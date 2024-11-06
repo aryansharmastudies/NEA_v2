@@ -6,11 +6,13 @@ import socket
 import time
 
 host = '0.0.0.0'
-port = 1234
+host_2 = socket.gethostbyname(socket.gethostname())
+print(host_2)
+port = 2
 HEADERSIZE = 10
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind((host, port))
+s.bind((host_2, port))
 s.listen(5)
 
 while True:
@@ -24,7 +26,7 @@ while True:
     clientsocket.send(bytes(msg, "utf-8"))
 
     while True:
-        time.sleep(3)
+        time.sleep(0.5)
         msg = f"The time is {time.time()}"
         msg = f'{len(msg):<{HEADERSIZE}}'+ msg
         clientsocket.send(bytes(msg, "utf-8"))
