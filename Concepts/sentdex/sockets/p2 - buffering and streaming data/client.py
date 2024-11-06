@@ -3,7 +3,7 @@ import socket
 HEADERSIZE = 10
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((socket.gethostbyname(socket.gethostname()), 2))
+s.connect((socket.gethostbyname(socket.gethostname()), 80))
 
 # print(f'{socket.gethostbyname(socket.gethostname())}') # NOTE: This is the same as '0.0.0.0' on the server side.
 

@@ -8,7 +8,7 @@ import time
 host = '0.0.0.0'
 host_2 = socket.gethostbyname(socket.gethostname())
 print(host_2)
-port = 2
+port = 80
 HEADERSIZE = 10
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
