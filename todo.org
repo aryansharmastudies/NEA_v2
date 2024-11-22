@@ -1,1 +1,2 @@
 * TODO transfer files using pickle
+* TODO check if files have been updated by hashing it.

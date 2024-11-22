@@ -1,1 +1,1 @@
-#run pair.py to pair one raspberry pi with another
+# run pair.py to pair one raspberry pi with another
