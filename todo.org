@@ -1,3 +1,4 @@
 * TODO transfer files using pickle
 * TODO check if files have been updated by hashing it
 * DONE setup up git and github!
+* TODO create prototype v1?
