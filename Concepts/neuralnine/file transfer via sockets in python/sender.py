@@ -2,7 +2,7 @@ import socket
 import os
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect((socket.gethostbyname(socket.gethostname()), 80))
+client.connect(('192.168.1.108', 1234))
 
 print(f'{socket.gethostbyname(socket.gethostname())}')
 

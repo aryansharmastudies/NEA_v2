@@ -1,7 +1,7 @@
 import socket, time
 
-host = '192.168.56.1'
-port = 2323
+host = '192.168.1.108'
+port = 1999
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 socket.connect((host, port)) # sends a connection request to the server.
