@@ -1,8 +1,12 @@
 import socket
 import tqdm
+import os
+
+gw = os.popen('ip -4 route show default').read().split()
+print(f"gw: {gw}")
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((socket.gethostbyname(socket.gethostname()), 80))
+server.bind((gw[-3], 1234))
 
 print(f'{socket.gethostbyname(socket.gethostname())}')
 server.listen()
