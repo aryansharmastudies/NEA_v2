@@ -1,6 +1,6 @@
 import socket, time
 
-host = "192.168.1.108"
+host = "192.168.43.155"
 port = 1999
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
