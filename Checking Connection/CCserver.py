@@ -14,9 +14,10 @@ print(f"addrinfo: {addrinfo}")
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((wireless_ipv4, port))
 s.listen()
-print("listening...")
 
 while True:
+    print()
+    print("listening...")
     client_socket, client_addr = s.accept()
     print(f"connection made with {client_addr}")
 
