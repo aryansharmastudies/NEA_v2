@@ -1,8 +1,12 @@
 import socket
 import os
 
+gw = os.popen('ip -4 route show default').read().split()
+print(f"gw: {gw}")
+
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect((socket.gethostbyname(socket.gethostname()), 80))
+# client.connect((socket.gethostbyname(socket.gethostname()), 80))
+client.connect((gw[-3], 80))
 
 print(f'{socket.gethostbyname(socket.gethostname())}')
 
