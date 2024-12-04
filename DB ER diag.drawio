@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
   <diagram name="Page-1" id="ekimDS5NgHhW3DlAZh_F">
-    <mxGraphModel dx="2012" dy="1150" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1423" dy="1150" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -739,8 +739,8 @@
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-193" value="&lt;h2&gt;User Interface&lt;br&gt;&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1025" y="50" width="310" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="m1OO1eJDPhX9h2eVrJNy-1" value="How syncing will work?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-420" y="253" width="150" height="30" as="geometry" />
+        <mxCell id="m1OO1eJDPhX9h2eVrJNy-1" value="&lt;b&gt;How syncing will work?&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-425" y="253" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="m1OO1eJDPhX9h2eVrJNy-2" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;OPTION 1:&lt;/div&gt;- device 1 will do routine checks comparing the hashes of its folders.&lt;div&gt;- if hashes are different, it starts comparing hashes of its sub-folders and sub-files.&lt;/div&gt;&lt;div&gt;- any changes files will be synced.&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-810" y="283" width="460" height="90" as="geometry" />
@@ -748,8 +748,14 @@
         <mxCell id="m1OO1eJDPhX9h2eVrJNy-3" value="OPTION 2:&lt;div&gt;- everytime a files has been updated and saved, it automatically creates&lt;/div&gt;&lt;div&gt;an entry in like a hidden file.&lt;/div&gt;&lt;div&gt;- this hidden file is read by the app and changes are synced&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-340" y="300" width="400" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="m1OO1eJDPhX9h2eVrJNy-4" value="Text" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-615" y="398" width="50" height="30" as="geometry" />
+        <mxCell id="m1OO1eJDPhX9h2eVrJNy-4" value="OPTION 3:&lt;div&gt;- hashing is very fast so could be a viable opition actually.&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-755" y="393" width="330" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="m1OO1eJDPhX9h2eVrJNy-5" value="&lt;b&gt;What scenario will cause sync?&lt;/b&gt;&lt;div&gt;- in case of new file creation.&lt;/div&gt;&lt;div&gt;- changes in a pre-existing file.&lt;/div&gt;&lt;div&gt;- user has forcefully synced.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-680" y="88" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="m1OO1eJDPhX9h2eVrJNy-6" value="&lt;b&gt;What do do incase of merge conflicts?&lt;/b&gt;&lt;div&gt;- Could be an option to merge the two.&lt;/div&gt;&lt;div&gt;- or I guess only allow one to exist.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-350" y="25" width="240" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
