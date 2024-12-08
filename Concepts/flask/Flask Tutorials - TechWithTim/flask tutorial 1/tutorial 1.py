@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/") # in the url if we type localhost:5000/home we are returned with home page.
 def home(): #represents the homecase...
-    return "Hello <h1>Aryan!<h1>"
+    return "Hello <h1>Aryan!</h1>"
 
 @app.route("/<name>") #<name> will be passed into the function.
 def user(name):
