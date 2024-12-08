@@ -10,8 +10,6 @@ def home(): #represents the homecase...
 def login():
     if request.method == "POST":
         user = request.form["nm"]
-        if user == "":
-            user = "Clown"
         return redirect(url_for("user", usr=user)) # nm is the dictionary key for name of user input.
     else:
         return render_template("login.html")
