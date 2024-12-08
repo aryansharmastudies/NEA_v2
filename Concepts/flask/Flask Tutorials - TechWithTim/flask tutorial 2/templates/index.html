@@ -6,11 +6,15 @@
     <body>
         <h1>Home Page!</h1>
         <p>{{content}}</p>
+
         {% for x in range(10) %}
             {% if x % 2 == 1 %}
-                <p>{{x}}</p> <!--uhh so {{x}} is interpreted as a parameter. -->
-                <p>{{content}}</p>
+                <p>{{x}}</p> <!--uhh so {{x}} is interpreted as a variable. -->
             {% endif %}
+        {% endfor %}
+
+        {% for y in names %}
+            <p>{{y}} studies {{subject}}</p>
         {% endfor %}
         
     </body>
