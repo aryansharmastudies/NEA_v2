@@ -10,5 +10,9 @@ when we finish exe code.-->
         {% endfor %}
     {% endif %}
 {% endwith %}
-<p><h3> Welcome {{user}} </h3></p>
+<form action="#" method="POST">
+    <input type="email" name="email_key" placeholder="Enter Email" value="{{email if email}}" /> <!-- value="{{email if email}}" it basically autocompletes the email in the box.
+    if it's in the database.-->
+    <input type="submit" value="submit"/>
+</form>
 {% endblock %}

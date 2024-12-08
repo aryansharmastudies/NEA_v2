@@ -1,0 +1,5 @@
+list of libraries you need to install
+- flask
+- flask-sqlalchemy
+- sockets
+- os(think its already installed)
