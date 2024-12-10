@@ -19,6 +19,14 @@ class users(db.Model): # inherits from db.Model
         self.name = name
         self.email = email
 
+class device(db.Model):
+    _id = db.Column("id", db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    mac_addr = db.Column(db.String(48))
+
+    def __init__(self, name, mac_addr):
+        self.name = name
+        self.mac_addr = mac_addr
 
 @app.route("/") # in the url if we type localhost:5000/home we are returned with home page.
 def home(): #represents the homecase...
