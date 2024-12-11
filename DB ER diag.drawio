@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.3">
   <diagram name="Page-1" id="ekimDS5NgHhW3DlAZh_F">
-    <mxGraphModel dx="3274" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1692" dy="631" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="#FEFFEB" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -743,37 +743,34 @@
           <mxGeometry x="-435" y="253" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="m1OO1eJDPhX9h2eVrJNy-2" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;OPTION 1:&lt;/div&gt;- device 1 will do routine checks comparing the hashes of its folders.&lt;div&gt;- if hashes are different, it starts comparing hashes of its sub-folders and sub-files.&lt;/div&gt;&lt;div&gt;- any changes files will be synced.&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-810" y="283" width="460" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="m1OO1eJDPhX9h2eVrJNy-3" value="OPTION 2:&lt;div&gt;- everytime a files has been updated and saved, it automatically creates&lt;/div&gt;&lt;div&gt;an entry in like a hidden file.&lt;/div&gt;&lt;div&gt;- this hidden file is read by the app and changes are synced&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-340" y="300" width="400" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="m1OO1eJDPhX9h2eVrJNy-4" value="OPTION 3:&lt;div&gt;- hashing is very fast so could be a viable opition actually.&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-755" y="393" width="330" height="40" as="geometry" />
+          <mxGeometry x="-570" y="260" width="460" height="90" as="geometry" />
         </mxCell>
         <mxCell id="m1OO1eJDPhX9h2eVrJNy-5" value="&lt;b&gt;What scenario will cause sync?&lt;/b&gt;&lt;div&gt;- in case of new file creation.&lt;/div&gt;&lt;div&gt;- changes in a pre-existing file.&lt;/div&gt;&lt;div&gt;- user has forcefully synced.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-680" y="88" width="200" height="70" as="geometry" />
+          <mxGeometry x="-650" y="80" width="200" height="70" as="geometry" />
         </mxCell>
         <mxCell id="m1OO1eJDPhX9h2eVrJNy-6" value="&lt;b&gt;What do do incase of merge conflicts?&lt;/b&gt;&lt;div&gt;- Could be an option to merge the two.&lt;/div&gt;&lt;div&gt;- or I guess only allow one to exist.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-350" y="28" width="240" height="60" as="geometry" />
+          <mxGeometry x="-290" y="80" width="240" height="60" as="geometry" />
         </mxCell>
         <mxCell id="J5T_INTHI0wTnBLm9tiO-1" value="OPTION 4&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. &lt;/span&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Track File Metadata&lt;/strong&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;File metadata (e.g., modification time, size) can be used as a lightweight way to detect changes.&amp;nbsp;&lt;/p&gt;&lt;p&gt;Instead of hashing the entire file, you can periodically check the file&#39;s &lt;code&gt;mtime&lt;/code&gt; (modification time) and size, which are quick to retrieve.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;How to Use&lt;/strong&gt;:&lt;ul&gt;&lt;li&gt;Maintain a dictionary of &lt;code&gt;{filename: (last_mtime, size)}&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Periodically check the files in the directory and compare their current &lt;code&gt;mtime&lt;/code&gt; and size with the stored values.&lt;/li&gt;&lt;li&gt;If either changes, the file likely changed.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-1270" y="520" width="720" height="190" as="geometry" />
+          <mxGeometry x="-700" y="360" width="720" height="190" as="geometry" />
         </mxCell>
         <mxCell id="J5T_INTHI0wTnBLm9tiO-2" value="&lt;div&gt;import os&lt;/div&gt;&lt;div&gt;from time import sleep&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;file_metadata = {}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;def check_for_changes(directory):&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; global file_metadata&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; for filename in os.listdir(directory):&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; filepath = os.path.join(directory, filename)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; if os.path.isfile(filepath):&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; stats = os.stat(filepath)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; mtime, size = stats.st_mtime, stats.st_size&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; if filepath not in file_metadata or file_metadata[filepath] != (mtime, size):&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; file_metadata[filepath] = (mtime, size)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; print(f&quot;File changed: {filepath}&quot;)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;while True:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; check_for_changes(&#39;your/directory/path&#39;)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; sleep(1)&amp;nbsp; # Check every second (adjust as needed)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-1080" y="750" width="440" height="300" as="geometry" />
+          <mxGeometry x="-460" y="560" width="440" height="300" as="geometry" />
         </mxCell>
         <mxCell id="kdXY9jHSjiTfkaNDkKo--2" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;how to schedule things?&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-365" y="600" width="190" height="30" as="geometry" />
+          <mxGeometry x="-1040" y="208" width="190" height="30" as="geometry" />
         </mxCell>
         <mxCell id="kdXY9jHSjiTfkaNDkKo--3" value="https://en.wikipedia.org/wiki/Cron" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="-310" y="630" width="60" height="30" as="geometry" />
+          <mxGeometry x="-985" y="238" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="kdXY9jHSjiTfkaNDkKo--4" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;w flask tutorial&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-340" y="670" width="120" height="30" as="geometry" />
+          <mxGeometry x="-1015" y="278" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="kdXY9jHSjiTfkaNDkKo--5" value="https://www.youtube.com/watch?v=Z1RJmh_OqeA" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="-435" y="700" width="360" height="20" as="geometry" />
+          <mxGeometry x="-1110" y="308" width="360" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7BFeL7Io8CZYMSER0SD8-1" value="&lt;b&gt;how will the setup work?&lt;/b&gt;&lt;div&gt;- install app on the device&lt;/div&gt;&lt;div&gt;- app will have a flask website that talks to server&lt;/div&gt;&lt;div&gt;- you can log into the website and make you&#39;re&amp;nbsp; account.&lt;/div&gt;&lt;div&gt;- data of account stored in raspberry pi.&lt;/div&gt;&lt;div&gt;- first thing you are prompted with to connect to a raspberry pi. -&amp;gt; you need Ip of the raspberry pi. (you can get that via the router settings).&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="-1065" y="420" width="240" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
