@@ -17,4 +17,3 @@ with open(sys.argv[1], 'rb') as f:
 
 print("MD5: {0}".format(md5.hexdigest()))
 print("SHA1: {0}".format(sha1.hexdigest()))
-# yuh
