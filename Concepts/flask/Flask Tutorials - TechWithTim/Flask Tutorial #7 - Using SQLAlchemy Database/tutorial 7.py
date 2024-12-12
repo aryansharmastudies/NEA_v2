@@ -1,6 +1,8 @@
 from flask import Flask, redirect, url_for, render_template, request, session, flash
 from datetime import timedelta # setup max time out session last for.
 from flask_sqlalchemy import SQLAlchemy
+from uuid import getnode as get_mac
+
 
 app = Flask(__name__)
 app.secret_key = "hello"
@@ -11,7 +13,7 @@ app.permanent_session_lifetime = timedelta(minutes=5) # session will
 db = SQLAlchemy(app)
 
 class users(db.Model): # inherits from db.Model
-    _id = db.Column("id", db.Integer, primary_key=True)
+    user_id = db.Column("user_id", db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     email = db.Column(db.String(100))
 
@@ -19,12 +21,13 @@ class users(db.Model): # inherits from db.Model
         self.name = name
         self.email = email
 
-class device(db.Model):
-    _id = db.Column("id", db.Integer, primary_key=True)
+class devices(db.Model):
+    user_id = db.Column("user_id", db.Integer)
     name = db.Column(db.String(100))
-    mac_addr = db.Column(db.String(48))
+    mac_addr = db.Column(db.String(48), primary_key=True)
 
-    def __init__(self, name, mac_addr):
+    def __init__(self, user_id, name, mac_addr): # initializes each device with this.
+        self.user_id = user_id
         self.name = name
         self.mac_addr = mac_addr
 
@@ -55,7 +58,7 @@ def login():
         return redirect(url_for("user")) # nm is the dictionary key for name of user input.
     else:
         if "user" in session: # if user is already logged in, then redirect to user page.
-            flash("Already Logged In!", "info")
+            flash("Already Logged!", "info")
             return redirect(url_for("user"))
         
         return render_template("login.html")
@@ -64,14 +67,31 @@ def login():
 @app.route("/user", methods=["POST", "GET"])
 def user():
     email = None
+    device = None
+    mac = get_mac()
+    print(mac)
+
     if "user" in session:
         user = session["user"]
+        print("######################################")
+        print(user)
+        print(user.name)
 
         if request.method == "POST":
-            email = request.form["email_key"]
+            if len(request.form["email_key"]) != 0:
+                email = request.form["email_key"]
+            if len(request.form["device_key"]) != 0:
+                device = request.form["device_key"]
+
             session["email"] = email
+            session["device"] = device
+
             found_user = users.query.filter_by(name=user).first()
             found_user.email = email
+
+            device = devices(user.user_id, device, mac)
+            db.session.add(device)
+
             db.session.commit()
             flash("Email was saved!", "info")
         else: # if the request.method is GET
