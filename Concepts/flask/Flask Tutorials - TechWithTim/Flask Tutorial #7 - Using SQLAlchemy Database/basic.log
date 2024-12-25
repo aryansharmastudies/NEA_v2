@@ -272,3 +272,11 @@
 2024-12-23 18:40:25 INFO EMAIL: sigma@gmail.com
 2024-12-23 18:40:25 INFO DEVICE: renner
 2024-12-23 18:40:25 INFO 127.0.0.1 - - [23/Dec/2024 18:40:25] "POST /user HTTP/1.1" 200 -
+2024-12-25 19:41:25 INFO testing!
+2024-12-25 19:41:25 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-25 19:41:25 INFO [33mPress CTRL+C to quit[0m
+2024-12-25 19:41:25 INFO  * Restarting with stat
+2024-12-25 19:41:25 INFO testing!
+2024-12-25 19:41:25 WARNING  * Debugger is active!
+2024-12-25 19:41:25 INFO  * Debugger PIN: 185-131-136

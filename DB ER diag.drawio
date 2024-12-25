@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
   <diagram name="Page-1" id="ekimDS5NgHhW3DlAZh_F">
-    <mxGraphModel dx="3312" dy="696" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3185" dy="1215" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -667,24 +667,24 @@
           <mxGeometry x="1880" y="780" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-148" value="" style="rounded=0;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2440" y="250" width="900" height="520" as="geometry" />
+          <mxGeometry x="3260" y="250" width="900" height="520" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-149" value="iphone 5s" style="swimlane;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2460" y="270" width="200" height="200" as="geometry" />
+          <mxGeometry x="3280" y="270" width="200" height="200" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-150" value="macbook pro" style="swimlane;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2680" y="270" width="200" height="200" as="geometry">
+          <mxGeometry x="3500" y="270" width="200" height="200" as="geometry">
             <mxRectangle x="970" y="120" width="220" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-151" value="quantum computer" style="swimlane;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2900" y="270" width="200" height="200" as="geometry" />
+          <mxGeometry x="3720" y="270" width="200" height="200" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-152" value="physics class" style="swimlane;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="3120" y="270" width="200" height="200" as="geometry" />
+          <mxGeometry x="3940" y="270" width="200" height="200" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-163" value="2024 Pictures" style="swimlane;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2475" y="300" width="170" height="150" as="geometry" />
+          <mxGeometry x="3295" y="300" width="170" height="150" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-177" value="" style="rounded=0;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-163" vertex="1">
           <mxGeometry x="65" y="30" width="40" height="50" as="geometry" />
@@ -705,10 +705,10 @@
           <mxGeometry x="70" y="100" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-165" value="life" style="swimlane;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2695" y="300" width="170" height="150" as="geometry" />
+          <mxGeometry x="3515" y="300" width="170" height="150" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-166" value="Music" style="swimlane;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2915" y="300" width="170" height="150" as="geometry" />
+          <mxGeometry x="3735" y="300" width="170" height="150" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-188" value="Diddys plan - drake" style="rounded=0;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-166" vertex="1">
           <mxGeometry x="15" y="30" width="135" height="20" as="geometry" />
@@ -720,7 +720,7 @@
           <mxGeometry x="15" y="90" width="135" height="20" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-167" value="Physics Notes" style="swimlane;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="3135" y="300" width="170" height="150" as="geometry" />
+          <mxGeometry x="3955" y="300" width="170" height="150" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-170" value="" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=14;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-167" vertex="1">
           <mxGeometry x="65" y="30" width="40" height="50" as="geometry" />
@@ -732,34 +732,28 @@
           <mxGeometry x="65" y="90" width="40" height="50" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-169" value="" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=14;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="3150" y="330" width="40" height="50" as="geometry" />
+          <mxGeometry x="3970" y="330" width="40" height="50" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-171" value="" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=14;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="3250" y="330" width="40" height="50" as="geometry" />
+          <mxGeometry x="4070" y="330" width="40" height="50" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-175" value="" style="rounded=0;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2490" y="330" width="40" height="50" as="geometry" />
+          <mxGeometry x="3310" y="330" width="40" height="50" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-178" value="" style="rounded=0;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2590" y="330" width="40" height="50" as="geometry" />
+          <mxGeometry x="3410" y="330" width="40" height="50" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-183" value="school" style="swimlane;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2710" y="330" width="60" height="110" as="geometry" />
+          <mxGeometry x="3530" y="330" width="60" height="110" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-184" value="todo" style="swimlane;whiteSpace=wrap;html=1;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2780" y="330" width="70" height="110" as="geometry" />
+          <mxGeometry x="3600" y="330" width="70" height="110" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-185" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.smiley;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2495" y="340" width="30" height="30" as="geometry" />
+          <mxGeometry x="3315" y="340" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="yCGKUtqAQL4sus2Y5JjS-193" value="&lt;h2&gt;User Interface - Groups&lt;br&gt;&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2735" y="200" width="310" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="J5T_INTHI0wTnBLm9tiO-1" value="OPTION 4&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. &lt;/span&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Track File Metadata&lt;/strong&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;File metadata (e.g., modification time, size) can be used as a lightweight way to detect changes.&amp;nbsp;&lt;/p&gt;&lt;p&gt;Instead of hashing the entire file, you can periodically check the file&#39;s &lt;code&gt;mtime&lt;/code&gt; (modification time) and size, which are quick to retrieve.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;How to Use&lt;/strong&gt;:&lt;ul&gt;&lt;li&gt;Maintain a dictionary of &lt;code&gt;{filename: (last_mtime, size)}&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Periodically check the files in the directory and compare their current &lt;code&gt;mtime&lt;/code&gt; and size with the stored values.&lt;/li&gt;&lt;li&gt;If either changes, the file likely changed.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=default;fillColor=none;swimlaneLine=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="-2470" y="270" width="720" height="190" as="geometry" />
-        </mxCell>
-        <mxCell id="J5T_INTHI0wTnBLm9tiO-2" value="&lt;div&gt;import os&lt;/div&gt;&lt;div&gt;from time import sleep&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;file_metadata = {}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;def check_for_changes(directory):&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; global file_metadata&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; for filename in os.listdir(directory):&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; filepath = os.path.join(directory, filename)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; if os.path.isfile(filepath):&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; stats = os.stat(filepath)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; mtime, size = stats.st_mtime, stats.st_size&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; if filepath not in file_metadata or file_metadata[filepath] != (mtime, size):&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; file_metadata[filepath] = (mtime, size)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; print(f&quot;File changed: {filepath}&quot;)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;while True:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; check_for_changes(&#39;your/directory/path&#39;)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; sleep(1)&amp;nbsp; # Check every second (adjust as needed)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=default;fillColor=none;swimlaneLine=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="-2230" y="470" width="440" height="300" as="geometry" />
+        <mxCell id="yCGKUtqAQL4sus2Y5JjS-193" value="&lt;h2&gt;idealy a representation of what the backend looks like&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="3555" y="200" width="310" height="50" as="geometry" />
         </mxCell>
         <mxCell id="MbVPeow9jD_4vrdPA5OP-2" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=50;endArrow=ERmany;endFill=0;strokeWidth=2;" parent="1" source="yCGKUtqAQL4sus2Y5JjS-22" target="yCGKUtqAQL4sus2Y5JjS-106" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -776,17 +770,71 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ve8_pdSx289FWDolOGCz-15" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;How will setup work?&lt;/h1&gt;&lt;div&gt;&lt;u&gt;Initialising&lt;/u&gt;&lt;/div&gt;&lt;div&gt;-x- usr downloads app&lt;/div&gt;&lt;div&gt;-x- usr opens flask website&lt;/div&gt;&lt;div&gt;-x- usr prompted to pair raspberry pi&lt;/div&gt;&lt;div&gt;-x- using sockets and udp broadcasting - usr finds pi and &lt;b&gt;exchanges ip_addr&lt;/b&gt;&lt;/div&gt;&lt;div&gt;-x- usr logs into website/registers device using mac_addr&lt;/div&gt;&lt;div&gt;-x- data transmitted via sockets to pi&lt;/div&gt;&lt;div&gt;-x- data stored in pi&#39;s db&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;Reconnecting&lt;/u&gt;&lt;/div&gt;&lt;div&gt;[in the scenario, usr rejoins network, how to establish connection?]&amp;nbsp;&lt;/div&gt;&lt;div&gt;-x- both pi and usr have ip&lt;/div&gt;&lt;div&gt;-x- &lt;b&gt;TODO&lt;/b&gt; pi will be made to have fixed ip&lt;/div&gt;&lt;div&gt;-x- usr sends mac_addr along with ip to pi&lt;/div&gt;&lt;div&gt;-x- if mac_addr in db, usr recognised&lt;/div&gt;&lt;div&gt;-x- else, redirected to &lt;b&gt;Initialising&lt;/b&gt; stage&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;Setting up file syncing&lt;/u&gt;&lt;/div&gt;&lt;div&gt;-x- usr can see eachother/their devices through flask website&lt;/div&gt;&lt;div&gt;-x- select share folder option&lt;/div&gt;&lt;div&gt;-x- input&amp;nbsp;&lt;/div&gt;&lt;div&gt;folder_id&lt;/div&gt;&lt;div&gt;folder_label&lt;/div&gt;&lt;div&gt;folder_path&lt;/div&gt;&lt;div&gt;-x- under share tab choose devices&lt;/div&gt;&lt;div&gt;-x- select folder type&lt;/div&gt;&lt;div&gt;send &amp;amp; recieve&lt;/div&gt;&lt;div&gt;send only&lt;/div&gt;&lt;div&gt;recieve only&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=default;" vertex="1" parent="1">
+        <mxCell id="ve8_pdSx289FWDolOGCz-15" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;How will setup work?&lt;/h1&gt;&lt;div&gt;&lt;u&gt;Initialising&lt;/u&gt;&lt;/div&gt;&lt;div&gt;-x- usr downloads app&lt;/div&gt;&lt;div&gt;-x- usr opens flask website&lt;/div&gt;&lt;div&gt;-x- usr prompted to pair raspberry pi&lt;/div&gt;&lt;div&gt;-x- using sockets and udp broadcasting - usr finds pi and &lt;b&gt;exchanges ip_addr&lt;/b&gt;&lt;/div&gt;&lt;div&gt;-x- usr logs into website/registers device using mac_addr&lt;/div&gt;&lt;div&gt;-x- data transmitted via sockets to pi&lt;/div&gt;&lt;div&gt;-x- data stored in pi&#39;s db&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;Reconnecting&lt;/u&gt;&lt;/div&gt;&lt;div&gt;[in the scenario, usr rejoins network, how to establish connection?]&amp;nbsp;&lt;/div&gt;&lt;div&gt;-x- both pi and usr have ip&lt;/div&gt;&lt;div&gt;-x- &lt;b&gt;TODO&lt;/b&gt; pi will be made to have fixed ip&lt;/div&gt;&lt;div&gt;-x- usr sends mac_addr along with ip to pi&lt;/div&gt;&lt;div&gt;-x- if mac_addr in db, usr recognised&lt;/div&gt;&lt;div&gt;-x- else, redirected to &lt;b&gt;Initialising&lt;/b&gt; stage&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;Setting up file syncing&lt;/u&gt;&lt;/div&gt;&lt;div&gt;-x- usr can see eachother/their devices through flask website&lt;/div&gt;&lt;div&gt;-x- select share folder option&lt;/div&gt;&lt;div&gt;-x- input&amp;nbsp;&lt;/div&gt;&lt;div&gt;folder_id&lt;/div&gt;&lt;div&gt;folder_label&lt;/div&gt;&lt;div&gt;folder_path&lt;/div&gt;&lt;div&gt;-x- under share tab choose devices&lt;/div&gt;&lt;div&gt;-x- select folder type&lt;/div&gt;&lt;div&gt;send &amp;amp; recieve&lt;/div&gt;&lt;div&gt;send only&lt;/div&gt;&lt;div&gt;recieve only&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=default;" parent="1" vertex="1">
           <mxGeometry x="-1640" y="200" width="280" height="601" as="geometry" />
         </mxCell>
-        <mxCell id="ve8_pdSx289FWDolOGCz-16" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Misconceptions&lt;/h1&gt;&lt;div&gt;So envisioning the project, I thought that if a user was part of a group, they will be able to access that group&#39;s file whatever network they were connected too and with whatever device. Although that is the greater goal, currently I aim(for simplicity) to be able to view that group&#39;s file from any device within the same network as the raspberry pi.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;TLDR&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;- originally, thought that usr in group can view group files from any network and any device&lt;/div&gt;&lt;div&gt;- changed that aim to make it so usr from any device in same network as pi can access group files.&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeColor=default;" vertex="1" parent="1">
+        <mxCell id="ve8_pdSx289FWDolOGCz-16" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Misconceptions&lt;/h1&gt;&lt;div&gt;So envisioning the project, I thought that if a user was part of a group, they will be able to access that group&#39;s file whatever network they were connected too and with whatever device. Although that is the greater goal, currently I aim(for simplicity) to be able to view that group&#39;s file from any device within the same network as the raspberry pi.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;TLDR&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;- originally, thought that usr in group can view group files from any network and any device&lt;/div&gt;&lt;div&gt;- changed that aim to make it so usr from any device in same network as pi can access group files.&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeColor=default;" parent="1" vertex="1">
           <mxGeometry x="-1320" y="200" width="280" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="ve8_pdSx289FWDolOGCz-17" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;How will syncing work?&lt;/h1&gt;&lt;div&gt;&lt;u&gt;Checking&lt;/u&gt;&lt;/div&gt;&lt;div&gt;-x- using function in os library&lt;/div&gt;&lt;div&gt;-x- checks file&#39;s &#39;last modified&#39; metadata&lt;/div&gt;&lt;div&gt;-x- if changed send data via sockets&lt;/div&gt;&lt;div&gt;-x- create buffer size&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;Merge Conflicts&lt;/u&gt;&lt;/div&gt;&lt;div&gt;-x- merge the two&lt;/div&gt;&lt;div&gt;-x- allow one to exist&lt;/div&gt;&lt;div&gt;-x- a system with one user will not have any conflicts since the usr can only make changes from one device&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;-x- scenario where this could fail is when usr made changes from one laptop, and also made changes from pc. laptop is offline but pc is online. once usr makes laptop online what happens!&lt;br&gt;&lt;/div&gt;&lt;div&gt;will changes from pc override laptop or vice versa.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;When will syncing occur?&lt;/div&gt;&lt;div&gt;-x- creation of new files&lt;/div&gt;&lt;div&gt;-x- changes to pre-existing files&lt;/div&gt;&lt;div&gt;-x- force sync&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=none;strokeColor=default;" vertex="1" parent="1">
+        <mxCell id="ve8_pdSx289FWDolOGCz-17" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;How will syncing work?&lt;/h1&gt;&lt;div&gt;&lt;u&gt;Checking&lt;/u&gt;&lt;/div&gt;&lt;div&gt;-x- using function in os library&lt;/div&gt;&lt;div&gt;-x- checks file&#39;s &#39;last modified&#39; metadata&lt;/div&gt;&lt;div&gt;-x- if changed send data via sockets&lt;/div&gt;&lt;div&gt;-x- create buffer size&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;Merge Conflicts&lt;/u&gt;&lt;/div&gt;&lt;div&gt;-x- merge the two&lt;/div&gt;&lt;div&gt;-x- allow one to exist&lt;/div&gt;&lt;div&gt;-x- a system with one user will not have any conflicts since the usr can only make changes from one device&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;-x- scenario where this could fail is when usr made changes from one laptop, and also made changes from pc. laptop is offline but pc is online. once usr makes laptop online what happens!&lt;br&gt;&lt;/div&gt;&lt;div&gt;will changes from pc override laptop or vice versa.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;When will syncing occur?&lt;/div&gt;&lt;div&gt;-x- creation of new files&lt;/div&gt;&lt;div&gt;-x- changes to pre-existing files&lt;/div&gt;&lt;div&gt;-x- force sync&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=none;strokeColor=default;" parent="1" vertex="1">
           <mxGeometry x="-1320" y="520" width="280" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="ve8_pdSx289FWDolOGCz-19" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Useful Links&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cron&quot;&gt;Cron - How to schedule things&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Z1RJmh_OqeA&quot;&gt;Flask Tutorial&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeColor=default;" vertex="1" parent="1">
+        <mxCell id="ve8_pdSx289FWDolOGCz-19" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Useful Links&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cron&quot;&gt;Cron - How to schedule things&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Z1RJmh_OqeA&quot;&gt;Flask Tutorial&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeColor=default;" parent="1" vertex="1">
           <mxGeometry x="-1640" y="40" width="600" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-6" value="Login" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3310" y="920" width="900" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-8" value="Pairing" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="2360" y="920" width="900" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-10" value="Dashboard" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2780" y="1560" width="900" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-7" value="Folders (2)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-10">
+          <mxGeometry x="15" y="40" width="425" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-11" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Default Folder&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font style=&quot;background-color: initial;&quot; color=&quot;#ff9933&quot;&gt;Unshared&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;background-color: initial;&quot; color=&quot;#ff9933&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;background-color: initial;&quot; color=&quot;#ff9933&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;background-color: initial;&quot; color=&quot;#ff9933&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-7">
+          <mxGeometry x="12.5" y="40" width="400" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-14" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Photos&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font color=&quot;#ff0000&quot;&gt;Out of Sync&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-7">
+          <mxGeometry x="12.5" y="170" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-15" value="Add Folder" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-7">
+          <mxGeometry x="220" y="220" width="192.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-25" value="Folder ID&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;default&lt;div&gt;Folder Path&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;/home&lt;/div&gt;&lt;div&gt;Folder Type&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Send &amp;amp; Recieve&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=none;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-7">
+          <mxGeometry x="25" y="80" width="375" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-9" value="Register this Device" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-10">
+          <mxGeometry x="460" y="40" width="425" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-16" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Enter Name : &lt;font color=&quot;#999999&quot;&gt;Device Name&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-9">
+          <mxGeometry x="12.5" y="30" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-17" value="Remote Devices(2)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-10">
+          <mxGeometry x="460" y="210" width="425" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-18" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;iPhone&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Disconnected" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-17">
+          <mxGeometry x="12.5" y="30" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-19" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Macbook Pro&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Connected" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-17">
+          <mxGeometry x="12.5" y="70" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-20" value="Groups(1)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-10">
+          <mxGeometry x="15" y="360" width="425" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-21" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Family&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font color=&quot;#ff9933&quot;&gt;Unshared&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-20">
+          <mxGeometry x="12.5" y="30" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-22" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Supercell&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font color=&quot;#ff0000&quot;&gt;Out of Sync&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-20">
+          <mxGeometry x="12.5" y="70" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-23" value="Add Folder" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-20">
+          <mxGeometry x="220" y="110" width="192.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-24" value="Join Group" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-20">
+          <mxGeometry x="12.5" y="110" width="192.5" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
