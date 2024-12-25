@@ -1,9 +1,52 @@
 {% extends "base.html" %}
 
 {% block title %}
-Home page
+Nearby Raspberry Pi Servers
 {% endblock %}
 
 {% block content %}
-<h2>Test</h2>
+<div class="container mt-4">
+    <h2 class="mb-3">Available Servers</h2>
+
+    <ul id="server-list" class="list-group mb-3">
+        <!-- Server list will be dynamically populated here -->
+    </ul>
+
+    <button class="btn btn-primary" onclick="reloadServers()">Reload</button>
+</div>
+
+<script>
+    // Function to fetch nearby Raspberry Pi servers and update the list
+    async function reloadServers() {
+        const serverList = document.getElementById("server-list");
+        serverList.innerHTML = '<li class="list-group-item">Loading...</li>'; // Temporary message while loading
+
+        try {
+            const response = await fetch("/api/servers"); // Fetch server data from the backend
+            const servers = await response.json();       // Parse the JSON response
+
+            // Clear the current list
+            serverList.innerHTML = "";
+
+            // Add each server to the list
+            servers.forEach(server => {
+                const listItem = document.createElement("li");
+                listItem.className = "list-group-item"; // Bootstrap styling
+                listItem.textContent = `Name: ${server.name}, IP: ${server.ip}`;
+                serverList.appendChild(listItem);
+            });
+
+            // If no servers were found, show a message
+            if (servers.length === 0) {
+                serverList.innerHTML = '<li class="list-group-item">No servers found.</li>';
+            }
+        } catch (error) {
+            // Handle any errors that occur during the fetch
+            serverList.innerHTML = '<li class="list-group-item text-danger">Error fetching servers.</li>';
+        }
+    }
+
+    // Automatically load servers when the page is opened
+    reloadServers();
+</script>
 {% endblock %}

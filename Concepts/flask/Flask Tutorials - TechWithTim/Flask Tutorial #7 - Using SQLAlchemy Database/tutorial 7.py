@@ -1,8 +1,9 @@
-from flask import Flask, redirect, url_for, render_template, request, session, flash
+from flask import Flask, redirect, url_for, render_template, request, session, flash, jsonify
 from datetime import timedelta # setup max time out session last for.
 from flask_sqlalchemy import SQLAlchemy
 from uuid import getnode as get_mac
 import logging
+import socket
 
 
 app = Flask(__name__)
@@ -44,10 +45,42 @@ class devices(db.Model):
         self.name = name
         self.mac_addr = mac_addr
 
-@app.route("/") # in the url if we type localhost:5000/home we are returned with home page.
-def home(): #represents the homecase...
+def discover_pi():
+    # Initialize the servers list
+    servers = []
+    
+    # Set up the UDP socket
+    udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+    udp_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+    udp_socket.bind(("", 37020))
+    
+    # Add a short timeout so the function doesn't block forever
+    udp_socket.settimeout(2)  # Wait for 2 seconds for broadcasts
+    
+    print("Scanning for broadcasts...")
+    try:
+        while True:
+            data, addr = udp_socket.recvfrom(1024)  # Receive data from the socket
+            server_info = {
+                "name": data.decode(),  # Message sent by the Raspberry Pi
+                "ip": addr[0]           # IP address of the sender
+            }
+            if server_info not in servers:
+                servers.append(server_info)  # Add unique servers
+    except socket.timeout:
+        print("Scanning completed.")
+
+    udp_socket.close()  # Clean up the socket
+    return servers
+
+@app.route("/")  # Main page
+def home():
     return render_template("index.html")
 
+@app.route("/api/servers")  # API endpoint for scanning and returning servers
+def api_servers():
+    servers = discover_pi()  # Call the discover function
+    return jsonify(servers)  # Return the list as JSON
 @app.route("/dump")
 def dump():
     return render_template("dump.html", values=users.query.all())

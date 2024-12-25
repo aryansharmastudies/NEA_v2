@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
   <diagram name="Page-1" id="ekimDS5NgHhW3DlAZh_F">
-    <mxGraphModel dx="4722" dy="2079" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3185" dy="1215" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -752,7 +752,7 @@
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-185" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.smiley;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="3315" y="340" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="yCGKUtqAQL4sus2Y5JjS-193" value="&lt;h2&gt;User Interface - Groups&lt;br&gt;&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
+        <mxCell id="yCGKUtqAQL4sus2Y5JjS-193" value="&lt;h2&gt;idealy a representation of what the backend looks like&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="3555" y="200" width="310" height="50" as="geometry" />
         </mxCell>
         <mxCell id="MbVPeow9jD_4vrdPA5OP-2" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=50;endArrow=ERmany;endFill=0;strokeWidth=2;" parent="1" source="yCGKUtqAQL4sus2Y5JjS-22" target="yCGKUtqAQL4sus2Y5JjS-106" edge="1">
@@ -783,19 +783,58 @@
           <mxGeometry x="-1640" y="40" width="600" height="120" as="geometry" />
         </mxCell>
         <mxCell id="FBM7-H1ohKF98GICXcu1-6" value="Login" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3300" y="920" width="900" height="520" as="geometry" />
+          <mxGeometry x="3310" y="920" width="900" height="520" as="geometry" />
         </mxCell>
         <mxCell id="FBM7-H1ohKF98GICXcu1-8" value="Pairing" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
           <mxGeometry x="2360" y="920" width="900" height="520" as="geometry" />
         </mxCell>
         <mxCell id="FBM7-H1ohKF98GICXcu1-10" value="Dashboard" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="2785" y="1600" width="900" height="530" as="geometry" />
+          <mxGeometry x="2780" y="1560" width="900" height="530" as="geometry" />
         </mxCell>
-        <mxCell id="FBM7-H1ohKF98GICXcu1-7" value="Add Folder" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-10">
-          <mxGeometry x="15" y="40" width="425" height="480" as="geometry" />
+        <mxCell id="FBM7-H1ohKF98GICXcu1-7" value="Folders (2)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-10">
+          <mxGeometry x="15" y="40" width="425" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-11" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Default Folder&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font style=&quot;background-color: initial;&quot; color=&quot;#ff9933&quot;&gt;Unshared&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;background-color: initial;&quot; color=&quot;#ff9933&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;background-color: initial;&quot; color=&quot;#ff9933&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;background-color: initial;&quot; color=&quot;#ff9933&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-7">
+          <mxGeometry x="12.5" y="40" width="400" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-14" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Photos&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font color=&quot;#ff0000&quot;&gt;Out of Sync&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-7">
+          <mxGeometry x="12.5" y="170" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-15" value="Add Folder" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-7">
+          <mxGeometry x="220" y="220" width="192.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-25" value="Folder ID&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;default&lt;div&gt;Folder Path&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;/home&lt;/div&gt;&lt;div&gt;Folder Type&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Send &amp;amp; Recieve&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=none;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-7">
+          <mxGeometry x="25" y="80" width="375" height="50" as="geometry" />
         </mxCell>
         <mxCell id="FBM7-H1ohKF98GICXcu1-9" value="Register this Device" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-10">
-          <mxGeometry x="460" y="40" width="425" height="480" as="geometry" />
+          <mxGeometry x="460" y="40" width="425" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-16" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Enter Name : &lt;font color=&quot;#999999&quot;&gt;Device Name&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-9">
+          <mxGeometry x="12.5" y="30" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-17" value="Remote Devices(2)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-10">
+          <mxGeometry x="460" y="210" width="425" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-18" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;iPhone&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Disconnected" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-17">
+          <mxGeometry x="12.5" y="30" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-19" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Macbook Pro&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Connected" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-17">
+          <mxGeometry x="12.5" y="70" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-20" value="Groups(1)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-10">
+          <mxGeometry x="15" y="360" width="425" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-21" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Family&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font color=&quot;#ff9933&quot;&gt;Unshared&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-20">
+          <mxGeometry x="12.5" y="30" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-22" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Supercell&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font color=&quot;#ff0000&quot;&gt;Out of Sync&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-20">
+          <mxGeometry x="12.5" y="70" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-23" value="Add Folder" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-20">
+          <mxGeometry x="220" y="110" width="192.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FBM7-H1ohKF98GICXcu1-24" value="Join Group" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;" vertex="1" parent="FBM7-H1ohKF98GICXcu1-20">
+          <mxGeometry x="12.5" y="110" width="192.5" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
