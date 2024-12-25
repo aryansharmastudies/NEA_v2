@@ -1,0 +1,274 @@
+2024-12-23 16:53:58 INFO testing!
+2024-12-23 16:53:58 WARNING  * Debugger is active!
+2024-12-23 16:53:58 INFO  * Debugger PIN: 719-335-841
+2024-12-23 16:54:10 INFO testing!
+2024-12-23 16:54:10 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-23 16:54:10 INFO [33mPress CTRL+C to quit[0m
+2024-12-23 16:54:10 INFO  * Restarting with stat
+2024-12-23 16:54:10 INFO testing!
+2024-12-23 16:54:10 WARNING  * Debugger is active!
+2024-12-23 16:54:10 INFO  * Debugger PIN: 719-335-841
+2024-12-23 16:55:05 INFO testing!
+2024-12-23 16:55:05 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-23 16:55:05 INFO [33mPress CTRL+C to quit[0m
+2024-12-23 16:55:05 INFO  * Restarting with stat
+2024-12-23 16:55:05 INFO testing!
+2024-12-23 16:55:05 WARNING  * Debugger is active!
+2024-12-23 16:55:05 INFO  * Debugger PIN: 719-335-841
+2024-12-23 16:55:18 INFO testing!
+2024-12-23 16:55:18 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-23 16:55:18 INFO [33mPress CTRL+C to quit[0m
+2024-12-23 16:55:18 INFO  * Restarting with stat
+2024-12-23 16:55:18 INFO testing!
+2024-12-23 16:55:18 WARNING  * Debugger is active!
+2024-12-23 16:55:18 INFO  * Debugger PIN: 719-335-841
+2024-12-23 16:55:29 INFO testing!
+2024-12-23 16:55:29 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-23 16:55:29 INFO [33mPress CTRL+C to quit[0m
+2024-12-23 16:55:29 INFO  * Restarting with stat
+2024-12-23 16:55:29 INFO testing!
+2024-12-23 16:55:29 WARNING  * Debugger is active!
+2024-12-23 16:55:29 INFO  * Debugger PIN: 719-335-841
+2024-12-23 16:55:56 INFO testing!
+2024-12-23 16:55:56 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-23 16:55:56 INFO [33mPress CTRL+C to quit[0m
+2024-12-23 16:55:56 INFO  * Restarting with stat
+2024-12-23 16:55:56 INFO testing!
+2024-12-23 16:55:56 WARNING  * Debugger is active!
+2024-12-23 16:55:56 INFO  * Debugger PIN: 719-335-841
+2024-12-23 16:56:49 INFO 127.0.0.1 - - [23/Dec/2024 16:56:49] "GET / HTTP/1.1" 200 -
+2024-12-23 16:56:53 INFO 127.0.0.1 - - [23/Dec/2024 16:56:53] "GET /login HTTP/1.1" 200 -
+2024-12-23 16:56:59 INFO 127.0.0.1 - - [23/Dec/2024 16:56:59] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 16:56:59 INFO 127.0.0.1 - - [23/Dec/2024 16:56:59] "GET /user HTTP/1.1" 200 -
+2024-12-23 17:00:33 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\Concepts\\flask\\Flask Tutorials - TechWithTim\\Flask Tutorial #7 - Using SQLAlchemy Database\\tutorial 7.py', reloading
+2024-12-23 17:00:33 INFO  * Restarting with stat
+2024-12-23 17:00:33 INFO testing!
+2024-12-23 17:00:33 WARNING  * Debugger is active!
+2024-12-23 17:00:33 INFO  * Debugger PIN: 719-335-841
+2024-12-23 17:00:34 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\Concepts\\flask\\Flask Tutorials - TechWithTim\\Flask Tutorial #7 - Using SQLAlchemy Database\\tutorial 7.py', reloading
+2024-12-23 17:00:34 INFO  * Restarting with stat
+2024-12-23 17:00:35 INFO testing!
+2024-12-23 17:00:35 WARNING  * Debugger is active!
+2024-12-23 17:00:35 INFO  * Debugger PIN: 719-335-841
+2024-12-23 17:00:43 INFO 127.0.0.1 - - [23/Dec/2024 17:00:43] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 17:00:43 INFO 127.0.0.1 - - [23/Dec/2024 17:00:43] "GET /login HTTP/1.1" 200 -
+2024-12-23 17:01:00 INFO 127.0.0.1 - - [23/Dec/2024 17:01:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 17:01:00 INFO USER: user3
+2024-12-23 17:01:00 INFO 127.0.0.1 - - [23/Dec/2024 17:01:00] "GET /user HTTP/1.1" 200 -
+2024-12-23 17:03:44 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\Concepts\\flask\\Flask Tutorials - TechWithTim\\Flask Tutorial #7 - Using SQLAlchemy Database\\tutorial 7.py', reloading
+2024-12-23 17:03:44 INFO  * Restarting with stat
+2024-12-23 17:03:44 INFO testing!
+2024-12-23 17:03:44 WARNING  * Debugger is active!
+2024-12-23 17:03:44 INFO  * Debugger PIN: 719-335-841
+2024-12-23 17:03:49 INFO 127.0.0.1 - - [23/Dec/2024 17:03:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 17:03:49 INFO 127.0.0.1 - - [23/Dec/2024 17:03:49] "GET /login HTTP/1.1" 200 -
+2024-12-23 17:03:53 INFO 127.0.0.1 - - [23/Dec/2024 17:03:53] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 17:03:53 INFO USER: user4
+2024-12-23 17:03:53 INFO 127.0.0.1 - - [23/Dec/2024 17:03:53] "GET /user HTTP/1.1" 200 -
+2024-12-23 17:04:11 INFO USER: user4
+2024-12-23 17:04:11 INFO EMAIL: user4@gmail.com
+2024-12-23 17:04:11 INFO DEVICE: user4_phone
+2024-12-23 17:04:11 INFO 127.0.0.1 - - [23/Dec/2024 17:04:11] "[35m[1mPOST /user HTTP/1.1[0m" 500 -
+2024-12-23 17:04:12 INFO 127.0.0.1 - - [23/Dec/2024 17:04:12] "[36mGET /user?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-23 17:04:12 INFO 127.0.0.1 - - [23/Dec/2024 17:04:12] "[36mGET /user?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-23 17:04:12 INFO 127.0.0.1 - - [23/Dec/2024 17:04:12] "GET /user?__debugger__=yes&cmd=resource&f=console.png&s=lZiy1tm4cmgjRoSBebo7 HTTP/1.1" 200 -
+2024-12-23 17:21:54 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\Concepts\\flask\\Flask Tutorials - TechWithTim\\Flask Tutorial #7 - Using SQLAlchemy Database\\tutorial 7.py', reloading
+2024-12-23 17:21:54 INFO  * Restarting with stat
+2024-12-23 17:21:55 INFO testing!
+2024-12-23 17:21:55 WARNING  * Debugger is active!
+2024-12-23 17:21:55 INFO  * Debugger PIN: 719-335-841
+2024-12-23 17:21:56 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\Concepts\\flask\\Flask Tutorials - TechWithTim\\Flask Tutorial #7 - Using SQLAlchemy Database\\tutorial 7.py', reloading
+2024-12-23 17:21:56 INFO  * Restarting with stat
+2024-12-23 17:21:56 INFO testing!
+2024-12-23 17:21:57 WARNING  * Debugger is active!
+2024-12-23 17:21:57 INFO  * Debugger PIN: 719-335-841
+2024-12-23 17:21:58 INFO 127.0.0.1 - - [23/Dec/2024 17:21:58] "[32mGET /user HTTP/1.1[0m" 302 -
+2024-12-23 17:21:58 INFO 127.0.0.1 - - [23/Dec/2024 17:21:58] "GET /login HTTP/1.1" 200 -
+2024-12-23 17:22:04 INFO 127.0.0.1 - - [23/Dec/2024 17:22:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 17:22:04 INFO USER: user2
+2024-12-23 17:22:04 INFO 127.0.0.1 - - [23/Dec/2024 17:22:04] "GET /user HTTP/1.1" 200 -
+2024-12-23 17:22:11 INFO USER: user2
+2024-12-23 17:22:11 INFO EMAIL: usr2@gmail.com
+2024-12-23 17:22:11 INFO 127.0.0.1 - - [23/Dec/2024 17:22:11] "POST /user HTTP/1.1" 200 -
+2024-12-23 17:23:39 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\Concepts\\flask\\Flask Tutorials - TechWithTim\\Flask Tutorial #7 - Using SQLAlchemy Database\\tutorial 7.py', reloading
+2024-12-23 17:23:39 INFO  * Restarting with stat
+2024-12-23 17:23:40 INFO testing!
+2024-12-23 17:23:40 WARNING  * Debugger is active!
+2024-12-23 17:23:40 INFO  * Debugger PIN: 719-335-841
+2024-12-23 17:23:42 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\Concepts\\flask\\Flask Tutorials - TechWithTim\\Flask Tutorial #7 - Using SQLAlchemy Database\\tutorial 7.py', reloading
+2024-12-23 17:23:42 INFO  * Restarting with stat
+2024-12-23 17:23:42 INFO testing!
+2024-12-23 17:23:42 WARNING  * Debugger is active!
+2024-12-23 17:23:42 INFO  * Debugger PIN: 719-335-841
+2024-12-23 18:01:26 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\Concepts\\flask\\Flask Tutorials - TechWithTim\\Flask Tutorial #7 - Using SQLAlchemy Database\\tutorial 7.py', reloading
+2024-12-23 18:01:26 INFO  * Restarting with stat
+2024-12-23 18:01:26 INFO testing!
+2024-12-23 18:01:26 WARNING  * Debugger is active!
+2024-12-23 18:01:26 INFO  * Debugger PIN: 719-335-841
+2024-12-23 18:01:34 INFO 127.0.0.1 - - [23/Dec/2024 18:01:34] "[32mPOST /user HTTP/1.1[0m" 302 -
+2024-12-23 18:01:34 INFO 127.0.0.1 - - [23/Dec/2024 18:01:34] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:01:37 INFO 127.0.0.1 - - [23/Dec/2024 18:01:37] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:01:40 INFO 127.0.0.1 - - [23/Dec/2024 18:01:40] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 18:01:40 INFO USER: user3
+2024-12-23 18:01:40 INFO 127.0.0.1 - - [23/Dec/2024 18:01:40] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:01:48 INFO USER: user3
+2024-12-23 18:01:48 INFO EMAIL: user3@gmail.com
+2024-12-23 18:01:48 INFO DEVICE: kyototo
+2024-12-23 18:01:48 INFO 127.0.0.1 - - [23/Dec/2024 18:01:48] "POST /user HTTP/1.1" 200 -
+2024-12-23 18:27:02 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\Concepts\\flask\\Flask Tutorials - TechWithTim\\Flask Tutorial #7 - Using SQLAlchemy Database\\tutorial 7.py', reloading
+2024-12-23 18:27:02 INFO  * Restarting with stat
+2024-12-23 18:27:02 INFO testing!
+2024-12-23 18:27:02 WARNING  * Debugger is active!
+2024-12-23 18:27:02 INFO  * Debugger PIN: 719-335-841
+2024-12-23 18:27:16 INFO testing!
+2024-12-23 18:27:16 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-23 18:27:16 INFO [33mPress CTRL+C to quit[0m
+2024-12-23 18:27:16 INFO  * Restarting with stat
+2024-12-23 18:27:16 INFO testing!
+2024-12-23 18:27:16 WARNING  * Debugger is active!
+2024-12-23 18:27:16 INFO  * Debugger PIN: 719-335-841
+2024-12-23 18:27:21 INFO 127.0.0.1 - - [23/Dec/2024 18:27:21] "GET / HTTP/1.1" 200 -
+2024-12-23 18:27:28 INFO 127.0.0.1 - - [23/Dec/2024 18:27:28] "GET / HTTP/1.1" 200 -
+2024-12-23 18:27:35 INFO 127.0.0.1 - - [23/Dec/2024 18:27:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 18:27:35 INFO 127.0.0.1 - - [23/Dec/2024 18:27:35] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:27:35 INFO 127.0.0.1 - - [23/Dec/2024 18:27:35] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:27:37 INFO 127.0.0.1 - - [23/Dec/2024 18:27:37] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:27:40 INFO 127.0.0.1 - - [23/Dec/2024 18:27:40] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 18:27:40 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:27:40 INFO USER: user2
+2024-12-23 18:27:40 INFO 127.0.0.1 - - [23/Dec/2024 18:27:40] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:27:47 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:27:47 INFO USER: user2
+2024-12-23 18:27:47 INFO EMAIL: usr2@gmail.com
+2024-12-23 18:27:47 INFO DEVICE: astroo
+2024-12-23 18:27:47 INFO 127.0.0.1 - - [23/Dec/2024 18:27:47] "[35m[1mPOST /user HTTP/1.1[0m" 500 -
+2024-12-23 18:27:48 INFO 127.0.0.1 - - [23/Dec/2024 18:27:48] "[36mGET /user?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-23 18:27:48 INFO 127.0.0.1 - - [23/Dec/2024 18:27:48] "[36mGET /user?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-23 18:27:48 INFO 127.0.0.1 - - [23/Dec/2024 18:27:48] "GET /user?__debugger__=yes&cmd=resource&f=console.png&s=oqkKpdiF31akkIaAYNgY HTTP/1.1" 200 -
+2024-12-23 18:32:04 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\Concepts\\flask\\Flask Tutorials - TechWithTim\\Flask Tutorial #7 - Using SQLAlchemy Database\\tutorial 7.py', reloading
+2024-12-23 18:32:04 INFO  * Restarting with stat
+2024-12-23 18:32:04 INFO testing!
+2024-12-23 18:32:04 WARNING  * Debugger is active!
+2024-12-23 18:32:04 INFO  * Debugger PIN: 719-335-841
+2024-12-23 18:32:11 INFO testing!
+2024-12-23 18:32:11 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-23 18:32:11 INFO [33mPress CTRL+C to quit[0m
+2024-12-23 18:32:11 INFO  * Restarting with stat
+2024-12-23 18:32:11 INFO testing!
+2024-12-23 18:32:11 WARNING  * Debugger is active!
+2024-12-23 18:32:11 INFO  * Debugger PIN: 719-335-841
+2024-12-23 18:32:17 INFO 127.0.0.1 - - [23/Dec/2024 18:32:17] "GET / HTTP/1.1" 200 -
+2024-12-23 18:32:25 INFO 127.0.0.1 - - [23/Dec/2024 18:32:25] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 18:32:25 INFO 127.0.0.1 - - [23/Dec/2024 18:32:25] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:32:31 INFO 127.0.0.1 - - [23/Dec/2024 18:32:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 18:32:31 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:32:31 INFO USER: user4
+2024-12-23 18:32:31 INFO 127.0.0.1 - - [23/Dec/2024 18:32:31] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:32:40 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:32:40 INFO USER: user4
+2024-12-23 18:32:40 INFO EMAIL: usr4@gmail.com
+2024-12-23 18:32:40 INFO DEVICE: baylis
+2024-12-23 18:32:40 INFO 127.0.0.1 - - [23/Dec/2024 18:32:40] "[35m[1mPOST /user HTTP/1.1[0m" 500 -
+2024-12-23 18:32:40 INFO 127.0.0.1 - - [23/Dec/2024 18:32:40] "[36mGET /user?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-23 18:32:40 INFO 127.0.0.1 - - [23/Dec/2024 18:32:40] "[36mGET /user?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-23 18:32:40 INFO 127.0.0.1 - - [23/Dec/2024 18:32:40] "GET /user?__debugger__=yes&cmd=resource&f=console.png&s=g8ZLgu5jdw3vlBY8Fo6q HTTP/1.1" 200 -
+2024-12-23 18:33:26 INFO testing!
+2024-12-23 18:33:26 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-23 18:33:26 INFO [33mPress CTRL+C to quit[0m
+2024-12-23 18:33:26 INFO  * Restarting with stat
+2024-12-23 18:33:26 INFO testing!
+2024-12-23 18:33:26 WARNING  * Debugger is active!
+2024-12-23 18:33:26 INFO  * Debugger PIN: 719-335-841
+2024-12-23 18:33:32 INFO 127.0.0.1 - - [23/Dec/2024 18:33:32] "GET / HTTP/1.1" 200 -
+2024-12-23 18:33:34 INFO 127.0.0.1 - - [23/Dec/2024 18:33:34] "[32mGET /login HTTP/1.1[0m" 302 -
+2024-12-23 18:33:34 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:33:34 INFO USER: user4
+2024-12-23 18:33:34 INFO 127.0.0.1 - - [23/Dec/2024 18:33:34] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:33:36 INFO 127.0.0.1 - - [23/Dec/2024 18:33:36] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 18:33:36 INFO 127.0.0.1 - - [23/Dec/2024 18:33:36] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:33:38 INFO 127.0.0.1 - - [23/Dec/2024 18:33:38] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 18:33:38 INFO 127.0.0.1 - - [23/Dec/2024 18:33:38] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:33:42 INFO 127.0.0.1 - - [23/Dec/2024 18:33:42] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:33:45 INFO 127.0.0.1 - - [23/Dec/2024 18:33:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 18:33:45 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:33:45 INFO USER: user1
+2024-12-23 18:33:45 INFO 127.0.0.1 - - [23/Dec/2024 18:33:45] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:33:54 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:33:54 INFO USER: user1
+2024-12-23 18:33:54 INFO EMAIL: usr1@gmail.com
+2024-12-23 18:33:54 INFO DEVICE: usr1_pc
+2024-12-23 18:33:54 INFO 127.0.0.1 - - [23/Dec/2024 18:33:54] "POST /user HTTP/1.1" 200 -
+2024-12-23 18:34:42 INFO 127.0.0.1 - - [23/Dec/2024 18:34:42] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 18:34:42 INFO 127.0.0.1 - - [23/Dec/2024 18:34:42] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:34:46 INFO 127.0.0.1 - - [23/Dec/2024 18:34:46] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 18:34:46 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:34:46 INFO USER: user2
+2024-12-23 18:34:46 INFO 127.0.0.1 - - [23/Dec/2024 18:34:46] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:34:58 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:34:58 INFO USER: user2
+2024-12-23 18:34:58 INFO EMAIL: usr2@gmail.com
+2024-12-23 18:34:58 INFO DEVICE: usr2_pc
+2024-12-23 18:34:58 INFO 127.0.0.1 - - [23/Dec/2024 18:34:58] "POST /user HTTP/1.1" 200 -
+2024-12-23 18:37:31 INFO 127.0.0.1 - - [23/Dec/2024 18:37:31] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 18:37:31 INFO 127.0.0.1 - - [23/Dec/2024 18:37:31] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:37:38 INFO 127.0.0.1 - - [23/Dec/2024 18:37:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 18:37:38 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:37:38 INFO USER: user1
+2024-12-23 18:37:38 INFO 127.0.0.1 - - [23/Dec/2024 18:37:38] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:37:51 INFO 127.0.0.1 - - [23/Dec/2024 18:37:51] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 18:37:51 INFO 127.0.0.1 - - [23/Dec/2024 18:37:51] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:37:57 INFO 127.0.0.1 - - [23/Dec/2024 18:37:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 18:37:57 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:37:57 INFO USER: user1
+2024-12-23 18:37:57 INFO 127.0.0.1 - - [23/Dec/2024 18:37:57] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:38:04 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:38:04 INFO USER: user1
+2024-12-23 18:38:04 INFO EMAIL: usr1@gmail.com
+2024-12-23 18:38:04 INFO DEVICE: sigma
+2024-12-23 18:38:04 INFO 127.0.0.1 - - [23/Dec/2024 18:38:04] "POST /user HTTP/1.1" 200 -
+2024-12-23 18:38:39 INFO 127.0.0.1 - - [23/Dec/2024 18:38:39] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 18:38:39 INFO 127.0.0.1 - - [23/Dec/2024 18:38:39] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:39:01 INFO 127.0.0.1 - - [23/Dec/2024 18:39:01] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:39:03 INFO 127.0.0.1 - - [23/Dec/2024 18:39:03] "GET / HTTP/1.1" 200 -
+2024-12-23 18:39:05 INFO 127.0.0.1 - - [23/Dec/2024 18:39:05] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:39:07 INFO 127.0.0.1 - - [23/Dec/2024 18:39:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 18:39:07 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:39:07 INFO USER: user1
+2024-12-23 18:39:07 INFO 127.0.0.1 - - [23/Dec/2024 18:39:07] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:39:16 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:39:16 INFO USER: user1
+2024-12-23 18:39:16 INFO EMAIL: usr1@gmail.com
+2024-12-23 18:39:16 INFO DEVICE: astro
+2024-12-23 18:39:16 INFO 127.0.0.1 - - [23/Dec/2024 18:39:16] "POST /user HTTP/1.1" 200 -
+2024-12-23 18:39:36 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:39:36 INFO USER: user1
+2024-12-23 18:39:36 INFO EMAIL: usr1@gmail.com
+2024-12-23 18:39:36 INFO DEVICE: kyoto
+2024-12-23 18:39:37 INFO 127.0.0.1 - - [23/Dec/2024 18:39:37] "[35m[1mPOST /user HTTP/1.1[0m" 500 -
+2024-12-23 18:39:37 INFO 127.0.0.1 - - [23/Dec/2024 18:39:37] "[36mGET /user?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-23 18:39:37 INFO 127.0.0.1 - - [23/Dec/2024 18:39:37] "[36mGET /user?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-23 18:39:37 INFO 127.0.0.1 - - [23/Dec/2024 18:39:37] "GET /user?__debugger__=yes&cmd=resource&f=console.png&s=miRdPK2kgch65UApY078 HTTP/1.1" 200 -
+2024-12-23 18:39:58 INFO 127.0.0.1 - - [23/Dec/2024 18:39:58] "GET / HTTP/1.1" 200 -
+2024-12-23 18:40:01 INFO 127.0.0.1 - - [23/Dec/2024 18:40:01] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 18:40:01 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:40:01 INFO USER: user2
+2024-12-23 18:40:01 INFO 127.0.0.1 - - [23/Dec/2024 18:40:01] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:40:06 INFO 127.0.0.1 - - [23/Dec/2024 18:40:06] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-12-23 18:40:06 INFO 127.0.0.1 - - [23/Dec/2024 18:40:06] "GET /login HTTP/1.1" 200 -
+2024-12-23 18:40:09 INFO 127.0.0.1 - - [23/Dec/2024 18:40:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-12-23 18:40:09 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:40:09 INFO USER: user2
+2024-12-23 18:40:09 INFO 127.0.0.1 - - [23/Dec/2024 18:40:09] "GET /user HTTP/1.1" 200 -
+2024-12-23 18:40:25 INFO MAC_ADDR: 4943750935229
+2024-12-23 18:40:25 INFO USER: user2
+2024-12-23 18:40:25 INFO EMAIL: sigma@gmail.com
+2024-12-23 18:40:25 INFO DEVICE: renner
+2024-12-23 18:40:25 INFO 127.0.0.1 - - [23/Dec/2024 18:40:25] "POST /user HTTP/1.1" 200 -

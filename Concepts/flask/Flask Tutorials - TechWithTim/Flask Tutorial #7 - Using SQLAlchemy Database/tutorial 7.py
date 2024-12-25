@@ -2,6 +2,7 @@ from flask import Flask, redirect, url_for, render_template, request, session, f
 from datetime import timedelta # setup max time out session last for.
 from flask_sqlalchemy import SQLAlchemy
 from uuid import getnode as get_mac
+import logging
 
 
 app = Flask(__name__)
@@ -11,6 +12,18 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.permanent_session_lifetime = timedelta(minutes=5) # session will 
 
 db = SQLAlchemy(app)
+
+def main() -> None:
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format="%(asctime)s %(levelname)s %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+        filename="basic.log",
+    )
+
+    logging.info("testing!")
+
+
 
 class users(db.Model): # inherits from db.Model
     user_id = db.Column("user_id", db.Integer, primary_key=True)
@@ -22,7 +35,7 @@ class users(db.Model): # inherits from db.Model
         self.email = email
 
 class devices(db.Model):
-    user_id = db.Column("user_id", db.Integer)
+    user_id = db.Column("user_id", db.Integer, db.ForeignKey('users.user_id'), nullable=False, primary_key=True)
     name = db.Column(db.String(100))
     mac_addr = db.Column(db.String(48), primary_key=True)
 
@@ -69,19 +82,20 @@ def user():
     email = None
     device = None
     mac = get_mac()
-    print(mac)
+    logging.info(f"MAC_ADDR: {mac}")
 
     if "user" in session:
         user = session["user"]
-        print("######################################")
-        print(user)
-        print(user.name)
+        logging.info(f"USER: {user}")
+        #print(user.name)
 
-        if request.method == "POST":
+        if request.method == "POST":  # gets the input form user
             if len(request.form["email_key"]) != 0:
                 email = request.form["email_key"]
+                logging.info(f"EMAIL: {email}")
             if len(request.form["device_key"]) != 0:
                 device = request.form["device_key"]
+                logging.info(f"DEVICE: {device}")
 
             session["email"] = email
             session["device"] = device
@@ -89,7 +103,7 @@ def user():
             found_user = users.query.filter_by(name=user).first()
             found_user.email = email
 
-            device = devices(user.user_id, device, mac)
+            device = devices(found_user.user_id, device, mac)
             db.session.add(device)
 
             db.session.commit()
@@ -115,6 +129,8 @@ def logout():
 
 
 if __name__ == "__main__":
+    main()
     with app.app_context():
         db.create_all()
     app.run(debug=True)
+    
