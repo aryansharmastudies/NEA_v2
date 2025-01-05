@@ -16,11 +16,71 @@ ip = w_wlan_ip()
 ########## FLASK ################################
 app = Flask(__name__)
 app.secret_key = "hello"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.sqlite3'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.permanent_session_lifetime = timedelta(minutes=5) # session will 
-
+app.permanent_session_lifetime = timedelta(minutes=3) # session will last for 10 days.
+#################################################
+########## DATA BASE ############################
 db = SQLAlchemy(app)
+
+class servers(db.Model):
+    name = db.Column(db.String(100), primary_key=True)
+
+    def __init__(self, name):
+        self.name = name
+#################################################
+########## WEBSITE ##############################
+@app.route('/', methods=['POST','GET'])
+def pair():
+    if request.method == 'POST':
+        session.permanent = True
+        server_name = request.form['nm'] # nm is dictionary key.
+        logging.info(f'server_name: {server_name}')
+        
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((server_name, 8000))
+        s.send(f'ping'.encode('utf-8'))
+        if s.recv(1024).decode('utf-8') == 'active':
+            logging.info(f"status: active")
+            session['server_name']=server_name
+            
+            found_server = servers.query.filter_by(name=server_name).first()
+            logging.info(f'found_server: {found_server}')
+            if found_server:
+                flash(f'Reconnected!', 'info')
+                return redirect(url_for('dashboard'))
+            else:
+                server = servers(server_name)
+                db.session.add(server)
+                db.session.commit()
+            
+            flash(f'Connected!', 'info')
+            return redirect(url_for('dashboard'))
+        else:
+            flash(f'Server inactive, please retry!', 'info')
+            return redirect(url_for('pair'))
+    else:
+        if 'server_name' in session:
+            flash('Already Connected!', 'info')
+            return redirect(url_for('dashboard'))
+        
+        return render_template('pair.html')
+    
+    # TODO: if the user is already connected to a pi and in a session, redirect to dashboard page.
+    # TODO: do a GET request and get the hostname to connect to.
+    # TODO: then try establish a connection and display it onto the page.
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route("/unpair")
+def logout():
+    if "server_name" in session:
+        server_name = session["server_name"]
+        flash(f"{server_name} has been unpaired!", "info")
+    session.pop("server_name", None)
+    return redirect(url_for('pair'))
 #################################################
 ########## LOGGING ##############################
 def main() -> None:
@@ -31,23 +91,12 @@ def main() -> None:
         filename="basic.log",)
     
 #################################################
-#################################################
-def discover_pi():
-    pass
-#################################################
 ########## ADDING USER ##########################
 def add_user(name, email):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(('osaka', 8000))
     s.send(f"{name}:{email}".encode('utf-8'))
-
-add_user("Aryan", "aryan@gmail.com")
 #################################################
-
-
-
-
-
 if __name__ == "__main__":
     main()
     with app.app_context():

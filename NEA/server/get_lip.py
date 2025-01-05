@@ -1,7 +1,4 @@
 import os
 def l_wlan_ip():
-    try:
-        gw = os.popen('ip -4 route show default').read().split()
-    except: 
-        return
+    gw = os.popen('ip -4 route show default').read().split()
     return gw[-3]

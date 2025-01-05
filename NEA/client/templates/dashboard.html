@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home page
+{% endblock %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %} <!-- checkout the 'with' statement concept 
+it uhh basically just wraps around the block of code and closes necessary objects
+when we finish exe code.-->
+    {% if messages %}
+        {% for msg in messages%}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<h2>dashboard ᓚᘏᗢ</h2>
+{% endblock %}
