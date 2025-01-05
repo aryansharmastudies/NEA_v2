@@ -531,3 +531,19 @@ WHERE servers.name = ?
 2025-01-05 21:56:24 INFO  * Restarting with watchdog (windowsapi)
 2025-01-05 21:56:24 WARNING  * Debugger is active!
 2025-01-05 21:56:24 INFO  * Debugger PIN: 704-536-889
+2025-01-05 22:06:48 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 22:06:48 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 22:06:48 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 22:06:49 WARNING  * Debugger is active!
+2025-01-05 22:06:49 INFO  * Debugger PIN: 704-536-889
+2025-01-05 22:06:53 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\unicode_escape.py', reloading
+2025-01-05 22:06:53 INFO 127.0.0.1 - - [05/Jan/2025 22:06:53] "GET / HTTP/1.1" 200 -
+2025-01-05 22:06:53 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 22:06:53 WARNING  * Debugger is active!
+2025-01-05 22:06:53 INFO  * Debugger PIN: 704-536-889
+2025-01-05 22:06:56 INFO server_name: kyoto
+2025-01-05 22:06:56 INFO status: active
+2025-01-05 22:06:56 INFO found_server: None
+2025-01-05 22:06:56 INFO 127.0.0.1 - - [05/Jan/2025 22:06:56] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-05 22:06:56 INFO 127.0.0.1 - - [05/Jan/2025 22:06:56] "GET /dashboard HTTP/1.1" 200 -
