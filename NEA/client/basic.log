@@ -1,0 +1,92 @@
+2025-01-05 14:25:40 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 14:25:40 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 14:25:40 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:25:47 WARNING  * Debugger is active!
+2025-01-05 14:25:47 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:26:40 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 14:26:40 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 14:26:40 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:27:06 WARNING  * Debugger is active!
+2025-01-05 14:27:06 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:27:29 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 14:27:29 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 14:27:29 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:27:35 WARNING  * Debugger is active!
+2025-01-05 14:27:35 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:28:34 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 14:28:34 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 14:28:34 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:28:41 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 14:28:41 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 14:28:41 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:28:43 WARNING  * Debugger is active!
+2025-01-05 14:28:43 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:29:06 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 14:29:06 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 14:29:06 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:29:50 WARNING  * Debugger is active!
+2025-01-05 14:29:50 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:29:50 INFO 127.0.0.1 - - [05/Jan/2025 14:29:50] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-05 14:30:20 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 14:30:20 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 14:30:20 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:30:21 WARNING  * Debugger is active!
+2025-01-05 14:30:21 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:31:49 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 14:31:49 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 14:31:49 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:31:50 WARNING  * Debugger is active!
+2025-01-05 14:31:50 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:33:40 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:33:40 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:33:40 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:33:41 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:33:41 INFO started
+2025-01-05 14:33:41 WARNING  * Debugger is active!
+2025-01-05 14:33:41 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:33:46 INFO started
+2025-01-05 14:33:46 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 14:33:46 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 14:33:46 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:33:46 INFO started
+2025-01-05 14:33:46 WARNING  * Debugger is active!
+2025-01-05 14:33:46 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:36:10 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:10 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:10 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:11 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:36:11 WARNING  * Debugger is active!
+2025-01-05 14:36:11 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:36:15 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 14:36:15 INFO [33mPress CTRL+C to quit[0m
+2025-01-05 14:36:15 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:36:15 WARNING  * Debugger is active!
+2025-01-05 14:36:15 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:36:23 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:23 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:23 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:23 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:23 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:23 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:23 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:23 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:23 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:23 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:36:24 WARNING  * Debugger is active!
+2025-01-05 14:36:24 INFO  * Debugger PIN: 704-536-889
+2025-01-05 14:36:27 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:27 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:27 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-05 14:36:27 INFO  * Restarting with watchdog (windowsapi)
+2025-01-05 14:36:28 WARNING  * Debugger is active!
+2025-01-05 14:36:28 INFO  * Debugger PIN: 704-536-889
