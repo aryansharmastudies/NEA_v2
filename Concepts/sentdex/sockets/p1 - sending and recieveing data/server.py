@@ -2,6 +2,8 @@ import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((socket.gethostname(), 1234))
+print(socket.gethostbyname(socket.gethostname()))
+print(socket.gethostname())
 s.listen(5)
 
 while True:
