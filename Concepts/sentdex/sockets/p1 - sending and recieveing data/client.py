@@ -1,7 +1,11 @@
 import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+<<<<<<< HEAD
 s.connect(("192.168.56.1", 1234))
+=======
+s.connect(("osaka", 8000))
+>>>>>>> f8151cc3e73fc012659db04b5b0f85ed46a431c5
 
 full_message = ''
 while True: # buffer size is 8 bytes.
