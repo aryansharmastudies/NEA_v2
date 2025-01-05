@@ -55,6 +55,8 @@ while True:
     clientsocket, addr = s.accept()
     print(f"connected with {addr}")
     message = clientsocket.recv(1024).decode('utf-8')
+    if message == 'ping':
+        clientsocket.send(f"active".encode('utf-8'))
     print(message)
     clientsocket.close()
     # TODO store info in db
