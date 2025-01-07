@@ -1,0 +1,63 @@
+2025-01-07 10:05:19 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 10:05:19 INFO [33mPress CTRL+C to quit[0m
+2025-01-07 10:05:19 INFO  * Restarting with stat
+2025-01-07 10:05:20 WARNING  * Debugger is active!
+2025-01-07 10:05:20 INFO  * Debugger PIN: 101-611-424
+2025-01-07 10:11:20 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 10:11:20 INFO [33mPress CTRL+C to quit[0m
+2025-01-07 10:11:20 INFO  * Restarting with stat
+2025-01-07 10:11:22 WARNING  * Debugger is active!
+2025-01-07 10:11:22 INFO  * Debugger PIN: 101-611-424
+2025-01-07 10:11:33 INFO 127.0.0.1 - - [07/Jan/2025 10:11:33] "GET / HTTP/1.1" 200 -
+2025-01-07 10:11:33 INFO 127.0.0.1 - - [07/Jan/2025 10:11:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-07 10:11:35 INFO 127.0.0.1 - - [07/Jan/2025 10:11:35] "GET / HTTP/1.1" 200 -
+2025-01-07 10:13:11 INFO server_name: Krishiv
+2025-01-07 10:13:14 INFO 127.0.0.1 - - [07/Jan/2025 10:13:14] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-01-07 10:13:14 INFO 127.0.0.1 - - [07/Jan/2025 10:13:14] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-01-07 10:13:14 INFO 127.0.0.1 - - [07/Jan/2025 10:13:14] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-01-07 10:13:14 INFO 127.0.0.1 - - [07/Jan/2025 10:13:14] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=Jj6hJV8P5sMwckMOM7Jl HTTP/1.1" 200 -
+2025-01-07 10:13:14 INFO 127.0.0.1 - - [07/Jan/2025 10:13:14] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-01-07 10:19:42 INFO  * Detected change in 'n:\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-07 10:19:43 INFO  * Restarting with stat
+2025-01-07 10:19:44 WARNING  * Debugger is active!
+2025-01-07 10:19:44 INFO  * Debugger PIN: 101-611-424
+2025-01-07 10:19:49 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 10:19:49 INFO [33mPress CTRL+C to quit[0m
+2025-01-07 10:19:49 INFO  * Restarting with stat
+2025-01-07 10:19:50 WARNING  * Debugger is active!
+2025-01-07 10:19:50 INFO  * Debugger PIN: 101-611-424
+2025-01-07 10:19:52 INFO server_name: Krishiv
+2025-01-07 10:19:55 INFO 127.0.0.1 - - [07/Jan/2025 10:19:55] "GET / HTTP/1.1" 200 -
+2025-01-07 10:19:55 INFO 127.0.0.1 - - [07/Jan/2025 10:19:55] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-01-07 10:20:01 INFO server_name: Macintosh
+2025-01-07 10:20:04 INFO 127.0.0.1 - - [07/Jan/2025 10:20:04] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-01-07 10:20:04 INFO 127.0.0.1 - - [07/Jan/2025 10:20:04] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-07 10:20:04 INFO 127.0.0.1 - - [07/Jan/2025 10:20:04] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-07 10:20:04 INFO 127.0.0.1 - - [07/Jan/2025 10:20:04] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=MpkEXDLUWzr3khMuGbmN HTTP/1.1" 200 -
+2025-01-07 10:20:04 INFO 127.0.0.1 - - [07/Jan/2025 10:20:04] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-01-07 10:20:53 INFO  * Detected change in 'n:\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-07 10:20:53 INFO  * Restarting with stat
+2025-01-07 10:20:55 WARNING  * Debugger is active!
+2025-01-07 10:20:55 INFO  * Debugger PIN: 101-611-424
+2025-01-07 10:20:59 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 10:20:59 INFO [33mPress CTRL+C to quit[0m
+2025-01-07 10:20:59 INFO  * Restarting with stat
+2025-01-07 10:21:01 WARNING  * Debugger is active!
+2025-01-07 10:21:01 INFO  * Debugger PIN: 101-611-424
+2025-01-07 10:21:12 INFO 127.0.0.1 - - [07/Jan/2025 10:21:12] "GET / HTTP/1.1" 200 -
+2025-01-07 10:21:13 INFO 127.0.0.1 - - [07/Jan/2025 10:21:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-07 10:21:27 INFO server_name: Joel
+2025-01-07 10:21:30 INFO 127.0.0.1 - - [07/Jan/2025 10:21:30] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-07 10:21:30 INFO 127.0.0.1 - - [07/Jan/2025 10:21:30] "GET / HTTP/1.1" 200 -
+2025-01-07 10:21:36 INFO server_name: Jiggly
+2025-01-07 10:21:39 INFO 127.0.0.1 - - [07/Jan/2025 10:21:39] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-07 10:21:39 INFO 127.0.0.1 - - [07/Jan/2025 10:21:39] "GET / HTTP/1.1" 200 -
+2025-01-07 10:23:20 INFO 127.0.0.1 - - [07/Jan/2025 10:23:20] "GET / HTTP/1.1" 200 -
+2025-01-07 10:23:20 INFO 127.0.0.1 - - [07/Jan/2025 10:23:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-07 10:23:29 INFO server_name: Jiggly
+2025-01-07 10:23:31 INFO 127.0.0.1 - - [07/Jan/2025 10:23:31] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-07 10:23:31 INFO 127.0.0.1 - - [07/Jan/2025 10:23:31] "GET / HTTP/1.1" 200 -

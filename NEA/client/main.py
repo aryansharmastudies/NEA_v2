@@ -38,26 +38,30 @@ def pair():
         logging.info(f'server_name: {server_name}')
         
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((server_name, 8000))
-        s.send(f'ping'.encode('utf-8'))
-        if s.recv(1024).decode('utf-8') == 'active':
-            logging.info(f"status: active")
-            session['server_name']=server_name
-            
-            found_server = servers.query.filter_by(name=server_name).first()
-            logging.info(f'found_server: {found_server}')
-            if found_server:
-                flash(f'Reconnected!', 'info')
+        try: 
+            s.connect((server_name, 8000))
+            s.send(f'ping'.encode('utf-8'))
+            if s.recv(1024).decode('utf-8') == 'active':
+                logging.info(f"status: active")
+                session['server_name']=server_name
+                
+                found_server = servers.query.filter_by(name=server_name).first()
+                logging.info(f'found_server: {found_server}')
+                if found_server:
+                    flash(f'Reconnected!', 'info')
+                    return redirect(url_for('dashboard'))
+                else:
+                    server = servers(server_name)
+                    db.session.add(server)
+                    db.session.commit()
+                
+                flash(f'Connected!', 'info')
                 return redirect(url_for('dashboard'))
             else:
-                server = servers(server_name)
-                db.session.add(server)
-                db.session.commit()
-            
-            flash(f'Connected!', 'info')
-            return redirect(url_for('dashboard'))
-        else:
-            flash(f'Server inactive, please retry!', 'info')
+                flash(f'Server inactive, please retry!', 'info')
+                return redirect(url_for('pair'))
+        except: 
+            flash(f'Could not connect to server!', 'info')
             return redirect(url_for('pair'))
     else:
         if 'server_name' in session:
