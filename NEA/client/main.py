@@ -88,7 +88,7 @@ def login():
         hash = hash.hexdigest()
         session['hash']=hash
         session['usr']=usr
-        json_data = json.dumps({'r_usr':usr, 'r_pwd':hash}) # convertes dictionary to json string.
+        json_data = json.dumps({'action': 'login','r_usr':usr, 'r_pwd':hash}) # convertes dictionary to json string.
         logging.info(f'hashed password: {hash}')
         logging.info(f'json_data: {json_data}')        
         try: 
@@ -109,6 +109,35 @@ def login():
             flash('You are not connected to a server!', 'info')
             return redirect(url_for('pair'))   
         return render_template("login.html")
+    
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        usr = request.form['r_usr']
+        pwd = request.form['r_pwd']
+        hash = hashlib.new("SHA256")
+        hash.update(pwd.encode('utf-8'))
+        hash = hash.hexdigest()
+        session['hash']=hash
+        session['usr']=usr
+        json_data = json.dumps({'action': 'register','r_usr':usr, 'r_pwd':hash})
+        logging.info(f'hashed password: {hash}')
+        logging.info(f'json_data: {json_data}')
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.connect((session['server_name'], 8000))
+            s.send(json_data.encode('utf-8'))
+        except:
+            flash(f'Could not connect to server for register!', 'info')
+            return redirect(url_for('register'))
+    else:
+        if 'usr' in session and 'server_name' in session:
+            flash('Already Logged In!', 'info')
+            return redirect(url_for('dashboard'))
+        elif 'server_name' not in session:
+            flash('You are not connected to a server!', 'info')
+            return redirect(url_for('pair'))
+        return render_template('register.html')
 
 @app.route('/dashboard', methods=['POST', 'GET'])
 def dashboard():

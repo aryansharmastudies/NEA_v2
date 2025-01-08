@@ -1109,3 +1109,151 @@ WHERE servers.name = ?
 2025-01-08 20:13:34 INFO  * Restarting with watchdog (windowsapi)
 2025-01-08 20:13:34 WARNING  * Debugger is active!
 2025-01-08 20:13:34 INFO  * Debugger PIN: 704-536-889
+2025-01-08 20:21:22 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 20:21:22 INFO [33mPress CTRL+C to quit[0m
+2025-01-08 20:21:22 INFO  * Restarting with watchdog (windowsapi)
+2025-01-08 20:21:23 WARNING  * Debugger is active!
+2025-01-08 20:21:23 INFO  * Debugger PIN: 704-536-889
+2025-01-08 20:21:26 INFO 127.0.0.1 - - [08/Jan/2025 20:21:26] "GET /pair HTTP/1.1" 200 -
+2025-01-08 20:21:32 INFO server_name: kyoto
+2025-01-08 20:21:32 INFO status: active
+2025-01-08 20:21:32 INFO found_server: <servers kyoto>
+2025-01-08 20:21:32 INFO 127.0.0.1 - - [08/Jan/2025 20:21:32] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-08 20:21:32 INFO 127.0.0.1 - - [08/Jan/2025 20:21:32] "GET /login HTTP/1.1" 200 -
+2025-01-08 20:21:47 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 20:21:47 INFO json_data: {"r_usr": "Yokohama", "r_pwd": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 20:21:47 INFO 127.0.0.1 - - [08/Jan/2025 20:21:47] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-08 20:21:47 INFO 127.0.0.1 - - [08/Jan/2025 20:21:47] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 20:32:17 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\get_wip.py', reloading
+2025-01-08 20:32:17 INFO  * Restarting with watchdog (windowsapi)
+2025-01-08 20:32:18 WARNING  * Debugger is active!
+2025-01-08 20:32:18 INFO  * Debugger PIN: 704-536-889
+2025-01-08 20:32:52 INFO 127.0.0.1 - - [08/Jan/2025 20:32:52] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-08 20:32:58 INFO 127.0.0.1 - - [08/Jan/2025 20:32:58] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-01-08 20:32:58 INFO 127.0.0.1 - - [08/Jan/2025 20:32:58] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-01-08 20:32:58 INFO 127.0.0.1 - - [08/Jan/2025 20:32:58] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 20:33:02 INFO 127.0.0.1 - - [08/Jan/2025 20:33:02] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-01-08 20:33:02 INFO 127.0.0.1 - - [08/Jan/2025 20:33:02] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-01-08 20:33:02 INFO 127.0.0.1 - - [08/Jan/2025 20:33:02] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 20:33:04 INFO 127.0.0.1 - - [08/Jan/2025 20:33:04] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-08 20:33:04 INFO 127.0.0.1 - - [08/Jan/2025 20:33:04] "GET /login HTTP/1.1" 200 -
+2025-01-08 20:33:04 INFO 127.0.0.1 - - [08/Jan/2025 20:33:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-08 20:33:05 INFO 127.0.0.1 - - [08/Jan/2025 20:33:05] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-08 20:33:05 INFO 127.0.0.1 - - [08/Jan/2025 20:33:05] "GET /pair HTTP/1.1" 200 -
+2025-01-08 20:33:48 INFO server_name: kyoto
+2025-01-08 20:33:48 INFO status: active
+2025-01-08 20:33:48 INFO found_server: <servers kyoto>
+2025-01-08 20:33:48 INFO 127.0.0.1 - - [08/Jan/2025 20:33:48] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-08 20:33:48 INFO 127.0.0.1 - - [08/Jan/2025 20:33:48] "GET /login HTTP/1.1" 200 -
+2025-01-08 20:33:52 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 20:33:52 INFO json_data: {"r_usr": "osaka", "r_pwd": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 20:33:52 INFO 127.0.0.1 - - [08/Jan/2025 20:33:52] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-08 20:33:52 INFO 127.0.0.1 - - [08/Jan/2025 20:33:52] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 20:35:01 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:35:01 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:35:02 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\get_lip.py', reloading
+2025-01-08 20:35:02 INFO  * Restarting with watchdog (windowsapi)
+2025-01-08 20:35:02 WARNING  * Debugger is active!
+2025-01-08 20:35:02 INFO  * Debugger PIN: 704-536-889
+2025-01-08 20:35:05 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:35:05 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:35:05 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:35:05 INFO  * Restarting with watchdog (windowsapi)
+2025-01-08 20:35:06 WARNING  * Debugger is active!
+2025-01-08 20:35:06 INFO  * Debugger PIN: 704-536-889
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\__init__.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\aliases.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\utf_8.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\cp1252.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\json\\decoder.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\re\\__init__.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\enum.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\types.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\operator.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\functools.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\collections\\__init__.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\keyword.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\reprlib.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\re\\_compiler.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\re\\_parser.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\re\\_constants.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\re\\_casefix.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\copyreg.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\json\\scanner.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\json\\encoder.py', reloading
+2025-01-08 20:36:23 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\utf_8_sig.py', reloading
+2025-01-08 20:36:23 INFO  * Restarting with watchdog (windowsapi)
+2025-01-08 20:36:23 WARNING  * Debugger is active!
+2025-01-08 20:36:23 INFO  * Debugger PIN: 704-536-889
+2025-01-08 20:36:45 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:36:45 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:36:45 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:36:46 INFO  * Restarting with watchdog (windowsapi)
+2025-01-08 20:36:46 WARNING  * Debugger is active!
+2025-01-08 20:36:46 INFO  * Debugger PIN: 704-536-889
+2025-01-08 20:37:20 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:37:20 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:37:20 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:37:21 INFO  * Restarting with watchdog (windowsapi)
+2025-01-08 20:37:21 WARNING  * Debugger is active!
+2025-01-08 20:37:21 INFO  * Debugger PIN: 704-536-889
+2025-01-08 20:47:19 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\headers.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\wrappers\\response.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\globals.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\json\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\helpers.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\typing.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\jinja2\\environment.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\jinja2\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\templating.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\app.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\wrappers.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\app.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\util\\typing.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\util\\_collections.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\util\\langhelpers.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\util\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\event\\registry.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\event\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\log.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\sql\\roles.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\inspection.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\sql\\visitors.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\sql\\cache_key.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\sql\\base.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\sql\\annotation.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\sql\\selectable.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\sql\\schema.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\sql\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\schema.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\orm\\_typing.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\orm\\base.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\orm\\interfaces.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\orm\\state.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\orm\\mapper.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\orm\\query.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\orm\\decl_api.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\sqlalchemy\\orm\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask_sqlalchemy\\query.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask_sqlalchemy\\model.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask_sqlalchemy\\extension.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'C:\\Users\\aryan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask_sqlalchemy\\__init__.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\get_wip.py', reloading
+2025-01-08 20:47:19 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\get_lip.py', reloading
+2025-01-08 20:47:20 INFO  * Restarting with watchdog (windowsapi)
+2025-01-08 20:47:21 WARNING  * Debugger is active!
+2025-01-08 20:47:21 INFO  * Debugger PIN: 704-536-889

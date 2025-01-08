@@ -10,10 +10,12 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-    <h1>pair</h1>
+    <h1>register</h1>
 <form action="#" method="POST"> <!-- action is the URL that the form will send the data to: '#' means it will redirect to the same page -->
-    <p>Server Name:</p>
-    <p><input type="text" name="nm" /></p>
+    <p>Username:</p>
+    <p><input type="text" name="r_usr" /></p>
+    <p>Password:</p>
+    <p><input type="password" name="r_pwd" /></p>
     <p><input type="submit" value="submit" /></p>
 </form>
 {% endblock %}
