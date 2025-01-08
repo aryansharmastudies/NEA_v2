@@ -50,8 +50,9 @@ class Device(Base):
 Base.metadata.create_all(engine)
 ##################################################
 ########## CRUD ##################################
-def create_user(name, email):
-    user = User(name=name, email=email)
+def create_user(name, hash):
+    user = User(name=name, hash=hash, email='default')
+    logging.info(f'Creating user: {name} with hash: {hash}')
     session.add(user)
     session.commit()
 #create_user('Aryan', 'aryanbvn@gmail.com')
@@ -83,16 +84,19 @@ def handle_client_message(message):
         data = json.loads(message)  # Parse JSON message
         action = data.get('action')
         if action == 'ping':
-            logging.info('Received ping from client', 'info')
+            logging.info('Received ping from client')
             clientsocket.send('pong'.encode('utf-8'))
         
         elif action == 'add_user':
-            User(name=data['r_usr'], hash=data['r_pwd'])
-            logging.info(f'Adding user: {data['r_usr']} with hash: {data['r_hash']}', 'info')
+            username = data['r_user']
+            password_hash = data['hash']
+            create_user(username, password_hash)
+
+            logging.info(f'Adding user: {username} with hash: {password_hash}')
             # Add user logic here
 
         elif action == 'login':
-            username = data['username']
+            username = data['r_user']
             password_hash = data['hash']
             print(f'Adding user: {username} with hash: {password_hash}')
         
@@ -132,6 +136,7 @@ while True:
     
     # Receive data
     message = clientsocket.recv(1024).decode('utf-8')
+    logging.info(f'message: {message}')
     handle_client_message(message)
     
     clientsocket.close()

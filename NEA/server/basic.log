@@ -1,0 +1,52 @@
+2025-01-08 22:30:16 INFO Received ping from client
+2025-01-08 22:31:23 INFO Received ping from client
+2025-01-08 22:34:06 INFO message: {"action": "ping"}
+2025-01-08 22:34:06 INFO Received ping from client
+2025-01-08 22:34:32 INFO message: {"action": "register", "r_usr": "kawasaki", "r_pwd": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 22:37:49 INFO message: {"action": "ping"}
+2025-01-08 22:37:49 INFO Received ping from client
+2025-01-08 22:38:05 INFO message: {"action": "login", "r_usr": "shibuya", "r_pwd": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 22:38:25 INFO message: {"action": "ping"}
+2025-01-08 22:38:25 INFO Received ping from client
+2025-01-08 22:44:56 INFO message: {"action": "ping"}
+2025-01-08 22:44:56 INFO Received ping from client
+2025-01-08 22:45:49 INFO message: {"action": "add_user", "r_user": "kobe", "r_pwd": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 22:46:43 INFO message: {"action": "ping"}
+2025-01-08 22:46:43 INFO Received ping from client
+2025-01-08 22:47:13 INFO message: {"action": "add_user", "r_user": "saitama", "r_pwd": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 22:47:48 INFO message: {"action": "add_user", "r_user": "saitama", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 22:47:48 INFO Adding user: saitama with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 22:49:22 INFO message: {"action": "ping"}
+2025-01-08 22:49:22 INFO Received ping from client
+2025-01-08 22:49:51 INFO message: {"action": "login", "r_user": "yokohama", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 22:51:21 INFO message: {"action": "ping"}
+2025-01-08 22:51:21 INFO Received ping from client
+2025-01-08 22:51:32 INFO message: {"action": "add_user", "r_user": "sendai", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 22:51:32 INFO Adding user: sendai with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 22:53:43 INFO message: {"action": "login", "r_user": "tokyo", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 22:54:12 INFO message: {"action": "add_user", "r_user": "akita", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 22:54:12 INFO Adding user: akita with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 22:56:29 INFO message: {"action": "ping"}
+2025-01-08 22:56:29 INFO Received ping from client
+2025-01-08 22:57:18 INFO message: {"action": "add_user", "r_user": "otsu", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 22:57:18 INFO Creating user: otsu with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 22:57:18 INFO Adding user: otsu with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:01:39 INFO message: {"action": "add_user", "r_user": "akita", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 23:01:39 INFO Creating user: akita with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:01:39 INFO Adding user: akita with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:01:47 INFO message: {"action": "login", "r_user": "kawasaki", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 23:01:53 INFO message: {"action": "add_user", "r_user": "kawasaki", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 23:01:53 INFO Creating user: kawasaki with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:01:54 INFO Adding user: kawasaki with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:01:58 INFO message: {"action": "add_user", "r_user": "nagoya", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 23:01:58 INFO Creating user: nagoya with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:01:58 INFO Adding user: nagoya with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:02:02 INFO message: {"action": "add_user", "r_user": "shibuya", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 23:02:02 INFO Creating user: shibuya with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:02:02 INFO Adding user: shibuya with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:02:05 INFO message: {"action": "add_user", "r_user": "tokyo", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 23:02:05 INFO Creating user: tokyo with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:02:05 INFO Adding user: tokyo with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:02:10 INFO message: {"action": "add_user", "r_user": "yokohama", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-08 23:02:10 INFO Creating user: yokohama with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-08 23:02:10 INFO Adding user: yokohama with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
