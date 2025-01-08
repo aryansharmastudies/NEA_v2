@@ -10,8 +10,8 @@ from get_lip import *
 
 ########## IP ADDRESS ###########################
 # NOTE - gets the ip. hash the one you don't want.
-#ip = l_wlan_ip()
-ip = w_wlan_ip()
+ip = l_wlan_ip()
+#ip = w_wlan_ip()
 #################################################
 ########## FLASK ################################
 app = Flask(__name__)
@@ -30,7 +30,7 @@ class servers(db.Model):
         self.name = name
 #################################################
 ########## WEBSITE ##############################
-@app.route('/', methods=['POST','GET'])
+@app.route('/pair', methods=['POST','GET'])
 def pair():
     if request.method == 'POST':
         session.permanent = True
@@ -70,14 +70,17 @@ def pair():
         
         return render_template('pair.html')
     
-    # TODO: if the user is already connected to a pi and in a session, redirect to dashboard page.
-    # TODO: do a GET request and get the hostname to connect to.
+    # DONE: if the user is already connected to a pi and in a session, redirect to dashboard page.
+    # DONE: do a GET request and get the hostname to connect to.
     # TODO: then try establish a connection and display it onto the page.
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
-
+    if 'server_name' in session:
+        return render_template('dashboard.html', server_name=session['server_name']) # pass in server_name to the dashboard.html file.
+    else:
+        flash('You are not connected to a server!', 'info')
+        return render_template('pair.html')
 @app.route("/unpair")
 def logout():
     if "server_name" in session:

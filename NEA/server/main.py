@@ -6,8 +6,8 @@ from get_lip import *
 from sqlalchemy.orm import sessionmaker
 ########## IP ADDRESS ############################
 # NOTE - gets the ip. hash the one you don't want.
-#ip = l_wlan_ip()
-ip = w_wlan_ip()
+ip = l_wlan_ip()
+#ip = w_wlan_ip()
 print(ip)
 ##################################################
 ########## DATA BASE #############################
@@ -61,5 +61,3 @@ while True:
     clientsocket.close()
     # TODO store info in db
 ##################################################
-
-

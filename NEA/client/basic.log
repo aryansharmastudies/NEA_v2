@@ -547,3 +547,218 @@ WHERE servers.name = ?
 2025-01-05 22:06:56 INFO found_server: None
 2025-01-05 22:06:56 INFO 127.0.0.1 - - [05/Jan/2025 22:06:56] "[32mPOST / HTTP/1.1[0m" 302 -
 2025-01-05 22:06:56 INFO 127.0.0.1 - - [05/Jan/2025 22:06:56] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 13:56:00 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 13:56:00 INFO [33mPress CTRL+C to quit[0m
+2025-01-08 13:56:00 INFO  * Restarting with stat
+2025-01-08 13:56:01 WARNING  * Debugger is active!
+2025-01-08 13:56:01 INFO  * Debugger PIN: 143-119-079
+2025-01-08 13:56:12 INFO 127.0.0.1 - - [08/Jan/2025 13:56:12] "GET / HTTP/1.1" 200 -
+2025-01-08 13:56:12 INFO 127.0.0.1 - - [08/Jan/2025 13:56:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-08 13:56:17 INFO server_name: kyoto
+2025-01-08 13:56:17 INFO 127.0.0.1 - - [08/Jan/2025 13:56:17] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-08 13:56:17 INFO 127.0.0.1 - - [08/Jan/2025 13:56:17] "GET / HTTP/1.1" 200 -
+2025-01-08 13:56:21 INFO server_name: kyoto
+2025-01-08 13:56:21 INFO 127.0.0.1 - - [08/Jan/2025 13:56:21] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-08 13:56:21 INFO 127.0.0.1 - - [08/Jan/2025 13:56:21] "GET / HTTP/1.1" 200 -
+2025-01-08 13:57:35 INFO server_name: 10.195.171.63
+2025-01-08 13:57:35 INFO status: active
+2025-01-08 13:57:35 INFO found_server: None
+2025-01-08 13:57:35 INFO 127.0.0.1 - - [08/Jan/2025 13:57:35] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-08 13:57:35 INFO 127.0.0.1 - - [08/Jan/2025 13:57:35] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 13:59:43 INFO 127.0.0.1 - - [08/Jan/2025 13:59:43] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-08 13:59:43 INFO 127.0.0.1 - - [08/Jan/2025 13:59:43] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 13:59:44 INFO 127.0.0.1 - - [08/Jan/2025 13:59:44] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-08 13:59:44 INFO 127.0.0.1 - - [08/Jan/2025 13:59:44] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:03:44 INFO 127.0.0.1 - - [08/Jan/2025 14:03:44] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:04:41 INFO 127.0.0.1 - - [08/Jan/2025 14:04:41] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:04:41 INFO 127.0.0.1 - - [08/Jan/2025 14:04:41] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-01-08 14:04:41 INFO 127.0.0.1 - - [08/Jan/2025 14:04:41] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-01-08 14:04:41 INFO 127.0.0.1 - - [08/Jan/2025 14:04:41] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=RvFXysQK6sfQTy37Q0ou HTTP/1.1" 200 -
+2025-01-08 14:04:41 INFO 127.0.0.1 - - [08/Jan/2025 14:04:41] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-01-08 14:07:33 INFO 127.0.0.1 - - [08/Jan/2025 14:07:33] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:08:24 INFO  * Detected change in '/home/kyoto/Desktop/NEA_v2/NEA/client/main.py', reloading
+2025-01-08 14:08:24 INFO  * Restarting with stat
+2025-01-08 14:08:24 WARNING  * Debugger is active!
+2025-01-08 14:08:24 INFO  * Debugger PIN: 143-119-079
+2025-01-08 14:08:28 INFO 127.0.0.1 - - [08/Jan/2025 14:08:28] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-08 14:08:28 INFO 127.0.0.1 - - [08/Jan/2025 14:08:28] "GET / HTTP/1.1" 200 -
+2025-01-08 14:08:29 INFO 127.0.0.1 - - [08/Jan/2025 14:08:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-08 14:08:40 INFO server_name: 10.195.171.63
+2025-01-08 14:08:40 INFO status: active
+2025-01-08 14:08:40 INFO found_server: <servers 10.195.171.63>
+2025-01-08 14:08:40 INFO 127.0.0.1 - - [08/Jan/2025 14:08:40] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-08 14:08:40 INFO server_name: 10.195.171.63
+2025-01-08 14:08:40 INFO 127.0.0.1 - - [08/Jan/2025 14:08:40] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:19:55 INFO 127.0.0.1 - - [08/Jan/2025 14:19:55] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:19:55 INFO 127.0.0.1 - - [08/Jan/2025 14:19:55] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:19:55 INFO 127.0.0.1 - - [08/Jan/2025 14:19:55] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:19:55 INFO 127.0.0.1 - - [08/Jan/2025 14:19:55] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8ZkAqMAzDI9peh3nddi3 HTTP/1.1" 200 -
+2025-01-08 14:20:19 INFO 127.0.0.1 - - [08/Jan/2025 14:20:19] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:20:19 INFO 127.0.0.1 - - [08/Jan/2025 14:20:19] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:20:19 INFO 127.0.0.1 - - [08/Jan/2025 14:20:19] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:20:19 INFO 127.0.0.1 - - [08/Jan/2025 14:20:19] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8ZkAqMAzDI9peh3nddi3 HTTP/1.1[0m" 304 -
+2025-01-08 14:20:20 INFO 127.0.0.1 - - [08/Jan/2025 14:20:20] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:20:20 INFO 127.0.0.1 - - [08/Jan/2025 14:20:20] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:20:20 INFO 127.0.0.1 - - [08/Jan/2025 14:20:20] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:20:20 INFO 127.0.0.1 - - [08/Jan/2025 14:20:20] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8ZkAqMAzDI9peh3nddi3 HTTP/1.1[0m" 304 -
+2025-01-08 14:20:25 INFO 127.0.0.1 - - [08/Jan/2025 14:20:25] "GET / HTTP/1.1" 200 -
+2025-01-08 14:20:29 INFO server_name: 10.195.171.63
+2025-01-08 14:20:29 INFO status: active
+2025-01-08 14:20:29 INFO found_server: <servers 10.195.171.63>
+2025-01-08 14:20:29 INFO 127.0.0.1 - - [08/Jan/2025 14:20:29] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-08 14:20:29 INFO server_name: 10.195.171.63
+2025-01-08 14:20:29 INFO 127.0.0.1 - - [08/Jan/2025 14:20:29] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:20:31 INFO 127.0.0.1 - - [08/Jan/2025 14:20:31] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-08 14:20:31 INFO 127.0.0.1 - - [08/Jan/2025 14:20:31] "GET / HTTP/1.1" 200 -
+2025-01-08 14:20:34 INFO server_name: kyoto
+2025-01-08 14:20:34 INFO 127.0.0.1 - - [08/Jan/2025 14:20:34] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-08 14:20:34 INFO 127.0.0.1 - - [08/Jan/2025 14:20:34] "GET / HTTP/1.1" 200 -
+2025-01-08 14:20:38 INFO server_name: 10.195.171.63
+2025-01-08 14:20:38 INFO status: active
+2025-01-08 14:20:38 INFO found_server: <servers 10.195.171.63>
+2025-01-08 14:20:38 INFO 127.0.0.1 - - [08/Jan/2025 14:20:38] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-01-08 14:20:38 INFO server_name: 10.195.171.63
+2025-01-08 14:20:38 INFO 127.0.0.1 - - [08/Jan/2025 14:20:38] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:21:04 INFO server_name: 10.195.171.63
+2025-01-08 14:21:04 INFO 127.0.0.1 - - [08/Jan/2025 14:21:04] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:24:41 INFO 127.0.0.1 - - [08/Jan/2025 14:24:41] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:24:42 INFO 127.0.0.1 - - [08/Jan/2025 14:24:42] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:24:42 INFO 127.0.0.1 - - [08/Jan/2025 14:24:42] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:24:42 INFO 127.0.0.1 - - [08/Jan/2025 14:24:42] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8ZkAqMAzDI9peh3nddi3 HTTP/1.1[0m" 304 -
+2025-01-08 14:24:42 INFO 127.0.0.1 - - [08/Jan/2025 14:24:42] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:24:42 INFO 127.0.0.1 - - [08/Jan/2025 14:24:42] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:24:42 INFO 127.0.0.1 - - [08/Jan/2025 14:24:42] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:24:42 INFO 127.0.0.1 - - [08/Jan/2025 14:24:42] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8ZkAqMAzDI9peh3nddi3 HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8ZkAqMAzDI9peh3nddi3 HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8ZkAqMAzDI9peh3nddi3 HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8ZkAqMAzDI9peh3nddi3 HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:24:43 INFO 127.0.0.1 - - [08/Jan/2025 14:24:43] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:24:44 INFO 127.0.0.1 - - [08/Jan/2025 14:24:44] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8ZkAqMAzDI9peh3nddi3 HTTP/1.1[0m" 304 -
+2025-01-08 14:24:44 INFO 127.0.0.1 - - [08/Jan/2025 14:24:44] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:24:44 INFO 127.0.0.1 - - [08/Jan/2025 14:24:44] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:24:44 INFO 127.0.0.1 - - [08/Jan/2025 14:24:44] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:24:44 INFO 127.0.0.1 - - [08/Jan/2025 14:24:44] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8ZkAqMAzDI9peh3nddi3 HTTP/1.1[0m" 304 -
+2025-01-08 14:25:28 INFO  * Detected change in '/home/kyoto/Desktop/NEA_v2/NEA/client/main.py', reloading
+2025-01-08 14:25:28 INFO  * Restarting with stat
+2025-01-08 14:25:28 WARNING  * Debugger is active!
+2025-01-08 14:25:28 INFO  * Debugger PIN: 143-119-079
+2025-01-08 14:25:30 INFO 127.0.0.1 - - [08/Jan/2025 14:25:30] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:25:30 INFO 127.0.0.1 - - [08/Jan/2025 14:25:30] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:25:30 INFO 127.0.0.1 - - [08/Jan/2025 14:25:30] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:25:30 INFO 127.0.0.1 - - [08/Jan/2025 14:25:30] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=dpuQ8zLI6rZFF1bLg8nn HTTP/1.1" 200 -
+2025-01-08 14:25:30 INFO 127.0.0.1 - - [08/Jan/2025 14:25:30] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:25:30 INFO 127.0.0.1 - - [08/Jan/2025 14:25:30] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:25:30 INFO 127.0.0.1 - - [08/Jan/2025 14:25:30] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:25:30 INFO 127.0.0.1 - - [08/Jan/2025 14:25:30] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=dpuQ8zLI6rZFF1bLg8nn HTTP/1.1[0m" 304 -
+2025-01-08 14:25:31 INFO 127.0.0.1 - - [08/Jan/2025 14:25:31] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:25:31 INFO 127.0.0.1 - - [08/Jan/2025 14:25:31] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:25:31 INFO 127.0.0.1 - - [08/Jan/2025 14:25:31] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:25:31 INFO 127.0.0.1 - - [08/Jan/2025 14:25:31] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=dpuQ8zLI6rZFF1bLg8nn HTTP/1.1[0m" 304 -
+2025-01-08 14:25:31 INFO 127.0.0.1 - - [08/Jan/2025 14:25:31] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-01-08 14:25:31 INFO 127.0.0.1 - - [08/Jan/2025 14:25:31] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-01-08 14:25:31 INFO 127.0.0.1 - - [08/Jan/2025 14:25:31] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-01-08 14:25:31 INFO 127.0.0.1 - - [08/Jan/2025 14:25:31] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=dpuQ8zLI6rZFF1bLg8nn HTTP/1.1[0m" 304 -
+2025-01-08 14:26:44 INFO  * Detected change in '/home/kyoto/Desktop/NEA_v2/NEA/client/main.py', reloading
+2025-01-08 14:26:44 INFO  * Restarting with stat
+2025-01-08 14:26:45 WARNING  * Debugger is active!
+2025-01-08 14:26:45 INFO  * Debugger PIN: 143-119-079
+2025-01-08 14:26:45 INFO 127.0.0.1 - - [08/Jan/2025 14:26:45] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:26:51 INFO 127.0.0.1 - - [08/Jan/2025 14:26:51] "GET / HTTP/1.1" 200 -
+2025-01-08 14:26:54 INFO 127.0.0.1 - - [08/Jan/2025 14:26:54] "[33mGET /pair HTTP/1.1[0m" 404 -
+2025-01-08 14:27:00 INFO 127.0.0.1 - - [08/Jan/2025 14:27:00] "GET / HTTP/1.1" 200 -
+2025-01-08 14:27:01 INFO 127.0.0.1 - - [08/Jan/2025 14:27:01] "GET / HTTP/1.1" 200 -
+2025-01-08 14:27:12 INFO  * Detected change in '/home/kyoto/Desktop/NEA_v2/NEA/client/main.py', reloading
+2025-01-08 14:27:12 INFO  * Restarting with stat
+2025-01-08 14:27:13 WARNING  * Debugger is active!
+2025-01-08 14:27:13 INFO  * Debugger PIN: 143-119-079
+2025-01-08 14:27:15 INFO 127.0.0.1 - - [08/Jan/2025 14:27:15] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-08 14:27:18 INFO 127.0.0.1 - - [08/Jan/2025 14:27:18] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:22 INFO 127.0.0.1 - - [08/Jan/2025 14:27:22] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-08 14:27:43 INFO 127.0.0.1 - - [08/Jan/2025 14:27:43] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-08 14:27:47 INFO 127.0.0.1 - - [08/Jan/2025 14:27:47] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:48 INFO 127.0.0.1 - - [08/Jan/2025 14:27:48] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:49 INFO 127.0.0.1 - - [08/Jan/2025 14:27:49] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:50 INFO 127.0.0.1 - - [08/Jan/2025 14:27:50] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:51 INFO 127.0.0.1 - - [08/Jan/2025 14:27:51] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-08 14:27:51 INFO 127.0.0.1 - - [08/Jan/2025 14:27:51] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:51 INFO 127.0.0.1 - - [08/Jan/2025 14:27:51] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:52 INFO 127.0.0.1 - - [08/Jan/2025 14:27:52] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-08 14:27:52 INFO 127.0.0.1 - - [08/Jan/2025 14:27:52] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:53 INFO 127.0.0.1 - - [08/Jan/2025 14:27:53] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:54 INFO 127.0.0.1 - - [08/Jan/2025 14:27:54] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:54 INFO 127.0.0.1 - - [08/Jan/2025 14:27:54] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:54 INFO 127.0.0.1 - - [08/Jan/2025 14:27:54] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:27:58 INFO server_name: 10.195.171.63
+2025-01-08 14:27:58 INFO status: active
+2025-01-08 14:27:58 INFO found_server: <servers 10.195.171.63>
+2025-01-08 14:27:58 INFO 127.0.0.1 - - [08/Jan/2025 14:27:58] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-08 14:27:58 INFO 127.0.0.1 - - [08/Jan/2025 14:27:58] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:28:04 INFO 127.0.0.1 - - [08/Jan/2025 14:28:04] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-08 14:28:16 INFO 127.0.0.1 - - [08/Jan/2025 14:28:16] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-01-08 14:28:16 INFO 127.0.0.1 - - [08/Jan/2025 14:28:16] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:28:18 INFO 127.0.0.1 - - [08/Jan/2025 14:28:18] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-08 14:28:18 INFO 127.0.0.1 - - [08/Jan/2025 14:28:18] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:28:54 INFO server_name: ginger
+2025-01-08 14:28:54 INFO 127.0.0.1 - - [08/Jan/2025 14:28:54] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-08 14:28:54 INFO 127.0.0.1 - - [08/Jan/2025 14:28:54] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:29:12 INFO server_name: 10.195.171.63
+2025-01-08 14:29:12 INFO status: active
+2025-01-08 14:29:12 INFO found_server: <servers 10.195.171.63>
+2025-01-08 14:29:12 INFO 127.0.0.1 - - [08/Jan/2025 14:29:12] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-08 14:29:12 INFO 127.0.0.1 - - [08/Jan/2025 14:29:12] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:29:34 INFO 127.0.0.1 - - [08/Jan/2025 14:29:34] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-08 14:29:35 INFO 127.0.0.1 - - [08/Jan/2025 14:29:35] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:29:50 INFO 127.0.0.1 - - [08/Jan/2025 14:29:50] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:30:05 INFO 127.0.0.1 - - [08/Jan/2025 14:30:05] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:30:10 INFO server_name: 10.195.171.63
+2025-01-08 14:30:10 INFO status: active
+2025-01-08 14:30:10 INFO found_server: <servers 10.195.171.63>
+2025-01-08 14:30:10 INFO 127.0.0.1 - - [08/Jan/2025 14:30:10] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-08 14:30:10 INFO 127.0.0.1 - - [08/Jan/2025 14:30:10] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:30:39 INFO 127.0.0.1 - - [08/Jan/2025 14:30:39] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:30:40 INFO 127.0.0.1 - - [08/Jan/2025 14:30:40] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:30:41 INFO 127.0.0.1 - - [08/Jan/2025 14:30:41] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:42:05 INFO  * Detected change in '/home/kyoto/Desktop/NEA_v2/NEA/client/main.py', reloading
+2025-01-08 14:42:05 INFO  * Restarting with stat
+2025-01-08 14:42:06 WARNING  * Debugger is active!
+2025-01-08 14:42:06 INFO  * Debugger PIN: 143-119-079
+2025-01-08 14:42:12 INFO 127.0.0.1 - - [08/Jan/2025 14:42:12] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:42:13 INFO 127.0.0.1 - - [08/Jan/2025 14:42:13] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-08 14:42:13 INFO 127.0.0.1 - - [08/Jan/2025 14:42:13] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:42:14 INFO 127.0.0.1 - - [08/Jan/2025 14:42:14] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-08 14:42:14 INFO 127.0.0.1 - - [08/Jan/2025 14:42:14] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:42:16 INFO 127.0.0.1 - - [08/Jan/2025 14:42:16] "[33mGET /dashabord HTTP/1.1[0m" 404 -
+2025-01-08 14:42:21 INFO 127.0.0.1 - - [08/Jan/2025 14:42:21] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:42:25 INFO 127.0.0.1 - - [08/Jan/2025 14:42:25] "[31m[1mPOST /dashboard HTTP/1.1[0m" 405 -
+2025-01-08 14:43:03 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 14:43:03 INFO [33mPress CTRL+C to quit[0m
+2025-01-08 14:43:03 INFO  * Restarting with stat
+2025-01-08 14:43:04 WARNING  * Debugger is active!
+2025-01-08 14:43:04 INFO  * Debugger PIN: 143-119-079
+2025-01-08 14:43:08 INFO 127.0.0.1 - - [08/Jan/2025 14:43:08] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-08 14:43:13 INFO 127.0.0.1 - - [08/Jan/2025 14:43:13] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:43:18 INFO server_name: kyoto
+2025-01-08 14:43:18 INFO 127.0.0.1 - - [08/Jan/2025 14:43:18] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-08 14:43:18 INFO 127.0.0.1 - - [08/Jan/2025 14:43:18] "GET /pair HTTP/1.1" 200 -
+2025-01-08 14:43:21 INFO server_name: 10.195.171.63
+2025-01-08 14:43:21 INFO status: active
+2025-01-08 14:43:21 INFO found_server: <servers 10.195.171.63>
+2025-01-08 14:43:21 INFO 127.0.0.1 - - [08/Jan/2025 14:43:21] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-08 14:43:21 INFO 127.0.0.1 - - [08/Jan/2025 14:43:21] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:43:24 INFO 127.0.0.1 - - [08/Jan/2025 14:43:24] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-01-08 14:43:24 INFO 127.0.0.1 - - [08/Jan/2025 14:43:24] "GET /dashboard HTTP/1.1" 200 -
+2025-01-08 14:43:25 INFO 127.0.0.1 - - [08/Jan/2025 14:43:25] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-01-08 14:43:25 INFO 127.0.0.1 - - [08/Jan/2025 14:43:25] "GET /dashboard HTTP/1.1" 200 -
