@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
   <diagram name="Page-1" id="ekimDS5NgHhW3DlAZh_F">
-    <mxGraphModel dx="3222" dy="954" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3178" dy="1780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -276,7 +276,7 @@
             <mxRectangle width="99.99999999999977" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="x8dIpfl7mM12fi0Gu0mU-27" value="size" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;swimlaneLine=1;strokeColor=default;shadow=0;" vertex="1" parent="yCGKUtqAQL4sus2Y5JjS-51">
+        <mxCell id="x8dIpfl7mM12fi0Gu0mU-27" value="size" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-51" vertex="1">
           <mxGeometry x="750" width="99.99999999999977" height="30" as="geometry">
             <mxRectangle width="99.99999999999977" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -309,7 +309,7 @@
             <mxRectangle width="99.99999999999977" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="x8dIpfl7mM12fi0Gu0mU-28" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" vertex="1" parent="yCGKUtqAQL4sus2Y5JjS-55">
+        <mxCell id="x8dIpfl7mM12fi0Gu0mU-28" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-55" vertex="1">
           <mxGeometry x="750" width="99.99999999999977" height="30" as="geometry">
             <mxRectangle width="99.99999999999977" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -342,7 +342,7 @@
             <mxRectangle width="99.99999999999977" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="x8dIpfl7mM12fi0Gu0mU-29" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" vertex="1" parent="yCGKUtqAQL4sus2Y5JjS-59">
+        <mxCell id="x8dIpfl7mM12fi0Gu0mU-29" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-59" vertex="1">
           <mxGeometry x="750" width="99.99999999999977" height="30" as="geometry">
             <mxRectangle width="99.99999999999977" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -375,7 +375,7 @@
             <mxRectangle width="99.99999999999977" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="x8dIpfl7mM12fi0Gu0mU-30" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" vertex="1" parent="yCGKUtqAQL4sus2Y5JjS-63">
+        <mxCell id="x8dIpfl7mM12fi0Gu0mU-30" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-63" vertex="1">
           <mxGeometry x="750" width="99.99999999999977" height="30" as="geometry">
             <mxRectangle width="99.99999999999977" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -408,7 +408,7 @@
             <mxRectangle width="99.99999999999977" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="x8dIpfl7mM12fi0Gu0mU-31" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" vertex="1" parent="yCGKUtqAQL4sus2Y5JjS-138">
+        <mxCell id="x8dIpfl7mM12fi0Gu0mU-31" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-138" vertex="1">
           <mxGeometry x="750" width="99.99999999999977" height="30" as="geometry">
             <mxRectangle width="99.99999999999977" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -864,7 +864,7 @@
         <mxCell id="3i9ndAqpxKI2bMyYtsXk-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;If a new client with new device wants to pair with raspberry pi, how will raspberry pi broadcast it&#39;s ip_addr and name for clients device to pair?&lt;/h1&gt;&lt;div&gt;-x- It won&#39;t.&lt;/div&gt;&lt;div&gt;-x- the original user who paired is responsible to share the raspberry pi&#39;s ip_addr&lt;/div&gt;&lt;div&gt;-x- &lt;b&gt;&lt;font color=&quot;#ff3333&quot;&gt;issue&amp;nbsp;arrises when the original user lost access to their device&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;-x- &lt;font color=&quot;#009900&quot;&gt;&lt;b&gt;in that scenario, restarting the pi, will turn on its broadcast for a minute or two&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=default;dashed=1;shadow=1;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="-2190" y="40" width="520" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="x8dIpfl7mM12fi0Gu0mU-32" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Features to add&lt;/h1&gt;&lt;div&gt;-x- admin should be able to accept other clients.&lt;/div&gt;&lt;div&gt;-N- if admin goes down, no clients can be added.&lt;/div&gt;&lt;div&gt;-S- &lt;b&gt;note: if admins device goes down, admin can log in with other devices!!&lt;/b&gt;&lt;/div&gt;&lt;div&gt;-S- anyone with the name of raspberry pi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-x- admin can create virtual partitions, by measuring the file size and restricting the user.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-x- nothing stops the user from entering the ip addr of server in search bar. Decide if its needed.&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;labelBorderColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+        <mxCell id="x8dIpfl7mM12fi0Gu0mU-32" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Features to add&lt;/h1&gt;&lt;div&gt;-x- admin should be able to accept other clients.&lt;/div&gt;&lt;div&gt;-N- if admin goes down, no clients can be added.&lt;/div&gt;&lt;div&gt;-S- &lt;b&gt;note: if admins device goes down, admin can log in with other devices!!&lt;/b&gt;&lt;/div&gt;&lt;div&gt;-S- anyone with the name of raspberry pi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-x- admin can create virtual partitions, by measuring the file size and restricting the user.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-x- nothing stops the user from entering the ip addr of server in search bar. Decide if its needed.&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;labelBorderColor=default;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="-2190" y="280" width="520" height="210" as="geometry" />
         </mxCell>
       </root>
