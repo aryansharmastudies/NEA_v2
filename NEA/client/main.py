@@ -44,9 +44,11 @@ def pair():
         try: 
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((server_name, 8000))
-            s.send(f'ping'.encode('utf-8'))
-            if s.recv(1024).decode('utf-8') == 'active':
-                logging.info(f"status: active")
+            json_data = json.dumps({'action': 'ping'})
+            logging.info(f'ping sent: {json_data}')
+            s.send(json_data.encode('utf-8'))
+            if s.recv(1024).decode('utf-8') == 'pong':
+                logging.info(f"status: pong")
                 session['server_name'] = server_name
                 
                 found_server = servers.query.filter_by(name=server_name).first()
@@ -81,14 +83,14 @@ def pair():
 def login():
     # Handle the form submission
     if request.method == 'POST':
-        usr = request.form['r_usr']
+        user = request.form['r_user']
         pwd = request.form['r_pwd']
         hash = hashlib.new("SHA256")
         hash.update(pwd.encode('utf-8'))
         hash = hash.hexdigest()
         session['hash']=hash
-        session['usr']=usr
-        json_data = json.dumps({'action': 'login','r_usr':usr, 'r_pwd':hash}) # convertes dictionary to json string.
+        session['user']=user
+        json_data = json.dumps({'action': 'login','r_user':user, 'hash':hash}) # convertes dictionary to json string.
         logging.info(f'hashed password: {hash}')
         logging.info(f'json_data: {json_data}')        
         try: 
@@ -102,7 +104,7 @@ def login():
         flash(f'Login Successful!', 'info')
         return redirect(url_for('dashboard')) # nm is the dictionary key for name of user input.
     else:
-        if 'usr' in session and 'server_name' in session: # if user is already logged in, then redirect to user page.
+        if 'user' in session and 'server_name' in session: # if user is already logged in, then redirect to user page.
             flash('Already Logged In!', 'info')
             return redirect(url_for('dashboard'))
         elif 'server_name' not in session:
@@ -113,14 +115,14 @@ def login():
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
-        usr = request.form['r_usr']
+        user = request.form['r_user']
         pwd = request.form['r_pwd']
         hash = hashlib.new("SHA256")
         hash.update(pwd.encode('utf-8'))
         hash = hash.hexdigest()
         session['hash']=hash
-        session['usr']=usr
-        json_data = json.dumps({'action': 'register','r_usr':usr, 'r_pwd':hash})
+        session['user']=user
+        json_data = json.dumps({'action': 'add_user','r_user':user, 'hash':hash})
         logging.info(f'hashed password: {hash}')
         logging.info(f'json_data: {json_data}')
         try:
@@ -130,8 +132,10 @@ def register():
         except:
             flash(f'Could not connect to server for register!', 'info')
             return redirect(url_for('register'))
+        flash(f'Registered!', 'info')
+        return redirect(url_for('dashboard'))
     else:
-        if 'usr' in session and 'server_name' in session:
+        if 'user' in session and 'server_name' in session:
             flash('Already Logged In!', 'info')
             return redirect(url_for('dashboard'))
         elif 'server_name' not in session:
@@ -141,7 +145,7 @@ def register():
 
 @app.route('/dashboard', methods=['POST', 'GET'])
 def dashboard():
-    if 'server_name' in session and 'usr' in session:
+    if 'server_name' in session and 'user' in session:
         return render_template('dashboard.html', server_name=session['server_name']) # pass in server_name to the dashboard.html file.
     elif 'server_name' in session:
         flash('You are not logged in!', 'info')
@@ -158,10 +162,10 @@ def unpair():
     return redirect(url_for('pair'))
 @app.route('/logout')
 def logout():
-    if 'usr' in session:
-        usr = session['usr']
-        flash(f'You have been logged out, {usr}', 'info')
-    session.pop('usr', None)
+    if 'user' in session:
+        user = session['user']
+        flash(f'You have been logged out, {user}', 'info')
+    session.pop('user', None)
     #session.pop('email', None)
     return redirect(url_for('login'))
 #################################################
@@ -175,7 +179,7 @@ def main() -> None:
     
 #################################################
 ########## ADDING USER ##########################
-def add_usr(name, email):
+def add_user(name, email):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(('osaka', 8000))
     s.send(f"{name}:{email}".encode('utf-8'))
