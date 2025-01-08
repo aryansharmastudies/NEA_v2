@@ -1,0 +1,2 @@
+deleting this file would result in the directory not being synced the next time database.db is deleted via git.
+therefore let this file exist so the directory(without database.db) is synced through git.
