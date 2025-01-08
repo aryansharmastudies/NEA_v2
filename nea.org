@@ -1,0 +1,118 @@
+#+title: nea
+
+* relevant research
+** Raspberry Pi
+*** Cheatsheet
+- sudo raspi-config
+** SSH
+*** Cheatsheet
+- ssh pi@192.168.0.0
+  "pi" is the name of the SSH server.
+  192.168.0.0 is the IP of the SSH server.
+** Port Forwarding
+** Sockets in Python
+*** [[https://www.youtube.com/watch?v=bwTAVGg_kVs][Python sockets Explained in 10 Minutes(yt)]]
+**** What are Sockets?
+*** [[https://www.youtube.com/watch?v=YwWfKitB8aA][Python Sockets Simply Explained]]
+**** Client and Server architecture
+***** Server Uses:
+- *Chatrooms*
+  to forward/broadcast a message to distinct/all clients.
+- *Cross Platform Gaming server*
+  pc connects to server.
+  ps4 connects to server.
+***** Definitions:
+- *Server*: Central entity that processes request and gives responses.
+- *Socket*: Communication endpoints.
+  - We can have different types such as *internet sockets(Socked.AF_INET)*, *bluetooth socket(Socked.AF_BLUETOOTH)*, operating system sockets.
+  - We also need to specify the protocols of Socket when instantiating such as *TCP(Transmission Control Protocol)(SOCK_STREAM)* or *UDP(User Datagram Protocol)(SOCK_DGRAM)*
+    - *Use TCP* - connection-based socket, creates a session between two clients. Exchange messages between to clients; once the connection is done, you terminate the connection.
+      - _Advantages:_
+        - Reliable(noticing lost packets)
+        - Connection based
+        - Sequential
+        - Byte-stream
+        - Keeps up Connection
+      - _Usecase_:
+        Sending an image file, you want to recieve the whole thing with no data loss.
+    - *Use UDP* - communicating individual messages without creating a temporary connection between two clients. Just send data and recieve data individually.
+      - _Advantages:_
+        - Sends one Datagram
+        - More real time(Faster)
+        - Less network and PC stress
+      - _Usecase_:
+        - Video Call where a few lost packets don't necessarily affect the call too much.
+        - Gaming where you would want real time experience.
+***** Addresses:
+Communitation happens through IP addresses.
+****** How Communication works?
+******* LAN:
+- Server hosts it IP address
+- PC connects to that IP along with a specific port.
+- Find Local IP address:
+  - Windows:
+    #+begin_src shell
+ipconfig
+  #+end_src
+  - Linux/Mac:
+    #+begin_src shell
+ifconfig
+    #+end_src
+- NOTE: Local IP is *private*. Can't connect to a node through the internet with local IP. Only nodes in *same network* can use *Local IP* to communicate.
+******* WAN:
+- Private IP addresses are not unique. Different devices in different LAN's can use the same IP.
+- Public IP address:
+  - All private IP addresses are translated into a public IP address
+- *_IMPO_*: *Server* has to be hosted on *Private Local Address*.
+  - If you are part of LAN, connect via private local IP Address
+  - If you are communicating through the *internt*, use the *public IP Address* to connect.
+** JSON
+*** [[https://www.youtube.com/watch?v=iiADhChRriM&t=15s][Learn JSON in 10 Minutes]]
+**** java script object notation(JSON)
+**** data representation format used for API's/Config
+**** lightweight
+**** easy-to-read
+**** ability to parse json string into objects/classes in python/any language
+**** JSON types
+***** strings
+***** numbers
+***** booleans
+***** null
+***** arrays
+***** objects - most used
+**** create file - user.json
+- NOTE: MUST USE DOUBLE QUOTATION i.e. ""
+{
+        "name":"Aryan",
+        "type":"Stoic",
+        "isProgrammer":true,
+        "hobbies":["Gym", "Sketching"]
+        "friends":[{
+                "name":"Jiggly_Joel", "hobbies":"tiktok_dance", "mukbangs"
+                },
+                {
+                "name":"Krishiv", "drip":false
+                }]
+}
+**** json is valid javascript so use 'JSON.parse()' to convert it to javascript object.
+*** [[https://www.youtube.com/watch?v=iiADhChRriM&t=15s][How To Use JSON In Python]]
+**** convert json string to python dict.
+- json.loads(json_string) @@comment: notice the 's' in .loads which signifies loading a json_string@@
+* documentation
+** KILL API to get public IP address for server using smth like myip.is @@comment:can just use commands in cmd/terminal to access the wlan ip.
+
+
+
+* roadmap
+* todo
+** website
+*** KILL add sensing @@comment: there is no point, rather the user should type in the ip/name of server@@
+*** KILL add devices and their mac_addr. @@comment: rather than saving to local db on client, send device name and mac_addr to pi.@@
+*** KILL make it so that pi and client can see eachother and exchange ip_addr.
+*** KILL now, make it so that device can send data to pi.
+*** TODO make device send SQL commands to register user
+**** TODO edit frontend to take in name and email
+**** TODO edit backend to use post and send details to server
+**** TODO edit server, to take details and craete new user
+**** TODO if its first used - make them admin
+*** TODO register their device(with mac_addr) into pi's db

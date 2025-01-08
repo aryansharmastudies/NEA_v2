@@ -58,6 +58,7 @@ while True:
     if message == 'ping':
         clientsocket.send(f"active".encode('utf-8'))
     print(message)
+    print(f"closing connection with {addr}")
     clientsocket.close()
     # TODO store info in db
 ##################################################
