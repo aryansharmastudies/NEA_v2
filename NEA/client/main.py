@@ -2,23 +2,28 @@ from flask import Flask, redirect, url_for, render_template, request, session, f
 from datetime import timedelta # setup max time out session last for.
 from flask_sqlalchemy import SQLAlchemy
 from uuid import getnode as get_mac
+from get_wip import *
+from get_lip import *
 import logging
 import socket
 import os
-from get_wip import *
-from get_lip import *
+import json
+import hashlib
+########## NOTES ################################
+# NOTE: session stores: server_name, user, email, (not password!),
 
+#################################################
 ########## IP ADDRESS ###########################
 # NOTE - gets the ip. hash the one you don't want.
-ip = l_wlan_ip()
-#ip = w_wlan_ip()
+#ip = l_wlan_ip()
+ip = w_wlan_ip()
 #################################################
 ########## FLASK ################################
 app = Flask(__name__)
 app.secret_key = "hello"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.sqlite3'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.permanent_session_lifetime = timedelta(minutes=3) # session will last for 10 days.
+app.permanent_session_lifetime = timedelta(days=30) # session will last for 30 days.
 #################################################
 ########## DATA BASE ############################
 db = SQLAlchemy(app)
@@ -36,27 +41,26 @@ def pair():
         session.permanent = True
         server_name = request.form['nm'] # nm is dictionary key.
         logging.info(f'server_name: {server_name}')
-        
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try: 
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((server_name, 8000))
             s.send(f'ping'.encode('utf-8'))
             if s.recv(1024).decode('utf-8') == 'active':
                 logging.info(f"status: active")
-                session['server_name']=server_name
+                session['server_name'] = server_name
                 
                 found_server = servers.query.filter_by(name=server_name).first()
                 logging.info(f'found_server: {found_server}')
                 if found_server:
                     flash(f'Reconnected!', 'info')
-                    return redirect(url_for('dashboard'))
+                    return redirect(url_for('login'))
                 else:
                     server = servers(server_name)
                     db.session.add(server)
                     db.session.commit()
                 
                 flash(f'Connected!', 'info')
-                return redirect(url_for('dashboard'))
+                return redirect(url_for('login'))
             else:
                 flash(f'Server inactive, please retry!', 'info')
                 return redirect(url_for('pair'))
@@ -66,28 +70,71 @@ def pair():
     else:
         if 'server_name' in session:
             flash('Already Connected!', 'info')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('login'))
         
         return render_template('pair.html')
     
     # DONE: if the user is already connected to a pi and in a session, redirect to dashboard page.
     # DONE: do a GET request and get the hostname to connect to.
-    # TODO: then try establish a connection and display it onto the page.
-
-@app.route('/dashboard')
-def dashboard():
-    if 'server_name' in session:
-        return render_template('dashboard.html', server_name=session['server_name']) # pass in server_name to the dashboard.html file.
+    # DONE: then try establish a connection and display it onto the page.
+@app.route("/login", methods=['POST', 'GET']) # in the url if we type localhost:5000/login we are returned with login page.
+def login():
+    # Handle the form submission
+    if request.method == 'POST':
+        usr = request.form['r_usr']
+        pwd = request.form['r_pwd']
+        hash = hashlib.new("SHA256")
+        hash.update(pwd.encode('utf-8'))
+        hash = hash.hexdigest()
+        session['hash']=hash
+        session['usr']=usr
+        json_data = json.dumps({'r_usr':usr, 'r_pwd':hash}) # convertes dictionary to json string.
+        logging.info(f'hashed password: {hash}')
+        logging.info(f'json_data: {json_data}')        
+        try: 
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.connect((session['server_name'], 8000))
+            s.send(json_data.encode('utf-8'))
+        except:
+            flash(f'Could not connect to server for login!', 'info')
+            return redirect(url_for('login'))
+        
+        flash(f'Login Successful!', 'info')
+        return redirect(url_for('dashboard')) # nm is the dictionary key for name of user input.
     else:
+        if 'usr' in session and 'server_name' in session: # if user is already logged in, then redirect to user page.
+            flash('Already Logged In!', 'info')
+            return redirect(url_for('dashboard'))
+        elif 'server_name' not in session:
+            flash('You are not connected to a server!', 'info')
+            return redirect(url_for('pair'))   
+        return render_template("login.html")
+
+@app.route('/dashboard', methods=['POST', 'GET'])
+def dashboard():
+    if 'server_name' in session and 'usr' in session:
+        return render_template('dashboard.html', server_name=session['server_name']) # pass in server_name to the dashboard.html file.
+    elif 'server_name' in session:
+        flash('You are not logged in!', 'info')
+        return render_template('login.html', server_name=session['server_name'])
+    else:    
         flash('You are not connected to a server!', 'info')
         return render_template('pair.html')
 @app.route("/unpair")
-def logout():
+def unpair():
     if "server_name" in session:
         server_name = session["server_name"]
         flash(f"{server_name} has been unpaired!", "info")
     session.pop("server_name", None)
     return redirect(url_for('pair'))
+@app.route('/logout')
+def logout():
+    if 'usr' in session:
+        usr = session['usr']
+        flash(f'You have been logged out, {usr}', 'info')
+    session.pop('usr', None)
+    #session.pop('email', None)
+    return redirect(url_for('login'))
 #################################################
 ########## LOGGING ##############################
 def main() -> None:
@@ -99,7 +146,7 @@ def main() -> None:
     
 #################################################
 ########## ADDING USER ##########################
-def add_user(name, email):
+def add_usr(name, email):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(('osaka', 8000))
     s.send(f"{name}:{email}".encode('utf-8'))
