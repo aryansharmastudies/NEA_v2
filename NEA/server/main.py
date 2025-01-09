@@ -14,16 +14,12 @@ def main() -> None:
         format='%(asctime)s %(levelname)s %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
         filename='basic.log',)
-    
 main()
-    
-#################################################
 ########## IP ADDRESS ############################
 # NOTE - gets the ip. hash the one you don't want.
 ip = l_wlan_ip()
 #ip = w_wlan_ip()
 print(ip)
-##################################################
 ########## DATA BASE #############################
 db_url = 'sqlite:///database/database.db'
 engine = create_engine(db_url)
@@ -48,7 +44,6 @@ class Device(Base):
     mac_addr = Column(String, primary_key=True)
 
 Base.metadata.create_all(engine)
-##################################################
 ########## CRUD ##################################
 def create_user(name, hash):
     user = User(name=name, hash=hash, email='default')
@@ -61,7 +56,6 @@ def create_device(user_id, name, mac_addr): # NOTE: user_id will be passed in by
     session.add(device)
     session.commit()
 #create_device(1,'osaka', '123.456.789')
-##################################################
 ########## SOCKETS ###############################
 # s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # print(socket.gethostname())
@@ -77,7 +71,6 @@ def create_device(user_id, name, mac_addr): # NOTE: user_id will be passed in by
 #     print(f'closing connection with {addr}')
 #     clientsocket.close()
 #     # TODO store info in db
-##################################################
 
 def handle_client_message(message):
     try:

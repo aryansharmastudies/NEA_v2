@@ -1659,3 +1659,28 @@ WHERE servers.name = ?
 2025-01-08 23:02:17 INFO json_data: {"action": "add_user", "r_user": "yokohama", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
 2025-01-08 23:02:17 INFO 127.0.0.1 - - [08/Jan/2025 23:02:17] "[32mPOST /register HTTP/1.1[0m" 302 -
 2025-01-08 23:02:17 INFO 127.0.0.1 - - [08/Jan/2025 23:02:17] "GET /dashboard HTTP/1.1" 200 -
+2025-01-09 06:39:13 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-09 06:39:13 INFO [33mPress CTRL+C to quit[0m
+2025-01-09 06:39:13 INFO  * Restarting with watchdog (windowsapi)
+2025-01-09 06:39:14 WARNING  * Debugger is active!
+2025-01-09 06:39:14 INFO  * Debugger PIN: 704-536-889
+2025-01-09 06:39:29 INFO 127.0.0.1 - - [09/Jan/2025 06:39:29] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-09 06:39:34 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\unicode_escape.py', reloading
+2025-01-09 06:39:34 INFO 127.0.0.1 - - [09/Jan/2025 06:39:34] "GET /pair HTTP/1.1" 200 -
+2025-01-09 06:39:35 INFO  * Restarting with watchdog (windowsapi)
+2025-01-09 06:39:35 WARNING  * Debugger is active!
+2025-01-09 06:39:35 INFO  * Debugger PIN: 704-536-889
+2025-01-09 06:39:52 INFO server_name: kyoto
+2025-01-09 06:39:52 INFO ping sent: {"action": "ping"}
+2025-01-09 06:39:52 INFO status: pong
+2025-01-09 06:39:52 INFO found_server: <servers kyoto>
+2025-01-09 06:39:52 INFO 127.0.0.1 - - [09/Jan/2025 06:39:52] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-09 06:39:52 INFO 127.0.0.1 - - [09/Jan/2025 06:39:52] "GET /login HTTP/1.1" 200 -
+2025-01-09 06:40:40 INFO 127.0.0.1 - - [09/Jan/2025 06:40:40] "GET /login HTTP/1.1" 200 -
+2025-01-09 06:40:41 INFO 127.0.0.1 - - [09/Jan/2025 06:40:41] "GET /register HTTP/1.1" 200 -
+2025-01-09 06:40:52 INFO 127.0.0.1 - - [09/Jan/2025 06:40:52] "GET /login HTTP/1.1" 200 -
+2025-01-09 06:41:08 INFO 127.0.0.1 - - [09/Jan/2025 06:41:08] "GET /register HTTP/1.1" 200 -
+2025-01-09 06:41:27 INFO 127.0.0.1 - - [09/Jan/2025 06:41:27] "GET /register HTTP/1.1" 200 -
+2025-01-09 06:41:28 INFO 127.0.0.1 - - [09/Jan/2025 06:41:28] "GET /login HTTP/1.1" 200 -
+2025-01-09 06:41:29 INFO 127.0.0.1 - - [09/Jan/2025 06:41:29] "GET /register HTTP/1.1" 200 -
