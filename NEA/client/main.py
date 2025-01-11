@@ -11,20 +11,23 @@ import json
 import hashlib
 ########## NOTES ################################
 # NOTE: session stores: server_name, user, email, (not password!),
-
-#################################################
 ########## IP ADDRESS ###########################
 # NOTE - gets the ip. hash the one you don't want.
-#ip = l_wlan_ip()
-ip = w_wlan_ip()
-#################################################
+ip = l_wlan_ip()
+#ip = w_wlan_ip()
+########## LOGGING ##############################
+def main() -> None:
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format="%(asctime)s %(levelname)s %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+        filename="basic.log",)
 ########## FLASK ################################
 app = Flask(__name__)
 app.secret_key = "hello"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.sqlite3'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.permanent_session_lifetime = timedelta(days=30) # session will last for 30 days.
-#################################################
 ########## DATA BASE ############################
 db = SQLAlchemy(app)
 
@@ -33,7 +36,6 @@ class servers(db.Model):
 
     def __init__(self, name):
         self.name = name
-#################################################
 ########## WEBSITE ##############################
 @app.route('/pair', methods=['POST','GET'])
 def pair():
@@ -126,9 +128,7 @@ def register():
         logging.info(f'hashed password: {hash}')
         logging.info(f'json_data: {json_data}')
         try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((session['server_name'], 8000))
-            s.send(json_data.encode('utf-8'))
+            send(json_data)
         except:
             flash(f'Could not connect to server for register!', 'info')
             return redirect(url_for('register'))
@@ -145,7 +145,30 @@ def register():
 
 @app.route('/dashboard', methods=['POST', 'GET'])
 def dashboard():
-    if 'server_name' in session and 'user' in session:
+    if request.method == 'POST':
+        action = request.form.get('action')
+        if not action:
+            return jsonify({"error": "Action type not provided"}), 400
+
+        if action == "add_folder":
+            folder_name = request.form.get('folder_name')
+            # Perform logic to add a folder
+            return jsonify({"message": f"Folder '{folder_name}' added successfully!"})
+
+        elif action == "register_device":
+            device_name = request.form.get('device_name')
+            json_data = json.dumps({'action': 'add_device','r_dev_name':device_name})
+            return jsonify({"message": f"Device '{device_name}' registered successfully!"})
+
+        elif action == "join_group":
+            group_name = request.form.get('group_name')
+            # Perform logic to join a group
+            return jsonify({"message": f"Joined group '{group_name}' successfully!"})
+
+        else:
+            return jsonify({"error": "Unknown action type"}), 400
+
+    elif 'server_name' in session and 'user' in session:
         return render_template('dashboard.html', server_name=session['server_name']) # pass in server_name to the dashboard.html file.
     elif 'server_name' in session:
         flash('You are not logged in!', 'info')
@@ -168,22 +191,21 @@ def logout():
     session.pop('user', None)
     #session.pop('email', None)
     return redirect(url_for('login'))
-#################################################
-########## LOGGING ##############################
-def main() -> None:
-    logging.basicConfig(
-        level=logging.DEBUG,
-        format="%(asctime)s %(levelname)s %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S",
-        filename="basic.log",)
-    
-#################################################
+
+########## SEND #################################
+def send(json_data):
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((session['server_name'], 8000))
+        s.send(json_data.encode('utf-8'))
+
 ########## ADDING USER ##########################
+# NOTE could use this function rather then coding add_user in the login and register functions.
 def add_user(name, email):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(('osaka', 8000))
     s.send(f"{name}:{email}".encode('utf-8'))
-#################################################
+
+########## MAIN #################################
 if __name__ == "__main__":
     main()
     with app.app_context():

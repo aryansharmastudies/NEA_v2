@@ -97,7 +97,16 @@ ifconfig
 **** json is valid javascript so use 'JSON.parse()' to convert it to javascript object.
 *** [[https://www.youtube.com/watch?v=iiADhChRriM&t=15s][How To Use JSON In Python]]
 **** convert json string to python dict.
+- import json
 - json.loads(json_string) @@comment: notice the 's' in .loads which signifies loading a json_string@@
+**** convert py dict. to json string
+- import json
+- data['test']=True
+- new_json = json.dumps(data) @@comment: notice the 's' in dumps signifying its creating a json_string@@
+- OR new_json = json.dumps(data, indent=4) @@comment: indents it with 4 spaces(eqiv. to tab indentation)@@
+** Hashing
+*** Hashlib Library
+-
 * documentation
 ** KILL API to get public IP address for server using smth like myip.is @@comment:can just use commands in cmd/terminal to access the wlan ip.
 
@@ -111,8 +120,13 @@ ifconfig
 *** KILL make it so that pi and client can see eachother and exchange ip_addr.
 *** KILL now, make it so that device can send data to pi.
 *** TODO make device send SQL commands to register user
-**** TODO edit frontend to take in name and email
-**** TODO edit backend to use post and send details to server
-**** TODO edit server, to take details and craete new user
+**** DONE edit frontend to take in name and email
+**** DONE edit backend to use post and send details to server
+**** DONE edit server, to take details and craete new user
 **** TODO if its first used - make them admin
 *** TODO register their device(with mac_addr) into pi's db
+**** TODO add option in dashboard for device name to enter
+**** TODO if the user's device is already authenticated. dont show it.
+
+
+IDEA whilst registration, should uer be allowed to enter the amount of storage they require/need/no requirement?

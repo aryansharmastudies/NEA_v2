@@ -1684,3 +1684,90 @@ WHERE servers.name = ?
 2025-01-09 06:41:27 INFO 127.0.0.1 - - [09/Jan/2025 06:41:27] "GET /register HTTP/1.1" 200 -
 2025-01-09 06:41:28 INFO 127.0.0.1 - - [09/Jan/2025 06:41:28] "GET /login HTTP/1.1" 200 -
 2025-01-09 06:41:29 INFO 127.0.0.1 - - [09/Jan/2025 06:41:29] "GET /register HTTP/1.1" 200 -
+2025-01-10 08:52:50 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-10 08:52:50 INFO [33mPress CTRL+C to quit[0m
+2025-01-10 08:52:50 INFO  * Restarting with stat
+2025-01-10 08:52:51 WARNING  * Debugger is active!
+2025-01-10 08:52:51 INFO  * Debugger PIN: 138-614-060
+2025-01-10 08:53:08 INFO 127.0.0.1 - - [10/Jan/2025 08:53:08] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-10 08:53:11 INFO 127.0.0.1 - - [10/Jan/2025 08:53:11] "GET /pair HTTP/1.1" 200 -
+2025-01-10 08:53:40 INFO server_name: 10.195.171.63
+2025-01-10 08:53:40 INFO ping sent: {"action": "ping"}
+2025-01-10 08:53:40 INFO status: pong
+2025-01-10 08:53:40 INFO found_server: <servers 10.195.171.63>
+2025-01-10 08:53:40 INFO 127.0.0.1 - - [10/Jan/2025 08:53:40] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-10 08:53:40 INFO 127.0.0.1 - - [10/Jan/2025 08:53:40] "GET /login HTTP/1.1" 200 -
+2025-01-10 09:23:45 INFO 127.0.0.1 - - [10/Jan/2025 09:23:45] "GET /login HTTP/1.1" 200 -
+2025-01-10 09:24:09 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-10 09:24:09 INFO json_data: {"action": "login", "r_user": "shibuya", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-10 09:24:09 INFO 127.0.0.1 - - [10/Jan/2025 09:24:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-10 09:24:10 INFO 127.0.0.1 - - [10/Jan/2025 09:24:10] "GET /dashboard HTTP/1.1" 200 -
+2025-01-10 09:24:10 INFO 127.0.0.1 - - [10/Jan/2025 09:24:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-10 09:36:26 INFO  * Detected change in '/home/kyoto/Desktop/NEA_v2/NEA/client/main.py', reloading
+2025-01-10 09:36:26 INFO  * Restarting with stat
+2025-01-10 09:36:27 WARNING  * Debugger is active!
+2025-01-10 09:36:27 INFO  * Debugger PIN: 138-614-060
+2025-01-10 09:36:31 INFO 127.0.0.1 - - [10/Jan/2025 09:36:31] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-10 09:36:31 INFO 127.0.0.1 - - [10/Jan/2025 09:36:31] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:36:31 INFO 127.0.0.1 - - [10/Jan/2025 09:36:31] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-10 09:36:31 INFO 127.0.0.1 - - [10/Jan/2025 09:36:31] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-01-10 09:36:31 INFO 127.0.0.1 - - [10/Jan/2025 09:36:31] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:36:33 INFO 127.0.0.1 - - [10/Jan/2025 09:36:33] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-10 09:36:33 INFO 127.0.0.1 - - [10/Jan/2025 09:36:33] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:36:33 INFO 127.0.0.1 - - [10/Jan/2025 09:36:33] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-10 09:36:34 INFO 127.0.0.1 - - [10/Jan/2025 09:36:34] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-01-10 09:36:34 INFO 127.0.0.1 - - [10/Jan/2025 09:36:34] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:36:44 INFO server_name: 10.195.171.63
+2025-01-10 09:36:44 INFO ping sent: {"action": "ping"}
+2025-01-10 09:36:44 INFO status: pong
+2025-01-10 09:36:44 INFO found_server: <servers 10.195.171.63>
+2025-01-10 09:36:44 INFO 127.0.0.1 - - [10/Jan/2025 09:36:44] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-10 09:36:44 INFO 127.0.0.1 - - [10/Jan/2025 09:36:44] "GET /login HTTP/1.1" 200 -
+2025-01-10 09:36:47 INFO 127.0.0.1 - - [10/Jan/2025 09:36:47] "GET /register HTTP/1.1" 200 -
+2025-01-10 09:36:57 INFO hashed password: a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e
+2025-01-10 09:36:57 INFO json_data: {"action": "add_user", "r_user": "jiggly", "hash": "a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e"}
+2025-01-10 09:36:57 INFO 127.0.0.1 - - [10/Jan/2025 09:36:57] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-01-10 09:36:57 INFO 127.0.0.1 - - [10/Jan/2025 09:36:57] "GET /dashboard HTTP/1.1" 200 -
+2025-01-10 09:39:02 INFO 127.0.0.1 - - [10/Jan/2025 09:39:02] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-10 09:39:03 INFO 127.0.0.1 - - [10/Jan/2025 09:39:03] "GET /login HTTP/1.1" 200 -
+2025-01-10 09:39:03 INFO 127.0.0.1 - - [10/Jan/2025 09:39:03] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-10 09:39:03 INFO 127.0.0.1 - - [10/Jan/2025 09:39:03] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:39:03 INFO 127.0.0.1 - - [10/Jan/2025 09:39:03] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-10 09:39:03 INFO 127.0.0.1 - - [10/Jan/2025 09:39:03] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:41:51 INFO 127.0.0.1 - - [10/Jan/2025 09:41:51] "GET /dashboard HTTP/1.1" 200 -
+2025-01-10 09:41:53 INFO 127.0.0.1 - - [10/Jan/2025 09:41:53] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-01-10 09:41:53 INFO 127.0.0.1 - - [10/Jan/2025 09:41:53] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:41:54 INFO 127.0.0.1 - - [10/Jan/2025 09:41:54] "[32mGET /register HTTP/1.1[0m" 302 -
+2025-01-10 09:41:54 INFO 127.0.0.1 - - [10/Jan/2025 09:41:54] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:41:55 INFO 127.0.0.1 - - [10/Jan/2025 09:41:55] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:41:56 INFO 127.0.0.1 - - [10/Jan/2025 09:41:56] "[32mGET /register HTTP/1.1[0m" 302 -
+2025-01-10 09:41:56 INFO 127.0.0.1 - - [10/Jan/2025 09:41:56] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:41:57 INFO 127.0.0.1 - - [10/Jan/2025 09:41:57] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-10 09:41:57 INFO 127.0.0.1 - - [10/Jan/2025 09:41:57] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:41:57 INFO 127.0.0.1 - - [10/Jan/2025 09:41:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-10 09:41:57 INFO 127.0.0.1 - - [10/Jan/2025 09:41:57] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-01-10 09:41:58 INFO 127.0.0.1 - - [10/Jan/2025 09:41:58] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:41:59 INFO 127.0.0.1 - - [10/Jan/2025 09:41:59] "GET /pair HTTP/1.1" 200 -
+2025-01-10 09:42:02 INFO server_name: 10.195.171.63
+2025-01-10 09:42:02 INFO ping sent: {"action": "ping"}
+2025-01-10 09:42:02 INFO status: pong
+2025-01-10 09:42:02 INFO found_server: <servers 10.195.171.63>
+2025-01-10 09:42:02 INFO 127.0.0.1 - - [10/Jan/2025 09:42:02] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-10 09:42:02 INFO 127.0.0.1 - - [10/Jan/2025 09:42:02] "GET /login HTTP/1.1" 200 -
+2025-01-10 09:42:06 INFO hashed password: a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e
+2025-01-10 09:42:06 INFO json_data: {"action": "login", "r_user": "jiggly", "hash": "a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e"}
+2025-01-10 09:42:06 INFO 127.0.0.1 - - [10/Jan/2025 09:42:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-10 09:42:06 INFO 127.0.0.1 - - [10/Jan/2025 09:42:06] "GET /dashboard HTTP/1.1" 200 -
+2025-01-10 09:42:42 INFO 127.0.0.1 - - [10/Jan/2025 09:42:42] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-10 09:42:42 INFO 127.0.0.1 - - [10/Jan/2025 09:42:42] "GET /login HTTP/1.1" 200 -
+2025-01-10 09:42:42 INFO 127.0.0.1 - - [10/Jan/2025 09:42:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-10 09:42:43 INFO 127.0.0.1 - - [10/Jan/2025 09:42:43] "GET /register HTTP/1.1" 200 -
+2025-01-10 09:42:50 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-10 09:42:50 INFO json_data: {"action": "add_user", "r_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-10 09:42:50 INFO 127.0.0.1 - - [10/Jan/2025 09:42:50] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-01-10 09:42:50 INFO 127.0.0.1 - - [10/Jan/2025 09:42:50] "GET /dashboard HTTP/1.1" 200 -
+2025-01-10 09:45:25 INFO  * Detected change in '/home/kyoto/Desktop/NEA_v2/NEA/client/main.py', reloading
+2025-01-10 09:45:26 INFO  * Restarting with stat
+2025-01-10 09:45:26 WARNING  * Debugger is active!
+2025-01-10 09:45:26 INFO  * Debugger PIN: 138-614-060
