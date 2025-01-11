@@ -47,15 +47,32 @@ Base.metadata.create_all(engine)
 ########## CRUD ##################################
 def create_user(name, hash):
     user = User(name=name, hash=hash, email='default')
+    if session.query(User).filter_by(name=name).first():
+        logging.info(f'User: {name} already exists')
     logging.info(f'Creating user: {name} with hash: {hash}')
     session.add(user)
     session.commit()
 #create_user('Aryan', 'aryanbvn@gmail.com')
 def create_device(user_id, name, mac_addr): # NOTE: user_id will be passed in by the user, when adding a new device.
     device = Device(user_id=user_id, name=name, mac_addr=mac_addr)
-    logging.info(f'Creating device: {name} with mac address: {mac_addr}')
     session.add(device)
     session.commit()
+#create_device(1,'osaka', '123.456.789')
+########## SOCKETS ###############################
+# s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# print(socket.gethostname())
+# s.bind((ip, 8000))
+# s.listen(10)
+# while True:
+#     clientsocket, addr = s.accept()
+#     print(f'connected with {addr}')
+#     message = clientsocket.recv(1024).decode('utf-8')
+#     if message == 'ping':
+#         clientsocket.send(f'active'.encode('utf-8'))
+#     print(message)
+#     print(f'closing connection with {addr}')
+#     clientsocket.close()
+#     # TODO store info in db
 
 def handle_client_message(message):
     try:
@@ -69,19 +86,18 @@ def handle_client_message(message):
             username = data['r_user']
             password_hash = data['hash']
             create_user(username, password_hash)
-
             logging.info(f'Adding user: {username} with hash: {password_hash}')
             # Add user logic here
 
-        elif action == 'login':  #NOTE: GET IT WORKING< WITH SAME VARIABLE NAMES!!!!
+        elif action == 'login':
             username = data['r_user']
             password_hash = data['hash']
             print(f'Adding user: {username} with hash: {password_hash}')
         
         elif action == 'add_device':
-            device_id = data['device_id']
-            username = data['username']
-            print(f'Adding device {device_id} for user {username}')
+            mac_addr = data['mac_addr']
+            device_name = data['r_dev_name']
+            print(f'Adding device {device_name} for user {username}')
             # Add device logic here
 
         elif action == 'send_file':
@@ -107,6 +123,7 @@ def handle_client_message(message):
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((ip, 8000))
 s.listen(10)
+
 
 while True:
     clientsocket, address = s.accept()
