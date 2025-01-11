@@ -13,8 +13,8 @@ import hashlib
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
 # NOTE - gets the ip. hash the one you don't want.
-ip = l_wlan_ip()
-#ip = w_wlan_ip()
+#ip = l_wlan_ip()
+ip = w_wlan_ip()
 ########## LOGGING ##############################
 def main() -> None:
     logging.basicConfig(
@@ -73,7 +73,7 @@ def pair():
             return redirect(url_for('pair'))
     else:
         if 'server_name' in session:
-            flash('Already Connected!', 'info')
+            flash(f'Already Connected with {session['server_name']}!', 'info')
             return redirect(url_for('login'))
         
         return render_template('pair.html')
@@ -107,7 +107,7 @@ def login():
         return redirect(url_for('dashboard')) # nm is the dictionary key for name of user input.
     else:
         if 'user' in session and 'server_name' in session: # if user is already logged in, then redirect to user page.
-            flash('Already Logged In!', 'info')
+            flash(f'Already Logged In {session['user']}!', 'info')
             return redirect(url_for('dashboard'))
         elif 'server_name' not in session:
             flash('You are not connected to a server!', 'info')
@@ -150,15 +150,20 @@ def dashboard():
         if not action:
             return jsonify({"error": "Action type not provided"}), 400
 
-        if action == "add_folder":
-            folder_name = request.form.get('folder_name')
-            # Perform logic to add a folder
-            return jsonify({"message": f"Folder '{folder_name}' added successfully!"})
-
-        elif action == "register_device":
+        if action == 'add_device':
             device_name = request.form.get('device_name')
             json_data = json.dumps({'action': 'add_device','r_dev_name':device_name})
-            return jsonify({"message": f"Device '{device_name}' registered successfully!"})
+            status = send(json_data)
+            if status == 200:
+                flash(f"Device '{device_name}' added successfully!", 'info')
+                return redirect(url_for('dashboard', server_name=session['server_name'])) # render_template('dashboard.html', server_name=session['server_name'])
+            else: 
+                flash(f"503 Service Unavailable", 'error')
+                return redirect(url_for('dashboard', server_name=session['server_name']))        
+        elif action == 'add_folder':
+            folder_name = request.form.get('folder_name')
+            # Perform logic to add a folder
+            return jsonify({'message': f"Folder '{folder_name}' added successfully!"})
 
         elif action == "join_group":
             group_name = request.form.get('group_name')
@@ -176,6 +181,7 @@ def dashboard():
     else:    
         flash('You are not connected to a server!', 'info')
         return render_template('pair.html')
+    
 @app.route("/unpair")
 def unpair():
     if "server_name" in session:
@@ -195,9 +201,13 @@ def logout():
 ########## SEND #################################
 def send(json_data):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((session['server_name'], 8000))
-        s.send(json_data.encode('utf-8'))
-
+        try: 
+            s.connect((session['server_name'], 8000))
+            s.send(json_data.encode('utf-8'))
+            return 200
+        except: 
+            return 503    
+        
 ########## ADDING USER ##########################
 # NOTE could use this function rather then coding add_user in the login and register functions.
 def add_user(name, email):
