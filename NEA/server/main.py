@@ -53,24 +53,9 @@ def create_user(name, hash):
 #create_user('Aryan', 'aryanbvn@gmail.com')
 def create_device(user_id, name, mac_addr): # NOTE: user_id will be passed in by the user, when adding a new device.
     device = Device(user_id=user_id, name=name, mac_addr=mac_addr)
+    logging.info(f'Creating device: {name} with mac address: {mac_addr}')
     session.add(device)
     session.commit()
-#create_device(1,'osaka', '123.456.789')
-########## SOCKETS ###############################
-# s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# print(socket.gethostname())
-# s.bind((ip, 8000))
-# s.listen(10)
-# while True:
-#     clientsocket, addr = s.accept()
-#     print(f'connected with {addr}')
-#     message = clientsocket.recv(1024).decode('utf-8')
-#     if message == 'ping':
-#         clientsocket.send(f'active'.encode('utf-8'))
-#     print(message)
-#     print(f'closing connection with {addr}')
-#     clientsocket.close()
-#     # TODO store info in db
 
 def handle_client_message(message):
     try:
@@ -88,7 +73,7 @@ def handle_client_message(message):
             logging.info(f'Adding user: {username} with hash: {password_hash}')
             # Add user logic here
 
-        elif action == 'login':
+        elif action == 'login':  #NOTE: GET IT WORKING< WITH SAME VARIABLE NAMES!!!!
             username = data['r_user']
             password_hash = data['hash']
             print(f'Adding user: {username} with hash: {password_hash}')
