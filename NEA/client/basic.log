@@ -2460,3 +2460,19 @@ WHERE servers.name = ?
 2025-01-12 12:54:14 INFO  * Restarting with watchdog (windowsapi)
 2025-01-12 12:54:15 WARNING  * Debugger is active!
 2025-01-12 12:54:15 INFO  * Debugger PIN: 598-432-408
+2025-01-12 13:20:58 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-12 13:20:58 INFO [33mPress CTRL+C to quit[0m
+2025-01-12 13:20:58 INFO  * Restarting with watchdog (windowsapi)
+2025-01-12 13:20:59 WARNING  * Debugger is active!
+2025-01-12 13:20:59 INFO  * Debugger PIN: 598-432-408
+2025-01-12 13:26:48 INFO  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2288.0_x64__qbz5n2kfra8p0\\Lib\\argparse.py', reloading
+2025-01-12 13:26:48 INFO  * Restarting with watchdog (windowsapi)
+2025-01-12 13:26:49 WARNING  * Debugger is active!
+2025-01-12 13:26:49 INFO  * Debugger PIN: 598-432-408
+2025-01-12 14:18:23 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-12 14:18:23 INFO [33mPress CTRL+C to quit[0m
+2025-01-12 14:18:23 INFO  * Restarting with stat
+2025-01-12 14:18:24 WARNING  * Debugger is active!
+2025-01-12 14:18:24 INFO  * Debugger PIN: 278-132-539
