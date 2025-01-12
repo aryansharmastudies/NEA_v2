@@ -380,3 +380,62 @@
 2025-01-12 19:36:54 INFO Comparing: asdasd with Mac_addr: 4681952839112 WITH Device: studywms_pc with Mac_addr: 4681952839112
 2025-01-12 19:36:54 INFO Device Mac_addr: 4681952839112 already exists for User: studywm
 2025-01-12 19:36:54 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-01-12 19:58:52 INFO Connection from ('192.168.1.75', 59283) has been established!
+2025-01-12 19:58:52 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 19:58:52 INFO Received ping from 192.168.1.75
+2025-01-12 19:58:52 INFO Pong sent to 192.168.1.75
+2025-01-12 19:58:56 INFO Connection from ('192.168.1.75', 59286) has been established!
+2025-01-12 19:58:56 INFO message: {"action": "login", "l_user": "studywm", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 19:58:56 INFO User: studywm has logged in
+2025-01-12 19:58:56 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-12 20:08:05 INFO Connection from ('192.168.1.75', 59450) has been established!
+2025-01-12 20:08:05 INFO message: {"action": "login", "l_user": "pranav", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 20:08:05 INFO User: pranav has logged in
+2025-01-12 20:08:05 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-12 20:09:29 INFO Connection from ('192.168.1.75', 59481) has been established!
+2025-01-12 20:09:29 INFO message: {"action": "add_device", "user": "pranav", "r_dev_name": "pranavs_arduino", "mac_addr": 4681952839112}
+2025-01-12 20:09:29 INFO User_ID: 13
+2025-01-12 20:09:29 INFO Adding device: pranavs_arduino with Mac_addr: 4681952839112 for User: pranav with User_ID: 13
+2025-01-12 20:09:29 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-01-12 20:14:10 INFO Connection from ('192.168.1.75', 59535) has been established!
+2025-01-12 20:14:10 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "krishiv_the_rizzler", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 20:14:10 INFO Creating user: krishiv_the_rizzler with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 20:14:10 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-01-12 20:15:03 INFO Connection from ('192.168.1.75', 59559) has been established!
+2025-01-12 20:15:03 INFO message: {"action": "add_device", "user": "krishiv_the_rizzler", "r_dev_name": "krishivs iphone", "mac_addr": 4681952839112}
+2025-01-12 20:15:03 INFO User_ID: 27
+2025-01-12 20:15:03 INFO Adding device: krishivs iphone with Mac_addr: 4681952839112 for User: krishiv_the_rizzler with User_ID: 27
+2025-01-12 20:15:03 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-01-12 20:17:46 INFO Connection from ('192.168.1.75', 59606) has been established!
+2025-01-12 20:17:46 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "aqib", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 20:17:46 INFO Creating user: aqib with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 20:17:46 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-01-12 20:17:56 INFO Connection from ('192.168.1.75', 59611) has been established!
+2025-01-12 20:17:56 INFO message: {"action": "add_device", "user": "aqib", "r_dev_name": "aqibs_gaming_pc", "mac_addr": 4681952839112}
+2025-01-12 20:17:56 INFO User_ID: 28
+2025-01-12 20:17:56 INFO Adding device: aqibs_gaming_pc with Mac_addr: 4681952839112 for User: aqib with User_ID: 28
+2025-01-12 20:17:56 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-01-12 20:53:38 INFO Connection from ('192.168.1.75', 60264) has been established!
+2025-01-12 20:53:38 INFO message: {"action": "add_device", "user": "aqib", "r_dev_name": "", "mac_addr": 4681952839112}
+2025-01-12 20:53:38 INFO User_ID: 28
+2025-01-12 20:53:38 INFO Comparing:  with Mac_addr: 4681952839112 WITH Device: aqibs_gaming_pc with Mac_addr: 4681952839112
+2025-01-12 20:53:38 INFO Device Mac_addr: 4681952839112 already exists for User: aqib
+2025-01-12 20:53:38 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-01-12 20:54:12 INFO Connection from ('192.168.1.75', 60310) has been established!
+2025-01-12 20:54:12 INFO message: {"action": "add_device", "user": "aqib", "r_dev_name": "", "mac_addr": 4681952839112}
+2025-01-12 20:54:12 INFO User_ID: 28
+2025-01-12 20:54:12 INFO Comparing:  with Mac_addr: 4681952839112 WITH Device: aqibs_gaming_pc with Mac_addr: 4681952839112
+2025-01-12 20:54:12 INFO Device Mac_addr: 4681952839112 already exists for User: aqib
+2025-01-12 20:54:12 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-01-12 20:56:26 INFO Connection from ('192.168.1.75', 60344) has been established!
+2025-01-12 20:56:26 INFO message: {"action": "add_device", "user": "aqib", "r_dev_name": "henry", "mac_addr": 4681952839112}
+2025-01-12 20:56:26 INFO User_ID: 28
+2025-01-12 20:56:26 INFO Comparing: henry with Mac_addr: 4681952839112 WITH Device: aqibs_gaming_pc with Mac_addr: 4681952839112
+2025-01-12 20:56:26 INFO Device Mac_addr: 4681952839112 already exists for User: aqib
+2025-01-12 20:56:26 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-01-12 21:00:20 INFO Connection from ('192.168.1.75', 60448) has been established!
+2025-01-12 21:00:20 INFO message: {"action": "add_device", "user": "aqib", "r_dev_name": "asdasdasd", "mac_addr": 4681952839112}
+2025-01-12 21:00:20 INFO User_ID: 28
+2025-01-12 21:00:20 INFO Comparing: asdasdasd with Mac_addr: 4681952839112 WITH Device: aqibs_gaming_pc with Mac_addr: 4681952839112
+2025-01-12 21:00:20 INFO Device Mac_addr: 4681952839112 already exists for User: aqib
+2025-01-12 21:00:20 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}

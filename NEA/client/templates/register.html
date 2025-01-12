@@ -10,7 +10,13 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-    <h1>register</h1>
+<h1>register</h1>
+<img src="{{ url_for('static', filename='images/initial_d01.jpg') }}" class="image" />
+<style>
+    .image {
+        width: 200px;
+    }
+</style>
 <form action="#" method="POST"> <!-- action is the URL that the form will send the data to: '#' means it will redirect to the same page -->
     <p>Username:</p>
     <p><input type="text" name="r_user" /></p>
@@ -18,4 +24,5 @@
     <p><input type="password" name="r_pwd" /></p>
     <p><input type="submit" value="submit" /></p>
 </form>
+<a href="http://127.0.0.1:5000/login" target="_self">login here</a>
 {% endblock %}

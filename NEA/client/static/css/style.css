@@ -1,0 +1,53 @@
+.modal {
+    padding: 1em;
+    max-width: 50ch;
+    border: 0;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+  
+    & > * {
+      margin: 0 0 0.5rem 0;
+    }
+  }
+  
+  .modal::backdrop {
+    background: rgb(0 0 0 / 0.4);
+  }
+  
+  /* extra styling */
+  
+  body {
+    min-height: 100vh;
+    margin: 2rem;
+    font-family: system-ui;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--gray-8);
+    background-image: url('https://images.unsplash.com/photo-1644242629712-943ae5c8c4f3?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0Njc1MjQxNA&ixlib=rb-1.2.1&q=85');
+    background-size: cover;
+  }
+  
+  h1 em {
+    color: var(--cyan-9);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+  
+  .button {
+    border: 0;
+    cursor: pointer;
+    background: var(--gray-8);
+    color: var(--gray-2);
+    font-weight: 700;
+    padding: var(--size-2) var(--size-4);
+  }
+  
+  .button:hover,
+  .button:focus {
+    background: var(--cyan-9);
+  }
+  
+  form {
+    display: grid;
+    gap: 1em;
+  }
+  

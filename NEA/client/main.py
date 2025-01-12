@@ -9,6 +9,8 @@ import socket
 import os
 import json
 import hashlib
+import random
+import string
 ########## NOTES ################################
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
@@ -167,7 +169,7 @@ def dashboard():
 
         if action == 'add_device':
             username = session['user']
-            device_name = request.form.get('device_name')
+            device_name = request.form.get('device_name').replace(" ", "_")
             mac_addr = get_mac()
             json_data = json.dumps({'action': 'add_device','user':username ,'r_dev_name':device_name, 'mac_addr':mac_addr})
             status, status_msg = send(json_data)
@@ -195,7 +197,8 @@ def dashboard():
             return jsonify({"error": "Unknown action type"}), 400
 
     elif 'server_name' in session and 'user' in session:
-        return render_template('dashboard.html', server_name=session['server_name'], user=session['user']) # pass in server_name to the dashboard.html file.
+        random_folder_id = get_random_id()
+        return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id) # pass in server_name to the dashboard.html file.
     elif 'server_name' in session:
         flash('You are not logged in!', 'info')
         return render_template('login.html')
@@ -261,6 +264,9 @@ def add_user(name, email):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(('osaka', 8000))
     s.send(f"{name}:{email}".encode('utf-8'))
+
+def get_random_id():
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=10))
 
 ########## MAIN #################################
 if __name__ == "__main__":
