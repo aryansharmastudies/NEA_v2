@@ -2458,3 +2458,5 @@ WHERE servers.name = ?
 2025-01-12 12:54:14 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\get_wip.py', reloading
 2025-01-12 12:54:14 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\get_wip.py', reloading
 2025-01-12 12:54:14 INFO  * Restarting with watchdog (windowsapi)
+2025-01-12 12:54:15 WARNING  * Debugger is active!
+2025-01-12 12:54:15 INFO  * Debugger PIN: 598-432-408
