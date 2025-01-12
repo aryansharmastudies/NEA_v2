@@ -2347,3 +2347,5 @@ WHERE servers.name = ?
 2025-01-12 12:14:12 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
 2025-01-12 12:14:12 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
 2025-01-12 12:14:12 INFO  * Restarting with watchdog (windowsapi)
+2025-01-12 12:14:13 WARNING  * Debugger is active!
+2025-01-12 12:14:13 INFO  * Debugger PIN: 598-432-408
