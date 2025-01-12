@@ -13,8 +13,8 @@ import hashlib
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
 # NOTE - gets the ip. hash the one you don't want.
-ip = l_wlan_ip()
-#ip = w_wlan_ip()
+#ip = l_wlan_ip()
+ip = w_wlan_ip()
 ########## LOGGING ##############################
 def main() -> None:
     logging.basicConfig(
@@ -126,17 +126,18 @@ def register():
         json_data = json.dumps({'action': 'register_user', 'ip_addr':ip, 'r_user':user, 'hash':hash})
         logging.info(f'hashed password: {hash}')
         logging.info(f'json_data: {json_data}')
-        
+
         status = send(json_data)
-        if status == 201:
+        if status == '201':
             flash(f'Registered!', 'info')
             session['hash']=hash
             session['user']=user
+            logging.info(f'user registered: {user}')
             return redirect(url_for('dashboard'))
-        elif status == 409:
+        elif status == '409':
             flash(f'409: User already exists', 'error')
             return redirect(url_for('register'))
-        elif status == 503:
+        elif status == '503':
             flash(f'503: server offline, please try again', 'error')
             return redirect(url_for('register'))
     else:
@@ -212,16 +213,15 @@ def send(json_data):
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((session['server_name'], 8000))
             s.send(json_data.encode('utf-8'))
-            s.recv(1024).decode('utf-8')
             if s.recv(1024).decode('utf-8') == '201':
                 logging.info(f"201 Data Added")
-                return 201
+                return '201'
             else:    
                 logging.info(f'409 Data Already Exists')
-                return 409
+                return '409'
         except: 
             logging.info(f'503 Server Offline')
-            return 503    
+            return '503'    
         
 ########## ADDING USER ##########################
 # NOTE could use this function rather then coding add_user in the login and register functions.
