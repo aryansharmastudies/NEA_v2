@@ -90,21 +90,29 @@ def login():
         hash = hashlib.new("SHA256")
         hash.update(pwd.encode('utf-8'))
         hash = hash.hexdigest()
-        session['hash']=hash
-        session['user']=user
-        json_data = json.dumps({'action': 'login','r_user':user, 'hash':hash}) # convertes dictionary to json string.
+        json_data = json.dumps({'action': 'login','l_user':user, 'hash':hash}) # convertes dictionary to json string.
         logging.info(f'hashed password: {hash}')
-        logging.info(f'json_data: {json_data}')        
-        try: 
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((session['server_name'], 8000))
-            s.send(json_data.encode('utf-8'))
-        except:
-            flash(f'Could not connect to server for login!', 'info')
+        logging.info(f'json_data: {json_data}')         
+        
+        status, status_msg = send(json_data)
+        if status == '200':
+            session['hash']=hash
+            session['user']=user
+            flash(f'{status}: {status_msg}', 'info')
+            return redirect(url_for('dashboard')) # nm is the dictionary key for name of user input.
+        elif status == '401':
+            flash(f'{status}: {status_msg}', 'error')
+            logging.info(f'401: Unauthorized - Wrong Password - redirecting to login!')
+            return redirect(url_for('login'))
+        elif status == '404':
+            flash(f'{status}: {status_msg}', 'error')
+            logging.info(f'404: User does not exist redirecting to login!')
+            return redirect(url_for('login'))
+        elif status == '503':
+            flash(f'{status}: {status_msg}', 'error')
+            logging.info(f'503: server offline, please try again')
             return redirect(url_for('login'))
         
-        flash(f'Login Successful!', 'info')
-        return redirect(url_for('dashboard')) # nm is the dictionary key for name of user input.
     else:
         if 'user' in session and 'server_name' in session: # if user is already logged in, then redirect to user page.
             flash(f'Already Logged In {session['user']}!', 'info')
@@ -127,21 +135,22 @@ def register():
         logging.info(f'hashed password: {hash}')
         logging.info(f'json_data: {json_data}')
 
-        status = send(json_data)
+        status, status_msg = send(json_data)
         if status == '201':
-            flash(f'Registered!', 'info')
+            flash(f'{status_msg}!', 'info')
             session['hash']=hash
             session['user']=user
             logging.info(f'user registered: {user}')
             return redirect(url_for('dashboard'))
         elif status == '409':
-            flash(f'409: User already exists', 'error')
+            flash(f'{status}: {status_msg}', 'error')
             return redirect(url_for('register'))
         elif status == '503':
-            flash(f'503: server offline, please try again', 'error')
+            flash(f'{status}: {status_msg}', 'error')
             return redirect(url_for('register'))
     else:
         if 'user' in session and 'server_name' in session:
+            logging.info(f'Already Logged In {session['user']} in Server {session['server_name']}!')
             flash('Already Logged In!', 'info')
             return redirect(url_for('dashboard'))
         elif 'server_name' not in session:
@@ -157,15 +166,21 @@ def dashboard():
             return jsonify({"error": "Action type not provided"}), 400
 
         if action == 'add_device':
+            username = session['user']
             device_name = request.form.get('device_name')
-            json_data = json.dumps({'action': 'add_device','r_dev_name':device_name})
-            status = send(json_data)
-            if status == 201:
-                flash(f"Device '{device_name}' added successfully!", 'info')
-                return redirect(url_for('dashboard', server_name=session['server_name'])) # render_template('dashboard.html', server_name=session['server_name'])
-            elif status == 503:
-                flash(f"503: server offline, please try again", 'error')
-                return redirect(url_for('dashboard', server_name=session['server_name']))        
+            mac_addr = get_mac()
+            json_data = json.dumps({'action': 'add_device','user':username ,'r_dev_name':device_name, 'mac_addr':mac_addr})
+            status, status_msg = send(json_data)
+            if status == '201':
+                flash(f"{status}: {status_msg} Device '{device_name}' added successfully!", 'info')
+                return redirect(url_for('dashboard')) # render_template('dashboard.html', server_name=session['server_name'])
+            elif status == '409':
+                flash(f"{status}: {status_msg}", 'error')
+                return redirect(url_for('dashboard'))
+            elif status == '503':
+                flash(f"{status}: {status_msg}", 'error')
+                return redirect(url_for('dashboard'))        
+        
         elif action == 'add_folder':
             folder_name = request.form.get('folder_name')
             # Perform logic to add a folder
@@ -180,10 +195,10 @@ def dashboard():
             return jsonify({"error": "Unknown action type"}), 400
 
     elif 'server_name' in session and 'user' in session:
-        return render_template('dashboard.html', server_name=session['server_name']) # pass in server_name to the dashboard.html file.
+        return render_template('dashboard.html', server_name=session['server_name'], user=session['user']) # pass in server_name to the dashboard.html file.
     elif 'server_name' in session:
         flash('You are not logged in!', 'info')
-        return render_template('login.html', server_name=session['server_name'])
+        return render_template('login.html')
     else:    
         flash('You are not connected to a server!', 'info')
         return render_template('pair.html')
@@ -213,15 +228,32 @@ def send(json_data):
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((session['server_name'], 8000))
             s.send(json_data.encode('utf-8'))
-            if s.recv(1024).decode('utf-8') == '201':
-                logging.info(f"201 Data Added")
-                return '201'
-            else:    
-                logging.info(f'409 Data Already Exists')
-                return '409'
+            json_response = s.recv(1024).decode('utf-8')
+            data = json.loads(json_response)
+            status = data['status']
+            status_msg = data['status_msg']
+            logging.info(f'json_data sent: {json_data}')
+            logging.info(f'server response: {json_response}')
+            if status == '200': # The request is OK (this is the standard response for successful HTTP requests)
+                logging.info(f"200 OK")
+                return status, status_msg
+            elif status == '201': # The request has been fulfilled, and a new resource(user/device/...) is created
+                logging.info(f"201 Added")
+                return status, status_msg
+            elif status == '401':
+                logging.info(f'401 Unauthorized') #  The request was a legal request, but the server is refusing to respond to it. For use when authentication is possible but has failed or not yet been provided
+                return status, status_msg
+            elif status == '404':
+                logging.info(f'404 Not Found') # The requested page/item could not be found but may be available again in the future
+                return status, status_msg
+            elif status == '409':
+                logging.info(f'409 Conflict') # The request could not be completed because of a conflict in the request
+                return status, status_msg
+            else:
+                return '500', 'server error - check return status for CRUD!' 
         except: 
             logging.info(f'503 Server Offline')
-            return '503'    
+            return '503', 'server offline'   
         
 ########## ADDING USER ##########################
 # NOTE could use this function rather then coding add_user in the login and register functions.

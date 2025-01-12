@@ -15,31 +15,53 @@ when we finish exe code.-->
     {% endif %}
 {% endwith %}
 
+<style>
+    .form-container {
+        border: 1px solid #808080; /* Light gray border */
+        border-radius: 8px; /* Rounded corners */
+        padding: 16px; /* Add some padding inside the box */
+        margin-bottom: 16px; /* Add space between the forms */
+        background-color: #f9f9f9; /* Light background color */
+        width: fit-content; /* Adjust width to fit content */
+    }
+    .form-container label {
+        margin-right: 8px; /* Add space between label and input */
+    }
+</style>
+    
+
 <h2>dashboard</h2>
+<p>Welcome {{user}}</p>
 <p>Connected to: {{server_name}}</p>
 
 <!-- Register Device Form -->
+<div class="form-container">
 <form method="POST" action="#">
     <input type="hidden" name="action" value="add_device">
     <label for="device_name">device name:</label>
     <input type="text" id="device_name" name="device_name">
     <button type="submit">add device</button>
 </form>
+</div>
 
 <!-- Add Folder Form -->
+<div class="form-container">
 <form method="POST" action="#">
     <input type="hidden" name="action" value="add_folder">
     <label for="folder_name">folder name:</label>
     <input type="text" id="folder_name" name="folder_name">
     <button type="submit">add folder</button>
 </form>
+</div>
 
 <!-- Join Group Form -->
+<div class="form-container">
 <form method="POST" action="#">
     <input type="hidden" name="action" value="join_group">
     <label for="group_name">group name:</label>
     <input type="text" id="group_name" name="group_name">
     <button type="submit">join group</button>
 </form>
+</div>
 
 {% endblock %}

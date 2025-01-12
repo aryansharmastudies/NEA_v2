@@ -161,3 +161,222 @@
 2025-01-12 12:13:57 INFO Creating user: jiggly_joel with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
 2025-01-12 12:13:57 INFO Adding user: jiggly_joel with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
 2025-01-12 12:13:57 INFO sending <socket.socket fd=7, family=2, type=1, proto=0, laddr=('192.168.1.221', 8000), raddr=('192.168.1.75', 52586)> 201
+2025-01-12 14:21:08 INFO Connection from ('192.168.1.75', 54807) has been established!
+2025-01-12 14:21:08 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 14:21:08 INFO Received ping from 192.168.1.75
+2025-01-12 14:21:47 INFO Connection from ('192.168.1.75', 54822) has been established!
+2025-01-12 14:21:47 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 14:21:47 INFO Received ping from 192.168.1.75
+2025-01-12 14:22:02 INFO Connection from ('192.168.1.75', 54832) has been established!
+2025-01-12 14:22:02 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 14:22:02 INFO User: joel already exists
+2025-01-12 14:22:02 INFO User: joel already exists
+2025-01-12 14:22:20 INFO Connection from ('192.168.1.75', 54835) has been established!
+2025-01-12 14:22:20 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "amzy", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 14:22:20 INFO User: amzy already exists
+2025-01-12 14:22:20 INFO User: amzy already exists
+2025-01-12 14:22:37 INFO Connection from ('192.168.1.75', 54839) has been established!
+2025-01-12 14:22:37 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "shadman", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 14:22:37 INFO Creating user: shadman with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 14:22:37 INFO Adding user: shadman with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 14:22:37 INFO sending <socket.socket fd=7, family=2, type=1, proto=0, laddr=('192.168.1.221', 8000), raddr=('192.168.1.75', 54839)> 201
+2025-01-12 14:23:09 INFO Connection from ('192.168.1.75', 54844) has been established!
+2025-01-12 14:23:09 INFO message: {"action": "add_device", "r_dev_name": "shadmans_pc"}
+2025-01-12 14:31:00 INFO Connection from ('192.168.1.75', 54983) has been established!
+2025-01-12 14:31:00 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 14:31:00 INFO Received ping from 192.168.1.75
+2025-01-12 14:31:15 INFO Connection from ('192.168.1.75', 54987) has been established!
+2025-01-12 14:31:15 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "java", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 14:31:15 INFO Creating user: java with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 14:31:15 INFO Adding user: java with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 14:31:15 INFO sending <socket.socket fd=7, family=2, type=1, proto=0, laddr=('192.168.1.221', 8000), raddr=('192.168.1.75', 54987)> 201
+2025-01-12 14:31:27 INFO Connection from ('192.168.1.75', 54991) has been established!
+2025-01-12 14:31:27 INFO message: {"action": "add_device", "username": "java", "r_dev_name": "tokyo_drift", "mac_addr": 4681952839112}
+2025-01-12 14:31:49 INFO Connection from ('192.168.1.75', 54996) has been established!
+2025-01-12 14:31:49 INFO message: {"action": "add_device", "username": "java", "r_dev_name": "tokyo_drift", "mac_addr": 4681952839112}
+2025-01-12 16:27:13 INFO Connection from ('192.168.1.75', 56110) has been established!
+2025-01-12 16:27:13 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 16:27:13 INFO Received ping from 192.168.1.75
+2025-01-12 16:28:35 INFO Connection from ('192.168.1.75', 56118) has been established!
+2025-01-12 16:28:35 INFO message: {"action": "login", "l_user": "senpai", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 16:28:35 INFO User: senpai not found
+2025-01-12 16:41:42 INFO Connection from ('192.168.1.75', 56270) has been established!
+2025-01-12 16:41:42 INFO message: {"action": "login", "l_user": "studywm", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-01-12 16:41:42 INFO User: studywm not found
+2025-01-12 16:41:42 INFO Sending login status: 404
+2025-01-12 16:46:10 INFO Connection from ('192.168.1.75', 56346) has been established!
+2025-01-12 16:46:10 INFO message: {"action": "login", "l_user": "studywm", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 16:46:10 INFO User: studywm not found
+2025-01-12 16:46:10 INFO Sending login status: 404
+2025-01-12 16:50:26 INFO Connection from ('192.168.1.75', 56422) has been established!
+2025-01-12 16:50:26 INFO message: {"action": "login", "l_user": "studywm", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 16:50:26 INFO User: studywm not found
+2025-01-12 16:50:26 INFO Sending login status: 404
+2025-01-12 16:54:20 INFO Connection from ('192.168.1.75', 56500) has been established!
+2025-01-12 16:54:20 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 16:54:20 INFO Received ping from 192.168.1.75
+2025-01-12 16:54:40 INFO Connection from ('192.168.1.75', 56504) has been established!
+2025-01-12 16:54:40 INFO message: {"action": "login", "l_user": "xyz", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 16:54:40 INFO User: xyz not found
+2025-01-12 16:54:40 INFO Sending login status: 404
+2025-01-12 16:58:17 INFO Connection from ('192.168.1.75', 56569) has been established!
+2025-01-12 16:58:17 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 16:58:17 INFO Received ping from 192.168.1.75
+2025-01-12 16:58:43 INFO Connection from ('192.168.1.75', 56573) has been established!
+2025-01-12 16:58:43 INFO message: {"action": "login", "l_user": "xqc", "hash": "53d42b7b53c6f6482dbf85189ab7306e3e919599e2c448748b8b1821495def35"}
+2025-01-12 16:58:43 INFO Unauthorized access attempt for user: xqc
+2025-01-12 16:58:43 INFO Sending login status: 401
+2025-01-12 16:59:00 INFO Connection from ('192.168.1.75', 56577) has been established!
+2025-01-12 16:59:00 INFO message: {"action": "login", "l_user": "diddy", "hash": "414c95b952c60391e62c04a24dbc96a1cc225fff5640ed3376ca45aadf0e4cb4"}
+2025-01-12 16:59:00 INFO User: diddy not found
+2025-01-12 16:59:00 INFO Sending login status: 404
+2025-01-12 16:59:11 INFO Connection from ('192.168.1.75', 56591) has been established!
+2025-01-12 16:59:11 INFO message: {"action": "login", "l_user": "studywm", "hash": "0f2a85eaedd3c1697dcd4ea5385077f87e34d575054a156a7649b54136d892ec"}
+2025-01-12 16:59:11 INFO User: studywm not found
+2025-01-12 16:59:11 INFO Sending login status: 404
+2025-01-12 16:59:24 INFO Connection from ('192.168.1.75', 56595) has been established!
+2025-01-12 16:59:24 INFO message: {"action": "login", "l_user": "studywm", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 16:59:24 INFO User: studywm not found
+2025-01-12 16:59:24 INFO Sending login status: 404
+2025-01-12 17:02:00 INFO Connection from ('192.168.1.75', 56647) has been established!
+2025-01-12 17:02:00 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 17:02:00 INFO Received ping from 192.168.1.75
+2025-01-12 17:02:08 INFO Connection from ('192.168.1.75', 56650) has been established!
+2025-01-12 17:02:08 INFO message: {"action": "login", "l_user": "qwerty", "hash": "9efa46658c068027e87a6ee51bf3247998ad36031ebe175703b0bb03eb7a66f5"}
+2025-01-12 17:02:08 INFO User: qwerty not found
+2025-01-12 17:02:08 INFO Sending login status: 404
+2025-01-12 17:02:21 INFO Connection from ('192.168.1.75', 56653) has been established!
+2025-01-12 17:02:21 INFO message: {"action": "login", "l_user": "rat", "hash": "ec2fe806301641523fc87066232268f255afffad56d467811ef354f932a7f467"}
+2025-01-12 17:02:21 INFO Unauthorized access attempt for user: rat
+2025-01-12 17:02:21 INFO Sending login status: 401
+2025-01-12 17:02:45 INFO Connection from ('192.168.1.75', 56659) has been established!
+2025-01-12 17:02:45 INFO message: {"action": "login", "l_user": "java", "hash": "6bd45b2e89d7e02c58447d1d981f9f53a5c214faa4656e0b4d8c26d16d05d816"}
+2025-01-12 17:02:45 INFO Unauthorized access attempt for user: java
+2025-01-12 17:02:45 INFO Sending login status: 401
+2025-01-12 17:02:59 INFO Connection from ('192.168.1.75', 56663) has been established!
+2025-01-12 17:02:59 INFO message: {"action": "login", "l_user": "jiggly", "hash": "a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e"}
+2025-01-12 17:02:59 INFO User: jiggly has logged in
+2025-01-12 17:02:59 INFO Sending login status: 201
+2025-01-12 17:03:12 INFO Connection from ('192.168.1.75', 56666) has been established!
+2025-01-12 17:03:12 INFO message: {"action": "add_device", "user": "jiggly", "r_dev_name": "yeahbaby", "mac_addr": 4681952839112}
+2025-01-12 17:09:37 INFO Connection from ('192.168.1.75', 56776) has been established!
+2025-01-12 17:09:37 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 17:09:37 INFO Received ping from 192.168.1.75
+2025-01-12 17:09:44 INFO Connection from ('192.168.1.75', 56781) has been established!
+2025-01-12 17:09:44 INFO message: {"action": "login", "l_user": "kjaskldjfklajsdf", "hash": "81fd034f898e34399e079610ded1047f347b3b905fe905ea91eb0190746a38f0"}
+2025-01-12 17:09:44 INFO User: kjaskldjfklajsdf not found
+2025-01-12 17:09:44 INFO Sending login status: 404
+2025-01-12 17:10:02 INFO Connection from ('192.168.1.75', 56790) has been established!
+2025-01-12 17:10:02 INFO message: {"action": "login", "l_user": "xqc", "hash": "2655f6a0f68777a1c16485c36c0f755eebaacb2164f565dfcc86611ee0bb1c1f"}
+2025-01-12 17:10:02 INFO Unauthorized access attempt for user: xqc
+2025-01-12 17:10:02 INFO Sending login status: 401
+2025-01-12 17:10:37 INFO Connection from ('192.168.1.75', 56801) has been established!
+2025-01-12 17:10:37 INFO message: {"action": "login", "l_user": "jiggly", "hash": "cfeb5fbe586fc9584b5704ccf04b03311d0be54b6b625bb7b9a8a193592cb136"}
+2025-01-12 17:10:37 INFO Unauthorized access attempt for user: jiggly
+2025-01-12 17:10:37 INFO Sending login status: 401
+2025-01-12 17:10:46 INFO Connection from ('192.168.1.75', 56805) has been established!
+2025-01-12 17:10:46 INFO message: {"action": "login", "l_user": "amzy2", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 17:10:46 INFO User: amzy2 has logged in
+2025-01-12 17:10:46 INFO Sending login status: 201
+2025-01-12 17:12:34 INFO Connection from ('192.168.1.75', 56827) has been established!
+2025-01-12 17:12:34 INFO message: {"action": "add_device", "user": "amzy2", "r_dev_name": "amzy2pc", "mac_addr": 4681952839112}
+2025-01-12 17:12:34 INFO Adding device: amzy2pc with Mac_addr: 4681952839112 for User: amzy2 with User_ID: 15
+2025-01-12 17:12:34 INFO Sending device status: 201
+2025-01-12 18:12:24 INFO Connection from ('192.168.1.75', 57671) has been established!
+2025-01-12 18:12:24 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 18:12:24 INFO Received ping from 192.168.1.75
+2025-01-12 18:12:56 INFO Connection from ('192.168.1.75', 57675) has been established!
+2025-01-12 18:12:56 INFO message: {"action": "login", "l_user": "klasdjflkjasldf", "hash": "00b368086a78b025f134d5f8c1f4f01be5d2234be3d57ab2a6eb05c6912d66fb"}
+2025-01-12 18:12:56 INFO User: klasdjflkjasldf not found
+2025-01-12 18:12:56 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-01-12 18:15:24 INFO Connection from ('192.168.1.75', 57717) has been established!
+2025-01-12 18:15:24 INFO message: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 18:15:24 INFO User: joel has logged in
+2025-01-12 18:15:24 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-12 18:18:25 INFO Connection from ('192.168.1.75', 57753) has been established!
+2025-01-12 18:18:25 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 18:18:25 INFO Received ping from 192.168.1.75
+2025-01-12 18:18:44 INFO Connection from ('192.168.1.75', 57761) has been established!
+2025-01-12 18:18:44 INFO message: {"action": "login", "l_user": "jeff", "hash": "2e0b8d61fa2a6959d254b6ff5d0fb512249329097336a35568089933b49abdde"}
+2025-01-12 18:18:44 INFO User: jeff not found
+2025-01-12 18:18:44 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-01-12 18:21:38 INFO Connection from ('192.168.1.75', 57822) has been established!
+2025-01-12 18:21:38 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 18:21:38 INFO Received ping from 192.168.1.75
+2025-01-12 18:21:54 INFO Connection from ('192.168.1.75', 57826) has been established!
+2025-01-12 18:21:54 INFO message: {"action": "login", "l_user": "jack", "hash": "80c5e536eec8387cccad28b8b17b933832244998d85918abf18cc9bada5d4fe9"}
+2025-01-12 18:21:54 INFO User: jack not found
+2025-01-12 18:21:54 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-01-12 18:22:03 INFO Connection from ('192.168.1.75', 57829) has been established!
+2025-01-12 18:22:03 INFO message: {"action": "login", "l_user": "joel", "hash": "081e8c84b5c3bea16e3c2d65c484499565fe66eb79711f784ef9446498fb6804"}
+2025-01-12 18:22:03 INFO Unauthorized access attempt for user: joel
+2025-01-12 18:22:03 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-01-12 18:22:28 INFO Connection from ('192.168.1.75', 57833) has been established!
+2025-01-12 18:22:28 INFO message: {"action": "login", "l_user": "tokyo", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 18:22:28 INFO User: tokyo has logged in
+2025-01-12 18:22:28 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-12 18:43:32 INFO Connection from ('192.168.1.75', 58184) has been established!
+2025-01-12 18:43:32 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 18:43:32 INFO Received ping from 192.168.1.75
+2025-01-12 18:45:58 INFO Connection from ('192.168.1.75', 58227) has been established!
+2025-01-12 18:45:58 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 18:45:58 INFO Received ping from 192.168.1.75
+2025-01-12 18:45:58 INFO Pong sent to 192.168.1.75
+2025-01-12 18:46:10 INFO Connection from ('192.168.1.75', 58230) has been established!
+2025-01-12 18:46:10 INFO message: {"action": "login", "l_user": "kjlkasdjfklaslkdfk", "hash": "5bd9d3f039710a15b7cce00d4251ea5b85f069e64199e7a7cdcb17477a45c17b"}
+2025-01-12 18:46:10 INFO User: kjlkasdjfklaslkdfk not found
+2025-01-12 18:46:10 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-01-12 18:46:30 INFO Connection from ('192.168.1.75', 58235) has been established!
+2025-01-12 18:46:30 INFO message: {"action": "login", "l_user": "joel", "hash": "e61df1b0ac66554ed5b68468c43628eae18892b751ddadc4a0d6d9b34894e754"}
+2025-01-12 18:46:30 INFO Unauthorized access attempt for user: joel
+2025-01-12 18:46:30 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-01-12 18:46:53 INFO Connection from ('192.168.1.75', 58239) has been established!
+2025-01-12 18:46:53 INFO message: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 18:46:53 INFO User: joel has logged in
+2025-01-12 18:46:53 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-12 18:53:31 INFO Connection from ('192.168.1.75', 58319) has been established!
+2025-01-12 18:53:31 INFO message: {"action": "add_device", "user": "joel", "r_dev_name": "googlegiggles", "mac_addr": 4681952839112}
+2025-01-12 18:53:31 INFO Adding device: googlegiggles with Mac_addr: 4681952839112 for User: joel with User_ID: 10
+2025-01-12 18:53:31 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-01-12 18:53:39 INFO Connection from ('192.168.1.75', 58326) has been established!
+2025-01-12 18:53:39 INFO message: {"action": "add_device", "user": "joel", "r_dev_name": "jeff", "mac_addr": 4681952839112}
+2025-01-12 18:53:39 INFO Adding device: jeff with Mac_addr: 4681952839112 for User: joel with User_ID: 10
+2025-01-12 19:07:08 INFO Connection from ('192.168.1.75', 58498) has been established!
+2025-01-12 19:07:08 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 19:07:08 INFO Received ping from 192.168.1.75
+2025-01-12 19:07:08 INFO Pong sent to 192.168.1.75
+2025-01-12 19:07:13 INFO Connection from ('192.168.1.75', 58501) has been established!
+2025-01-12 19:07:13 INFO message: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 19:07:13 INFO User: joel has logged in
+2025-01-12 19:07:13 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-12 19:07:21 INFO Connection from ('192.168.1.75', 58510) has been established!
+2025-01-12 19:07:21 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "joel", "hash": "768622260faa621f9ec6e07fe728f52b5e6ac24f15f4309dea13505f79cd8a92"}
+2025-01-12 19:07:21 INFO User: joel already exists
+2025-01-12 19:07:21 INFO Sending registration status: {"status": "409", "status_msg": "User already exists"}
+2025-01-12 19:07:30 INFO Connection from ('192.168.1.75', 58513) has been established!
+2025-01-12 19:07:30 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "studywm", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 19:07:30 INFO Creating user: studywm with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 19:07:30 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-01-12 19:07:41 INFO Connection from ('192.168.1.75', 58516) has been established!
+2025-01-12 19:07:41 INFO message: {"action": "add_device", "user": "studywm", "r_dev_name": "studywms_pc", "mac_addr": 4681952839112}
+2025-01-12 19:07:41 INFO User_ID: 26
+2025-01-12 19:07:41 INFO Adding device: studywms_pc with Mac_addr: 4681952839112 for User: studywm with User_ID: 26
+2025-01-12 19:07:41 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-01-12 19:07:50 INFO Connection from ('192.168.1.75', 58519) has been established!
+2025-01-12 19:07:50 INFO message: {"action": "add_device", "user": "studywm", "r_dev_name": "studywms_phone", "mac_addr": 4681952839112}
+2025-01-12 19:07:50 INFO User_ID: 26
+2025-01-12 19:07:50 INFO Comparing: studywms_phone with Mac_addr: 4681952839112 WITH Device: studywms_pc with Mac_addr: 4681952839112
+2025-01-12 19:07:50 INFO Device Mac_addr: 4681952839112 already exists for User: studywm
+2025-01-12 19:07:50 INFO Sending device status: {"status": "409", "status_msg": "This device is already exists"}
+2025-01-12 19:09:44 INFO Connection from ('192.168.1.75', 58561) has been established!
+2025-01-12 19:09:44 INFO message: {"action": "add_device", "user": "studywm", "r_dev_name": "hhkb_keyboard", "mac_addr": 4681952839112}
+2025-01-12 19:09:44 INFO User_ID: 26
+2025-01-12 19:09:44 INFO Comparing: hhkb_keyboard with Mac_addr: 4681952839112 WITH Device: studywms_pc with Mac_addr: 4681952839112
+2025-01-12 19:09:44 INFO Device Mac_addr: 4681952839112 already exists for User: studywm
+2025-01-12 19:09:44 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-01-12 19:36:54 INFO Connection from ('192.168.1.75', 58853) has been established!
+2025-01-12 19:36:54 INFO message: {"action": "add_device", "user": "studywm", "r_dev_name": "asdasd", "mac_addr": 4681952839112}
+2025-01-12 19:36:54 INFO User_ID: 26
+2025-01-12 19:36:54 INFO Comparing: asdasd with Mac_addr: 4681952839112 WITH Device: studywms_pc with Mac_addr: 4681952839112
+2025-01-12 19:36:54 INFO Device Mac_addr: 4681952839112 already exists for User: studywm
+2025-01-12 19:36:54 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}

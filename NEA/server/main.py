@@ -44,39 +44,50 @@ class Device(Base):
     mac_addr = Column(String, primary_key=True)
 
 Base.metadata.create_all(engine)
-########## CRUD ##################################
-def create_user(name, hash):
-    user = User(name=name, hash=hash, email='default')
-    if session.query(User).filter_by(name=name).first():
-        logging.info(f'User: {name} already exists')
-        return 409
+########## CRUD(create, read, update, delete) ####
+def create_user(r_user, hash):
+    user = User(name=r_user, hash=hash, email='default')
+    if session.query(User).filter_by(name=r_user).first():
+        logging.info(f'User: {r_user} already exists')
+        return json.dumps({'status': '409', 'status_msg': 'User already exists'})
     else: 
-        logging.info(f'Creating user: {name} with hash: {hash}')
+        logging.info(f'Creating user: {r_user} with hash: {hash}')
         session.add(user)
         session.commit()
-        return 201
-#create_user('Aryan', 'aryanbvn@gmail.com')
-def create_device(user_id, name, mac_addr): # NOTE: user_id will be passed in by the user, when adding a new device.
+        return json.dumps({'status': '201', 'status_msg': 'User created successfully'})
+
+def login(l_user, hash):
+    user = session.query(User).filter_by(name=l_user).first()
+    if user:
+        if user.hash == hash:
+            logging.info(f'User: {l_user} has logged in')
+            return json.dumps({'status': '200', 'status_msg': 'Login successful'})
+        else:
+            logging.info(f'Unauthorized access attempt for user: {l_user}')
+            return json.dumps({'status': '401', 'status_msg': 'Retry with correct password'})
+    else:
+        logging.info(f'User: {l_user} not found')
+        return json.dumps({'status': '404', 'status_msg': 'User not found'})
+    
+def create_device(username, name, mac_addr):
+     # NOTE: username will be passed in by the user, when adding a new device which will map to user_id when adding device.
+    user_id = session.query(User).filter_by(name=username).first().user_id
+    logging.info(f'User_ID: {user_id}')
+    for device in session.query(Device).filter_by(user_id=user_id):
+        logging.info(f'Comparing: {name} with Mac_addr: {mac_addr} WITH Device: {device.name} with Mac_addr: {device.mac_addr}')
+        if device.mac_addr == str(mac_addr):
+            logging.info(f'Device Mac_addr: {mac_addr} already exists for User: {username}')
+            return json.dumps({'status': '409', 'status_msg': 'Device with this MAC address already exists'})
+        elif device.name == name:
+            logging.info(f'Device name: {name} already exist for User: {username}')
+            return json.dumps({'status': '409', 'status_msg': f'Device with name: {name} already exists'})
+    logging.info(f'Adding device: {name} with Mac_addr: {mac_addr} for User: {username} with User_ID: {user_id}')
     device = Device(user_id=user_id, name=name, mac_addr=mac_addr)
     session.add(device)
     session.commit()
-#create_device(1,'osaka', '123.456.789')
-########## SOCKETS ###############################
-# s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# print(socket.gethostname())
-# s.bind((ip, 8000))
-# s.listen(10)
-# while True:
-#     clientsocket, addr = s.accept()
-#     print(f'connected with {addr}')
-#     message = clientsocket.recv(1024).decode('utf-8')
-#     if message == 'ping':
-#         clientsocket.send(f'active'.encode('utf-8'))
-#     print(message)
-#     print(f'closing connection with {addr}')
-#     clientsocket.close()
-#     # TODO store info in db
+    return json.dumps({'status': '201', 'status_msg': 'Device added successfully'})
 
+########## SOCKETS ###############################
 def handle_client_message(message):
     try:
         data = json.loads(message)  # Parse JSON message
@@ -84,37 +95,36 @@ def handle_client_message(message):
         if action == 'ping':
             logging.info(f'Received ping from {data['ip_addr']}')
             clientsocket.send('pong'.encode('utf-8'))
+            logging.info(f'Pong sent to {data['ip_addr']}')
         
-        elif action == 'register_user':
-            username = data['r_user']
-            password_hash = data['hash']
-            status = create_user(username, password_hash)
-            if status == 201:
-                logging.info(f'Adding user: {username} with hash: {password_hash}')
-                logging.info(f'sending {clientsocket} 201')
-                clientsocket.send('201'.encode('utf-8'))
-            else:
-                logging.info(f'User: {username} already exists')
-                clientsocket.send('409'.encode('utf-8'))
-            # Add user logic here
-
         elif action == 'login':
-            username = data['r_user']
-            password_hash = data['hash']
-            print(f'Adding user: {username} with hash: {password_hash}')
+            l_user = data['l_user']
+            hash = data['hash']
+            status = login(l_user, hash)
+            logging.info(f'Sending login status: {status}')
+            clientsocket.send(str(status).encode('utf-8'))
+            
+        elif action == 'register_user':
+            r_user = data['r_user']
+            hash = data['hash']
+            status = create_user(r_user, hash)
+            logging.info(f'Sending registration status: {status}')
+            clientsocket.send(str(status).encode('utf-8'))
         
         elif action == 'add_device':
             mac_addr = data['mac_addr']
             device_name = data['r_dev_name']
-            print(f'Adding device {device_name} for user {username}')
-            # Add device logic here
+            username = data['user']
+            status = create_device(username, device_name, mac_addr)
+            logging.info(f'Sending device status: {status}')
+            clientsocket.send(str(status).encode('utf-8'))
 
         elif action == 'send_file':
             filename = data['filename']
             username = data['username']
             file_size = data['file_size']
             print(f'Preparing to receive file: {filename} ({file_size} bytes) from {username}')
-            # File receiving logic here
+            # TODO File receiving logic here
 
         elif action == 'remove_user':
             username = data['username']
