@@ -1,3 +1,2 @@
-import socket
-
-print(socket.gethostbyname(socket.gethostname()))
+x = 192.168.082.661
+print(f"{x}")

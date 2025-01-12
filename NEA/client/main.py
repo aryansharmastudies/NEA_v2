@@ -13,8 +13,8 @@ import hashlib
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
 # NOTE - gets the ip. hash the one you don't want.
-#ip = l_wlan_ip()
-ip = w_wlan_ip()
+ip = l_wlan_ip()
+#ip = w_wlan_ip()
 ########## LOGGING ##############################
 def main() -> None:
     logging.basicConfig(
@@ -46,7 +46,7 @@ def pair():
         try: 
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((server_name, 8000))
-            json_data = json.dumps({'action': 'ping'})
+            json_data = json.dumps({'action': 'ping', 'ip_addr':ip})
             logging.info(f'ping sent: {json_data}')
             s.send(json_data.encode('utf-8'))
             if s.recv(1024).decode('utf-8') == 'pong':
@@ -122,18 +122,23 @@ def register():
         hash = hashlib.new("SHA256")
         hash.update(pwd.encode('utf-8'))
         hash = hash.hexdigest()
-        session['hash']=hash
-        session['user']=user
-        json_data = json.dumps({'action': 'add_user','r_user':user, 'hash':hash})
+
+        json_data = json.dumps({'action': 'register_user', 'ip_addr':ip, 'r_user':user, 'hash':hash})
         logging.info(f'hashed password: {hash}')
         logging.info(f'json_data: {json_data}')
-        try:
-            send(json_data)
-        except:
-            flash(f'Could not connect to server for register!', 'info')
+        
+        status = send(json_data)
+        if status == 201:
+            flash(f'Registered!', 'info')
+            session['hash']=hash
+            session['user']=user
+            return redirect(url_for('dashboard'))
+        elif status == 409:
+            flash(f'409: User already exists', 'error')
             return redirect(url_for('register'))
-        flash(f'Registered!', 'info')
-        return redirect(url_for('dashboard'))
+        elif status == 503:
+            flash(f'503: server offline, please try again', 'error')
+            return redirect(url_for('register'))
     else:
         if 'user' in session and 'server_name' in session:
             flash('Already Logged In!', 'info')
@@ -154,11 +159,11 @@ def dashboard():
             device_name = request.form.get('device_name')
             json_data = json.dumps({'action': 'add_device','r_dev_name':device_name})
             status = send(json_data)
-            if status == 200:
+            if status == 201:
                 flash(f"Device '{device_name}' added successfully!", 'info')
                 return redirect(url_for('dashboard', server_name=session['server_name'])) # render_template('dashboard.html', server_name=session['server_name'])
-            else: 
-                flash(f"503 Service Unavailable", 'error')
+            elif status == 503:
+                flash(f"503: server offline, please try again", 'error')
                 return redirect(url_for('dashboard', server_name=session['server_name']))        
         elif action == 'add_folder':
             folder_name = request.form.get('folder_name')
@@ -187,8 +192,11 @@ def unpair():
     if "server_name" in session:
         server_name = session["server_name"]
         flash(f"{server_name} has been unpaired!", "info")
-    session.pop("server_name", None)
-    return redirect(url_for('pair'))
+        session.pop("server_name", None)
+        return redirect(url_for('pair'))
+    else:
+        flash("You are not connected to a server!", "info")
+        return redirect(url_for('pair'))
 @app.route('/logout')
 def logout():
     if 'user' in session:
@@ -200,12 +208,19 @@ def logout():
 
 ########## SEND #################################
 def send(json_data):
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try: 
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((session['server_name'], 8000))
             s.send(json_data.encode('utf-8'))
-            return 200
+            s.recv(1024).decode('utf-8')
+            if s.recv(1024).decode('utf-8') == '201':
+                logging.info(f"201 Data Added")
+                return 201
+            else:    
+                logging.info(f'409 Data Already Exists')
+                return 409
         except: 
+            logging.info(f'503 Server Offline')
             return 503    
         
 ########## ADDING USER ##########################

@@ -49,9 +49,12 @@ def create_user(name, hash):
     user = User(name=name, hash=hash, email='default')
     if session.query(User).filter_by(name=name).first():
         logging.info(f'User: {name} already exists')
-    logging.info(f'Creating user: {name} with hash: {hash}')
-    session.add(user)
-    session.commit()
+        return 409
+    else: 
+        logging.info(f'Creating user: {name} with hash: {hash}')
+        session.add(user)
+        session.commit()
+        return 201
 #create_user('Aryan', 'aryanbvn@gmail.com')
 def create_device(user_id, name, mac_addr): # NOTE: user_id will be passed in by the user, when adding a new device.
     device = Device(user_id=user_id, name=name, mac_addr=mac_addr)
@@ -79,14 +82,21 @@ def handle_client_message(message):
         data = json.loads(message)  # Parse JSON message
         action = data.get('action')
         if action == 'ping':
-            logging.info('Received ping from client')
+            logging.info(f'Received ping from {data['ip_addr']}')
             clientsocket.send('pong'.encode('utf-8'))
         
-        elif action == 'add_user':
+        elif action == 'register_user':
             username = data['r_user']
             password_hash = data['hash']
-            create_user(username, password_hash)
-            logging.info(f'Adding user: {username} with hash: {password_hash}')
+            status = create_user(username, password_hash)
+            if status == 201:
+                logging.info(f'Adding user: {username} with hash: {password_hash}')
+                s.connect((data['ip_addr'], 8000))
+                s.sendall(201)
+            else:
+                logging.info(f'User: {username} already exists')
+                s.connect((data['ip_addr'], 8000))
+                s.sendall(409)
             # Add user logic here
 
         elif action == 'login':
@@ -124,11 +134,9 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((ip, 8000))
 s.listen(10)
 
-
 while True:
     clientsocket, address = s.accept()
     print(f'Connection from {address} has been established!')
-    
     # Receive data
     message = clientsocket.recv(1024).decode('utf-8')
     logging.info(f'message: {message}')
