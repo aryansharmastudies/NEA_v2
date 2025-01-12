@@ -91,6 +91,7 @@ def handle_client_message(message):
             status = create_user(username, password_hash)
             if status == 201:
                 logging.info(f'Adding user: {username} with hash: {password_hash}')
+                logging.info(f'sending {clientsocket} 201')
                 clientsocket.send('201'.encode('utf-8'))
             else:
                 logging.info(f'User: {username} already exists')

@@ -89,3 +89,75 @@
 2025-01-11 22:25:38 INFO message: {"action": "register_user", "ip_addr": "192.168.1.221", "r_user": "joel", "hash": "4d06a5b2e3702d8e6418e2e037764fbe730ada4eff6f464593d52f3b24cceffc"}
 2025-01-11 22:25:38 INFO User: joel already exists
 2025-01-11 22:25:38 INFO User: joel already exists
+2025-01-12 11:44:35 INFO Connection from ('192.168.1.75', 52168) has been established!
+2025-01-12 11:44:35 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 11:44:35 INFO Received ping from 192.168.1.75
+2025-01-12 11:45:23 INFO Connection from ('192.168.1.75', 52185) has been established!
+2025-01-12 11:45:23 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "joel", "hash": "63d1e6eb6fe575e5499ba53b9dbecc66ee33aa88e2bb516802c32ed530ac5868"}
+2025-01-12 11:45:23 INFO User: joel already exists
+2025-01-12 11:45:23 INFO User: joel already exists
+2025-01-12 11:46:08 INFO Connection from ('192.168.1.75', 52205) has been established!
+2025-01-12 11:46:08 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 11:46:08 INFO User: aryan already exists
+2025-01-12 11:46:08 INFO User: aryan already exists
+2025-01-12 11:46:11 INFO Connection from ('192.168.1.75', 52208) has been established!
+2025-01-12 11:46:11 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "jiggly", "hash": "a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e"}
+2025-01-12 11:46:11 INFO User: jiggly already exists
+2025-01-12 11:46:11 INFO User: jiggly already exists
+2025-01-12 11:46:24 INFO Connection from ('192.168.1.75', 52213) has been established!
+2025-01-12 11:46:24 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "shravan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 11:46:24 INFO Creating user: shravan with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:46:24 INFO Adding user: shravan with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:46:43 INFO Connection from ('192.168.1.75', 52216) has been established!
+2025-01-12 11:46:43 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "xqc", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 11:46:43 INFO Creating user: xqc with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:46:43 INFO Adding user: xqc with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:47:55 INFO Connection from ('192.168.1.75', 52232) has been established!
+2025-01-12 11:47:55 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "pranav", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 11:47:55 INFO Creating user: pranav with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:47:55 INFO Adding user: pranav with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:49:36 INFO Connection from ('192.168.1.75', 52250) has been established!
+2025-01-12 11:49:36 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "amzy", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 11:49:36 INFO Creating user: amzy with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:49:36 INFO Adding user: amzy with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:50:20 INFO Connection from ('192.168.1.75', 52270) has been established!
+2025-01-12 11:50:20 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "amzy2", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 11:50:20 INFO Creating user: amzy2 with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:50:20 INFO Adding user: amzy2 with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:52:10 INFO Connection from ('192.168.1.75', 52298) has been established!
+2025-01-12 11:52:10 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "amzy23", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 11:52:10 INFO Creating user: amzy23 with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:52:10 INFO Adding user: amzy23 with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:52:40 INFO Connection from ('192.168.1.75', 52311) has been established!
+2025-01-12 11:52:40 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "rat", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 11:52:40 INFO Creating user: rat with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:52:40 INFO Adding user: rat with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:58:33 INFO Connection from ('192.168.1.75', 52400) has been established!
+2025-01-12 11:58:33 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-12 11:58:33 INFO Received ping from 192.168.1.75
+2025-01-12 11:58:47 INFO Connection from ('192.168.1.75', 52404) has been established!
+2025-01-12 11:58:47 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "miyamoto", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 11:58:47 INFO Creating user: miyamoto with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 11:58:47 INFO Adding user: miyamoto with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:06:20 INFO Connection from ('192.168.1.75', 52483) has been established!
+2025-01-12 12:06:20 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "kali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 12:06:20 INFO Creating user: kali with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:06:20 INFO Adding user: kali with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:07:47 INFO Connection from ('192.168.1.75', 52505) has been established!
+2025-01-12 12:07:47 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "riad", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 12:07:47 INFO Creating user: riad with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:07:47 INFO Adding user: riad with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:08:37 INFO Connection from ('192.168.1.75', 52511) has been established!
+2025-01-12 12:08:37 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "happy", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 12:08:37 INFO Creating user: happy with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:08:37 INFO Adding user: happy with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:11:46 INFO Connection from ('192.168.1.75', 52558) has been established!
+2025-01-12 12:11:46 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "poko", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 12:11:46 INFO Creating user: poko with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:11:46 INFO Adding user: poko with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:11:46 INFO sending <socket.socket fd=7, family=2, type=1, proto=0, laddr=('192.168.1.221', 8000), raddr=('192.168.1.75', 52558)> 201
+2025-01-12 12:13:57 INFO Connection from ('192.168.1.75', 52586) has been established!
+2025-01-12 12:13:57 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "jiggly_joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 12:13:57 INFO Creating user: jiggly_joel with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:13:57 INFO Adding user: jiggly_joel with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 12:13:57 INFO sending <socket.socket fd=7, family=2, type=1, proto=0, laddr=('192.168.1.221', 8000), raddr=('192.168.1.75', 52586)> 201
