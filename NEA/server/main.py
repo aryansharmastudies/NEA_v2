@@ -91,12 +91,10 @@ def handle_client_message(message):
             status = create_user(username, password_hash)
             if status == 201:
                 logging.info(f'Adding user: {username} with hash: {password_hash}')
-                s.connect((data['ip_addr'], 8000))
-                s.sendall(201)
+                clientsocket.send('201'.encode('utf-8'))
             else:
                 logging.info(f'User: {username} already exists')
-                s.connect((data['ip_addr'], 8000))
-                s.sendall(409)
+                clientsocket.send('409'.encode('utf-8'))
             # Add user logic here
 
         elif action == 'login':
@@ -135,8 +133,8 @@ s.bind((ip, 8000))
 s.listen(10)
 
 while True:
-    clientsocket, address = s.accept()
-    print(f'Connection from {address} has been established!')
+    clientsocket, address = s.accept() # if client does s.connect((server_name, 8000))
+    logging.info(f'Connection from {address} has been established!')
     # Receive data
     message = clientsocket.recv(1024).decode('utf-8')
     logging.info(f'message: {message}')
