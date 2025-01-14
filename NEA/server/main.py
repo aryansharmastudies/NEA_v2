@@ -22,6 +22,7 @@ if system == 'w':
     ip = w_wlan_ip()
 else:
     ip = l_wlan_ip()
+print(ip)
 ########## DATA BASE #############################
 db_url = 'sqlite:///database/database.db'
 engine = create_engine(db_url)
@@ -46,7 +47,7 @@ class Device(Base):
     mac_addr = Column(String, primary_key=True)
 
 class Folder(Base):
-    __annotations__ = 'folders'
+    __tablename__ = 'folders'
 
     folder_id = Column(String, primary_key=True)
     name = Column(String)
@@ -99,6 +100,11 @@ def create_device(username, name, mac_addr):
     session.commit()
     return json.dumps({'status': '201', 'status_msg': 'Device added successfully'})
 
+def create_folder(mac_addr, folder_name, folder_id, folder_type):
+    # TODO dont matter if the name is the same
+    # TODO the folder_id cant be the exact same
+    pass
+
 ########## SOCKETS ###############################
 def handle_client_message(message):
     try:
@@ -131,11 +137,12 @@ def handle_client_message(message):
             logging.info(f'Sending device status: {status}')
             clientsocket.send(str(status).encode('utf-8'))
 
-        elif action == 'send_file':
-            filename = data['filename']
-            username = data['username']
-            file_size = data['file_size']
-            print(f'Preparing to receive file: {filename} ({file_size} bytes) from {username}')
+        elif action == 'add_folder':
+            folder_label = data['folder_label']
+            folder_id = data['folder_id']
+            folder_path = data['folder_path']
+            folder_type = data['folder_type']
+            print(f'Preparing to receive file: {folder_label}')
             # TODO File receiving logic here
 
         elif action == 'remove_user':

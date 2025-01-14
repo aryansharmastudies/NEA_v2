@@ -15,8 +15,11 @@ import string
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
 # NOTE - gets the ip. hash the one you don't want.
-ip = l_wlan_ip()
-#ip = w_wlan_ip()
+system = input('windows(w) or linux(l)?')
+if system == 'w':
+    ip = w_wlan_ip()
+else:
+    ip = l_wlan_ip()
 ########## LOGGING ##############################
 def main() -> None:
     logging.basicConfig(
@@ -184,8 +187,23 @@ def dashboard():
                 return redirect(url_for('dashboard'))        
         
         elif action == 'add_folder':
-            folder_name = request.form.get('folder_name')
-            return jsonify({'message': f"Folder '{folder_name}' added successfully!"})
+            folder_label = request.form.get('folder_label')
+            folder_id = request.form.get('folder_id')
+            folder_path = request.form.get('folder_path')
+            folder_type = request.form.get('folder_type')
+
+            json_data = json.dumps({'action': 'add_folder', 'folder_label': folder_label, 'folder_id': folder_id, 'folder_path': folder_path, 'folder_type': folder_type})
+            status, status_msg = send(json_data)
+            if status == '201':
+                flash(f"{status}: {status_msg}", 'info')
+                return redirect(url_for('dashboard'))
+            elif status == '409':
+                flash(f"{status}: {status_msg}", 'error')
+                return redirect(url_for('dashboard'))
+            elif status == '503':
+                flash(f"{status}: {status_msg}", 'error')
+                return redirect(url_for('dashboard'))
+            return jsonify({'message': f"Folder '{folder_label}' added diddylys!"})
 
         elif action == "join_group":
             group_name = request.form.get('group_name')

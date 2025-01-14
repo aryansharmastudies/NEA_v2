@@ -443,3 +443,99 @@
 2025-01-12 21:56:22 INFO message: {"action": "login", "l_user": "kawasaki", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
 2025-01-12 21:56:22 INFO User: kawasaki has logged in
 2025-01-12 21:56:22 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-14 10:10:38 INFO Connection from ('10.195.171.63', 53520) has been established!
+2025-01-14 10:10:38 INFO message: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-01-14 10:10:38 INFO Received ping from 10.195.171.63
+2025-01-14 10:10:38 INFO Pong sent to 10.195.171.63
+2025-01-14 10:12:53 INFO Connection from ('10.195.171.63', 53680) has been established!
+2025-01-14 10:12:53 INFO message: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-01-14 10:12:53 INFO Received ping from 10.195.171.63
+2025-01-14 10:12:53 INFO Pong sent to 10.195.171.63
+2025-01-14 10:13:06 INFO Connection from ('10.195.171.63', 48472) has been established!
+2025-01-14 10:13:06 INFO message: {"action": "register_user", "ip_addr": "10.195.171.63", "r_user": "krishiv_the_rizzler", "hash": "c6a80e95c2345e6f8d3c909fac89f71abeb52f89f32d8421f1c9e561b81289eb"}
+2025-01-14 10:13:06 INFO User: krishiv_the_rizzler already exists
+2025-01-14 10:13:06 INFO Sending registration status: {"status": "409", "status_msg": "User already exists"}
+2025-01-14 10:13:32 INFO Connection from ('10.195.171.63', 48080) has been established!
+2025-01-14 10:13:32 INFO message: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-01-14 10:13:32 INFO Received ping from 10.195.171.63
+2025-01-14 10:13:32 INFO Pong sent to 10.195.171.63
+2025-01-14 10:17:00 INFO Connection from ('10.195.171.63', 57594) has been established!
+2025-01-14 10:17:00 INFO message: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-01-14 10:17:00 INFO Received ping from 10.195.171.63
+2025-01-14 10:17:00 INFO Pong sent to 10.195.171.63
+2025-01-14 10:17:34 INFO Connection from ('10.195.171.63', 42872) has been established!
+2025-01-14 10:17:34 INFO message: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-01-14 10:17:34 INFO Received ping from 10.195.171.63
+2025-01-14 10:17:34 INFO Pong sent to 10.195.171.63
+2025-01-14 10:17:38 INFO Connection from ('10.195.171.63', 60084) has been established!
+2025-01-14 10:17:38 INFO message: {"action": "login", "l_user": "jiggly", "hash": "a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e"}
+2025-01-14 10:17:38 INFO User: jiggly has logged in
+2025-01-14 10:17:38 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-14 10:25:13 INFO Connection from ('10.195.171.63', 60200) has been established!
+2025-01-14 10:25:13 INFO message: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-01-14 10:25:13 INFO Received ping from 10.195.171.63
+2025-01-14 10:25:13 INFO Pong sent to 10.195.171.63
+2025-01-14 10:25:41 INFO Connection from ('10.195.171.63', 60606) has been established!
+2025-01-14 10:25:41 INFO message: {"action": "register_user", "ip_addr": "10.195.171.63", "r_user": "kiddydiddy", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-14 10:25:41 INFO Creating user: kiddydiddy with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-14 10:25:41 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-01-14 10:27:05 INFO Connection from ('10.195.171.63', 43426) has been established!
+2025-01-14 10:27:05 INFO message: {"action": "add_device", "user": "kiddydiddy", "r_dev_name": "pranavdiiddy_party?_/:_SELECT_*_FROM_USERS", "mac_addr": 167132875827157}
+2025-01-14 10:27:05 INFO User_ID: 29
+2025-01-14 10:27:05 INFO Adding device: pranavdiiddy_party?_/:_SELECT_*_FROM_USERS with Mac_addr: 167132875827157 for User: kiddydiddy with User_ID: 29
+2025-01-14 10:27:05 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-01-14 10:28:36 INFO Connection from ('10.195.171.63', 55252) has been established!
+2025-01-14 10:28:36 INFO message: {"action": "add_folder", "folder_label": "1", "folder_id": "DioQaZ6j4Y", "folder_path": "~/DioQaZ6j4Y", "folder_type": "1"}
+2025-01-14 10:39:30 INFO Connection from ('10.195.171.63', 58312) has been established!
+2025-01-14 10:39:30 INFO message: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-01-14 10:39:30 INFO Received ping from 10.195.171.63
+2025-01-14 10:39:30 INFO Pong sent to 10.195.171.63
+2025-01-14 10:39:40 INFO Connection from ('10.195.171.63', 33422) has been established!
+2025-01-14 10:39:40 INFO message: {"action": "login", "l_user": "aryan", "hash": "49c237d3e91fe0f856a517bcea2ba92d751a7d9f0d1d4d353e0378650c2416d2"}
+2025-01-14 10:39:40 INFO Unauthorized access attempt for user: aryan
+2025-01-14 10:39:40 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-01-14 10:39:47 INFO Connection from ('10.195.171.63', 58676) has been established!
+2025-01-14 10:39:47 INFO message: {"action": "login", "l_user": "java", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-14 10:39:47 INFO User: java has logged in
+2025-01-14 10:39:47 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-14 10:39:58 INFO Connection from ('10.195.171.63', 54136) has been established!
+2025-01-14 10:39:58 INFO message: {"action": "register_user", "ip_addr": "10.195.171.63", "r_user": "kiddydiddy", "hash": "d23821aa8196d33fab15cf00b37fe2f330f9a065e3472ac78157706e1d46aa35"}
+2025-01-14 10:39:58 INFO User: kiddydiddy already exists
+2025-01-14 10:39:58 INFO Sending registration status: {"status": "409", "status_msg": "User already exists"}
+2025-01-14 10:40:03 INFO Connection from ('10.195.171.63', 54146) has been established!
+2025-01-14 10:40:03 INFO message: {"action": "register_user", "ip_addr": "10.195.171.63", "r_user": "kiddydiddy", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-14 10:40:03 INFO User: kiddydiddy already exists
+2025-01-14 10:40:03 INFO Sending registration status: {"status": "409", "status_msg": "User already exists"}
+2025-01-14 10:40:10 INFO Connection from ('10.195.171.63', 52428) has been established!
+2025-01-14 10:40:10 INFO message: {"action": "register_user", "ip_addr": "10.195.171.63", "r_user": "ffs", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-14 10:40:10 INFO Creating user: ffs with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-14 10:40:10 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-01-14 10:42:02 INFO Connection from ('10.195.171.63', 36046) has been established!
+2025-01-14 10:42:02 INFO message: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-01-14 10:42:02 INFO Received ping from 10.195.171.63
+2025-01-14 10:42:02 INFO Pong sent to 10.195.171.63
+2025-01-14 10:42:06 INFO Connection from ('10.195.171.63', 36062) has been established!
+2025-01-14 10:42:06 INFO message: {"action": "login", "l_user": "ksjdfkjl", "hash": "5d9218201bc939fe2258f5c0d60783222fd851a5e558a49413884618de8c28d4"}
+2025-01-14 10:42:06 INFO User: ksjdfkjl not found
+2025-01-14 10:42:06 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-01-14 10:42:09 INFO Connection from ('10.195.171.63', 44036) has been established!
+2025-01-14 10:42:09 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-14 10:42:09 INFO User: aryan has logged in
+2025-01-14 10:42:09 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-14 10:42:16 INFO Connection from ('10.195.171.63', 57126) has been established!
+2025-01-14 10:42:16 INFO message: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-01-14 10:42:16 INFO Received ping from 10.195.171.63
+2025-01-14 10:42:16 INFO Pong sent to 10.195.171.63
+2025-01-14 10:42:27 INFO Connection from ('10.195.171.63', 42218) has been established!
+2025-01-14 10:42:27 INFO message: {"action": "register_user", "ip_addr": "10.195.171.63", "r_user": "kiddydiddy", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-14 10:42:27 INFO User: kiddydiddy already exists
+2025-01-14 10:42:27 INFO Sending registration status: {"status": "409", "status_msg": "User already exists"}
+2025-01-14 10:42:36 INFO Connection from ('10.195.171.63', 42228) has been established!
+2025-01-14 10:42:36 INFO message: {"action": "register_user", "ip_addr": "10.195.171.63", "r_user": "bug", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-14 10:42:36 INFO Creating user: bug with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-14 10:42:36 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-01-14 10:42:45 INFO Connection from ('10.195.171.63', 44230) has been established!
+2025-01-14 10:42:45 INFO message: {"action": "add_device", "user": "bug", "r_dev_name": "bug-dev", "mac_addr": 167132875827157}
+2025-01-14 10:42:45 INFO User_ID: 31
+2025-01-14 10:42:45 INFO Adding device: bug-dev with Mac_addr: 167132875827157 for User: bug with User_ID: 31
+2025-01-14 10:42:45 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
