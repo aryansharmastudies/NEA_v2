@@ -439,3 +439,7 @@
 2025-01-12 21:00:20 INFO Comparing: asdasdasd with Mac_addr: 4681952839112 WITH Device: aqibs_gaming_pc with Mac_addr: 4681952839112
 2025-01-12 21:00:20 INFO Device Mac_addr: 4681952839112 already exists for User: aqib
 2025-01-12 21:00:20 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-01-12 21:56:22 INFO Connection from ('192.168.1.221', 43350) has been established!
+2025-01-12 21:56:22 INFO message: {"action": "login", "l_user": "kawasaki", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 21:56:22 INFO User: kawasaki has logged in
+2025-01-12 21:56:22 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}

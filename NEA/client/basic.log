@@ -3686,3 +3686,62 @@ WHERE servers.name = ?
 2025-01-12 21:37:36 INFO  * Restarting with stat
 2025-01-12 21:37:37 WARNING  * Debugger is active!
 2025-01-12 21:37:37 INFO  * Debugger PIN: 278-132-539
+2025-01-12 21:55:36 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-12 21:55:36 INFO [33mPress CTRL+C to quit[0m
+2025-01-12 21:55:36 INFO  * Restarting with stat
+2025-01-12 21:55:36 WARNING  * Debugger is active!
+2025-01-12 21:55:36 INFO  * Debugger PIN: 500-100-173
+2025-01-12 21:55:48 INFO 127.0.0.1 - - [12/Jan/2025 21:55:48] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-01-12 21:55:48 INFO 127.0.0.1 - - [12/Jan/2025 21:55:48] "GET /login HTTP/1.1" 200 -
+2025-01-12 21:55:48 INFO 127.0.0.1 - - [12/Jan/2025 21:55:48] "GET /static/images/initial_d02.jpg HTTP/1.1" 200 -
+2025-01-12 21:55:48 INFO 127.0.0.1 - - [12/Jan/2025 21:55:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-12 21:56:22 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-12 21:56:22 INFO json_data: {"action": "login", "l_user": "kawasaki", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 21:56:22 INFO json_data sent: {"action": "login", "l_user": "kawasaki", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-12 21:56:22 INFO server response: {"status": "200", "status_msg": "Login successful"}
+2025-01-12 21:56:22 INFO 200 OK
+2025-01-12 21:56:22 INFO 127.0.0.1 - - [12/Jan/2025 21:56:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-12 21:56:22 INFO 127.0.0.1 - - [12/Jan/2025 21:56:22] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 21:56:22 INFO 127.0.0.1 - - [12/Jan/2025 21:56:22] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-01-12 21:59:00 INFO 127.0.0.1 - - [12/Jan/2025 21:59:00] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 21:59:00 INFO 127.0.0.1 - - [12/Jan/2025 21:59:00] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 21:59:13 INFO 127.0.0.1 - - [12/Jan/2025 21:59:13] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 21:59:13 INFO 127.0.0.1 - - [12/Jan/2025 21:59:13] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 21:59:17 INFO 127.0.0.1 - - [12/Jan/2025 21:59:17] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 21:59:17 INFO 127.0.0.1 - - [12/Jan/2025 21:59:17] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:02:37 INFO 127.0.0.1 - - [12/Jan/2025 22:02:37] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:02:37 INFO 127.0.0.1 - - [12/Jan/2025 22:02:37] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:02:37 INFO 127.0.0.1 - - [12/Jan/2025 22:02:37] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:02:37 INFO 127.0.0.1 - - [12/Jan/2025 22:02:37] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:04:50 INFO 127.0.0.1 - - [12/Jan/2025 22:04:50] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:04:50 INFO 127.0.0.1 - - [12/Jan/2025 22:04:50] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:06:21 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-12 22:06:21 INFO [33mPress CTRL+C to quit[0m
+2025-01-12 22:06:21 INFO  * Restarting with stat
+2025-01-12 22:06:22 WARNING  * Debugger is active!
+2025-01-12 22:06:22 INFO  * Debugger PIN: 500-100-173
+2025-01-12 22:06:31 INFO 127.0.0.1 - - [12/Jan/2025 22:06:31] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:06:31 INFO 127.0.0.1 - - [12/Jan/2025 22:06:31] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:06:35 INFO 127.0.0.1 - - [12/Jan/2025 22:06:35] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:06:35 INFO 127.0.0.1 - - [12/Jan/2025 22:06:35] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:06:36 INFO 127.0.0.1 - - [12/Jan/2025 22:06:36] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:06:36 INFO 127.0.0.1 - - [12/Jan/2025 22:06:36] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:06:36 INFO 127.0.0.1 - - [12/Jan/2025 22:06:36] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:06:36 INFO 127.0.0.1 - - [12/Jan/2025 22:06:36] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:06:37 INFO 127.0.0.1 - - [12/Jan/2025 22:06:37] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:06:37 INFO 127.0.0.1 - - [12/Jan/2025 22:06:37] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:07:03 INFO 127.0.0.1 - - [12/Jan/2025 22:07:03] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:07:03 INFO 127.0.0.1 - - [12/Jan/2025 22:07:03] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:07:03 INFO 127.0.0.1 - - [12/Jan/2025 22:07:03] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:07:03 INFO 127.0.0.1 - - [12/Jan/2025 22:07:03] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:07:03 INFO 127.0.0.1 - - [12/Jan/2025 22:07:03] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:07:05 INFO 127.0.0.1 - - [12/Jan/2025 22:07:05] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:07:05 INFO 127.0.0.1 - - [12/Jan/2025 22:07:05] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 22:07:06 INFO 127.0.0.1 - - [12/Jan/2025 22:07:06] "GET /dashboard HTTP/1.1" 200 -
+2025-01-12 22:07:06 INFO 127.0.0.1 - - [12/Jan/2025 22:07:06] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-12 23:05:52 INFO  * Detected change in '/home/kyoto/Desktop/NEA_v2/NEA/client/main.py', reloading
+2025-01-12 23:05:52 INFO  * Restarting with stat
+2025-01-12 23:05:52 WARNING  * Debugger is active!
+2025-01-12 23:05:52 INFO  * Debugger PIN: 500-100-173

@@ -17,9 +17,11 @@ def main() -> None:
 main()
 ########## IP ADDRESS ############################
 # NOTE - gets the ip. hash the one you don't want.
-ip = l_wlan_ip()
-#ip = w_wlan_ip()
-print(ip)
+system = input('windows(w) or linux(l)?')
+if system == 'w':
+    ip = w_wlan_ip()
+else:
+    ip = l_wlan_ip()
 ########## DATA BASE #############################
 db_url = 'sqlite:///database/database.db'
 engine = create_engine(db_url)
@@ -42,6 +44,16 @@ class Device(Base):
     user_id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String)
     mac_addr = Column(String, primary_key=True)
+
+class Folder(Base):
+    __annotations__ = 'folders'
+
+    folder_id = Column(String, primary_key=True)
+    name = Column(String)
+    mac_addr = Column(String, primary_key=True)
+    path = Column(String)
+    type = Column(String)
+    size = Column(Integer)
 
 Base.metadata.create_all(engine)
 ########## CRUD(create, read, update, delete) ####

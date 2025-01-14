@@ -15,8 +15,8 @@ import string
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
 # NOTE - gets the ip. hash the one you don't want.
-#ip = l_wlan_ip()
-ip = w_wlan_ip()
+ip = l_wlan_ip()
+#ip = w_wlan_ip()
 ########## LOGGING ##############################
 def main() -> None:
     logging.basicConfig(
@@ -185,7 +185,6 @@ def dashboard():
         
         elif action == 'add_folder':
             folder_name = request.form.get('folder_name')
-            # Perform logic to add a folder
             return jsonify({'message': f"Folder '{folder_name}' added successfully!"})
 
         elif action == "join_group":

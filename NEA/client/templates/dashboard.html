@@ -58,11 +58,14 @@ when we finish exe code.-->
 <div class="form-container">
 <form method="POST" action="#">
     <input type="hidden" name="action" value="add_folder">
-    <label for="folder_label">folder name:</label>
+    <label for="folder_label">folder label:</label>
     <input type="text" id="folder_label" name="folder_label" required>
     <br>
     <label for="folder_id">folder id:</label>
     <input type="text" id="folder_id" name="folder_id" value="{{random_folder_id}}" required>
+    <br>
+    <label for="folder_path">folder path:</label>
+    <input type="text" id="folder_path" name="folder_path" value="~/{{random_folder_id}}" required>
     <br>
     <button type="submit">add folder</button>
 
