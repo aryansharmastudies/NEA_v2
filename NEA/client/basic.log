@@ -4066,3 +4066,69 @@ WHERE servers.name = ?
 2025-01-14 10:42:45 INFO 127.0.0.1 - - [14/Jan/2025 10:42:45] "[32mPOST /dashboard HTTP/1.1[0m" 302 -
 2025-01-14 10:42:45 INFO 127.0.0.1 - - [14/Jan/2025 10:42:45] "GET /dashboard HTTP/1.1" 200 -
 2025-01-14 10:42:46 INFO 127.0.0.1 - - [14/Jan/2025 10:42:46] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-21 05:20:23 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-21 05:20:23 INFO [33mPress CTRL+C to quit[0m
+2025-01-21 05:20:23 INFO  * Restarting with stat
+2025-01-21 05:20:24 WARNING  * Debugger is active!
+2025-01-21 05:20:24 INFO  * Debugger PIN: 128-961-261
+2025-01-21 05:20:39 INFO 127.0.0.1 - - [21/Jan/2025 05:20:39] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-21 05:20:39 INFO 127.0.0.1 - - [21/Jan/2025 05:20:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-21 05:20:43 INFO 127.0.0.1 - - [21/Jan/2025 05:20:43] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-01-21 05:20:43 INFO 127.0.0.1 - - [21/Jan/2025 05:20:43] "GET /login HTTP/1.1" 200 -
+2025-01-21 05:20:43 INFO 127.0.0.1 - - [21/Jan/2025 05:20:43] "GET /static/images/initial_d02.jpg HTTP/1.1" 200 -
+2025-01-21 05:20:43 INFO 127.0.0.1 - - [21/Jan/2025 05:20:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-21 05:20:49 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-21 05:20:49 INFO json_data: {"action": "login", "l_user": "tokyo", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-21 05:20:59 INFO 127.0.0.1 - - [21/Jan/2025 05:20:59] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-21 05:20:59 INFO 127.0.0.1 - - [21/Jan/2025 05:20:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-21 05:21:01 INFO 127.0.0.1 - - [21/Jan/2025 05:21:01] "GET /login HTTP/1.1" 200 -
+2025-01-21 05:21:01 INFO 127.0.0.1 - - [21/Jan/2025 05:21:01] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-21 05:21:01 INFO 127.0.0.1 - - [21/Jan/2025 05:21:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-21 05:21:07 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-21 05:21:07 INFO json_data: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-21 05:21:10 INFO 503 Server Offline
+2025-01-21 05:21:10 INFO 503: server offline, please try again
+2025-01-21 05:21:10 INFO 127.0.0.1 - - [21/Jan/2025 05:21:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-21 05:21:28 INFO 503 Server Offline
+2025-01-21 05:21:28 INFO 503: server offline, please try again
+2025-01-21 05:21:28 INFO 127.0.0.1 - - [21/Jan/2025 05:21:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-21 05:21:28 INFO 127.0.0.1 - - [21/Jan/2025 05:21:28] "GET /login HTTP/1.1" 200 -
+2025-01-21 05:21:29 INFO 127.0.0.1 - - [21/Jan/2025 05:21:29] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-21 05:21:29 INFO 127.0.0.1 - - [21/Jan/2025 05:21:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-21 05:21:45 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-21 05:21:45 INFO json_data: {"action": "login", "l_user": "kawasaki", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-21 05:22:06 INFO 503 Server Offline
+2025-01-21 05:22:06 INFO 503: server offline, please try again
+2025-01-21 05:22:06 INFO 127.0.0.1 - - [21/Jan/2025 05:22:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-21 05:22:06 INFO 127.0.0.1 - - [21/Jan/2025 05:22:06] "GET /login HTTP/1.1" 200 -
+2025-01-21 05:22:06 INFO 127.0.0.1 - - [21/Jan/2025 05:22:06] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-21 05:22:06 INFO 127.0.0.1 - - [21/Jan/2025 05:22:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-21 05:22:46 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-21 05:22:46 INFO json_data: {"action": "login", "l_user": "kobe", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-21 05:23:07 INFO 503 Server Offline
+2025-01-21 05:23:07 INFO 503: server offline, please try again
+2025-01-21 05:23:07 INFO 127.0.0.1 - - [21/Jan/2025 05:23:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-21 05:23:07 INFO 127.0.0.1 - - [21/Jan/2025 05:23:07] "GET /login HTTP/1.1" 200 -
+2025-01-21 05:23:07 INFO 127.0.0.1 - - [21/Jan/2025 05:23:07] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-21 05:23:07 INFO 127.0.0.1 - - [21/Jan/2025 05:23:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-21 05:23:14 INFO 127.0.0.1 - - [21/Jan/2025 05:23:14] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-21 05:23:14 INFO 127.0.0.1 - - [21/Jan/2025 05:23:14] "GET /pair HTTP/1.1" 200 -
+2025-01-21 05:23:14 INFO 127.0.0.1 - - [21/Jan/2025 05:23:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-21 05:23:17 INFO server_name: 192.168.1.75
+2025-01-21 05:23:17 INFO ping sent: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-21 05:23:17 INFO status: pong
+2025-01-21 05:23:17 INFO found_server: None
+2025-01-21 05:23:17 INFO 127.0.0.1 - - [21/Jan/2025 05:23:17] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-21 05:23:17 INFO 127.0.0.1 - - [21/Jan/2025 05:23:17] "GET /login HTTP/1.1" 200 -
+2025-01-21 05:23:17 INFO 127.0.0.1 - - [21/Jan/2025 05:23:17] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-21 05:23:17 INFO 127.0.0.1 - - [21/Jan/2025 05:23:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-21 05:23:24 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-21 05:23:24 INFO json_data: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-21 05:23:24 INFO json_data sent: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-21 05:23:24 INFO server response: {"status": "200", "status_msg": "Login successful"}
+2025-01-21 05:23:24 INFO 200 OK
+2025-01-21 05:23:24 INFO 127.0.0.1 - - [21/Jan/2025 05:23:24] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-21 05:23:24 INFO 127.0.0.1 - - [21/Jan/2025 05:23:24] "GET /dashboard HTTP/1.1" 200 -
+2025-01-21 05:23:24 INFO 127.0.0.1 - - [21/Jan/2025 05:23:24] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-01-21 05:23:24 INFO 127.0.0.1 - - [21/Jan/2025 05:23:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
