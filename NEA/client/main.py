@@ -203,7 +203,7 @@ def dashboard():
             elif status == '503':
                 flash(f"{status}: {status_msg}", 'error')
                 return redirect(url_for('dashboard'))
-            return jsonify({'message': f"Folder '{folder_label}' added diddylys!"})
+            return jsonify({'message': f"Folder '{folder_label}' added!"})
 
         elif action == "join_group":
             group_name = request.form.get('group_name')
