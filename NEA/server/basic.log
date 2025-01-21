@@ -539,3 +539,11 @@
 2025-01-14 10:42:45 INFO User_ID: 31
 2025-01-14 10:42:45 INFO Adding device: bug-dev with Mac_addr: 167132875827157 for User: bug with User_ID: 31
 2025-01-14 10:42:45 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-01-21 05:23:17 INFO Connection from ('192.168.1.75', 52353) has been established!
+2025-01-21 05:23:17 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-21 05:23:17 INFO Received ping from 192.168.1.75
+2025-01-21 05:23:17 INFO Pong sent to 192.168.1.75
+2025-01-21 05:23:24 INFO Connection from ('192.168.1.75', 52358) has been established!
+2025-01-21 05:23:24 INFO message: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-21 05:23:24 INFO User: joel has logged in
+2025-01-21 05:23:24 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}

@@ -4,6 +4,17 @@
 
 body {
     font-family: Arial, sans-serif;
+    background: #111;
+}
+
+button{
+    background-image: linear-gradient(to right, #663399, #8853bd);
+    border-radius: 20px;
+    border: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 25px;
 }
 
 button:active{
@@ -24,6 +35,7 @@ button:active{
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .modal.open {
@@ -34,8 +46,9 @@ button:active{
 .modal-inner{
     background: #fff;
     border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 15px 25px;
     text-align: center;
-    padding: 10px 0px;
     width: 380px;
 }
 
