@@ -118,7 +118,7 @@ def login():
             logging.info(f'503: server offline, please try again')
             return redirect(url_for('login'))
         
-    else:
+    else: # BUG: if the user connects to different server, but has 'user' in sessions, then it will redirect to dashboard !!!
         if 'user' in session and 'server_name' in session: # if user is already logged in, then redirect to user page.
             flash(f'Already Logged In {session['user']}!', 'info')
             return redirect(url_for('dashboard'))
@@ -143,7 +143,7 @@ def register():
         status, status_msg = send(json_data)
         if status == '201':
             flash(f'{status_msg}!', 'info')
-            session['hash']=hash
+            session['hash']=hash # adds hash into session
             session['user']=user
             logging.info(f'user registered: {user}')
             return redirect(url_for('dashboard'))
@@ -239,7 +239,8 @@ def logout():
         user = session['user']
         flash(f'You have been logged out, {user}', 'info')
     session.pop('user', None)
-    #session.pop('email', None)
+    session.pop('hash', None) # SECURITY: to ensure hash removed from session incase someone tries to access it.
+    logging.info(f'{session}')
     return redirect(url_for('login'))
 
 ########## SEND #################################

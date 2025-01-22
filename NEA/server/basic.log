@@ -553,3 +553,58 @@
 2025-01-22 04:39:38 INFO Pong sent to 192.168.1.75
 2025-01-22 04:52:32 INFO Connection from ('192.168.1.75', 52171) has been established!
 2025-01-22 04:52:32 INFO message: {"action": "add_folder", "folder_label": "asd", "folder_id": "CaDs42lN0Y", "folder_path": "~/CaDs42lN0Y", "folder_type": "asd"}
+2025-01-22 05:45:59 INFO Connection from ('192.168.1.75', 52904) has been established!
+2025-01-22 05:45:59 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-22 05:45:59 INFO Received ping from 192.168.1.75
+2025-01-22 05:45:59 INFO Pong sent to 192.168.1.75
+2025-01-22 05:46:20 INFO Connection from ('192.168.1.75', 52911) has been established!
+2025-01-22 05:46:20 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 05:46:20 INFO User: aryan has logged in
+2025-01-22 05:46:20 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 05:46:33 INFO Connection from ('192.168.1.75', 52918) has been established!
+2025-01-22 05:46:33 INFO message: {"action": "add_device", "user": "aryan", "r_dev_name": "r32-gtr", "mac_addr": 4943750935229}
+2025-01-22 05:46:33 INFO User_ID: 9
+2025-01-22 05:46:33 INFO Adding device: r32-gtr with Mac_addr: 4943750935229 for User: aryan with User_ID: 9
+2025-01-22 05:46:33 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-01-22 05:46:42 INFO Connection from ('192.168.1.75', 52924) has been established!
+2025-01-22 05:46:42 INFO message: {"action": "add_device", "user": "aryan", "r_dev_name": "sigmaboy", "mac_addr": 4943750935229}
+2025-01-22 05:46:42 INFO User_ID: 9
+2025-01-22 05:46:42 INFO Comparing: sigmaboy with Mac_addr: 4943750935229 WITH Device: r32-gtr with Mac_addr: 4943750935229
+2025-01-22 05:46:42 INFO Device Mac_addr: 4943750935229 already exists for User: aryan
+2025-01-22 05:46:42 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-01-22 05:55:48 INFO Connection from ('192.168.1.75', 53061) has been established!
+2025-01-22 05:55:48 INFO message: {"action": "add_device", "user": "aryan", "r_dev_name": "asdsd", "mac_addr": 4943750935229}
+2025-01-22 05:55:48 INFO User_ID: 9
+2025-01-22 05:55:48 INFO Comparing: asdsd with Mac_addr: 4943750935229 WITH Device: r32-gtr with Mac_addr: 4943750935229
+2025-01-22 05:55:48 INFO Device Mac_addr: 4943750935229 already exists for User: aryan
+2025-01-22 05:55:48 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-01-22 05:56:27 INFO Connection from ('192.168.1.75', 53087) has been established!
+2025-01-22 05:56:27 INFO message: {"action": "login", "l_user": "jiggly", "hash": "a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e"}
+2025-01-22 05:56:27 INFO User: jiggly has logged in
+2025-01-22 05:56:27 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 06:10:24 INFO Connection from ('192.168.1.75', 53304) has been established!
+2025-01-22 06:10:24 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:10:24 INFO User: aryan has logged in
+2025-01-22 06:10:24 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 06:10:33 INFO Connection from ('192.168.1.75', 53311) has been established!
+2025-01-22 06:10:33 INFO message: {"action": "login", "l_user": "asdasd", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:10:33 INFO User: asdasd not found
+2025-01-22 06:10:33 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-01-22 06:13:02 INFO Connection from ('192.168.1.75', 53367) has been established!
+2025-01-22 06:13:02 INFO message: {"action": "login", "l_user": "java", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:13:02 INFO User: java has logged in
+2025-01-22 06:13:02 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 06:16:45 INFO Connection from ('192.168.1.75', 53436) has been established!
+2025-01-22 06:16:45 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-22 06:16:45 INFO Received ping from 192.168.1.75
+2025-01-22 06:16:45 INFO Pong sent to 192.168.1.75
+2025-01-22 06:16:52 INFO Connection from ('192.168.1.75', 53442) has been established!
+2025-01-22 06:16:52 INFO message: {"action": "login", "l_user": "studywm", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:16:52 INFO User: studywm has logged in
+2025-01-22 06:16:52 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 06:16:58 INFO Connection from ('192.168.1.75', 53449) has been established!
+2025-01-22 06:16:58 INFO message: {"action": "add_device", "user": "studywm", "r_dev_name": "trueno", "mac_addr": 4943750935229}
+2025-01-22 06:16:58 INFO User_ID: 26
+2025-01-22 06:16:58 INFO Comparing: trueno with Mac_addr: 4943750935229 WITH Device: studywms_pc with Mac_addr: 4681952839112
+2025-01-22 06:16:58 INFO Adding device: trueno with Mac_addr: 4943750935229 for User: studywm with User_ID: 26
+2025-01-22 06:16:58 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}

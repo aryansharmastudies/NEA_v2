@@ -34,8 +34,8 @@ button:active{
 .modal-inner{
     background: #fff;
     border-radius: 5px;
+    padding: 10px 5px;
     text-align: center;
-    padding: 10px 0px;
     width: 380px;
 }
 
@@ -46,4 +46,17 @@ button:active{
 .modal-inner p{
     line-height: 24px;
     margin: 10px 0;
+}
+
+.modal-inner {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 20px 30px;
+    text-align: center;
+    width: 400px; /* Adjust width as needed */
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stacks content vertically */
+    align-items: center; /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically */
 }

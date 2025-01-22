@@ -43,50 +43,35 @@ when we finish exe code.-->
     }
   </style>
   
-
-<!-- Register Device Form -->
-<div class="form-container">
-<form method="POST" action="#">
-    <input type="hidden" name="action" value="add_device">
-    <label for="device_name">device name:</label>
-    <input type="text" id="device_name" name="device_name" required>
-    <button type="submit">add device</button>
-</form>
-</div>
-
-<!-- Add Folder Form -->
-<div class="form-container">
-<form method="POST" action="#">
-    <input type="hidden" name="action" value="add_folder">
-    <label for="folder_label">folder label:</label>
-    <input type="text" id="folder_label" name="folder_label" required>
-    <br>
-    <label for="folder_id">folder id:</label>
-    <input type="text" id="folder_id" name="folder_id" value="{{random_folder_id}}" required>
-    <br>
-    <label for="folder_path">folder path:</label>
-    <input type="text" id="folder_path" name="folder_path" value="~/{{random_folder_id}}" required>
-    <br>
-    <label for="folder_type">folder type:</label>
-    <input type="text" id="folder_type" name="folder_type" required>
-    <br>
-    <button type="submit">add folder</button>
-
-    <!--DISPLAY ALL FOLDERS AND DATA-->
-</form>
-</div> 
-
-<!--TODO: add popup-->
-<!-- Add Folder Modal -->
-<!-- Button to Open the Modal -->
-
+<br>
 <body>
-    <button id="openModal">Open Modal</button>
+    <button id="openModalDevice">register device</button>
 
-    <div class="modal" id="modal">
+    <div class="modal" id="modalDevice">
         <div class="modal-inner">
-            <h2>Y2K!</h2>
-            <p>Y2K is a common abbreviation for the year 2000 software problem.</p>
+            <h2>(っ °Д °;)っ</h2>
+            <p>register device</p>
+            <div class="form-container">
+                <form method="POST" action="#">
+                    <input type="hidden" name="action" value="add_device">
+                    <label for="device_name">device name:</label>
+                    <input type="text" id="device_name" name="device_name" required>
+                    <button type="submit">add device</button>
+                </form>
+                </div> 
+            <button id="closeModalDevice">Close</button>
+        </div>
+    </div> 
+</body>
+
+<br>
+<body>
+    <button id="openModalFolder">add folder</button>
+
+    <div class="modal" id="modalFolder">
+        <div class="modal-inner">
+            <h2>つ﹏⊂</h2>
+            <p>add folder</p>
             <div class="form-container">
                 <form method="POST" action="#">
                     <input type="hidden" name="action" value="add_folder">
@@ -103,35 +88,12 @@ when we finish exe code.-->
                     <input type="text" id="folder_type" name="folder_type" required>
                     <br>
                     <button type="submit">add folder</button>
-                
-                    <!--DISPLAY ALL FOLDERS AND DATA-->
                 </form>
                 </div> 
-            <button id="closeModal">Close</button>
+            <button id="closeModalFolder">Close</button>
         </div>
     </div> 
 </body>
-
-
-<button id="openModal">Open Modal</button>
-
-<div class="modal" id="modal">
-    <div class="modal-inner">
-        <h2>Add Folder</h2>
-        <p>Fill in the folder details below:</p>
-        <form>
-            <label for="folder_label">Folder Label:</label>
-            <input type="text" id="folder_label" name="folder_label" required>
-            <br>
-            <label for="folder_path">Folder Path:</label>
-            <input type="text" id="folder_path" name="folder_path" required>
-            <br>
-            <button type="submit">Submit</button>
-        </form>
-        <button id="closeModal">Close</button>
-    </div>
-</div>
-
 
 <!-- Join Group Form -->
 <div class="form-container">

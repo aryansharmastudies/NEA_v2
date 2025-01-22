@@ -4278,3 +4278,558 @@ WHERE servers.name = ?
 2025-01-22 05:15:43 INFO 127.0.0.1 - - [22/Jan/2025 05:15:43] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
 2025-01-22 05:15:43 INFO 127.0.0.1 - - [22/Jan/2025 05:15:43] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
 2025-01-22 05:15:43 INFO 127.0.0.1 - - [22/Jan/2025 05:15:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:21:33 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-22 05:21:33 INFO [33mPress CTRL+C to quit[0m
+2025-01-22 05:21:33 INFO  * Restarting with stat
+2025-01-22 05:21:34 WARNING  * Debugger is active!
+2025-01-22 05:21:34 INFO  * Debugger PIN: 719-335-841
+2025-01-22 05:21:43 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-22 05:21:43 INFO  * Restarting with stat
+2025-01-22 05:22:27 WARNING  * Debugger is active!
+2025-01-22 05:22:27 INFO  * Debugger PIN: 719-335-841
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:22:27 INFO 127.0.0.1 - - [22/Jan/2025 05:22:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:22:30 INFO 127.0.0.1 - - [22/Jan/2025 05:22:30] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:22:30 INFO 127.0.0.1 - - [22/Jan/2025 05:22:30] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:22:30 INFO 127.0.0.1 - - [22/Jan/2025 05:22:30] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:22:30 INFO 127.0.0.1 - - [22/Jan/2025 05:22:30] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:22:31 INFO 127.0.0.1 - - [22/Jan/2025 05:22:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:22:31 INFO 127.0.0.1 - - [22/Jan/2025 05:22:31] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:22:31 INFO 127.0.0.1 - - [22/Jan/2025 05:22:31] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:22:31 INFO 127.0.0.1 - - [22/Jan/2025 05:22:31] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:22:31 INFO 127.0.0.1 - - [22/Jan/2025 05:22:31] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:22:32 INFO 127.0.0.1 - - [22/Jan/2025 05:22:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:22:33 INFO 127.0.0.1 - - [22/Jan/2025 05:22:33] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:22:33 INFO 127.0.0.1 - - [22/Jan/2025 05:22:33] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:22:33 INFO 127.0.0.1 - - [22/Jan/2025 05:22:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:22:33 INFO 127.0.0.1 - - [22/Jan/2025 05:22:33] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:22:33 INFO 127.0.0.1 - - [22/Jan/2025 05:22:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:26:39 INFO 127.0.0.1 - - [22/Jan/2025 05:26:39] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:26:39 INFO 127.0.0.1 - - [22/Jan/2025 05:26:39] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:26:39 INFO 127.0.0.1 - - [22/Jan/2025 05:26:39] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:26:39 INFO 127.0.0.1 - - [22/Jan/2025 05:26:39] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:26:39 INFO 127.0.0.1 - - [22/Jan/2025 05:26:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:27:47 INFO 127.0.0.1 - - [22/Jan/2025 05:27:47] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:27:47 INFO 127.0.0.1 - - [22/Jan/2025 05:27:47] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:27:47 INFO 127.0.0.1 - - [22/Jan/2025 05:27:47] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:27:47 INFO 127.0.0.1 - - [22/Jan/2025 05:27:47] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:27:47 INFO 127.0.0.1 - - [22/Jan/2025 05:27:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:29:32 INFO 127.0.0.1 - - [22/Jan/2025 05:29:32] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:29:32 INFO 127.0.0.1 - - [22/Jan/2025 05:29:32] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:29:32 INFO 127.0.0.1 - - [22/Jan/2025 05:29:32] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:29:32 INFO 127.0.0.1 - - [22/Jan/2025 05:29:32] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:29:32 INFO 127.0.0.1 - - [22/Jan/2025 05:29:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:29:45 INFO 127.0.0.1 - - [22/Jan/2025 05:29:45] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:29:45 INFO 127.0.0.1 - - [22/Jan/2025 05:29:45] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:29:45 INFO 127.0.0.1 - - [22/Jan/2025 05:29:45] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:29:45 INFO 127.0.0.1 - - [22/Jan/2025 05:29:45] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:29:45 INFO 127.0.0.1 - - [22/Jan/2025 05:29:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:30:01 INFO 127.0.0.1 - - [22/Jan/2025 05:30:01] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:30:01 INFO 127.0.0.1 - - [22/Jan/2025 05:30:01] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:30:01 INFO 127.0.0.1 - - [22/Jan/2025 05:30:01] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:30:01 INFO 127.0.0.1 - - [22/Jan/2025 05:30:01] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:30:01 INFO 127.0.0.1 - - [22/Jan/2025 05:30:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:30:07 INFO 127.0.0.1 - - [22/Jan/2025 05:30:07] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:30:07 INFO 127.0.0.1 - - [22/Jan/2025 05:30:07] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:30:07 INFO 127.0.0.1 - - [22/Jan/2025 05:30:07] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:30:07 INFO 127.0.0.1 - - [22/Jan/2025 05:30:07] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:30:07 INFO 127.0.0.1 - - [22/Jan/2025 05:30:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:30:16 INFO 127.0.0.1 - - [22/Jan/2025 05:30:16] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:30:16 INFO 127.0.0.1 - - [22/Jan/2025 05:30:16] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:30:16 INFO 127.0.0.1 - - [22/Jan/2025 05:30:16] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:30:16 INFO 127.0.0.1 - - [22/Jan/2025 05:30:16] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:30:16 INFO 127.0.0.1 - - [22/Jan/2025 05:30:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:30:34 INFO 127.0.0.1 - - [22/Jan/2025 05:30:34] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:30:35 INFO 127.0.0.1 - - [22/Jan/2025 05:30:35] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:30:35 INFO 127.0.0.1 - - [22/Jan/2025 05:30:35] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:30:35 INFO 127.0.0.1 - - [22/Jan/2025 05:30:35] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:30:35 INFO 127.0.0.1 - - [22/Jan/2025 05:30:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:30:46 INFO 127.0.0.1 - - [22/Jan/2025 05:30:46] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:30:46 INFO 127.0.0.1 - - [22/Jan/2025 05:30:46] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:30:46 INFO 127.0.0.1 - - [22/Jan/2025 05:30:46] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:30:46 INFO 127.0.0.1 - - [22/Jan/2025 05:30:46] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:30:46 INFO 127.0.0.1 - - [22/Jan/2025 05:30:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:31:46 INFO 127.0.0.1 - - [22/Jan/2025 05:31:46] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:31:46 INFO 127.0.0.1 - - [22/Jan/2025 05:31:46] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:31:46 INFO 127.0.0.1 - - [22/Jan/2025 05:31:46] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:31:46 INFO 127.0.0.1 - - [22/Jan/2025 05:31:46] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:31:46 INFO 127.0.0.1 - - [22/Jan/2025 05:31:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:31:56 INFO 127.0.0.1 - - [22/Jan/2025 05:31:56] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:31:56 INFO 127.0.0.1 - - [22/Jan/2025 05:31:56] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:31:56 INFO 127.0.0.1 - - [22/Jan/2025 05:31:56] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:31:56 INFO 127.0.0.1 - - [22/Jan/2025 05:31:56] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:31:56 INFO 127.0.0.1 - - [22/Jan/2025 05:31:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:31:57 INFO 127.0.0.1 - - [22/Jan/2025 05:31:57] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:31:57 INFO 127.0.0.1 - - [22/Jan/2025 05:31:57] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:31:57 INFO 127.0.0.1 - - [22/Jan/2025 05:31:57] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:31:57 INFO 127.0.0.1 - - [22/Jan/2025 05:31:57] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:31:57 INFO 127.0.0.1 - - [22/Jan/2025 05:31:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:32:14 INFO 127.0.0.1 - - [22/Jan/2025 05:32:14] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:32:14 INFO 127.0.0.1 - - [22/Jan/2025 05:32:14] "GET /static/css/original_style.css HTTP/1.1" 200 -
+2025-01-22 05:32:14 INFO 127.0.0.1 - - [22/Jan/2025 05:32:14] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:32:14 INFO 127.0.0.1 - - [22/Jan/2025 05:32:14] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:32:14 INFO 127.0.0.1 - - [22/Jan/2025 05:32:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:32:37 INFO 127.0.0.1 - - [22/Jan/2025 05:32:37] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:32:37 INFO 127.0.0.1 - - [22/Jan/2025 05:32:37] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:32:37 INFO 127.0.0.1 - - [22/Jan/2025 05:32:37] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:32:37 INFO 127.0.0.1 - - [22/Jan/2025 05:32:37] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:32:37 INFO 127.0.0.1 - - [22/Jan/2025 05:32:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:33:47 INFO 127.0.0.1 - - [22/Jan/2025 05:33:47] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:33:47 INFO 127.0.0.1 - - [22/Jan/2025 05:33:47] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:33:47 INFO 127.0.0.1 - - [22/Jan/2025 05:33:47] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:33:47 INFO 127.0.0.1 - - [22/Jan/2025 05:33:47] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:33:47 INFO 127.0.0.1 - - [22/Jan/2025 05:33:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:34:30 INFO 127.0.0.1 - - [22/Jan/2025 05:34:30] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:34:30 INFO 127.0.0.1 - - [22/Jan/2025 05:34:30] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:34:30 INFO 127.0.0.1 - - [22/Jan/2025 05:34:30] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:34:30 INFO 127.0.0.1 - - [22/Jan/2025 05:34:30] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-01-22 05:34:30 INFO 127.0.0.1 - - [22/Jan/2025 05:34:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:34:45 INFO 127.0.0.1 - - [22/Jan/2025 05:34:45] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:34:45 INFO 127.0.0.1 - - [22/Jan/2025 05:34:45] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:34:45 INFO 127.0.0.1 - - [22/Jan/2025 05:34:45] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:34:45 INFO 127.0.0.1 - - [22/Jan/2025 05:34:45] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:34:45 INFO 127.0.0.1 - - [22/Jan/2025 05:34:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:34:56 INFO 127.0.0.1 - - [22/Jan/2025 05:34:56] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:34:56 INFO 127.0.0.1 - - [22/Jan/2025 05:34:56] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:34:56 INFO 127.0.0.1 - - [22/Jan/2025 05:34:56] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:34:56 INFO 127.0.0.1 - - [22/Jan/2025 05:34:56] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:34:56 INFO 127.0.0.1 - - [22/Jan/2025 05:34:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:35:06 INFO 127.0.0.1 - - [22/Jan/2025 05:35:06] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:35:06 INFO 127.0.0.1 - - [22/Jan/2025 05:35:06] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:35:06 INFO 127.0.0.1 - - [22/Jan/2025 05:35:06] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:35:06 INFO 127.0.0.1 - - [22/Jan/2025 05:35:06] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:35:06 INFO 127.0.0.1 - - [22/Jan/2025 05:35:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:35:13 INFO 127.0.0.1 - - [22/Jan/2025 05:35:13] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:35:13 INFO 127.0.0.1 - - [22/Jan/2025 05:35:13] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:35:13 INFO 127.0.0.1 - - [22/Jan/2025 05:35:13] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:35:13 INFO 127.0.0.1 - - [22/Jan/2025 05:35:13] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:35:13 INFO 127.0.0.1 - - [22/Jan/2025 05:35:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:35:18 INFO 127.0.0.1 - - [22/Jan/2025 05:35:18] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:35:18 INFO 127.0.0.1 - - [22/Jan/2025 05:35:18] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:35:18 INFO 127.0.0.1 - - [22/Jan/2025 05:35:18] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:35:18 INFO 127.0.0.1 - - [22/Jan/2025 05:35:18] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:35:19 INFO 127.0.0.1 - - [22/Jan/2025 05:35:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:35:32 INFO 127.0.0.1 - - [22/Jan/2025 05:35:32] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:35:33 INFO 127.0.0.1 - - [22/Jan/2025 05:35:33] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:35:33 INFO 127.0.0.1 - - [22/Jan/2025 05:35:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:35:33 INFO 127.0.0.1 - - [22/Jan/2025 05:35:33] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:35:33 INFO 127.0.0.1 - - [22/Jan/2025 05:35:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:35:37 INFO 127.0.0.1 - - [22/Jan/2025 05:35:37] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:35:38 INFO 127.0.0.1 - - [22/Jan/2025 05:35:38] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:35:38 INFO 127.0.0.1 - - [22/Jan/2025 05:35:38] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:35:38 INFO 127.0.0.1 - - [22/Jan/2025 05:35:38] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:35:38 INFO 127.0.0.1 - - [22/Jan/2025 05:35:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:35:46 INFO 127.0.0.1 - - [22/Jan/2025 05:35:46] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:35:46 INFO 127.0.0.1 - - [22/Jan/2025 05:35:46] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:35:46 INFO 127.0.0.1 - - [22/Jan/2025 05:35:46] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:35:46 INFO 127.0.0.1 - - [22/Jan/2025 05:35:46] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:35:46 INFO 127.0.0.1 - - [22/Jan/2025 05:35:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:36:05 INFO 127.0.0.1 - - [22/Jan/2025 05:36:05] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:36:05 INFO 127.0.0.1 - - [22/Jan/2025 05:36:05] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:36:05 INFO 127.0.0.1 - - [22/Jan/2025 05:36:05] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:36:05 INFO 127.0.0.1 - - [22/Jan/2025 05:36:05] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:36:05 INFO 127.0.0.1 - - [22/Jan/2025 05:36:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:36:19 INFO 127.0.0.1 - - [22/Jan/2025 05:36:19] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:36:19 INFO 127.0.0.1 - - [22/Jan/2025 05:36:19] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:36:19 INFO 127.0.0.1 - - [22/Jan/2025 05:36:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:36:19 INFO 127.0.0.1 - - [22/Jan/2025 05:36:19] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:36:19 INFO 127.0.0.1 - - [22/Jan/2025 05:36:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:36:30 INFO 127.0.0.1 - - [22/Jan/2025 05:36:30] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 05:36:30 INFO 127.0.0.1 - - [22/Jan/2025 05:36:30] "GET /login HTTP/1.1" 200 -
+2025-01-22 05:36:30 INFO 127.0.0.1 - - [22/Jan/2025 05:36:30] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:36:30 INFO 127.0.0.1 - - [22/Jan/2025 05:36:30] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:36:30 INFO 127.0.0.1 - - [22/Jan/2025 05:36:30] "GET /static/images/initial_d02.jpg HTTP/1.1" 200 -
+2025-01-22 05:36:30 INFO 127.0.0.1 - - [22/Jan/2025 05:36:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:36:39 INFO 127.0.0.1 - - [22/Jan/2025 05:36:39] "GET /login HTTP/1.1" 200 -
+2025-01-22 05:36:39 INFO 127.0.0.1 - - [22/Jan/2025 05:36:39] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:36:39 INFO 127.0.0.1 - - [22/Jan/2025 05:36:39] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:36:39 INFO 127.0.0.1 - - [22/Jan/2025 05:36:39] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:36:39 INFO 127.0.0.1 - - [22/Jan/2025 05:36:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-22 05:36:42 INFO Already Logged In aqib in Server kyoto!
+2025-01-22 05:36:42 INFO 127.0.0.1 - - [22/Jan/2025 05:36:42] "[32mGET /register HTTP/1.1[0m" 302 -
+2025-01-22 05:36:42 INFO 127.0.0.1 - - [22/Jan/2025 05:36:42] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:36:42 INFO 127.0.0.1 - - [22/Jan/2025 05:36:42] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:36:42 INFO 127.0.0.1 - - [22/Jan/2025 05:36:42] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-01-22 05:36:42 INFO 127.0.0.1 - - [22/Jan/2025 05:36:42] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-01-22 05:44:44 INFO 127.0.0.1 - - [22/Jan/2025 05:44:44] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:44:44 INFO 127.0.0.1 - - [22/Jan/2025 05:44:44] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:44:44 INFO 127.0.0.1 - - [22/Jan/2025 05:44:44] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:44:44 INFO 127.0.0.1 - - [22/Jan/2025 05:44:44] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:44:58 INFO 127.0.0.1 - - [22/Jan/2025 05:44:58] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:44:58 INFO 127.0.0.1 - - [22/Jan/2025 05:44:58] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:44:58 INFO 127.0.0.1 - - [22/Jan/2025 05:44:58] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:44:58 INFO 127.0.0.1 - - [22/Jan/2025 05:44:58] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:45:08 INFO 503 Server Offline
+2025-01-22 05:45:08 INFO 127.0.0.1 - - [22/Jan/2025 05:45:08] "[32mPOST /dashboard HTTP/1.1[0m" 302 -
+2025-01-22 05:45:08 INFO 127.0.0.1 - - [22/Jan/2025 05:45:08] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:45:08 INFO 127.0.0.1 - - [22/Jan/2025 05:45:08] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:45:08 INFO 127.0.0.1 - - [22/Jan/2025 05:45:08] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:45:08 INFO 127.0.0.1 - - [22/Jan/2025 05:45:08] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:45:13 INFO 127.0.0.1 - - [22/Jan/2025 05:45:13] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-22 05:45:13 INFO 127.0.0.1 - - [22/Jan/2025 05:45:13] "GET /pair HTTP/1.1" 200 -
+2025-01-22 05:45:13 INFO 127.0.0.1 - - [22/Jan/2025 05:45:13] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:45:13 INFO 127.0.0.1 - - [22/Jan/2025 05:45:13] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:45:16 INFO 127.0.0.1 - - [22/Jan/2025 05:45:16] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 05:45:16 INFO 127.0.0.1 - - [22/Jan/2025 05:45:16] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-01-22 05:45:16 INFO 127.0.0.1 - - [22/Jan/2025 05:45:16] "GET /pair HTTP/1.1" 200 -
+2025-01-22 05:45:16 INFO 127.0.0.1 - - [22/Jan/2025 05:45:16] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:45:16 INFO 127.0.0.1 - - [22/Jan/2025 05:45:16] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:45:19 INFO 127.0.0.1 - - [22/Jan/2025 05:45:19] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 05:45:19 INFO 127.0.0.1 - - [22/Jan/2025 05:45:19] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-01-22 05:45:19 INFO 127.0.0.1 - - [22/Jan/2025 05:45:19] "GET /pair HTTP/1.1" 200 -
+2025-01-22 05:45:19 INFO 127.0.0.1 - - [22/Jan/2025 05:45:19] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:45:19 INFO 127.0.0.1 - - [22/Jan/2025 05:45:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:45:21 INFO 127.0.0.1 - - [22/Jan/2025 05:45:21] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-22 05:45:21 INFO 127.0.0.1 - - [22/Jan/2025 05:45:21] "GET /pair HTTP/1.1" 200 -
+2025-01-22 05:45:21 INFO 127.0.0.1 - - [22/Jan/2025 05:45:21] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:45:21 INFO 127.0.0.1 - - [22/Jan/2025 05:45:21] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:45:59 INFO server_name: 192.168.1.75
+2025-01-22 05:45:59 INFO ping sent: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-22 05:45:59 INFO status: pong
+2025-01-22 05:45:59 INFO found_server: <servers 192.168.1.75>
+2025-01-22 05:45:59 INFO 127.0.0.1 - - [22/Jan/2025 05:45:59] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-22 05:45:59 INFO 127.0.0.1 - - [22/Jan/2025 05:45:59] "GET /login HTTP/1.1" 200 -
+2025-01-22 05:45:59 INFO 127.0.0.1 - - [22/Jan/2025 05:45:59] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:45:59 INFO 127.0.0.1 - - [22/Jan/2025 05:45:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:45:59 INFO 127.0.0.1 - - [22/Jan/2025 05:45:59] "GET /static/images/initial_d02.jpg HTTP/1.1" 200 -
+2025-01-22 05:46:20 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-22 05:46:20 INFO json_data: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 05:46:20 INFO json_data sent: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 05:46:20 INFO server response: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 05:46:20 INFO 200 OK
+2025-01-22 05:46:20 INFO 127.0.0.1 - - [22/Jan/2025 05:46:20] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-22 05:46:20 INFO 127.0.0.1 - - [22/Jan/2025 05:46:20] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:46:20 INFO 127.0.0.1 - - [22/Jan/2025 05:46:20] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:46:20 INFO 127.0.0.1 - - [22/Jan/2025 05:46:20] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:46:20 INFO 127.0.0.1 - - [22/Jan/2025 05:46:20] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:46:33 INFO json_data sent: {"action": "add_device", "user": "aryan", "r_dev_name": "r32-gtr", "mac_addr": 4943750935229}
+2025-01-22 05:46:33 INFO server response: {"status": "201", "status_msg": "Device added successfully"}
+2025-01-22 05:46:33 INFO 201 Added
+2025-01-22 05:46:33 INFO 127.0.0.1 - - [22/Jan/2025 05:46:33] "[32mPOST /dashboard HTTP/1.1[0m" 302 -
+2025-01-22 05:46:33 INFO 127.0.0.1 - - [22/Jan/2025 05:46:33] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:46:33 INFO 127.0.0.1 - - [22/Jan/2025 05:46:33] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:46:33 INFO 127.0.0.1 - - [22/Jan/2025 05:46:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:46:33 INFO 127.0.0.1 - - [22/Jan/2025 05:46:33] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:46:42 INFO json_data sent: {"action": "add_device", "user": "aryan", "r_dev_name": "sigmaboy", "mac_addr": 4943750935229}
+2025-01-22 05:46:42 INFO server response: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-01-22 05:46:42 INFO 409 Conflict
+2025-01-22 05:46:42 INFO 127.0.0.1 - - [22/Jan/2025 05:46:42] "[32mPOST /dashboard HTTP/1.1[0m" 302 -
+2025-01-22 05:46:42 INFO 127.0.0.1 - - [22/Jan/2025 05:46:42] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:46:42 INFO 127.0.0.1 - - [22/Jan/2025 05:46:42] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:46:42 INFO 127.0.0.1 - - [22/Jan/2025 05:46:42] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:46:42 INFO 127.0.0.1 - - [22/Jan/2025 05:46:42] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:47:28 INFO 127.0.0.1 - - [22/Jan/2025 05:47:28] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:47:28 INFO 127.0.0.1 - - [22/Jan/2025 05:47:28] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:47:28 INFO 127.0.0.1 - - [22/Jan/2025 05:47:28] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:47:28 INFO 127.0.0.1 - - [22/Jan/2025 05:47:28] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:47:42 INFO 127.0.0.1 - - [22/Jan/2025 05:47:42] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:47:42 INFO 127.0.0.1 - - [22/Jan/2025 05:47:42] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:47:42 INFO 127.0.0.1 - - [22/Jan/2025 05:47:42] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:47:42 INFO 127.0.0.1 - - [22/Jan/2025 05:47:42] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:47:52 INFO 127.0.0.1 - - [22/Jan/2025 05:47:52] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:47:52 INFO 127.0.0.1 - - [22/Jan/2025 05:47:52] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:47:52 INFO 127.0.0.1 - - [22/Jan/2025 05:47:52] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:47:52 INFO 127.0.0.1 - - [22/Jan/2025 05:47:52] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:48:01 INFO 127.0.0.1 - - [22/Jan/2025 05:48:01] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:48:01 INFO 127.0.0.1 - - [22/Jan/2025 05:48:01] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:48:01 INFO 127.0.0.1 - - [22/Jan/2025 05:48:01] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:48:01 INFO 127.0.0.1 - - [22/Jan/2025 05:48:01] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:48:19 INFO 127.0.0.1 - - [22/Jan/2025 05:48:19] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:48:19 INFO 127.0.0.1 - - [22/Jan/2025 05:48:19] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:48:19 INFO 127.0.0.1 - - [22/Jan/2025 05:48:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:48:19 INFO 127.0.0.1 - - [22/Jan/2025 05:48:19] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:48:23 INFO 127.0.0.1 - - [22/Jan/2025 05:48:23] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:48:23 INFO 127.0.0.1 - - [22/Jan/2025 05:48:23] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:48:23 INFO 127.0.0.1 - - [22/Jan/2025 05:48:23] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:48:23 INFO 127.0.0.1 - - [22/Jan/2025 05:48:23] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:48:32 INFO 127.0.0.1 - - [22/Jan/2025 05:48:32] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:48:32 INFO 127.0.0.1 - - [22/Jan/2025 05:48:32] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:48:32 INFO 127.0.0.1 - - [22/Jan/2025 05:48:32] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:48:32 INFO 127.0.0.1 - - [22/Jan/2025 05:48:32] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:48:37 INFO 127.0.0.1 - - [22/Jan/2025 05:48:37] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:48:37 INFO 127.0.0.1 - - [22/Jan/2025 05:48:37] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:48:37 INFO 127.0.0.1 - - [22/Jan/2025 05:48:37] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:48:37 INFO 127.0.0.1 - - [22/Jan/2025 05:48:37] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:52:10 INFO 127.0.0.1 - - [22/Jan/2025 05:52:10] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:52:10 INFO 127.0.0.1 - - [22/Jan/2025 05:52:10] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:52:10 INFO 127.0.0.1 - - [22/Jan/2025 05:52:10] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:52:10 INFO 127.0.0.1 - - [22/Jan/2025 05:52:10] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:52:11 INFO 127.0.0.1 - - [22/Jan/2025 05:52:11] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:52:11 INFO 127.0.0.1 - - [22/Jan/2025 05:52:11] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:52:11 INFO 127.0.0.1 - - [22/Jan/2025 05:52:11] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:52:11 INFO 127.0.0.1 - - [22/Jan/2025 05:52:11] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:53:09 INFO 127.0.0.1 - - [22/Jan/2025 05:53:09] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:53:09 INFO 127.0.0.1 - - [22/Jan/2025 05:53:09] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:53:09 INFO 127.0.0.1 - - [22/Jan/2025 05:53:09] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:53:09 INFO 127.0.0.1 - - [22/Jan/2025 05:53:09] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:53:58 INFO 127.0.0.1 - - [22/Jan/2025 05:53:58] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:53:58 INFO 127.0.0.1 - - [22/Jan/2025 05:53:58] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:53:58 INFO 127.0.0.1 - - [22/Jan/2025 05:53:58] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:53:58 INFO 127.0.0.1 - - [22/Jan/2025 05:53:58] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:54:04 INFO 127.0.0.1 - - [22/Jan/2025 05:54:04] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:54:04 INFO 127.0.0.1 - - [22/Jan/2025 05:54:04] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:54:04 INFO 127.0.0.1 - - [22/Jan/2025 05:54:04] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:54:04 INFO 127.0.0.1 - - [22/Jan/2025 05:54:04] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:54:04 INFO 127.0.0.1 - - [22/Jan/2025 05:54:04] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:54:04 INFO 127.0.0.1 - - [22/Jan/2025 05:54:04] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:54:04 INFO 127.0.0.1 - - [22/Jan/2025 05:54:04] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:54:04 INFO 127.0.0.1 - - [22/Jan/2025 05:54:04] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:54:10 INFO 127.0.0.1 - - [22/Jan/2025 05:54:10] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:54:10 INFO 127.0.0.1 - - [22/Jan/2025 05:54:10] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:54:10 INFO 127.0.0.1 - - [22/Jan/2025 05:54:10] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:54:10 INFO 127.0.0.1 - - [22/Jan/2025 05:54:10] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:55:09 INFO 127.0.0.1 - - [22/Jan/2025 05:55:09] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:55:09 INFO 127.0.0.1 - - [22/Jan/2025 05:55:09] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:55:09 INFO 127.0.0.1 - - [22/Jan/2025 05:55:09] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:55:09 INFO 127.0.0.1 - - [22/Jan/2025 05:55:09] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:55:41 INFO 127.0.0.1 - - [22/Jan/2025 05:55:41] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:55:48 INFO json_data sent: {"action": "add_device", "user": "aryan", "r_dev_name": "asdsd", "mac_addr": 4943750935229}
+2025-01-22 05:55:48 INFO server response: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-01-22 05:55:48 INFO 409 Conflict
+2025-01-22 05:55:48 INFO 127.0.0.1 - - [22/Jan/2025 05:55:48] "[32mPOST /dashboard HTTP/1.1[0m" 302 -
+2025-01-22 05:55:48 INFO 127.0.0.1 - - [22/Jan/2025 05:55:48] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:55:48 INFO 127.0.0.1 - - [22/Jan/2025 05:55:48] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:55:48 INFO 127.0.0.1 - - [22/Jan/2025 05:55:48] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:55:48 INFO 127.0.0.1 - - [22/Jan/2025 05:55:48] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:55:50 INFO 127.0.0.1 - - [22/Jan/2025 05:55:50] "POST /dashboard HTTP/1.1" 200 -
+2025-01-22 05:56:20 INFO 127.0.0.1 - - [22/Jan/2025 05:56:20] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:56:20 INFO 127.0.0.1 - - [22/Jan/2025 05:56:20] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:56:20 INFO 127.0.0.1 - - [22/Jan/2025 05:56:20] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:56:20 INFO 127.0.0.1 - - [22/Jan/2025 05:56:20] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:56:24 INFO 127.0.0.1 - - [22/Jan/2025 05:56:24] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 05:56:24 INFO 127.0.0.1 - - [22/Jan/2025 05:56:24] "GET /login HTTP/1.1" 200 -
+2025-01-22 05:56:24 INFO 127.0.0.1 - - [22/Jan/2025 05:56:24] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:56:24 INFO 127.0.0.1 - - [22/Jan/2025 05:56:24] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:56:24 INFO 127.0.0.1 - - [22/Jan/2025 05:56:24] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:56:27 INFO hashed password: a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e
+2025-01-22 05:56:27 INFO json_data: {"action": "login", "l_user": "jiggly", "hash": "a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e"}
+2025-01-22 05:56:27 INFO json_data sent: {"action": "login", "l_user": "jiggly", "hash": "a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e"}
+2025-01-22 05:56:27 INFO server response: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 05:56:27 INFO 200 OK
+2025-01-22 05:56:27 INFO 127.0.0.1 - - [22/Jan/2025 05:56:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-22 05:56:27 INFO 127.0.0.1 - - [22/Jan/2025 05:56:27] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:56:27 INFO 127.0.0.1 - - [22/Jan/2025 05:56:27] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:56:27 INFO 127.0.0.1 - - [22/Jan/2025 05:56:27] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:56:27 INFO 127.0.0.1 - - [22/Jan/2025 05:56:27] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:56:37 INFO 127.0.0.1 - - [22/Jan/2025 05:56:37] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:56:37 INFO 127.0.0.1 - - [22/Jan/2025 05:56:37] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:56:37 INFO 127.0.0.1 - - [22/Jan/2025 05:56:37] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:56:37 INFO 127.0.0.1 - - [22/Jan/2025 05:56:37] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:57:15 INFO 127.0.0.1 - - [22/Jan/2025 05:57:15] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:57:15 INFO 127.0.0.1 - - [22/Jan/2025 05:57:15] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:57:15 INFO 127.0.0.1 - - [22/Jan/2025 05:57:15] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:57:15 INFO 127.0.0.1 - - [22/Jan/2025 05:57:15] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:57:33 INFO 127.0.0.1 - - [22/Jan/2025 05:57:33] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:57:33 INFO 127.0.0.1 - - [22/Jan/2025 05:57:33] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:57:33 INFO 127.0.0.1 - - [22/Jan/2025 05:57:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:57:33 INFO 127.0.0.1 - - [22/Jan/2025 05:57:33] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:57:34 INFO 127.0.0.1 - - [22/Jan/2025 05:57:34] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:57:34 INFO 127.0.0.1 - - [22/Jan/2025 05:57:34] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:57:34 INFO 127.0.0.1 - - [22/Jan/2025 05:57:34] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:57:34 INFO 127.0.0.1 - - [22/Jan/2025 05:57:34] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:57:36 INFO 127.0.0.1 - - [22/Jan/2025 05:57:36] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:57:36 INFO 127.0.0.1 - - [22/Jan/2025 05:57:36] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 05:57:36 INFO 127.0.0.1 - - [22/Jan/2025 05:57:36] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:57:36 INFO 127.0.0.1 - - [22/Jan/2025 05:57:36] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 05:59:33 INFO 127.0.0.1 - - [22/Jan/2025 05:59:33] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 05:59:33 INFO 127.0.0.1 - - [22/Jan/2025 05:59:33] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 05:59:33 INFO 127.0.0.1 - - [22/Jan/2025 05:59:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 05:59:33 INFO 127.0.0.1 - - [22/Jan/2025 05:59:33] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:00:18 INFO 127.0.0.1 - - [22/Jan/2025 06:00:18] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:00:18 INFO 127.0.0.1 - - [22/Jan/2025 06:00:18] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:00:18 INFO 127.0.0.1 - - [22/Jan/2025 06:00:18] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 06:00:18 INFO 127.0.0.1 - - [22/Jan/2025 06:00:18] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-01-22 06:00:54 INFO 127.0.0.1 - - [22/Jan/2025 06:00:54] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:00:54 INFO 127.0.0.1 - - [22/Jan/2025 06:00:54] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:00:54 INFO 127.0.0.1 - - [22/Jan/2025 06:00:54] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 06:00:54 INFO 127.0.0.1 - - [22/Jan/2025 06:00:54] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-01-22 06:01:52 INFO 127.0.0.1 - - [22/Jan/2025 06:01:52] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:01:52 INFO 127.0.0.1 - - [22/Jan/2025 06:01:52] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:01:52 INFO 127.0.0.1 - - [22/Jan/2025 06:01:52] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:01:52 INFO 127.0.0.1 - - [22/Jan/2025 06:01:52] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:02:13 INFO 127.0.0.1 - - [22/Jan/2025 06:02:13] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:02:13 INFO 127.0.0.1 - - [22/Jan/2025 06:02:13] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:02:13 INFO 127.0.0.1 - - [22/Jan/2025 06:02:13] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:02:13 INFO 127.0.0.1 - - [22/Jan/2025 06:02:13] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:06:21 INFO 127.0.0.1 - - [22/Jan/2025 06:06:21] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:06:21 INFO 127.0.0.1 - - [22/Jan/2025 06:06:21] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:06:21 INFO 127.0.0.1 - - [22/Jan/2025 06:06:21] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-01-22 06:06:21 INFO 127.0.0.1 - - [22/Jan/2025 06:06:21] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:06:29 INFO 127.0.0.1 - - [22/Jan/2025 06:06:29] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:06:29 INFO 127.0.0.1 - - [22/Jan/2025 06:06:29] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:06:29 INFO 127.0.0.1 - - [22/Jan/2025 06:06:29] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-01-22 06:06:29 INFO 127.0.0.1 - - [22/Jan/2025 06:06:29] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:07:05 INFO 127.0.0.1 - - [22/Jan/2025 06:07:05] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:07:05 INFO 127.0.0.1 - - [22/Jan/2025 06:07:05] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:07:05 INFO 127.0.0.1 - - [22/Jan/2025 06:07:05] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-01-22 06:07:05 INFO 127.0.0.1 - - [22/Jan/2025 06:07:05] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:08:04 INFO 127.0.0.1 - - [22/Jan/2025 06:08:04] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:08:04 INFO 127.0.0.1 - - [22/Jan/2025 06:08:04] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-01-22 06:08:04 INFO 127.0.0.1 - - [22/Jan/2025 06:08:04] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:08:04 INFO 127.0.0.1 - - [22/Jan/2025 06:08:04] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:09:15 INFO 127.0.0.1 - - [22/Jan/2025 06:09:15] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:09:15 INFO 127.0.0.1 - - [22/Jan/2025 06:09:15] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:09:15 INFO 127.0.0.1 - - [22/Jan/2025 06:09:15] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:09:15 INFO 127.0.0.1 - - [22/Jan/2025 06:09:15] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:09:23 INFO 127.0.0.1 - - [22/Jan/2025 06:09:23] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:09:23 INFO 127.0.0.1 - - [22/Jan/2025 06:09:23] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:09:23 INFO 127.0.0.1 - - [22/Jan/2025 06:09:23] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:09:23 INFO 127.0.0.1 - - [22/Jan/2025 06:09:23] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:09:29 INFO 127.0.0.1 - - [22/Jan/2025 06:09:29] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:09:29 INFO 127.0.0.1 - - [22/Jan/2025 06:09:29] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:09:29 INFO 127.0.0.1 - - [22/Jan/2025 06:09:29] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:09:29 INFO 127.0.0.1 - - [22/Jan/2025 06:09:29] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:09:40 INFO 127.0.0.1 - - [22/Jan/2025 06:09:40] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:09:40 INFO 127.0.0.1 - - [22/Jan/2025 06:09:40] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:09:40 INFO 127.0.0.1 - - [22/Jan/2025 06:09:40] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:09:40 INFO 127.0.0.1 - - [22/Jan/2025 06:09:40] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:09:52 INFO 127.0.0.1 - - [22/Jan/2025 06:09:52] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 06:09:52 INFO 127.0.0.1 - - [22/Jan/2025 06:09:52] "GET /login HTTP/1.1" 200 -
+2025-01-22 06:09:52 INFO 127.0.0.1 - - [22/Jan/2025 06:09:52] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:09:52 INFO 127.0.0.1 - - [22/Jan/2025 06:09:52] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:09:52 INFO 127.0.0.1 - - [22/Jan/2025 06:09:52] "GET /static/images/initial_d02.jpg HTTP/1.1" 200 -
+2025-01-22 06:09:57 INFO 127.0.0.1 - - [22/Jan/2025 06:09:57] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:09:57 INFO 127.0.0.1 - - [22/Jan/2025 06:09:57] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:09:57 INFO 127.0.0.1 - - [22/Jan/2025 06:09:57] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:09:57 INFO 127.0.0.1 - - [22/Jan/2025 06:09:57] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:10:00 INFO 127.0.0.1 - - [22/Jan/2025 06:10:00] "[31m[1mPOST /dashboard HTTP/1.1[0m" 400 -
+2025-01-22 06:10:05 INFO 127.0.0.1 - - [22/Jan/2025 06:10:05] "[31m[1mPOST /dashboard HTTP/1.1[0m" 400 -
+2025-01-22 06:10:15 INFO 127.0.0.1 - - [22/Jan/2025 06:10:15] "[31m[1mPOST /dashboard HTTP/1.1[0m" 400 -
+2025-01-22 06:10:18 INFO 127.0.0.1 - - [22/Jan/2025 06:10:18] "GET /register HTTP/1.1" 200 -
+2025-01-22 06:10:18 INFO 127.0.0.1 - - [22/Jan/2025 06:10:18] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:10:18 INFO 127.0.0.1 - - [22/Jan/2025 06:10:18] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:10:18 INFO 127.0.0.1 - - [22/Jan/2025 06:10:18] "GET /static/images/initial_d01.jpg HTTP/1.1" 200 -
+2025-01-22 06:10:22 INFO 127.0.0.1 - - [22/Jan/2025 06:10:22] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 06:10:22 INFO 127.0.0.1 - - [22/Jan/2025 06:10:22] "GET /login HTTP/1.1" 200 -
+2025-01-22 06:10:22 INFO 127.0.0.1 - - [22/Jan/2025 06:10:22] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:10:22 INFO 127.0.0.1 - - [22/Jan/2025 06:10:22] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:10:22 INFO 127.0.0.1 - - [22/Jan/2025 06:10:22] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:10:24 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-22 06:10:24 INFO json_data: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:10:24 INFO json_data sent: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:10:24 INFO server response: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 06:10:24 INFO 200 OK
+2025-01-22 06:10:24 INFO 127.0.0.1 - - [22/Jan/2025 06:10:24] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-22 06:10:24 INFO 127.0.0.1 - - [22/Jan/2025 06:10:24] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:10:24 INFO 127.0.0.1 - - [22/Jan/2025 06:10:24] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:10:24 INFO 127.0.0.1 - - [22/Jan/2025 06:10:24] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:10:24 INFO 127.0.0.1 - - [22/Jan/2025 06:10:24] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:10:33 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-22 06:10:33 INFO json_data: {"action": "login", "l_user": "asdasd", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:10:33 INFO json_data sent: {"action": "login", "l_user": "asdasd", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:10:33 INFO server response: {"status": "404", "status_msg": "User not found"}
+2025-01-22 06:10:33 INFO 404 Not Found
+2025-01-22 06:10:33 INFO 404: User does not exist redirecting to login!
+2025-01-22 06:10:33 INFO 127.0.0.1 - - [22/Jan/2025 06:10:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-22 06:10:33 INFO 127.0.0.1 - - [22/Jan/2025 06:10:33] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-01-22 06:10:33 INFO 127.0.0.1 - - [22/Jan/2025 06:10:33] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:10:33 INFO 127.0.0.1 - - [22/Jan/2025 06:10:33] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:10:33 INFO 127.0.0.1 - - [22/Jan/2025 06:10:33] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:10:33 INFO 127.0.0.1 - - [22/Jan/2025 06:10:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:10:50 INFO 127.0.0.1 - - [22/Jan/2025 06:10:50] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 06:10:50 INFO 127.0.0.1 - - [22/Jan/2025 06:10:50] "GET /login HTTP/1.1" 200 -
+2025-01-22 06:10:50 INFO 127.0.0.1 - - [22/Jan/2025 06:10:50] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:10:50 INFO 127.0.0.1 - - [22/Jan/2025 06:10:50] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:10:50 INFO 127.0.0.1 - - [22/Jan/2025 06:10:50] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:11:45 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-22 06:11:45 INFO  * Restarting with stat
+2025-01-22 06:12:41 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-22 06:12:41 INFO [33mPress CTRL+C to quit[0m
+2025-01-22 06:12:41 INFO  * Restarting with stat
+2025-01-22 06:12:43 WARNING  * Debugger is active!
+2025-01-22 06:12:43 INFO  * Debugger PIN: 719-335-841
+2025-01-22 06:12:50 INFO 127.0.0.1 - - [22/Jan/2025 06:12:50] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-01-22 06:12:50 INFO 127.0.0.1 - - [22/Jan/2025 06:12:50] "GET /login HTTP/1.1" 200 -
+2025-01-22 06:12:50 INFO 127.0.0.1 - - [22/Jan/2025 06:12:50] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:12:50 INFO 127.0.0.1 - - [22/Jan/2025 06:12:50] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:12:50 INFO 127.0.0.1 - - [22/Jan/2025 06:12:50] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:13:02 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-22 06:13:02 INFO json_data: {"action": "login", "l_user": "java", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:13:02 INFO json_data sent: {"action": "login", "l_user": "java", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:13:02 INFO server response: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 06:13:02 INFO 200 OK
+2025-01-22 06:13:02 INFO 127.0.0.1 - - [22/Jan/2025 06:13:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-22 06:13:02 INFO 127.0.0.1 - - [22/Jan/2025 06:13:02] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:13:02 INFO 127.0.0.1 - - [22/Jan/2025 06:13:02] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:13:02 INFO 127.0.0.1 - - [22/Jan/2025 06:13:02] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:13:02 INFO 127.0.0.1 - - [22/Jan/2025 06:13:02] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:13:07 INFO <SecureCookieSession {'_permanent': True, 'hash': '00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92', 'server_name': '192.168.1.75', '_flashes': [('info', 'You have been logged out, java')]}>
+2025-01-22 06:13:07 INFO 127.0.0.1 - - [22/Jan/2025 06:13:07] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 06:13:07 INFO 127.0.0.1 - - [22/Jan/2025 06:13:07] "GET /login HTTP/1.1" 200 -
+2025-01-22 06:13:07 INFO 127.0.0.1 - - [22/Jan/2025 06:13:07] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:13:07 INFO 127.0.0.1 - - [22/Jan/2025 06:13:07] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:13:07 INFO 127.0.0.1 - - [22/Jan/2025 06:13:07] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:16:13 INFO  * Detected change in 'c:\\Users\\aryan\\Desktop\\NEA_v2\\NEA\\client\\main.py', reloading
+2025-01-22 06:16:13 INFO  * Restarting with stat
+2025-01-22 06:16:26 WARNING  * Debugger is active!
+2025-01-22 06:16:26 INFO  * Debugger PIN: 719-335-841
+2025-01-22 06:16:26 INFO <SecureCookieSession {'_permanent': True, 'server_name': '192.168.1.75'}>
+2025-01-22 06:16:26 INFO 127.0.0.1 - - [22/Jan/2025 06:16:26] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 06:16:26 INFO 127.0.0.1 - - [22/Jan/2025 06:16:26] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-22 06:16:26 INFO 127.0.0.1 - - [22/Jan/2025 06:16:26] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-22 06:16:26 INFO <SecureCookieSession {'_permanent': True, 'server_name': '192.168.1.75'}>
+2025-01-22 06:16:26 INFO 127.0.0.1 - - [22/Jan/2025 06:16:26] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-22 06:16:26 INFO 127.0.0.1 - - [22/Jan/2025 06:16:26] "GET /login HTTP/1.1" 200 -
+2025-01-22 06:16:26 INFO 127.0.0.1 - - [22/Jan/2025 06:16:26] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:16:26 INFO 127.0.0.1 - - [22/Jan/2025 06:16:26] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:16:26 INFO 127.0.0.1 - - [22/Jan/2025 06:16:26] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:16:39 INFO 127.0.0.1 - - [22/Jan/2025 06:16:39] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-01-22 06:16:39 INFO 127.0.0.1 - - [22/Jan/2025 06:16:39] "GET /pair HTTP/1.1" 200 -
+2025-01-22 06:16:39 INFO 127.0.0.1 - - [22/Jan/2025 06:16:39] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:16:39 INFO 127.0.0.1 - - [22/Jan/2025 06:16:39] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:16:45 INFO server_name: 192.168.1.75
+2025-01-22 06:16:45 INFO ping sent: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-22 06:16:45 INFO status: pong
+2025-01-22 06:16:45 INFO found_server: <servers 192.168.1.75>
+2025-01-22 06:16:45 INFO 127.0.0.1 - - [22/Jan/2025 06:16:45] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-01-22 06:16:45 INFO 127.0.0.1 - - [22/Jan/2025 06:16:45] "GET /login HTTP/1.1" 200 -
+2025-01-22 06:16:45 INFO 127.0.0.1 - - [22/Jan/2025 06:16:45] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:16:45 INFO 127.0.0.1 - - [22/Jan/2025 06:16:45] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:16:45 INFO 127.0.0.1 - - [22/Jan/2025 06:16:45] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:16:52 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-01-22 06:16:52 INFO json_data: {"action": "login", "l_user": "studywm", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:16:52 INFO json_data sent: {"action": "login", "l_user": "studywm", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-01-22 06:16:52 INFO server response: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 06:16:52 INFO 200 OK
+2025-01-22 06:16:52 INFO 127.0.0.1 - - [22/Jan/2025 06:16:52] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-22 06:16:52 INFO 127.0.0.1 - - [22/Jan/2025 06:16:52] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:16:52 INFO 127.0.0.1 - - [22/Jan/2025 06:16:52] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:16:52 INFO 127.0.0.1 - - [22/Jan/2025 06:16:52] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:16:52 INFO 127.0.0.1 - - [22/Jan/2025 06:16:52] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-01-22 06:16:58 INFO json_data sent: {"action": "add_device", "user": "studywm", "r_dev_name": "trueno", "mac_addr": 4943750935229}
+2025-01-22 06:16:58 INFO server response: {"status": "201", "status_msg": "Device added successfully"}
+2025-01-22 06:16:58 INFO 201 Added
+2025-01-22 06:16:58 INFO 127.0.0.1 - - [22/Jan/2025 06:16:58] "[32mPOST /dashboard HTTP/1.1[0m" 302 -
+2025-01-22 06:16:58 INFO 127.0.0.1 - - [22/Jan/2025 06:16:58] "GET /dashboard HTTP/1.1" 200 -
+2025-01-22 06:16:58 INFO 127.0.0.1 - - [22/Jan/2025 06:16:58] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-01-22 06:16:58 INFO 127.0.0.1 - - [22/Jan/2025 06:16:58] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-22 06:16:58 INFO 127.0.0.1 - - [22/Jan/2025 06:16:58] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -

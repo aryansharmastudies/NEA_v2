@@ -1,7 +1,0 @@
-index.html
-original_style.css
-minimal_style.css
-script.js
-
-has be copied from the 'popup in 1 minute' tutorial
-> TODO tweak it to fit youre need !
