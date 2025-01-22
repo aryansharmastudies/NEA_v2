@@ -1,11 +1,13 @@
-const modal = document.querySelector("#modal");
-const openModal = document.querySelector(".open-button");
-const closeModal = document.querySelector(".close-button");
+const openBtn = document.getElementById('openModal');
+const closeBtn = document.getElementById('closeModal');
+const modal = document.getElementById('modal');
 
-openModal.addEventListener("click", () => {
-  modal.showModal();
-});
+openBtn.addEventListener('click', () => {
+    modal.classList.add('open');
+    });
 
-closeModal.addEventListener("click", () => {
-  modal.close();
-});
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('open');
+    });
+
+    

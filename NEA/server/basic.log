@@ -547,3 +547,9 @@
 2025-01-21 05:23:24 INFO message: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
 2025-01-21 05:23:24 INFO User: joel has logged in
 2025-01-21 05:23:24 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-01-22 04:39:38 INFO Connection from ('192.168.1.75', 52066) has been established!
+2025-01-22 04:39:38 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-01-22 04:39:38 INFO Received ping from 192.168.1.75
+2025-01-22 04:39:38 INFO Pong sent to 192.168.1.75
+2025-01-22 04:52:32 INFO Connection from ('192.168.1.75', 52171) has been established!
+2025-01-22 04:52:32 INFO message: {"action": "add_folder", "folder_label": "asd", "folder_id": "CaDs42lN0Y", "folder_path": "~/CaDs42lN0Y", "folder_type": "asd"}
