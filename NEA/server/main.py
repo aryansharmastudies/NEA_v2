@@ -57,7 +57,68 @@ class Folder(Base):
     size = Column(Integer)
 
 Base.metadata.create_all(engine)
+# RESPONSE CLASS
+class Response: # 👑
+    def __init__(self):
+        #self.client_data = ''
+        #self.status = ''
+        #self.status_msg = ''
+        pass
+    
+    def tojson(self):
+        return json.dumps(self,default=lambda o: o.__dict__, sort_keys=True, indent=2)
+
+class Status_Response(Response):
+    def __init__(self):
+        super().__init__()
+        logging.info(f'Status_Response Object is made')
+
+class Data_Response(Response): # TODO get this working.
+    def __init__(self, requested_data):
+        super().__init__()
+        self.requested_data = requested_data # e.g. {'user':['name'], 'device':['user_id', 'name']}
+        self.data = dict() # using a dictionary to store scraped data
+        logging.info(f'Data_Response Object is made')
+    
+    def scrape(self): # used to scrape the database for requested data
+        for table_name in self.requested_data: # itteratively goes through the each requested table!
+            scraped_data = scrape_db(table_name, self.requested_data[table_name]) # self.requested_data[table] => attributes requested for of that table.
+            self.data[table_name] = scraped_data # scraped_data should be a list returned back!
+        logging.info(f'scraped data to be returned!: {self.data}')
+
+class Instruction_Response(Response):
+    def __init__(self):
+        super().__init__()
+        logging.info(f'Instruction_Response Object is made')
+
+class Blockdata_Response(Response):
+    def __init__(self):
+        super().__init__()
+        logging.info(f'Blockdata_Response Object is made')
 ########## CRUD(create, read, update, delete) ####
+def scrape_db(table_name, attributes): # scrapes db and returns back data
+    # input: (device', ['user_id', 'name'])
+    # expected output: [['kyoto', 'x230'],['kyoto', 'iphone5s'],['tokyo', 'chromebook']]
+        # Map the table name to the corresponding SQLAlchemy model
+    table_map = {
+        'users': User,
+        'devices': Device,
+        'folders': Folder,
+        # Add other tables here as needed 
+    }
+    # Get the SQLAlchemy model for the table
+    table_model = table_map.get(table_name)
+    if not table_model:
+        logging.warning(f"Table '{table_name}' not found in table_map.")
+
+    # Query the database for the specified attributes
+    query = session.query(*[getattr(table_model, attr) for attr in attributes])
+    results = query.all()
+
+    # Convert the results into a list of lists
+    scraped_data = [list(row) for row in results]
+    return scraped_data
+
 def create_user(r_user, hash):
     user = User(name=r_user, hash=hash, email='default')
     if session.query(User).filter_by(name=r_user).first():
@@ -108,56 +169,67 @@ def create_folder(mac_addr, folder_name, folder_id, folder_type):
 ########## SOCKETS ###############################
 def handle_client_message(message):
     try:
-        data = json.loads(message)  # Parse JSON message
-        action = data.get('action')
-        if action == 'ping':
-            logging.info(f'Received ping from {data['ip_addr']}')
-            clientsocket.send('pong'.encode('utf-8'))
-            logging.info(f'Pong sent to {data['ip_addr']}')
-        
-        elif action == 'login':
-            l_user = data['l_user']
-            hash = data['hash']
-            status = login(l_user, hash)
-            logging.info(f'Sending login status: {status}')
-            clientsocket.send(str(status).encode('utf-8'))
-            
-        elif action == 'register_user':
-            r_user = data['r_user']
-            hash = data['hash']
-            status = create_user(r_user, hash)
-            logging.info(f'Sending registration status: {status}')
-            clientsocket.send(str(status).encode('utf-8'))
-        
-        elif action == 'add_device':
-            mac_addr = data['mac_addr']
-            device_name = data['r_dev_name']
-            username = data['user']
-            status = create_device(username, device_name, mac_addr)
-            logging.info(f'Sending device status: {status}')
-            clientsocket.send(str(status).encode('utf-8'))
-
-        elif action == 'add_folder':
-            folder_label = data['folder_label']
-            folder_id = data['folder_id']
-            folder_path = data['folder_path']
-            folder_type = data['folder_type']
-            print(f'Preparing to receive file: {folder_label}')
-            # TODO File receiving logic here
-
-        elif action == 'remove_user':
-            username = data['username']
-            print(f'Removing user: {username}')
-            # Remove user logic here
-
-        else:
-            print('Unknown action!')
+        client_data = json.loads(message)  # Parse JSON message
+        action = client_data.get('action')
     except json.JSONDecodeError:
         print('Invalid JSON received.')
     except KeyError as e:
         print(f'Missing field: {e}')
 
-# Example server loop
+    if action == 'ping':
+        logging.info(f'Received ping from {client_data['ip_addr']}')
+        clientsocket.send('pong'.encode('utf-8'))
+        logging.info(f'Pong sent to {client_data['ip_addr']}')
+    
+    elif action == 'login':
+        l_user = client_data['l_user']
+        hash = client_data['hash']
+        status = login(l_user, hash)
+        logging.info(f'Sending login status: {status}')
+        clientsocket.send(str(status).encode('utf-8'))
+        
+    elif action == 'register_user':
+        r_user = client_data['r_user']
+        hash = client_data['hash']
+        status = create_user(r_user, hash)
+        logging.info(f'Sending registration status: {status}')
+        clientsocket.send(str(status).encode('utf-8'))
+    
+    elif action == 'add_device':
+        mac_addr = client_data['mac_addr']
+        device_name = client_data['r_dev_name']
+        username = client_data['user']
+        status = create_device(username, device_name, mac_addr)
+        logging.info(f'Sending device status: {status}')
+        clientsocket.send(str(status).encode('utf-8'))
+
+    elif action == 'add_folder': # TODO get it working.
+        folder_label = client_data['folder_label']
+        folder_id = client_data['folder_id']
+        folder_path = client_data['folder_path']
+        folder_type = client_data['folder_type']
+        print(f'Preparing to receive file: {folder_label}')
+        # TODO File receiving logic here
+
+    elif action == 'remove_user': # TODO should be a potential option for admin.
+        username = client_data['username']
+        print(f'Removing user: {username}')
+        # Remove user logic here
+
+    elif action == 'request':
+        requested_data = client_data['data']
+        response = Data_Response(requested_data) # response is the object made.
+        response.scrape()
+        response_in_json = response.tojson()
+        logging.info(f'SENDING: {response_in_json}')
+        clientsocket.send(str(response_in_json).encode('utf-8')) # converted to JSON using 'tojson'.
+        del response
+
+    else:
+        print('Unknown action!')
+    
+
+# SERVER LOOP
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((ip, 8000))
 s.listen(10)

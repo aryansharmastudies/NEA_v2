@@ -44,6 +44,7 @@ when we finish exe code.-->
   </style>
   
 <br>
+
 <body>
     <button id="openModalDevice">register device</button>
 
@@ -70,29 +71,61 @@ when we finish exe code.-->
 
     <div class="modal" id="modalFolder">
         <div class="modal-inner">
-            <h2>つ﹏⊂</h2>
-            <p>add folder</p>
+
+                <!-- Tabs -->
+    <div class="tabs">
+        <button class="tablink active" data-tab="general">General</button>
+        <button class="tablink" data-tab="sharing">Sharing</button>
+        <button class="tablink" data-tab="advanced">Advanced</button>
+    </div>
+
+       <!-- Tab Content -->
+    <div id="general" class="tabcontent active">
+        <h3>General Settings</h3>
+        <p>General settings for the folder.</p>
             <div class="form-container">
                 <form method="POST" action="#">
                     <input type="hidden" name="action" value="add_folder">
                     <label for="folder_label">folder label:</label>
+                    <br>
                     <input type="text" id="folder_label" name="folder_label" required>
                     <br>
                     <label for="folder_id">folder id:</label>
+                    <br>
                     <input type="text" id="folder_id" name="folder_id" value="{{random_folder_id}}" required>
                     <br>
                     <label for="folder_path">folder path:</label>
+                    <br>
                     <input type="text" id="folder_path" name="folder_path" value="~/{{random_folder_id}}" required>
                     <br>
                     <label for="folder_type">folder type:</label>
+                    <br>
                     <input type="text" id="folder_type" name="folder_type" required>
                     <br>
-                    <button type="submit">add folder</button>
                 </form>
                 </div> 
-            <button id="closeModalFolder">Close</button>
+    </div>
+
+    <div id="sharing" class="tabcontent">
+        <h3>Sharing Settings</h3>
+        <p>Select devices to share this folder with:</p>
+        <div id="sharing"></div> <!-- Raw JSON data will be displayed here -->
+    </div>
+  
+    <div id="advanced" class="tabcontent">
+        <h3>Advanced Settings</h3>
+        <p>Advanced configuration options.</p>
+    </div>
+
+    <div class="button-container">
+        <button type="submit">Submit</button>
+        <button id="closeModalFolder">Close</button>
+    </div>
         </div>
     </div> 
+
+<script src="/static/js/script.js" defer></script>
+
 </body>
 
 <!-- Join Group Form -->

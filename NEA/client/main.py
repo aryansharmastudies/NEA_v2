@@ -222,7 +222,14 @@ def dashboard():
     else:    
         flash('You are not connected to a server!', 'info')
         return render_template('pair.html')
-    
+
+@app.route("/get_users_and_devices", methods=["GET"])
+def get_users_and_devices():
+    json_data = json.dumps({'action': 'request', 'data': {'users': ['user_id', 'name'], 'devices': ['user_id', 'name']}})
+    logging.info(f'getting users and devices info... sending: {json_data}')
+    status, status_msg, data = send(json_data)
+    return jsonify(data)
+
 @app.route("/unpair")
 def unpair():
     if "server_name" in session:
@@ -233,6 +240,7 @@ def unpair():
     else:
         flash("You are not connected to a server!", "info")
         return redirect(url_for('pair'))
+    
 @app.route('/logout')
 def logout():
     if 'user' in session:
@@ -248,34 +256,42 @@ def send(json_data):
         try: 
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((session['server_name'], 8000))
-            s.send(json_data.encode('utf-8'))
-            json_response = s.recv(1024).decode('utf-8')
-            data = json.loads(json_response)
-            status = data['status']
-            status_msg = data['status_msg']
-            logging.info(f'json_data sent: {json_data}')
-            logging.info(f'server response: {json_response}')
-            if status == '200': # The request is OK (this is the standard response for successful HTTP requests)
-                logging.info(f"200 OK")
-                return status, status_msg
-            elif status == '201': # The request has been fulfilled, and a new resource(user/device/...) is created
-                logging.info(f"201 Added")
-                return status, status_msg
-            elif status == '401':
-                logging.info(f'401 Unauthorized') #  The request was a legal request, but the server is refusing to respond to it. For use when authentication is possible but has failed or not yet been provided
-                return status, status_msg
-            elif status == '404':
-                logging.info(f'404 Not Found') # The requested page/item could not be found but may be available again in the future
-                return status, status_msg
-            elif status == '409':
-                logging.info(f'409 Conflict') # The request could not be completed because of a conflict in the request
-                return status, status_msg
-            else:
-                return '500', 'server error - check return status for CRUD!' 
         except: 
             logging.info(f'503 Server Offline')
             return '503', 'server offline'   
+        s.send(json_data.encode('utf-8')) # sending data to server 📨
+        json_response = s.recv(1024).decode('utf-8') # server's response back 📩 # TODO recieves 1024 bits, add buffering feature !!
+        logging.info(f'JSON_RESPONSE: {json_response}')
+        server_data = json.loads(json_response)
+        status = server_data.get('status', '200')
+        status_msg = server_data.get('status_msg', 'unknown')
+        data = server_data.get('data', False) # incase 'data' key don't exist, simply set data = False
+    
+        logging.info(f'json_data sent: {json_data}')
+        logging.info(f'server response: {json_response}')
+        if status == '200': # The request is OK (this is the standard response for successful HTTP requests)
+            logging.info(f"200 OK")
+            if not data: # if there is NO DATA incomming (which means, we as the client DIDNT request for data
+                # e.g. adding a user), simply return the status and status_msg!
+                return status, status_msg
+            else: # but if data is recieved, if we as the client made a request.
+                return status, status_msg, data # return the data.
+        elif status == '201': # The request has been fulfilled, and a new resource(user/device/...) is created
+            logging.info(f"201 Added")
+            return status, status_msg
+        elif status == '401':
+            logging.info(f'401 Unauthorized') #  The request was a legal request, but the server is refusing to respond to it. For use when authentication is possible but has failed or not yet been provided
+            return status, status_msg
+        elif status == '404':
+            logging.info(f'404 Not Found') # The requested page/item could not be found but may be available again in the future
+            return status, status_msg
+        elif status == '409':
+            logging.info(f'409 Conflict') # The request could not be completed because of a conflict in the request
+            return status, status_msg
         
+        else:
+            return '500', 'server error - check return status for CRUD!' 
+       
 ########## ADDING USER ##########################
 # NOTE could use this function rather then coding add_user in the login and register functions.
 def add_user(name, email):

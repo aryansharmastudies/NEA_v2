@@ -608,3 +608,1305 @@
 2025-01-22 06:16:58 INFO Comparing: trueno with Mac_addr: 4943750935229 WITH Device: studywms_pc with Mac_addr: 4681952839112
 2025-01-22 06:16:58 INFO Adding device: trueno with Mac_addr: 4943750935229 for User: studywm with User_ID: 26
 2025-01-22 06:16:58 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-02-15 08:06:05 INFO Connection from ('192.168.1.75', 56977) has been established!
+2025-02-15 08:06:05 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-15 08:06:05 INFO Received ping from 192.168.1.75
+2025-02-15 08:06:05 INFO Pong sent to 192.168.1.75
+2025-02-15 08:06:35 INFO Connection from ('192.168.1.75', 56987) has been established!
+2025-02-15 08:06:35 INFO message: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-15 08:06:35 INFO Unauthorized access attempt for user: aryan
+2025-02-15 08:06:35 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-02-15 08:24:09 INFO Connection from ('192.168.1.75', 57112) has been established!
+2025-02-15 08:24:09 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-15 08:24:09 INFO Received ping from 192.168.1.75
+2025-02-15 08:24:09 INFO Pong sent to 192.168.1.75
+2025-02-15 08:24:13 INFO Connection from ('192.168.1.75', 57120) has been established!
+2025-02-15 08:24:13 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-15 08:24:13 INFO User: aryan has logged in
+2025-02-15 08:24:13 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-15 08:26:07 INFO Connection from ('192.168.1.75', 57275) has been established!
+2025-02-15 08:26:07 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-15 08:26:07 INFO Received ping from 192.168.1.75
+2025-02-15 08:26:07 INFO Pong sent to 192.168.1.75
+2025-02-15 08:26:22 INFO Connection from ('192.168.1.75', 57346) has been established!
+2025-02-15 08:26:22 INFO message: {"action": "login", "l_user": "joel", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-15 08:26:22 INFO Unauthorized access attempt for user: joel
+2025-02-15 08:26:22 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-02-15 08:26:31 INFO Connection from ('192.168.1.75', 57381) has been established!
+2025-02-15 08:26:31 INFO message: {"action": "login", "l_user": "joel", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-15 08:26:31 INFO Unauthorized access attempt for user: joel
+2025-02-15 08:26:31 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-02-15 08:26:48 INFO Connection from ('192.168.1.75', 57454) has been established!
+2025-02-15 08:26:48 INFO message: {"action": "login", "l_user": "studywm", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-15 08:26:48 INFO Unauthorized access attempt for user: studywm
+2025-02-15 08:26:48 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-02-15 08:26:54 INFO Connection from ('192.168.1.75', 57480) has been established!
+2025-02-15 08:26:54 INFO message: {"action": "login", "l_user": "studywm", "hash": "7babd445a35ae0b8bab12ef2d238400d40ffb9251e8061171531b923ea222759"}
+2025-02-15 08:26:54 INFO Unauthorized access attempt for user: studywm
+2025-02-15 08:26:54 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-02-15 08:27:35 INFO Connection from ('192.168.1.75', 57642) has been established!
+2025-02-15 08:27:35 INFO message: {"action": "login", "l_user": "studywm", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-15 08:27:35 INFO Unauthorized access attempt for user: studywm
+2025-02-15 08:27:35 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-02-15 08:27:48 INFO Connection from ('192.168.1.75', 57667) has been established!
+2025-02-15 08:27:48 INFO message: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-15 08:27:48 INFO Unauthorized access attempt for user: aryan
+2025-02-15 08:27:48 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-02-15 08:28:04 INFO Connection from ('192.168.1.75', 57749) has been established!
+2025-02-15 08:28:04 INFO message: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-15 08:28:04 INFO Unauthorized access attempt for user: aryan
+2025-02-15 08:28:04 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-02-15 08:28:18 INFO Connection from ('192.168.1.75', 57785) has been established!
+2025-02-15 08:28:18 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-15 08:28:18 INFO User: aryan has logged in
+2025-02-15 08:28:18 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-15 08:28:24 INFO Connection from ('192.168.1.75', 57794) has been established!
+2025-02-15 08:28:24 INFO message: {"action": "login", "l_user": "joel", "hash": "7babd445a35ae0b8bab12ef2d238400d40ffb9251e8061171531b923ea222759"}
+2025-02-15 08:28:24 INFO Unauthorized access attempt for user: joel
+2025-02-15 08:28:24 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-02-15 08:28:29 INFO Connection from ('192.168.1.75', 57799) has been established!
+2025-02-15 08:28:29 INFO message: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-15 08:28:29 INFO User: joel has logged in
+2025-02-15 08:28:29 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-15 08:30:21 INFO Connection from ('192.168.1.75', 57893) has been established!
+2025-02-15 08:30:21 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-15 08:30:21 INFO Received ping from 192.168.1.75
+2025-02-15 08:30:21 INFO Pong sent to 192.168.1.75
+2025-02-15 08:30:25 INFO Connection from ('192.168.1.75', 57910) has been established!
+2025-02-15 08:30:25 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-15 08:30:25 INFO User: aryan has logged in
+2025-02-15 08:30:25 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-15 11:54:00 INFO Connection from ('192.168.1.75', 60790) has been established!
+2025-02-15 11:54:00 INFO message: {"action": "login", "l_user": "jiggly", "hash": "a6761ccff1191f3ee53acada4f7965241538511ef6eb52d37974507ab5a9023e"}
+2025-02-15 11:54:00 INFO User: jiggly has logged in
+2025-02-15 11:54:00 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 19:20:19 INFO Connection from ('192.168.1.75', 62094) has been established!
+2025-02-16 19:20:19 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-16 19:20:19 INFO Received ping from 192.168.1.75
+2025-02-16 19:20:19 INFO Pong sent to 192.168.1.75
+2025-02-16 19:20:32 INFO Connection from ('192.168.1.75', 62102) has been established!
+2025-02-16 19:20:32 INFO message: {"action": "login", "l_user": "otsu", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-16 19:20:32 INFO User: otsu has logged in
+2025-02-16 19:20:32 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 19:20:37 INFO Connection from ('192.168.1.75', 62110) has been established!
+2025-02-16 19:20:37 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 19:25:37 INFO Connection from ('192.168.1.75', 62227) has been established!
+2025-02-16 19:25:37 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-16 19:25:37 INFO Received ping from 192.168.1.75
+2025-02-16 19:25:37 INFO Pong sent to 192.168.1.75
+2025-02-16 19:25:47 INFO Connection from ('192.168.1.75', 62245) has been established!
+2025-02-16 19:25:47 INFO message: {"action": "login", "l_user": "kawasaki", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-16 19:25:47 INFO User: kawasaki has logged in
+2025-02-16 19:25:47 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 19:27:09 INFO Connection from ('192.168.1.75', 62270) has been established!
+2025-02-16 19:27:09 INFO message: {"action": "login", "l_user": "otsu", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-16 19:27:09 INFO User: otsu has logged in
+2025-02-16 19:27:09 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 19:28:23 INFO Connection from ('192.168.1.75', 62291) has been established!
+2025-02-16 19:28:23 INFO message: {"action": "login", "l_user": "otsu", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-16 19:28:23 INFO User: otsu has logged in
+2025-02-16 19:28:23 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 19:28:32 INFO Connection from ('192.168.1.75', 62311) has been established!
+2025-02-16 19:28:32 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-16 19:28:32 INFO Received ping from 192.168.1.75
+2025-02-16 19:28:32 INFO Pong sent to 192.168.1.75
+2025-02-16 19:28:35 INFO Connection from ('192.168.1.75', 62318) has been established!
+2025-02-16 19:28:35 INFO message: {"action": "login", "l_user": "kawasaki", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-16 19:28:35 INFO User: kawasaki has logged in
+2025-02-16 19:28:35 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 19:28:43 INFO Connection from ('192.168.1.75', 62326) has been established!
+2025-02-16 19:28:43 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 19:28:43 INFO Data_Response Object is made
+2025-02-16 19:28:43 INFO scraped data to be returned!: {'users': [[1, 'otsu'], [2, 'akita'], [3, 'kawasaki'], [4, 'nagoya'], [5, 'shibuya'], [6, 'tokyo'], [7, 'yokohama'], [8, 'jiggly'], [9, 'aryan'], [10, 'joel'], [11, 'shravan'], [12, 'xqc'], [13, 'pranav'], [14, 'amzy'], [15, 'amzy2'], [16, 'amzy23'], [17, 'rat'], [18, 'miyamoto'], [19, 'kali'], [20, 'riad'], [21, 'happy'], [22, 'poko'], [23, 'jiggly_joel'], [24, 'shadman'], [25, 'java'], [26, 'studywm'], [27, 'krishiv_the_rizzler'], [28, 'aqib'], [29, 'kiddydiddy'], [30, 'ffs'], [31, 'bug']], 'devices': [[8, 'yeahbaby'], [15, 'amzy2pc'], [10, 'googlegiggles'], [26, 'studywms_pc'], [13, 'pranavs_arduino'], [27, 'krishivs iphone'], [28, 'aqibs_gaming_pc'], [29, 'pranavdiiddy_party?_/:_SELECT_*_FROM_USERS'], [31, 'bug-dev'], [9, 'r32-gtr'], [26, 'trueno']]}
+2025-02-16 19:32:05 INFO Connection from ('192.168.1.75', 62376) has been established!
+2025-02-16 19:32:05 INFO message: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-16 19:32:05 INFO User: joel has logged in
+2025-02-16 19:32:05 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 19:32:14 INFO Connection from ('192.168.1.75', 62387) has been established!
+2025-02-16 19:32:14 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 19:32:14 INFO Data_Response Object is made
+2025-02-16 19:32:14 INFO scraped data to be returned!: {'users': [[1, 'otsu'], [2, 'akita'], [3, 'kawasaki'], [4, 'nagoya'], [5, 'shibuya'], [6, 'tokyo'], [7, 'yokohama'], [8, 'jiggly'], [9, 'aryan'], [10, 'joel'], [11, 'shravan'], [12, 'xqc'], [13, 'pranav'], [14, 'amzy'], [15, 'amzy2'], [16, 'amzy23'], [17, 'rat'], [18, 'miyamoto'], [19, 'kali'], [20, 'riad'], [21, 'happy'], [22, 'poko'], [23, 'jiggly_joel'], [24, 'shadman'], [25, 'java'], [26, 'studywm'], [27, 'krishiv_the_rizzler'], [28, 'aqib'], [29, 'kiddydiddy'], [30, 'ffs'], [31, 'bug']], 'devices': [[8, 'yeahbaby'], [15, 'amzy2pc'], [10, 'googlegiggles'], [26, 'studywms_pc'], [13, 'pranavs_arduino'], [27, 'krishivs iphone'], [28, 'aqibs_gaming_pc'], [29, 'pranavdiiddy_party?_/:_SELECT_*_FROM_USERS'], [31, 'bug-dev'], [9, 'r32-gtr'], [26, 'trueno']]}
+2025-02-16 19:32:14 INFO SENDING: {
+    "client_data": "",
+    "data": {
+        "devices": [
+            [
+                8,
+                "yeahbaby"
+            ],
+            [
+                15,
+                "amzy2pc"
+            ],
+            [
+                10,
+                "googlegiggles"
+            ],
+            [
+                26,
+                "studywms_pc"
+            ],
+            [
+                13,
+                "pranavs_arduino"
+            ],
+            [
+                27,
+                "krishivs iphone"
+            ],
+            [
+                28,
+                "aqibs_gaming_pc"
+            ],
+            [
+                29,
+                "pranavdiiddy_party?_/:_SELECT_*_FROM_USERS"
+            ],
+            [
+                31,
+                "bug-dev"
+            ],
+            [
+                9,
+                "r32-gtr"
+            ],
+            [
+                26,
+                "trueno"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "otsu"
+            ],
+            [
+                2,
+                "akita"
+            ],
+            [
+                3,
+                "kawasaki"
+            ],
+            [
+                4,
+                "nagoya"
+            ],
+            [
+                5,
+                "shibuya"
+            ],
+            [
+                6,
+                "tokyo"
+            ],
+            [
+                7,
+                "yokohama"
+            ],
+            [
+                8,
+                "jiggly"
+            ],
+            [
+                9,
+                "aryan"
+            ],
+            [
+                10,
+                "joel"
+            ],
+            [
+                11,
+                "shravan"
+            ],
+            [
+                12,
+                "xqc"
+            ],
+            [
+                13,
+                "pranav"
+            ],
+            [
+                14,
+                "amzy"
+            ],
+            [
+                15,
+                "amzy2"
+            ],
+            [
+                16,
+                "amzy23"
+            ],
+            [
+                17,
+                "rat"
+            ],
+            [
+                18,
+                "miyamoto"
+            ],
+            [
+                19,
+                "kali"
+            ],
+            [
+                20,
+                "riad"
+            ],
+            [
+                21,
+                "happy"
+            ],
+            [
+                22,
+                "poko"
+            ],
+            [
+                23,
+                "jiggly_joel"
+            ],
+            [
+                24,
+                "shadman"
+            ],
+            [
+                25,
+                "java"
+            ],
+            [
+                26,
+                "studywm"
+            ],
+            [
+                27,
+                "krishiv_the_rizzler"
+            ],
+            [
+                28,
+                "aqib"
+            ],
+            [
+                29,
+                "kiddydiddy"
+            ],
+            [
+                30,
+                "ffs"
+            ],
+            [
+                31,
+                "bug"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    },
+    "status": "",
+    "status_msg": ""
+}
+2025-02-16 19:49:06 INFO Connection from ('192.168.1.75', 62579) has been established!
+2025-02-16 19:49:06 INFO message: {"action": "login", "l_user": "otsu", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-16 19:49:06 INFO User: otsu has logged in
+2025-02-16 19:49:06 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 19:49:12 INFO Connection from ('192.168.1.75', 62591) has been established!
+2025-02-16 19:49:12 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 19:49:12 INFO Data_Response Object is made
+2025-02-16 19:49:12 INFO scraped data to be returned!: {'users': [[1, 'otsu'], [2, 'akita'], [3, 'kawasaki'], [4, 'nagoya'], [5, 'shibuya'], [6, 'tokyo'], [7, 'yokohama'], [8, 'jiggly'], [9, 'aryan'], [10, 'joel'], [11, 'shravan'], [12, 'xqc'], [13, 'pranav'], [14, 'amzy'], [15, 'amzy2'], [16, 'amzy23'], [17, 'rat'], [18, 'miyamoto'], [19, 'kali'], [20, 'riad'], [21, 'happy'], [22, 'poko'], [23, 'jiggly_joel'], [24, 'shadman'], [25, 'java'], [26, 'studywm'], [27, 'krishiv_the_rizzler'], [28, 'aqib'], [29, 'kiddydiddy'], [30, 'ffs'], [31, 'bug']], 'devices': [[8, 'yeahbaby'], [15, 'amzy2pc'], [10, 'googlegiggles'], [26, 'studywms_pc'], [13, 'pranavs_arduino'], [27, 'krishivs iphone'], [28, 'aqibs_gaming_pc'], [29, 'pranavdiiddy_party?_/:_SELECT_*_FROM_USERS'], [31, 'bug-dev'], [9, 'r32-gtr'], [26, 'trueno']]}
+2025-02-16 19:49:12 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                8,
+                "yeahbaby"
+            ],
+            [
+                15,
+                "amzy2pc"
+            ],
+            [
+                10,
+                "googlegiggles"
+            ],
+            [
+                26,
+                "studywms_pc"
+            ],
+            [
+                13,
+                "pranavs_arduino"
+            ],
+            [
+                27,
+                "krishivs iphone"
+            ],
+            [
+                28,
+                "aqibs_gaming_pc"
+            ],
+            [
+                29,
+                "pranavdiiddy_party?_/:_SELECT_*_FROM_USERS"
+            ],
+            [
+                31,
+                "bug-dev"
+            ],
+            [
+                9,
+                "r32-gtr"
+            ],
+            [
+                26,
+                "trueno"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "otsu"
+            ],
+            [
+                2,
+                "akita"
+            ],
+            [
+                3,
+                "kawasaki"
+            ],
+            [
+                4,
+                "nagoya"
+            ],
+            [
+                5,
+                "shibuya"
+            ],
+            [
+                6,
+                "tokyo"
+            ],
+            [
+                7,
+                "yokohama"
+            ],
+            [
+                8,
+                "jiggly"
+            ],
+            [
+                9,
+                "aryan"
+            ],
+            [
+                10,
+                "joel"
+            ],
+            [
+                11,
+                "shravan"
+            ],
+            [
+                12,
+                "xqc"
+            ],
+            [
+                13,
+                "pranav"
+            ],
+            [
+                14,
+                "amzy"
+            ],
+            [
+                15,
+                "amzy2"
+            ],
+            [
+                16,
+                "amzy23"
+            ],
+            [
+                17,
+                "rat"
+            ],
+            [
+                18,
+                "miyamoto"
+            ],
+            [
+                19,
+                "kali"
+            ],
+            [
+                20,
+                "riad"
+            ],
+            [
+                21,
+                "happy"
+            ],
+            [
+                22,
+                "poko"
+            ],
+            [
+                23,
+                "jiggly_joel"
+            ],
+            [
+                24,
+                "shadman"
+            ],
+            [
+                25,
+                "java"
+            ],
+            [
+                26,
+                "studywm"
+            ],
+            [
+                27,
+                "krishiv_the_rizzler"
+            ],
+            [
+                28,
+                "aqib"
+            ],
+            [
+                29,
+                "kiddydiddy"
+            ],
+            [
+                30,
+                "ffs"
+            ],
+            [
+                31,
+                "bug"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 19:52:51 INFO Connection from ('192.168.1.75', 62649) has been established!
+2025-02-16 19:52:51 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 19:52:51 INFO Data_Response Object is made
+2025-02-16 19:52:51 INFO scraped data to be returned!: {'users': [[1, 'otsu'], [2, 'akita'], [3, 'kawasaki'], [4, 'nagoya'], [5, 'shibuya'], [6, 'tokyo'], [7, 'yokohama'], [8, 'jiggly'], [9, 'aryan'], [10, 'joel'], [11, 'shravan'], [12, 'xqc'], [13, 'pranav'], [14, 'amzy'], [15, 'amzy2'], [16, 'amzy23'], [17, 'rat'], [18, 'miyamoto'], [19, 'kali'], [20, 'riad'], [21, 'happy'], [22, 'poko'], [23, 'jiggly_joel'], [24, 'shadman'], [25, 'java'], [26, 'studywm'], [27, 'krishiv_the_rizzler'], [28, 'aqib'], [29, 'kiddydiddy'], [30, 'ffs'], [31, 'bug']], 'devices': [[8, 'yeahbaby'], [15, 'amzy2pc'], [10, 'googlegiggles'], [26, 'studywms_pc'], [13, 'pranavs_arduino'], [27, 'krishivs iphone'], [28, 'aqibs_gaming_pc'], [29, 'pranavdiiddy_party?_/:_SELECT_*_FROM_USERS'], [31, 'bug-dev'], [9, 'r32-gtr'], [26, 'trueno']]}
+2025-02-16 19:52:51 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                8,
+                "yeahbaby"
+            ],
+            [
+                15,
+                "amzy2pc"
+            ],
+            [
+                10,
+                "googlegiggles"
+            ],
+            [
+                26,
+                "studywms_pc"
+            ],
+            [
+                13,
+                "pranavs_arduino"
+            ],
+            [
+                27,
+                "krishivs iphone"
+            ],
+            [
+                28,
+                "aqibs_gaming_pc"
+            ],
+            [
+                29,
+                "pranavdiiddy_party?_/:_SELECT_*_FROM_USERS"
+            ],
+            [
+                31,
+                "bug-dev"
+            ],
+            [
+                9,
+                "r32-gtr"
+            ],
+            [
+                26,
+                "trueno"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "otsu"
+            ],
+            [
+                2,
+                "akita"
+            ],
+            [
+                3,
+                "kawasaki"
+            ],
+            [
+                4,
+                "nagoya"
+            ],
+            [
+                5,
+                "shibuya"
+            ],
+            [
+                6,
+                "tokyo"
+            ],
+            [
+                7,
+                "yokohama"
+            ],
+            [
+                8,
+                "jiggly"
+            ],
+            [
+                9,
+                "aryan"
+            ],
+            [
+                10,
+                "joel"
+            ],
+            [
+                11,
+                "shravan"
+            ],
+            [
+                12,
+                "xqc"
+            ],
+            [
+                13,
+                "pranav"
+            ],
+            [
+                14,
+                "amzy"
+            ],
+            [
+                15,
+                "amzy2"
+            ],
+            [
+                16,
+                "amzy23"
+            ],
+            [
+                17,
+                "rat"
+            ],
+            [
+                18,
+                "miyamoto"
+            ],
+            [
+                19,
+                "kali"
+            ],
+            [
+                20,
+                "riad"
+            ],
+            [
+                21,
+                "happy"
+            ],
+            [
+                22,
+                "poko"
+            ],
+            [
+                23,
+                "jiggly_joel"
+            ],
+            [
+                24,
+                "shadman"
+            ],
+            [
+                25,
+                "java"
+            ],
+            [
+                26,
+                "studywm"
+            ],
+            [
+                27,
+                "krishiv_the_rizzler"
+            ],
+            [
+                28,
+                "aqib"
+            ],
+            [
+                29,
+                "kiddydiddy"
+            ],
+            [
+                30,
+                "ffs"
+            ],
+            [
+                31,
+                "bug"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 19:55:46 INFO Connection from ('192.168.1.75', 62737) has been established!
+2025-02-16 19:55:46 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-16 19:55:46 INFO Received ping from 192.168.1.75
+2025-02-16 19:55:46 INFO Pong sent to 192.168.1.75
+2025-02-16 19:55:52 INFO Connection from ('192.168.1.75', 62753) has been established!
+2025-02-16 19:55:52 INFO message: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-16 19:55:52 INFO User: joel not found
+2025-02-16 19:55:52 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-02-16 19:59:22 INFO Connection from ('192.168.1.75', 62847) has been established!
+2025-02-16 19:59:22 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-16 19:59:22 INFO Received ping from 192.168.1.75
+2025-02-16 19:59:22 INFO Pong sent to 192.168.1.75
+2025-02-16 19:59:34 INFO Connection from ('192.168.1.75', 62878) has been established!
+2025-02-16 19:59:34 INFO message: {"action": "login", "l_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 19:59:34 INFO User: admin not found
+2025-02-16 19:59:34 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-02-16 19:59:45 INFO Connection from ('192.168.1.75', 62893) has been established!
+2025-02-16 19:59:45 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 19:59:45 INFO Creating user: admin with hash: 4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694
+2025-02-16 19:59:45 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-02-16 20:00:38 INFO Connection from ('192.168.1.75', 62917) has been established!
+2025-02-16 20:00:38 INFO message: {"action": "add_device", "user": "admin", "r_dev_name": "x230", "mac_addr": 4943750935229}
+2025-02-16 20:00:38 INFO User_ID: 1
+2025-02-16 20:00:38 INFO Adding device: x230 with Mac_addr: 4943750935229 for User: admin with User_ID: 1
+2025-02-16 20:00:38 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-02-16 20:00:50 INFO Connection from ('192.168.1.75', 62935) has been established!
+2025-02-16 20:00:50 INFO message: {"action": "add_device", "user": "admin", "r_dev_name": "x220", "mac_addr": 4943750935229}
+2025-02-16 20:00:50 INFO User_ID: 1
+2025-02-16 20:00:50 INFO Comparing: x220 with Mac_addr: 4943750935229 WITH Device: x230 with Mac_addr: 4943750935229
+2025-02-16 20:00:50 INFO Device Mac_addr: 4943750935229 already exists for User: admin
+2025-02-16 20:00:50 INFO Sending device status: {"status": "409", "status_msg": "Device with this MAC address already exists"}
+2025-02-16 20:00:55 INFO Connection from ('192.168.1.75', 62942) has been established!
+2025-02-16 20:00:55 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:00:55 INFO Data_Response Object is made
+2025-02-16 20:00:55 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:00:55 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 20:01:35 INFO Connection from ('192.168.1.75', 62958) has been established!
+2025-02-16 20:01:35 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:01:35 INFO Data_Response Object is made
+2025-02-16 20:01:35 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:01:35 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 20:01:38 INFO Connection from ('192.168.1.75', 62961) has been established!
+2025-02-16 20:01:38 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:01:38 INFO Data_Response Object is made
+2025-02-16 20:01:38 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:01:38 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 20:01:41 INFO Connection from ('192.168.1.75', 62963) has been established!
+2025-02-16 20:01:41 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:01:41 INFO Data_Response Object is made
+2025-02-16 20:01:41 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:01:41 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 20:02:05 INFO Connection from ('192.168.1.75', 62968) has been established!
+2025-02-16 20:02:05 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:02:05 INFO Data_Response Object is made
+2025-02-16 20:02:05 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:02:05 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 20:12:31 INFO Connection from ('192.168.1.75', 63114) has been established!
+2025-02-16 20:12:31 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:12:31 INFO Data_Response Object is made
+2025-02-16 20:12:31 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:12:31 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 20:14:43 INFO Connection from ('192.168.1.75', 63145) has been established!
+2025-02-16 20:14:43 INFO message: {"action": "login", "l_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 20:14:43 INFO User: admin has logged in
+2025-02-16 20:14:43 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 20:14:51 INFO Connection from ('192.168.1.75', 63154) has been established!
+2025-02-16 20:14:51 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:14:51 INFO Data_Response Object is made
+2025-02-16 20:14:51 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:14:51 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 20:15:48 INFO Connection from ('192.168.1.75', 63182) has been established!
+2025-02-16 20:15:48 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:15:48 INFO Data_Response Object is made
+2025-02-16 20:15:48 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:15:48 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 20:22:49 INFO Connection from ('192.168.1.75', 63326) has been established!
+2025-02-16 20:22:49 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:22:49 INFO Data_Response Object is made
+2025-02-16 20:22:49 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:22:49 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 20:24:02 INFO Connection from ('192.168.1.75', 63376) has been established!
+2025-02-16 20:24:02 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:24:02 INFO Data_Response Object is made
+2025-02-16 20:24:02 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:24:02 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 20:24:42 INFO Connection from ('192.168.1.75', 63382) has been established!
+2025-02-16 20:24:42 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 20:24:42 INFO Data_Response Object is made
+2025-02-16 20:24:42 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 20:24:42 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 21:00:11 INFO Connection from ('192.168.1.75', 64814) has been established!
+2025-02-16 21:00:11 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 21:00:11 INFO Data_Response Object is made
+2025-02-16 21:00:11 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 21:00:11 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 21:00:51 INFO Connection from ('192.168.1.75', 64837) has been established!
+2025-02-16 21:00:51 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 21:00:51 INFO Data_Response Object is made
+2025-02-16 21:00:51 INFO scraped data to be returned!: {'users': [[1, 'admin']], 'devices': [[1, 'x230']]}
+2025-02-16 21:00:51 INFO SENDING: {
+    "data": {
+        "devices": [
+            [
+                1,
+                "x230"
+            ]
+        ],
+        "users": [
+            [
+                1,
+                "admin"
+            ]
+        ]
+    },
+    "requested_data": {
+        "devices": [
+            "user_id",
+            "name"
+        ],
+        "users": [
+            "user_id",
+            "name"
+        ]
+    }
+}
+2025-02-16 21:03:30 INFO Connection from ('192.168.1.75', 64900) has been established!
+2025-02-16 21:03:30 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-16 21:03:30 INFO Received ping from 192.168.1.75
+2025-02-16 21:03:30 INFO Pong sent to 192.168.1.75
+2025-02-16 21:03:51 INFO Connection from ('192.168.1.75', 64913) has been established!
+2025-02-16 21:03:51 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 21:03:51 INFO Creating user: aryan with hash: 4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694
+2025-02-16 21:03:51 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-02-16 21:04:22 INFO Connection from ('192.168.1.75', 64926) has been established!
+2025-02-16 21:04:22 INFO message: {"action": "add_device", "user": "aryan", "r_dev_name": "aryan's_x200_thinkpad", "mac_addr": 4943750935229}
+2025-02-16 21:04:22 INFO User_ID: 2
+2025-02-16 21:04:22 INFO Adding device: aryan's_x200_thinkpad with Mac_addr: 4943750935229 for User: aryan with User_ID: 2
+2025-02-16 21:04:22 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-02-16 21:04:41 INFO Connection from ('192.168.1.75', 64967) has been established!
+2025-02-16 21:04:41 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "joel", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 21:04:41 INFO Creating user: joel with hash: 4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694
+2025-02-16 21:04:41 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-02-16 21:04:49 INFO Connection from ('192.168.1.75', 64976) has been established!
+2025-02-16 21:04:49 INFO message: {"action": "add_device", "user": "joel", "r_dev_name": "chromebook", "mac_addr": 4943750935229}
+2025-02-16 21:04:49 INFO User_ID: 3
+2025-02-16 21:04:49 INFO Adding device: chromebook with Mac_addr: 4943750935229 for User: joel with User_ID: 3
+2025-02-16 21:04:49 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-02-16 21:05:02 INFO Connection from ('192.168.1.75', 65003) has been established!
+2025-02-16 21:05:02 INFO message: {"action": "login", "l_user": "joel", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 21:05:02 INFO User: joel has logged in
+2025-02-16 21:05:02 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 21:05:11 INFO Connection from ('192.168.1.75', 65019) has been established!
+2025-02-16 21:05:11 INFO message: {"action": "login", "l_user": "joel", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-02-16 21:05:11 INFO Unauthorized access attempt for user: joel
+2025-02-16 21:05:11 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-02-16 21:05:16 INFO Connection from ('192.168.1.75', 65028) has been established!
+2025-02-16 21:05:16 INFO message: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 21:05:16 INFO User: aryan has logged in
+2025-02-16 21:05:16 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 21:05:18 INFO Connection from ('192.168.1.75', 65038) has been established!
+2025-02-16 21:05:18 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 21:05:18 INFO Data_Response Object is made
+2025-02-16 21:05:18 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook']]}
+2025-02-16 21:05:18 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-16 21:08:47 INFO Connection from ('192.168.1.221', 46758) has been established!
+2025-02-16 21:08:47 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-02-16 21:08:47 INFO Received ping from 192.168.1.221
+2025-02-16 21:08:47 INFO Pong sent to 192.168.1.221
+2025-02-16 21:09:25 INFO Connection from ('192.168.1.221', 55532) has been established!
+2025-02-16 21:09:25 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-02-16 21:09:25 INFO Received ping from 192.168.1.221
+2025-02-16 21:09:25 INFO Pong sent to 192.168.1.221
+2025-02-16 21:10:21 INFO Connection from ('192.168.1.221', 45578) has been established!
+2025-02-16 21:10:21 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-02-16 21:10:21 INFO Received ping from 192.168.1.221
+2025-02-16 21:10:21 INFO Pong sent to 192.168.1.221
+2025-02-16 21:12:17 INFO Connection from ('192.168.1.221', 45944) has been established!
+2025-02-16 21:12:17 INFO message: {"action": "login", "l_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 21:12:17 INFO User: admin not found
+2025-02-16 21:12:17 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-02-16 21:12:24 INFO Connection from ('192.168.1.221', 41962) has been established!
+2025-02-16 21:12:24 INFO message: {"action": "login", "l_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 21:12:24 INFO User: admin not found
+2025-02-16 21:12:24 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-02-16 21:17:16 INFO Connection from ('192.168.1.221', 57612) has been established!
+2025-02-16 21:17:16 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-02-16 21:17:16 INFO Received ping from 192.168.1.221
+2025-02-16 21:17:16 INFO Pong sent to 192.168.1.221
+2025-02-16 21:17:48 INFO Connection from ('192.168.1.221', 60156) has been established!
+2025-02-16 21:17:48 INFO message: {"action": "login", "l_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 21:17:48 INFO User: admin has logged in
+2025-02-16 21:17:48 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 21:18:41 INFO Connection from ('192.168.1.221', 39516) has been established!
+2025-02-16 21:18:41 INFO message: {"action": "add_device", "user": "admin", "r_dev_name": "admins_MBP", "mac_addr": 167132875827157}
+2025-02-16 21:18:41 INFO User_ID: 1
+2025-02-16 21:18:41 INFO Comparing: admins_MBP with Mac_addr: 167132875827157 WITH Device: x230 with Mac_addr: 4943750935229
+2025-02-16 21:18:41 INFO Adding device: admins_MBP with Mac_addr: 167132875827157 for User: admin with User_ID: 1
+2025-02-16 21:18:41 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-02-16 21:18:53 INFO Connection from ('192.168.1.221', 47114) has been established!
+2025-02-16 21:18:53 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-02-16 21:18:53 INFO Received ping from 192.168.1.221
+2025-02-16 21:18:53 INFO Pong sent to 192.168.1.221
+2025-02-16 21:18:58 INFO Connection from ('192.168.1.221', 55904) has been established!
+2025-02-16 21:18:58 INFO message: {"action": "login", "l_user": "joel", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 21:18:58 INFO User: joel has logged in
+2025-02-16 21:18:58 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 21:19:09 INFO Connection from ('192.168.1.221', 49048) has been established!
+2025-02-16 21:19:09 INFO message: {"action": "add_device", "user": "joel", "r_dev_name": "joels_pixel", "mac_addr": 167132875827157}
+2025-02-16 21:19:09 INFO User_ID: 3
+2025-02-16 21:19:09 INFO Comparing: joels_pixel with Mac_addr: 167132875827157 WITH Device: chromebook with Mac_addr: 4943750935229
+2025-02-16 21:19:09 INFO Adding device: joels_pixel with Mac_addr: 167132875827157 for User: joel with User_ID: 3
+2025-02-16 21:19:09 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-02-16 21:19:23 INFO Connection from ('192.168.1.221', 56164) has been established!
+2025-02-16 21:19:23 INFO message: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-16 21:19:23 INFO User: aryan has logged in
+2025-02-16 21:19:23 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-16 21:19:26 INFO Connection from ('192.168.1.221', 56166) has been established!
+2025-02-16 21:19:26 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-16 21:19:26 INFO Data_Response Object is made
+2025-02-16 21:19:26 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-16 21:19:26 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}

@@ -60,3 +60,14 @@ button:active{
     align-items: center; /* Centers items horizontally */
     justify-content: center; /* Centers items vertically */
 }
+
+/* Tab Content Styling */
+.tabcontent {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.tabcontent.active {
+    display: block;
+}
