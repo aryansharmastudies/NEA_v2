@@ -3,6 +3,9 @@ from sqlalchemy.orm import declarative_base
 import socket
 import json
 import logging
+import re
+import os
+import asyncio
 from get_wip import *
 from get_lip import *
 from sqlalchemy.orm import sessionmaker
@@ -51,12 +54,20 @@ class Folder(Base):
 
     folder_id = Column(String, primary_key=True)
     name = Column(String)
-    mac_addr = Column(String, primary_key=True)
+    mac_addr = Column(String)
     path = Column(String)
     type = Column(String)
     size = Column(Integer)
 
+class Share(Base):
+    __tablename__ = 'share'
+    
+    folder_id = Column(String, primary_key=True)
+    mac_addr = Column(String, primary_key=True)
+    path = Column(String)
+
 Base.metadata.create_all(engine)
+
 # RESPONSE CLASS
 class Response: # 👑
     def __init__(self):
@@ -161,13 +172,191 @@ def create_device(username, name, mac_addr):
     session.commit()
     return json.dumps({'status': '201', 'status_msg': 'Device added successfully'})
 
-def create_folder(mac_addr, folder_name, folder_id, folder_type):
-    # TODO dont matter if the name is the same
-    # TODO the folder_id cant be the exact same
-    pass
+'''
+class Folder(Base):
+    __tablename__ = 'folders'
 
+    folder_id = Column(String, primary_key=True)
+    name = Column(String)
+    mac_addr = Column(String)
+    path = Column(String)
+    type = Column(String)
+    size = Column(Integer)
+
+
+class Share(Base):
+    __tablename__ = 'share'
+    
+    folder_id = Column(String, primary_key=True)
+    mac_addr = Column(String, primary_key=True)
+    path = Column(String)
+'''
+
+# {'action': 'add_folder', 'name': "anjali's folder", 'directory': '~/HqZYgro3ux',
+#  'shared_users': ['admin:x230', 'admin:admins_MBP', 'joel:joels_pixel'], 'folder_type': 'sync_bothways'}
+
+def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type):
+    # DONE check if folder_id exists!
+    # DONE convert windows path to linux! USE REGEX!
+    # TODO share it to all users... :<
+    for folder in session.query(Folder):
+        if folder.folder_id == str(folder_id):
+            logging.info(f'Folder_id: {folder_id} already exists!')
+            return json.dumps({'status': '409', 'status_msg': 'Folder with this folder_id already exists'})
+    
+    result = validate_directory(directory)
+    if result == '400':
+        return json.dumps({'status': '400', 'status_msg': 'Invalid directory format'})
+
+    for shared_user in shared_users:  # 😳😿
+        # find the shared_user and its devices MAC ADDRESS
+        # check if it exists in ip_map.json
+        # then send a ping first
+        # then followed by a request, if pong is returned
+
+        shared_user = shared_user.split(':')
+        username = shared_user[0]
+        device_name = shared_user[1]
+        user = session.query(User).filter_by(name=username).first()
+        target_user_id = user.user_id
+        if not user:
+            logging.info(f'User: {username} not found')
+            return json.dumps({'status': '404', 'status_msg': 'User not found'})
+        
+        logging.info(f'User: {username} found with User_ID: {target_user_id}')
+        device = session.query(Device).filter_by(user_id=target_user_id, name=device_name).first()
+        
+        if not device:
+            logging.info(f'Device: {device_name} not found for User: {username}')
+            return json.dumps({'status': '404', 'status_msg': 'Device not found'})
+        
+        device_mac_addr = device.mac_addr # gets devices mac addr
+        logging.info(f'Device: {device_name} found with Mac_addr: {device_mac_addr}')
+
+        if username not in ip_map["users"]:
+            logging.info(f'User: {username} not found in ip_map')
+            return json.dumps({'status': '404', 'status_msg': 'User not found in ip_map'})
+
+        logging.info(f'{ip_map["users"][username]}')        
+        if str(device_mac_addr) not in ip_map["users"][username]:
+            logging.info(f'Device: {device_name} not found in ip_map')
+            return json.dumps({'status': '404', 'status_msg': 'Device not found in ip_map'})
+        
+        logging.info(f'ip of device: {ip_map["users"][username][device_mac_addr]}')
+        ip = ip_map["users"][username][device_mac_addr] # gets users ip address
+        logging.info(f'Sending ping to {username} with ip: {ip}')
+
+        status = send(json.dumps({'action': 'ping'}), ip, 6000) # sends a ping through!
+        if status == '400': # if ping fails
+            logging.info(f'Ping failed for {username} with ip: {ip}')
+            # adds to invites.json
+            if username not in invites["folders"]: # first check if the user is in the invites file
+                invites["folders"][username] = {} # if not, add them
+            invites["folders"][username][folder_id] = {'folder_label': folder_label}
+            
+            with open(invites_file, "w") as file:
+                json.dump(invites, file, indent=2)
+         
+            
+            # ❗no need to return if user is offline, as the user will get the invite when they log in.
+            # return json.dumps({'status': '400', 'status_msg': 'Ping failed'})
+        else: # if ping is successful
+            logging.info(f'Ping successful for {username} with ip: {ip}')
+            data = send(json.dumps({'action': 'add_folder', 'folder_label': folder_label, 'folder_id': folder_id}), ip, 6000)
+            if data != False:
+                data = json.loads(data)
+                directory = data['directory']
+                shared_user = Share(folder_id=folder_id, mac_addr=mac_addr, path=directory)
+                session.add(shared_user) # im sure with a for loop you can itterate and add many 'share' objects to the session, then commit them.
+            else:
+                logging.info(f'data {username} sent has failed: {data}')
+    # use async to ask the currently active users
+    # or else, put instruction in a json file!!!
+    # and whenever user logs in, check if they are in the file.
+
+    folder = Folder(mac_addr=mac_addr, name=folder_label, folder_id=folder_id, path=directory, type=folder_type)
+    session.add(folder)
+    session.commit()
+
+    return json.dumps({'status': '201', 'status_msg': 'Folder added successfully'})
+
+def validate_directory(directory): # NOTE need this for checking if directory is either valid unix or windows. if windows -> convert to unix.
+        # Check if the directory is in Unix format
+    unix_format_check = re.search(r'^~(/.+)*', directory)
+    # Check if the directory is in Windows format
+    windows_format_check = re.search(r'^C:\\Users\\.+', directory)
+    
+    # Log the results of the checks
+    if unix_format_check:
+        logging.info(f"Unix format directory: {directory}")
+        return directory
+    elif windows_format_check:
+        logging.info(f"Windows format directory: {directory}")
+        directory = directory.split('\\')
+        directory = directory[3:]
+        directory = '~\\' + '\\'.join(directory)
+        logging.info(f'Windows directory converted to Unix: {directory}')
+        return directory
+    else:
+        logging.info(f"Invalid directory format: {directory}")
+        return '400'
+    
+ip_file = "ip_map.json"
+if os.path.exists(ip_file):
+    with open(ip_file, "r") as file: # Load data from the file if it exists
+        ip_map = json.load(file)
+else:
+    ip_map = {
+        "users": {}
+    } # NOTE: it dont create the file just yet, create the varible. 
+    # when stuff is being added to the varible, the file will be created then.
+
+invites_file = "invites.json"
+if os.path.exists(invites_file):
+    with open(invites_file, "r") as file: # Load data from the file if it exists
+        invites = json.load(file)
+else:
+    invites = {
+        "folders": {},
+        "groups": {}
+    }
+                                                                                                                                                                                                                                                                                                                                   
+def track_ip(user, mac_addr, ip):
+    if user not in ip_map["users"]:
+        ip_map["users"][user] = {}
+    mac_addr = str(mac_addr)
+    ip_map["users"][user][mac_addr] = ip
+    logging.info(f'ip_map: {ip_map}')
+
+    with open(ip_file, "w") as file:
+        json.dump(ip_map, file, indent=2)
+    
+    return json.dumps({'status': '200', 'status_msg': 'IP updated successfully'})
+        
 ########## SOCKETS ###############################
+def send(message, ip, port):
+    c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        c.connect((ip, port))
+    except: 
+        return '400' 
+    c.send(message.encode('utf-8'))
+    client_data = c.recv(1024).decode('utf-8')
+    client_data = json.loads(client_data)
+    status_code = client_data.get('status_code', False)
+    status_msg = client_data.get('status_msg', False)
+    data = client_data.get('data', False)
+
+    if message['action'] == 'ping':
+        return status_code
+    elif message['action'] == 'add_folder':
+        return data 
+
+
+
 def handle_client_message(message):
+    #NOTE 'status' here includes both the status-code and status-description e.g. 
+    # {'status': '201', 'status_msg': 'Device added successfully'}
     try:
         client_data = json.loads(message)  # Parse JSON message
         action = client_data.get('action')
@@ -180,7 +369,15 @@ def handle_client_message(message):
         logging.info(f'Received ping from {client_data['ip_addr']}')
         clientsocket.send('pong'.encode('utf-8'))
         logging.info(f'Pong sent to {client_data['ip_addr']}')
-    
+
+    elif action == 'track':
+        ip_addr = client_data['ip_addr']
+        user = client_data['user']
+        mac_addr = client_data['mac_addr']
+        logging.info(f'Recieved tracking info from {user} with ip_addr {ip_addr} and mac_addr {mac_addr}')
+        status = track_ip(user, mac_addr, ip_addr)
+        clientsocket.send(str(status).encode('utf-8'))
+
     elif action == 'login':
         l_user = client_data['l_user']
         hash = client_data['hash']
@@ -202,14 +399,19 @@ def handle_client_message(message):
         status = create_device(username, device_name, mac_addr)
         logging.info(f'Sending device status: {status}')
         clientsocket.send(str(status).encode('utf-8'))
+        #TODO after adding device in db, then tracker the ip and mac addr!
 
     elif action == 'add_folder': # TODO get it working.
+        logging.info(f'Recieved data to add folder: {client_data}')
+        mac_addr = client_data['mac_addr']
         folder_label = client_data['folder_label']
         folder_id = client_data['folder_id']
-        folder_path = client_data['folder_path']
+        directory = client_data['directory']
+        shared_users = client_data['shared_users']
         folder_type = client_data['folder_type']
-        print(f'Preparing to receive file: {folder_label}')
-        # TODO File receiving logic here
+        status = create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type)
+        logging.info(f'Sending folder status: {status}')
+        clientsocket.send(str(status).encode('utf-8'))
 
     elif action == 'remove_user': # TODO should be a potential option for admin.
         username = client_data['username']
@@ -231,6 +433,7 @@ def handle_client_message(message):
 
 # SERVER LOOP
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind((ip, 8000))
 s.listen(10)
 

@@ -81,26 +81,28 @@ when we finish exe code.-->
 
        <!-- Tab Content -->
     <div id="general" class="tabcontent active">
-        <h3>General Settings</h3>
+        <h3>General Settings</h3> 
         <p>General settings for the folder.</p>
             <div class="form-container">
-                <form method="POST" action="#">
+                <form id ='generalForm' autocomplete="off">
                     <input type="hidden" name="action" value="add_folder">
-                    <label for="folder_label">folder label:</label>
+                    <label for="folder_label">folder label:</label> 
                     <br>
                     <input type="text" id="folder_label" name="folder_label" required>
+                    <span id="folder_label_error" class="error-message"></span>
+                    <p>Optional folder label: A descriptive name that can vary across devices.</p>
                     <br>
                     <label for="folder_id">folder id:</label>
                     <br>
                     <input type="text" id="folder_id" name="folder_id" value="{{random_folder_id}}" required>
+                    <span id="folder_id_error" class="error-message"></span>
+                    <p>Required Folder ID: A unique identifier that must match exactly across all devices. It is case-sensitive and ensures folders are synced correctly.</p>
                     <br>
                     <label for="folder_path">folder path:</label>
                     <br>
                     <input type="text" id="folder_path" name="folder_path" value="~/{{random_folder_id}}" required>
-                    <br>
-                    <label for="folder_type">folder type:</label>
-                    <br>
-                    <input type="text" id="folder_type" name="folder_type" required>
+                    <span id="folder_path_error" class="error-message"></span>
+                    <p>Specify the folder path on your local computer. If the folder doesn't exist, it will be created. Use ~ as a shortcut for directory C:\Users\YourUsername</p>
                     <br>
                 </form>
                 </div> 
@@ -109,16 +111,32 @@ when we finish exe code.-->
     <div id="sharing" class="tabcontent">
         <h3>Sharing Settings</h3>
         <p>Select devices to share this folder with:</p>
-        <div id="sharing"></div> <!-- Raw JSON data will be displayed here -->
+        <div class="form-container">
+            <form id="sharingForm">
+                <!-- Checkboxes for devices will be dynamically added here -->
+            </form>
+        </div>
     </div>
   
     <div id="advanced" class="tabcontent">
         <h3>Advanced Settings</h3>
         <p>Advanced configuration options.</p>
+        <div class="form-container">
+            <form id="advancedForm">
+                <label for="folder_type">folder type:</label>
+                <br>
+                <select id="folder_type" name="folder_type" required>
+                    <option value="sync_bothways">Sync Both Ways</option>
+                    <option value="sync_oneway">Sync One Way</option>
+                </select>
+            </form>
+        </div>
     </div>
 
+
+
     <div class="button-container">
-        <button type="submit">Submit</button>
+        <button id="submitAllForms">Submit</button>
         <button id="closeModalFolder">Close</button>
     </div>
         </div>

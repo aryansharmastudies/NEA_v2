@@ -1910,3 +1910,4112 @@
     ]
   }
 }
+2025-02-18 20:00:52 INFO Connection from ('192.168.1.75', 59502) has been established!
+2025-02-18 20:00:52 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-18 20:00:52 INFO Received ping from 192.168.1.75
+2025-02-18 20:00:52 INFO Pong sent to 192.168.1.75
+2025-02-18 20:00:55 INFO Connection from ('192.168.1.75', 59509) has been established!
+2025-02-18 20:00:55 INFO message: {"action": "login", "l_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-18 20:00:55 INFO User: admin has logged in
+2025-02-18 20:00:55 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-18 20:00:56 INFO Connection from ('192.168.1.75', 59517) has been established!
+2025-02-18 20:00:56 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-18 20:00:56 INFO Data_Response Object is made
+2025-02-18 20:00:56 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-18 20:00:56 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-18 20:01:31 INFO Connection from ('192.168.1.75', 59531) has been established!
+2025-02-18 20:01:31 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-18 20:01:31 INFO Data_Response Object is made
+2025-02-18 20:01:31 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-18 20:01:31 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-18 20:03:04 INFO Connection from ('192.168.1.75', 59550) has been established!
+2025-02-18 20:03:04 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-18 20:03:04 INFO Data_Response Object is made
+2025-02-18 20:03:04 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-18 20:03:04 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-18 20:06:18 INFO Connection from ('192.168.1.75', 59631) has been established!
+2025-02-18 20:06:18 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-18 20:06:18 INFO Data_Response Object is made
+2025-02-18 20:06:18 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-18 20:06:18 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-18 20:07:49 INFO Connection from ('192.168.1.75', 59659) has been established!
+2025-02-18 20:07:49 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-18 20:07:49 INFO Data_Response Object is made
+2025-02-18 20:07:49 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-18 20:07:49 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-18 21:17:16 INFO Connection from ('192.168.1.75', 60932) has been established!
+2025-02-18 21:17:16 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-18 21:17:16 INFO Data_Response Object is made
+2025-02-18 21:17:16 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-18 21:17:16 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 12:18:53 INFO Connection from ('192.168.1.75', 56555) has been established!
+2025-02-19 12:18:53 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-19 12:18:53 INFO Received ping from 192.168.1.75
+2025-02-19 12:18:53 INFO Pong sent to 192.168.1.75
+2025-02-19 12:19:03 INFO Connection from ('192.168.1.75', 56563) has been established!
+2025-02-19 12:19:03 INFO message: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-19 12:19:03 INFO User: aryan has logged in
+2025-02-19 12:19:03 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-19 12:19:04 INFO Connection from ('192.168.1.75', 56571) has been established!
+2025-02-19 12:19:04 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 12:19:04 INFO Data_Response Object is made
+2025-02-19 12:19:04 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 12:19:04 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 12:34:19 INFO Connection from ('192.168.1.75', 57025) has been established!
+2025-02-19 12:34:19 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 12:34:19 INFO Data_Response Object is made
+2025-02-19 12:34:19 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 12:34:19 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 12:37:16 INFO Connection from ('192.168.1.75', 57086) has been established!
+2025-02-19 12:37:16 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 12:37:16 INFO Data_Response Object is made
+2025-02-19 12:37:16 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 12:37:16 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 12:38:25 INFO Connection from ('192.168.1.75', 57112) has been established!
+2025-02-19 12:38:25 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 12:38:25 INFO Data_Response Object is made
+2025-02-19 12:38:25 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 12:38:25 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 16:32:01 INFO Connection from ('192.168.1.75', 63344) has been established!
+2025-02-19 16:32:01 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-19 16:32:01 INFO Received ping from 192.168.1.75
+2025-02-19 16:32:01 INFO Pong sent to 192.168.1.75
+2025-02-19 16:32:15 INFO Connection from ('192.168.1.75', 63360) has been established!
+2025-02-19 16:32:15 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "anjali", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-19 16:32:15 INFO Creating user: anjali with hash: 4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694
+2025-02-19 16:32:15 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-02-19 16:32:22 INFO Connection from ('192.168.1.75', 63368) has been established!
+2025-02-19 16:32:22 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 16:32:22 INFO Data_Response Object is made
+2025-02-19 16:32:22 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 16:32:22 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:13:09 INFO Connection from ('192.168.1.75', 64407) has been established!
+2025-02-19 17:13:09 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:13:09 INFO Data_Response Object is made
+2025-02-19 17:13:09 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:13:09 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:14:39 INFO Connection from ('192.168.1.75', 64424) has been established!
+2025-02-19 17:14:39 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:14:39 INFO Data_Response Object is made
+2025-02-19 17:14:39 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:14:39 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:17:55 INFO Connection from ('192.168.1.75', 64631) has been established!
+2025-02-19 17:17:55 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:17:55 INFO Data_Response Object is made
+2025-02-19 17:17:55 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:17:55 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:18:02 INFO Connection from ('192.168.1.75', 64634) has been established!
+2025-02-19 17:18:02 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:18:02 INFO Data_Response Object is made
+2025-02-19 17:18:02 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:18:02 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:18:05 INFO Connection from ('192.168.1.75', 64643) has been established!
+2025-02-19 17:18:05 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:18:05 INFO Data_Response Object is made
+2025-02-19 17:18:05 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:18:05 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:19:04 INFO Connection from ('192.168.1.75', 64666) has been established!
+2025-02-19 17:19:04 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:19:04 INFO Data_Response Object is made
+2025-02-19 17:19:04 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:19:04 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:19:07 INFO Connection from ('192.168.1.75', 64675) has been established!
+2025-02-19 17:19:07 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:19:07 INFO Data_Response Object is made
+2025-02-19 17:19:07 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:19:07 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:19:09 INFO Connection from ('192.168.1.75', 64683) has been established!
+2025-02-19 17:19:09 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:19:09 INFO Data_Response Object is made
+2025-02-19 17:19:09 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:19:09 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:19:10 INFO Connection from ('192.168.1.75', 64692) has been established!
+2025-02-19 17:19:10 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:19:10 INFO Data_Response Object is made
+2025-02-19 17:19:10 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:19:10 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:19:36 INFO Connection from ('192.168.1.75', 64699) has been established!
+2025-02-19 17:19:36 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:19:36 INFO Data_Response Object is made
+2025-02-19 17:19:36 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:19:36 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:19:37 INFO Connection from ('192.168.1.75', 64707) has been established!
+2025-02-19 17:19:37 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:19:37 INFO Data_Response Object is made
+2025-02-19 17:19:37 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:19:37 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:19:39 INFO Connection from ('192.168.1.75', 64715) has been established!
+2025-02-19 17:19:39 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:19:39 INFO Data_Response Object is made
+2025-02-19 17:19:39 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:19:39 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:19:40 INFO Connection from ('192.168.1.75', 64723) has been established!
+2025-02-19 17:19:40 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:19:40 INFO Data_Response Object is made
+2025-02-19 17:19:40 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:19:40 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:19:40 INFO Connection from ('192.168.1.75', 64731) has been established!
+2025-02-19 17:19:40 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:19:40 INFO Data_Response Object is made
+2025-02-19 17:19:40 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:19:40 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:19:47 INFO Connection from ('192.168.1.75', 64743) has been established!
+2025-02-19 17:19:47 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:19:47 INFO Data_Response Object is made
+2025-02-19 17:19:47 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:19:47 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:21:57 INFO Connection from ('192.168.1.75', 64790) has been established!
+2025-02-19 17:21:57 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:21:57 INFO Data_Response Object is made
+2025-02-19 17:21:57 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:21:57 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:21:58 INFO Connection from ('192.168.1.75', 64798) has been established!
+2025-02-19 17:21:58 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:21:58 INFO Data_Response Object is made
+2025-02-19 17:21:58 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:21:58 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 17:22:08 INFO Connection from ('192.168.1.75', 64808) has been established!
+2025-02-19 17:22:08 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 17:22:08 INFO Data_Response Object is made
+2025-02-19 17:22:08 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 17:22:08 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 18:28:44 INFO Connection from ('192.168.1.75', 50383) has been established!
+2025-02-19 18:28:44 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 18:28:44 INFO Data_Response Object is made
+2025-02-19 18:28:44 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 18:28:44 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 18:30:19 INFO Connection from ('192.168.1.75', 50542) has been established!
+2025-02-19 18:30:19 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 18:30:19 INFO Data_Response Object is made
+2025-02-19 18:30:19 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 18:30:19 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:21:22 INFO Connection from ('192.168.1.75', 52048) has been established!
+2025-02-19 19:21:22 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:21:22 INFO Data_Response Object is made
+2025-02-19 19:21:22 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:21:22 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:24:12 INFO Connection from ('192.168.1.75', 52086) has been established!
+2025-02-19 19:24:12 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:24:12 INFO Data_Response Object is made
+2025-02-19 19:24:12 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:24:12 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:24:23 INFO Connection from ('192.168.1.75', 52096) has been established!
+2025-02-19 19:24:23 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:24:23 INFO Data_Response Object is made
+2025-02-19 19:24:23 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:24:23 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:24:28 INFO Connection from ('192.168.1.75', 52108) has been established!
+2025-02-19 19:24:28 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:24:28 INFO Data_Response Object is made
+2025-02-19 19:24:28 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:24:28 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:24:41 INFO Connection from ('192.168.1.75', 52123) has been established!
+2025-02-19 19:24:41 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:24:41 INFO Data_Response Object is made
+2025-02-19 19:24:41 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:24:41 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:27:18 INFO Connection from ('192.168.1.75', 52183) has been established!
+2025-02-19 19:27:18 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:27:18 INFO Data_Response Object is made
+2025-02-19 19:27:18 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:27:18 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:27:33 INFO Connection from ('192.168.1.75', 52189) has been established!
+2025-02-19 19:27:33 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:27:33 INFO Data_Response Object is made
+2025-02-19 19:27:33 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:27:33 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:36:04 INFO Connection from ('192.168.1.75', 52548) has been established!
+2025-02-19 19:36:04 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-19 19:36:04 INFO Received ping from 192.168.1.75
+2025-02-19 19:36:04 INFO Pong sent to 192.168.1.75
+2025-02-19 19:36:07 INFO Connection from ('192.168.1.75', 52555) has been established!
+2025-02-19 19:36:07 INFO message: {"action": "login", "l_user": "anjali", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-19 19:36:07 INFO User: anjali has logged in
+2025-02-19 19:36:07 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-19 19:36:09 INFO Connection from ('192.168.1.75', 52563) has been established!
+2025-02-19 19:36:09 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:36:09 INFO Data_Response Object is made
+2025-02-19 19:36:09 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:36:09 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:51:00 INFO Connection from ('192.168.1.75', 53141) has been established!
+2025-02-19 19:51:00 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:51:00 INFO Data_Response Object is made
+2025-02-19 19:51:00 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:51:00 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:51:18 INFO Connection from ('192.168.1.75', 53156) has been established!
+2025-02-19 19:51:18 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:51:18 INFO Data_Response Object is made
+2025-02-19 19:51:18 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:51:18 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:52:11 INFO Connection from ('192.168.1.75', 53176) has been established!
+2025-02-19 19:52:11 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:52:11 INFO Data_Response Object is made
+2025-02-19 19:52:11 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:52:11 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:53:04 INFO Connection from ('192.168.1.75', 53205) has been established!
+2025-02-19 19:53:04 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:53:04 INFO Data_Response Object is made
+2025-02-19 19:53:04 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:53:04 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:53:14 INFO Connection from ('192.168.1.75', 53216) has been established!
+2025-02-19 19:53:14 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:53:14 INFO Data_Response Object is made
+2025-02-19 19:53:14 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:53:14 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:55:18 INFO Connection from ('192.168.1.75', 53245) has been established!
+2025-02-19 19:55:18 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:55:18 INFO Data_Response Object is made
+2025-02-19 19:55:18 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:55:18 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:55:33 INFO Connection from ('192.168.1.75', 53257) has been established!
+2025-02-19 19:55:33 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:55:33 INFO Data_Response Object is made
+2025-02-19 19:55:33 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:55:33 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:55:58 INFO Connection from ('192.168.1.75', 53279) has been established!
+2025-02-19 19:55:58 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:55:58 INFO Data_Response Object is made
+2025-02-19 19:55:58 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:55:58 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 19:56:06 INFO Connection from ('192.168.1.75', 53298) has been established!
+2025-02-19 19:56:06 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 19:56:06 INFO Data_Response Object is made
+2025-02-19 19:56:06 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 19:56:06 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 21:51:00 INFO Connection from ('192.168.1.75', 56676) has been established!
+2025-02-19 21:51:00 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 21:51:00 INFO Data_Response Object is made
+2025-02-19 21:51:00 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 21:51:00 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 21:53:59 INFO Connection from ('192.168.1.75', 56724) has been established!
+2025-02-19 21:53:59 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 21:53:59 INFO Data_Response Object is made
+2025-02-19 21:53:59 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 21:53:59 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-19 21:54:54 INFO Connection from ('192.168.1.75', 56741) has been established!
+2025-02-19 21:54:54 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-19 21:54:54 INFO Data_Response Object is made
+2025-02-19 21:54:54 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-19 21:54:54 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-20 18:49:40 INFO Connection from ('192.168.1.75', 51833) has been established!
+2025-02-20 18:49:40 INFO message: {"action": "ping", "ip_addr": "192.168.1.75", "mac_addr": 4943750935229}
+2025-02-20 18:49:40 INFO Received ping from 192.168.1.75
+2025-02-20 19:02:12 INFO Connection from ('192.168.1.75', 52304) has been established!
+2025-02-20 19:02:12 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-20 19:02:12 INFO Received ping from 192.168.1.75
+2025-02-20 19:02:12 INFO Pong sent to 192.168.1.75
+2025-02-20 19:02:17 INFO Connection from ('192.168.1.75', 52312) has been established!
+2025-02-20 19:02:17 INFO message: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-20 19:02:17 INFO User: aryan has logged in
+2025-02-20 19:02:17 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-20 19:02:17 INFO Connection from ('192.168.1.75', 52315) has been established!
+2025-02-20 19:02:17 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-20 19:02:17 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-20 19:07:07 INFO Connection from ('192.168.1.75', 52407) has been established!
+2025-02-20 19:07:07 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-20 19:07:07 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-20 19:08:58 INFO Connection from ('192.168.1.75', 52456) has been established!
+2025-02-20 19:08:58 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-20 19:08:58 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-20 19:08:58 INFO ip_map: {'users': {'aryan': {4943750935229: '192.168.1.75'}}}
+2025-02-20 19:10:54 INFO Connection from ('192.168.1.75', 52736) has been established!
+2025-02-20 19:10:54 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-20 19:10:54 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-20 19:10:54 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-20 19:11:06 INFO Connection from ('192.168.1.75', 52752) has been established!
+2025-02-20 19:11:06 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "anjali", "mac_addr": 4943750935229}
+2025-02-20 19:11:06 INFO Recieved tracking info from anjali with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-20 19:11:06 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'anjali': {4943750935229: '192.168.1.75'}}}
+2025-02-20 19:12:00 INFO Connection from ('192.168.1.75', 52824) has been established!
+2025-02-20 19:12:00 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "krishiv", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-20 19:12:00 INFO Creating user: krishiv with hash: 4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694
+2025-02-20 19:12:00 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-02-20 19:12:00 INFO Connection from ('192.168.1.75', 52826) has been established!
+2025-02-20 19:12:00 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "krishiv", "mac_addr": 4943750935229}
+2025-02-20 19:12:00 INFO Recieved tracking info from krishiv with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-20 19:12:00 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'anjali': {4943750935229: '192.168.1.75'}, 'krishiv': {4943750935229: '192.168.1.75'}}}
+2025-02-20 19:12:15 INFO Connection from ('192.168.1.75', 52839) has been established!
+2025-02-20 19:12:15 INFO message: {"action": "login", "l_user": "krishiv", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-20 19:12:15 INFO User: krishiv has logged in
+2025-02-20 19:12:15 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-20 19:12:15 INFO Connection from ('192.168.1.75', 52841) has been established!
+2025-02-20 19:12:15 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "krishiv", "mac_addr": 4943750935229}
+2025-02-20 19:12:15 INFO Recieved tracking info from krishiv with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-20 19:12:15 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'anjali': {4943750935229: '192.168.1.75'}, 'krishiv': {4943750935229: '192.168.1.75'}}}
+2025-02-20 19:13:04 INFO Connection from ('192.168.1.75', 52864) has been established!
+2025-02-20 19:13:04 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "krishiv", "mac_addr": 4943750935229}
+2025-02-20 19:13:04 INFO Recieved tracking info from krishiv with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-20 19:13:04 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75'}, 'krishiv': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-20 19:13:06 INFO Connection from ('192.168.1.75', 52871) has been established!
+2025-02-20 19:13:06 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "krishiv", "mac_addr": 4943750935229}
+2025-02-20 19:13:06 INFO Recieved tracking info from krishiv with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-20 19:13:06 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75'}, 'krishiv': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-20 19:13:38 INFO Connection from ('192.168.1.75', 52893) has been established!
+2025-02-20 19:13:38 INFO message: {"action": "login", "l_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-20 19:13:38 INFO User: admin has logged in
+2025-02-20 19:13:38 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-20 19:13:38 INFO Connection from ('192.168.1.75', 52895) has been established!
+2025-02-20 19:13:38 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "admin", "mac_addr": 4943750935229}
+2025-02-20 19:13:38 INFO Recieved tracking info from admin with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-20 19:13:38 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75'}, 'krishiv': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'admin': {4943750935229: '192.168.1.75'}}}
+2025-02-21 15:48:24 INFO Connection from ('192.168.1.75', 56605) has been established!
+2025-02-21 15:48:24 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-21 15:48:24 INFO Received ping from 192.168.1.75
+2025-02-21 15:48:24 INFO Pong sent to 192.168.1.75
+2025-02-21 15:50:43 INFO Connection from ('192.168.1.75', 56627) has been established!
+2025-02-21 15:50:43 INFO message: {"action": "login", "l_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-21 15:50:43 INFO User: admin has logged in
+2025-02-21 15:50:43 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-21 15:50:43 INFO Connection from ('192.168.1.75', 56629) has been established!
+2025-02-21 15:50:43 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "admin", "mac_addr": 4943750935229}
+2025-02-21 15:50:43 INFO Recieved tracking info from admin with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 15:50:43 INFO ip_map: {'users': {'admin': {4943750935229: '192.168.1.75'}}}
+2025-02-21 15:50:56 INFO Connection from ('192.168.1.75', 56641) has been established!
+2025-02-21 15:50:56 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 15:50:56 INFO Data_Response Object is made
+2025-02-21 15:50:56 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-21 15:50:56 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 15:51:13 INFO Connection from ('192.168.1.75', 56643) has been established!
+2025-02-21 16:17:37 INFO Connection from ('192.168.1.75', 57054) has been established!
+2025-02-21 16:17:37 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-21 16:17:37 INFO Received ping from 192.168.1.75
+2025-02-21 16:17:37 INFO Pong sent to 192.168.1.75
+2025-02-21 16:17:50 INFO Connection from ('192.168.1.75', 57062) has been established!
+2025-02-21 16:17:50 INFO message: {"action": "login", "l_user": "anjali", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-21 16:17:50 INFO User: anjali has logged in
+2025-02-21 16:17:50 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-21 16:17:50 INFO Connection from ('192.168.1.75', 57064) has been established!
+2025-02-21 16:17:50 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "anjali", "mac_addr": 4943750935229}
+2025-02-21 16:17:50 INFO Recieved tracking info from anjali with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 16:17:50 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {4943750935229: '192.168.1.75'}}}
+2025-02-21 16:18:02 INFO Connection from ('192.168.1.75', 57075) has been established!
+2025-02-21 16:18:02 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 16:18:02 INFO Data_Response Object is made
+2025-02-21 16:18:02 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-21 16:18:02 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 16:18:09 INFO Connection from ('192.168.1.75', 57077) has been established!
+2025-02-21 16:18:09 INFO message: {"action": "add_folder", "folder_label": "testing", "folder_id": "EMizlwxST2", "directory": "~/EMizlwxST2", "shared_users": [], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 16:18:09 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'testing', 'folder_id': 'EMizlwxST2', 'directory': '~/EMizlwxST2', 'shared_users': [], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 16:18:09 INFO Unix format directory: ~/EMizlwxST2
+2025-02-21 16:18:09 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-02-21 16:49:42 INFO Connection from ('192.168.1.75', 57619) has been established!
+2025-02-21 16:49:42 INFO message: {"action": "add_folder", "folder_label": "testing!", "folder_id": "EMizlwxST2", "directory": "~/EMizlwxST2", "shared_users": ["joel:chromebook"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 16:49:42 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'testing!', 'folder_id': 'EMizlwxST2', 'directory': '~/EMizlwxST2', 'shared_users': ['joel:chromebook'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 16:49:42 INFO Folder_id: EMizlwxST2 already exists!
+2025-02-21 16:49:42 INFO Sending folder status: {"status": "409", "status_msg": "Folder with this folder_id already exists"}
+2025-02-21 16:50:22 INFO Connection from ('192.168.1.75', 57628) has been established!
+2025-02-21 16:50:22 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "anjali", "mac_addr": 4943750935229}
+2025-02-21 16:50:22 INFO Recieved tracking info from anjali with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 16:50:22 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {4943750935229: '192.168.1.75'}}}
+2025-02-21 16:50:23 INFO Connection from ('192.168.1.75', 57635) has been established!
+2025-02-21 16:50:23 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "anjali", "mac_addr": 4943750935229}
+2025-02-21 16:50:23 INFO Recieved tracking info from anjali with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 16:50:23 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {4943750935229: '192.168.1.75'}}}
+2025-02-21 16:50:28 INFO Connection from ('192.168.1.75', 57642) has been established!
+2025-02-21 16:50:28 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "anjali", "mac_addr": 4943750935229}
+2025-02-21 16:50:28 INFO Recieved tracking info from anjali with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 16:50:28 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {4943750935229: '192.168.1.75'}}}
+2025-02-21 16:51:45 INFO Connection from ('192.168.1.75', 57689) has been established!
+2025-02-21 16:51:45 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 16:51:45 INFO Data_Response Object is made
+2025-02-21 16:51:45 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-21 16:51:45 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 16:51:54 INFO Connection from ('192.168.1.75', 57692) has been established!
+2025-02-21 16:51:54 INFO message: {"action": "add_folder", "folder_label": "nujabes", "folder_id": "3slkKIPmVa", "directory": "~/3slkKIPmVa", "shared_users": ["joel:chromebook"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 16:51:54 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'nujabes', 'folder_id': '3slkKIPmVa', 'directory': '~/3slkKIPmVa', 'shared_users': ['joel:chromebook'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 16:51:54 INFO Unix format directory: ~/3slkKIPmVa
+2025-02-21 16:58:51 INFO Connection from ('192.168.1.75', 57797) has been established!
+2025-02-21 16:58:51 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "anjali", "mac_addr": 4943750935229}
+2025-02-21 16:58:51 INFO Recieved tracking info from anjali with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 16:58:51 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-21 16:58:53 INFO Connection from ('192.168.1.75', 57804) has been established!
+2025-02-21 16:58:53 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "anjali", "mac_addr": 4943750935229}
+2025-02-21 16:58:53 INFO Recieved tracking info from anjali with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 16:58:53 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-21 16:58:56 INFO Connection from ('192.168.1.75', 57811) has been established!
+2025-02-21 16:58:56 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "anjali", "mac_addr": 4943750935229}
+2025-02-21 16:58:56 INFO Recieved tracking info from anjali with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 16:58:56 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-21 16:58:59 INFO Connection from ('192.168.1.75', 57818) has been established!
+2025-02-21 16:58:59 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "anjali", "mac_addr": 4943750935229}
+2025-02-21 16:58:59 INFO Recieved tracking info from anjali with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 16:58:59 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-21 16:59:10 INFO Connection from ('192.168.1.75', 57825) has been established!
+2025-02-21 16:59:10 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 16:59:10 INFO Data_Response Object is made
+2025-02-21 16:59:10 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-21 16:59:10 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 16:59:33 INFO Connection from ('192.168.1.75', 57827) has been established!
+2025-02-21 16:59:33 INFO message: {"action": "add_folder", "folder_label": "nujabes_bangers", "folder_id": "FAeaE8JjpI", "directory": "~/FAeaE8JjpI", "shared_users": ["joel:chromebook"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 16:59:33 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'nujabes_bangers', 'folder_id': 'FAeaE8JjpI', 'directory': '~/FAeaE8JjpI', 'shared_users': ['joel:chromebook'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 16:59:33 INFO Unix format directory: ~/FAeaE8JjpI
+2025-02-21 16:59:33 INFO User: joel found with User_ID: 3
+2025-02-21 16:59:33 INFO Device: chromebook found with Mac_addr: 4943750935229
+2025-02-21 16:59:33 INFO User: joel not found in ip_map
+2025-02-21 16:59:33 INFO Sending folder status: {"status": "404", "status_msg": "User not found in ip_map"}
+2025-02-21 17:03:01 INFO Connection from ('192.168.1.75', 57870) has been established!
+2025-02-21 17:03:01 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "anjali", "mac_addr": 4943750935229}
+2025-02-21 17:03:01 INFO Recieved tracking info from anjali with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 17:03:01 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-21 17:03:09 INFO Connection from ('192.168.1.75', 57884) has been established!
+2025-02-21 17:03:09 INFO message: {"action": "login", "l_user": "joel", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-21 17:03:09 INFO User: joel has logged in
+2025-02-21 17:03:09 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-21 17:03:09 INFO Connection from ('192.168.1.75', 57886) has been established!
+2025-02-21 17:03:09 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "joel", "mac_addr": 4943750935229}
+2025-02-21 17:03:09 INFO Recieved tracking info from joel with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 17:03:09 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'joel': {4943750935229: '192.168.1.75'}}}
+2025-02-21 17:03:33 INFO Connection from ('192.168.1.75', 57898) has been established!
+2025-02-21 17:03:33 INFO message: {"action": "add_folder", "folder_label": "nujabes !", "folder_id": "FAeaE8JjpI", "directory": "~/FAeaE8JjpI", "shared_users": ["joel:chromebook"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 17:03:33 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'nujabes !', 'folder_id': 'FAeaE8JjpI', 'directory': '~/FAeaE8JjpI', 'shared_users': ['joel:chromebook'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 17:03:33 INFO Unix format directory: ~/FAeaE8JjpI
+2025-02-21 17:03:33 INFO User: joel found with User_ID: 3
+2025-02-21 17:03:33 INFO Device: chromebook found with Mac_addr: 4943750935229
+2025-02-21 17:03:33 INFO Device: chromebook not found in ip_map
+2025-02-21 17:03:33 INFO Sending folder status: {"status": "404", "status_msg": "Device not found in ip_map"}
+2025-02-21 17:38:50 INFO Connection from ('192.168.1.75', 58263) has been established!
+2025-02-21 17:38:50 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "joel", "mac_addr": 4943750935229}
+2025-02-21 17:38:50 INFO Recieved tracking info from joel with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 17:38:50 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75'}, 'joel': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-21 17:38:52 INFO Connection from ('192.168.1.75', 58270) has been established!
+2025-02-21 17:38:52 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "joel", "mac_addr": 4943750935229}
+2025-02-21 17:38:52 INFO Recieved tracking info from joel with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 17:38:52 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75'}, 'joel': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-21 17:38:53 INFO Connection from ('192.168.1.75', 58278) has been established!
+2025-02-21 17:38:53 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 17:38:53 INFO Data_Response Object is made
+2025-02-21 17:38:53 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-21 17:38:53 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 17:39:05 INFO Connection from ('192.168.1.75', 58280) has been established!
+2025-02-21 17:39:05 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "joel", "mac_addr": 4943750935229}
+2025-02-21 17:39:05 INFO Recieved tracking info from joel with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 17:39:05 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75'}, 'joel': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}}}
+2025-02-21 17:39:10 INFO Connection from ('192.168.1.75', 58287) has been established!
+2025-02-21 17:39:10 INFO message: {"action": "add_folder", "folder_label": "folder01", "folder_id": "tcSwToBNbi", "directory": "~/tcSwToBNbi", "shared_users": ["joel:chromebook"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 17:39:10 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'folder01', 'folder_id': 'tcSwToBNbi', 'directory': '~/tcSwToBNbi', 'shared_users': ['joel:chromebook'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 17:39:10 INFO Unix format directory: ~/tcSwToBNbi
+2025-02-21 17:39:10 INFO User: joel found with User_ID: 3
+2025-02-21 17:39:10 INFO Device: chromebook found with Mac_addr: 4943750935229
+2025-02-21 17:39:10 INFO {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}
+2025-02-21 17:39:10 INFO Sending ping to joel with ip: 192.168.1.75
+2025-02-21 17:40:49 INFO Connection from ('192.168.1.75', 58334) has been established!
+2025-02-21 17:40:49 INFO message: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-21 17:40:49 INFO User: aryan has logged in
+2025-02-21 17:40:49 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-21 17:40:49 INFO Connection from ('192.168.1.75', 58336) has been established!
+2025-02-21 17:40:49 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-21 17:40:49 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 17:40:49 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75'}, 'joel': {'4943750935229': '192.168.1.75'}, 'aryan': {4943750935229: '192.168.1.75'}}}
+2025-02-21 17:41:45 INFO Connection from ('192.168.1.75', 58394) has been established!
+2025-02-21 17:41:45 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-21 17:41:45 INFO Received ping from 192.168.1.75
+2025-02-21 17:41:45 INFO Pong sent to 192.168.1.75
+2025-02-21 17:41:49 INFO Connection from ('192.168.1.75', 58400) has been established!
+2025-02-21 17:41:49 INFO message: {"action": "login", "l_user": "joel", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-21 17:41:49 INFO User: joel has logged in
+2025-02-21 17:41:49 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-21 17:41:49 INFO Connection from ('192.168.1.75', 58402) has been established!
+2025-02-21 17:41:49 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "joel", "mac_addr": 4943750935229}
+2025-02-21 17:41:49 INFO Recieved tracking info from joel with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 17:41:49 INFO ip_map: {'users': {'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'4943750935229': '192.168.1.75'}, 'joel': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'aryan': {4943750935229: '192.168.1.75'}}}
+2025-02-21 17:42:23 INFO Connection from ('192.168.1.75', 58413) has been established!
+2025-02-21 17:42:23 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 17:42:23 INFO Data_Response Object is made
+2025-02-21 17:42:23 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-21 17:42:23 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 17:42:46 INFO Connection from ('192.168.1.75', 58417) has been established!
+2025-02-21 17:42:46 INFO message: {"action": "add_folder", "folder_label": "folder02", "folder_id": "9YVxO7v1LK", "directory": "~/9YVxO7v1LK", "shared_users": ["joel:chromebook"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 17:42:46 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'folder02', 'folder_id': '9YVxO7v1LK', 'directory': '~/9YVxO7v1LK', 'shared_users': ['joel:chromebook'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 17:42:46 INFO Unix format directory: ~/9YVxO7v1LK
+2025-02-21 17:42:46 INFO User: joel found with User_ID: 3
+2025-02-21 17:42:46 INFO Device: chromebook found with Mac_addr: 4943750935229
+2025-02-21 17:42:46 INFO {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}
+2025-02-21 17:42:46 INFO Sending ping to joel with ip: 192.168.1.75
+2025-02-21 19:12:36 INFO Connection from ('192.168.1.75', 59495) has been established!
+2025-02-21 19:12:36 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-21 19:12:36 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 19:12:36 INFO ip_map: {'users': {'aryan': {4943750935229: '192.168.1.75'}}}
+2025-02-21 20:56:51 INFO Connection from ('192.168.1.221', 54362) has been established!
+2025-02-21 20:56:51 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-02-21 20:56:51 INFO Received ping from 192.168.1.221
+2025-02-21 20:56:51 INFO Pong sent to 192.168.1.221
+2025-02-21 20:57:01 INFO Connection from ('192.168.1.221', 56888) has been established!
+2025-02-21 20:57:01 INFO message: {"action": "login", "l_user": "joel", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-21 20:57:01 INFO User: joel has logged in
+2025-02-21 20:57:01 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-21 20:57:01 INFO Connection from ('192.168.1.221', 56900) has been established!
+2025-02-21 20:57:01 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "joel", "mac_addr": 167132875827157}
+2025-02-21 20:57:01 INFO Recieved tracking info from joel with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-02-21 20:57:01 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75'}, 'joel': {167132875827157: '192.168.1.221'}}}
+2025-02-21 20:57:29 INFO Connection from ('192.168.1.75', 60447) has been established!
+2025-02-21 20:57:29 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-21 20:57:29 INFO Received ping from 192.168.1.75
+2025-02-21 20:57:29 INFO Pong sent to 192.168.1.75
+2025-02-21 20:57:32 INFO Connection from ('192.168.1.75', 60455) has been established!
+2025-02-21 20:57:32 INFO message: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-21 20:57:32 INFO User: aryan has logged in
+2025-02-21 20:57:32 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-21 20:57:32 INFO Connection from ('192.168.1.75', 60457) has been established!
+2025-02-21 20:57:32 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-21 20:57:32 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 20:57:32 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'joel': {167132875827157: '192.168.1.221'}}}
+2025-02-21 20:57:33 INFO Connection from ('192.168.1.75', 60465) has been established!
+2025-02-21 20:57:33 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 20:57:33 INFO Data_Response Object is made
+2025-02-21 20:57:33 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-21 20:57:33 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 20:58:04 INFO Connection from ('192.168.1.75', 60478) has been established!
+2025-02-21 20:58:04 INFO message: {"action": "add_folder", "folder_label": "rest_in_beats_nujabes!", "folder_id": "lLpRrY5RnF", "directory": "~/lLpRrY5RnF", "shared_users": ["joel:joels_pixel"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 20:58:04 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'rest_in_beats_nujabes!', 'folder_id': 'lLpRrY5RnF', 'directory': '~/lLpRrY5RnF', 'shared_users': ['joel:joels_pixel'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 20:58:04 INFO Unix format directory: ~/lLpRrY5RnF
+2025-02-21 20:58:04 INFO User: joel found with User_ID: 3
+2025-02-21 20:58:04 INFO Device: joels_pixel found with Mac_addr: 167132875827157
+2025-02-21 20:58:04 INFO {167132875827157: '192.168.1.221'}
+2025-02-21 20:58:04 INFO Device: joels_pixel not found in ip_map
+2025-02-21 20:58:04 INFO Sending folder status: {"status": "404", "status_msg": "Device not found in ip_map"}
+2025-02-21 21:09:27 INFO Connection from ('192.168.1.75', 60531) has been established!
+2025-02-21 21:09:27 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-21 21:09:27 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 21:09:27 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221'}}}
+2025-02-21 21:09:40 INFO Connection from ('192.168.1.221', 33242) has been established!
+2025-02-21 21:09:40 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "joel", "mac_addr": 167132875827157}
+2025-02-21 21:09:40 INFO Recieved tracking info from joel with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-02-21 21:09:40 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}}}
+2025-02-21 21:09:43 INFO Connection from ('192.168.1.75', 60539) has been established!
+2025-02-21 21:09:43 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-21 21:09:43 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 21:09:43 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}}}
+2025-02-21 21:09:50 INFO Connection from ('192.168.1.75', 60546) has been established!
+2025-02-21 21:09:50 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 21:09:50 INFO Data_Response Object is made
+2025-02-21 21:09:50 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel']]}
+2025-02-21 21:09:50 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 21:10:13 INFO Connection from ('192.168.1.75', 60548) has been established!
+2025-02-21 21:10:13 INFO message: {"action": "add_folder", "folder_label": "jun_seba_the_goat", "folder_id": "8btPnkBDV6", "directory": "~/8btPnkBDV6", "shared_users": ["joel:joels_pixel"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 21:10:13 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'jun_seba_the_goat', 'folder_id': '8btPnkBDV6', 'directory': '~/8btPnkBDV6', 'shared_users': ['joel:joels_pixel'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 21:10:13 INFO Unix format directory: ~/8btPnkBDV6
+2025-02-21 21:10:13 INFO User: joel found with User_ID: 3
+2025-02-21 21:10:13 INFO Device: joels_pixel found with Mac_addr: 167132875827157
+2025-02-21 21:10:13 INFO {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}
+2025-02-21 21:14:42 INFO Connection from ('192.168.1.75', 60571) has been established!
+2025-02-21 21:14:42 INFO message: {"action": "add_folder", "folder_label": "jun_seba_the_goat", "folder_id": "8btPnkBDV6", "directory": "~/8btPnkBDV6", "shared_users": ["joel:joels_pixel"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 21:14:42 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'jun_seba_the_goat', 'folder_id': '8btPnkBDV6', 'directory': '~/8btPnkBDV6', 'shared_users': ['joel:joels_pixel'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 21:14:42 INFO Unix format directory: ~/8btPnkBDV6
+2025-02-21 21:14:42 INFO User: joel found with User_ID: 3
+2025-02-21 21:14:42 INFO Device: joels_pixel found with Mac_addr: 167132875827157
+2025-02-21 21:14:42 INFO {'167132875827157': '192.168.1.221'}
+2025-02-21 21:14:42 INFO ip of device: 192.168.1.221
+2025-02-21 21:15:27 INFO Connection from ('192.168.1.75', 60574) has been established!
+2025-02-21 21:15:27 INFO message: {"action": "add_folder", "folder_label": "jun_seba_the_goat", "folder_id": "8btPnkBDV6", "directory": "~/8btPnkBDV6", "shared_users": ["joel:joels_pixel"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 21:15:27 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'jun_seba_the_goat', 'folder_id': '8btPnkBDV6', 'directory': '~/8btPnkBDV6', 'shared_users': ['joel:joels_pixel'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 21:15:27 INFO Unix format directory: ~/8btPnkBDV6
+2025-02-21 21:15:27 INFO User: joel found with User_ID: 3
+2025-02-21 21:15:27 INFO Device: joels_pixel found with Mac_addr: 167132875827157
+2025-02-21 21:15:27 INFO {'167132875827157': '192.168.1.221'}
+2025-02-21 21:15:27 INFO ip of device: 192.168.1.221
+2025-02-21 21:15:27 INFO Sending ping to joel with ip: 192.168.1.221
+2025-02-21 21:15:29 INFO Ping failed for joel with ip: 192.168.1.221
+2025-02-21 21:15:29 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-02-21 21:17:41 INFO Connection from ('192.168.1.75', 60582) has been established!
+2025-02-21 21:17:41 INFO message: {"action": "add_folder", "folder_label": "rip_nujabes!", "folder_id": "8btPnkBDV6", "directory": "~/8btPnkBDV6", "shared_users": ["joel:joels_pixel"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 21:17:41 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'rip_nujabes!', 'folder_id': '8btPnkBDV6', 'directory': '~/8btPnkBDV6', 'shared_users': ['joel:joels_pixel'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 21:17:41 INFO Folder_id: 8btPnkBDV6 already exists!
+2025-02-21 21:17:41 INFO Sending folder status: {"status": "409", "status_msg": "Folder with this folder_id already exists"}
+2025-02-21 21:19:27 INFO Connection from ('192.168.1.221', 38112) has been established!
+2025-02-21 21:19:27 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "joel", "mac_addr": 167132875827157}
+2025-02-21 21:19:27 INFO Recieved tracking info from joel with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-02-21 21:19:27 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}}}
+2025-02-21 21:19:52 INFO Connection from ('192.168.1.75', 60592) has been established!
+2025-02-21 21:19:52 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "admin", "mac_addr": 4943750935229}
+2025-02-21 21:19:52 INFO Recieved tracking info from admin with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 21:19:52 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}, 'admin': {4943750935229: '192.168.1.75'}}}
+2025-02-21 21:20:10 INFO Connection from ('192.168.1.75', 60619) has been established!
+2025-02-21 21:20:10 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-02-21 21:20:10 INFO Received ping from 192.168.1.75
+2025-02-21 21:20:10 INFO Pong sent to 192.168.1.75
+2025-02-21 21:20:17 INFO Connection from ('192.168.1.221', 60058) has been established!
+2025-02-21 21:20:17 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-02-21 21:20:17 INFO Received ping from 192.168.1.221
+2025-02-21 21:20:17 INFO Pong sent to 192.168.1.221
+2025-02-21 21:20:17 INFO Connection from ('192.168.1.221', 60072) has been established!
+2025-02-21 21:20:17 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "joel", "mac_addr": 167132875827157}
+2025-02-21 21:20:17 INFO Recieved tracking info from joel with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-02-21 21:20:17 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}, 'admin': {4943750935229: '192.168.1.75'}}}
+2025-02-21 21:20:24 INFO Connection from ('192.168.1.221', 59708) has been established!
+2025-02-21 21:20:24 INFO message: {"action": "login", "l_user": "anjali", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-21 21:20:24 INFO User: anjali has logged in
+2025-02-21 21:20:24 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-21 21:20:24 INFO Connection from ('192.168.1.221', 59720) has been established!
+2025-02-21 21:20:24 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-02-21 21:20:24 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-02-21 21:20:24 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}, 'admin': {4943750935229: '192.168.1.75'}, 'anjali': {167132875827157: '192.168.1.221'}}}
+2025-02-21 21:20:36 INFO Connection from ('192.168.1.221', 35592) has been established!
+2025-02-21 21:20:36 INFO message: {"action": "add_device", "user": "anjali", "r_dev_name": "samsung", "mac_addr": 167132875827157}
+2025-02-21 21:20:36 INFO User_ID: 4
+2025-02-21 21:20:36 INFO Adding device: samsung with Mac_addr: 167132875827157 for User: anjali with User_ID: 4
+2025-02-21 21:20:36 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-02-21 21:20:36 INFO Connection from ('192.168.1.221', 35608) has been established!
+2025-02-21 21:20:36 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-02-21 21:20:36 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-02-21 21:20:36 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}, 'admin': {4943750935229: '192.168.1.75'}, 'anjali': {167132875827157: '192.168.1.221'}}}
+2025-02-21 21:20:53 INFO Connection from ('192.168.1.75', 60630) has been established!
+2025-02-21 21:20:53 INFO message: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-02-21 21:20:53 INFO User: aryan has logged in
+2025-02-21 21:20:53 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-02-21 21:20:53 INFO Connection from ('192.168.1.75', 60632) has been established!
+2025-02-21 21:20:53 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-21 21:20:53 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 21:20:53 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}, 'admin': {4943750935229: '192.168.1.75'}, 'anjali': {167132875827157: '192.168.1.221'}}}
+2025-02-21 21:21:16 INFO Connection from ('192.168.1.75', 60639) has been established!
+2025-02-21 21:21:16 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 21:21:16 INFO Data_Response Object is made
+2025-02-21 21:21:16 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel'], [4, 'samsung']]}
+2025-02-21 21:21:16 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ],
+      [
+        4,
+        "samsung"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 21:21:29 INFO Connection from ('192.168.1.75', 60641) has been established!
+2025-02-21 21:21:29 INFO message: {"action": "add_folder", "folder_label": "8bitdo", "folder_id": "K9Q9bwQP3E", "directory": "~/K9Q9bwQP3E", "shared_users": ["anjali:samsung"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 21:21:29 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': '8bitdo', 'folder_id': 'K9Q9bwQP3E', 'directory': '~/K9Q9bwQP3E', 'shared_users': ['anjali:samsung'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 21:21:29 INFO Unix format directory: ~/K9Q9bwQP3E
+2025-02-21 21:21:29 INFO User: anjali found with User_ID: 4
+2025-02-21 21:21:29 INFO Device: samsung found with Mac_addr: 167132875827157
+2025-02-21 21:21:29 INFO {167132875827157: '192.168.1.221'}
+2025-02-21 21:21:29 INFO Device: samsung not found in ip_map
+2025-02-21 21:21:29 INFO Sending folder status: {"status": "404", "status_msg": "Device not found in ip_map"}
+2025-02-21 21:24:48 INFO Connection from ('192.168.1.75', 60669) has been established!
+2025-02-21 21:24:48 INFO message: {"action": "add_folder", "folder_label": "8bitdo", "folder_id": "K9Q9bwQP3E", "directory": "~/K9Q9bwQP3E", "shared_users": ["anjali:samsung"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 21:24:48 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': '8bitdo', 'folder_id': 'K9Q9bwQP3E', 'directory': '~/K9Q9bwQP3E', 'shared_users': ['anjali:samsung'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 21:24:48 INFO Unix format directory: ~/K9Q9bwQP3E
+2025-02-21 21:24:48 INFO User: anjali found with User_ID: 4
+2025-02-21 21:24:48 INFO Device: samsung found with Mac_addr: 167132875827157
+2025-02-21 21:24:48 INFO {167132875827157: '192.168.1.221'}
+2025-02-21 21:24:48 INFO Device: samsung not found in ip_map
+2025-02-21 21:24:48 INFO Sending folder status: {"status": "404", "status_msg": "Device not found in ip_map"}
+2025-02-21 21:34:10 INFO Connection from ('192.168.1.221', 47062) has been established!
+2025-02-21 21:34:10 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-02-21 21:34:10 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-02-21 21:34:10 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}, 'admin': {4943750935229: '192.168.1.75'}, 'anjali': {167132875827157: '192.168.1.221'}}}
+2025-02-21 21:34:15 INFO Connection from ('192.168.1.75', 60704) has been established!
+2025-02-21 21:34:15 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-21 21:34:15 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 21:34:15 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221', 167132875827157: '192.168.1.221'}, 'admin': {4943750935229: '192.168.1.75'}, 'anjali': {167132875827157: '192.168.1.221'}}}
+2025-02-21 21:34:16 INFO Connection from ('192.168.1.75', 60711) has been established!
+2025-02-21 21:34:16 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 21:34:16 INFO Data_Response Object is made
+2025-02-21 21:34:16 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel'], [4, 'samsung']]}
+2025-02-21 21:34:16 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ],
+      [
+        4,
+        "samsung"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 21:34:23 INFO Connection from ('192.168.1.75', 60714) has been established!
+2025-02-21 21:34:23 INFO message: {"action": "add_folder", "folder_label": "goat", "folder_id": "z60Q6g0CFb", "directory": "~/z60Q6g0CFb", "shared_users": ["anjali:samsung"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 21:34:23 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'goat', 'folder_id': 'z60Q6g0CFb', 'directory': '~/z60Q6g0CFb', 'shared_users': ['anjali:samsung'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 21:34:23 INFO Unix format directory: ~/z60Q6g0CFb
+2025-02-21 21:34:23 INFO User: anjali found with User_ID: 4
+2025-02-21 21:34:23 INFO Device: samsung found with Mac_addr: 167132875827157
+2025-02-21 21:34:23 INFO {167132875827157: '192.168.1.221'}
+2025-02-21 21:34:23 INFO Device: samsung not found in ip_map
+2025-02-21 21:34:23 INFO Sending folder status: {"status": "404", "status_msg": "Device not found in ip_map"}
+2025-02-21 21:35:23 INFO Connection from ('192.168.1.75', 60717) has been established!
+2025-02-21 21:35:23 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-21 21:35:23 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 21:35:23 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221'}, 'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-02-21 21:35:25 INFO Connection from ('192.168.1.75', 60724) has been established!
+2025-02-21 21:35:25 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 21:35:25 INFO Data_Response Object is made
+2025-02-21 21:35:25 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel'], [4, 'samsung']]}
+2025-02-21 21:35:25 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ],
+      [
+        4,
+        "samsung"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 21:35:33 INFO Connection from ('192.168.1.75', 60726) has been established!
+2025-02-21 21:35:33 INFO message: {"action": "add_folder", "folder_label": "samsung_folda", "folder_id": "CnPKFcO2ha", "directory": "~/CnPKFcO2ha", "shared_users": ["anjali:samsung"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 21:35:33 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'samsung_folda', 'folder_id': 'CnPKFcO2ha', 'directory': '~/CnPKFcO2ha', 'shared_users': ['anjali:samsung'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 21:35:33 INFO Unix format directory: ~/CnPKFcO2ha
+2025-02-21 21:35:33 INFO User: anjali found with User_ID: 4
+2025-02-21 21:35:33 INFO Device: samsung found with Mac_addr: 167132875827157
+2025-02-21 21:35:33 INFO {'167132875827157': '192.168.1.221'}
+2025-02-21 21:35:33 INFO Device: samsung not found in ip_map
+2025-02-21 21:35:33 INFO Sending folder status: {"status": "404", "status_msg": "Device not found in ip_map"}
+2025-02-21 21:36:29 INFO Connection from ('192.168.1.75', 60728) has been established!
+2025-02-21 21:36:29 INFO message: {"action": "add_folder", "folder_label": "samsung_folda", "folder_id": "CnPKFcO2ha", "directory": "~/CnPKFcO2ha", "shared_users": ["anjali:samsung"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 21:36:29 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'samsung_folda', 'folder_id': 'CnPKFcO2ha', 'directory': '~/CnPKFcO2ha', 'shared_users': ['anjali:samsung'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 21:36:29 INFO Unix format directory: ~/CnPKFcO2ha
+2025-02-21 21:36:29 INFO User: anjali found with User_ID: 4
+2025-02-21 21:36:29 INFO Device: samsung found with Mac_addr: 167132875827157
+2025-02-21 21:36:29 INFO {'167132875827157': '192.168.1.221'}
+2025-02-21 21:36:29 INFO ip of device: 192.168.1.221
+2025-02-21 21:36:29 INFO Sending ping to anjali with ip: 192.168.1.221
+2025-02-21 21:37:06 INFO Connection from ('192.168.1.75', 60732) has been established!
+2025-02-21 21:37:06 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4943750935229}
+2025-02-21 21:37:06 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4943750935229
+2025-02-21 21:37:06 INFO ip_map: {'users': {'aryan': {'4943750935229': '192.168.1.75', 4943750935229: '192.168.1.75'}, 'joel': {'167132875827157': '192.168.1.221'}, 'admin': {'4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-02-21 21:37:08 INFO Connection from ('192.168.1.75', 60739) has been established!
+2025-02-21 21:37:08 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-02-21 21:37:08 INFO Data_Response Object is made
+2025-02-21 21:37:08 INFO scraped data to be returned!: {'users': [[1, 'admin'], [2, 'aryan'], [3, 'joel'], [4, 'anjali'], [5, 'krishiv']], 'devices': [[1, 'x230'], [2, "aryan's_x200_thinkpad"], [3, 'chromebook'], [1, 'admins_MBP'], [3, 'joels_pixel'], [4, 'samsung']]}
+2025-02-21 21:37:08 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "x230"
+      ],
+      [
+        2,
+        "aryan's_x200_thinkpad"
+      ],
+      [
+        3,
+        "chromebook"
+      ],
+      [
+        1,
+        "admins_MBP"
+      ],
+      [
+        3,
+        "joels_pixel"
+      ],
+      [
+        4,
+        "samsung"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "admin"
+      ],
+      [
+        2,
+        "aryan"
+      ],
+      [
+        3,
+        "joel"
+      ],
+      [
+        4,
+        "anjali"
+      ],
+      [
+        5,
+        "krishiv"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-02-21 21:37:13 INFO Connection from ('192.168.1.75', 60741) has been established!
+2025-02-21 21:37:13 INFO message: {"action": "add_folder", "folder_label": "frog", "folder_id": "bE4C4drMsi", "directory": "~/bE4C4drMsi", "shared_users": ["anjali:samsung"], "folder_type": "sync_bothways", "mac_addr": 4943750935229}
+2025-02-21 21:37:13 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'frog', 'folder_id': 'bE4C4drMsi', 'directory': '~/bE4C4drMsi', 'shared_users': ['anjali:samsung'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+2025-02-21 21:37:13 INFO Unix format directory: ~/bE4C4drMsi
+2025-02-21 21:37:13 INFO User: anjali found with User_ID: 4
+2025-02-21 21:37:13 INFO Device: samsung found with Mac_addr: 167132875827157
+2025-02-21 21:37:13 INFO {'167132875827157': '192.168.1.221'}
+2025-02-21 21:37:13 INFO ip of device: 192.168.1.221
+2025-02-21 21:37:13 INFO Sending ping to anjali with ip: 192.168.1.221

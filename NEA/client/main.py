@@ -1,4 +1,5 @@
 from flask import Flask, redirect, url_for, render_template, request, session, flash, jsonify
+from werkzeug.serving import run_simple
 from datetime import timedelta # setup max time out session last for.
 from flask_sqlalchemy import SQLAlchemy
 from uuid import getnode as get_mac
@@ -11,17 +12,14 @@ import json
 import hashlib
 import random
 import string
+import threading
 ########## NOTES ################################
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
 # NOTE - gets the ip. hash the one you don't want.
-system = input('windows(w) or linux(l)?')
-if system == 'w':
-    ip = w_wlan_ip()
-else:
-    ip = l_wlan_ip()
+
 ########## LOGGING ##############################
-def main() -> None:
+def log() -> None:
     logging.basicConfig(
         level=logging.DEBUG,
         format="%(asctime)s %(levelname)s %(message)s",
@@ -124,7 +122,7 @@ def login():
             return redirect(url_for('dashboard'))
         elif 'server_name' not in session:
             flash('You are not connected to a server!', 'info')
-            return redirect(url_for('pair'))   
+            return redirect(url_for('pair'))
         return render_template("login.html")
     
 @app.route('/register', methods=['POST', 'GET'])
@@ -214,6 +212,12 @@ def dashboard():
             return jsonify({"error": "Unknown action type"}), 400
 
     elif 'server_name' in session and 'user' in session:
+
+        mac_addr = get_mac()
+        ip_tracking_data = json.dumps({'action': 'track', 'ip_addr':ip, 'user':session['user'], 'mac_addr':mac_addr})
+        logging.info(f'tracking_data sent: {ip_tracking_data}')
+        status = send(ip_tracking_data)
+
         random_folder_id = get_random_id()
         return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id) # pass in server_name to the dashboard.html file.
     elif 'server_name' in session:
@@ -228,7 +232,24 @@ def get_users_and_devices():
     json_data = json.dumps({'action': 'request', 'data': {'users': ['user_id', 'name'], 'devices': ['user_id', 'name']}})
     logging.info(f'getting users and devices info... sending: {json_data}')
     status, status_msg, data = send(json_data)
-    return jsonify(data)
+
+    devices = data['devices']
+    users = data['users']
+
+    id_to_users = {}
+    users_and_device = {}
+    
+    for user in users:
+        id_to_users[user[0]] = user[1]
+        users_and_device[user[1]] = []
+
+    for device in devices:
+        username = id_to_users[device[0]]
+        users_and_device[username].append(device[1])
+    
+    logging.info(f'Sending to frontend: {users_and_device}')
+
+    return jsonify(users_and_device)
 
 @app.route("/unpair")
 def unpair():
@@ -251,6 +272,24 @@ def logout():
     logging.info(f'{session}')
     return redirect(url_for('login'))
 
+# 😳
+@app.route("/submit_folder", methods=["POST"])
+def submit_folder():
+    # Get the JSON data from the request
+    data = request.get_json()
+    mac_addr = get_mac()
+    data['mac_addr'] = mac_addr
+    logging.info(f'DATA FROM ADDING FOLDER FORMS!: {data}')
+
+    data = json.dumps(data)
+    status, status_msg = send(data)
+    if status == '201':
+    # Return a response
+        return jsonify({'status': 'success', 'message': 'Folder added successfully'})
+    else: 
+        return jsonify({'status': 'failure', 'message': 'Folder not added, please try again'})
+# 😳
+
 ########## SEND #################################
 def send(json_data):
         try: 
@@ -261,7 +300,6 @@ def send(json_data):
             return '503', 'server offline'   
         s.send(json_data.encode('utf-8')) # sending data to server 📨
         json_response = s.recv(1024).decode('utf-8') # server's response back 📩 # TODO recieves 1024 bits, add buffering feature !!
-        logging.info(f'JSON_RESPONSE: {json_response}')
         server_data = json.loads(json_response)
         status = server_data.get('status', '200')
         status_msg = server_data.get('status_msg', 'unknown')
@@ -292,19 +330,67 @@ def send(json_data):
         else:
             return '500', 'server error - check return status for CRUD!' 
        
+########## HANDLE SERVER MESSAGE ################
+
+def handle_server_message(json_message, server_socket):
+    if json_message['action'] == 'ping':
+        logging.info(f'ping recieved: {json_message}')
+        server_socket.send('pong'.encode('utf-8'))
+        logging.info(f'pong sent!')
+
+
+def listen_for_messages():
+    # Create a socket to listen for incoming messages
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    s.bind((ip, 6000))  # Listen on all available interfaces, port 6000
+    s.listen(5)  # Allow up to 5 connections
+
+    logging.info("Listening for incoming messages on port 6000...")
+
+    while True:
+        server_socket, addr = s.accept()
+        logging.info(f"Connection from {addr} established.")
+        message = server_socket.recv(1024).decode('utf-8')
+        logging.info(f"Message received: {message}")
+        
+        # Pass the message to the handle_server_message function
+        try:
+            json_message = json.loads(message)
+            handle_server_message(json_message, server_socket)
+        except json.JSONDecodeError:
+            logging.error("Received message is not valid JSON.")
+        
+        server_socket.close()
+
 ########## ADDING USER ##########################
 # NOTE could use this function rather then coding add_user in the login and register functions.
-def add_user(name, email):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(('osaka', 8000))
-    s.send(f"{name}:{email}".encode('utf-8'))
+# def add_user(name, email):
+#     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#     s.connect(('osaka', 8000))
+#     s.send(f"{name}:{email}".encode('utf-8'))
 
 def get_random_id():
     return ''.join(random.choices(string.ascii_letters + string.digits, k=10))
 
 ########## MAIN #################################
 if __name__ == "__main__":
-    main()
+    log() # to start the logging system
+
+    system = input('windows(w) or linux(l)?')
+    if system == 'w':
+        ip = w_wlan_ip()
+    else:
+        ip = l_wlan_ip()
+    
+    print(f'binding ip: {ip}')
+
+    listener_thread = threading.Thread(target=listen_for_messages)
+    listener_thread.daemon = True  # This ensures the thread will exit when the main program exits
+    listener_thread.start()
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    run_simple("0.0.0.0", 5000, app, use_reloader=False)
+    # app.run(debug=True)
+
+    

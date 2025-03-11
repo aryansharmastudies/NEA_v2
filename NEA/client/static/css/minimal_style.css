@@ -37,6 +37,10 @@ button:active{
     padding: 10px 5px;
     text-align: center;
     width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-inner h2{
@@ -61,6 +65,40 @@ button:active{
     justify-content: center; /* Centers items vertically */
 }
 
+/* Center the form container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Style for each user container */
+.user-container {
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+}
+
+/* Style for each checkbox container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Style for checkboxes */
+.checkbox-container input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Style for labels */
+.checkbox-container label {
+    font-size: 1em;
+    color: #333;
+}
+
 /* Tab Content Styling */
 .tabcontent {
     display: none;
@@ -71,3 +109,12 @@ button:active{
 .tabcontent.active {
     display: block;
 }
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+/* input:invalid {
+    border: 1px solid red;
+} */
