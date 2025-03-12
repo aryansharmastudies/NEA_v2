@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open {
+    opacity: 1;
+    z-index: 999;
+}
+
+.modal-inner {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 20px 30px;
+    text-align: center;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center the form container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Style for each user container */
+.user-container {
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 400px;
+    text-align: left; /* Align user names to the left */
+}
+
+/* Style for each checkbox container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Style for checkboxes */
+.checkbox-container input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Style for labels */
+.checkbox-container label {
+    font-size: 1em;
+    color: #333;
+}
+
+/* Tab Content Styling */
+.tabcontent {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+/* Center the Sharing tab content */
+#sharing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Ensure the form inside the Sharing tab is centered */
+#sharingForm {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align checkboxes and labels to the left */
+}

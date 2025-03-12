@@ -101,6 +101,9 @@ def login():
         if status == '200':
             session['hash']=hash
             session['user']=user
+
+            active_session['user'] = user # global dictionary of session that can be passed to threads
+
             flash(f'{status}: {status_msg}', 'info')
             return redirect(url_for('dashboard')) # nm is the dictionary key for name of user input.
         elif status == '401':
@@ -143,6 +146,7 @@ def register():
             flash(f'{status_msg}!', 'info')
             session['hash']=hash # adds hash into session
             session['user']=user
+            active_session['user'] = user # global dictionary of session that can be passed to threads
             logging.info(f'user registered: {user}')
             return redirect(url_for('dashboard'))
         elif status == '409':
@@ -151,7 +155,7 @@ def register():
         elif status == '503':
             flash(f'{status}: {status_msg}', 'error')
             return redirect(url_for('register'))
-    else:
+    else: # BUG - if user in session, it auto redirects to dashboard.(even if user is not logged in)
         if 'user' in session and 'server_name' in session:
             logging.info(f'Already Logged In {session['user']} in Server {session['server_name']}!')
             flash('Already Logged In!', 'info')
@@ -253,6 +257,15 @@ def get_users_and_devices():
 
 @app.route("/unpair")
 def unpair():
+    if "user" in session:
+        user = session["user"]
+        flash(f"{user} has been logged out!", "info")
+        session.pop("user", None)
+        active_session.pop('user', None)
+
+    if "hash" in session:
+        session.pop("hash", None)
+
     if "server_name" in session:
         server_name = session["server_name"]
         flash(f"{server_name} has been unpaired!", "info")
@@ -268,6 +281,7 @@ def logout():
         user = session['user']
         flash(f'You have been logged out, {user}', 'info')
     session.pop('user', None)
+    active_session.pop('user', None)
     session.pop('hash', None) # SECURITY: to ensure hash removed from session incase someone tries to access it.
     logging.info(f'{session}')
     return redirect(url_for('login'))
@@ -333,16 +347,23 @@ def send(json_data):
 ########## HANDLE SERVER MESSAGE ################
 
 def handle_server_message(json_message, server_socket):
-    if json_message['action'] == 'ping':
-        logging.info(f'ping recieved: {json_message}')
-        server_socket.send('pong'.encode('utf-8'))
-        logging.info(f'pong sent!')
+    if json_message['action'] == 'authorise':
+        logging.info(f'authorisation recieved: {json_message}')
+        if active_session['user'] == json_message['user']:
+
+            # try request.session['user']
+            message = json.dumps({'status_code': '200'})
+            server_socket.send(message.encode('utf-8'))
+        else:
+            message = json.dumps({'status_code': '404'})
+            server_socket.send(message.encode('utf-8'))
 
 
 def listen_for_messages():
     # Create a socket to listen for incoming messages
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    logging.info(f"binding to ip: {ip}")
     s.bind((ip, 6000))  # Listen on all available interfaces, port 6000
     s.listen(5)  # Allow up to 5 connections
 
@@ -376,7 +397,7 @@ def get_random_id():
 ########## MAIN #################################
 if __name__ == "__main__":
     log() # to start the logging system
-
+    active_session = {}
     system = input('windows(w) or linux(l)?')
     if system == 'w':
         ip = w_wlan_ip()
@@ -388,9 +409,11 @@ if __name__ == "__main__":
     listener_thread = threading.Thread(target=listen_for_messages)
     listener_thread.daemon = True  # This ensures the thread will exit when the main program exits
     listener_thread.start()
-    with app.app_context():
+    # with app.app_context():
+    with app.test_request_context('/'):
+        request.session = session
         db.create_all()
     run_simple("0.0.0.0", 5000, app, use_reloader=False)
     # app.run(debug=True)
 
-    
+    #app.test_request_context

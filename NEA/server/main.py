@@ -246,8 +246,11 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
         ip = ip_map["users"][username][device_mac_addr] # gets users ip address
         logging.info(f'Sending ping to {username} with ip: {ip}')
 
-        status = send(json.dumps({'action': 'ping'}), ip, 6000) # sends a ping through!
-        if status == '400': # if ping fails
+        status = send(json.dumps({'action': 'authorise', 'user': username}), ip, 6000) # sends a ping through!
+        # either no response -> add to list of invites!!
+        # or another user is online(from same ip - maybe ip changed/user logged into device)
+        # or correct user is online
+        if status == '400' or status == '404': # if ping fails
             logging.info(f'Ping failed for {username} with ip: {ip}')
             # adds to invites.json
             if username not in invites["folders"]: # first check if the user is in the invites file
@@ -256,12 +259,12 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
             
             with open(invites_file, "w") as file:
                 json.dump(invites, file, indent=2)
-         
-            
+         # everytime user logs in, check if they are in the invites file!!
+
             # ❗no need to return if user is offline, as the user will get the invite when they log in.
             # return json.dumps({'status': '400', 'status_msg': 'Ping failed'})
-        else: # if ping is successful
-            logging.info(f'Ping successful for {username} with ip: {ip}')
+        elif status == '200': # if authorisation is successful.
+            logging.info(f'Authorisation successful for {username} with ip: {ip}')
             data = send(json.dumps({'action': 'add_folder', 'folder_label': folder_label, 'folder_id': folder_id}), ip, 6000)
             if data != False:
                 data = json.loads(data)
@@ -335,6 +338,7 @@ def track_ip(user, mac_addr, ip):
         
 ########## SOCKETS ###############################
 def send(message, ip, port):
+    logging.info(f'Sending: {message} to {ip} on port {port}')
     c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         c.connect((ip, port))
@@ -342,12 +346,14 @@ def send(message, ip, port):
         return '400' 
     c.send(message.encode('utf-8'))
     client_data = c.recv(1024).decode('utf-8')
+    logging.info(f'client_data: {client_data}')
     client_data = json.loads(client_data)
-    status_code = client_data.get('status_code', False)
+    
+    status_code = client_data.get('status_code', '400')
     status_msg = client_data.get('status_msg', False)
     data = client_data.get('data', False)
 
-    if message['action'] == 'ping':
+    if message['action'] == 'authorise':
         return status_code
     elif message['action'] == 'add_folder':
         return data 

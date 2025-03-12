@@ -6019,3 +6019,591 @@
 2025-02-21 21:37:13 INFO {'167132875827157': '192.168.1.221'}
 2025-02-21 21:37:13 INFO ip of device: 192.168.1.221
 2025-02-21 21:37:13 INFO Sending ping to anjali with ip: 192.168.1.221
+2025-03-11 19:00:27 INFO Connection from ('192.168.1.221', 57358) has been established!
+2025-03-11 19:00:27 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-11 19:00:27 INFO Received ping from 192.168.1.221
+2025-03-11 19:00:27 INFO Pong sent to 192.168.1.221
+2025-03-11 19:00:46 INFO Connection from ('192.168.1.221', 49574) has been established!
+2025-03-11 19:00:46 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-11 19:00:46 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:00:46 INFO ip_map: {'users': {'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:03:16 INFO Connection from ('192.168.1.221', 50232) has been established!
+2025-03-11 19:03:16 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-11 19:03:16 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:03:16 INFO ip_map: {'users': {'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:03:23 INFO Connection from ('192.168.1.221', 50236) has been established!
+2025-03-11 19:03:23 INFO message: {"action": "login", "l_user": "", "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
+2025-03-11 19:03:23 INFO User:  not found
+2025-03-11 19:03:23 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-03-11 19:03:25 INFO Connection from ('192.168.1.221', 50252) has been established!
+2025-03-11 19:03:25 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-11 19:03:25 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:03:25 INFO ip_map: {'users': {'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:05:00 INFO Connection from ('192.168.1.221', 60632) has been established!
+2025-03-11 19:05:00 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-11 19:05:00 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:05:00 INFO ip_map: {'users': {'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:06:10 INFO Connection from ('192.168.1.221', 58322) has been established!
+2025-03-11 19:06:10 INFO message: {"action": "register_user", "ip_addr": "192.168.1.221", "r_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-11 19:06:10 INFO Creating user: aryan with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-03-11 19:06:10 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-03-11 19:06:10 INFO Connection from ('192.168.1.221', 58332) has been established!
+2025-03-11 19:06:10 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 19:06:10 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:06:10 INFO ip_map: {'users': {'anjali': {'167132875827157': '192.168.1.221'}, 'aryan': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:07:46 INFO Connection from ('192.168.1.221', 55108) has been established!
+2025-03-11 19:07:46 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-11 19:07:46 INFO User: aryan has logged in
+2025-03-11 19:07:46 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-11 19:07:46 INFO Connection from ('192.168.1.221', 55116) has been established!
+2025-03-11 19:07:46 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 19:07:46 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:07:46 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:10:49 INFO Connection from ('192.168.1.221', 39366) has been established!
+2025-03-11 19:10:49 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-11 19:10:49 INFO Received ping from 192.168.1.221
+2025-03-11 19:10:49 INFO Pong sent to 192.168.1.221
+2025-03-11 19:10:49 INFO Connection from ('192.168.1.221', 39372) has been established!
+2025-03-11 19:10:49 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 19:10:49 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:10:49 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:11:11 INFO Connection from ('192.168.1.221', 57728) has been established!
+2025-03-11 19:11:11 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-11 19:11:11 INFO Received ping from 192.168.1.221
+2025-03-11 19:11:11 INFO Pong sent to 192.168.1.221
+2025-03-11 19:11:16 INFO Connection from ('192.168.1.221', 57740) has been established!
+2025-03-11 19:11:16 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-11 19:11:16 INFO User: aryan has logged in
+2025-03-11 19:11:16 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-11 19:11:16 INFO Connection from ('192.168.1.221', 57748) has been established!
+2025-03-11 19:11:16 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 19:11:16 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:11:16 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:12:32 INFO Connection from ('192.168.1.221', 38402) has been established!
+2025-03-11 19:12:32 INFO message: {"action": "register_user", "ip_addr": "192.168.1.221", "r_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-11 19:12:32 INFO Creating user: anjali with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-03-11 19:12:32 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-03-11 19:12:32 INFO Connection from ('192.168.1.221', 38404) has been established!
+2025-03-11 19:12:32 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-11 19:12:32 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:12:32 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:13:07 INFO Connection from ('192.168.1.221', 38456) has been established!
+2025-03-11 19:13:07 INFO message: {"action": "add_device", "user": "anjali", "r_dev_name": "macbook_pro", "mac_addr": 167132875827157}
+2025-03-11 19:13:07 INFO User_ID: 2
+2025-03-11 19:13:07 INFO Adding device: macbook_pro with Mac_addr: 167132875827157 for User: anjali with User_ID: 2
+2025-03-11 19:13:07 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-03-11 19:13:07 INFO Connection from ('192.168.1.221', 38468) has been established!
+2025-03-11 19:13:07 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-11 19:13:07 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:13:07 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:13:14 INFO Connection from ('192.168.1.221', 38476) has been established!
+2025-03-11 19:13:14 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-11 19:13:14 INFO User: aryan has logged in
+2025-03-11 19:13:14 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-11 19:13:14 INFO Connection from ('192.168.1.221', 38490) has been established!
+2025-03-11 19:13:14 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 19:13:14 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:13:14 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:13:29 INFO Connection from ('192.168.1.221', 41926) has been established!
+2025-03-11 19:13:29 INFO message: {"action": "add_device", "user": "aryan", "r_dev_name": "MBP", "mac_addr": 167132875827157}
+2025-03-11 19:13:29 INFO User_ID: 1
+2025-03-11 19:13:29 INFO Adding device: MBP with Mac_addr: 167132875827157 for User: aryan with User_ID: 1
+2025-03-11 19:13:29 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-03-11 19:13:30 INFO Connection from ('192.168.1.221', 41938) has been established!
+2025-03-11 19:13:30 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 19:13:30 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:13:30 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:13:31 INFO Connection from ('192.168.1.221', 41944) has been established!
+2025-03-11 19:13:31 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-11 19:13:31 INFO Data_Response Object is made
+2025-03-11 19:13:31 INFO scraped data to be returned!: {'users': [[1, 'aryan'], [2, 'anjali']], 'devices': [[2, 'macbook_pro'], [1, 'MBP']]}
+2025-03-11 19:13:31 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-11 19:14:05 INFO Connection from ('192.168.1.221', 53458) has been established!
+2025-03-11 19:14:05 INFO message: {"action": "add_folder", "folder_label": "music", "folder_id": "OZHHPDcEJL", "directory": "~/OZHHPDcEJL", "shared_users": ["anjali:macbook_pro"], "folder_type": "sync_oneway", "mac_addr": 167132875827157}
+2025-03-11 19:14:05 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'music', 'folder_id': 'OZHHPDcEJL', 'directory': '~/OZHHPDcEJL', 'shared_users': ['anjali:macbook_pro'], 'folder_type': 'sync_oneway', 'mac_addr': 167132875827157}
+2025-03-11 19:14:05 INFO Unix format directory: ~/OZHHPDcEJL
+2025-03-11 19:14:05 INFO User: anjali found with User_ID: 2
+2025-03-11 19:14:05 INFO Device: macbook_pro found with Mac_addr: 167132875827157
+2025-03-11 19:14:05 INFO {'167132875827157': '192.168.1.221'}
+2025-03-11 19:14:05 INFO ip of device: 192.168.1.221
+2025-03-11 19:14:05 INFO Sending ping to anjali with ip: 192.168.1.221
+2025-03-11 19:52:42 INFO Connection from ('192.168.1.221', 47206) has been established!
+2025-03-11 19:52:42 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 19:52:42 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:52:42 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:52:42 INFO Connection from ('192.168.1.221', 35006) has been established!
+2025-03-11 19:52:42 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 19:52:42 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:52:42 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:52:42 INFO Connection from ('192.168.1.221', 35020) has been established!
+2025-03-11 19:52:42 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 19:52:42 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:52:42 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:52:44 INFO Connection from ('192.168.1.221', 35036) has been established!
+2025-03-11 19:52:44 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 19:52:44 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:52:44 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:52:57 INFO Connection from ('192.168.1.221', 59762) has been established!
+2025-03-11 19:52:57 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-11 19:52:57 INFO Received ping from 192.168.1.221
+2025-03-11 19:52:57 INFO Pong sent to 192.168.1.221
+2025-03-11 19:53:03 INFO Connection from ('192.168.1.221', 59768) has been established!
+2025-03-11 19:53:03 INFO message: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-11 19:53:03 INFO User: anjali has logged in
+2025-03-11 19:53:03 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-11 19:53:03 INFO Connection from ('192.168.1.221', 59774) has been established!
+2025-03-11 19:53:03 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-11 19:53:03 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 19:53:03 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 19:53:06 INFO Connection from ('192.168.1.221', 39814) has been established!
+2025-03-11 19:53:06 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-11 19:53:06 INFO Data_Response Object is made
+2025-03-11 19:53:06 INFO scraped data to be returned!: {'users': [[1, 'aryan'], [2, 'anjali']], 'devices': [[2, 'macbook_pro'], [1, 'MBP']]}
+2025-03-11 19:53:06 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-11 19:53:21 INFO Connection from ('192.168.1.221', 53686) has been established!
+2025-03-11 19:53:21 INFO message: {"action": "add_folder", "folder_label": "photos", "folder_id": "ZNQw1H5sdc", "directory": "~/ZNQw1H5sdc", "shared_users": ["aryan:MBP"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-11 19:53:21 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'photos', 'folder_id': 'ZNQw1H5sdc', 'directory': '~/ZNQw1H5sdc', 'shared_users': ['aryan:MBP'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-11 19:53:21 INFO Unix format directory: ~/ZNQw1H5sdc
+2025-03-11 19:53:21 INFO User: aryan found with User_ID: 1
+2025-03-11 19:53:21 INFO Device: MBP found with Mac_addr: 167132875827157
+2025-03-11 19:53:21 INFO {'167132875827157': '192.168.1.221'}
+2025-03-11 19:53:21 INFO ip of device: 192.168.1.221
+2025-03-11 19:53:21 INFO Sending ping to aryan with ip: 192.168.1.221
+2025-03-11 19:53:21 INFO client_data: 
+2025-03-11 21:58:58 INFO Connection from ('192.168.1.221', 44660) has been established!
+2025-03-11 21:58:58 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-11 21:58:58 INFO Received ping from 192.168.1.221
+2025-03-11 21:58:58 INFO Pong sent to 192.168.1.221
+2025-03-11 21:59:04 INFO Connection from ('192.168.1.221', 55466) has been established!
+2025-03-11 21:59:04 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-11 21:59:04 INFO User: aryan has logged in
+2025-03-11 21:59:04 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-11 21:59:04 INFO Connection from ('192.168.1.221', 55480) has been established!
+2025-03-11 21:59:04 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 21:59:04 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 21:59:04 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 21:59:07 INFO Connection from ('192.168.1.221', 55490) has been established!
+2025-03-11 21:59:07 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-11 21:59:07 INFO Data_Response Object is made
+2025-03-11 21:59:07 INFO scraped data to be returned!: {'users': [[1, 'aryan'], [2, 'anjali']], 'devices': [[2, 'macbook_pro'], [1, 'MBP']]}
+2025-03-11 21:59:07 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-11 21:59:22 INFO Connection from ('192.168.1.221', 40424) has been established!
+2025-03-11 21:59:22 INFO message: {"action": "add_folder", "folder_label": "Books", "folder_id": "4XuWbFZfkY", "directory": "~/4XuWbFZfkY", "shared_users": ["anjali:macbook_pro"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-11 21:59:22 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'Books', 'folder_id': '4XuWbFZfkY', 'directory': '~/4XuWbFZfkY', 'shared_users': ['anjali:macbook_pro'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-11 21:59:22 INFO Unix format directory: ~/4XuWbFZfkY
+2025-03-11 21:59:22 INFO User: anjali found with User_ID: 2
+2025-03-11 21:59:22 INFO Device: macbook_pro found with Mac_addr: 167132875827157
+2025-03-11 21:59:22 INFO {'167132875827157': '192.168.1.221'}
+2025-03-11 21:59:22 INFO ip of device: 192.168.1.221
+2025-03-11 21:59:22 INFO Sending ping to anjali with ip: 192.168.1.221
+2025-03-11 21:59:22 INFO client_data: 
+2025-03-11 22:04:44 INFO Connection from ('192.168.1.221', 60576) has been established!
+2025-03-11 22:04:44 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-11 22:04:44 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-11 22:04:44 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-11 22:04:46 INFO Connection from ('192.168.1.221', 60578) has been established!
+2025-03-11 22:04:46 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-11 22:04:46 INFO Data_Response Object is made
+2025-03-11 22:04:47 INFO scraped data to be returned!: {'users': [[1, 'aryan'], [2, 'anjali']], 'devices': [[2, 'macbook_pro'], [1, 'MBP']]}
+2025-03-11 22:04:47 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-11 22:05:02 INFO Connection from ('192.168.1.221', 42590) has been established!
+2025-03-11 22:05:02 INFO message: {"action": "add_folder", "folder_label": "library", "folder_id": "GgwbMBMbip", "directory": "~/GgwbMBMbip", "shared_users": ["anjali:macbook_pro"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-11 22:05:02 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'library', 'folder_id': 'GgwbMBMbip', 'directory': '~/GgwbMBMbip', 'shared_users': ['anjali:macbook_pro'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-11 22:05:02 INFO Unix format directory: ~/GgwbMBMbip
+2025-03-11 22:05:02 INFO User: anjali found with User_ID: 2
+2025-03-11 22:05:02 INFO Device: macbook_pro found with Mac_addr: 167132875827157
+2025-03-11 22:05:02 INFO {'167132875827157': '192.168.1.221'}
+2025-03-11 22:05:02 INFO ip of device: 192.168.1.221
+2025-03-11 22:05:02 INFO Sending ping to anjali with ip: 192.168.1.221
+2025-03-11 22:05:02 INFO client_data: 
+2025-03-12 06:21:03 INFO Connection from ('192.168.1.221', 47022) has been established!
+2025-03-12 06:21:03 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-12 06:21:03 INFO Received ping from 192.168.1.221
+2025-03-12 06:21:03 INFO Pong sent to 192.168.1.221
+2025-03-12 06:21:07 INFO Connection from ('192.168.1.221', 53580) has been established!
+2025-03-12 06:21:07 INFO message: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-12 06:21:07 INFO User: anjali has logged in
+2025-03-12 06:21:07 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-12 06:21:07 INFO Connection from ('192.168.1.221', 53586) has been established!
+2025-03-12 06:21:07 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-12 06:21:07 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-12 06:21:07 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-12 06:21:09 INFO Connection from ('192.168.1.221', 53646) has been established!
+2025-03-12 06:21:09 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-12 06:21:09 INFO Data_Response Object is made
+2025-03-12 06:21:09 INFO scraped data to be returned!: {'users': [[1, 'aryan'], [2, 'anjali']], 'devices': [[2, 'macbook_pro'], [1, 'MBP']]}
+2025-03-12 06:21:09 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-12 06:21:17 INFO Connection from ('192.168.1.221', 32790) has been established!
+2025-03-12 06:21:17 INFO message: {"action": "add_folder", "folder_label": "please work", "folder_id": "hvxkbOKsqn", "directory": "~/hvxkbOKsqn", "shared_users": ["aryan:MBP"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-12 06:21:17 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'please work', 'folder_id': 'hvxkbOKsqn', 'directory': '~/hvxkbOKsqn', 'shared_users': ['aryan:MBP'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-12 06:21:17 INFO Unix format directory: ~/hvxkbOKsqn
+2025-03-12 06:21:17 INFO User: aryan found with User_ID: 1
+2025-03-12 06:21:17 INFO Device: MBP found with Mac_addr: 167132875827157
+2025-03-12 06:21:17 INFO {'167132875827157': '192.168.1.221'}
+2025-03-12 06:21:17 INFO ip of device: 192.168.1.221
+2025-03-12 06:21:17 INFO Sending ping to aryan with ip: 192.168.1.221
+2025-03-12 06:21:17 INFO client_data: 
+2025-03-12 06:32:15 INFO Connection from ('192.168.1.221', 53854) has been established!
+2025-03-12 06:32:15 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-12 06:32:15 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-12 06:32:15 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-12 06:32:42 INFO Connection from ('192.168.1.221', 32956) has been established!
+2025-03-12 06:32:42 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-12 06:32:42 INFO Received ping from 192.168.1.221
+2025-03-12 06:32:42 INFO Pong sent to 192.168.1.221
+2025-03-12 06:32:47 INFO Connection from ('192.168.1.221', 43150) has been established!
+2025-03-12 06:32:47 INFO message: {"action": "login", "l_user": "anjali", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-03-12 06:32:47 INFO Unauthorized access attempt for user: anjali
+2025-03-12 06:32:47 INFO Sending login status: {"status": "401", "status_msg": "Retry with correct password"}
+2025-03-12 06:32:52 INFO Connection from ('192.168.1.221', 43158) has been established!
+2025-03-12 06:32:52 INFO message: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-12 06:32:52 INFO User: anjali has logged in
+2025-03-12 06:32:52 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-12 06:32:52 INFO Connection from ('192.168.1.221', 43164) has been established!
+2025-03-12 06:32:52 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-12 06:32:52 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-12 06:32:52 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-12 06:32:56 INFO Connection from ('192.168.1.221', 60238) has been established!
+2025-03-12 06:32:56 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-12 06:32:56 INFO Data_Response Object is made
+2025-03-12 06:32:56 INFO scraped data to be returned!: {'users': [[1, 'aryan'], [2, 'anjali']], 'devices': [[2, 'macbook_pro'], [1, 'MBP']]}
+2025-03-12 06:32:56 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-12 06:33:06 INFO Connection from ('192.168.1.221', 60244) has been established!
+2025-03-12 06:33:06 INFO message: {"action": "add_folder", "folder_label": "bruh_please", "folder_id": "KS8Kk49Rt6", "directory": "~/KS8Kk49Rt6", "shared_users": ["aryan:MBP"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-12 06:33:06 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'bruh_please', 'folder_id': 'KS8Kk49Rt6', 'directory': '~/KS8Kk49Rt6', 'shared_users': ['aryan:MBP'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-12 06:33:06 INFO Unix format directory: ~/KS8Kk49Rt6
+2025-03-12 06:33:06 INFO User: aryan found with User_ID: 1
+2025-03-12 06:33:06 INFO Device: MBP found with Mac_addr: 167132875827157
+2025-03-12 06:33:06 INFO {'167132875827157': '192.168.1.221'}
+2025-03-12 06:33:06 INFO ip of device: 192.168.1.221
+2025-03-12 06:33:06 INFO Sending ping to aryan with ip: 192.168.1.221
+2025-03-12 06:33:06 INFO client_data: 
+2025-03-12 06:43:34 INFO Connection from ('192.168.1.221', 52526) has been established!
+2025-03-12 06:43:34 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-12 06:43:34 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-12 06:43:34 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-12 06:43:34 INFO Connection from ('192.168.1.221', 40664) has been established!
+2025-03-12 06:43:34 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-12 06:43:34 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-12 06:43:34 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-12 06:43:52 INFO Connection from ('192.168.1.221', 35600) has been established!
+2025-03-12 06:43:52 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-12 06:43:52 INFO Data_Response Object is made
+2025-03-12 06:43:52 INFO scraped data to be returned!: {'users': [[1, 'aryan'], [2, 'anjali']], 'devices': [[2, 'macbook_pro'], [1, 'MBP']]}
+2025-03-12 06:43:52 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-12 06:44:02 INFO Connection from ('192.168.1.221', 52318) has been established!
+2025-03-12 06:44:02 INFO message: {"action": "add_folder", "folder_label": "comeon", "folder_id": "2AdUWX4XzM", "directory": "~/2AdUWX4XzM", "shared_users": ["aryan:MBP"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-12 06:44:02 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'comeon', 'folder_id': '2AdUWX4XzM', 'directory': '~/2AdUWX4XzM', 'shared_users': ['aryan:MBP'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-12 06:44:02 INFO Unix format directory: ~/2AdUWX4XzM
+2025-03-12 06:44:02 INFO User: aryan found with User_ID: 1
+2025-03-12 06:44:02 INFO Device: MBP found with Mac_addr: 167132875827157
+2025-03-12 06:44:02 INFO {'167132875827157': '192.168.1.221'}
+2025-03-12 06:44:02 INFO ip of device: 192.168.1.221
+2025-03-12 06:44:02 INFO Sending ping to aryan with ip: 192.168.1.221
+2025-03-12 06:44:02 INFO client_data: 
+2025-03-12 06:45:17 INFO Connection from ('192.168.1.221', 47716) has been established!
+2025-03-12 06:45:17 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-12 06:45:17 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-12 06:45:17 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-12 06:45:24 INFO Connection from ('192.168.1.221', 47726) has been established!
+2025-03-12 06:45:24 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-12 06:45:24 INFO Received ping from 192.168.1.221
+2025-03-12 06:45:24 INFO Pong sent to 192.168.1.221
+2025-03-12 06:46:53 INFO Connection from ('192.168.1.221', 46312) has been established!
+2025-03-12 06:46:53 INFO message: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-12 06:46:53 INFO User: anjali has logged in
+2025-03-12 06:46:53 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-12 06:46:53 INFO Connection from ('192.168.1.221', 46318) has been established!
+2025-03-12 06:46:53 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-12 06:46:53 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-12 06:46:53 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}}}
+2025-03-12 06:47:29 INFO Connection from ('192.168.1.221', 55340) has been established!
+2025-03-12 06:47:29 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-12 06:47:29 INFO Data_Response Object is made
+2025-03-12 06:47:29 INFO scraped data to be returned!: {'users': [[1, 'aryan'], [2, 'anjali']], 'devices': [[2, 'macbook_pro'], [1, 'MBP']]}
+2025-03-12 06:47:29 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-12 06:47:43 INFO Connection from ('192.168.1.221', 34230) has been established!
+2025-03-12 06:47:43 INFO message: {"action": "add_folder", "folder_label": "gambare", "folder_id": "U5Fsv3QqfC", "directory": "~/U5Fsv3QqfC", "shared_users": ["aryan:MBP"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-12 06:47:43 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'gambare', 'folder_id': 'U5Fsv3QqfC', 'directory': '~/U5Fsv3QqfC', 'shared_users': ['aryan:MBP'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-12 06:47:43 INFO Unix format directory: ~/U5Fsv3QqfC
+2025-03-12 06:47:43 INFO User: aryan found with User_ID: 1
+2025-03-12 06:47:43 INFO Device: MBP found with Mac_addr: 167132875827157
+2025-03-12 06:47:43 INFO {'167132875827157': '192.168.1.221'}
+2025-03-12 06:47:43 INFO ip of device: 192.168.1.221
+2025-03-12 06:47:43 INFO Sending ping to aryan with ip: 192.168.1.221
+2025-03-12 06:47:43 INFO client_data: {"status_code": "404"}
+2025-03-12 06:52:11 INFO Connection from ('192.168.1.221', 50586) has been established!
+2025-03-12 06:52:11 INFO message: {"action": "add_folder", "folder_label": "gambare", "folder_id": "U5Fsv3QqfC", "directory": "~/U5Fsv3QqfC", "shared_users": ["aryan:MBP"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-12 06:52:11 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'gambare', 'folder_id': 'U5Fsv3QqfC', 'directory': '~/U5Fsv3QqfC', 'shared_users': ['aryan:MBP'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-12 06:52:11 INFO Unix format directory: ~/U5Fsv3QqfC
+2025-03-12 06:52:11 INFO User: aryan found with User_ID: 1
+2025-03-12 06:52:11 INFO Device: MBP found with Mac_addr: 167132875827157
+2025-03-12 06:52:11 INFO {'167132875827157': '192.168.1.221'}
+2025-03-12 06:52:11 INFO ip of device: 192.168.1.221
+2025-03-12 06:52:11 INFO Sending ping to aryan with ip: 192.168.1.221
+2025-03-12 06:52:11 INFO Sending: {"action": "authorise", "user": "aryan"} to 192.168.1.221 on port 6000
+2025-03-12 06:52:11 INFO client_data: {"status_code": "404"}
