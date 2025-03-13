@@ -14551,3 +14551,334 @@ Traceback (most recent call last):
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 2025-03-12 06:52:08 INFO 127.0.0.1 - - [12/Mar/2025 06:52:08] "[35m[1mPOST /submit_folder HTTP/1.1[0m" 500 -
+2025-03-12 13:54:04 INFO binding to ip: 10.195.171.63
+2025-03-12 13:54:04 INFO Listening for incoming messages on port 6000...
+2025-03-12 13:54:04 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.195.171.63:5000
+2025-03-12 13:54:04 INFO [33mPress CTRL+C to quit[0m
+2025-03-12 13:54:13 INFO 127.0.0.1 - - [12/Mar/2025 13:54:13] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-12 13:54:13 INFO 127.0.0.1 - - [12/Mar/2025 13:54:13] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-03-12 13:54:13 INFO tracking_data sent: {"action": "track", "ip_addr": "10.195.171.63", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-12 13:54:13 INFO 503 Server Offline
+2025-03-12 13:54:13 INFO 127.0.0.1 - - [12/Mar/2025 13:54:13] "GET /dashboard HTTP/1.1" 200 -
+2025-03-12 13:54:13 INFO 127.0.0.1 - - [12/Mar/2025 13:54:13] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:54:13 INFO 127.0.0.1 - - [12/Mar/2025 13:54:13] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:54:13 INFO 127.0.0.1 - - [12/Mar/2025 13:54:13] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-03-12 13:54:14 INFO 127.0.0.1 - - [12/Mar/2025 13:54:14] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:54:14 INFO 127.0.0.1 - - [12/Mar/2025 13:54:14] "GET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1" 200 -
+2025-03-12 13:54:16 INFO <SecureCookieSession {'_permanent': True, 'server_name': '192.168.1.75', '_flashes': [('info', 'You have been logged out, anjali')]}>
+2025-03-12 13:54:16 INFO 127.0.0.1 - - [12/Mar/2025 13:54:16] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-12 13:54:16 INFO 127.0.0.1 - - [12/Mar/2025 13:54:16] "GET /login HTTP/1.1" 200 -
+2025-03-12 13:54:16 INFO 127.0.0.1 - - [12/Mar/2025 13:54:16] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:54:16 INFO 127.0.0.1 - - [12/Mar/2025 13:54:16] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:54:16 INFO 127.0.0.1 - - [12/Mar/2025 13:54:16] "GET /static/images/initial_d02.jpg HTTP/1.1" 200 -
+2025-03-12 13:54:16 INFO 127.0.0.1 - - [12/Mar/2025 13:54:16] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:54:17 INFO 127.0.0.1 - - [12/Mar/2025 13:54:17] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-03-12 13:54:17 INFO 127.0.0.1 - - [12/Mar/2025 13:54:17] "GET /pair HTTP/1.1" 200 -
+2025-03-12 13:54:17 INFO 127.0.0.1 - - [12/Mar/2025 13:54:17] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:54:17 INFO 127.0.0.1 - - [12/Mar/2025 13:54:17] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:54:17 INFO 127.0.0.1 - - [12/Mar/2025 13:54:17] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:54:18 INFO <SecureCookieSession {'_permanent': True}>
+2025-03-12 13:54:18 INFO 127.0.0.1 - - [12/Mar/2025 13:54:18] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-12 13:54:18 INFO 127.0.0.1 - - [12/Mar/2025 13:54:18] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-03-12 13:54:18 INFO 127.0.0.1 - - [12/Mar/2025 13:54:18] "GET /pair HTTP/1.1" 200 -
+2025-03-12 13:54:18 INFO 127.0.0.1 - - [12/Mar/2025 13:54:18] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:54:18 INFO 127.0.0.1 - - [12/Mar/2025 13:54:18] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:54:18 INFO 127.0.0.1 - - [12/Mar/2025 13:54:18] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:54:37 INFO server_name: 10.195.171.63
+2025-03-12 13:54:37 INFO ping sent: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-03-12 13:54:37 INFO status: pong
+2025-03-12 13:54:37 INFO found_server: <servers 10.195.171.63>
+2025-03-12 13:54:37 INFO 127.0.0.1 - - [12/Mar/2025 13:54:37] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-03-12 13:54:37 INFO 127.0.0.1 - - [12/Mar/2025 13:54:37] "GET /login HTTP/1.1" 200 -
+2025-03-12 13:54:37 INFO 127.0.0.1 - - [12/Mar/2025 13:54:37] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:54:37 INFO 127.0.0.1 - - [12/Mar/2025 13:54:37] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:54:37 INFO 127.0.0.1 - - [12/Mar/2025 13:54:37] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-03-12 13:54:37 INFO 127.0.0.1 - - [12/Mar/2025 13:54:37] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:55:08 INFO Already Logged In anjali in Server 192.168.1.75!
+2025-03-12 13:55:08 INFO 127.0.0.1 - - [12/Mar/2025 13:55:08] "[32mGET /register HTTP/1.1[0m" 302 -
+2025-03-12 13:55:08 INFO tracking_data sent: {"action": "track", "ip_addr": "10.195.171.63", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-12 13:55:08 INFO 503 Server Offline
+2025-03-12 13:55:08 INFO 127.0.0.1 - - [12/Mar/2025 13:55:08] "GET /dashboard HTTP/1.1" 200 -
+2025-03-12 13:55:08 INFO 127.0.0.1 - - [12/Mar/2025 13:55:08] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:55:08 INFO 127.0.0.1 - - [12/Mar/2025 13:55:08] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:55:08 INFO 127.0.0.1 - - [12/Mar/2025 13:55:08] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-03-12 13:55:09 INFO 127.0.0.1 - - [12/Mar/2025 13:55:09] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:55:09 INFO 127.0.0.1 - - [12/Mar/2025 13:55:09] "GET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1" 200 -
+2025-03-12 13:55:16 INFO <SecureCookieSession {'_permanent': True, 'server_name': '192.168.1.75', '_flashes': [('info', 'You have been logged out, anjali')]}>
+2025-03-12 13:55:16 INFO 127.0.0.1 - - [12/Mar/2025 13:55:16] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-12 13:55:16 INFO 127.0.0.1 - - [12/Mar/2025 13:55:16] "GET /login HTTP/1.1" 200 -
+2025-03-12 13:55:16 INFO 127.0.0.1 - - [12/Mar/2025 13:55:16] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:55:16 INFO 127.0.0.1 - - [12/Mar/2025 13:55:16] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:55:16 INFO 127.0.0.1 - - [12/Mar/2025 13:55:16] "GET /static/images/initial_d02.jpg HTTP/1.1" 200 -
+2025-03-12 13:55:16 INFO 127.0.0.1 - - [12/Mar/2025 13:55:16] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:55:17 INFO 127.0.0.1 - - [12/Mar/2025 13:55:17] "GET /register HTTP/1.1" 200 -
+2025-03-12 13:55:18 INFO 127.0.0.1 - - [12/Mar/2025 13:55:18] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:55:18 INFO 127.0.0.1 - - [12/Mar/2025 13:55:18] "GET /static/images/initial_d01.jpg HTTP/1.1" 200 -
+2025-03-12 13:55:18 INFO 127.0.0.1 - - [12/Mar/2025 13:55:18] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:55:18 INFO 127.0.0.1 - - [12/Mar/2025 13:55:18] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:55:31 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-03-12 13:55:31 INFO json_data: {"action": "register_user", "ip_addr": "10.195.171.63", "r_user": "shravan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-12 13:55:31 INFO 503 Server Offline
+2025-03-12 13:55:31 INFO 127.0.0.1 - - [12/Mar/2025 13:55:31] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-03-12 13:55:31 INFO 127.0.0.1 - - [12/Mar/2025 13:55:31] "GET /register HTTP/1.1" 200 -
+2025-03-12 13:55:31 INFO 127.0.0.1 - - [12/Mar/2025 13:55:31] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:55:31 INFO 127.0.0.1 - - [12/Mar/2025 13:55:31] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:55:31 INFO 127.0.0.1 - - [12/Mar/2025 13:55:31] "[36mGET /static/images/initial_d01.jpg HTTP/1.1[0m" 304 -
+2025-03-12 13:55:31 INFO 127.0.0.1 - - [12/Mar/2025 13:55:31] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:55:40 INFO 127.0.0.1 - - [12/Mar/2025 13:55:40] "[32mGET /unpair HTTP/1.1[0m" 302 -
+2025-03-12 13:55:40 INFO 127.0.0.1 - - [12/Mar/2025 13:55:40] "GET /pair HTTP/1.1" 200 -
+2025-03-12 13:55:40 INFO 127.0.0.1 - - [12/Mar/2025 13:55:40] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:55:40 INFO 127.0.0.1 - - [12/Mar/2025 13:55:40] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:55:40 INFO 127.0.0.1 - - [12/Mar/2025 13:55:40] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:56:00 INFO server_name: 10.195.171.63
+2025-03-12 13:56:00 INFO ping sent: {"action": "ping", "ip_addr": "10.195.171.63"}
+2025-03-12 13:56:00 INFO status: pong
+2025-03-12 13:56:00 INFO found_server: <servers 10.195.171.63>
+2025-03-12 13:56:00 INFO 127.0.0.1 - - [12/Mar/2025 13:56:00] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-03-12 13:56:00 INFO 127.0.0.1 - - [12/Mar/2025 13:56:00] "GET /login HTTP/1.1" 200 -
+2025-03-12 13:56:00 INFO 127.0.0.1 - - [12/Mar/2025 13:56:00] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:56:00 INFO 127.0.0.1 - - [12/Mar/2025 13:56:00] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:56:00 INFO 127.0.0.1 - - [12/Mar/2025 13:56:00] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-03-12 13:56:00 INFO 127.0.0.1 - - [12/Mar/2025 13:56:00] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:56:03 INFO 127.0.0.1 - - [12/Mar/2025 13:56:03] "GET /register HTTP/1.1" 200 -
+2025-03-12 13:56:03 INFO 127.0.0.1 - - [12/Mar/2025 13:56:03] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:56:03 INFO 127.0.0.1 - - [12/Mar/2025 13:56:03] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:56:03 INFO 127.0.0.1 - - [12/Mar/2025 13:56:03] "[36mGET /static/images/initial_d01.jpg HTTP/1.1[0m" 304 -
+2025-03-12 13:56:04 INFO 127.0.0.1 - - [12/Mar/2025 13:56:04] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:56:08 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-03-12 13:56:08 INFO json_data: {"action": "register_user", "ip_addr": "10.195.171.63", "r_user": "shravan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-12 13:56:08 INFO json_data sent: {"action": "register_user", "ip_addr": "10.195.171.63", "r_user": "shravan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-12 13:56:08 INFO server response: {"status": "201", "status_msg": "User created successfully"}
+2025-03-12 13:56:08 INFO 201 Added
+2025-03-12 13:56:08 INFO user registered: shravan
+2025-03-12 13:56:08 INFO 127.0.0.1 - - [12/Mar/2025 13:56:08] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-03-12 13:56:08 INFO tracking_data sent: {"action": "track", "ip_addr": "10.195.171.63", "user": "shravan", "mac_addr": 167132875827157}
+2025-03-12 13:56:08 INFO json_data sent: {"action": "track", "ip_addr": "10.195.171.63", "user": "shravan", "mac_addr": 167132875827157}
+2025-03-12 13:56:08 INFO server response: {"status": "200", "status_msg": "IP updated successfully"}
+2025-03-12 13:56:08 INFO 200 OK
+2025-03-12 13:56:08 INFO 127.0.0.1 - - [12/Mar/2025 13:56:08] "GET /dashboard HTTP/1.1" 200 -
+2025-03-12 13:56:08 INFO 127.0.0.1 - - [12/Mar/2025 13:56:08] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:56:08 INFO 127.0.0.1 - - [12/Mar/2025 13:56:08] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:56:08 INFO 127.0.0.1 - - [12/Mar/2025 13:56:08] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-03-12 13:56:08 INFO 127.0.0.1 - - [12/Mar/2025 13:56:08] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:56:08 INFO 127.0.0.1 - - [12/Mar/2025 13:56:08] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:56:36 INFO json_data sent: {"action": "add_device", "user": "shravan", "r_dev_name": "macbookpro", "mac_addr": 167132875827157}
+2025-03-12 13:56:36 INFO server response: {"status": "201", "status_msg": "Device added successfully"}
+2025-03-12 13:56:36 INFO 201 Added
+2025-03-12 13:56:36 INFO 127.0.0.1 - - [12/Mar/2025 13:56:36] "[32mPOST /dashboard HTTP/1.1[0m" 302 -
+2025-03-12 13:56:36 INFO tracking_data sent: {"action": "track", "ip_addr": "10.195.171.63", "user": "shravan", "mac_addr": 167132875827157}
+2025-03-12 13:56:36 INFO json_data sent: {"action": "track", "ip_addr": "10.195.171.63", "user": "shravan", "mac_addr": 167132875827157}
+2025-03-12 13:56:36 INFO server response: {"status": "200", "status_msg": "IP updated successfully"}
+2025-03-12 13:56:36 INFO 200 OK
+2025-03-12 13:56:36 INFO 127.0.0.1 - - [12/Mar/2025 13:56:36] "GET /dashboard HTTP/1.1" 200 -
+2025-03-12 13:56:36 INFO 127.0.0.1 - - [12/Mar/2025 13:56:36] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 13:56:36 INFO 127.0.0.1 - - [12/Mar/2025 13:56:36] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:56:36 INFO 127.0.0.1 - - [12/Mar/2025 13:56:36] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-03-12 13:56:36 INFO 127.0.0.1 - - [12/Mar/2025 13:56:36] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 13:56:36 INFO 127.0.0.1 - - [12/Mar/2025 13:56:36] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 13:56:42 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-12 13:56:42 INFO json_data sent: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-12 13:56:42 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ],
+      [
+        3,
+        "macbookpro"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ],
+      [
+        3,
+        "shravan"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-12 13:56:42 INFO 200 OK
+2025-03-12 13:56:42 INFO Sending to frontend: {'aryan': ['MBP'], 'anjali': ['macbook_pro'], 'shravan': ['macbookpro']}
+2025-03-12 13:56:42 INFO 127.0.0.1 - - [12/Mar/2025 13:56:42] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-03-12 13:56:52 INFO DATA FROM ADDING FOLDER FORMS!: {'action': 'add_folder', 'folder_label': 'feetpics', 'folder_id': 'nSBSsJLXcs', 'directory': '~/nSBSsJLXcs', 'shared_users': ['aryan:MBP'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-12 13:56:52 INFO json_data sent: {"action": "add_folder", "folder_label": "feetpics", "folder_id": "nSBSsJLXcs", "directory": "~/nSBSsJLXcs", "shared_users": ["aryan:MBP"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-12 13:56:52 INFO server response: {"status": "201", "status_msg": "Folder added successfully"}
+2025-03-12 13:56:52 INFO 201 Added
+2025-03-12 13:56:52 INFO 127.0.0.1 - - [12/Mar/2025 13:56:52] "POST /submit_folder HTTP/1.1" 200 -
+2025-03-12 14:07:19 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-12 14:07:19 INFO json_data sent: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-12 14:07:19 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ],
+      [
+        3,
+        "macbookpro"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ],
+      [
+        3,
+        "shravan"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-12 14:07:19 INFO 200 OK
+2025-03-12 14:07:19 INFO Sending to frontend: {'aryan': ['MBP'], 'anjali': ['macbook_pro'], 'shravan': ['macbookpro']}
+2025-03-12 14:07:19 INFO 127.0.0.1 - - [12/Mar/2025 14:07:19] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-03-12 14:07:30 INFO DATA FROM ADDING FOLDER FORMS!: {'action': 'add_folder', 'folder_label': 'gallary', 'folder_id': 'nSBSsJLXcs', 'directory': '~/nSBSsJLXcs', 'shared_users': ['shravan:macbookpro'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-12 14:07:30 INFO json_data sent: {"action": "add_folder", "folder_label": "gallary", "folder_id": "nSBSsJLXcs", "directory": "~/nSBSsJLXcs", "shared_users": ["shravan:macbookpro"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-12 14:07:30 INFO server response: {"status": "409", "status_msg": "Folder with this folder_id already exists"}
+2025-03-12 14:07:30 INFO 409 Conflict
+2025-03-12 14:07:30 INFO 127.0.0.1 - - [12/Mar/2025 14:07:30] "POST /submit_folder HTTP/1.1" 200 -
+2025-03-12 14:11:03 INFO DATA FROM ADDING FOLDER FORMS!: {'action': 'add_folder', 'folder_label': 'gallary', 'folder_id': 'bruhhhhhhhhh', 'directory': '~/nSBSsuhhhhhh', 'shared_users': ['shravan:macbookpro'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-12 14:11:03 INFO Connection from ('10.195.171.63', 41502) established.
+2025-03-12 14:11:03 INFO Message received: {"action": "authorise", "user": "shravan"}
+2025-03-12 14:11:03 INFO authorisation recieved: {'action': 'authorise', 'user': 'shravan'}
+2025-03-12 14:11:04 ERROR Exception on /submit_folder [POST]
+Traceback (most recent call last):
+  File "/home/kyoto/Desktop/NEA_v2/NEA/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/NEA/.venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/NEA/.venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/NEA/.venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/NEA/client/main.py", line 299, in submit_folder
+    status, status_msg = send(data)
+                         ^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/NEA/client/main.py", line 317, in send
+    server_data = json.loads(json_response)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-03-12 14:11:04 INFO 127.0.0.1 - - [12/Mar/2025 14:11:04] "[35m[1mPOST /submit_folder HTTP/1.1[0m" 500 -
+2025-03-12 14:22:51 INFO tracking_data sent: {"action": "track", "ip_addr": "10.195.171.63", "user": "shravan", "mac_addr": 167132875827157}
+2025-03-12 14:22:51 INFO json_data sent: {"action": "track", "ip_addr": "10.195.171.63", "user": "shravan", "mac_addr": 167132875827157}
+2025-03-12 14:22:51 INFO server response: {"status": "200", "status_msg": "IP updated successfully"}
+2025-03-12 14:22:51 INFO 200 OK
+2025-03-12 14:22:51 INFO 127.0.0.1 - - [12/Mar/2025 14:22:51] "GET /dashboard HTTP/1.1" 200 -
+2025-03-12 14:22:51 INFO 127.0.0.1 - - [12/Mar/2025 14:22:51] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-12 14:22:51 INFO 127.0.0.1 - - [12/Mar/2025 14:22:51] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 14:22:51 INFO 127.0.0.1 - - [12/Mar/2025 14:22:51] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-03-12 14:22:51 INFO 127.0.0.1 - - [12/Mar/2025 14:22:51] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-12 14:22:51 INFO 127.0.0.1 - - [12/Mar/2025 14:22:51] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-12 14:22:53 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-12 14:22:53 INFO json_data sent: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-03-12 14:22:53 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ],
+      [
+        3,
+        "macbookpro"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ],
+      [
+        3,
+        "shravan"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-03-12 14:22:53 INFO 200 OK
+2025-03-12 14:22:53 INFO Sending to frontend: {'aryan': ['MBP'], 'anjali': ['macbook_pro'], 'shravan': ['macbookpro']}
+2025-03-12 14:22:53 INFO 127.0.0.1 - - [12/Mar/2025 14:22:53] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-03-12 14:22:59 INFO DATA FROM ADDING FOLDER FORMS!: {'action': 'add_folder', 'folder_label': 'bruh', 'folder_id': 'nx3qRVE2QO', 'directory': '~/nx3qRVE2QO', 'shared_users': ['shravan:macbookpro'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
+2025-03-12 14:22:59 INFO Connection from ('10.195.171.63', 49750) established.
+2025-03-12 14:22:59 INFO Message received: {"action": "authorise", "user": "shravan"}
+2025-03-12 14:22:59 INFO authorisation recieved: {'action': 'authorise', 'user': 'shravan'}
+2025-03-12 14:22:59 INFO json_data sent: {"action": "add_folder", "folder_label": "bruh", "folder_id": "nx3qRVE2QO", "directory": "~/nx3qRVE2QO", "shared_users": ["shravan:macbookpro"], "folder_type": "sync_bothways", "mac_addr": 167132875827157}
+2025-03-12 14:22:59 INFO server response: {"status": "201", "status_msg": "Folder added successfully"}
+2025-03-12 14:22:59 INFO 201 Added
+2025-03-12 14:22:59 INFO 127.0.0.1 - - [12/Mar/2025 14:22:59] "POST /submit_folder HTTP/1.1" 200 -

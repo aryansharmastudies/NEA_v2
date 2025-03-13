@@ -357,6 +357,13 @@ def handle_server_message(json_message, server_socket):
         else:
             message = json.dumps({'status_code': '404'})
             server_socket.send(message.encode('utf-8'))
+    elif json_message['action'] == 'share_folder':
+        # need to create a popup on dashboard to accept or decline the folder.
+        logging.info(f'sharing folder: {json_message}')
+        # TODO toggle the modal to popup.
+        random_folder_id = get_random_id()
+        return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, )
+        # continue with the rest of code.
 
 
 def listen_for_messages():

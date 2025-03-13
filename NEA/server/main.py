@@ -244,14 +244,15 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
         
         logging.info(f'ip of device: {ip_map["users"][username][device_mac_addr]}')
         ip = ip_map["users"][username][device_mac_addr] # gets users ip address
-        logging.info(f'Sending ping to {username} with ip: {ip}')
-
+        
+        logging.info(f'Sending authorisation request to {username}, device: {device.name}, mac_addr: {device_mac_addr},  ip: {ip}')
         status = send(json.dumps({'action': 'authorise', 'user': username}), ip, 6000) # sends a ping through!
+        logging.info(f'User Status: {status} (400/404 -> failed, 200 -> success)')
         # either no response -> add to list of invites!!
         # or another user is online(from same ip - maybe ip changed/user logged into device)
         # or correct user is online
         if status == '400' or status == '404': # if ping fails
-            logging.info(f'Ping failed for {username} with ip: {ip}')
+            logging.info(f'Authorisation failed for {username} with ip: {ip}')
             # adds to invites.json
             if username not in invites["folders"]: # first check if the user is in the invites file
                 invites["folders"][username] = {} # if not, add them
@@ -353,10 +354,8 @@ def send(message, ip, port):
     status_msg = client_data.get('status_msg', False)
     data = client_data.get('data', False)
 
-    if message['action'] == 'authorise':
-        return status_code
-    elif message['action'] == 'add_folder':
-        return data 
+    if message == 'authorise':
+        return status_code 
 
 
 
