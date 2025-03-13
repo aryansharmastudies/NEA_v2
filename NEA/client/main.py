@@ -223,7 +223,9 @@ def dashboard():
         status = send(ip_tracking_data)
 
         random_folder_id = get_random_id()
-        return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id) # pass in server_name to the dashboard.html file.
+
+        # TODO - get any notifications from the server.
+        return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, share_folder=json_message) # pass in server_name to the dashboard.html file.
     elif 'server_name' in session:
         flash('You are not logged in!', 'info')
         return render_template('login.html')
@@ -362,7 +364,7 @@ def handle_server_message(json_message, server_socket):
         logging.info(f'sharing folder: {json_message}')
         # TODO toggle the modal to popup.
         random_folder_id = get_random_id()
-        return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, )
+        return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, share_folder=json_message)
         # continue with the rest of code.
 
 
