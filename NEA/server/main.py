@@ -256,7 +256,7 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
             # adds to invites.json
             if username not in invites["folders"]: # first check if the user is in the invites file
                 invites["folders"][username] = {} # if not, add them
-            invites["folders"][username][folder_id] = {'folder_label': folder_label, 'host': }
+            invites["folders"][username][folder_id] = {'folder_label': folder_label, 'host': } # TODO ADD THE HOST WHO IS SENDING INVITE!
             
             with open(invites_file, "w") as file:
                 json.dump(invites, file, indent=2)
