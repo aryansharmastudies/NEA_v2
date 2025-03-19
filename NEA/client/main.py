@@ -215,10 +215,10 @@ def dashboard():
         else:
             return jsonify({"error": "Unknown action type"}), 400
 
-    elif 'server_name' in session and 'user' in session:
+    elif 'server_name' in session and 'user' in session: # if used logs in/registers,
 
         mac_addr = get_mac()
-        ip_tracking_data = json.dumps({'action': 'track', 'ip_addr':ip, 'user':session['user'], 'mac_addr':mac_addr})
+        ip_tracking_data = json.dumps({'action': 'track', 'ip_addr':ip, 'user':session['user'], 'mac_addr':mac_addr}) # dont matter if user's registerd device.
         logging.info(f'tracking_data sent: {ip_tracking_data}')
         status = send(ip_tracking_data)
 
@@ -418,6 +418,8 @@ if __name__ == "__main__":
     listener_thread = threading.Thread(target=listen_for_messages)
     listener_thread.daemon = True  # This ensures the thread will exit when the main program exits
     listener_thread.start()
+    
+    
     # with app.app_context():
     with app.test_request_context('/'):
         request.session = session

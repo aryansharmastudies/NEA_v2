@@ -251,12 +251,12 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
         # either no response -> add to list of invites!!
         # or another user is online(from same ip - maybe ip changed/user logged into device)
         # or correct user is online
-        if status == '400' or status == '404': # if ping fails
+        if status == '400' or status == '404': # if request fails
             logging.info(f'Authorisation failed for {username} with ip: {ip}')
             # adds to invites.json
             if username not in invites["folders"]: # first check if the user is in the invites file
                 invites["folders"][username] = {} # if not, add them
-            invites["folders"][username][folder_id] = {'folder_label': folder_label}
+            invites["folders"][username][folder_id] = {'folder_label': folder_label, 'host': } # TODO ADD THE HOST WHO IS SENDING INVITE!
             
             with open(invites_file, "w") as file:
                 json.dump(invites, file, indent=2)
@@ -266,8 +266,8 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
             # return json.dumps({'status': '400', 'status_msg': 'Ping failed'})
         elif status == '200': # if authorisation is successful.
             logging.info(f'Authorisation successful for {username} with ip: {ip}')
-            data = send(json.dumps({'action': 'add_folder', 'folder_label': folder_label, 'folder_id': folder_id}), ip, 6000)
-            if data != False:
+            data = send(json.dumps({'action': 'add_folder', 'folder_label': folder_label, 'folder_id': folder_id}), ip, 6000) # TODO needs to be displayed on clients side through websockets.
+            if data != False: # NOTE MAYBE SHOULD SCRAP THIS SINCE IT WILL WAIT UNNECESSARILY
                 data = json.loads(data)
                 directory = data['directory']
                 shared_user = Share(folder_id=folder_id, mac_addr=mac_addr, path=directory)
@@ -325,11 +325,11 @@ else:
         "groups": {}
     }
                                                                                                                                                                                                                                                                                                                                    
-def track_ip(user, mac_addr, ip):
+def track_ip(user, mac_addr, ip): # DONE if user logs in with differnet ip from same device! it should update it.
     if user not in ip_map["users"]:
         ip_map["users"][user] = {}
     mac_addr = str(mac_addr)
-    ip_map["users"][user][mac_addr] = ip
+    ip_map["users"][user][mac_addr] = ip # if user signs in with differet ip from same device -> it overwrites the ip. 
     logging.info(f'ip_map: {ip_map}')
 
     with open(ip_file, "w") as file:
@@ -337,6 +337,9 @@ def track_ip(user, mac_addr, ip):
     
     return json.dumps({'status': '200', 'status_msg': 'IP updated successfully'})
         
+
+def alert(): # TODO make it send back any unanswered invites to the user
+    pass
 ########## SOCKETS ###############################
 def send(message, ip, port):
     logging.info(f'Sending: {message} to {ip} on port {port}')
@@ -375,12 +378,19 @@ def handle_client_message(message):
         clientsocket.send('pong'.encode('utf-8'))
         logging.info(f'Pong sent to {client_data['ip_addr']}')
 
-    elif action == 'track':
+    elif action == 'track': # client sends this thru whenever they are redirected to 'dashboard.html'
         ip_addr = client_data['ip_addr']
         user = client_data['user']
         mac_addr = client_data['mac_addr']
         logging.info(f'Recieved tracking info from {user} with ip_addr {ip_addr} and mac_addr {mac_addr}')
-        status = track_ip(user, mac_addr, ip_addr)
+        status = track_ip(user, mac_addr, ip_addr) # ok we track them. but we should also respond back with any notifications/updates.
+        '''
+            issue may arise when a user1 tries to invite another user2 device which user2 has not yet registered.
+            ACTUALLY, it will not happen, since user1 can only invite anyone else whose device is registered!
+            the server only sends back registered device to user1!
+        '''
+        alerts = alert()
+        # TODO send alerts
         clientsocket.send(str(status).encode('utf-8'))
 
     elif action == 'login':
@@ -406,9 +416,11 @@ def handle_client_message(message):
         clientsocket.send(str(status).encode('utf-8'))
         #TODO after adding device in db, then tracker the ip and mac addr!
 
+
+# {'action': 'add_folder', 'folder_label': 'feetpics', 'folder_id': 'nSBSsJLXcs', 'directory': '~/nSBSsJLXcs', 'shared_users': ['aryan:MBP'], 'folder_type': 'sync_bothways', 'mac_addr': 167132875827157}
     elif action == 'add_folder': # TODO get it working.
         logging.info(f'Recieved data to add folder: {client_data}')
-        mac_addr = client_data['mac_addr']
+        mac_addr = client_data['mac_addr'] # of the user sharing it.
         folder_label = client_data['folder_label']
         folder_id = client_data['folder_id']
         directory = client_data['directory']
@@ -431,6 +443,15 @@ def handle_client_message(message):
         logging.info(f'SENDING: {response_in_json}')
         clientsocket.send(str(response_in_json).encode('utf-8')) # converted to JSON using 'tojson'.
         del response
+
+    elif action == 'invite_response':
+        invite_type = client_data('invite_type') # can be either a group or folder invite response
+        data = client_data('data')
+        '''
+            could include (folder_id, mac_addr and user_directory) if folder response
+            otherwise would include a 'accept' or 'decline' as well as 'user_id' and 'group_id' for group invite response
+        '''
+        pass
 
     else:
         print('Unknown action!')
