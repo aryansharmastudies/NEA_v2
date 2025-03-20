@@ -32,6 +32,31 @@ when we finish exe code.-->
     }
 </style>
     
+
+<script>
+    var socket = io()
+    socket.on('connect', function(){
+        socket.emit('connect', {data: 'Connection request from Front-end.'})
+    });
+
+    socket.on('alerts', function(alerts){
+        const alerts = alerts;
+        for (let alert of alerts) {
+            
+            /*
+            DISPLAY THE ALERT 
+            https://www.w3schools.com/howto/howto_js_alert.asp
+            */
+
+        }
+    })
+
+</script>
+
+
+
+
+
 <h2>dashboard</h2>
 <p>Welcome {{user}}</p>
 <p>Connected to: {{server_name}}</p>

@@ -2,6 +2,9 @@ from flask import Flask, redirect, url_for, render_template, request, session, f
 from werkzeug.serving import run_simple
 from datetime import timedelta # setup max time out session last for.
 from flask_sqlalchemy import SQLAlchemy
+from flask_socketio import SocketIO
+from flask_socketio import send, emit
+from flask_socketio import join_room, leave_room
 from uuid import getnode as get_mac
 from get_wip import *
 from get_lip import *
@@ -27,7 +30,7 @@ def log() -> None:
         filename="basic.log",)
 ########## FLASK ################################
 app = Flask(__name__)
-app.secret_key = "hello"
+app.secret_key = "shady"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.sqlite3'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.permanent_session_lifetime = timedelta(days=30) # session will last for 30 days.
@@ -39,6 +42,18 @@ class servers(db.Model):
 
     def __init__(self, name):
         self.name = name
+
+########## WEB SOCKETS ##########################
+socketio = SocketIO(app)
+
+# NOTE: alerts will be in the form [['folder_label','id','host'],[...],[...]]
+@socketio.echo_alerts()
+def echo_alerts(alerts):
+    emit('alerts', alerts) # ❓
+
+def echo_alerts_v2(alerts):
+    socketio.emit('alerts', alerts) # ❓
+
 ########## WEBSITE ##############################
 @app.route('/pair', methods=['POST','GET'])
 def pair():
@@ -220,12 +235,12 @@ def dashboard():
         mac_addr = get_mac()
         ip_tracking_data = json.dumps({'action': 'track', 'ip_addr':ip, 'user':session['user'], 'mac_addr':mac_addr}) # dont matter if user's registerd device.
         logging.info(f'tracking_data sent: {ip_tracking_data}')
-        status = send(ip_tracking_data)
-
+        status, status_msg, data = send(ip_tracking_data)
+        echo_alerts(data) #⭐
         random_folder_id = get_random_id()
 
         # TODO - get any notifications from the server.
-        return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, share_folder=json_message) # pass in server_name to the dashboard.html file.
+        return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id) # pass in server_name to the dashboard.html file.
     elif 'server_name' in session:
         flash('You are not logged in!', 'info')
         return render_template('login.html')
