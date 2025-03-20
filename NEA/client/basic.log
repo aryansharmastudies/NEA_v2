@@ -14882,3 +14882,300 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 2025-03-12 14:22:59 INFO server response: {"status": "201", "status_msg": "Folder added successfully"}
 2025-03-12 14:22:59 INFO 201 Added
 2025-03-12 14:22:59 INFO 127.0.0.1 - - [12/Mar/2025 14:22:59] "POST /submit_folder HTTP/1.1" 200 -
+2025-03-19 23:33:44 INFO binding to ip: 192.168.1.221
+2025-03-19 23:33:44 INFO Listening for incoming messages on port 6000...
+2025-03-19 23:33:44 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.221:5000
+2025-03-19 23:33:44 INFO [33mPress CTRL+C to quit[0m
+2025-03-19 23:34:05 INFO 127.0.0.1 - - [19/Mar/2025 23:34:05] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:34:05 INFO 127.0.0.1 - - [19/Mar/2025 23:34:05] "GET /login HTTP/1.1" 200 -
+2025-03-19 23:34:05 INFO 127.0.0.1 - - [19/Mar/2025 23:34:05] "GET /static/css/minimal_style.css HTTP/1.1" 200 -
+2025-03-19 23:34:05 INFO 127.0.0.1 - - [19/Mar/2025 23:34:05] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-03-19 23:34:05 INFO 127.0.0.1 - - [19/Mar/2025 23:34:05] "GET /static/images/initial_d02.jpg HTTP/1.1" 200 -
+2025-03-19 23:34:06 INFO 127.0.0.1 - - [19/Mar/2025 23:34:06] "GET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1" 200 -
+2025-03-19 23:34:12 INFO hashed password: 4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694
+2025-03-19 23:34:12 INFO json_data: {"action": "login", "l_user": "aryan", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-03-19 23:36:27 INFO 503 Server Offline
+2025-03-19 23:36:27 INFO 503: server offline, please try again
+2025-03-19 23:36:27 INFO 127.0.0.1 - - [19/Mar/2025 23:36:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-19 23:36:27 INFO 127.0.0.1 - - [19/Mar/2025 23:36:27] "GET /login HTTP/1.1" 200 -
+2025-03-19 23:36:27 INFO 127.0.0.1 - - [19/Mar/2025 23:36:27] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-19 23:36:27 INFO 127.0.0.1 - - [19/Mar/2025 23:36:27] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-19 23:36:27 INFO 127.0.0.1 - - [19/Mar/2025 23:36:27] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-03-19 23:36:27 INFO 127.0.0.1 - - [19/Mar/2025 23:36:27] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-19 23:40:28 INFO 127.0.0.1 - - [19/Mar/2025 23:40:28] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:40:28 INFO 127.0.0.1 - - [19/Mar/2025 23:40:28] "GET /login HTTP/1.1" 200 -
+2025-03-19 23:40:28 INFO 127.0.0.1 - - [19/Mar/2025 23:40:28] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-19 23:40:28 INFO 127.0.0.1 - - [19/Mar/2025 23:40:28] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-19 23:40:28 INFO 127.0.0.1 - - [19/Mar/2025 23:40:28] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-03-19 23:40:29 INFO 127.0.0.1 - - [19/Mar/2025 23:40:29] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-19 23:40:54 INFO binding to ip: 192.168.1.221
+2025-03-19 23:40:54 INFO Listening for incoming messages on port 6000...
+2025-03-19 23:40:54 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.221:5000
+2025-03-19 23:40:54 INFO [33mPress CTRL+C to quit[0m
+2025-03-19 23:40:59 INFO 127.0.0.1 - - [19/Mar/2025 23:40:59] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:40:59 INFO 127.0.0.1 - - [19/Mar/2025 23:40:59] "GET /login HTTP/1.1" 200 -
+2025-03-19 23:40:59 INFO 127.0.0.1 - - [19/Mar/2025 23:40:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-19 23:40:59 INFO 127.0.0.1 - - [19/Mar/2025 23:40:59] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-19 23:40:59 INFO 127.0.0.1 - - [19/Mar/2025 23:40:59] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-03-19 23:41:00 INFO 127.0.0.1 - - [19/Mar/2025 23:41:00] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-19 23:41:09 INFO 127.0.0.1 - - [19/Mar/2025 23:41:09] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:41:09 INFO 127.0.0.1 - - [19/Mar/2025 23:41:09] "GET /login HTTP/1.1" 200 -
+2025-03-19 23:41:09 INFO 127.0.0.1 - - [19/Mar/2025 23:41:09] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-19 23:41:09 INFO 127.0.0.1 - - [19/Mar/2025 23:41:09] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-19 23:41:09 INFO 127.0.0.1 - - [19/Mar/2025 23:41:09] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-03-19 23:41:09 INFO 127.0.0.1 - - [19/Mar/2025 23:41:09] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-19 23:41:44 INFO hashed password: 4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694
+2025-03-19 23:41:44 INFO json_data: {"action": "login", "l_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-03-19 23:41:55 INFO 503 Server Offline
+2025-03-19 23:41:55 INFO 503: server offline, please try again
+2025-03-19 23:41:55 INFO 127.0.0.1 - - [19/Mar/2025 23:41:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-19 23:41:55 INFO 127.0.0.1 - - [19/Mar/2025 23:41:55] "GET /login HTTP/1.1" 200 -
+2025-03-19 23:41:55 INFO 127.0.0.1 - - [19/Mar/2025 23:41:55] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-19 23:41:55 INFO 127.0.0.1 - - [19/Mar/2025 23:41:55] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-19 23:41:55 INFO 127.0.0.1 - - [19/Mar/2025 23:41:55] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-03-19 23:41:55 INFO 127.0.0.1 - - [19/Mar/2025 23:41:55] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-19 23:44:08 INFO binding to ip: 192.168.1.221
+2025-03-19 23:44:08 INFO Listening for incoming messages on port 6000...
+2025-03-19 23:44:08 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.221:5000
+2025-03-19 23:44:08 INFO [33mPress CTRL+C to quit[0m
+2025-03-19 23:44:17 INFO 127.0.0.1 - - [19/Mar/2025 23:44:17] "[31m[1mGET /pair HTTP/1.1[0m" 400 -
+2025-03-19 23:44:17 INFO 127.0.0.1 - - [19/Mar/2025 23:44:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-19 23:44:21 INFO 127.0.0.1 - - [19/Mar/2025 23:44:21] "[31m[1mGET /pair HTTP/1.1[0m" 400 -
+2025-03-19 23:44:21 INFO 127.0.0.1 - - [19/Mar/2025 23:44:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-19 23:44:24 INFO 127.0.0.1 - - [19/Mar/2025 23:44:24] "[31m[1mGET /pair HTTP/1.1[0m" 400 -
+2025-03-19 23:44:24 INFO 127.0.0.1 - - [19/Mar/2025 23:44:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-19 23:44:30 INFO 127.0.0.1 - - [19/Mar/2025 23:44:30] "GET /login HTTP/1.1" 200 -
+2025-03-19 23:44:30 INFO 127.0.0.1 - - [19/Mar/2025 23:44:30] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-19 23:44:30 INFO 127.0.0.1 - - [19/Mar/2025 23:44:30] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-19 23:44:30 INFO 127.0.0.1 - - [19/Mar/2025 23:44:30] "GET /static/images/initial_d02.jpg HTTP/1.1" 200 -
+2025-03-19 23:44:31 INFO 127.0.0.1 - - [19/Mar/2025 23:44:31] "GET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1" 200 -
+2025-03-19 23:44:33 INFO 127.0.0.1 - - [19/Mar/2025 23:44:33] "[31m[1mGET /pair HTTP/1.1[0m" 400 -
+2025-03-19 23:44:33 INFO 127.0.0.1 - - [19/Mar/2025 23:44:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-19 23:46:12 INFO 127.0.0.1 - - [19/Mar/2025 23:46:12] "[31m[1mGET /pair HTTP/1.1[0m" 400 -
+2025-03-19 23:46:12 INFO 127.0.0.1 - - [19/Mar/2025 23:46:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-19 23:46:32 INFO 127.0.0.1 - - [19/Mar/2025 23:46:32] "[31m[1mGET /pair HTTP/1.1[0m" 400 -
+2025-03-19 23:46:32 INFO 127.0.0.1 - - [19/Mar/2025 23:46:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-19 23:53:41 INFO binding to ip: 192.168.1.221
+2025-03-19 23:53:41 INFO Listening for incoming messages on port 6000...
+2025-03-19 23:53:41 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.221:5000
+2025-03-19 23:53:41 INFO [33mPress CTRL+C to quit[0m
+2025-03-19 23:54:06 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:54:07 INFO 127.0.0.1 - - [19/Mar/2025 23:54:07] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:54:07 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:54:08 INFO 127.0.0.1 - - [19/Mar/2025 23:54:08] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:54:08 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:54:11 INFO 127.0.0.1 - - [19/Mar/2025 23:54:11] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:54:11 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:54:15 INFO 127.0.0.1 - - [19/Mar/2025 23:54:15] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:54:15 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:54:16 INFO 127.0.0.1 - - [19/Mar/2025 23:54:16] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:54:16 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:54:18 INFO 127.0.0.1 - - [19/Mar/2025 23:54:18] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:54:18 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:54:21 INFO 127.0.0.1 - - [19/Mar/2025 23:54:21] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:54:21 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:56:35 INFO 127.0.0.1 - - [19/Mar/2025 23:56:35] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:56:35 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:56:39 INFO 127.0.0.1 - - [19/Mar/2025 23:56:39] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:56:39 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:23 INFO 127.0.0.1 - - [19/Mar/2025 23:58:23] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:23 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:25 INFO 127.0.0.1 - - [19/Mar/2025 23:58:25] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:25 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:26 INFO 127.0.0.1 - - [19/Mar/2025 23:58:26] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:26 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:26 INFO 127.0.0.1 - - [19/Mar/2025 23:58:26] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:26 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:26 INFO 127.0.0.1 - - [19/Mar/2025 23:58:26] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:26 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:26 INFO 127.0.0.1 - - [19/Mar/2025 23:58:26] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:26 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:27 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:27 INFO 127.0.0.1 - - [19/Mar/2025 23:58:27] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:33 INFO binding to ip: 192.168.1.221
+2025-03-19 23:58:33 INFO Listening for incoming messages on port 6000...
+2025-03-19 23:58:33 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.221:5000
+2025-03-19 23:58:33 INFO [33mPress CTRL+C to quit[0m
+2025-03-19 23:58:37 INFO trying to re-connecte with prev. server: 10.195.171.63
+2025-03-19 23:58:39 INFO 127.0.0.1 - - [19/Mar/2025 23:58:39] "[32mGET /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:58:39 INFO 127.0.0.1 - - [19/Mar/2025 23:58:39] "GET /pair HTTP/1.1" 200 -
+2025-03-19 23:58:39 INFO 127.0.0.1 - - [19/Mar/2025 23:58:39] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-19 23:58:39 INFO 127.0.0.1 - - [19/Mar/2025 23:58:39] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-19 23:58:40 INFO 127.0.0.1 - - [19/Mar/2025 23:58:40] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-19 23:58:49 INFO 127.0.0.1 - - [19/Mar/2025 23:58:49] "GET /pair HTTP/1.1" 200 -
+2025-03-19 23:58:49 INFO 127.0.0.1 - - [19/Mar/2025 23:58:49] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-19 23:58:49 INFO 127.0.0.1 - - [19/Mar/2025 23:58:49] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-19 23:58:49 INFO 127.0.0.1 - - [19/Mar/2025 23:58:49] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-19 23:59:15 INFO server_name: 192.168.1.221
+2025-03-19 23:59:15 INFO ping sent: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-19 23:59:15 INFO status: pong
+2025-03-19 23:59:15 INFO found_server: <servers 192.168.1.221>
+2025-03-19 23:59:15 INFO 127.0.0.1 - - [19/Mar/2025 23:59:15] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-03-19 23:59:15 INFO 127.0.0.1 - - [19/Mar/2025 23:59:15] "GET /login HTTP/1.1" 200 -
+2025-03-19 23:59:16 INFO 127.0.0.1 - - [19/Mar/2025 23:59:16] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-03-19 23:59:16 INFO 127.0.0.1 - - [19/Mar/2025 23:59:16] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-03-19 23:59:16 INFO 127.0.0.1 - - [19/Mar/2025 23:59:16] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-03-19 23:59:16 INFO 127.0.0.1 - - [19/Mar/2025 23:59:16] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-19 23:59:25 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-03-19 23:59:25 INFO json_data: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-19 23:59:25 INFO json_data sent: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-19 23:59:25 INFO server response: {"status": "200", "status_msg": "Login successful"}
+2025-03-19 23:59:25 INFO 200 OK
+2025-03-19 23:59:25 INFO 127.0.0.1 - - [19/Mar/2025 23:59:25] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-19 23:59:25 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-19 23:59:25 ERROR Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/NEA/client/main.py", line 227, in dashboard
+    status = send(ip_tracking_data)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/NEA/client/main.py", line 323, in send
+    server_data = json.loads(json_response)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-03-19 23:59:25 INFO 127.0.0.1 - - [19/Mar/2025 23:59:25] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-03-19 23:59:25 INFO 127.0.0.1 - - [19/Mar/2025 23:59:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-20 00:01:58 INFO 127.0.0.1 - - [20/Mar/2025 00:01:58] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-20 00:01:59 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-03-20 00:01:59 INFO json_data: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-20 00:01:59 INFO json_data sent: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-20 00:01:59 INFO server response: {"status": "200", "status_msg": "Login successful"}
+2025-03-20 00:01:59 INFO 200 OK
+2025-03-20 00:01:59 INFO 127.0.0.1 - - [20/Mar/2025 00:01:59] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-20 00:01:59 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-20 00:01:59 INFO json_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-20 00:01:59 INFO server response: {"status": "200", "status_msg": "IP updated successfully"}
+2025-03-20 00:01:59 INFO 200 OK
+2025-03-20 00:01:59 ERROR Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/NEA/client/main.py", line 232, in dashboard
+    return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, share_folder=json_message) # pass in server_name to the dashboard.html file.
+                                                                                                                                                       ^^^^^^^^^^^^
+NameError: name 'json_message' is not defined
+2025-03-20 00:01:59 INFO 127.0.0.1 - - [20/Mar/2025 00:01:59] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-03-20 00:01:59 INFO 127.0.0.1 - - [20/Mar/2025 00:01:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-20 00:02:01 INFO 127.0.0.1 - - [20/Mar/2025 00:02:01] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-20 00:02:03 INFO 127.0.0.1 - - [20/Mar/2025 00:02:03] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-03-20 00:02:03 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-20 00:02:03 INFO json_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-20 00:02:03 INFO server response: {"status": "200", "status_msg": "IP updated successfully"}
+2025-03-20 00:02:03 INFO 200 OK
+2025-03-20 00:02:03 ERROR Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/NEA/client/main.py", line 232, in dashboard
+    return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, share_folder=json_message) # pass in server_name to the dashboard.html file.
+                                                                                                                                                       ^^^^^^^^^^^^
+NameError: name 'json_message' is not defined
+2025-03-20 00:02:03 INFO 127.0.0.1 - - [20/Mar/2025 00:02:03] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-03-20 00:02:03 INFO 127.0.0.1 - - [20/Mar/2025 00:02:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-20 00:02:05 INFO 127.0.0.1 - - [20/Mar/2025 00:02:05] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-03-20 00:02:06 INFO Already Logged In anjali in Server 192.168.1.221!
+2025-03-20 00:02:06 INFO 127.0.0.1 - - [20/Mar/2025 00:02:06] "[32mGET /register HTTP/1.1[0m" 302 -
+2025-03-20 00:02:06 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-20 00:02:06 INFO json_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-20 00:02:06 INFO server response: {"status": "200", "status_msg": "IP updated successfully"}
+2025-03-20 00:02:06 INFO 200 OK
+2025-03-20 00:02:06 ERROR Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/.venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kyoto/Desktop/NEA_v2/NEA/client/main.py", line 232, in dashboard
+    return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, share_folder=json_message) # pass in server_name to the dashboard.html file.
+                                                                                                                                                       ^^^^^^^^^^^^
+NameError: name 'json_message' is not defined
+2025-03-20 00:02:06 INFO 127.0.0.1 - - [20/Mar/2025 00:02:06] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-03-20 00:02:06 INFO 127.0.0.1 - - [20/Mar/2025 00:02:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-20 00:02:07 INFO 127.0.0.1 - - [20/Mar/2025 00:02:07] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -

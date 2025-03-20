@@ -6814,3 +6814,31 @@
 2025-03-12 14:22:59 INFO Sending: {"action": "authorise", "user": "shravan"} to 10.195.171.63 on port 6000
 2025-03-12 14:22:59 INFO client_data: {"status_code": "200"}
 2025-03-12 14:22:59 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-03-19 23:59:15 INFO Connection from ('192.168.1.221', 41654) has been established!
+2025-03-19 23:59:15 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-19 23:59:15 INFO Received ping from 192.168.1.221
+2025-03-19 23:59:15 INFO Pong sent to 192.168.1.221
+2025-03-19 23:59:25 INFO Connection from ('192.168.1.221', 59292) has been established!
+2025-03-19 23:59:25 INFO message: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-19 23:59:25 INFO User: anjali has logged in
+2025-03-19 23:59:25 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-19 23:59:25 INFO Connection from ('192.168.1.221', 59304) has been established!
+2025-03-19 23:59:25 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-19 23:59:25 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-19 23:59:25 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-20 00:01:59 INFO Connection from ('192.168.1.221', 42512) has been established!
+2025-03-20 00:01:59 INFO message: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-20 00:01:59 INFO User: anjali has logged in
+2025-03-20 00:01:59 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-20 00:01:59 INFO Connection from ('192.168.1.221', 42528) has been established!
+2025-03-20 00:01:59 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-20 00:01:59 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-20 00:01:59 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-20 00:02:03 INFO Connection from ('192.168.1.221', 42534) has been established!
+2025-03-20 00:02:03 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-20 00:02:03 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-20 00:02:03 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-20 00:02:06 INFO Connection from ('192.168.1.221', 42546) has been established!
+2025-03-20 00:02:06 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-20 00:02:06 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-20 00:02:06 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221'}, 'anjali': {'167132875827157': '192.168.1.221'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
