@@ -1,4 +1,5 @@
 {
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.smoothScrolling": true
+    "zenMode.hideLineNumbers": false
 }

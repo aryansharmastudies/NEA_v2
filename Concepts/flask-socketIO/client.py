@@ -44,8 +44,11 @@ def on_leave(data):
 
 @socketio.on('change message')
 def change_message():
+    x = input('change message?')
     print('changing message')
-    emit('message','LES GO', broadcast=True)
+    emit('message',x, broadcast=True)
 
 if __name__ == '__main__':
     socketio.run(app)
+
+    

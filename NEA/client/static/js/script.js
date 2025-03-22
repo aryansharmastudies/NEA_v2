@@ -1,3 +1,28 @@
+
+
+const socket = io();
+socket.on('connect', function() {
+    socket.emit('my event', {data: 'I\'m connected!'}); // emit an event to the server
+});
+
+// listens up for 'alerts' messages from the backend
+socket.on('alerts', function(data) {
+    console.log("Received alert:", data); 
+
+    document.getElementById('alertBox').innerText = JSON.stringify(data);
+});
+
+function changemsg() {
+    socket.emit('change message', {data: 'Request to changemsg!'}); // emit an event to the server
+}
+
+// Listen for incoming messages from the server
+socket.on('message', function(data) {
+    const new_msg = data;
+    document.getElementById('msg').innerText = new_msg;
+});
+
+
 // Register Device Modal
 const openDeviceBtn = document.getElementById('openModalDevice');
 const closeDeviceBtn = document.getElementById('closeModalDevice');
@@ -160,10 +185,16 @@ function submitAllForms() {
         },
         body: JSON.stringify(combinedData)
     })
-    .then((response) => response.json())
+    .then((response) => response.json())  // Convert response to JSON
     .then((data) => {
-        console.log("Success:", data);
-        alert("Folder added successfully!");
+        console.log("Response from server:", data);
+    
+        // Show success or failure message based on response
+        if (data.status === "success") {
+            alert("✅ " + data.message); // Folder added successfully
+        } else {
+            alert("❌ " + data.message); // Folder not added
+        }
     })
     .catch((error) => {
         console.error("Error:", error);
@@ -176,3 +207,4 @@ document.getElementById("submitAllForms").addEventListener("click", (event) => {
     event.preventDefault(); // Prevent the default form submission
     submitAllForms(); // Call the function to submit all forms
 });
+

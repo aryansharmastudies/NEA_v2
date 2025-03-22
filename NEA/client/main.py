@@ -47,12 +47,21 @@ class servers(db.Model):
 socketio = SocketIO(app)
 
 # NOTE: alerts will be in the form [['folder_label','id','host'],[...],[...]]
-@socketio.echo_alerts()
+@socketio.on('echo_alerts')
 def echo_alerts(alerts):
     emit('alerts', alerts) # ❓
 
 def echo_alerts_v2(alerts):
     socketio.emit('alerts', alerts) # ❓
+
+@socketio.on('change message')
+def change_message(json):
+    print('recieved json: ' + str(json))
+    emit('message', json, broadcast=True)
+
+@socketio.on('my event')
+def handle_my_custom_event(json):
+    print('received json: ' + str(json))
 
 ########## WEBSITE ##############################
 @app.route('/pair', methods=['POST','GET'])
@@ -65,8 +74,8 @@ def pair():
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((server_name, 8000))
             json_data = json.dumps({'action': 'ping', 'ip_addr':ip})
-            logging.info(f'ping sent: {json_data}')
-            s.send(json_data.encode('utf-8'))
+            logging.info(f'ping sent: {json_data}') 
+            s.send(json_data.encode('utf-8'))       # TODO MAYBE USE SEND FUNCTION TO GENERALISE EVERYTHING?
             if s.recv(1024).decode('utf-8') == 'pong':
                 logging.info(f"status: pong")
                 session['server_name'] = server_name
@@ -235,8 +244,14 @@ def dashboard():
         mac_addr = get_mac()
         ip_tracking_data = json.dumps({'action': 'track', 'ip_addr':ip, 'user':session['user'], 'mac_addr':mac_addr}) # dont matter if user's registerd device.
         logging.info(f'tracking_data sent: {ip_tracking_data}')
-        status, status_msg, data = send(ip_tracking_data)
-        echo_alerts(data) #⭐
+        status, status_msg, data = send(ip_tracking_data)        
+        logging.info(f'sending alerts to frontend!: {data}')
+
+        socketio.emit('alerts', data) #⭐
+        # echo_alerts(data) #⭐
+        # socketio.emit('message', 'new notification!!!', broadcast=True)
+        # change_message('new notification!!!')
+
         random_folder_id = get_random_id()
 
         # TODO - get any notifications from the server.
@@ -252,7 +267,7 @@ def dashboard():
 def get_users_and_devices():
     json_data = json.dumps({'action': 'request', 'data': {'users': ['user_id', 'name'], 'devices': ['user_id', 'name']}})
     logging.info(f'getting users and devices info... sending: {json_data}')
-    status, status_msg, data = send(json_data)
+    data = send(json_data)
 
     devices = data['devices']
     users = data['users']
@@ -314,6 +329,7 @@ def submit_folder():
 
     data = json.dumps(data)
     status, status_msg = send(data)
+    logging.info(f'submit_folder status: {status}')
     if status == '201':
     # Return a response
         return jsonify({'status': 'success', 'message': 'Folder added successfully'})
@@ -322,45 +338,68 @@ def submit_folder():
 # 😳
 
 ########## SEND #################################
-def send(json_data):
+def send(json_data): # 🛫
+        logging.info(f'sending data to server: {json_data}')
         try: 
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((session['server_name'], 8000))
         except: 
             logging.info(f'503 Server Offline')
-            return '503', 'server offline'   
+            flash(f'Server inactive, please retry!', 'info')
+            return '503', 'server offline', False  
         s.send(json_data.encode('utf-8')) # sending data to server 📨
         json_response = s.recv(1024).decode('utf-8') # server's response back 📩 # TODO recieves 1024 bits, add buffering feature !!
-        server_data = json.loads(json_response)
-        status = server_data.get('status', '200')
-        status_msg = server_data.get('status_msg', 'unknown')
-        data = server_data.get('data', False) # incase 'data' key don't exist, simply set data = False
-    
-        logging.info(f'json_data sent: {json_data}')
-        logging.info(f'server response: {json_response}')
-        if status == '200': # The request is OK (this is the standard response for successful HTTP requests)
-            logging.info(f"200 OK")
-            if not data: # if there is NO DATA incomming (which means, we as the client DIDNT request for data
-                # e.g. adding a user), simply return the status and status_msg!
-                return status, status_msg
-            else: # but if data is recieved, if we as the client made a request.
-                return status, status_msg, data # return the data.
-        elif status == '201': # The request has been fulfilled, and a new resource(user/device/...) is created
-            logging.info(f"201 Added")
-            return status, status_msg
-        elif status == '401':
-            logging.info(f'401 Unauthorized') #  The request was a legal request, but the server is refusing to respond to it. For use when authentication is possible but has failed or not yet been provided
-            return status, status_msg
-        elif status == '404':
-            logging.info(f'404 Not Found') # The requested page/item could not be found but may be available again in the future
-            return status, status_msg
-        elif status == '409':
-            logging.info(f'409 Conflict') # The request could not be completed because of a conflict in the request
-            return status, status_msg
+        logging.info(f'server response: {json_response}, type: {type(json_response)}')
         
-        else:
-            return '500', 'server error - check return status for CRUD!' 
-       
+        server_data = json.loads(json_response)
+        logging.info(f'server_data: {server_data}')
+        
+        status = server_data.get('status', '200')
+        logging.info(f'status: {status}')
+        
+        status_msg = server_data.get('status_msg', 'unknown')
+        logging.info(f'status_msg: {status_msg}')
+        
+        data = server_data.get('data', False) # incase 'data' key don't exist, simply set data = False
+        logging.info(f'data: {data}')
+        
+        logging.info(f'status: {status} status_msg: {status_msg} data: {data}')
+        
+        # could use hashmap i.e. {200: 'ok', 201: 'created', 401: 'unauthorized'} then returns in O(1) time.
+        status_to_codes = {'200': 'OK', '201': 'Added', '401': 'Unauthorized', '404': 'Not Found', '409': 'Conflict'}
+        logging.info(f'{status} : {status_to_codes[status]}')
+        
+        # if status == '200': # The request is OK (this is the standard response for successful HTTP requests)
+        #     logging.info(f"200 OK")
+        #     if data: # but if data is recieved, if we as the client made a request. 
+        #         # e.g. adding a user), simply return the status and status_msg!
+        #         return status, status_msg, data
+        #     else: # if there is NO DATA incomming (which means, we as the client DIDNT request for data
+        #         return status, status_msg # return the data.
+        # elif status == '201': # The request has been fulfilled, and a new resource(user/device/...) is created
+        #     logging.info(f"201 Added")
+        #     return status, status_msg
+        # elif status == '401':
+        #     logging.info(f'401 Unauthorized') #  The request was a legal request, but the server is refusing to respond to it. For use when authentication is possible but has failed or not yet been provided
+        #     return status, status_msg
+        # elif status == '404':
+        #     logging.info(f'404 Not Found') # The requested page/item could not be found but may be available again in the future
+        #     return status, status_msg
+        # elif status == '409':
+        #     logging.info(f'409 Conflict') # The request could not be completed because of a conflict in the request
+        #     return status, status_msg
+        
+        # else:
+        #     return '500', 'server error - check return status for CRUD!' 
+        action = json.loads(json_data)['action']
+        if action in ['login', 'register_user', 'add_device', 'add_folder']:
+            return status, status_msg
+        elif action in ['track']:
+            return status, status_msg, data
+        elif action in ['request']:
+            return data
+            
+
 ########## HANDLE SERVER MESSAGE ################
 
 def handle_server_message(json_message, server_socket):
@@ -418,28 +457,38 @@ def listen_for_messages():
 def get_random_id():
     return ''.join(random.choices(string.ascii_letters + string.digits, k=10))
 
-########## MAIN #################################
-if __name__ == "__main__":
-    log() # to start the logging system
-    active_session = {}
-    system = input('windows(w) or linux(l)?')
-    if system == 'w':
-        ip = w_wlan_ip()
-    else:
-        ip = l_wlan_ip()
-    
-    print(f'binding ip: {ip}')
 
-    listener_thread = threading.Thread(target=listen_for_messages)
-    listener_thread.daemon = True  # This ensures the thread will exit when the main program exits
+########## MAIN #################################
+def run_flask():
+    """Function to run the Flask server using run_simple."""
+    print("Running Flask server...")
+    run_simple("0.0.0.0", 5000, app, use_reloader=False)
+
+if __name__ == "__main__":
+    log()  # Start the logging system
+    active_session = {}
+
+    system = input("windows(w) or linux(l)? ")
+    ip = w_wlan_ip() if system == "w" else l_wlan_ip()
+
+    print(f"Binding IP: {ip}")
+
+    # Start the listener thread for message listening
+    listener_thread = threading.Thread(target=listen_for_messages, daemon=True)
+    # daemon=True ensures thread exits when main program exits!!
     listener_thread.start()
-    
-    
-    # with app.app_context():
-    with app.test_request_context('/'):
+
+    # Set up the Flask app with database
+    with app.test_request_context("/"):
         request.session = session
         db.create_all()
-    run_simple("0.0.0.0", 5000, app, use_reloader=False)
+
+    # Start the Flask server in a separate thread
+    flask_thread = threading.Thread(target=run_flask, daemon=True)
+    flask_thread.start()
+
+    print("Running SocketIO server...")
+    socketio.run(app)
     # app.run(debug=True)
 
     #app.test_request_context

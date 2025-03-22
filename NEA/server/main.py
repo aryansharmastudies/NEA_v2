@@ -214,23 +214,30 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
         # then send a ping first
         # then followed by a request, if pong is returned
 
-        shared_user = shared_user.split(':')
-        username = shared_user[0]
-        device_name = shared_user[1]
-        user = session.query(User).filter_by(name=username).first()
-        target_user_id = user.user_id
+        shared_user = shared_user.split(':') # ['admin', 'x230']
+        username = shared_user[0] # 🌸
+        device_name = shared_user[1] # 🌸
+        user = session.query(User).filter_by(name=username).first() # 🌸
+        target_user_id = user.user_id # 🌸
+
+        # TODO find username given mac_addr of host
+        # mac_addr -> user_id -> username
+
+        host_id = session.query(Device).filter_by(mac_addr=mac_addr).first().user_id
+        hostname = session.query(User).filter_by(user_id=host_id).first().name
+
         if not user:
             logging.info(f'User: {username} not found')
             return json.dumps({'status': '404', 'status_msg': 'User not found'})
         
         logging.info(f'User: {username} found with User_ID: {target_user_id}')
-        device = session.query(Device).filter_by(user_id=target_user_id, name=device_name).first()
+        device = session.query(Device).filter_by(user_id=target_user_id, name=device_name).first() # 🌸
         
         if not device:
             logging.info(f'Device: {device_name} not found for User: {username}')
             return json.dumps({'status': '404', 'status_msg': 'Device not found'})
         
-        device_mac_addr = device.mac_addr # gets devices mac addr
+        device_mac_addr = device.mac_addr # gets devices mac addr # 🌸
         logging.info(f'Device: {device_name} found with Mac_addr: {device_mac_addr}')
 
         if username not in ip_map["users"]:
@@ -254,10 +261,15 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
         if status == '400' or status == '404': # if request fails
             logging.info(f'Authorisation failed for {username} with ip: {ip}')
             # adds to invites.json
-            if username not in invites["folders"]: # first check if the user is in the invites file
-                invites["folders"][username] = {} # if not, add them
-            invites["folders"][username][folder_id] = {'folder_label': folder_label, 'host': } # TODO ADD THE HOST WHO IS SENDING INVITE!
-            
+            logging.info(f'invites.json BEFORE adding: {invites}')
+            if username not in invites["folders"]: # first check if the user is in the invites file 🌸
+                invites["folders"][username] = {} # 🌸
+                invites["folders"][username][device_mac_addr] = [] # if not, add them 🌸
+            elif device_mac_addr not in invites["folders"][username]: # then check if the device is in the invites file 🌸
+                invites["folders"][username][device_mac_addr] = [] # if not, add it 🌸
+
+            invites["folders"][username][device_mac_addr].append([folder_label, folder_id, hostname])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
+            logging.info(f'invites.json AFTER adding: {invites}')
             with open(invites_file, "w") as file:
                 json.dump(invites, file, indent=2)
          # everytime user logs in, check if they are in the invites file!!
@@ -304,26 +316,7 @@ def validate_directory(directory): # NOTE need this for checking if directory is
     else:
         logging.info(f"Invalid directory format: {directory}")
         return '400'
-    
-ip_file = "ip_map.json"
-if os.path.exists(ip_file):
-    with open(ip_file, "r") as file: # Load data from the file if it exists
-        ip_map = json.load(file)
-else:
-    ip_map = {
-        "users": {}
-    } # NOTE: it dont create the file just yet, create the varible. 
-    # when stuff is being added to the varible, the file will be created then.
 
-invites_file = "invites.json"
-if os.path.exists(invites_file):
-    with open(invites_file, "r") as file: # Load data from the file if it exists
-        invites = json.load(file)
-else:
-    invites = {
-        "folders": {},
-        "groups": {}
-    }
                                                                                                                                                                                                                                                                                                                                    
 def track_ip(user, mac_addr, ip): # DONE if user logs in with differnet ip from same device! it should update it.
     if user not in ip_map["users"]:
@@ -338,8 +331,20 @@ def track_ip(user, mac_addr, ip): # DONE if user logs in with differnet ip from 
     return json.dumps({'status': '200', 'status_msg': 'IP updated successfully'})
         
 
-def alert(): # TODO make it send back any unanswered invites to the user
-    pass
+def alert(user, mac_addr): # TODO make it send back any unanswered invites to the user
+    alerts = []
+    if user in invites["folders"]:
+        if mac_addr in invites["folders"][user]:
+            for invite in invites["folders"][user][mac_addr]:
+                alerts.append(invite)
+    if user in invites["groups"]:
+        if mac_addr in invites["groups"][user]:
+            for invite in invites["groups"][user][mac_addr]:
+                alerts.append(invite)
+    logging.info(f'sending alerts to {user} with mac_addr {mac_addr}: {alerts}')
+    return alerts
+
+
 ########## SOCKETS ###############################
 def send(message, ip, port):
     logging.info(f'Sending: {message} to {ip} on port {port}')
@@ -383,15 +388,19 @@ def handle_client_message(message):
         user = client_data['user']
         mac_addr = client_data['mac_addr']
         logging.info(f'Recieved tracking info from {user} with ip_addr {ip_addr} and mac_addr {mac_addr}')
-        status = track_ip(user, mac_addr, ip_addr) # ok we track them. but we should also respond back with any notifications/updates.
-        '''
+        response = json.loads(track_ip(user, mac_addr, ip_addr)) # ok we track them. but we should also respond back with any notifications/updates.    
+        '''w
             issue may arise when a user1 tries to invite another user2 device which user2 has not yet registered.
             ACTUALLY, it will not happen, since user1 can only invite anyone else whose device is registered!
             the server only sends back registered device to user1!
         '''
-        alerts = alert()
-        # TODO send alerts
-        clientsocket.send(str(status).encode('utf-8'))
+        # 😋 data is {'status': '200', 'status_msg': 'IP updated successfully'}
+        alerts = alert(user, mac_addr)
+        response['data'] = alerts
+        response = json.dumps(response)
+        # 😋 data is {'status': '200', 'status_msg': 'IP updated successfully', 'alerts': []}
+        logging.info(f'Sending tracking results + alerts: {response}')
+        clientsocket.send(str(response).encode('utf-8'))
 
     elif action == 'login':
         l_user = client_data['l_user']
@@ -462,6 +471,27 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind((ip, 8000))
 s.listen(10)
+
+
+ip_file = "ip_map.json"
+if os.path.exists(ip_file):
+    with open(ip_file, "r") as file: # Load data from the file if it exists
+        ip_map = json.load(file)
+else:
+    ip_map = {
+        "users": {}
+    } # NOTE: it dont create the file just yet, create the varible. 
+    # when stuff is being added to the varible, the file will be created then.
+
+invites_file = "invites.json"
+if os.path.exists(invites_file):
+    with open(invites_file, "r") as file: # Load data from the file if it exists
+        invites = json.load(file)
+else:
+    invites = {
+        "folders": {},
+        "groups": {}
+    }
 
 while True:
     clientsocket, address = s.accept() # if client does s.connect((server_name, 8000))
