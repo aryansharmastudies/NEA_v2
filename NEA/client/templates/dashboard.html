@@ -45,14 +45,32 @@ when we finish exe code.-->
     });
 </script>
 -->
-<div id="alertBox" style="background: yellow; padding: 10px; border: 1px solid black;">
+
+
+<!--
+<script>
+    var socket = io();
+
+    socket.on('connect', function() {
+        console.log("Connected to WebSocket");
+    });
+
+    socket.on('alerts', function(data) {
+        console.log("Received alerts:", data);
+        document.getElementById('alertBox').innerText = data;
+    });
+</script> 
+
+-->
+
+<div id="alert_box" style="background: yellow; padding: 10px; border: 1px solid black;">
     Waiting for updates...
 </div>
 
-<h2 id="msg">placeholder</h2>
+<!--
+<p id="text">Waiting for alerts...</p>
 <button id="btn" onclick="changemsg()">change placeholder</button>
-
-
+-->
 
 <h2>dashboard</h2>
 <p>Welcome {{user}}</p>

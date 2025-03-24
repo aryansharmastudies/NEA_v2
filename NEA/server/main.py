@@ -332,11 +332,16 @@ def track_ip(user, mac_addr, ip): # DONE if user logs in with differnet ip from 
         
 
 def alert(user, mac_addr): # TODO make it send back any unanswered invites to the user
+    user = str(user)
+    mac_addr = str(mac_addr)
+    logging.info(f'building alerts for {user} with mac_addr {mac_addr}')
     alerts = []
     if user in invites["folders"]:
         if mac_addr in invites["folders"][user]:
             for invite in invites["folders"][user][mac_addr]:
+                logging.info(f'user\'s invite: {invite}')
                 alerts.append(invite)
+                logging.info(f'building alerts: {alerts}')
     if user in invites["groups"]:
         if mac_addr in invites["groups"][user]:
             for invite in invites["groups"][user][mac_addr]:
@@ -467,12 +472,6 @@ def handle_client_message(message):
     
 
 # SERVER LOOP
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-s.bind((ip, 8000))
-s.listen(10)
-
-
 ip_file = "ip_map.json"
 if os.path.exists(ip_file):
     with open(ip_file, "r") as file: # Load data from the file if it exists
@@ -492,6 +491,12 @@ else:
         "folders": {},
         "groups": {}
     }
+logging.info(f'INITIALISING invites: {invites}')
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+s.bind((ip, 8000))
+s.listen(10)
 
 while True:
     clientsocket, address = s.accept() # if client does s.connect((server_name, 8000))

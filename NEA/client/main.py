@@ -47,22 +47,28 @@ class servers(db.Model):
 socketio = SocketIO(app)
 
 # NOTE: alerts will be in the form [['folder_label','id','host'],[...],[...]]
-@socketio.on('echo_alerts')
-def echo_alerts(alerts):
-    emit('alerts', alerts) # ❓
 
-def echo_alerts_v2(alerts):
-    socketio.emit('alerts', alerts) # ❓
+# @socketio.on('echo_alerts')
+# def echo_alerts(alerts):
+#     emit('alerts', alerts) # ❓
 
-@socketio.on('change message')
-def change_message(json):
-    print('recieved json: ' + str(json))
-    emit('message', json, broadcast=True)
+# def echo_alerts_v2(alerts):
+#     socketio.emit('alerts', alerts) # ❓
 
-@socketio.on('my event')
-def handle_my_custom_event(json):
-    print('received json: ' + str(json))
+# @socketio.on('change message')
+# def change_message(json):
+#     print('recieved json: ' + str(json))
+#     emit('message', json, broadcast=True)
 
+# @socketio.on('my event')
+# def handle_my_custom_event(json):
+#     print('received json: ' + str(json))
+
+@socketio.on('connect')
+def handle_connect():
+    logging.info(f'connected to frontend!')
+    socketio.emit('alerts', session['alerts']) # ⭐
+    logging.info(f'sending alerts to frontend!: {session["alerts"]}')
 ########## WEBSITE ##############################
 @app.route('/pair', methods=['POST','GET'])
 def pair():
@@ -245,9 +251,10 @@ def dashboard():
         ip_tracking_data = json.dumps({'action': 'track', 'ip_addr':ip, 'user':session['user'], 'mac_addr':mac_addr}) # dont matter if user's registerd device.
         logging.info(f'tracking_data sent: {ip_tracking_data}')
         status, status_msg, data = send(ip_tracking_data)        
-        logging.info(f'sending alerts to frontend!: {data}')
+        session['alerts'] = data
+        logging.info(f'storing alerts to sessions!: {data}')
 
-        socketio.emit('alerts', data) #⭐
+        # socketio.emit('alerts', data) #⭐
         # echo_alerts(data) #⭐
         # socketio.emit('message', 'new notification!!!', broadcast=True)
         # change_message('new notification!!!')
@@ -341,12 +348,21 @@ def submit_folder():
 def send(json_data): # 🛫
         logging.info(f'sending data to server: {json_data}')
         try: 
+            logging.info(f'trying to connect to server: {session["server_name"]} on port 8000')
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((session['server_name'], 8000))
         except: 
             logging.info(f'503 Server Offline')
             flash(f'Server inactive, please retry!', 'info')
-            return '503', 'server offline', False  
+            
+            action = json.loads(json_data)['action']
+            if action in ['login', 'register_user', 'add_device', 'add_folder']:
+                return '503', 'server offline'
+            elif action in ['track']:
+                return '503', 'server offline', False
+            elif action in ['request']:
+                return False
+            
         s.send(json_data.encode('utf-8')) # sending data to server 📨
         json_response = s.recv(1024).decode('utf-8') # server's response back 📩 # TODO recieves 1024 bits, add buffering feature !!
         logging.info(f'server response: {json_response}, type: {type(json_response)}')
@@ -399,6 +415,8 @@ def send(json_data): # 🛫
         elif action in ['request']:
             return data
             
+
+
 
 ########## HANDLE SERVER MESSAGE ################
 
@@ -462,7 +480,13 @@ def get_random_id():
 def run_flask():
     """Function to run the Flask server using run_simple."""
     print("Running Flask server...")
-    run_simple("0.0.0.0", 5000, app, use_reloader=False)
+    run_simple("0.0.0.0", 1234, app, use_reloader=False)
+
+def run_socketio():
+    """Function to run the Flask-SocketIO server."""
+    print("Running SocketIO server...")
+    socketio.run(app)
+
 
 if __name__ == "__main__":
     log()  # Start the logging system
@@ -487,8 +511,10 @@ if __name__ == "__main__":
     flask_thread = threading.Thread(target=run_flask, daemon=True)
     flask_thread.start()
 
-    print("Running SocketIO server...")
-    socketio.run(app)
-    # app.run(debug=True)
+    # socketio_thread = threading.Thread(target=run_socketio, daemon=True)
+    # socketio_thread.start()
 
-    #app.test_request_context
+    # socket = threading.Thread(target=socketio.run, args=(app,))
+    # socket.start()
+
+    socketio.run(app)

@@ -9693,3 +9693,771 @@
 2025-03-22 20:50:15 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
 2025-03-22 20:50:15 INFO sending alerts to anjali with mac_addr 4943750935229: []
 2025-03-22 20:50:15 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-03-22 20:57:12 INFO Connection from ('192.168.1.221', 58110) has been established!
+2025-03-22 20:57:12 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-22 20:57:12 INFO Received ping from 192.168.1.221
+2025-03-22 20:57:12 INFO Pong sent to 192.168.1.221
+2025-03-22 20:57:16 INFO Connection from ('192.168.1.221', 58116) has been established!
+2025-03-22 20:57:16 INFO message: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-22 20:57:16 INFO User: anjali has logged in
+2025-03-22 20:57:16 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-22 20:57:16 INFO Connection from ('192.168.1.221', 58118) has been established!
+2025-03-22 20:57:16 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 20:57:16 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 20:57:16 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 20:57:16 INFO sending alerts to anjali with mac_addr 167132875827157: []
+2025-03-22 20:57:16 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-03-22 21:01:54 INFO Connection from ('192.168.1.221', 59570) has been established!
+2025-03-22 21:01:54 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:01:54 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:01:54 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:01:54 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:01:54 INFO sending alerts to anjali with mac_addr 167132875827157: []
+2025-03-22 21:01:54 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-03-22 21:04:07 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-22 21:04:10 INFO Connection from ('192.168.1.221', 50652) has been established!
+2025-03-22 21:04:10 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:04:10 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:04:10 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:04:10 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:04:10 INFO sending alerts to anjali with mac_addr 167132875827157: []
+2025-03-22 21:04:10 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-03-22 21:05:15 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-22 21:05:16 INFO Connection from ('192.168.1.221', 45208) has been established!
+2025-03-22 21:05:16 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:05:16 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:05:16 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:05:16 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:05:16 INFO sending alerts to anjali with mac_addr 167132875827157: []
+2025-03-22 21:05:16 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-03-22 21:08:56 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-22 21:08:58 INFO Connection from ('192.168.1.221', 41244) has been established!
+2025-03-22 21:08:58 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:08:58 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:08:58 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:08:58 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:09:47 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-22 21:09:49 INFO Connection from ('192.168.1.221', 60114) has been established!
+2025-03-22 21:09:49 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:09:49 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:09:49 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:09:49 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:09:49 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:09:49 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:09:49 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:09:49 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:09:49 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:09:49 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:09:49 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:09:49 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:09:49 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:09:49 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:09:49 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:09:49 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:09:52 INFO Connection from ('192.168.1.221', 39250) has been established!
+2025-03-22 21:09:52 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:09:52 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:09:52 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:09:52 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:09:52 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:09:52 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:09:52 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:09:52 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:09:52 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:09:52 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:09:52 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:09:52 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:09:52 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:09:52 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:09:52 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:09:52 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:10:39 INFO Connection from ('192.168.1.221', 47606) has been established!
+2025-03-22 21:10:39 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:10:39 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:10:39 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:10:39 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:10:39 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:10:39 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:10:39 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:10:39 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:10:39 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:10:39 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:10:39 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:10:39 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:10:39 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:10:39 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:10:39 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:10:39 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:11:50 INFO Connection from ('192.168.1.221', 55604) has been established!
+2025-03-22 21:11:50 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:11:50 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:11:50 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:11:50 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:11:50 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:11:50 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:11:50 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:11:50 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:11:50 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:11:50 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:11:50 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:11:50 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:11:50 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:11:50 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:11:50 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:11:50 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:12:34 INFO Connection from ('192.168.1.221', 39192) has been established!
+2025-03-22 21:12:34 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:12:34 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:12:34 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:12:34 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:12:34 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:12:34 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:12:34 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:12:34 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:12:34 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:12:34 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:12:34 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:12:34 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:12:34 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:12:34 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:12:34 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:12:34 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:25:01 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-22 21:25:03 INFO Connection from ('192.168.1.221', 56048) has been established!
+2025-03-22 21:25:03 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:25:03 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:25:03 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:25:03 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:25:03 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:25:03 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:25:03 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:25:03 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:25:03 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:25:03 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:25:03 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:25:03 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:25:03 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:25:03 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:25:03 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:25:03 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:30:06 INFO Connection from ('192.168.1.221', 47592) has been established!
+2025-03-22 21:30:06 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:30:06 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:30:06 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:30:06 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:30:06 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:30:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:30:06 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:30:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:30:06 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:30:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:30:06 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:30:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:30:06 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:30:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:30:06 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:30:06 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:31:22 INFO Connection from ('192.168.1.221', 34432) has been established!
+2025-03-22 21:31:22 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:31:22 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:31:22 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:31:22 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:31:22 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:31:22 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:31:22 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:31:22 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:31:22 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:31:22 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:31:22 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:31:22 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:31:22 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:31:22 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:31:22 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:31:22 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:32:06 INFO Connection from ('192.168.1.221', 40070) has been established!
+2025-03-22 21:32:06 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:32:06 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:32:06 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:32:06 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:32:06 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:32:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:32:06 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:32:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:32:06 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:32:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:32:06 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:32:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:32:06 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:32:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:32:06 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:32:06 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:33:11 INFO Connection from ('192.168.1.221', 58960) has been established!
+2025-03-22 21:33:11 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:33:11 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:33:11 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:33:11 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:33:11 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:33:11 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:33:11 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:33:11 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:33:11 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:33:11 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:33:11 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:33:11 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:33:11 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:33:11 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:33:11 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:33:11 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:34:32 INFO Connection from ('192.168.1.221', 45804) has been established!
+2025-03-22 21:34:32 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:34:32 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:34:32 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:34:32 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:34:32 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:34:32 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:34:32 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:34:32 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:34:32 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:34:32 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:34:32 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:34:32 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:34:32 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:34:32 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:34:32 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:34:32 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:36:38 INFO Connection from ('192.168.1.221', 36848) has been established!
+2025-03-22 21:36:38 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:36:38 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:36:38 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:36:38 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:36:38 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:36:38 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:36:38 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:36:38 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:36:38 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:36:38 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:36:38 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:36:38 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:36:38 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:36:38 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:36:38 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:36:38 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-22 21:37:19 INFO Connection from ('192.168.1.221', 58588) has been established!
+2025-03-22 21:37:19 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-22 21:37:19 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-22 21:37:19 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-22 21:37:19 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-22 21:37:19 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-22 21:37:19 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-22 21:37:19 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-22 21:37:19 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-22 21:37:19 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-22 21:37:19 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-22 21:37:19 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-22 21:37:19 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-22 21:37:19 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-22 21:37:19 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:37:19 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-22 21:37:19 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 11:31:09 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-23 11:32:04 INFO Connection from ('192.168.1.221', 39102) has been established!
+2025-03-23 11:32:04 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-23 11:32:04 INFO Received ping from 192.168.1.221
+2025-03-23 11:32:04 INFO Pong sent to 192.168.1.221
+2025-03-23 11:32:11 INFO Connection from ('192.168.1.221', 60468) has been established!
+2025-03-23 11:32:12 INFO message: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-23 11:32:12 INFO User: anjali has logged in
+2025-03-23 11:32:12 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-23 11:32:12 INFO Connection from ('192.168.1.221', 60474) has been established!
+2025-03-23 11:32:12 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 11:32:12 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 11:32:12 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 11:32:12 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 11:32:12 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 11:32:12 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 11:32:12 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 11:32:12 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 11:32:12 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 11:32:12 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 11:32:12 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 11:32:12 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 11:32:12 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 11:32:12 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 11:32:12 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 11:32:12 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 11:34:06 INFO Connection from ('192.168.1.221', 55788) has been established!
+2025-03-23 11:34:06 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 11:34:06 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 11:34:06 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 11:34:06 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 11:34:06 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 11:34:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 11:34:06 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 11:34:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 11:34:06 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 11:34:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 11:34:06 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 11:34:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 11:34:06 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 11:34:06 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 11:34:06 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 11:34:06 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 11:37:40 INFO Connection from ('192.168.1.221', 53326) has been established!
+2025-03-23 11:37:40 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 11:37:40 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 11:37:40 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 11:37:40 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 11:37:40 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 11:37:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 11:37:40 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 11:37:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 11:37:40 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 11:37:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 11:37:40 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 11:37:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 11:37:40 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 11:37:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 11:37:40 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 11:37:40 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 11:37:45 INFO Connection from ('192.168.1.221', 53342) has been established!
+2025-03-23 11:37:45 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 11:37:45 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 11:37:45 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 11:37:45 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 11:37:45 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 11:37:45 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 11:37:45 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 11:37:45 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 11:37:45 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 11:37:45 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 11:37:45 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 11:37:45 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 11:37:45 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 11:37:45 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 11:37:45 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 11:37:45 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 11:37:53 INFO Connection from ('192.168.1.221', 48642) has been established!
+2025-03-23 11:37:53 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 11:37:53 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 11:37:53 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 11:37:53 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 11:37:53 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 11:37:53 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 11:37:53 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 11:37:53 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 11:37:53 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 11:37:53 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 11:37:53 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 11:37:53 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 11:37:53 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 11:37:53 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 11:37:53 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 11:37:53 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 11:56:11 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-23 12:06:12 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-23 12:21:22 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-23 12:22:35 INFO Connection from ('192.168.1.221', 54654) has been established!
+2025-03-23 12:22:35 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:22:35 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:22:35 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:22:35 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:22:35 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:22:35 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:22:35 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:22:35 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:22:35 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:22:35 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:22:35 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:22:35 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:22:35 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:22:35 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:22:35 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:22:35 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:23:10 INFO Connection from ('192.168.1.221', 50598) has been established!
+2025-03-23 12:23:10 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:23:10 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:23:10 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:23:10 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:23:10 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:23:10 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:23:10 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:23:10 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:23:10 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:23:10 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:23:10 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:23:10 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:23:10 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:23:10 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:23:10 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:23:10 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:25:21 INFO Connection from ('192.168.1.221', 52022) has been established!
+2025-03-23 12:25:21 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:25:21 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:25:21 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:25:21 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:25:21 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:25:21 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:25:21 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:25:21 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:25:21 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:25:21 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:25:21 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:25:21 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:25:21 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:25:21 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:25:21 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:25:21 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:25:22 INFO Connection from ('192.168.1.221', 52028) has been established!
+2025-03-23 12:25:22 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:25:22 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:25:22 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:25:22 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:25:22 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:25:22 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:25:22 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:25:22 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:25:22 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:25:22 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:25:22 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:25:22 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:25:22 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:25:22 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:25:22 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:25:22 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:25:48 INFO Connection from ('192.168.1.221', 54172) has been established!
+2025-03-23 12:25:48 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:25:48 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:25:48 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:25:48 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:25:48 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:25:48 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:25:48 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:25:48 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:25:48 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:25:48 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:25:48 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:25:48 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:25:48 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:25:48 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:25:48 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:25:48 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:26:05 INFO Connection from ('192.168.1.221', 51704) has been established!
+2025-03-23 12:26:05 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:26:05 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:26:05 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:26:05 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:26:05 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:26:05 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:26:05 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:26:05 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:26:05 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:26:05 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:26:05 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:26:05 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:26:05 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:26:05 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:26:05 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:26:05 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:27:33 INFO Connection from ('192.168.1.221', 39966) has been established!
+2025-03-23 12:27:33 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:27:33 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:27:33 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:27:33 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:27:33 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:27:33 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:27:33 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:27:33 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:27:33 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:27:33 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:27:33 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:27:33 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:27:33 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:27:33 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:27:33 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:27:33 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:28:56 INFO Connection from ('192.168.1.221', 53846) has been established!
+2025-03-23 12:28:56 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:28:56 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:28:56 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:28:56 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:28:56 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:28:56 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:28:56 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:28:56 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:28:56 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:28:56 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:28:56 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:28:56 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:28:56 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:28:56 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:28:56 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:28:56 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:29:32 INFO Connection from ('192.168.1.221', 39466) has been established!
+2025-03-23 12:29:32 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:29:32 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:29:32 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:29:32 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:29:32 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:29:32 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:29:32 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:29:32 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:29:32 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:29:32 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:29:32 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:29:32 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:29:32 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:29:32 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:29:32 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:29:32 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:33:55 INFO Connection from ('192.168.1.221', 33364) has been established!
+2025-03-23 12:33:55 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:33:55 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:33:55 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:33:55 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:33:55 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:33:55 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:33:55 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:33:55 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:33:55 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:33:55 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:33:55 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:33:55 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:33:55 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:33:55 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:33:55 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:33:55 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:35:40 INFO Connection from ('192.168.1.221', 44534) has been established!
+2025-03-23 12:35:40 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:35:40 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:35:40 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:35:40 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:35:40 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:35:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:35:40 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:35:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:35:40 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:35:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:35:40 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:35:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:35:40 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:35:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:35:40 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:35:40 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 12:36:38 INFO Connection from ('192.168.1.221', 39354) has been established!
+2025-03-23 12:36:38 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 12:36:38 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 12:36:38 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 12:36:38 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 12:36:38 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 12:36:38 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 12:36:38 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 12:36:38 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 12:36:38 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 12:36:38 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 12:36:38 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 12:36:38 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 12:36:38 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 12:36:38 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:36:38 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 12:36:38 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 18:02:47 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-23 18:03:34 INFO Connection from ('192.168.1.221', 35590) has been established!
+2025-03-23 18:03:34 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-03-23 18:03:34 INFO Received ping from 192.168.1.221
+2025-03-23 18:03:34 INFO Pong sent to 192.168.1.221
+2025-03-23 18:03:37 INFO Connection from ('192.168.1.221', 35602) has been established!
+2025-03-23 18:03:37 INFO message: {"action": "login", "l_user": "admin", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-03-23 18:03:37 INFO User: admin not found
+2025-03-23 18:03:37 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-03-23 18:03:41 INFO Connection from ('192.168.1.221', 35610) has been established!
+2025-03-23 18:03:41 INFO message: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-23 18:03:41 INFO User: anjali has logged in
+2025-03-23 18:03:41 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-23 18:03:41 INFO Connection from ('192.168.1.221', 35618) has been established!
+2025-03-23 18:03:41 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 18:03:41 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 18:03:41 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 18:03:41 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 18:03:41 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 18:03:41 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 18:03:41 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 18:03:41 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 18:03:41 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 18:03:41 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 18:03:41 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 18:03:41 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 18:03:41 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 18:03:41 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 18:03:41 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 18:03:41 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 21:46:55 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-03-23 21:47:02 INFO Connection from ('192.168.1.221', 47778) has been established!
+2025-03-23 21:47:02 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 21:47:02 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 21:47:02 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 21:47:02 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 21:47:02 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 21:47:02 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 21:47:02 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 21:47:02 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 21:47:02 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 21:47:02 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 21:47:02 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 21:47:02 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 21:47:02 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 21:47:02 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:47:02 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:47:02 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 21:48:00 INFO Connection from ('192.168.1.221', 55412) has been established!
+2025-03-23 21:48:00 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 21:48:00 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 21:48:00 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 21:48:00 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 21:48:00 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 21:48:00 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 21:48:00 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 21:48:00 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 21:48:00 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 21:48:00 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 21:48:00 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 21:48:00 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 21:48:00 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 21:48:00 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:48:00 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:48:00 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 21:48:35 INFO Connection from ('192.168.1.221', 45532) has been established!
+2025-03-23 21:48:35 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 21:48:35 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 21:48:35 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 21:48:35 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 21:48:35 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 21:48:35 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 21:48:35 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 21:48:35 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 21:48:35 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 21:48:35 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 21:48:35 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 21:48:35 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 21:48:35 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 21:48:35 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:48:35 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:48:35 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 21:49:24 INFO Connection from ('192.168.1.221', 38088) has been established!
+2025-03-23 21:49:24 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 21:49:24 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 21:49:24 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 21:49:24 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 21:49:24 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 21:49:24 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 21:49:24 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 21:49:24 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 21:49:24 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 21:49:24 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 21:49:24 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 21:49:24 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 21:49:24 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 21:49:24 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:49:24 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:49:24 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 21:51:14 INFO Connection from ('192.168.1.221', 45750) has been established!
+2025-03-23 21:51:14 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 21:51:14 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 21:51:14 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 21:51:14 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 21:51:14 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 21:51:14 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 21:51:14 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 21:51:14 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 21:51:14 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 21:51:14 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 21:51:14 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 21:51:14 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 21:51:14 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 21:51:14 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:51:14 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:51:14 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 21:51:50 INFO Connection from ('192.168.1.221', 37326) has been established!
+2025-03-23 21:51:50 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 21:51:50 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 21:51:50 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 21:51:50 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 21:51:50 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 21:51:50 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 21:51:50 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 21:51:50 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 21:51:50 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 21:51:50 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 21:51:50 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 21:51:50 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 21:51:50 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 21:51:50 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:51:50 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:51:50 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 21:52:40 INFO Connection from ('192.168.1.221', 59494) has been established!
+2025-03-23 21:52:40 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 21:52:40 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 21:52:40 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '10.195.171.63'}}}
+2025-03-23 21:52:40 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 21:52:40 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 21:52:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 21:52:40 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 21:52:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 21:52:40 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 21:52:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 21:52:40 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 21:52:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 21:52:40 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 21:52:40 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:52:40 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:52:40 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}
+2025-03-23 21:53:49 INFO Connection from ('192.168.1.221', 53194) has been established!
+2025-03-23 21:53:49 INFO message: {"action": "login", "l_user": "shravan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-23 21:53:49 INFO User: shravan has logged in
+2025-03-23 21:53:49 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-23 21:53:49 INFO Connection from ('192.168.1.221', 53202) has been established!
+2025-03-23 21:53:49 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "shravan", "mac_addr": 167132875827157}
+2025-03-23 21:53:49 INFO Recieved tracking info from shravan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 21:53:49 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '192.168.1.221'}}}
+2025-03-23 21:53:49 INFO building alerts for shravan with mac_addr 167132875827157
+2025-03-23 21:53:49 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 21:53:49 INFO building alerts: [['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 21:53:49 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 21:53:49 INFO building alerts: [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 21:53:49 INFO sending alerts to shravan with mac_addr 167132875827157: [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 21:53:49 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"]]}
+2025-03-23 21:54:01 INFO Connection from ('192.168.1.221', 52756) has been established!
+2025-03-23 21:54:01 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-23 21:54:01 INFO User: aryan has logged in
+2025-03-23 21:54:01 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-23 21:54:01 INFO Connection from ('192.168.1.221', 52762) has been established!
+2025-03-23 21:54:01 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "aryan", "mac_addr": 167132875827157}
+2025-03-23 21:54:01 INFO Recieved tracking info from aryan with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 21:54:01 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '192.168.1.221'}}}
+2025-03-23 21:54:01 INFO building alerts for aryan with mac_addr 167132875827157
+2025-03-23 21:54:01 INFO sending alerts to aryan with mac_addr 167132875827157: []
+2025-03-23 21:54:01 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-03-23 21:54:32 INFO Connection from ('192.168.1.221', 49274) has been established!
+2025-03-23 21:54:32 INFO message: {"action": "login", "l_user": "joel", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-03-23 21:54:32 INFO User: joel not found
+2025-03-23 21:54:32 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-03-23 21:54:39 INFO Connection from ('192.168.1.221', 45788) has been established!
+2025-03-23 21:54:39 INFO message: {"action": "login", "l_user": "anjali", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-03-23 21:54:39 INFO User: anjali has logged in
+2025-03-23 21:54:39 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-03-23 21:54:39 INFO Connection from ('192.168.1.221', 45794) has been established!
+2025-03-23 21:54:39 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "anjali", "mac_addr": 167132875827157}
+2025-03-23 21:54:39 INFO Recieved tracking info from anjali with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-03-23 21:54:39 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '192.168.1.221'}}}
+2025-03-23 21:54:39 INFO building alerts for anjali with mac_addr 167132875827157
+2025-03-23 21:54:39 INFO user's invite: ['COMEON', 'GIc07V9FAa', 'aryan']
+2025-03-23 21:54:39 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan']]
+2025-03-23 21:54:39 INFO user's invite: ['aye', 'EZGCUVpVys', 'aryan']
+2025-03-23 21:54:39 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan']]
+2025-03-23 21:54:39 INFO user's invite: ['feetpics', '1YYygSKiLc', 'aryan']
+2025-03-23 21:54:39 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]
+2025-03-23 21:54:39 INFO user's invite: ['sigma', 'iYsfe5z4zh', 'aryan']
+2025-03-23 21:54:39 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan']]
+2025-03-23 21:54:39 INFO user's invite: ['2025', 'UhjDUQsQG5', 'aryan']
+2025-03-23 21:54:39 INFO building alerts: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:54:39 INFO sending alerts to anjali with mac_addr 167132875827157: [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan']]
+2025-03-23 21:54:39 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["COMEON", "GIc07V9FAa", "aryan"], ["aye", "EZGCUVpVys", "aryan"], ["feetpics", "1YYygSKiLc", "aryan"], ["sigma", "iYsfe5z4zh", "aryan"], ["2025", "UhjDUQsQG5", "aryan"]]}

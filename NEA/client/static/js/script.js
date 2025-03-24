@@ -1,17 +1,16 @@
-
-
-const socket = io();
+var socket = io();
 socket.on('connect', function() {
-    socket.emit('my event', {data: 'I\'m connected!'}); // emit an event to the server
-});
+    console.log("Connected to WebSocket");
+}); 
 
 // listens up for 'alerts' messages from the backend
 socket.on('alerts', function(data) {
-    console.log("Received alert:", data); 
-
-    document.getElementById('alertBox').innerText = JSON.stringify(data);
+    var alerts_data = data // emit an event to the server
+    document.getElementById('alert_box').innerText = alerts_data;
 });
 
+
+/*
 function changemsg() {
     socket.emit('change message', {data: 'Request to changemsg!'}); // emit an event to the server
 }
@@ -21,7 +20,7 @@ socket.on('message', function(data) {
     const new_msg = data;
     document.getElementById('msg').innerText = new_msg;
 });
-
+*/
 
 // Register Device Modal
 const openDeviceBtn = document.getElementById('openModalDevice');

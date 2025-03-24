@@ -4,6 +4,8 @@ from flask_socketio import SocketIO
 from flask_socketio import send, emit
 from flask_socketio import join_room, leave_room
 
+import threading
+import time
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -48,7 +50,19 @@ def change_message():
     print('changing message')
     emit('message',x, broadcast=True)
 
-if __name__ == '__main__':
-    socketio.run(app)
+def some_function():
+    print('some function')
+    socketio.emit('message','hello')
 
+if __name__ == '__main__':
+
+    socket = threading.Thread(target=socketio.run, args=(app,))
+    socket.start()
+    print('running')
+
+    time.sleep(3)
+    # x = input('change message?')
+    # socketio.emit('message',x)
+    socketio.emit('message','hello')
+    print('ran')
     
