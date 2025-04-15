@@ -18,8 +18,7 @@ class MyEventHandler(FileSystemEventHandler):
     #    print(event)
 
     def on_moved(self, event):
-        print('🟣')
-        print(event)
+        print(f'🟣 {event}')
 
     def on_created(self, event):
         print(f'🟢 {event.src_path} has been {event.event_type}')
@@ -30,10 +29,8 @@ class MyEventHandler(FileSystemEventHandler):
         print(f'🟡 {event.src_path} has been {event.event_type}. Current size {stats.st_size} bytes')
         # print(f'File size: {stats.st_size} bytes')
         # print(f'Last modified: {time.ctime(stats.st_mtime)}')
-        
     def on_closed(self, event):
-        print('🔵')
-        print(event)
+        print(f'🔵 {event}')
 
 # filemovedevent = FileSystemEvent()
 
