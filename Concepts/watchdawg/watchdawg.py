@@ -18,19 +18,23 @@ class MyEventHandler(FileSystemEventHandler):
     #    print(event)
 
     def on_moved(self, event):
-        print(f'🟣 {event}')
+        
+        print(f'🟣 {event}') # 💥
 
     def on_created(self, event):
-        print(f'🟢 {event.src_path} has been {event.event_type}')
+        print(f'🟢 {event.src_path} has been {event.event_type}') # 💥
     def on_deleted(self, event):
-        print(f'🔴 {event.src_path} has been {event.event_type}')
+        print(f'🔴 {event.src_path} has been {event.event_type}') # 💥
     def on_modified(self, event):
         stats = os.stat(event.src_path)
-        print(f'🟡 {event.src_path} has been {event.event_type}. Current size {stats.st_size} bytes')
+        if event.is_directory == True:
+            pass
+        else:
+            print(f'🟡 {event.src_path} has been {event.event_type}. Current size {stats.st_size} bytes') # 💥
         # print(f'File size: {stats.st_size} bytes')
         # print(f'Last modified: {time.ctime(stats.st_mtime)}')
-    def on_closed(self, event):
-        print(f'🔵 {event}')
+    # def on_closed(self, event):
+        # print(f'🔵 {event}')
 
 # filemovedevent = FileSystemEvent()
 
