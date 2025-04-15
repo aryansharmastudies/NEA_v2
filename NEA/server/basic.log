@@ -10869,3 +10869,81 @@
 2025-04-13 14:58:52 INFO invites.json BEFORE adding: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan'], ['rotring', '7bFuC452ND', 'aryan'], ['rotring', '83hdJJd23h', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
 2025-04-13 14:58:52 INFO invites.json AFTER adding: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan'], ['rotring', '7bFuC452ND', 'aryan'], ['rotring', '83hdJJd23h', 'aryan'], ['rebirth', 'KydydMxyKE', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
 2025-04-13 14:58:52 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-04-15 17:25:35 INFO INITIALISING invites: {'folders': {'anjali': {'167132875827157': [['COMEON', 'GIc07V9FAa', 'aryan'], ['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan'], ['sigma', 'iYsfe5z4zh', 'aryan'], ['2025', 'UhjDUQsQG5', 'aryan'], ['rotring', '7bFuC452ND', 'aryan'], ['rotring', '83hdJJd23h', 'aryan'], ['rebirth', 'KydydMxyKE', 'aryan']]}, 'shravan': {'167132875827157': [['aye', 'EZGCUVpVys', 'aryan'], ['feetpics', '1YYygSKiLc', 'aryan']]}}, 'groups': {}}
+2025-04-15 17:25:52 INFO Connection from ('192.168.1.75', 40552) has been established!
+2025-04-15 17:25:52 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-04-15 17:25:52 INFO Received ping from 192.168.1.75
+2025-04-15 17:25:52 INFO Pong sent to 192.168.1.75
+2025-04-15 17:25:59 INFO Connection from ('192.168.1.75', 40564) has been established!
+2025-04-15 17:25:59 INFO message: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-15 17:25:59 INFO User: aryan has logged in
+2025-04-15 17:25:59 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-04-15 17:25:59 INFO Connection from ('192.168.1.75', 40578) has been established!
+2025-04-15 17:25:59 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-15 17:25:59 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-15 17:25:59 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75', '4681952839112': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '192.168.1.221'}}}
+2025-04-15 17:25:59 INFO building alerts for aryan with mac_addr 4681952839112
+2025-04-15 17:25:59 INFO sending alerts to aryan with mac_addr 4681952839112: []
+2025-04-15 17:25:59 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-15 17:26:09 INFO Connection from ('192.168.1.75', 33336) has been established!
+2025-04-15 17:26:09 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-15 17:26:09 INFO Data_Response Object is made
+2025-04-15 17:26:09 INFO scraped data to be returned!: {'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']], 'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh']]}
+2025-04-15 17:26:09 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ],
+      [
+        3,
+        "macbookpro"
+      ],
+      [
+        1,
+        "bruh"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ],
+      [
+        3,
+        "shravan"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-15 17:27:02 INFO Connection from ('192.168.1.75', 60142) has been established!
+2025-04-15 17:27:02 INFO message: {"action": "add_folder", "folder_label": "Linux", "folder_id": "kJW4Q2xKjN", "directory": "~/Desktop/linux", "shared_users": [], "folder_type": "sync_bothways", "mac_addr": 4681952839112}
+2025-04-15 17:27:02 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'Linux', 'folder_id': 'kJW4Q2xKjN', 'directory': '~/Desktop/linux', 'shared_users': [], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112}
+2025-04-15 17:27:02 INFO Unix format directory: ~/Desktop/linux
+2025-04-15 17:27:02 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-04-15 17:28:30 INFO Connection from ('192.168.1.75', 33230) has been established!
+2025-04-15 17:28:30 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-15 17:28:30 INFO Recieved tracking info from aryan with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-15 17:28:30 INFO ip_map: {'users': {'aryan': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75', '4681952839112': '192.168.1.75'}, 'anjali': {'167132875827157': '192.168.1.221', '4943750935229': '192.168.1.75'}, 'shravan': {'167132875827157': '192.168.1.221'}}}
+2025-04-15 17:28:30 INFO building alerts for aryan with mac_addr 4681952839112
+2025-04-15 17:28:30 INFO sending alerts to aryan with mac_addr 4681952839112: []
+2025-04-15 17:28:30 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}

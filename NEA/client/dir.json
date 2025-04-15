@@ -4,5 +4,11 @@
     "label": "rebirth",
     "type": "sync_bothways",
     "size": 0
+  },
+  "/home/osaka/Desktop/linux": {
+    "id": "kJW4Q2xKjN",
+    "label": "Linux",
+    "type": "sync_bothways",
+    "size": 0
   }
 }

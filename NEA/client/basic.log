@@ -26718,3 +26718,143 @@ KeyError: 'C:\\Users\\aryan/Desktop/COMEONNNNNNNNN'
 2025-04-13 14:58:57 INFO creating directory: C:\Users\aryan/Desktop/REBIRTH
 2025-04-13 14:58:57 INFO dir.json: {'C:\\Users\\aryan/Desktop/REBIRTH': {'id': 'KydydMxyKE', 'label': 'rebirth', 'type': 'sync_bothways', 'size': 0}}
 2025-04-13 14:58:57 INFO 127.0.0.1 - - [13/Apr/2025 14:58:57] "POST /submit_folder HTTP/1.1" 200 -
+2025-04-15 17:25:27 INFO binding to ip: 192.168.1.75
+2025-04-15 17:25:27 INFO Listening for incoming messages on port 6000...
+2025-04-15 17:25:27 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-15 17:25:27 INFO [33mPress CTRL+C to quit[0m
+2025-04-15 17:25:52 INFO server_name: 192.168.1.75
+2025-04-15 17:25:52 INFO ping sent: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-04-15 17:25:52 INFO status: pong
+2025-04-15 17:25:52 INFO found_server: <servers 192.168.1.75>
+2025-04-15 17:25:52 INFO 127.0.0.1 - - [15/Apr/2025 17:25:52] "[32mPOST /pair HTTP/1.1[0m" 302 -
+2025-04-15 17:25:52 INFO 127.0.0.1 - - [15/Apr/2025 17:25:52] "GET /login HTTP/1.1" 200 -
+2025-04-15 17:25:52 INFO 127.0.0.1 - - [15/Apr/2025 17:25:52] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-15 17:25:52 INFO 127.0.0.1 - - [15/Apr/2025 17:25:52] "GET /static/images/initial_d02.jpg HTTP/1.1" 200 -
+2025-04-15 17:25:52 INFO 127.0.0.1 - - [15/Apr/2025 17:25:52] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-15 17:25:59 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-04-15 17:25:59 INFO json_data: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-15 17:25:59 INFO sending data to server: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-15 17:25:59 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-15 17:25:59 INFO server response: {"status": "200", "status_msg": "Login successful"}, type: <class 'str'>
+2025-04-15 17:25:59 INFO server_data: {'status': '200', 'status_msg': 'Login successful'}
+2025-04-15 17:25:59 INFO status: 200
+2025-04-15 17:25:59 INFO status_msg: Login successful
+2025-04-15 17:25:59 INFO data: False
+2025-04-15 17:25:59 INFO status: 200 status_msg: Login successful data: False
+2025-04-15 17:25:59 INFO 200 : OK
+2025-04-15 17:25:59 INFO 127.0.0.1 - - [15/Apr/2025 17:25:59] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-15 17:25:59 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-15 17:25:59 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-15 17:25:59 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-15 17:25:59 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-15 17:25:59 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-15 17:25:59 INFO status: 200
+2025-04-15 17:25:59 INFO status_msg: IP updated successfully
+2025-04-15 17:25:59 INFO data: []
+2025-04-15 17:25:59 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-15 17:25:59 INFO 200 : OK
+2025-04-15 17:25:59 INFO storing alerts to sessions!: []
+2025-04-15 17:25:59 INFO 127.0.0.1 - - [15/Apr/2025 17:25:59] "GET /dashboard HTTP/1.1" 200 -
+2025-04-15 17:25:59 INFO 127.0.0.1 - - [15/Apr/2025 17:25:59] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-15 17:25:59 INFO 127.0.0.1 - - [15/Apr/2025 17:25:59] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-04-15 17:25:59 INFO 127.0.0.1 - - [15/Apr/2025 17:25:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-15 17:25:59 INFO 127.0.0.1 - - [15/Apr/2025 17:25:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-15 17:25:59 INFO 127.0.0.1 - - [15/Apr/2025 17:25:59] "GET /socket.io/?EIO=4&transport=polling&t=POwHP4r HTTP/1.1" 200 -
+2025-04-15 17:25:59 INFO connected to frontend!
+2025-04-15 17:25:59 INFO sending alerts to frontend!: []
+2025-04-15 17:25:59 INFO 127.0.0.1 - - [15/Apr/2025 17:25:59] "POST /socket.io/?EIO=4&transport=polling&t=POwHP52&sid=CaoN2ury2Dz03jV1AAAA HTTP/1.1" 200 -
+2025-04-15 17:25:59 INFO 127.0.0.1 - - [15/Apr/2025 17:25:59] "GET /socket.io/?EIO=4&transport=polling&t=POwHP53&sid=CaoN2ury2Dz03jV1AAAA HTTP/1.1" 200 -
+2025-04-15 17:26:09 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-15 17:26:09 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-15 17:26:09 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-15 17:26:09 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ],
+      [
+        3,
+        "macbookpro"
+      ],
+      [
+        1,
+        "bruh"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ],
+      [
+        3,
+        "shravan"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-15 17:26:09 INFO server_data: {'data': {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-15 17:26:09 INFO status: 200
+2025-04-15 17:26:09 INFO status_msg: unknown
+2025-04-15 17:26:09 INFO data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-15 17:26:09 INFO status: 200 status_msg: unknown data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-15 17:26:09 INFO 200 : OK
+2025-04-15 17:26:09 INFO Sending to frontend: {'aryan': ['MBP', 'bruh'], 'anjali': ['macbook_pro'], 'shravan': ['macbookpro']}
+2025-04-15 17:26:09 INFO 127.0.0.1 - - [15/Apr/2025 17:26:09] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-04-15 17:27:02 INFO DATA FROM ADDING FOLDER FORMS(front front end)!: {'action': 'add_folder', 'folder_label': 'Linux', 'folder_id': 'kJW4Q2xKjN', 'directory': '~/Desktop/linux', 'shared_users': [], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112}
+2025-04-15 17:27:02 INFO sending data to server: {"action": "add_folder", "folder_label": "Linux", "folder_id": "kJW4Q2xKjN", "directory": "~/Desktop/linux", "shared_users": [], "folder_type": "sync_bothways", "mac_addr": 4681952839112}
+2025-04-15 17:27:02 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-15 17:27:02 INFO server response: {"status": "201", "status_msg": "Folder added successfully"}, type: <class 'str'>
+2025-04-15 17:27:02 INFO server_data: {'status': '201', 'status_msg': 'Folder added successfully'}
+2025-04-15 17:27:02 INFO status: 201
+2025-04-15 17:27:02 INFO status_msg: Folder added successfully
+2025-04-15 17:27:02 INFO data: False
+2025-04-15 17:27:02 INFO status: 201 status_msg: Folder added successfully data: False
+2025-04-15 17:27:02 INFO 201 : Added
+2025-04-15 17:27:02 INFO submit_folder status: 201
+2025-04-15 17:27:02 INFO creating directory: /home/osaka/Desktop/linux
+2025-04-15 17:27:02 INFO dir.json: {'C:\\Users\\aryan/Desktop/REBIRTH': {'id': 'KydydMxyKE', 'label': 'rebirth', 'type': 'sync_bothways', 'size': 0}, '/home/osaka/Desktop/linux': {'id': 'kJW4Q2xKjN', 'label': 'Linux', 'type': 'sync_bothways', 'size': 0}}
+2025-04-15 17:27:02 INFO 127.0.0.1 - - [15/Apr/2025 17:27:02] "POST /submit_folder HTTP/1.1" 200 -
+2025-04-15 17:28:26 INFO 127.0.0.1 - - [15/Apr/2025 17:28:26] "GET /socket.io/?EIO=4&transport=websocket&sid=CaoN2ury2Dz03jV1AAAA HTTP/1.1" 200 -
+2025-04-15 17:28:30 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-15 17:28:30 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-15 17:28:30 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-15 17:28:30 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-15 17:28:30 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-15 17:28:30 INFO status: 200
+2025-04-15 17:28:30 INFO status_msg: IP updated successfully
+2025-04-15 17:28:30 INFO data: []
+2025-04-15 17:28:30 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-15 17:28:30 INFO 200 : OK
+2025-04-15 17:28:30 INFO storing alerts to sessions!: []
+2025-04-15 17:28:30 INFO 127.0.0.1 - - [15/Apr/2025 17:28:30] "GET /dashboard HTTP/1.1" 200 -
+2025-04-15 17:28:30 INFO 127.0.0.1 - - [15/Apr/2025 17:28:30] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-15 17:28:30 INFO 127.0.0.1 - - [15/Apr/2025 17:28:30] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-15 17:28:30 INFO 127.0.0.1 - - [15/Apr/2025 17:28:30] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-15 17:28:30 INFO 127.0.0.1 - - [15/Apr/2025 17:28:30] "GET /socket.io/?EIO=4&transport=polling&t=POwHzu- HTTP/1.1" 200 -
+2025-04-15 17:28:30 INFO connected to frontend!
+2025-04-15 17:28:30 INFO sending alerts to frontend!: []
+2025-04-15 17:28:30 INFO 127.0.0.1 - - [15/Apr/2025 17:28:30] "GET /socket.io/?EIO=4&transport=polling&t=POwHzv0.0&sid=xqEyYfRsyPFUr_ACAAAC HTTP/1.1" 200 -
+2025-04-15 17:28:30 INFO 127.0.0.1 - - [15/Apr/2025 17:28:30] "POST /socket.io/?EIO=4&transport=polling&t=POwHzv0&sid=xqEyYfRsyPFUr_ACAAAC HTTP/1.1" 200 -
+2025-04-15 17:28:35 INFO 127.0.0.1 - - [15/Apr/2025 17:28:35] "GET /socket.io/?EIO=4&transport=websocket&sid=xqEyYfRsyPFUr_ACAAAC HTTP/1.1" 200 -
