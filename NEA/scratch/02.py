@@ -1,2 +1,2 @@
-x = {'a':'aryan', 'j':'joel', 'k':'krishiv'}
-print([x[keys] for keys in x])
+x = {'action': 'add_folder', 'folder_label': 'rotring', 'folder_id': '83hdJJd23h', 'directory': '~/Desktop/ROTRING', 'shared_users': ['anjali:macbook_pro'], 'folder_type': 'sync_bothways', 'mac_addr': 4943750935229}
+print(x['action'])

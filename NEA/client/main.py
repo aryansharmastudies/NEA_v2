@@ -218,7 +218,7 @@ def dashboard():
                 flash(f"{status}: {status_msg}", 'error')
                 return redirect(url_for('dashboard'))        
         
-        elif action == 'add_folder':
+        elif action == 'add_folder': # 🔴 don't think this is in use.
             folder_label = request.form.get('folder_label')
             folder_id = request.form.get('folder_id')
             folder_path = request.form.get('folder_path')
@@ -332,17 +332,41 @@ def submit_folder():
     data = request.get_json()
     mac_addr = get_mac()
     data['mac_addr'] = mac_addr
-    logging.info(f'DATA FROM ADDING FOLDER FORMS!: {data}')
-
+    logging.info(f'DATA FROM ADDING FOLDER FORMS(front front end)!: {data}')
     data = json.dumps(data)
     status, status_msg = send(data)
     logging.info(f'submit_folder status: {status}')
     if status == '201':
     # Return a response
+        mkdir(json.loads(data))
         return jsonify({'status': 'success', 'message': 'Folder added successfully'})
     else: 
         return jsonify({'status': 'failure', 'message': 'Folder not added, please try again'})
 # 😳
+
+def mkdir(data):
+    folder_id = data['folder_id']
+    folder_label = data['folder_label']
+    folder_type = data['folder_type']
+    raw_dir = data['directory']
+    fmt_dir = os.path.expanduser(raw_dir)
+    logging.info(f'creating directory: {fmt_dir}')
+    os.makedirs(fmt_dir, exist_ok=True)
+
+    dirs[fmt_dir] = {}
+    dirs[fmt_dir]['id'] = folder_id
+    dirs[fmt_dir]['label'] = folder_label
+    dirs[fmt_dir]['type'] = folder_type
+    dirs[fmt_dir]['size'] = 0
+    logging.info(f'dir.json: {dirs}')
+
+    with open('dir.json', 'w') as file:
+        json.dump(dirs, file, indent=2)
+    
+    # {'C://Users/aryan/Desktop/rebirth': {
+    #    'id': 'x2su29dr3', 
+    #    'size': 123456,
+    #    'type': 'bothways'}
 
 ########## SEND #################################
 def send(json_data): # 🛫
@@ -372,7 +396,7 @@ def send(json_data): # 🛫
         
         status = server_data.get('status', '200')
         logging.info(f'status: {status}')
-        
+        2
         status_msg = server_data.get('status_msg', 'unknown')
         logging.info(f'status_msg: {status_msg}')
         
@@ -480,15 +504,25 @@ def get_random_id():
 def run_flask():
     """Function to run the Flask server using run_simple."""
     print("Running Flask server...")
-    run_simple("0.0.0.0", 1234, app, use_reloader=False)
+    run_simple("0.0.0.0", 5000, app, use_reloader=False)
 
 def run_socketio():
     """Function to run the Flask-SocketIO server."""
     print("Running SocketIO server...")
     socketio.run(app)
 
-
 if __name__ == "__main__":
+    dir_file = "dir.json"
+    if os.path.exists(dir_file):
+        with open(dir_file, "r") as file: # Load data from the file if it exists
+            dirs = json.load(file)
+    else:
+        dirs = {
+            # 'C://Users/aryan/Desktop/rebirth': {
+            #    'id': 'x2su29dr3', 
+            #    'size': 123456,
+            #    'type': 'bothways'
+        }
     log()  # Start the logging system
     active_session = {}
 
