@@ -19,6 +19,7 @@ import threading
 import time
 from watchdog.events import FileSystemEvent, FileSystemEventHandler
 from watchdog.observers import Observer
+import re
 ########## NOTES ################################
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
@@ -521,9 +522,29 @@ def run_socketio():
     print("Running SocketIO server...")
     socketio.run(app)
 #################################### WATCHDOG # 🐕 #####################################
+
+################################# regex ################################################
+
+TEMP_PATTERNS_REGEX = re.compile(
+    r"(^.*\.swp$|^.*\.tmp$|^\.goutputstream.*$|^~.*$|^.*\.bak$|^.*\.part$)"
+)
+
+def is_temp_file(filepath):
+    filename = os.path.basename(filepath)
+    return bool(TEMP_PATTERNS_REGEX.match(filename))
+
+################################# regex ################################################
+
 class MyEventHandler(FileSystemEventHandler):
     #def on_any_event(self, event: FileSystemEvent) -> None:
     #    print(event)
+
+    def dispatch(self, event):
+        if is_temp_file(event.src_path):
+            print(f'⚠️ Ignoring temporary file: {event.src_path}')
+            return  # ❌ You should return here to **stop** processing
+        return super().dispatch(event)  # ✅ This goes ahead **only if the file is not temporary**
+
 
     def on_moved(self, event):# 💥
         print(f'🟣 {event}')
@@ -535,15 +556,15 @@ class MyEventHandler(FileSystemEventHandler):
         print(f'🔴 {event.src_path} has been {event.event_type}') 
     
     def on_modified(self, event): # 💥
-        stats = os.stat(event.src_path)
         if event.is_directory == True:
             pass
         else:
+            stats = os.stat(event.src_path)  # Added to get file stats
             print(f'🟡 {event.src_path} has been {event.event_type}. Current size {stats.st_size} bytes') # 💥
             print(f'File size: {stats.st_size} bytes')  # Added to log file size
             print(f'Last modified: {time.ctime(stats.st_mtime)}')  # Added to log last modified time
-    # def on_closed(self, event):
-        # print(f'🔵 {event}')
+    def on_closed(self, event):
+        print(f'🔵 {event}')
 
 event_handler = MyEventHandler()
 observer = Observer()
@@ -565,7 +586,7 @@ def start_watchdog(dirs):
     with open('dir.json', 'w') as fp:
         json.dump(dirs, fp, indent=2)
     
-    logging.info(f'watchdog started!')
+    logging.info(f'🐕 watchdog started! 🐕')
     observer.start()
 
     try:

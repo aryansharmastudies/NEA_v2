@@ -29262,3 +29262,1649 @@ TypeError: 'bool' object is not subscriptable
 2025-04-16 14:18:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
 2025-04-16 14:18:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
 2025-04-16 14:18:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:25:23 INFO 127.0.0.1 - - [16/Apr/2025 14:25:23] "GET /socket.io/?EIO=4&transport=websocket&sid=1_A3PCy-sMiAGWteAAAO HTTP/1.1" 200 -
+2025-04-16 14:25:23 INFO <SecureCookieSession {'_permanent': True, 'alerts': [], 'server_name': '192.168.1.75', '_flashes': [('info', 'You have been logged out, anjali')]}>
+2025-04-16 14:25:23 INFO 127.0.0.1 - - [16/Apr/2025 14:25:23] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-16 14:25:23 INFO 127.0.0.1 - - [16/Apr/2025 14:25:23] "GET /login HTTP/1.1" 200 -
+2025-04-16 14:25:23 INFO 127.0.0.1 - - [16/Apr/2025 14:25:23] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-16 14:25:23 INFO 127.0.0.1 - - [16/Apr/2025 14:25:23] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:25:23 INFO 127.0.0.1 - - [16/Apr/2025 14:25:23] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-04-16 14:25:27 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-04-16 14:25:27 INFO json_data: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-16 14:25:27 INFO sending data to server: {"action": "login", "l_user": "aryan", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-16 14:25:27 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:25:27 INFO server response: {"status": "200", "status_msg": "Login successful"}, type: <class 'str'>
+2025-04-16 14:25:27 INFO server_data: {'status': '200', 'status_msg': 'Login successful'}
+2025-04-16 14:25:27 INFO status: 200
+2025-04-16 14:25:27 INFO status_msg: Login successful
+2025-04-16 14:25:27 INFO data: False
+2025-04-16 14:25:27 INFO status: 200 status_msg: Login successful data: False
+2025-04-16 14:25:27 INFO 200 : OK
+2025-04-16 14:25:27 INFO 127.0.0.1 - - [16/Apr/2025 14:25:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-16 14:25:27 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:25:27 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:25:27 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:25:27 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-16 14:25:27 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-16 14:25:27 INFO status: 200
+2025-04-16 14:25:27 INFO status_msg: IP updated successfully
+2025-04-16 14:25:27 INFO data: []
+2025-04-16 14:25:27 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-16 14:25:27 INFO 200 : OK
+2025-04-16 14:25:27 INFO storing alerts to sessions!: []
+2025-04-16 14:25:27 INFO 127.0.0.1 - - [16/Apr/2025 14:25:27] "GET /dashboard HTTP/1.1" 200 -
+2025-04-16 14:25:27 INFO 127.0.0.1 - - [16/Apr/2025 14:25:27] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:25:27 INFO 127.0.0.1 - - [16/Apr/2025 14:25:27] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-16 14:25:27 INFO 127.0.0.1 - - [16/Apr/2025 14:25:27] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-16 14:25:27 INFO 127.0.0.1 - - [16/Apr/2025 14:25:27] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:25:27 INFO 127.0.0.1 - - [16/Apr/2025 14:25:27] "GET /socket.io/?EIO=4&transport=polling&t=PO-ngH1 HTTP/1.1" 200 -
+2025-04-16 14:25:27 INFO connected to frontend!
+2025-04-16 14:25:27 INFO sending alerts to frontend!: []
+2025-04-16 14:25:27 INFO 127.0.0.1 - - [16/Apr/2025 14:25:27] "GET /socket.io/?EIO=4&transport=polling&t=PO-ngH9&sid=G0R3aHcqrORz0RzoAAAQ HTTP/1.1" 200 -
+2025-04-16 14:25:27 INFO 127.0.0.1 - - [16/Apr/2025 14:25:27] "POST /socket.io/?EIO=4&transport=polling&t=PO-ngH8&sid=G0R3aHcqrORz0RzoAAAQ HTTP/1.1" 200 -
+2025-04-16 14:25:27 INFO 127.0.0.1 - - [16/Apr/2025 14:25:27] "GET /socket.io/?EIO=4&transport=polling&t=PO-ngHF&sid=G0R3aHcqrORz0RzoAAAQ HTTP/1.1" 200 -
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "GET /socket.io/?EIO=4&transport=websocket&sid=G0R3aHcqrORz0RzoAAAQ HTTP/1.1" 200 -
+2025-04-16 14:25:35 INFO sending data to server: {"action": "add_device", "user": "aryan", "r_dev_name": "aryans-pc", "mac_addr": 4681952839112}
+2025-04-16 14:25:35 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:25:35 INFO server response: {"status": "201", "status_msg": "Device added successfully"}, type: <class 'str'>
+2025-04-16 14:25:35 INFO server_data: {'status': '201', 'status_msg': 'Device added successfully'}
+2025-04-16 14:25:35 INFO status: 201
+2025-04-16 14:25:35 INFO status_msg: Device added successfully
+2025-04-16 14:25:35 INFO data: False
+2025-04-16 14:25:35 INFO status: 201 status_msg: Device added successfully data: False
+2025-04-16 14:25:35 INFO 201 : Added
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "[32mPOST /dashboard HTTP/1.1[0m" 302 -
+2025-04-16 14:25:35 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:25:35 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:25:35 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:25:35 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-16 14:25:35 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-16 14:25:35 INFO status: 200
+2025-04-16 14:25:35 INFO status_msg: IP updated successfully
+2025-04-16 14:25:35 INFO data: []
+2025-04-16 14:25:35 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-16 14:25:35 INFO 200 : OK
+2025-04-16 14:25:35 INFO storing alerts to sessions!: []
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "GET /dashboard HTTP/1.1" 200 -
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "GET /socket.io/?EIO=4&transport=polling&t=PO-ni9T HTTP/1.1" 200 -
+2025-04-16 14:25:35 INFO connected to frontend!
+2025-04-16 14:25:35 INFO sending alerts to frontend!: []
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "GET /socket.io/?EIO=4&transport=polling&t=PO-ni9Z.0&sid=qejSOAGZ6Y4yJ1zsAAAS HTTP/1.1" 200 -
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "POST /socket.io/?EIO=4&transport=polling&t=PO-ni9Z&sid=qejSOAGZ6Y4yJ1zsAAAS HTTP/1.1" 200 -
+2025-04-16 14:25:35 INFO 127.0.0.1 - - [16/Apr/2025 14:25:35] "GET /socket.io/?EIO=4&transport=polling&t=PO-ni9i&sid=qejSOAGZ6Y4yJ1zsAAAS HTTP/1.1" 200 -
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "GET /socket.io/?EIO=4&transport=websocket&sid=qejSOAGZ6Y4yJ1zsAAAS HTTP/1.1" 200 -
+2025-04-16 14:25:40 INFO sending data to server: {"action": "add_device", "user": "aryan", "r_dev_name": "hmmm", "mac_addr": 4681952839112}
+2025-04-16 14:25:40 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:25:40 INFO server response: {"status": "409", "status_msg": "Device with this MAC address already exists"}, type: <class 'str'>
+2025-04-16 14:25:40 INFO server_data: {'status': '409', 'status_msg': 'Device with this MAC address already exists'}
+2025-04-16 14:25:40 INFO status: 409
+2025-04-16 14:25:40 INFO status_msg: Device with this MAC address already exists
+2025-04-16 14:25:40 INFO data: False
+2025-04-16 14:25:40 INFO status: 409 status_msg: Device with this MAC address already exists data: False
+2025-04-16 14:25:40 INFO 409 : Conflict
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "[32mPOST /dashboard HTTP/1.1[0m" 302 -
+2025-04-16 14:25:40 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:25:40 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:25:40 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:25:40 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-16 14:25:40 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-16 14:25:40 INFO status: 200
+2025-04-16 14:25:40 INFO status_msg: IP updated successfully
+2025-04-16 14:25:40 INFO data: []
+2025-04-16 14:25:40 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-16 14:25:40 INFO 200 : OK
+2025-04-16 14:25:40 INFO storing alerts to sessions!: []
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "GET /dashboard HTTP/1.1" 200 -
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "GET /socket.io/?EIO=4&transport=polling&t=PO-njPU HTTP/1.1" 200 -
+2025-04-16 14:25:40 INFO connected to frontend!
+2025-04-16 14:25:40 INFO sending alerts to frontend!: []
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "POST /socket.io/?EIO=4&transport=polling&t=PO-njPb&sid=Mbh3o5xG5CJ-vW9YAAAU HTTP/1.1" 200 -
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "GET /socket.io/?EIO=4&transport=polling&t=PO-njPb.0&sid=Mbh3o5xG5CJ-vW9YAAAU HTTP/1.1" 200 -
+2025-04-16 14:25:40 INFO 127.0.0.1 - - [16/Apr/2025 14:25:40] "GET /socket.io/?EIO=4&transport=polling&t=PO-njPi&sid=Mbh3o5xG5CJ-vW9YAAAU HTTP/1.1" 200 -
+2025-04-16 14:25:48 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-16 14:25:48 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-16 14:25:48 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:25:48 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ],
+      [
+        3,
+        "macbookpro"
+      ],
+      [
+        1,
+        "bruh"
+      ],
+      [
+        2,
+        "anj_pc"
+      ],
+      [
+        1,
+        "aryans-pc"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ],
+      [
+        3,
+        "shravan"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-16 14:25:48 INFO server_data: {'data': {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-16 14:25:48 INFO status: 200
+2025-04-16 14:25:48 INFO status_msg: unknown
+2025-04-16 14:25:48 INFO data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-16 14:25:48 INFO status: 200 status_msg: unknown data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-16 14:25:48 INFO 200 : OK
+2025-04-16 14:25:48 INFO Sending to frontend: {'aryan': ['MBP', 'bruh', 'aryans-pc'], 'anjali': ['macbook_pro', 'anj_pc'], 'shravan': ['macbookpro']}
+2025-04-16 14:25:48 INFO 127.0.0.1 - - [16/Apr/2025 14:25:48] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-04-16 14:25:56 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:25:56 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:25:56 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:25:56 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:26:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:26:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:26:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:26:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:26:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:26:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:26:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:26:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:26:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:26:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:26:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:26:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:26:16 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-16 14:26:16 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-16 14:26:16 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:26:16 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ],
+      [
+        3,
+        "macbookpro"
+      ],
+      [
+        1,
+        "bruh"
+      ],
+      [
+        2,
+        "anj_pc"
+      ],
+      [
+        1,
+        "aryans-pc"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ],
+      [
+        3,
+        "shravan"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-16 14:26:16 INFO server_data: {'data': {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-16 14:26:16 INFO status: 200
+2025-04-16 14:26:16 INFO status_msg: unknown
+2025-04-16 14:26:16 INFO data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-16 14:26:16 INFO status: 200 status_msg: unknown data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-16 14:26:16 INFO 200 : OK
+2025-04-16 14:26:16 INFO Sending to frontend: {'aryan': ['MBP', 'bruh', 'aryans-pc'], 'anjali': ['macbook_pro', 'anj_pc'], 'shravan': ['macbookpro']}
+2025-04-16 14:26:16 INFO 127.0.0.1 - - [16/Apr/2025 14:26:16] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-04-16 14:26:32 INFO DATA FROM ADDING FOLDER FORMS(front front end)!: {'action': 'add_folder', 'folder_label': 'rebirth', 'folder_id': 'LuozIEyEjm', 'directory': '~/Desktop/rebirth', 'shared_users': [], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112}
+2025-04-16 14:26:32 INFO sending data to server: {"action": "add_folder", "folder_label": "rebirth", "folder_id": "LuozIEyEjm", "directory": "~/Desktop/rebirth", "shared_users": [], "folder_type": "sync_bothways", "mac_addr": 4681952839112}
+2025-04-16 14:26:32 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:26:32 INFO server response: {"status": "201", "status_msg": "Folder added successfully"}, type: <class 'str'>
+2025-04-16 14:26:32 INFO server_data: {'status': '201', 'status_msg': 'Folder added successfully'}
+2025-04-16 14:26:32 INFO status: 201
+2025-04-16 14:26:32 INFO status_msg: Folder added successfully
+2025-04-16 14:26:32 INFO data: False
+2025-04-16 14:26:32 INFO status: 201 status_msg: Folder added successfully data: False
+2025-04-16 14:26:32 INFO 201 : Added
+2025-04-16 14:26:32 INFO submit_folder status: 201
+2025-04-16 14:26:32 INFO creating directory: /home/osaka/Desktop/rebirth
+2025-04-16 14:26:32 INFO dir.json: {'/home/osaka/Desktop/linux': {'id': 'ryNeOOVn1J', 'label': 'linux', 'type': 'sync_bothways', 'size': 0, 'status': 'NOT FOUND!'}, '/home/osaka/Desktop/Java': {'id': 'ZEzE3qEPFA', 'label': 'java', 'type': 'sync_bothways', 'size': 0, 'status': 'NOT FOUND!'}, '/home/osaka/Desktop/Arch': {'id': '1AgTRbvOLr', 'label': 'Arch', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/Uhm': {'id': 'BA0scRxLoo', 'label': 'Uh', 'type': 'sync_bothways', 'size': 0, 'status': 'NOT FOUND!'}, '/home/osaka/Desktop/LINUX': {'id': 'y45GjL7JYy', 'label': 'LINUX', 'type': 'sync_bothways', 'size': 0, 'status': 'NOT FOUND!'}, '/home/osaka/Desktop/IPHONE': {'id': 'h6azN7P8RE', 'label': 'IPHONE', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/Calculator/Bottle': {'id': 'xGW65dSjXO', 'label': 'Bottle', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/rebirth': {'id': 'LuozIEyEjm', 'label': 'rebirth', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}}
+2025-04-16 14:26:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:26:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:26:32 INFO added /home/osaka/Desktop/rebirth to watchdog!
+2025-04-16 14:26:32 INFO 127.0.0.1 - - [16/Apr/2025 14:26:32] "POST /submit_folder HTTP/1.1" 200 -
+2025-04-16 14:26:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:26:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:26:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:26:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-MWG042', wd=1, mask=IN_CREATE, cookie=0, name='.goutputstream-MWG042'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-MWG042', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-MWG042'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-MWG042', wd=1, mask=IN_ATTRIB, cookie=0, name='.goutputstream-MWG042'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-MWG042', wd=1, mask=IN_MODIFY, cookie=0, name='.goutputstream-MWG042'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-MWG042', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-MWG042'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-MWG042', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.goutputstream-MWG042'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-MWG042', wd=1, mask=IN_MOVED_FROM, cookie=9240, name='.goutputstream-MWG042'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_MOVED_TO, cookie=9240, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:26:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:26:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-Y9CX42', wd=1, mask=IN_CREATE, cookie=0, name='.goutputstream-Y9CX42'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-Y9CX42', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-Y9CX42'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-Y9CX42', wd=1, mask=IN_ATTRIB, cookie=0, name='.goutputstream-Y9CX42'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-Y9CX42', wd=1, mask=IN_MODIFY, cookie=0, name='.goutputstream-Y9CX42'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/.goutputstream-Y9CX42', wd=1, mask=IN_MOVED_FROM, cookie=9264, name='.goutputstream-Y9CX42'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_MOVED_TO, cookie=9264, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:27:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:29:48 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-16 14:29:48 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-16 14:29:48 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:29:48 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ],
+      [
+        3,
+        "macbookpro"
+      ],
+      [
+        1,
+        "bruh"
+      ],
+      [
+        2,
+        "anj_pc"
+      ],
+      [
+        1,
+        "aryans-pc"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ],
+      [
+        3,
+        "shravan"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-16 14:29:48 INFO server_data: {'data': {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-16 14:29:48 INFO status: 200
+2025-04-16 14:29:48 INFO status_msg: unknown
+2025-04-16 14:29:48 INFO data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-16 14:29:48 INFO status: 200 status_msg: unknown data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-16 14:29:48 INFO 200 : OK
+2025-04-16 14:29:48 INFO Sending to frontend: {'aryan': ['MBP', 'bruh', 'aryans-pc'], 'anjali': ['macbook_pro', 'anj_pc'], 'shravan': ['macbookpro']}
+2025-04-16 14:29:48 INFO 127.0.0.1 - - [16/Apr/2025 14:29:48] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-04-16 14:29:56 INFO 127.0.0.1 - - [16/Apr/2025 14:29:56] "GET /socket.io/?EIO=4&transport=websocket&sid=Mbh3o5xG5CJ-vW9YAAAU HTTP/1.1" 200 -
+2025-04-16 14:29:56 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:29:56 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:29:56 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:29:56 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-16 14:29:56 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-16 14:29:56 INFO status: 200
+2025-04-16 14:29:56 INFO status_msg: IP updated successfully
+2025-04-16 14:29:56 INFO data: []
+2025-04-16 14:29:56 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-16 14:29:56 INFO 200 : OK
+2025-04-16 14:29:56 INFO storing alerts to sessions!: []
+2025-04-16 14:29:56 INFO 127.0.0.1 - - [16/Apr/2025 14:29:56] "GET /dashboard HTTP/1.1" 200 -
+2025-04-16 14:29:56 INFO 127.0.0.1 - - [16/Apr/2025 14:29:56] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-16 14:29:56 INFO 127.0.0.1 - - [16/Apr/2025 14:29:56] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:29:56 INFO 127.0.0.1 - - [16/Apr/2025 14:29:56] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-16 14:29:56 INFO 127.0.0.1 - - [16/Apr/2025 14:29:56] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:29:56 INFO 127.0.0.1 - - [16/Apr/2025 14:29:56] "GET /socket.io/?EIO=4&transport=polling&t=PO-ohzB HTTP/1.1" 200 -
+2025-04-16 14:29:56 INFO connected to frontend!
+2025-04-16 14:29:56 INFO sending alerts to frontend!: []
+2025-04-16 14:29:56 INFO 127.0.0.1 - - [16/Apr/2025 14:29:56] "GET /socket.io/?EIO=4&transport=polling&t=PO-ohzI.0&sid=JTsON2XkHd-6FGizAAAW HTTP/1.1" 200 -
+2025-04-16 14:29:56 INFO 127.0.0.1 - - [16/Apr/2025 14:29:56] "POST /socket.io/?EIO=4&transport=polling&t=PO-ohzI&sid=JTsON2XkHd-6FGizAAAW HTTP/1.1" 200 -
+2025-04-16 14:29:56 INFO 127.0.0.1 - - [16/Apr/2025 14:29:56] "GET /socket.io/?EIO=4&transport=polling&t=PO-ohzO&sid=JTsON2XkHd-6FGizAAAW HTTP/1.1" 200 -
+2025-04-16 14:29:57 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-16 14:29:57 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-16 14:29:57 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:29:57 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ],
+      [
+        3,
+        "macbookpro"
+      ],
+      [
+        1,
+        "bruh"
+      ],
+      [
+        2,
+        "anj_pc"
+      ],
+      [
+        1,
+        "aryans-pc"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ],
+      [
+        3,
+        "shravan"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-16 14:29:57 INFO server_data: {'data': {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-16 14:29:57 INFO status: 200
+2025-04-16 14:29:57 INFO status_msg: unknown
+2025-04-16 14:29:57 INFO data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-16 14:29:57 INFO status: 200 status_msg: unknown data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-16 14:29:57 INFO 200 : OK
+2025-04-16 14:29:57 INFO Sending to frontend: {'aryan': ['MBP', 'bruh', 'aryans-pc'], 'anjali': ['macbook_pro', 'anj_pc'], 'shravan': ['macbookpro']}
+2025-04-16 14:29:57 INFO 127.0.0.1 - - [16/Apr/2025 14:29:57] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-04-16 14:30:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:30:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:30:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:30:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:30:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:30:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth/base.html', wd=1, mask=IN_MOVED_FROM, cookie=9340, name='base.html'>
+2025-04-16 14:30:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:30:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:30:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:30:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:40 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:30:40 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:30:40 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:30:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:59 INFO DATA FROM ADDING FOLDER FORMS(front front end)!: {'action': 'add_folder', 'folder_label': 'java', 'folder_id': 'YifklQeJxr', 'directory': '~/Desktop/Java', 'shared_users': [], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112}
+2025-04-16 14:30:59 INFO sending data to server: {"action": "add_folder", "folder_label": "java", "folder_id": "YifklQeJxr", "directory": "~/Desktop/Java", "shared_users": [], "folder_type": "sync_bothways", "mac_addr": 4681952839112}
+2025-04-16 14:30:59 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:30:59 INFO server response: {"status": "201", "status_msg": "Folder added successfully"}, type: <class 'str'>
+2025-04-16 14:30:59 INFO server_data: {'status': '201', 'status_msg': 'Folder added successfully'}
+2025-04-16 14:30:59 INFO status: 201
+2025-04-16 14:30:59 INFO status_msg: Folder added successfully
+2025-04-16 14:30:59 INFO data: False
+2025-04-16 14:30:59 INFO status: 201 status_msg: Folder added successfully data: False
+2025-04-16 14:30:59 INFO 201 : Added
+2025-04-16 14:30:59 INFO submit_folder status: 201
+2025-04-16 14:30:59 INFO creating directory: /home/osaka/Desktop/Java
+2025-04-16 14:30:59 INFO dir.json: {'/home/osaka/Desktop/linux': {'id': 'ryNeOOVn1J', 'label': 'linux', 'type': 'sync_bothways', 'size': 0, 'status': 'NOT FOUND!'}, '/home/osaka/Desktop/Java': {'id': 'YifklQeJxr', 'label': 'java', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/Arch': {'id': '1AgTRbvOLr', 'label': 'Arch', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/Uhm': {'id': 'BA0scRxLoo', 'label': 'Uh', 'type': 'sync_bothways', 'size': 0, 'status': 'NOT FOUND!'}, '/home/osaka/Desktop/LINUX': {'id': 'y45GjL7JYy', 'label': 'LINUX', 'type': 'sync_bothways', 'size': 0, 'status': 'NOT FOUND!'}, '/home/osaka/Desktop/IPHONE': {'id': 'h6azN7P8RE', 'label': 'IPHONE', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/Calculator/Bottle': {'id': 'xGW65dSjXO', 'label': 'Bottle', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/rebirth': {'id': 'LuozIEyEjm', 'label': 'rebirth', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}}
+2025-04-16 14:30:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:30:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:30:59 INFO added /home/osaka/Desktop/Java to watchdog!
+2025-04-16 14:30:59 INFO 127.0.0.1 - - [16/Apr/2025 14:30:59] "POST /submit_folder HTTP/1.1" 200 -
+2025-04-16 14:31:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:31:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:31:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:31:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:31:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:31:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:31:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:27 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-629M42', wd=1, mask=IN_CREATE, cookie=0, name='.goutputstream-629M42'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-629M42', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-629M42'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-629M42', wd=1, mask=IN_ATTRIB, cookie=0, name='.goutputstream-629M42'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-629M42', wd=1, mask=IN_MODIFY, cookie=0, name='.goutputstream-629M42'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-629M42', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-629M42'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-629M42', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.goutputstream-629M42'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-629M42', wd=1, mask=IN_MOVED_FROM, cookie=9383, name='.goutputstream-629M42'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_MOVED_TO, cookie=9383, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:31:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:32:51 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CREATE, cookie=0, name='bruh.txt'>
+2025-04-16 14:32:51 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:32:51 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_ATTRIB, cookie=0, name='bruh.txt'>
+2025-04-16 14:32:51 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:32:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:32:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:33:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:55 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:33:55 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:33:55 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:33:55 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy).html'>
+2025-04-16 14:33:55 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy).html'>
+2025-04-16 14:33:55 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:33:55 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:33:55 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:33:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:33:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:33:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:33:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:33:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:34:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:34:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 14:34:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 14:34:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy).html'>
+2025-04-16 14:34:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy).html'>
+2025-04-16 14:34:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:34:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:34:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:34:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:34:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:34:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:34:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:34:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:34:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:34:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:34:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 14:34:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:34:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:35:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:35:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 14:35:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:35:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:35:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:35:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:35:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:35:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:35:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:35:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:07 INFO binding to ip: 192.168.1.75
+2025-04-16 14:37:07 INFO Listening for incoming messages on port 6000...
+2025-04-16 14:37:07 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 14:37:07 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 14:37:07 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 14:37:07 INFO watchdog started!
+2025-04-16 14:37:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:37:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:37:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:37:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:37:07 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 14:37:07 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 14:37:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:37:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:37:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:37:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:37:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:37:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:37:07 INFO 127.0.0.1 - - [16/Apr/2025 14:37:07] "GET /socket.io/?EIO=4&transport=polling&t=PO-qL8B HTTP/1.1" 200 -
+2025-04-16 14:37:07 INFO connected to frontend!
+2025-04-16 14:37:07 INFO sending alerts to frontend!: []
+2025-04-16 14:37:07 INFO 127.0.0.1 - - [16/Apr/2025 14:37:07] "POST /socket.io/?EIO=4&transport=polling&t=PO-qL8F&sid=vEIEvryzgxuNJyM6AAAA HTTP/1.1" 200 -
+2025-04-16 14:37:07 INFO 127.0.0.1 - - [16/Apr/2025 14:37:07] "GET /socket.io/?EIO=4&transport=polling&t=PO-qL8F.0&sid=vEIEvryzgxuNJyM6AAAA HTTP/1.1" 200 -
+2025-04-16 14:37:07 INFO 127.0.0.1 - - [16/Apr/2025 14:37:07] "GET /socket.io/?EIO=4&transport=polling&t=PO-qL8M&sid=vEIEvryzgxuNJyM6AAAA HTTP/1.1" 200 -
+2025-04-16 14:37:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:37:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:37:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 14:37:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 14:37:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 14:44:54 INFO 127.0.0.1 - - [16/Apr/2025 14:44:54] "GET /socket.io/?EIO=4&transport=websocket&sid=vEIEvryzgxuNJyM6AAAA HTTP/1.1" 200 -
+2025-04-16 14:44:54 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:44:54 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:44:54 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:44:54 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-16 14:44:54 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-16 14:44:54 INFO status: 200
+2025-04-16 14:44:54 INFO status_msg: IP updated successfully
+2025-04-16 14:44:54 INFO data: []
+2025-04-16 14:44:54 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-16 14:44:54 INFO 200 : OK
+2025-04-16 14:44:54 INFO storing alerts to sessions!: []
+2025-04-16 14:44:54 INFO 127.0.0.1 - - [16/Apr/2025 14:44:54] "GET /dashboard HTTP/1.1" 200 -
+2025-04-16 14:44:54 INFO 127.0.0.1 - - [16/Apr/2025 14:44:54] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-16 14:44:54 INFO 127.0.0.1 - - [16/Apr/2025 14:44:54] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:44:55 INFO 127.0.0.1 - - [16/Apr/2025 14:44:55] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-04-16 14:44:55 INFO 127.0.0.1 - - [16/Apr/2025 14:44:55] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:44:55 INFO 127.0.0.1 - - [16/Apr/2025 14:44:55] "GET /socket.io/?EIO=4&transport=polling&t=PO-s7Gs HTTP/1.1" 200 -
+2025-04-16 14:44:55 INFO connected to frontend!
+2025-04-16 14:44:55 INFO sending alerts to frontend!: []
+2025-04-16 14:44:55 INFO 127.0.0.1 - - [16/Apr/2025 14:44:55] "POST /socket.io/?EIO=4&transport=polling&t=PO-s7G_&sid=CxRIgJOUF_LUKOgjAAAC HTTP/1.1" 200 -
+2025-04-16 14:44:55 INFO 127.0.0.1 - - [16/Apr/2025 14:44:55] "GET /socket.io/?EIO=4&transport=polling&t=PO-s7G_.0&sid=CxRIgJOUF_LUKOgjAAAC HTTP/1.1" 200 -
+2025-04-16 14:44:55 INFO 127.0.0.1 - - [16/Apr/2025 14:44:55] "GET /socket.io/?EIO=4&transport=polling&t=PO-s7H6&sid=CxRIgJOUF_LUKOgjAAAC HTTP/1.1" 200 -
+2025-04-16 14:44:56 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-16 14:44:56 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-16 14:44:56 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:44:56 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        2,
+        "macbook_pro"
+      ],
+      [
+        1,
+        "MBP"
+      ],
+      [
+        3,
+        "macbookpro"
+      ],
+      [
+        1,
+        "bruh"
+      ],
+      [
+        2,
+        "anj_pc"
+      ],
+      [
+        1,
+        "aryans-pc"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "aryan"
+      ],
+      [
+        2,
+        "anjali"
+      ],
+      [
+        3,
+        "shravan"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-16 14:44:56 INFO server_data: {'data': {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-16 14:44:56 INFO status: 200
+2025-04-16 14:44:56 INFO status_msg: unknown
+2025-04-16 14:44:56 INFO data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-16 14:44:56 INFO status: 200 status_msg: unknown data: {'devices': [[2, 'macbook_pro'], [1, 'MBP'], [3, 'macbookpro'], [1, 'bruh'], [2, 'anj_pc'], [1, 'aryans-pc']], 'users': [[1, 'aryan'], [2, 'anjali'], [3, 'shravan']]}
+2025-04-16 14:44:56 INFO 200 : OK
+2025-04-16 14:44:56 INFO Sending to frontend: {'aryan': ['MBP', 'bruh', 'aryans-pc'], 'anjali': ['macbook_pro', 'anj_pc'], 'shravan': ['macbookpro']}
+2025-04-16 14:44:56 INFO 127.0.0.1 - - [16/Apr/2025 14:44:56] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-04-16 14:45:09 INFO DATA FROM ADDING FOLDER FORMS(front front end)!: {'action': 'add_folder', 'folder_label': 'Hidden!', 'folder_id': 'WgMZNeNBZH', 'directory': '~/Desktop/.hidden', 'shared_users': [], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112}
+2025-04-16 14:45:09 INFO sending data to server: {"action": "add_folder", "folder_label": "Hidden!", "folder_id": "WgMZNeNBZH", "directory": "~/Desktop/.hidden", "shared_users": [], "folder_type": "sync_bothways", "mac_addr": 4681952839112}
+2025-04-16 14:45:09 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:45:09 INFO server response: {"status": "201", "status_msg": "Folder added successfully"}, type: <class 'str'>
+2025-04-16 14:45:09 INFO server_data: {'status': '201', 'status_msg': 'Folder added successfully'}
+2025-04-16 14:45:09 INFO status: 201
+2025-04-16 14:45:09 INFO status_msg: Folder added successfully
+2025-04-16 14:45:09 INFO data: False
+2025-04-16 14:45:09 INFO status: 201 status_msg: Folder added successfully data: False
+2025-04-16 14:45:09 INFO 201 : Added
+2025-04-16 14:45:09 INFO submit_folder status: 201
+2025-04-16 14:45:09 INFO creating directory: /home/osaka/Desktop/.hidden
+2025-04-16 14:45:09 INFO dir.json: {'/home/osaka/Desktop/linux': {'id': 'ryNeOOVn1J', 'label': 'linux', 'type': 'sync_bothways', 'size': 0, 'status': 'NOT FOUND!'}, '/home/osaka/Desktop/Java': {'id': 'YifklQeJxr', 'label': 'java', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/Arch': {'id': '1AgTRbvOLr', 'label': 'Arch', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/Uhm': {'id': 'BA0scRxLoo', 'label': 'Uh', 'type': 'sync_bothways', 'size': 0, 'status': 'NOT FOUND!'}, '/home/osaka/Desktop/LINUX': {'id': 'y45GjL7JYy', 'label': 'LINUX', 'type': 'sync_bothways', 'size': 0, 'status': 'NOT FOUND!'}, '/home/osaka/Desktop/IPHONE': {'id': 'h6azN7P8RE', 'label': 'IPHONE', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/Calculator/Bottle': {'id': 'xGW65dSjXO', 'label': 'Bottle', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/rebirth': {'id': 'LuozIEyEjm', 'label': 'rebirth', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Desktop/.hidden': {'id': 'WgMZNeNBZH', 'label': 'Hidden!', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}}
+2025-04-16 14:45:09 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:09 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:09 INFO added /home/osaka/Desktop/.hidden to watchdog!
+2025-04-16 14:45:09 INFO 127.0.0.1 - - [16/Apr/2025 14:45:09] "POST /submit_folder HTTP/1.1" 200 -
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:13 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:20 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:45:20 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:45:20 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:46:46 INFO binding to ip: 192.168.1.75
+2025-04-16 14:46:46 INFO Listening for incoming messages on port 6000...
+2025-04-16 14:46:46 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 14:46:46 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 14:46:46 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 14:46:46 INFO watchdog started!
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:46:46 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 14:46:46 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 14:46:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 14:46:47 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:46:47 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "aryan", "mac_addr": 4681952839112}
+2025-04-16 14:46:47 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-16 14:46:47 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-16 14:46:47 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-16 14:46:47 INFO status: 200
+2025-04-16 14:46:47 INFO status_msg: IP updated successfully
+2025-04-16 14:46:47 INFO data: []
+2025-04-16 14:46:47 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-16 14:46:47 INFO 200 : OK
+2025-04-16 14:46:47 INFO storing alerts to sessions!: []
+2025-04-16 14:46:47 INFO 127.0.0.1 - - [16/Apr/2025 14:46:47] "GET /dashboard HTTP/1.1" 200 -
+2025-04-16 14:46:47 INFO 127.0.0.1 - - [16/Apr/2025 14:46:47] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:46:47 INFO 127.0.0.1 - - [16/Apr/2025 14:46:47] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-16 14:46:47 INFO 127.0.0.1 - - [16/Apr/2025 14:46:47] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-04-16 14:46:47 INFO 127.0.0.1 - - [16/Apr/2025 14:46:47] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-16 14:46:47 INFO 127.0.0.1 - - [16/Apr/2025 14:46:47] "GET /socket.io/?EIO=4&transport=polling&t=PO-sYok HTTP/1.1" 200 -
+2025-04-16 14:46:47 INFO connected to frontend!
+2025-04-16 14:46:47 INFO sending alerts to frontend!: []
+2025-04-16 14:46:47 INFO 127.0.0.1 - - [16/Apr/2025 14:46:47] "GET /socket.io/?EIO=4&transport=polling&t=PO-sYor&sid=RNqT1tMClZiNd7x5AAAA HTTP/1.1" 200 -
+2025-04-16 14:46:47 INFO 127.0.0.1 - - [16/Apr/2025 14:46:47] "POST /socket.io/?EIO=4&transport=polling&t=PO-sYoq&sid=RNqT1tMClZiNd7x5AAAA HTTP/1.1" 200 -
+2025-04-16 14:46:47 INFO 127.0.0.1 - - [16/Apr/2025 14:46:47] "GET /socket.io/?EIO=4&transport=polling&t=PO-sYp0&sid=RNqT1tMClZiNd7x5AAAA HTTP/1.1" 200 -
+2025-04-16 15:00:18 INFO binding to ip: 192.168.1.75
+2025-04-16 15:00:18 INFO Listening for incoming messages on port 6000...
+2025-04-16 15:00:18 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 15:00:18 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 15:00:18 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 15:00:18 INFO watchdog started!
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:00:18 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 15:00:18 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:00:18 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:00:24 INFO 127.0.0.1 - - [16/Apr/2025 15:00:24] "GET /socket.io/?EIO=4&transport=polling&t=PO-vg6x HTTP/1.1" 200 -
+2025-04-16 15:00:24 INFO connected to frontend!
+2025-04-16 15:00:24 INFO sending alerts to frontend!: []
+2025-04-16 15:00:24 INFO 127.0.0.1 - - [16/Apr/2025 15:00:24] "GET /socket.io/?EIO=4&transport=polling&t=PO-vg70&sid=E4z0jdi7yS7QKtEPAAAA HTTP/1.1" 200 -
+2025-04-16 15:00:24 INFO 127.0.0.1 - - [16/Apr/2025 15:00:24] "POST /socket.io/?EIO=4&transport=polling&t=PO-vg6_&sid=E4z0jdi7yS7QKtEPAAAA HTTP/1.1" 200 -
+2025-04-16 15:00:24 INFO 127.0.0.1 - - [16/Apr/2025 15:00:24] "GET /socket.io/?EIO=4&transport=polling&t=PO-vg74&sid=E4z0jdi7yS7QKtEPAAAA HTTP/1.1" 200 -
+2025-04-16 15:00:49 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:00:49 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:00:55 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:00:55 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:00:56 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:00:56 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:01:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:01:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:01:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:01:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:01:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:01:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:01:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:01:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:01:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:01:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:01:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:01:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:01:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:01:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:01:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 15:01:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:01:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:01:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:01:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:01:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:01:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:01:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:01:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:05 INFO binding to ip: 192.168.1.75
+2025-04-16 15:05:05 INFO Listening for incoming messages on port 6000...
+2025-04-16 15:05:05 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 15:05:05 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 15:05:05 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 15:05:05 INFO watchdog started!
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:05:05 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.75:5000
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:05:05 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:05:05 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:05:07 INFO 127.0.0.1 - - [16/Apr/2025 15:05:07] "GET /socket.io/?EIO=4&transport=polling&t=PO-wlNj HTTP/1.1" 200 -
+2025-04-16 15:05:07 INFO connected to frontend!
+2025-04-16 15:05:07 INFO sending alerts to frontend!: []
+2025-04-16 15:05:07 INFO 127.0.0.1 - - [16/Apr/2025 15:05:07] "POST /socket.io/?EIO=4&transport=polling&t=PO-wlNn&sid=eqDmRUt9yn3E0FxYAAAA HTTP/1.1" 200 -
+2025-04-16 15:05:07 INFO 127.0.0.1 - - [16/Apr/2025 15:05:07] "GET /socket.io/?EIO=4&transport=polling&t=PO-wlNo&sid=eqDmRUt9yn3E0FxYAAAA HTTP/1.1" 200 -
+2025-04-16 15:05:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:05:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:05:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:05:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:05:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:05:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:05:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:05:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:05:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:05:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:05:19 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:05:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:05:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:46 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:05:52 INFO 127.0.0.1 - - [16/Apr/2025 15:05:52] "GET /socket.io/?EIO=4&transport=websocket&sid=eqDmRUt9yn3E0FxYAAAA HTTP/1.1" 200 -
+2025-04-16 15:05:52 INFO 127.0.0.1 - - [16/Apr/2025 15:05:52] "GET /socket.io/?EIO=4&transport=polling&t=PO-wlNr&sid=eqDmRUt9yn3E0FxYAAAA HTTP/1.1" 200 -
+2025-04-16 15:05:53 INFO 127.0.0.1 - - [16/Apr/2025 15:05:53] "GET /socket.io/?EIO=4&transport=polling&t=PO-wwcY HTTP/1.1" 200 -
+2025-04-16 15:05:53 INFO connected to frontend!
+2025-04-16 15:05:53 INFO sending alerts to frontend!: []
+2025-04-16 15:05:53 INFO 127.0.0.1 - - [16/Apr/2025 15:05:53] "POST /socket.io/?EIO=4&transport=polling&t=PO-wwcb&sid=Lt0X8v3XBHIddwX-AAAC HTTP/1.1" 200 -
+2025-04-16 15:05:53 INFO 127.0.0.1 - - [16/Apr/2025 15:05:53] "GET /socket.io/?EIO=4&transport=polling&t=PO-wwcc&sid=Lt0X8v3XBHIddwX-AAAC HTTP/1.1" 200 -
+2025-04-16 15:06:38 INFO 127.0.0.1 - - [16/Apr/2025 15:06:38] "GET /socket.io/?EIO=4&transport=websocket&sid=Lt0X8v3XBHIddwX-AAAC HTTP/1.1" 200 -
+2025-04-16 15:06:38 INFO 127.0.0.1 - - [16/Apr/2025 15:06:38] "GET /socket.io/?EIO=4&transport=polling&t=PO-wwcf&sid=Lt0X8v3XBHIddwX-AAAC HTTP/1.1" 200 -
+2025-04-16 15:06:39 INFO 127.0.0.1 - - [16/Apr/2025 15:06:39] "GET /socket.io/?EIO=4&transport=polling&t=PO-x5rM HTTP/1.1" 200 -
+2025-04-16 15:06:39 INFO connected to frontend!
+2025-04-16 15:06:39 INFO sending alerts to frontend!: []
+2025-04-16 15:06:39 INFO 127.0.0.1 - - [16/Apr/2025 15:06:39] "POST /socket.io/?EIO=4&transport=polling&t=PO-x5rP&sid=jsciFMoFAf1gOr-OAAAE HTTP/1.1" 200 -
+2025-04-16 15:06:39 INFO 127.0.0.1 - - [16/Apr/2025 15:06:39] "GET /socket.io/?EIO=4&transport=polling&t=PO-x5rQ&sid=jsciFMoFAf1gOr-OAAAE HTTP/1.1" 200 -
+2025-04-16 15:07:26 INFO binding to ip: 192.168.1.75
+2025-04-16 15:07:26 INFO Listening for incoming messages on port 6000...
+2025-04-16 15:07:26 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 15:07:26 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 15:07:26 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 15:07:26 INFO watchdog started!
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:07:26 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 15:07:26 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:07:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:07:26 INFO 127.0.0.1 - - [16/Apr/2025 15:07:26] "GET /socket.io/?EIO=4&transport=polling&t=PO-xHFL HTTP/1.1" 200 -
+2025-04-16 15:07:26 INFO connected to frontend!
+2025-04-16 15:07:26 INFO sending alerts to frontend!: []
+2025-04-16 15:07:26 INFO 127.0.0.1 - - [16/Apr/2025 15:07:26] "POST /socket.io/?EIO=4&transport=polling&t=PO-xHFP&sid=VYFdM7YVgDcmJt9gAAAA HTTP/1.1" 200 -
+2025-04-16 15:07:26 INFO 127.0.0.1 - - [16/Apr/2025 15:07:26] "GET /socket.io/?EIO=4&transport=polling&t=PO-xHFQ&sid=VYFdM7YVgDcmJt9gAAAA HTTP/1.1" 200 -
+2025-04-16 15:07:26 INFO 127.0.0.1 - - [16/Apr/2025 15:07:26] "GET /socket.io/?EIO=4&transport=polling&t=PO-xHFU&sid=VYFdM7YVgDcmJt9gAAAA HTTP/1.1" 200 -
+2025-04-16 15:07:30 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:07:30 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:07:30 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:07:30 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:07:30 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:07:30 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:07:54 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:07:54 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:07:54 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:07:54 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:07:54 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:08:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:08:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 15:08:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:08:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:08:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:08:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:08:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:08:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:08:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:08:58 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:29:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:29:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:29:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:29:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:29:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:29:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:29:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:29:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:29:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:29:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:40:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:40:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:40:29 INFO binding to ip: 192.168.1.75
+2025-04-16 15:40:29 INFO Listening for incoming messages on port 6000...
+2025-04-16 15:40:29 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 15:40:29 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 15:40:29 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 15:40:29 INFO watchdog started!
+2025-04-16 15:40:29 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 15:40:29 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:40:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:40:32 INFO 127.0.0.1 - - [16/Apr/2025 15:40:32] "GET /socket.io/?EIO=4&transport=polling&t=PO_2s18 HTTP/1.1" 200 -
+2025-04-16 15:40:32 INFO connected to frontend!
+2025-04-16 15:40:32 INFO sending alerts to frontend!: []
+2025-04-16 15:40:32 INFO 127.0.0.1 - - [16/Apr/2025 15:40:32] "POST /socket.io/?EIO=4&transport=polling&t=PO_2s1C&sid=Jhj3STGybPZfXFiiAAAA HTTP/1.1" 200 -
+2025-04-16 15:40:32 INFO 127.0.0.1 - - [16/Apr/2025 15:40:32] "GET /socket.io/?EIO=4&transport=polling&t=PO_2s1D&sid=Jhj3STGybPZfXFiiAAAA HTTP/1.1" 200 -
+2025-04-16 15:40:32 INFO 127.0.0.1 - - [16/Apr/2025 15:40:32] "GET /socket.io/?EIO=4&transport=polling&t=PO_2s1I&sid=Jhj3STGybPZfXFiiAAAA HTTP/1.1" 200 -
+2025-04-16 15:40:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:40:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:40:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:40:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:40:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:40:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:40:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:40:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:40:42 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:40:42 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:40:42 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:40:42 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:40:42 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:40:50 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:40:50 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 15:40:50 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:40:50 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:40:50 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:40:50 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:40:50 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:40:50 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:40:50 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:40:50 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:04 INFO binding to ip: 192.168.1.75
+2025-04-16 15:47:04 INFO Listening for incoming messages on port 6000...
+2025-04-16 15:47:04 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 15:47:04 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 15:47:04 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 15:47:04 INFO 🐕 watchdog started! 🐕
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:47:04 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 15:47:04 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:47:04 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:47:06 INFO 127.0.0.1 - - [16/Apr/2025 15:47:06] "GET /socket.io/?EIO=4&transport=polling&t=PO_4MAi HTTP/1.1" 200 -
+2025-04-16 15:47:06 INFO connected to frontend!
+2025-04-16 15:47:06 INFO sending alerts to frontend!: []
+2025-04-16 15:47:06 INFO 127.0.0.1 - - [16/Apr/2025 15:47:06] "GET /socket.io/?EIO=4&transport=polling&t=PO_4MAn.0&sid=icWBdO_MTGbKbmsiAAAA HTTP/1.1" 200 -
+2025-04-16 15:47:06 INFO 127.0.0.1 - - [16/Apr/2025 15:47:06] "POST /socket.io/?EIO=4&transport=polling&t=PO_4MAn&sid=icWBdO_MTGbKbmsiAAAA HTTP/1.1" 200 -
+2025-04-16 15:47:06 INFO 127.0.0.1 - - [16/Apr/2025 15:47:06] "GET /socket.io/?EIO=4&transport=polling&t=PO_4MAt&sid=icWBdO_MTGbKbmsiAAAA HTTP/1.1" 200 -
+2025-04-16 15:47:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:47:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:47:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:47:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:47:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:47:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:47:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:47:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:47:14 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:47:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:47:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:47:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:06 INFO binding to ip: 192.168.1.75
+2025-04-16 15:48:06 INFO Listening for incoming messages on port 6000...
+2025-04-16 15:48:06 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 15:48:06 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 15:48:06 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 15:48:06 INFO 🐕 watchdog started! 🐕
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:06 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.75:5000
+2025-04-16 15:48:06 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:08 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:09 INFO 127.0.0.1 - - [16/Apr/2025 15:48:09] "GET /socket.io/?EIO=4&transport=polling&t=PO_4bf- HTTP/1.1" 200 -
+2025-04-16 15:48:09 INFO connected to frontend!
+2025-04-16 15:48:09 INFO sending alerts to frontend!: []
+2025-04-16 15:48:09 INFO 127.0.0.1 - - [16/Apr/2025 15:48:09] "POST /socket.io/?EIO=4&transport=polling&t=PO_4bg2&sid=c0ubriOoKX3Mg9xyAAAA HTTP/1.1" 200 -
+2025-04-16 15:48:09 INFO 127.0.0.1 - - [16/Apr/2025 15:48:09] "GET /socket.io/?EIO=4&transport=polling&t=PO_4bg3&sid=c0ubriOoKX3Mg9xyAAAA HTTP/1.1" 200 -
+2025-04-16 15:48:12 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:12 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:12 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:12 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:12 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:23 INFO binding to ip: 192.168.1.75
+2025-04-16 15:48:23 INFO Listening for incoming messages on port 6000...
+2025-04-16 15:48:23 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 15:48:23 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 15:48:23 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 15:48:23 INFO 🐕 watchdog started! 🐕
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:23 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:23 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:48:23 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:48:27 INFO 127.0.0.1 - - [16/Apr/2025 15:48:27] "GET /socket.io/?EIO=4&transport=polling&t=PO_4g3i HTTP/1.1" 200 -
+2025-04-16 15:48:27 INFO connected to frontend!
+2025-04-16 15:48:27 INFO sending alerts to frontend!: []
+2025-04-16 15:48:27 INFO 127.0.0.1 - - [16/Apr/2025 15:48:27] "GET /socket.io/?EIO=4&transport=polling&t=PO_4g3n.0&sid=GQeoM-bppqAh3vylAAAA HTTP/1.1" 200 -
+2025-04-16 15:48:27 INFO 127.0.0.1 - - [16/Apr/2025 15:48:27] "POST /socket.io/?EIO=4&transport=polling&t=PO_4g3n&sid=GQeoM-bppqAh3vylAAAA HTTP/1.1" 200 -
+2025-04-16 15:48:27 INFO 127.0.0.1 - - [16/Apr/2025 15:48:27] "GET /socket.io/?EIO=4&transport=polling&t=PO_4g3s&sid=GQeoM-bppqAh3vylAAAA HTTP/1.1" 200 -
+2025-04-16 15:48:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:29 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:33 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:33 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:33 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:33 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:33 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:48:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:48:49 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh2.txt', wd=1, mask=IN_CREATE, cookie=0, name='bruh2.txt'>
+2025-04-16 15:48:49 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh2.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh2.txt'>
+2025-04-16 15:48:49 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh2.txt', wd=1, mask=IN_ATTRIB, cookie=0, name='bruh2.txt'>
+2025-04-16 15:48:49 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh2.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh2.txt'>
+2025-04-16 15:50:15 INFO binding to ip: 192.168.1.75
+2025-04-16 15:50:15 INFO Listening for incoming messages on port 6000...
+2025-04-16 15:50:15 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 15:50:15 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 15:50:15 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 15:50:15 INFO 🐕 watchdog started! 🐕
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:50:15 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.75:5000
+2025-04-16 15:50:15 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:50:15 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:50:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:50:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:50:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:50:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:50:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:50:17 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:50:17 INFO 127.0.0.1 - - [16/Apr/2025 15:50:17] "GET /socket.io/?EIO=4&transport=polling&t=PO_54_g HTTP/1.1" 200 -
+2025-04-16 15:50:17 INFO connected to frontend!
+2025-04-16 15:50:17 INFO sending alerts to frontend!: []
+2025-04-16 15:50:17 INFO 127.0.0.1 - - [16/Apr/2025 15:50:17] "POST /socket.io/?EIO=4&transport=polling&t=PO_54_k&sid=6jfjZYiIoS9QDct5AAAA HTTP/1.1" 200 -
+2025-04-16 15:50:17 INFO 127.0.0.1 - - [16/Apr/2025 15:50:17] "GET /socket.io/?EIO=4&transport=polling&t=PO_54_k.0&sid=6jfjZYiIoS9QDct5AAAA HTTP/1.1" 200 -
+2025-04-16 15:50:20 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:50:20 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:50:20 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:50:20 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:50:20 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:50:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:50:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 15:50:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:50:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:50:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:50:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:50:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:50:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:50:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:50:25 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:51:02 INFO 127.0.0.1 - - [16/Apr/2025 15:51:02] "GET /socket.io/?EIO=4&transport=websocket&sid=6jfjZYiIoS9QDct5AAAA HTTP/1.1" 200 -
+2025-04-16 15:51:02 INFO 127.0.0.1 - - [16/Apr/2025 15:51:02] "GET /socket.io/?EIO=4&transport=polling&t=PO_54_n&sid=6jfjZYiIoS9QDct5AAAA HTTP/1.1" 200 -
+2025-04-16 15:51:03 INFO 127.0.0.1 - - [16/Apr/2025 15:51:03] "GET /socket.io/?EIO=4&transport=polling&t=PO_5GEU HTTP/1.1" 200 -
+2025-04-16 15:51:03 INFO connected to frontend!
+2025-04-16 15:51:03 INFO sending alerts to frontend!: []
+2025-04-16 15:51:03 INFO 127.0.0.1 - - [16/Apr/2025 15:51:03] "POST /socket.io/?EIO=4&transport=polling&t=PO_5GEY&sid=icfz7rreN0BVS0ROAAAC HTTP/1.1" 200 -
+2025-04-16 15:51:03 INFO 127.0.0.1 - - [16/Apr/2025 15:51:03] "GET /socket.io/?EIO=4&transport=polling&t=PO_5GEY.0&sid=icfz7rreN0BVS0ROAAAC HTTP/1.1" 200 -
+2025-04-16 15:51:48 INFO 127.0.0.1 - - [16/Apr/2025 15:51:48] "GET /socket.io/?EIO=4&transport=websocket&sid=icfz7rreN0BVS0ROAAAC HTTP/1.1" 200 -
+2025-04-16 15:51:48 INFO 127.0.0.1 - - [16/Apr/2025 15:51:48] "GET /socket.io/?EIO=4&transport=polling&t=PO_5GEb&sid=icfz7rreN0BVS0ROAAAC HTTP/1.1" 200 -
+2025-04-16 15:51:50 INFO 127.0.0.1 - - [16/Apr/2025 15:51:50] "GET /socket.io/?EIO=4&transport=polling&t=PO_5RVq HTTP/1.1" 200 -
+2025-04-16 15:51:50 INFO connected to frontend!
+2025-04-16 15:51:50 INFO sending alerts to frontend!: []
+2025-04-16 15:51:50 INFO 127.0.0.1 - - [16/Apr/2025 15:51:50] "POST /socket.io/?EIO=4&transport=polling&t=PO_5RVu&sid=pJeUZ0bZGevyAY25AAAE HTTP/1.1" 200 -
+2025-04-16 15:51:50 INFO 127.0.0.1 - - [16/Apr/2025 15:51:50] "GET /socket.io/?EIO=4&transport=polling&t=PO_5RVu.0&sid=pJeUZ0bZGevyAY25AAAE HTTP/1.1" 200 -
+2025-04-16 15:52:35 INFO 127.0.0.1 - - [16/Apr/2025 15:52:35] "GET /socket.io/?EIO=4&transport=websocket&sid=pJeUZ0bZGevyAY25AAAE HTTP/1.1" 200 -
+2025-04-16 15:52:35 INFO 127.0.0.1 - - [16/Apr/2025 15:52:35] "GET /socket.io/?EIO=4&transport=polling&t=PO_5RVx&sid=pJeUZ0bZGevyAY25AAAE HTTP/1.1" 200 -
+2025-04-16 15:52:36 INFO 127.0.0.1 - - [16/Apr/2025 15:52:36] "GET /socket.io/?EIO=4&transport=polling&t=PO_5cqV HTTP/1.1" 200 -
+2025-04-16 15:52:36 INFO connected to frontend!
+2025-04-16 15:52:36 INFO sending alerts to frontend!: []
+2025-04-16 15:52:36 INFO 127.0.0.1 - - [16/Apr/2025 15:52:36] "POST /socket.io/?EIO=4&transport=polling&t=PO_5cqX&sid=3Aoav602vwLZvNNEAAAG HTTP/1.1" 200 -
+2025-04-16 15:52:36 INFO 127.0.0.1 - - [16/Apr/2025 15:52:36] "GET /socket.io/?EIO=4&transport=polling&t=PO_5cqY&sid=3Aoav602vwLZvNNEAAAG HTTP/1.1" 200 -
+2025-04-16 15:53:21 INFO 127.0.0.1 - - [16/Apr/2025 15:53:21] "GET /socket.io/?EIO=4&transport=websocket&sid=3Aoav602vwLZvNNEAAAG HTTP/1.1" 200 -
+2025-04-16 15:53:21 INFO 127.0.0.1 - - [16/Apr/2025 15:53:21] "GET /socket.io/?EIO=4&transport=polling&t=PO_5cqc&sid=3Aoav602vwLZvNNEAAAG HTTP/1.1" 200 -
+2025-04-16 15:53:22 INFO 127.0.0.1 - - [16/Apr/2025 15:53:22] "GET /socket.io/?EIO=4&transport=polling&t=PO_5o3I HTTP/1.1" 200 -
+2025-04-16 15:53:22 INFO connected to frontend!
+2025-04-16 15:53:22 INFO sending alerts to frontend!: []
+2025-04-16 15:53:22 INFO 127.0.0.1 - - [16/Apr/2025 15:53:22] "POST /socket.io/?EIO=4&transport=polling&t=PO_5o3L&sid=DzzqtkRsGUsKb10lAAAI HTTP/1.1" 200 -
+2025-04-16 15:53:22 INFO 127.0.0.1 - - [16/Apr/2025 15:53:22] "GET /socket.io/?EIO=4&transport=polling&t=PO_5o3L.0&sid=DzzqtkRsGUsKb10lAAAI HTTP/1.1" 200 -
+2025-04-16 15:54:07 INFO 127.0.0.1 - - [16/Apr/2025 15:54:07] "GET /socket.io/?EIO=4&transport=websocket&sid=DzzqtkRsGUsKb10lAAAI HTTP/1.1" 200 -
+2025-04-16 15:54:07 INFO 127.0.0.1 - - [16/Apr/2025 15:54:07] "GET /socket.io/?EIO=4&transport=polling&t=PO_5o3O&sid=DzzqtkRsGUsKb10lAAAI HTTP/1.1" 200 -
+2025-04-16 15:54:08 INFO 127.0.0.1 - - [16/Apr/2025 15:54:08] "GET /socket.io/?EIO=4&transport=polling&t=PO_5zMk HTTP/1.1" 200 -
+2025-04-16 15:54:08 INFO connected to frontend!
+2025-04-16 15:54:08 INFO sending alerts to frontend!: []
+2025-04-16 15:54:08 INFO 127.0.0.1 - - [16/Apr/2025 15:54:08] "POST /socket.io/?EIO=4&transport=polling&t=PO_5zMn&sid=gR29MIfg6cJSI-bTAAAK HTTP/1.1" 200 -
+2025-04-16 15:54:08 INFO 127.0.0.1 - - [16/Apr/2025 15:54:08] "GET /socket.io/?EIO=4&transport=polling&t=PO_5zMn.0&sid=gR29MIfg6cJSI-bTAAAK HTTP/1.1" 200 -
+2025-04-16 15:54:53 INFO 127.0.0.1 - - [16/Apr/2025 15:54:53] "GET /socket.io/?EIO=4&transport=websocket&sid=gR29MIfg6cJSI-bTAAAK HTTP/1.1" 200 -
+2025-04-16 15:54:53 INFO 127.0.0.1 - - [16/Apr/2025 15:54:53] "GET /socket.io/?EIO=4&transport=polling&t=PO_5zMr&sid=gR29MIfg6cJSI-bTAAAK HTTP/1.1" 200 -
+2025-04-16 15:54:55 INFO 127.0.0.1 - - [16/Apr/2025 15:54:55] "GET /socket.io/?EIO=4&transport=polling&t=PO_68ed HTTP/1.1" 200 -
+2025-04-16 15:54:55 INFO connected to frontend!
+2025-04-16 15:54:55 INFO sending alerts to frontend!: []
+2025-04-16 15:54:55 INFO 127.0.0.1 - - [16/Apr/2025 15:54:55] "POST /socket.io/?EIO=4&transport=polling&t=PO_68eg&sid=CO3Up7v513FjBnHwAAAM HTTP/1.1" 200 -
+2025-04-16 15:54:55 INFO 127.0.0.1 - - [16/Apr/2025 15:54:55] "GET /socket.io/?EIO=4&transport=polling&t=PO_68eh&sid=CO3Up7v513FjBnHwAAAM HTTP/1.1" 200 -
+2025-04-16 15:55:40 INFO 127.0.0.1 - - [16/Apr/2025 15:55:40] "GET /socket.io/?EIO=4&transport=websocket&sid=CO3Up7v513FjBnHwAAAM HTTP/1.1" 200 -
+2025-04-16 15:55:40 INFO 127.0.0.1 - - [16/Apr/2025 15:55:40] "GET /socket.io/?EIO=4&transport=polling&t=PO_68el&sid=CO3Up7v513FjBnHwAAAM HTTP/1.1" 200 -
+2025-04-16 15:55:41 INFO 127.0.0.1 - - [16/Apr/2025 15:55:41] "GET /socket.io/?EIO=4&transport=polling&t=PO_6JwA HTTP/1.1" 200 -
+2025-04-16 15:55:41 INFO connected to frontend!
+2025-04-16 15:55:41 INFO sending alerts to frontend!: []
+2025-04-16 15:55:41 INFO 127.0.0.1 - - [16/Apr/2025 15:55:41] "POST /socket.io/?EIO=4&transport=polling&t=PO_6JwD&sid=kEUM6u9vcMsBhmBDAAAO HTTP/1.1" 200 -
+2025-04-16 15:55:41 INFO 127.0.0.1 - - [16/Apr/2025 15:55:41] "GET /socket.io/?EIO=4&transport=polling&t=PO_6JwD.0&sid=kEUM6u9vcMsBhmBDAAAO HTTP/1.1" 200 -
+2025-04-16 15:56:07 INFO binding to ip: 192.168.1.75
+2025-04-16 15:56:07 INFO Listening for incoming messages on port 6000...
+2025-04-16 15:56:07 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 15:56:07 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 15:56:07 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 15:56:07 INFO 🐕 watchdog started! 🐕
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:56:07 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:56:07 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/rebirth', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/IPHONE', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:56:07 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Calculator/Bottle', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:56:09 INFO 127.0.0.1 - - [16/Apr/2025 15:56:09] "GET /socket.io/?EIO=4&transport=polling&t=PO_6QoJ HTTP/1.1" 200 -
+2025-04-16 15:56:09 INFO connected to frontend!
+2025-04-16 15:56:09 INFO sending alerts to frontend!: []
+2025-04-16 15:56:09 INFO 127.0.0.1 - - [16/Apr/2025 15:56:09] "POST /socket.io/?EIO=4&transport=polling&t=PO_6QoN&sid=My8UnvrkF3cnV7AlAAAA HTTP/1.1" 200 -
+2025-04-16 15:56:09 INFO 127.0.0.1 - - [16/Apr/2025 15:56:09] "GET /socket.io/?EIO=4&transport=polling&t=PO_6QoN.0&sid=My8UnvrkF3cnV7AlAAAA HTTP/1.1" 200 -
+2025-04-16 15:56:09 INFO 127.0.0.1 - - [16/Apr/2025 15:56:09] "GET /socket.io/?EIO=4&transport=polling&t=PO_6QoS&sid=My8UnvrkF3cnV7AlAAAA HTTP/1.1" 200 -
+2025-04-16 15:56:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:56:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:56:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:56:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:56:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:12 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:56:12 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CREATE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:56:12 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_OPEN, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:56:12 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_MODIFY, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:56:12 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:56:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.bruh.txt.swp', wd=1, mask=IN_DELETE, cookie=0, name='.bruh.txt.swp'>
+2025-04-16 15:56:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:56:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh3.txt', wd=1, mask=IN_CREATE, cookie=0, name='bruh3.txt'>
+2025-04-16 15:56:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh3.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh3.txt'>
+2025-04-16 15:56:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh3.txt', wd=1, mask=IN_ATTRIB, cookie=0, name='bruh3.txt'>
+2025-04-16 15:56:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh3.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh3.txt'>
+2025-04-16 15:56:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:56:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:56:42 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh2.txt', wd=1, mask=IN_DELETE, cookie=0, name='bruh2.txt'>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=1, mask=IN_CREATE|IN_ISDIR, cookie=0, name='ARGS'>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGS'>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGS'>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGS'>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGS'>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGS'>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGS'>
+2025-04-16 15:56:59 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_OPEN, cookie=0, name='base.html'>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base.html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base.html'>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy).html'>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy).html'>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGS'>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGS'>
+2025-04-16 15:57:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:57:47 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGS', wd=1, mask=IN_ISDIR|IN_MOVED_FROM, cookie=10386, name='ARGS'>
+2025-04-16 15:57:47 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_ISDIR|IN_MOVED_TO, cookie=10386, name='ARGUEMENT'>
+2025-04-16 15:57:47 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:57:47 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:57:47 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:57:47 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:57:47 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:57:47 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:57:47 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:57:47 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:57:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 15:57:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 15:57:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:57:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 15:57:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 15:57:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 15:57:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 15:57:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:57:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_OPEN, cookie=0, name='base (Copy 2).html'>
+2025-04-16 15:57:57 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/base (Copy 2).html', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='base (Copy 2).html'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-FQ2J42', wd=1, mask=IN_CREATE, cookie=0, name='.goutputstream-FQ2J42'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-FQ2J42', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-FQ2J42'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-FQ2J42', wd=1, mask=IN_ATTRIB, cookie=0, name='.goutputstream-FQ2J42'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-FQ2J42', wd=1, mask=IN_MODIFY, cookie=0, name='.goutputstream-FQ2J42'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-FQ2J42', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-FQ2J42'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-FQ2J42', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.goutputstream-FQ2J42'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-FQ2J42', wd=1, mask=IN_MOVED_FROM, cookie=10398, name='.goutputstream-FQ2J42'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MOVED_TO, cookie=10398, name='bruh.txt'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:02 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-E79X42', wd=1, mask=IN_CREATE, cookie=0, name='.goutputstream-E79X42'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-E79X42', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-E79X42'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-E79X42', wd=1, mask=IN_ATTRIB, cookie=0, name='.goutputstream-E79X42'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-E79X42', wd=1, mask=IN_MODIFY, cookie=0, name='.goutputstream-E79X42'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-E79X42', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-E79X42'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-E79X42', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.goutputstream-E79X42'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-E79X42', wd=1, mask=IN_MOVED_FROM, cookie=10404, name='.goutputstream-E79X42'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MOVED_TO, cookie=10404, name='bruh.txt'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:11 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-MR5042', wd=1, mask=IN_CREATE, cookie=0, name='.goutputstream-MR5042'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-MR5042', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-MR5042'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-MR5042', wd=1, mask=IN_ATTRIB, cookie=0, name='.goutputstream-MR5042'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-MR5042', wd=1, mask=IN_MODIFY, cookie=0, name='.goutputstream-MR5042'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-MR5042', wd=1, mask=IN_OPEN, cookie=0, name='.goutputstream-MR5042'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-MR5042', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='.goutputstream-MR5042'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/.goutputstream-MR5042', wd=1, mask=IN_MOVED_FROM, cookie=10412, name='.goutputstream-MR5042'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MOVED_TO, cookie=10412, name='bruh.txt'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:58:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:26 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:35 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:36 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:37 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:38 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 15:59:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGUEMENT'>
+2025-04-16 15:59:41 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_MODIFY, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_WRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_OPEN, cookie=0, name='bruh.txt'>
+2025-04-16 15:59:45 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/bruh.txt', wd=1, mask=IN_CLOSE_NOWRITE, cookie=0, name='bruh.txt'>
+2025-04-16 16:01:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 16:01:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 16:01:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 16:01:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 16:01:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 16:01:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 16:01:06 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Arch', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 16:01:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 16:01:16 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/.hidden', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 16:01:24 INFO binding to ip: 192.168.1.75
+2025-04-16 16:01:24 INFO Listening for incoming messages on port 6000...
+2025-04-16 16:01:24 WARNING Directory not found: /home/osaka/Desktop/linux. Removing from dirs.
+2025-04-16 16:01:24 WARNING Directory not found: /home/osaka/Desktop/Arch. Removing from dirs.
+2025-04-16 16:01:24 WARNING Directory not found: /home/osaka/Desktop/Uhm. Removing from dirs.
+2025-04-16 16:01:24 WARNING Directory not found: /home/osaka/Desktop/LINUX. Removing from dirs.
+2025-04-16 16:01:24 WARNING Directory not found: /home/osaka/Desktop/IPHONE. Removing from dirs.
+2025-04-16 16:01:24 WARNING Directory not found: /home/osaka/Desktop/Calculator/Bottle. Removing from dirs.
+2025-04-16 16:01:24 WARNING Directory not found: /home/osaka/Desktop/rebirth. Removing from dirs.
+2025-04-16 16:01:24 WARNING Directory not found: /home/osaka/Desktop/.hidden. Removing from dirs.
+2025-04-16 16:01:24 INFO 🐕 watchdog started! 🐕
+2025-04-16 16:01:24 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 16:01:24 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 16:01:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 16:01:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 16:01:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ARGUEMENT'>
+2025-04-16 16:01:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-16 16:01:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ARGUEMENT'>
+2025-04-16 16:01:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Desktop/Java/ARGUEMENT', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-16 16:01:27 INFO 127.0.0.1 - - [16/Apr/2025 16:01:27] "GET /socket.io/?EIO=4&transport=polling&t=PO_7eLM HTTP/1.1" 200 -
+2025-04-16 16:01:27 INFO connected to frontend!
+2025-04-16 16:01:27 INFO sending alerts to frontend!: []
+2025-04-16 16:01:27 INFO 127.0.0.1 - - [16/Apr/2025 16:01:27] "GET /socket.io/?EIO=4&transport=polling&t=PO_7eLQ.0&sid=ea1FBgzyxa-m4Q_QAAAA HTTP/1.1" 200 -
+2025-04-16 16:01:27 INFO 127.0.0.1 - - [16/Apr/2025 16:01:27] "POST /socket.io/?EIO=4&transport=polling&t=PO_7eLQ&sid=ea1FBgzyxa-m4Q_QAAAA HTTP/1.1" 200 -
+2025-04-16 16:01:27 INFO 127.0.0.1 - - [16/Apr/2025 16:01:27] "GET /socket.io/?EIO=4&transport=polling&t=PO_7eLV&sid=ea1FBgzyxa-m4Q_QAAAA HTTP/1.1" 200 -

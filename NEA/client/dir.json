@@ -7,18 +7,18 @@
     "status": "NOT FOUND!"
   },
   "/home/osaka/Desktop/Java": {
-    "id": "ZEzE3qEPFA",
+    "id": "YifklQeJxr",
     "label": "java",
     "type": "sync_bothways",
     "size": 0,
-    "status": "NOT FOUND!"
+    "status": "ACTIVE"
   },
   "/home/osaka/Desktop/Arch": {
     "id": "1AgTRbvOLr",
     "label": "Arch",
     "type": "sync_bothways",
     "size": 0,
-    "status": "ACTIVE"
+    "status": "NOT FOUND!"
   },
   "/home/osaka/Desktop/Uhm": {
     "id": "BA0scRxLoo",
@@ -39,13 +39,27 @@
     "label": "IPHONE",
     "type": "sync_bothways",
     "size": 0,
-    "status": "ACTIVE"
+    "status": "NOT FOUND!"
   },
   "/home/osaka/Desktop/Calculator/Bottle": {
     "id": "xGW65dSjXO",
     "label": "Bottle",
     "type": "sync_bothways",
     "size": 0,
-    "status": "ACTIVE"
+    "status": "NOT FOUND!"
+  },
+  "/home/osaka/Desktop/rebirth": {
+    "id": "LuozIEyEjm",
+    "label": "rebirth",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "NOT FOUND!"
+  },
+  "/home/osaka/Desktop/.hidden": {
+    "id": "WgMZNeNBZH",
+    "label": "Hidden!",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "NOT FOUND!"
   }
 }
