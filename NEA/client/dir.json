@@ -1,14 +1,51 @@
 {
-  "C:\\Users\\aryan/Desktop/REBIRTH": {
-    "id": "KydydMxyKE",
-    "label": "rebirth",
-    "type": "sync_bothways",
-    "size": 0
-  },
   "/home/osaka/Desktop/linux": {
-    "id": "kJW4Q2xKjN",
-    "label": "Linux",
+    "id": "ryNeOOVn1J",
+    "label": "linux",
     "type": "sync_bothways",
-    "size": 0
+    "size": 0,
+    "status": "NOT FOUND!"
+  },
+  "/home/osaka/Desktop/Java": {
+    "id": "ZEzE3qEPFA",
+    "label": "java",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "NOT FOUND!"
+  },
+  "/home/osaka/Desktop/Arch": {
+    "id": "1AgTRbvOLr",
+    "label": "Arch",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Desktop/Uhm": {
+    "id": "BA0scRxLoo",
+    "label": "Uh",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "NOT FOUND!"
+  },
+  "/home/osaka/Desktop/LINUX": {
+    "id": "y45GjL7JYy",
+    "label": "LINUX",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "NOT FOUND!"
+  },
+  "/home/osaka/Desktop/IPHONE": {
+    "id": "h6azN7P8RE",
+    "label": "IPHONE",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Desktop/Calculator/Bottle": {
+    "id": "xGW65dSjXO",
+    "label": "Bottle",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
   }
 }

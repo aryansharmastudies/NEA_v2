@@ -16,6 +16,9 @@ import hashlib
 import random
 import string
 import threading
+import time
+from watchdog.events import FileSystemEvent, FileSystemEventHandler
+from watchdog.observers import Observer
 ########## NOTES ################################
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
@@ -338,13 +341,13 @@ def submit_folder():
     logging.info(f'submit_folder status: {status}')
     if status == '201':
     # Return a response
-        mkdir(json.loads(data))
+        mkdir(json.loads(data)) # 🥝
         return jsonify({'status': 'success', 'message': 'Folder added successfully'})
     else: 
         return jsonify({'status': 'failure', 'message': 'Folder not added, please try again'})
 # 😳
 
-def mkdir(data):
+def mkdir(data): # 🥝
     folder_id = data['folder_id']
     folder_label = data['folder_label']
     folder_type = data['folder_type']
@@ -358,10 +361,17 @@ def mkdir(data):
     dirs[fmt_dir]['label'] = folder_label
     dirs[fmt_dir]['type'] = folder_type
     dirs[fmt_dir]['size'] = 0
+    dirs[fmt_dir]['status'] = 'ACTIVE'
     logging.info(f'dir.json: {dirs}')
 
     with open('dir.json', 'w') as file:
         json.dump(dirs, file, indent=2)
+
+    if observer.is_alive():
+        observer.schedule(event_handler, fmt_dir, recursive=True)
+        logging.info(f'added {fmt_dir} to watchdog!')
+    else:
+        logging.info(f'watchdog is not alive, cannot add {fmt_dir}!')
     
     # {'C://Users/aryan/Desktop/rebirth': {
     #    'id': 'x2su29dr3', 
@@ -510,7 +520,63 @@ def run_socketio():
     """Function to run the Flask-SocketIO server."""
     print("Running SocketIO server...")
     socketio.run(app)
+#################################### WATCHDOG # 🐕 #####################################
+class MyEventHandler(FileSystemEventHandler):
+    #def on_any_event(self, event: FileSystemEvent) -> None:
+    #    print(event)
 
+    def on_moved(self, event):# 💥
+        print(f'🟣 {event}')
+    
+    def on_created(self, event):# 💥
+        print(f'🟢 {event.src_path} has been {event.event_type}')
+    
+    def on_deleted(self, event):# 💥
+        print(f'🔴 {event.src_path} has been {event.event_type}') 
+    
+    def on_modified(self, event): # 💥
+        stats = os.stat(event.src_path)
+        if event.is_directory == True:
+            pass
+        else:
+            print(f'🟡 {event.src_path} has been {event.event_type}. Current size {stats.st_size} bytes') # 💥
+            print(f'File size: {stats.st_size} bytes')  # Added to log file size
+            print(f'Last modified: {time.ctime(stats.st_mtime)}')  # Added to log last modified time
+    # def on_closed(self, event):
+        # print(f'🔵 {event}')
+
+event_handler = MyEventHandler()
+observer = Observer()
+threads = []
+
+def start_watchdog(dirs):
+    global event_handler, observer, threads
+
+    for d in dirs:
+        targetPath = str(d)
+        if os.path.exists(targetPath):
+            observer.schedule(event_handler, targetPath, recursive=True)
+            threads.append(observer)
+            dirs[d]['status'] = 'ACTIVE'
+        else:
+            logging.warning(f"Directory not found: {targetPath}. Removing from dirs.")
+            dirs[d]['status'] = 'NOT FOUND!'
+    
+    with open('dir.json', 'w') as fp:
+        json.dump(dirs, fp, indent=2)
+    
+    logging.info(f'watchdog started!')
+    observer.start()
+
+    try:
+        while True:
+            time.sleep(5)
+    except KeyboardInterrupt:
+        observer.stop()
+    observer.join()
+
+
+#################################### WATCHDOG # 🐕 #####################################
 if __name__ == "__main__":
     dir_file = "dir.json"
     if os.path.exists(dir_file):
@@ -545,6 +611,8 @@ if __name__ == "__main__":
     flask_thread = threading.Thread(target=run_flask, daemon=True)
     flask_thread.start()
 
+    watchdog = threading.Thread(target=start_watchdog, args=(dirs,))
+    watchdog.start()
     # socketio_thread = threading.Thread(target=run_socketio, daemon=True)
     # socketio_thread.start()
 

@@ -208,6 +208,12 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
     if result == '400':
         return json.dumps({'status': '400', 'status_msg': 'Invalid directory format'})
 
+
+    # DONE find username given mac_addr of host
+    # mac_addr -> user_id -> username
+    host_id = session.query(Device).filter_by(mac_addr=mac_addr).first().user_id
+    hostname = session.query(User).filter_by(user_id=host_id).first().name
+
     for shared_user in shared_users:  # 😳😿
         # find the shared_user and its devices MAC ADDRESS
         # check if it exists in ip_map.json
@@ -219,12 +225,6 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
         device_name = shared_user[1] # 🌸
         user = session.query(User).filter_by(name=username).first() # 🌸
         target_user_id = user.user_id # 🌸
-
-        # TODO find username given mac_addr of host
-        # mac_addr -> user_id -> username
-
-        host_id = session.query(Device).filter_by(mac_addr=mac_addr).first().user_id
-        hostname = session.query(User).filter_by(user_id=host_id).first().name
 
         if not user:
             logging.info(f'User: {username} not found')
@@ -293,6 +293,18 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
     folder = Folder(mac_addr=mac_addr, name=folder_label, folder_id=folder_id, path=directory, type=folder_type)
     session.add(folder)
     session.commit()
+
+    # directory = ~/Desktop/LINUX
+    # e.g. ~/Desktop/LINUX -> ~/02/290128321/Desktop/LINUX i.e. ~/<user_id>/<mac_addr>/<folder_name>
+    
+    directory = directory.split('/')
+    directory.insert(1, str(host_id)) # insert user_id
+    directory.insert(2, str(mac_addr)) # insert mac_addr
+    directory = '/'.join(directory)
+    directory = os.path.expanduser(directory) 
+    os.makedirs(directory)
+
+    logging.info(f'Directory created: {directory}')
 
     return json.dumps({'status': '201', 'status_msg': 'Folder added successfully'})
 
