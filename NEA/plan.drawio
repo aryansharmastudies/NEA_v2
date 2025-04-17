@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
   <diagram name="Page-1" id="ekimDS5NgHhW3DlAZh_F">
-    <mxGraphModel dx="3853" dy="1560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3417" dy="1212" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -956,7 +956,7 @@
         <mxCell id="dZZOXCzAqUCWwI2QULWn-2" value="Shit i need to consider:&lt;div&gt;- encryption&lt;/div&gt;&lt;div&gt;- checksum&lt;/div&gt;&lt;div&gt;- &lt;font style=&quot;color: rgb(255, 51, 51);&quot;&gt;file locking(when the file is being transmitted?)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;- classes and objects&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="-1410" y="1350" width="330" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="dZZOXCzAqUCWwI2QULWn-4" value="Classes and objects&lt;div&gt;- what is different from sending a file to a folder?&lt;/div&gt;&lt;div&gt;- for different operations, i need different objects&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-4" value="Classes and objects&lt;div&gt;- what is different from sending a file to a folder?&lt;/div&gt;&lt;div&gt;- for different operations, i need different objects&lt;/div&gt;&lt;div&gt;(NOTE: actually, not really&lt;/div&gt;&lt;div&gt;you might need to make different classes/objects on the server side - not the client!)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="-1400" y="1550" width="290" height="140" as="geometry" />
         </mxCell>
         <mxCell id="dZZOXCzAqUCWwI2QULWn-5" value="what is sent through?&lt;div&gt;- i was thinking that, initially we need to send the command&lt;/div&gt;&lt;div&gt;e.g. if its a move, copy, remove, create, modify etc.&lt;/div&gt;&lt;div&gt;also we need to send the metadata first?&amp;nbsp;&lt;/div&gt;&lt;div&gt;- we gotta send directory too, where the file will be made/directory will be made.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
@@ -1031,6 +1031,9 @@
         </mxCell>
         <mxCell id="dZZOXCzAqUCWwI2QULWn-40" value="Traverasal?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-1650" y="1260" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-41" value="OK, so we used pre-order traversal down a directory and add the files and directory to sync_events, also add files to file table in db." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1680" y="1410" width="230" height="65" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

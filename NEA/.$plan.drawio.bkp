@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
   <diagram name="Page-1" id="ekimDS5NgHhW3DlAZh_F">
-    <mxGraphModel dx="2948" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2770" dy="1077" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -949,6 +949,88 @@
             <mxPoint x="670" y="1010" as="sourcePoint" />
             <mxPoint x="830" y="915" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-1" value="how will transmission of folders/files work?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1155" y="1328" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-2" value="Shit i need to consider:&lt;div&gt;- encryption&lt;/div&gt;&lt;div&gt;- checksum&lt;/div&gt;&lt;div&gt;- &lt;font style=&quot;color: rgb(255, 51, 51);&quot;&gt;file locking(when the file is being transmitted?)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;- classes and objects&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1410" y="1350" width="330" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-4" value="Classes and objects&lt;div&gt;- what is different from sending a file to a folder?&lt;/div&gt;&lt;div&gt;- for different operations, i need different objects&lt;/div&gt;&lt;div&gt;(NOTE: actually, not really&lt;/div&gt;&lt;div&gt;you might need to make different classes/objects on the server side - not the client!)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1400" y="1550" width="290" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-5" value="what is sent through?&lt;div&gt;- i was thinking that, initially we need to send the command&lt;/div&gt;&lt;div&gt;e.g. if its a move, copy, remove, create, modify etc.&lt;/div&gt;&lt;div&gt;also we need to send the metadata first?&amp;nbsp;&lt;/div&gt;&lt;div&gt;- we gotta send directory too, where the file will be made/directory will be made.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1025" y="1410" width="450" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dZZOXCzAqUCWwI2QULWn-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-780" y="1750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-6" value="start" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-960" y="1720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dZZOXCzAqUCWwI2QULWn-7" target="dZZOXCzAqUCWwI2QULWn-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-7" value="buffer 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1120" y="1720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dZZOXCzAqUCWwI2QULWn-8" target="dZZOXCzAqUCWwI2QULWn-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-8" value="buffer 2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1280" y="1720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dZZOXCzAqUCWwI2QULWn-9" target="dZZOXCzAqUCWwI2QULWn-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-9" value="end" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1440" y="1720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dZZOXCzAqUCWwI2QULWn-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-860" y="1870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-10" value="response&lt;div&gt;200&lt;/div&gt;&lt;div&gt;404(send again)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="1840" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-20" value="client" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.laptop_2;" vertex="1" parent="1">
+          <mxGeometry x="-1570" y="1706.75" width="116" height="86.5" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-21" value="server" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.ftp_server;" vertex="1" parent="1">
+          <mxGeometry x="-670" y="1820" width="71" height="97" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-24" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folder;" vertex="1" parent="1">
+          <mxGeometry x="-1601" y="1300" width="30" height="19.5" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-25" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folder;" vertex="1" parent="1">
+          <mxGeometry x="-1640" y="1338.5" width="30" height="19.5" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-26" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folder;" vertex="1" parent="1">
+          <mxGeometry x="-1560" y="1338.5" width="30" height="19.5" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-27" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folder;" vertex="1" parent="1">
+          <mxGeometry x="-1680" y="1380" width="30" height="19.5" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-28" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folder;" vertex="1" parent="1">
+          <mxGeometry x="-1600" y="1380" width="30" height="19.5" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.593;entryY=0.268;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="dZZOXCzAqUCWwI2QULWn-25" target="dZZOXCzAqUCWwI2QULWn-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.519;entryY=0.04;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="dZZOXCzAqUCWwI2QULWn-25" target="dZZOXCzAqUCWwI2QULWn-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.519;entryY=0.094;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="dZZOXCzAqUCWwI2QULWn-24" target="dZZOXCzAqUCWwI2QULWn-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.533;entryY=0.026;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="dZZOXCzAqUCWwI2QULWn-24" target="dZZOXCzAqUCWwI2QULWn-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dZZOXCzAqUCWwI2QULWn-40" value="Traverasal?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1650" y="1260" width="90" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

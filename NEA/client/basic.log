@@ -34956,3 +34956,586 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 2025-04-17 21:13:10 INFO 127.0.0.1 - - [17/Apr/2025 21:13:10] "POST /socket.io/?EIO=4&transport=polling&t=PP5OaSr&sid=rjwIlqmTd8MZ5wCdAAAG HTTP/1.1" 200 -
 2025-04-17 21:13:10 INFO 127.0.0.1 - - [17/Apr/2025 21:13:10] "GET /socket.io/?EIO=4&transport=polling&t=PP5OaSs&sid=rjwIlqmTd8MZ5wCdAAAG HTTP/1.1" 200 -
 2025-04-17 21:13:10 INFO 127.0.0.1 - - [17/Apr/2025 21:13:10] "GET /socket.io/?EIO=4&transport=polling&t=PP5OaT1&sid=rjwIlqmTd8MZ5wCdAAAG HTTP/1.1" 200 -
+2025-04-17 21:32:52 INFO binding to ip: 192.168.1.75
+2025-04-17 21:32:52 INFO Listening for incoming messages on port 6000...
+2025-04-17 21:32:52 INFO active_session dict: {}
+2025-04-17 21:32:52 INFO 🐕 watchdog started! 🐕
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='fuji_speedway'>
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='fuji_speedway'>
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='mt_fuji'>
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:32:52 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='mt_fuji'>
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:32:52 INFO [33mPress CTRL+C to quit[0m
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:32:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:32:54 INFO 127.0.0.1 - - [17/Apr/2025 21:32:54] "GET /socket.io/?EIO=4&transport=polling&t=PP5T5M6 HTTP/1.1" 200 -
+2025-04-17 21:32:54 INFO connected to frontend!
+2025-04-17 21:32:54 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:32:54 INFO 127.0.0.1 - - [17/Apr/2025 21:32:54] "GET /socket.io/?EIO=4&transport=polling&t=PP5T5MB&sid=nOVTyPmc_a7RLbKPAAAA HTTP/1.1" 200 -
+2025-04-17 21:32:54 INFO 127.0.0.1 - - [17/Apr/2025 21:32:54] "POST /socket.io/?EIO=4&transport=polling&t=PP5T5MA&sid=nOVTyPmc_a7RLbKPAAAA HTTP/1.1" 200 -
+2025-04-17 21:32:54 INFO 127.0.0.1 - - [17/Apr/2025 21:32:54] "GET /socket.io/?EIO=4&transport=polling&t=PP5T5MG&sid=nOVTyPmc_a7RLbKPAAAA HTTP/1.1" 200 -
+2025-04-17 21:33:10 INFO binding to ip: 192.168.1.75
+2025-04-17 21:33:10 INFO Listening for incoming messages on port 6000...
+2025-04-17 21:33:10 INFO active_session dict: {}
+2025-04-17 21:33:10 INFO 🐕 watchdog started! 🐕
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:33:10 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-17 21:33:10 INFO [33mPress CTRL+C to quit[0m
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='fuji_speedway'>
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='fuji_speedway'>
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='mt_fuji'>
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='mt_fuji'>
+2025-04-17 21:33:10 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:33:11 INFO 127.0.0.1 - - [17/Apr/2025 21:33:11] "GET /socket.io/?EIO=4&transport=polling&t=PP5T9iS HTTP/1.1" 200 -
+2025-04-17 21:33:11 INFO connected to frontend!
+2025-04-17 21:33:11 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:33:11 INFO 127.0.0.1 - - [17/Apr/2025 21:33:11] "POST /socket.io/?EIO=4&transport=polling&t=PP5T9iW&sid=pOyC-ez9H7S7DSXlAAAA HTTP/1.1" 200 -
+2025-04-17 21:33:11 INFO 127.0.0.1 - - [17/Apr/2025 21:33:11] "GET /socket.io/?EIO=4&transport=polling&t=PP5T9iW.0&sid=pOyC-ez9H7S7DSXlAAAA HTTP/1.1" 200 -
+2025-04-17 21:33:11 INFO 127.0.0.1 - - [17/Apr/2025 21:33:11] "GET /socket.io/?EIO=4&transport=polling&t=PP5T9ib&sid=pOyC-ez9H7S7DSXlAAAA HTTP/1.1" 200 -
+2025-04-17 21:34:24 INFO binding to ip: 192.168.1.75
+2025-04-17 21:34:24 INFO Listening for incoming messages on port 6000...
+2025-04-17 21:34:24 INFO active_session dict: {}
+2025-04-17 21:34:24 INFO 🐕 watchdog started! 🐕
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:34:24 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.75:5000
+2025-04-17 21:34:24 INFO [33mPress CTRL+C to quit[0m
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='fuji_speedway'>
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='fuji_speedway'>
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='mt_fuji'>
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='mt_fuji'>
+2025-04-17 21:34:24 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:34:25 INFO 127.0.0.1 - - [17/Apr/2025 21:34:25] "GET /socket.io/?EIO=4&transport=polling&t=PP5TRaV HTTP/1.1" 200 -
+2025-04-17 21:34:25 INFO connected to frontend!
+2025-04-17 21:34:25 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:34:25 INFO 127.0.0.1 - - [17/Apr/2025 21:34:25] "POST /socket.io/?EIO=4&transport=polling&t=PP5TRaZ&sid=HOB9NdAI-0GcLfdaAAAA HTTP/1.1" 200 -
+2025-04-17 21:34:25 INFO 127.0.0.1 - - [17/Apr/2025 21:34:25] "GET /socket.io/?EIO=4&transport=polling&t=PP5TRaZ.0&sid=HOB9NdAI-0GcLfdaAAAA HTTP/1.1" 200 -
+2025-04-17 21:35:10 INFO 127.0.0.1 - - [17/Apr/2025 21:35:10] "GET /socket.io/?EIO=4&transport=websocket&sid=HOB9NdAI-0GcLfdaAAAA HTTP/1.1" 200 -
+2025-04-17 21:35:10 INFO 127.0.0.1 - - [17/Apr/2025 21:35:10] "GET /socket.io/?EIO=4&transport=polling&t=PP5TRad&sid=HOB9NdAI-0GcLfdaAAAA HTTP/1.1" 200 -
+2025-04-17 21:35:11 INFO 127.0.0.1 - - [17/Apr/2025 21:35:11] "GET /socket.io/?EIO=4&transport=polling&t=PP5TcpK HTTP/1.1" 200 -
+2025-04-17 21:35:11 INFO connected to frontend!
+2025-04-17 21:35:11 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:35:11 INFO 127.0.0.1 - - [17/Apr/2025 21:35:11] "POST /socket.io/?EIO=4&transport=polling&t=PP5TcpM&sid=Cks7eqtwWKwrp0qPAAAC HTTP/1.1" 200 -
+2025-04-17 21:35:11 INFO 127.0.0.1 - - [17/Apr/2025 21:35:11] "GET /socket.io/?EIO=4&transport=polling&t=PP5TcpM.0&sid=Cks7eqtwWKwrp0qPAAAC HTTP/1.1" 200 -
+2025-04-17 21:35:56 INFO 127.0.0.1 - - [17/Apr/2025 21:35:56] "GET /socket.io/?EIO=4&transport=websocket&sid=Cks7eqtwWKwrp0qPAAAC HTTP/1.1" 200 -
+2025-04-17 21:35:56 INFO 127.0.0.1 - - [17/Apr/2025 21:35:56] "GET /socket.io/?EIO=4&transport=polling&t=PP5TcpQ&sid=Cks7eqtwWKwrp0qPAAAC HTTP/1.1" 200 -
+2025-04-17 21:35:57 INFO 127.0.0.1 - - [17/Apr/2025 21:35:57] "GET /socket.io/?EIO=4&transport=polling&t=PP5To9U HTTP/1.1" 200 -
+2025-04-17 21:35:57 INFO connected to frontend!
+2025-04-17 21:35:57 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:35:57 INFO 127.0.0.1 - - [17/Apr/2025 21:35:57] "POST /socket.io/?EIO=4&transport=polling&t=PP5To9W&sid=3KE1dHmS76i-PXO-AAAE HTTP/1.1" 200 -
+2025-04-17 21:35:57 INFO 127.0.0.1 - - [17/Apr/2025 21:35:57] "GET /socket.io/?EIO=4&transport=polling&t=PP5To9W.0&sid=3KE1dHmS76i-PXO-AAAE HTTP/1.1" 200 -
+2025-04-17 21:36:42 INFO 127.0.0.1 - - [17/Apr/2025 21:36:42] "GET /socket.io/?EIO=4&transport=websocket&sid=3KE1dHmS76i-PXO-AAAE HTTP/1.1" 200 -
+2025-04-17 21:36:42 INFO 127.0.0.1 - - [17/Apr/2025 21:36:42] "GET /socket.io/?EIO=4&transport=polling&t=PP5To9Z&sid=3KE1dHmS76i-PXO-AAAE HTTP/1.1" 200 -
+2025-04-17 21:36:43 INFO 127.0.0.1 - - [17/Apr/2025 21:36:43] "GET /socket.io/?EIO=4&transport=polling&t=PP5TzOH HTTP/1.1" 200 -
+2025-04-17 21:36:43 INFO connected to frontend!
+2025-04-17 21:36:43 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:36:43 INFO 127.0.0.1 - - [17/Apr/2025 21:36:43] "POST /socket.io/?EIO=4&transport=polling&t=PP5TzOK&sid=lut1Qte3lZLh8kYxAAAG HTTP/1.1" 200 -
+2025-04-17 21:36:43 INFO 127.0.0.1 - - [17/Apr/2025 21:36:43] "GET /socket.io/?EIO=4&transport=polling&t=PP5TzOL&sid=lut1Qte3lZLh8kYxAAAG HTTP/1.1" 200 -
+2025-04-17 21:36:52 INFO binding to ip: 192.168.1.75
+2025-04-17 21:36:52 INFO Listening for incoming messages on port 6000...
+2025-04-17 21:36:52 INFO active_session dict: {}
+2025-04-17 21:36:52 INFO 🐕 watchdog started! 🐕
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:36:52 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.75:5000
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='fuji_speedway'>
+2025-04-17 21:36:52 INFO [33mPress CTRL+C to quit[0m
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='fuji_speedway'>
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='mt_fuji'>
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='mt_fuji'>
+2025-04-17 21:36:52 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:36:57 INFO 127.0.0.1 - - [17/Apr/2025 21:36:57] "GET /socket.io/?EIO=4&transport=polling&t=PP5U0k6 HTTP/1.1" 200 -
+2025-04-17 21:36:57 INFO connected to frontend!
+2025-04-17 21:36:57 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:36:57 INFO 127.0.0.1 - - [17/Apr/2025 21:36:57] "POST /socket.io/?EIO=4&transport=polling&t=PP5U0k9&sid=eVhUSFHJ4PWd4V86AAAA HTTP/1.1" 200 -
+2025-04-17 21:36:57 INFO 127.0.0.1 - - [17/Apr/2025 21:36:57] "GET /socket.io/?EIO=4&transport=polling&t=PP5U0kA&sid=eVhUSFHJ4PWd4V86AAAA HTTP/1.1" 200 -
+2025-04-17 21:36:58 INFO 127.0.0.1 - - [17/Apr/2025 21:36:58] "GET /socket.io/?EIO=4&transport=websocket&sid=eVhUSFHJ4PWd4V86AAAA HTTP/1.1" 200 -
+2025-04-17 21:36:58 INFO 127.0.0.1 - - [17/Apr/2025 21:36:58] "GET /socket.io/?EIO=4&transport=polling&t=PP5U0kD&sid=eVhUSFHJ4PWd4V86AAAA HTTP/1.1" 200 -
+2025-04-17 21:36:58 INFO active_session updated: {'user': 'takumi', 'server_name': '192.168.1.75'}
+2025-04-17 21:36:58 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-17 21:36:58 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-17 21:36:58 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-17 21:36:58 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": [["akina", "QijTog8iyj", "ryosuke"]]}, type: <class 'str'>
+2025-04-17 21:36:58 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': [['akina', 'QijTog8iyj', 'ryosuke']]}
+2025-04-17 21:36:58 INFO status: 200
+2025-04-17 21:36:58 INFO status_msg: IP updated successfully
+2025-04-17 21:36:58 INFO data: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:36:58 INFO status: 200 status_msg: IP updated successfully data: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:36:58 INFO 200 : OK
+2025-04-17 21:36:58 INFO storing alerts to sessions!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:36:58 INFO 127.0.0.1 - - [17/Apr/2025 21:36:58] "GET /dashboard HTTP/1.1" 200 -
+2025-04-17 21:36:58 INFO 127.0.0.1 - - [17/Apr/2025 21:36:58] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-17 21:36:58 INFO 127.0.0.1 - - [17/Apr/2025 21:36:58] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:36:58 INFO 127.0.0.1 - - [17/Apr/2025 21:36:58] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-17 21:36:58 INFO 127.0.0.1 - - [17/Apr/2025 21:36:58] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:36:58 INFO 127.0.0.1 - - [17/Apr/2025 21:36:58] "GET /socket.io/?EIO=4&transport=polling&t=PP5U0zk HTTP/1.1" 200 -
+2025-04-17 21:36:58 INFO connected to frontend!
+2025-04-17 21:36:58 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:36:58 INFO 127.0.0.1 - - [17/Apr/2025 21:36:58] "POST /socket.io/?EIO=4&transport=polling&t=PP5U0zq&sid=3xPHDgx2ygy1q33gAAAC HTTP/1.1" 200 -
+2025-04-17 21:36:58 INFO 127.0.0.1 - - [17/Apr/2025 21:36:58] "GET /socket.io/?EIO=4&transport=polling&t=PP5U0zq.0&sid=3xPHDgx2ygy1q33gAAAC HTTP/1.1" 200 -
+2025-04-17 21:37:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='fuji_speedway'>
+2025-04-17 21:37:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:37:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='fuji_speedway'>
+2025-04-17 21:37:00 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:37:44 INFO 127.0.0.1 - - [17/Apr/2025 21:37:44] "GET /socket.io/?EIO=4&transport=websocket&sid=3xPHDgx2ygy1q33gAAAC HTTP/1.1" 200 -
+2025-04-17 21:37:44 INFO 127.0.0.1 - - [17/Apr/2025 21:37:44] "GET /socket.io/?EIO=4&transport=polling&t=PP5U0z-&sid=3xPHDgx2ygy1q33gAAAC HTTP/1.1" 200 -
+2025-04-17 21:37:45 INFO 127.0.0.1 - - [17/Apr/2025 21:37:45] "GET /socket.io/?EIO=4&transport=polling&t=PP5UCOF HTTP/1.1" 200 -
+2025-04-17 21:37:45 INFO connected to frontend!
+2025-04-17 21:37:45 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:37:45 INFO 127.0.0.1 - - [17/Apr/2025 21:37:45] "POST /socket.io/?EIO=4&transport=polling&t=PP5UCOI&sid=OvK-aDoudmEX3iuwAAAE HTTP/1.1" 200 -
+2025-04-17 21:37:45 INFO 127.0.0.1 - - [17/Apr/2025 21:37:45] "GET /socket.io/?EIO=4&transport=polling&t=PP5UCOJ&sid=OvK-aDoudmEX3iuwAAAE HTTP/1.1" 200 -
+2025-04-17 21:38:30 INFO 127.0.0.1 - - [17/Apr/2025 21:38:30] "GET /socket.io/?EIO=4&transport=websocket&sid=OvK-aDoudmEX3iuwAAAE HTTP/1.1" 200 -
+2025-04-17 21:38:30 INFO 127.0.0.1 - - [17/Apr/2025 21:38:30] "GET /socket.io/?EIO=4&transport=polling&t=PP5UCON&sid=OvK-aDoudmEX3iuwAAAE HTTP/1.1" 200 -
+2025-04-17 21:38:31 INFO 127.0.0.1 - - [17/Apr/2025 21:38:31] "GET /socket.io/?EIO=4&transport=polling&t=PP5UNd4 HTTP/1.1" 200 -
+2025-04-17 21:38:31 INFO connected to frontend!
+2025-04-17 21:38:31 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:38:31 INFO 127.0.0.1 - - [17/Apr/2025 21:38:31] "POST /socket.io/?EIO=4&transport=polling&t=PP5UNd7&sid=REkLLl9Tuqz6yX7JAAAG HTTP/1.1" 200 -
+2025-04-17 21:39:16 INFO 127.0.0.1 - - [17/Apr/2025 21:39:16] "GET /socket.io/?EIO=4&transport=websocket&sid=REkLLl9Tuqz6yX7JAAAG HTTP/1.1" 200 -
+2025-04-17 21:39:16 INFO 127.0.0.1 - - [17/Apr/2025 21:39:16] "GET /socket.io/?EIO=4&transport=polling&t=PP5UNd8&sid=REkLLl9Tuqz6yX7JAAAG HTTP/1.1" 200 -
+2025-04-17 21:39:17 INFO 127.0.0.1 - - [17/Apr/2025 21:39:17] "GET /socket.io/?EIO=4&transport=polling&t=PP5UYru HTTP/1.1" 200 -
+2025-04-17 21:39:17 INFO connected to frontend!
+2025-04-17 21:39:17 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:39:17 INFO 127.0.0.1 - - [17/Apr/2025 21:39:17] "POST /socket.io/?EIO=4&transport=polling&t=PP5UYry&sid=KH2zhRcNi5nSzfolAAAI HTTP/1.1" 200 -
+2025-04-17 21:39:17 INFO 127.0.0.1 - - [17/Apr/2025 21:39:17] "GET /socket.io/?EIO=4&transport=polling&t=PP5UYry.0&sid=KH2zhRcNi5nSzfolAAAI HTTP/1.1" 200 -
+2025-04-17 21:40:02 INFO 127.0.0.1 - - [17/Apr/2025 21:40:02] "GET /socket.io/?EIO=4&transport=websocket&sid=KH2zhRcNi5nSzfolAAAI HTTP/1.1" 200 -
+2025-04-17 21:40:02 INFO 127.0.0.1 - - [17/Apr/2025 21:40:02] "GET /socket.io/?EIO=4&transport=polling&t=PP5UYs0&sid=KH2zhRcNi5nSzfolAAAI HTTP/1.1" 200 -
+2025-04-17 21:40:03 INFO 127.0.0.1 - - [17/Apr/2025 21:40:03] "GET /socket.io/?EIO=4&transport=polling&t=PP5UkCG HTTP/1.1" 200 -
+2025-04-17 21:40:03 INFO connected to frontend!
+2025-04-17 21:40:03 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:40:03 INFO 127.0.0.1 - - [17/Apr/2025 21:40:03] "POST /socket.io/?EIO=4&transport=polling&t=PP5UkCJ&sid=mi2JUmOMfqr0TuPZAAAK HTTP/1.1" 200 -
+2025-04-17 21:40:03 INFO 127.0.0.1 - - [17/Apr/2025 21:40:03] "GET /socket.io/?EIO=4&transport=polling&t=PP5UkCJ.0&sid=mi2JUmOMfqr0TuPZAAAK HTTP/1.1" 200 -
+2025-04-17 21:40:48 INFO 127.0.0.1 - - [17/Apr/2025 21:40:48] "GET /socket.io/?EIO=4&transport=websocket&sid=mi2JUmOMfqr0TuPZAAAK HTTP/1.1" 200 -
+2025-04-17 21:40:48 INFO 127.0.0.1 - - [17/Apr/2025 21:40:48] "GET /socket.io/?EIO=4&transport=polling&t=PP5UkCM&sid=mi2JUmOMfqr0TuPZAAAK HTTP/1.1" 200 -
+2025-04-17 21:40:49 INFO 127.0.0.1 - - [17/Apr/2025 21:40:49] "GET /socket.io/?EIO=4&transport=polling&t=PP5UvSQ HTTP/1.1" 200 -
+2025-04-17 21:40:49 INFO connected to frontend!
+2025-04-17 21:40:49 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:40:49 INFO 127.0.0.1 - - [17/Apr/2025 21:40:49] "POST /socket.io/?EIO=4&transport=polling&t=PP5UvSS&sid=J7CTIoeAmoVKkY7FAAAM HTTP/1.1" 200 -
+2025-04-17 21:40:49 INFO 127.0.0.1 - - [17/Apr/2025 21:40:49] "GET /socket.io/?EIO=4&transport=polling&t=PP5UvST&sid=J7CTIoeAmoVKkY7FAAAM HTTP/1.1" 200 -
+2025-04-17 21:41:34 INFO 127.0.0.1 - - [17/Apr/2025 21:41:34] "GET /socket.io/?EIO=4&transport=websocket&sid=J7CTIoeAmoVKkY7FAAAM HTTP/1.1" 200 -
+2025-04-17 21:41:34 INFO 127.0.0.1 - - [17/Apr/2025 21:41:34] "GET /socket.io/?EIO=4&transport=polling&t=PP5UvSW&sid=J7CTIoeAmoVKkY7FAAAM HTTP/1.1" 200 -
+2025-04-17 21:41:35 INFO 127.0.0.1 - - [17/Apr/2025 21:41:35] "GET /socket.io/?EIO=4&transport=polling&t=PP5V4hE HTTP/1.1" 200 -
+2025-04-17 21:41:35 INFO connected to frontend!
+2025-04-17 21:41:35 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:41:35 INFO 127.0.0.1 - - [17/Apr/2025 21:41:35] "POST /socket.io/?EIO=4&transport=polling&t=PP5V4hH&sid=7tcsLKdWDtBHbXq8AAAO HTTP/1.1" 200 -
+2025-04-17 21:41:35 INFO 127.0.0.1 - - [17/Apr/2025 21:41:35] "GET /socket.io/?EIO=4&transport=polling&t=PP5V4hH.0&sid=7tcsLKdWDtBHbXq8AAAO HTTP/1.1" 200 -
+2025-04-17 21:42:20 INFO 127.0.0.1 - - [17/Apr/2025 21:42:20] "GET /socket.io/?EIO=4&transport=websocket&sid=7tcsLKdWDtBHbXq8AAAO HTTP/1.1" 200 -
+2025-04-17 21:42:20 INFO 127.0.0.1 - - [17/Apr/2025 21:42:20] "GET /socket.io/?EIO=4&transport=polling&t=PP5V4hK&sid=7tcsLKdWDtBHbXq8AAAO HTTP/1.1" 200 -
+2025-04-17 21:42:21 INFO 127.0.0.1 - - [17/Apr/2025 21:42:21] "GET /socket.io/?EIO=4&transport=polling&t=PP5VFw1 HTTP/1.1" 200 -
+2025-04-17 21:42:21 INFO connected to frontend!
+2025-04-17 21:42:21 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:42:21 INFO 127.0.0.1 - - [17/Apr/2025 21:42:21] "POST /socket.io/?EIO=4&transport=polling&t=PP5VFw4&sid=l9LlDAB-Gm5UzfdhAAAQ HTTP/1.1" 200 -
+2025-04-17 21:42:21 INFO 127.0.0.1 - - [17/Apr/2025 21:42:21] "GET /socket.io/?EIO=4&transport=polling&t=PP5VFw4.0&sid=l9LlDAB-Gm5UzfdhAAAQ HTTP/1.1" 200 -
+2025-04-17 21:43:06 INFO 127.0.0.1 - - [17/Apr/2025 21:43:06] "GET /socket.io/?EIO=4&transport=websocket&sid=l9LlDAB-Gm5UzfdhAAAQ HTTP/1.1" 200 -
+2025-04-17 21:43:06 INFO 127.0.0.1 - - [17/Apr/2025 21:43:06] "GET /socket.io/?EIO=4&transport=polling&t=PP5VFw8&sid=l9LlDAB-Gm5UzfdhAAAQ HTTP/1.1" 200 -
+2025-04-17 21:43:07 INFO 127.0.0.1 - - [17/Apr/2025 21:43:07] "GET /socket.io/?EIO=4&transport=polling&t=PP5VR8s HTTP/1.1" 200 -
+2025-04-17 21:43:07 INFO connected to frontend!
+2025-04-17 21:43:07 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:43:07 INFO 127.0.0.1 - - [17/Apr/2025 21:43:07] "POST /socket.io/?EIO=4&transport=polling&t=PP5VR8v&sid=i47U4r8ghXLsiRhbAAAS HTTP/1.1" 200 -
+2025-04-17 21:43:07 INFO 127.0.0.1 - - [17/Apr/2025 21:43:07] "GET /socket.io/?EIO=4&transport=polling&t=PP5VR8w&sid=i47U4r8ghXLsiRhbAAAS HTTP/1.1" 200 -
+2025-04-17 21:43:52 INFO 127.0.0.1 - - [17/Apr/2025 21:43:52] "GET /socket.io/?EIO=4&transport=websocket&sid=i47U4r8ghXLsiRhbAAAS HTTP/1.1" 200 -
+2025-04-17 21:43:52 INFO 127.0.0.1 - - [17/Apr/2025 21:43:52] "GET /socket.io/?EIO=4&transport=polling&t=PP5VR8z&sid=i47U4r8ghXLsiRhbAAAS HTTP/1.1" 200 -
+2025-04-17 21:43:53 INFO 127.0.0.1 - - [17/Apr/2025 21:43:53] "GET /socket.io/?EIO=4&transport=polling&t=PP5VcNg HTTP/1.1" 200 -
+2025-04-17 21:43:53 INFO connected to frontend!
+2025-04-17 21:43:53 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:43:53 INFO 127.0.0.1 - - [17/Apr/2025 21:43:53] "POST /socket.io/?EIO=4&transport=polling&t=PP5VcNj&sid=MkfO5JOM_NqzS8wsAAAU HTTP/1.1" 200 -
+2025-04-17 21:43:53 INFO 127.0.0.1 - - [17/Apr/2025 21:43:53] "GET /socket.io/?EIO=4&transport=polling&t=PP5VcNk&sid=MkfO5JOM_NqzS8wsAAAU HTTP/1.1" 200 -
+2025-04-17 21:44:39 INFO 127.0.0.1 - - [17/Apr/2025 21:44:39] "GET /socket.io/?EIO=4&transport=websocket&sid=MkfO5JOM_NqzS8wsAAAU HTTP/1.1" 200 -
+2025-04-17 21:44:39 INFO 127.0.0.1 - - [17/Apr/2025 21:44:39] "GET /socket.io/?EIO=4&transport=polling&t=PP5VcNn&sid=MkfO5JOM_NqzS8wsAAAU HTTP/1.1" 200 -
+2025-04-17 21:44:40 INFO 127.0.0.1 - - [17/Apr/2025 21:44:40] "GET /socket.io/?EIO=4&transport=polling&t=PP5VnhO HTTP/1.1" 200 -
+2025-04-17 21:44:40 INFO connected to frontend!
+2025-04-17 21:44:40 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:44:40 INFO 127.0.0.1 - - [17/Apr/2025 21:44:40] "POST /socket.io/?EIO=4&transport=polling&t=PP5VnhS&sid=ZSEdXKkmPzTbC-n2AAAW HTTP/1.1" 200 -
+2025-04-17 21:45:25 INFO 127.0.0.1 - - [17/Apr/2025 21:45:25] "GET /socket.io/?EIO=4&transport=websocket&sid=ZSEdXKkmPzTbC-n2AAAW HTTP/1.1" 200 -
+2025-04-17 21:45:25 INFO 127.0.0.1 - - [17/Apr/2025 21:45:25] "GET /socket.io/?EIO=4&transport=polling&t=PP5VnhS.0&sid=ZSEdXKkmPzTbC-n2AAAW HTTP/1.1" 200 -
+2025-04-17 21:45:25 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-17 21:45:25 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-17 21:45:25 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-17 21:45:25 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "desktop-computer"
+      ],
+      [
+        2,
+        "desktop-computer"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-17 21:45:25 INFO server_data: {'data': {'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']], 'users': [[1, 'takumi'], [2, 'ryosuke']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-17 21:45:25 INFO status: 200
+2025-04-17 21:45:25 INFO status_msg: unknown
+2025-04-17 21:45:25 INFO data: {'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']], 'users': [[1, 'takumi'], [2, 'ryosuke']]}
+2025-04-17 21:45:25 INFO status: 200 status_msg: unknown data: {'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']], 'users': [[1, 'takumi'], [2, 'ryosuke']]}
+2025-04-17 21:45:25 INFO 200 : OK
+2025-04-17 21:45:25 INFO Sending to frontend: {'takumi': ['desktop-computer'], 'ryosuke': ['desktop-computer']}
+2025-04-17 21:45:25 INFO 127.0.0.1 - - [17/Apr/2025 21:45:25] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-04-17 21:45:25 INFO 127.0.0.1 - - [17/Apr/2025 21:45:25] "GET /socket.io/?EIO=4&transport=polling&t=PP5Vyuf HTTP/1.1" 200 -
+2025-04-17 21:45:25 INFO connected to frontend!
+2025-04-17 21:45:25 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:45:25 INFO 127.0.0.1 - - [17/Apr/2025 21:45:25] "POST /socket.io/?EIO=4&transport=polling&t=PP5Vyui&sid=tJQ2iGJkvrGlS84eAAAY HTTP/1.1" 200 -
+2025-04-17 21:45:25 INFO 127.0.0.1 - - [17/Apr/2025 21:45:25] "GET /socket.io/?EIO=4&transport=polling&t=PP5Vyuj&sid=tJQ2iGJkvrGlS84eAAAY HTTP/1.1" 200 -
+2025-04-17 21:46:10 INFO 127.0.0.1 - - [17/Apr/2025 21:46:10] "GET /socket.io/?EIO=4&transport=websocket&sid=tJQ2iGJkvrGlS84eAAAY HTTP/1.1" 200 -
+2025-04-17 21:46:10 INFO 127.0.0.1 - - [17/Apr/2025 21:46:10] "GET /socket.io/?EIO=4&transport=polling&t=PP5Vyun&sid=tJQ2iGJkvrGlS84eAAAY HTTP/1.1" 200 -
+2025-04-17 21:46:11 INFO 127.0.0.1 - - [17/Apr/2025 21:46:11] "GET /socket.io/?EIO=4&transport=polling&t=PP5W85p HTTP/1.1" 200 -
+2025-04-17 21:46:11 INFO connected to frontend!
+2025-04-17 21:46:11 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:46:11 INFO 127.0.0.1 - - [17/Apr/2025 21:46:11] "POST /socket.io/?EIO=4&transport=polling&t=PP5W85s&sid=r4q2jnc-og_KYIYpAAAa HTTP/1.1" 200 -
+2025-04-17 21:46:11 INFO 127.0.0.1 - - [17/Apr/2025 21:46:11] "GET /socket.io/?EIO=4&transport=polling&t=PP5W85t&sid=r4q2jnc-og_KYIYpAAAa HTTP/1.1" 200 -
+2025-04-17 21:46:58 INFO 127.0.0.1 - - [17/Apr/2025 21:46:58] "GET /socket.io/?EIO=4&transport=websocket&sid=r4q2jnc-og_KYIYpAAAa HTTP/1.1" 200 -
+2025-04-17 21:46:58 ERROR Invalid session r4q2jnc-og_KYIYpAAAa (further occurrences of this error will be logged with level INFO)
+2025-04-17 21:46:58 INFO 127.0.0.1 - - [17/Apr/2025 21:46:58] "[31m[1mGET /socket.io/?EIO=4&transport=polling&t=PP5W85v&sid=r4q2jnc-og_KYIYpAAAa HTTP/1.1[0m" 400 -
+2025-04-17 21:46:59 INFO 127.0.0.1 - - [17/Apr/2025 21:46:59] "GET /socket.io/?EIO=4&transport=polling&t=PP5WJhT HTTP/1.1" 200 -
+2025-04-17 21:46:59 INFO connected to frontend!
+2025-04-17 21:46:59 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:46:59 INFO 127.0.0.1 - - [17/Apr/2025 21:46:59] "POST /socket.io/?EIO=4&transport=polling&t=PP5WJhW&sid=4lxWUcKuzJ4JsnYvAAAc HTTP/1.1" 200 -
+2025-04-17 21:46:59 INFO 127.0.0.1 - - [17/Apr/2025 21:46:59] "GET /socket.io/?EIO=4&transport=polling&t=PP5WJhW.0&sid=4lxWUcKuzJ4JsnYvAAAc HTTP/1.1" 200 -
+2025-04-17 21:47:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:47:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:47:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:47:03 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:47:21 INFO 127.0.0.1 - - [17/Apr/2025 21:47:21] "GET /socket.io/?EIO=4&transport=websocket&sid=4lxWUcKuzJ4JsnYvAAAc HTTP/1.1" 200 -
+2025-04-17 21:47:21 INFO 127.0.0.1 - - [17/Apr/2025 21:47:21] "GET /socket.io/?EIO=4&transport=polling&t=PP5WJha&sid=4lxWUcKuzJ4JsnYvAAAc HTTP/1.1" 200 -
+2025-04-17 21:47:21 INFO active_session updated: {'user': 'takumi', 'server_name': '192.168.1.75'}
+2025-04-17 21:47:21 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-17 21:47:21 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-17 21:47:21 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-17 21:47:21 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": [["akina", "QijTog8iyj", "ryosuke"]]}, type: <class 'str'>
+2025-04-17 21:47:21 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': [['akina', 'QijTog8iyj', 'ryosuke']]}
+2025-04-17 21:47:21 INFO status: 200
+2025-04-17 21:47:21 INFO status_msg: IP updated successfully
+2025-04-17 21:47:21 INFO data: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:21 INFO status: 200 status_msg: IP updated successfully data: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:21 INFO 200 : OK
+2025-04-17 21:47:21 INFO storing alerts to sessions!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:21 INFO 127.0.0.1 - - [17/Apr/2025 21:47:21] "GET /dashboard HTTP/1.1" 200 -
+2025-04-17 21:47:21 INFO 127.0.0.1 - - [17/Apr/2025 21:47:21] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-17 21:47:21 INFO 127.0.0.1 - - [17/Apr/2025 21:47:21] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:47:21 INFO 127.0.0.1 - - [17/Apr/2025 21:47:21] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-17 21:47:21 INFO 127.0.0.1 - - [17/Apr/2025 21:47:21] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:47:21 INFO 127.0.0.1 - - [17/Apr/2025 21:47:21] "GET /socket.io/?EIO=4&transport=polling&t=PP5WP9l HTTP/1.1" 200 -
+2025-04-17 21:47:21 INFO connected to frontend!
+2025-04-17 21:47:21 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:21 INFO 127.0.0.1 - - [17/Apr/2025 21:47:21] "POST /socket.io/?EIO=4&transport=polling&t=PP5WP9v&sid=fRDDOwMKUE7Oi7o2AAAe HTTP/1.1" 200 -
+2025-04-17 21:47:21 INFO 127.0.0.1 - - [17/Apr/2025 21:47:21] "GET /socket.io/?EIO=4&transport=polling&t=PP5WP9v.0&sid=fRDDOwMKUE7Oi7o2AAAe HTTP/1.1" 200 -
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "GET /socket.io/?EIO=4&transport=websocket&sid=fRDDOwMKUE7Oi7o2AAAe HTTP/1.1" 200 -
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "GET /socket.io/?EIO=4&transport=polling&t=PP5WPA4&sid=fRDDOwMKUE7Oi7o2AAAe HTTP/1.1" 200 -
+2025-04-17 21:47:26 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-17 21:47:26 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-17 21:47:26 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-17 21:47:26 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "desktop-computer"
+      ],
+      [
+        2,
+        "desktop-computer"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-17 21:47:26 INFO server_data: {'data': {'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']], 'users': [[1, 'takumi'], [2, 'ryosuke']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-17 21:47:26 INFO status: 200
+2025-04-17 21:47:26 INFO status_msg: unknown
+2025-04-17 21:47:26 INFO data: {'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']], 'users': [[1, 'takumi'], [2, 'ryosuke']]}
+2025-04-17 21:47:26 INFO status: 200 status_msg: unknown data: {'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']], 'users': [[1, 'takumi'], [2, 'ryosuke']]}
+2025-04-17 21:47:26 INFO 200 : OK
+2025-04-17 21:47:26 INFO Sending to frontend: {'takumi': ['desktop-computer'], 'ryosuke': ['desktop-computer']}
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-04-17 21:47:26 INFO active_session updated: {'user': 'takumi', 'server_name': '192.168.1.75'}
+2025-04-17 21:47:26 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-17 21:47:26 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-17 21:47:26 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-17 21:47:26 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": [["akina", "QijTog8iyj", "ryosuke"]]}, type: <class 'str'>
+2025-04-17 21:47:26 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': [['akina', 'QijTog8iyj', 'ryosuke']]}
+2025-04-17 21:47:26 INFO status: 200
+2025-04-17 21:47:26 INFO status_msg: IP updated successfully
+2025-04-17 21:47:26 INFO data: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:26 INFO status: 200 status_msg: IP updated successfully data: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:26 INFO 200 : OK
+2025-04-17 21:47:26 INFO storing alerts to sessions!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "GET /dashboard HTTP/1.1" 200 -
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "GET /socket.io/?EIO=4&transport=polling&t=PP5WQK7 HTTP/1.1" 200 -
+2025-04-17 21:47:26 INFO connected to frontend!
+2025-04-17 21:47:26 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "POST /socket.io/?EIO=4&transport=polling&t=PP5WQKD&sid=Y2tzOhyp6zstof5gAAAg HTTP/1.1" 200 -
+2025-04-17 21:47:26 INFO 127.0.0.1 - - [17/Apr/2025 21:47:26] "GET /socket.io/?EIO=4&transport=polling&t=PP5WQKE&sid=Y2tzOhyp6zstof5gAAAg HTTP/1.1" 200 -
+2025-04-17 21:47:32 INFO binding to ip: 192.168.1.75
+2025-04-17 21:47:32 INFO Listening for incoming messages on port 6000...
+2025-04-17 21:47:32 INFO active_session dict: {}
+2025-04-17 21:47:32 INFO 🐕 watchdog started! 🐕
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/akina', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:47:32 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:47:32 INFO [33mPress CTRL+C to quit[0m
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='fuji_speedway'>
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='fuji_speedway'>
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/fuji_speedway', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='mt_fuji'>
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='mt_fuji'>
+2025-04-17 21:47:32 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/fuji/mt_fuji', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:47:33 INFO active_session updated: {'user': 'takumi', 'server_name': '192.168.1.75'}
+2025-04-17 21:47:33 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-17 21:47:33 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-17 21:47:33 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-17 21:47:33 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": [["akina", "QijTog8iyj", "ryosuke"]]}, type: <class 'str'>
+2025-04-17 21:47:33 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': [['akina', 'QijTog8iyj', 'ryosuke']]}
+2025-04-17 21:47:33 INFO status: 200
+2025-04-17 21:47:33 INFO status_msg: IP updated successfully
+2025-04-17 21:47:33 INFO data: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:33 INFO status: 200 status_msg: IP updated successfully data: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:33 INFO 200 : OK
+2025-04-17 21:47:33 INFO storing alerts to sessions!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:33 INFO 127.0.0.1 - - [17/Apr/2025 21:47:33] "GET /dashboard HTTP/1.1" 200 -
+2025-04-17 21:47:33 INFO 127.0.0.1 - - [17/Apr/2025 21:47:33] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-17 21:47:33 INFO 127.0.0.1 - - [17/Apr/2025 21:47:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:47:33 INFO 127.0.0.1 - - [17/Apr/2025 21:47:33] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-04-17 21:47:33 INFO 127.0.0.1 - - [17/Apr/2025 21:47:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:47:33 INFO 127.0.0.1 - - [17/Apr/2025 21:47:33] "GET /socket.io/?EIO=4&transport=polling&t=PP5WS8E HTTP/1.1" 200 -
+2025-04-17 21:47:33 INFO connected to frontend!
+2025-04-17 21:47:33 INFO sending alerts to frontend!: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-17 21:47:33 INFO 127.0.0.1 - - [17/Apr/2025 21:47:33] "POST /socket.io/?EIO=4&transport=polling&t=PP5WS8J&sid=dqoWrOYGLokPNGyqAAAA HTTP/1.1" 200 -
+2025-04-17 21:47:33 INFO 127.0.0.1 - - [17/Apr/2025 21:47:33] "GET /socket.io/?EIO=4&transport=polling&t=PP5WS8K&sid=dqoWrOYGLokPNGyqAAAA HTTP/1.1" 200 -
+2025-04-17 21:47:33 INFO 127.0.0.1 - - [17/Apr/2025 21:47:33] "GET /socket.io/?EIO=4&transport=polling&t=PP5WS8W&sid=dqoWrOYGLokPNGyqAAAA HTTP/1.1" 200 -
+2025-04-17 21:47:34 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-17 21:47:34 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-17 21:47:34 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-17 21:47:34 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "desktop-computer"
+      ],
+      [
+        2,
+        "desktop-computer"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-17 21:47:34 INFO server_data: {'data': {'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']], 'users': [[1, 'takumi'], [2, 'ryosuke']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-17 21:47:34 INFO status: 200
+2025-04-17 21:47:34 INFO status_msg: unknown
+2025-04-17 21:47:34 INFO data: {'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']], 'users': [[1, 'takumi'], [2, 'ryosuke']]}
+2025-04-17 21:47:34 INFO status: 200 status_msg: unknown data: {'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']], 'users': [[1, 'takumi'], [2, 'ryosuke']]}
+2025-04-17 21:47:34 INFO 200 : OK
+2025-04-17 21:47:34 INFO Sending to frontend: {'takumi': ['desktop-computer'], 'ryosuke': ['desktop-computer']}
+2025-04-17 21:47:34 INFO 127.0.0.1 - - [17/Apr/2025 21:47:34] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-04-17 21:48:01 INFO DATA FROM ADDING FOLDER FORMS(front front end)!: {'action': 'add_folder', 'folder_label': 'ebisu', 'folder_id': 'uXQaqSCpV3', 'directory': '~/Documents/Shared/ebisu', 'shared_users': ['ryosuke:desktop-computer'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'takumi'}
+2025-04-17 21:48:01 INFO sending data to server: {"action": "add_folder", "folder_label": "ebisu", "folder_id": "uXQaqSCpV3", "directory": "~/Documents/Shared/ebisu", "shared_users": ["ryosuke:desktop-computer"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "takumi"}
+2025-04-17 21:48:01 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-17 21:48:01 INFO Connection from ('192.168.1.75', 55812) established.
+2025-04-17 21:48:01 INFO Message received: {"action": "authorise", "user": "ryosuke"}
+2025-04-17 21:48:01 INFO authorisation recieved: {'action': 'authorise', 'user': 'ryosuke'}
+2025-04-17 21:48:01 INFO server response: {"status": "201", "status_msg": "Folder added successfully"}, type: <class 'str'>
+2025-04-17 21:48:01 INFO server_data: {'status': '201', 'status_msg': 'Folder added successfully'}
+2025-04-17 21:48:01 INFO status: 201
+2025-04-17 21:48:01 INFO status_msg: Folder added successfully
+2025-04-17 21:48:01 INFO data: False
+2025-04-17 21:48:01 INFO status: 201 status_msg: Folder added successfully data: False
+2025-04-17 21:48:01 INFO 201 : Added
+2025-04-17 21:48:01 INFO submit_folder status: 201
+2025-04-17 21:48:01 INFO creating directory: /home/osaka/Documents/Shared/ebisu
+2025-04-17 21:48:01 INFO dir.json: {'/home/osaka/Documents/Shared/akina': {'id': 'QijTog8iyj', 'label': 'akina', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Documents/Shared/fuji': {'id': 'uF7lP3j1xI', 'label': 'Fuji', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}, '/home/osaka/Documents/Shared/ebisu': {'id': 'uXQaqSCpV3', 'label': 'ebisu', 'type': 'sync_bothways', 'size': 0, 'status': 'ACTIVE'}}
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/ebisu-drift-track', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ebisu-drift-track'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/ebisu-drift-track', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/ebisu-drift-track', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ebisu-drift-track'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/ebisu-drift-track', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='tyres'>
+2025-04-17 21:48:01 INFO added /home/osaka/Documents/Shared/ebisu to watchdog!
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:48:01 INFO Created FolderInitializer Object: <__main__.FolderInitializer object at 0x7a124c70f320>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='tyres'>
+2025-04-17 21:48:01 INFO 📂 Traversing: /home/osaka/Documents/Shared/ebisu
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/slick', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name='slick'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/slick', wd=4, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:48:01 INFO 📖 Found file: /home/osaka/Documents/Shared/ebisu/track-details.txt
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/slick', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='slick'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/slick', wd=4, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/semi-slick', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name='semi-slick'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/semi-slick', wd=5, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/semi-slick', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='semi-slick'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/semi-slick', wd=5, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:48:01 INFO File /home/osaka/Documents/Shared/ebisu/track-details.txt added to database with version v1
+2025-04-17 21:48:01 INFO 📂 Traversing: /home/osaka/Documents/Shared/ebisu/ebisu-drift-track
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/ebisu-drift-track', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='ebisu-drift-track'>
+2025-04-17 21:48:01 INFO 📂 Traversing: /home/osaka/Documents/Shared/ebisu/tyres
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/ebisu-drift-track', wd=2, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/ebisu-drift-track', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='ebisu-drift-track'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/ebisu-drift-track', wd=2, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres', wd=1, mask=IN_ISDIR|IN_OPEN, cookie=0, name='tyres'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:48:01 INFO 📂 Traversing: /home/osaka/Documents/Shared/ebisu/tyres/slick
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres', wd=1, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='tyres'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/slick', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name='slick'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/slick', wd=4, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:48:01 INFO 📖 Found file: /home/osaka/Documents/Shared/ebisu/tyres/slick/grip-info.txt
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/slick', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='slick'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/slick', wd=4, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:48:01 INFO File /home/osaka/Documents/Shared/ebisu/tyres/slick/grip-info.txt added to database with version v1
+2025-04-17 21:48:01 INFO 📂 Traversing: /home/osaka/Documents/Shared/ebisu/tyres/semi-slick
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/semi-slick', wd=3, mask=IN_ISDIR|IN_OPEN, cookie=0, name='semi-slick'>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/semi-slick', wd=5, mask=IN_ISDIR|IN_OPEN, cookie=0, name=''>
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/semi-slick', wd=3, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name='semi-slick'>
+2025-04-17 21:48:01 INFO ✅ Traversal Complete
+2025-04-17 21:48:01 DEBUG in-event <InotifyEvent: src_path=b'/home/osaka/Documents/Shared/ebisu/tyres/semi-slick', wd=5, mask=IN_CLOSE_NOWRITE|IN_ISDIR, cookie=0, name=''>
+2025-04-17 21:48:01 INFO 🗃️ Directories: ['/home/osaka/Documents/Shared/ebisu', '/home/osaka/Documents/Shared/ebisu/ebisu-drift-track', '/home/osaka/Documents/Shared/ebisu/tyres', '/home/osaka/Documents/Shared/ebisu/tyres/slick', '/home/osaka/Documents/Shared/ebisu/tyres/semi-slick']
+2025-04-17 21:48:01 INFO 📑 Files: ['/home/osaka/Documents/Shared/ebisu/track-details.txt', '/home/osaka/Documents/Shared/ebisu/tyres/slick/grip-info.txt']
+2025-04-17 21:48:01 INFO Sync queue saved to sync_queue.json
+2025-04-17 21:48:01 INFO ========Completed Folder Traversal!========
+2025-04-17 21:48:01 INFO 127.0.0.1 - - [17/Apr/2025 21:48:01] "POST /submit_folder HTTP/1.1" 200 -
+2025-04-17 21:54:54 INFO 127.0.0.1 - - [17/Apr/2025 21:54:54] "GET /socket.io/?EIO=4&transport=websocket&sid=dqoWrOYGLokPNGyqAAAA HTTP/1.1" 200 -
+2025-04-17 21:54:54 INFO <SecureCookieSession {'_permanent': True, 'alerts': [['akina', 'QijTog8iyj', 'ryosuke']], 'server_name': '192.168.1.75', '_flashes': [('info', 'You have been logged out, takumi')]}>
+2025-04-17 21:54:54 INFO 127.0.0.1 - - [17/Apr/2025 21:54:54] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-17 21:54:54 INFO 127.0.0.1 - - [17/Apr/2025 21:54:54] "GET /login HTTP/1.1" 200 -
+2025-04-17 21:54:54 INFO 127.0.0.1 - - [17/Apr/2025 21:54:54] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-17 21:54:54 INFO 127.0.0.1 - - [17/Apr/2025 21:54:54] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:54:54 INFO 127.0.0.1 - - [17/Apr/2025 21:54:54] "[36mGET /static/images/initial_d02.jpg HTTP/1.1[0m" 304 -
+2025-04-17 21:54:57 INFO hashed password: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-04-17 21:54:57 INFO json_data: {"action": "login", "l_user": "ryosuke", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-17 21:54:57 INFO sending data to server: {"action": "login", "l_user": "ryosuke", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-17 21:54:57 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-17 21:54:57 INFO server response: {"status": "200", "status_msg": "Login successful"}, type: <class 'str'>
+2025-04-17 21:54:57 INFO server_data: {'status': '200', 'status_msg': 'Login successful'}
+2025-04-17 21:54:57 INFO status: 200
+2025-04-17 21:54:57 INFO status_msg: Login successful
+2025-04-17 21:54:57 INFO data: False
+2025-04-17 21:54:57 INFO status: 200 status_msg: Login successful data: False
+2025-04-17 21:54:57 INFO 200 : OK
+2025-04-17 21:54:57 INFO active_session dict: {'server_name': '192.168.1.75', 'user': 'ryosuke'}
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-17 21:54:57 INFO active_session updated: {'server_name': '192.168.1.75', 'user': 'ryosuke'}
+2025-04-17 21:54:57 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-17 21:54:57 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-17 21:54:57 INFO trying to connect to server: 192.168.1.75 on port 8000
+2025-04-17 21:54:57 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}, type: <class 'str'>
+2025-04-17 21:54:57 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}
+2025-04-17 21:54:57 INFO status: 200
+2025-04-17 21:54:57 INFO status_msg: IP updated successfully
+2025-04-17 21:54:57 INFO data: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-17 21:54:57 INFO status: 200 status_msg: IP updated successfully data: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-17 21:54:57 INFO 200 : OK
+2025-04-17 21:54:57 INFO storing alerts to sessions!: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "GET /dashboard HTTP/1.1" 200 -
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "GET /static/images/initial_d03.jpg HTTP/1.1" 200 -
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "GET /socket.io/?EIO=4&transport=polling&t=PP5Y8MU HTTP/1.1" 200 -
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "GET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1" 200 -
+2025-04-17 21:54:57 INFO connected to frontend!
+2025-04-17 21:54:57 INFO sending alerts to frontend!: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "GET /socket.io/?EIO=4&transport=polling&t=PP5Y8Mc&sid=LhhwhV8Y2OJukF1FAAAC HTTP/1.1" 200 -
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "POST /socket.io/?EIO=4&transport=polling&t=PP5Y8Mb&sid=LhhwhV8Y2OJukF1FAAAC HTTP/1.1" 200 -
+2025-04-17 21:54:57 INFO 127.0.0.1 - - [17/Apr/2025 21:54:57] "GET /socket.io/?EIO=4&transport=polling&t=PP5Y8Ml&sid=LhhwhV8Y2OJukF1FAAAC HTTP/1.1" 200 -

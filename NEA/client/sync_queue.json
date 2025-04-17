@@ -34,5 +34,54 @@
     "path": "/home/osaka/Documents/Shared/fuji/mt_fuji",
     "is_directory": true,
     "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_214801_2372d7",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/ebisu",
+    "is_directory": true,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_214801_2372d7",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/ebisu/track-details.txt",
+    "is_directory": false,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_214801_2372d7",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/ebisu/ebisu-drift-track",
+    "is_directory": true,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_214801_2372d7",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/ebisu/tyres",
+    "is_directory": true,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_214801_2372d7",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/ebisu/tyres/slick",
+    "is_directory": true,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_214801_2372d7",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/ebisu/tyres/slick/grip-info.txt",
+    "is_directory": false,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_214801_2372d7",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/ebisu/tyres/semi-slick",
+    "is_directory": true,
+    "origin": "mkdir"
   }
 ]

@@ -77,12 +77,10 @@ class servers(db.Model):
 
 class File(db.Model):
     path = db.Column(db.String(255), primary_key=True) 
-    name = db.Column(db.String(255), primary_key=True) 
     version = db.Column(db.String(10)) 
 
-    def __init__(self, path, name, version='v1'):
+    def __init__(self, path, version='v1'):
         self.path = path
-        self.name = name
         self.version = version
 ########## WEB SOCKETS ##########################
 socketio = SocketIO(app)
@@ -452,7 +450,7 @@ def send(json_data): # 🛫
         
         status = server_data.get('status', '200')
         logging.info(f'status: {status}')
-        
+
         status_msg = server_data.get('status_msg', 'unknown')
         logging.info(f'status_msg: {status_msg}')
         
@@ -709,7 +707,7 @@ class FolderInitializer:
                 logging.error(f'❌ Permission denied: {current}')
                 continue
 
-            for item in reversed(children):  # reversed to keep order consistent
+            for item in reversed(children):  # reversed to keep the order of traversal consistent.
                 full_path = os.path.join(current, item)
                 if os.path.isdir(full_path):
                     stack.append(full_path)
@@ -725,14 +723,25 @@ class FolderInitializer:
                         "origin": "mkdir"
                         }
                     sync_queue.put(event)
+
+                    new_file = File(path=full_path, version="v1")
+                    try:
+                        db.session.add(new_file)
+                        db.session.commit()
+                        logging.info(f'File {full_path} added to database with version v1')
+                    except Exception as e:
+                        db.session.rollback()  # just used to rollback in case of errors.
+                        logging.error(f'❌ Failed to add {full_path} to database: {e}')
         
-        logging.info('\n✅ Traversal Complete')
-        logging.info(f'Directories:\n{directories}')
-        logging.info(f'Files:\n{files}')
+        logging.info('✅ Traversal Complete')
+        logging.info(f'🗃️ Directories: {directories}')
+        logging.info(f'📑 Files: {files}')
 
         all_events = list(sync_queue.queue)
         with open("sync_queue.json", "w") as f:
             json.dump(all_events, f, indent=2)
+        
+        logging.info(f'Sync queue saved to sync_queue.json')
 
 ################################# folder traversal algo ################################
 if __name__ == "__main__":
