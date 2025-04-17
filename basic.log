@@ -134,3 +134,15 @@
 2025-04-15 17:25:05 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 2025-04-15 17:25:05 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 16:05:12 INFO binding to ip: 192.168.1.75
+2025-04-16 16:05:12 INFO Listening for incoming messages on port 6000...
+2025-04-16 16:05:12 INFO 🐕 watchdog started! 🐕
+2025-04-16 16:05:12 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 16:05:12 INFO [33mPress CTRL+C to quit[0m
+2025-04-16 16:05:16 INFO 127.0.0.1 - - [16/Apr/2025 16:05:16] "GET /socket.io/?EIO=4&transport=polling&t=PO_8WKf HTTP/1.1" 200 -
+2025-04-16 16:05:16 INFO connected to frontend!
+2025-04-16 16:05:16 INFO sending alerts to frontend!: []
+2025-04-16 16:05:16 INFO 127.0.0.1 - - [16/Apr/2025 16:05:16] "GET /socket.io/?EIO=4&transport=polling&t=PO_8WKj.0&sid=ERYZ134YpbfdJNbgAAAA HTTP/1.1" 200 -
+2025-04-16 16:05:16 INFO 127.0.0.1 - - [16/Apr/2025 16:05:16] "POST /socket.io/?EIO=4&transport=polling&t=PO_8WKj&sid=ERYZ134YpbfdJNbgAAAA HTTP/1.1" 200 -
+2025-04-16 16:05:16 INFO 127.0.0.1 - - [16/Apr/2025 16:05:16] "GET /socket.io/?EIO=4&transport=polling&t=PO_8WKn&sid=ERYZ134YpbfdJNbgAAAA HTTP/1.1" 200 -

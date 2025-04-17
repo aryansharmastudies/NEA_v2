@@ -1,0 +1,38 @@
+[
+  {
+    "id": "event_20250417_143615_62c5d7",
+    "time_added": "2025-04-17T14:36:15.296805",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/akina",
+    "is_directory": true,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_210742_0cf618",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/fuji",
+    "is_directory": true,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_210742_0cf618",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/fuji/fuji_speedway",
+    "is_directory": true,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_210742_0cf618",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/fuji/fuji_speedway/supra.txt",
+    "is_directory": false,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250417_210742_0cf618",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/fuji/mt_fuji",
+    "is_directory": true,
+    "origin": "mkdir"
+  }
+]

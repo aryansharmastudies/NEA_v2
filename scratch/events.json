@@ -1,0 +1,24 @@
+[
+  {
+    "id": "event_20250417_105232_415a68",
+    "time_added": "2025-04-17T10:52:32.121146",
+    "event_type": "modified",
+    "path": "/home/osaka/Desktop/Java/bruh.txt",
+    "is_directory": false,
+    "file_hash": "abc123...",
+    "origin": "watchdog",
+    "status": "pending",
+    "retries": 0
+  },
+  {
+    "id": "event_20250417_105240_efcdee",
+    "time_added": "2025-04-17T10:52:40.364104",
+    "event_type": "modified",
+    "path": "/home/osaka/Desktop/Java/bruh.txt",
+    "is_directory": false,
+    "file_hash": "abc123...",
+    "origin": "watchdog",
+    "status": "pending",
+    "retries": 0
+  }
+]

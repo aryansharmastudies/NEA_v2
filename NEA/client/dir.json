@@ -1,65 +1,16 @@
 {
-  "/home/osaka/Desktop/linux": {
-    "id": "ryNeOOVn1J",
-    "label": "linux",
-    "type": "sync_bothways",
-    "size": 0,
-    "status": "NOT FOUND!"
-  },
-  "/home/osaka/Desktop/Java": {
-    "id": "YifklQeJxr",
-    "label": "java",
+  "/home/osaka/Documents/Shared/akina": {
+    "id": "QijTog8iyj",
+    "label": "akina",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"
   },
-  "/home/osaka/Desktop/Arch": {
-    "id": "1AgTRbvOLr",
-    "label": "Arch",
+  "/home/osaka/Documents/Shared/fuji": {
+    "id": "uF7lP3j1xI",
+    "label": "Fuji",
     "type": "sync_bothways",
     "size": 0,
-    "status": "NOT FOUND!"
-  },
-  "/home/osaka/Desktop/Uhm": {
-    "id": "BA0scRxLoo",
-    "label": "Uh",
-    "type": "sync_bothways",
-    "size": 0,
-    "status": "NOT FOUND!"
-  },
-  "/home/osaka/Desktop/LINUX": {
-    "id": "y45GjL7JYy",
-    "label": "LINUX",
-    "type": "sync_bothways",
-    "size": 0,
-    "status": "NOT FOUND!"
-  },
-  "/home/osaka/Desktop/IPHONE": {
-    "id": "h6azN7P8RE",
-    "label": "IPHONE",
-    "type": "sync_bothways",
-    "size": 0,
-    "status": "NOT FOUND!"
-  },
-  "/home/osaka/Desktop/Calculator/Bottle": {
-    "id": "xGW65dSjXO",
-    "label": "Bottle",
-    "type": "sync_bothways",
-    "size": 0,
-    "status": "NOT FOUND!"
-  },
-  "/home/osaka/Desktop/rebirth": {
-    "id": "LuozIEyEjm",
-    "label": "rebirth",
-    "type": "sync_bothways",
-    "size": 0,
-    "status": "NOT FOUND!"
-  },
-  "/home/osaka/Desktop/.hidden": {
-    "id": "WgMZNeNBZH",
-    "label": "Hidden!",
-    "type": "sync_bothways",
-    "size": 0,
-    "status": "NOT FOUND!"
+    "status": "ACTIVE"
   }
 }

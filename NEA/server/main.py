@@ -195,7 +195,7 @@ class Share(Base):
 # {'action': 'add_folder', 'name': "anjali's folder", 'directory': '~/HqZYgro3ux',
 #  'shared_users': ['admin:x230', 'admin:admins_MBP', 'joel:joels_pixel'], 'folder_type': 'sync_bothways'}
 
-def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type):
+def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type, user):
     # DONE check if folder_id exists!
     # DONE convert windows path to linux! USE REGEX!
     # TODO share it to all users... :<
@@ -211,8 +211,11 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
 
     # DONE find username given mac_addr of host
     # mac_addr -> user_id -> username
-    host_id = session.query(Device).filter_by(mac_addr=mac_addr).first().user_id
-    hostname = session.query(User).filter_by(user_id=host_id).first().name
+    host_name = user
+    host_id = session.query(User).filter_by(name=host_name).first().user_id
+    # host_id = session.query(Device).filter_by(mac_addr=mac_addr).first().user_id
+    # hostname = session.query(User).filter_by(user_id=host_id).first().name
+    logging.info(f'👤Host: {user} with User_ID: {host_id} is creating folder📂: {folder_label} with folder_id: {folder_id} in directory: {directory}')
 
     for shared_user in shared_users:  # 😳😿
         # find the shared_user and its devices MAC ADDRESS
@@ -268,7 +271,7 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
             elif device_mac_addr not in invites["folders"][username]: # then check if the device is in the invites file 🌸
                 invites["folders"][username][device_mac_addr] = [] # if not, add it 🌸
 
-            invites["folders"][username][device_mac_addr].append([folder_label, folder_id, hostname])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
+            invites["folders"][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
             logging.info(f'invites.json AFTER adding: {invites}')
             with open(invites_file, "w") as file:
                 json.dump(invites, file, indent=2)
@@ -363,7 +366,7 @@ def alert(user, mac_addr): # TODO make it send back any unanswered invites to th
 
 
 ########## SOCKETS ###############################
-def send(message, ip, port):
+def send(message, ip, port): 
     logging.info(f'Sending: {message} to {ip} on port {port}')
     c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
@@ -379,8 +382,8 @@ def send(message, ip, port):
     status_msg = client_data.get('status_msg', False)
     data = client_data.get('data', False)
 
-    if message == 'authorise':
-        return status_code 
+    if json.loads(message)['action'] == 'authorise':
+        return status_code
 
 
 
@@ -452,7 +455,8 @@ def handle_client_message(message):
         directory = client_data['directory']
         shared_users = client_data['shared_users']
         folder_type = client_data['folder_type']
-        status = create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type)
+        user = client_data['user']
+        status = create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type, user)
         logging.info(f'Sending folder status: {status}')
         clientsocket.send(str(status).encode('utf-8'))
 
@@ -519,3 +523,5 @@ while True:
     handle_client_message(message)
     
     clientsocket.close()
+
+# NOTE if sending and receiving data dont work concurrently, use THREADS/asyncio

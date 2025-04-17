@@ -20,6 +20,9 @@ import time
 from watchdog.events import FileSystemEvent, FileSystemEventHandler
 from watchdog.observers import Observer
 import re
+import queue
+from datetime import datetime
+import uuid
 ########## NOTES ################################
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
@@ -32,6 +35,31 @@ def log() -> None:
         format="%(asctime)s %(levelname)s %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
         filename="basic.log",)
+    
+log()  
+
+# def log():
+#     log_dir = "logs"
+#     if not os.path.exists(log_dir):
+#         os.makedirs(log_dir)
+
+#     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+#     filename = f"{log_dir}/log_{current_time}.log"
+
+#     # Remove all existing handlers before reconfiguring
+#     for handler in logging.root.handlers[:]:
+#         logging.root.removeHandler(handler)
+
+#     logging.basicConfig(
+#         level=logging.INFO,
+#         format='%(asctime)s - %(levelname)s - %(message)s',
+#         handlers=[
+#             logging.FileHandler(filename),
+#             logging.StreamHandler()
+#         ]
+#     )
+#     logging.info(f"📝 Logging system initialized. Writing to {filename}")
+
 ########## FLASK ################################
 app = Flask(__name__)
 app.secret_key = "shady"
@@ -47,6 +75,15 @@ class servers(db.Model):
     def __init__(self, name):
         self.name = name
 
+class File(db.Model):
+    path = db.Column(db.String(255), primary_key=True) 
+    name = db.Column(db.String(255), primary_key=True) 
+    version = db.Column(db.String(10)) 
+
+    def __init__(self, path, name, version='v1'):
+        self.path = path
+        self.name = name
+        self.version = version
 ########## WEB SOCKETS ##########################
 socketio = SocketIO(app)
 
@@ -136,7 +173,8 @@ def login():
             session['hash']=hash
             session['user']=user
 
-            active_session['user'] = user # global dictionary of session that can be passed to threads
+            active_session['user'] = user
+            logging.info(f'active_session dict: {active_session}') # global dictionary of session that can be passed to threads
 
             flash(f'{status}: {status_msg}', 'info')
             return redirect(url_for('dashboard')) # nm is the dictionary key for name of user input.
@@ -251,6 +289,10 @@ def dashboard():
 
     elif 'server_name' in session and 'user' in session: # if used logs in/registers,
 
+        active_session['user'] = session['user']
+        active_session['server_name'] = session['server_name']
+        logging.info(f'active_session updated: {active_session}')
+
         mac_addr = get_mac()
         ip_tracking_data = json.dumps({'action': 'track', 'ip_addr':ip, 'user':session['user'], 'mac_addr':mac_addr}) # dont matter if user's registerd device.
         logging.info(f'tracking_data sent: {ip_tracking_data}')
@@ -336,6 +378,7 @@ def submit_folder():
     data = request.get_json()
     mac_addr = get_mac()
     data['mac_addr'] = mac_addr
+    data['user'] = active_session['user']
     logging.info(f'DATA FROM ADDING FOLDER FORMS(front front end)!: {data}')
     data = json.dumps(data)
     status, status_msg = send(data)
@@ -374,10 +417,12 @@ def mkdir(data): # 🥝
     else:
         logging.info(f'watchdog is not alive, cannot add {fmt_dir}!')
     
-    # {'C://Users/aryan/Desktop/rebirth': {
-    #    'id': 'x2su29dr3', 
-    #    'size': 123456,
-    #    'type': 'bothways'}
+    event_id = generate_event_id()
+    Initializer = FolderInitializer(event_id, fmt_dir)
+    logging.info(f'Created FolderInitializer Object: {Initializer}')
+    Initializer.preorderTraversal()
+    logging.info(f'========Completed Folder Traversal!========')
+    del Initializer
 
 ########## SEND #################################
 def send(json_data): # 🛫
@@ -407,7 +452,7 @@ def send(json_data): # 🛫
         
         status = server_data.get('status', '200')
         logging.info(f'status: {status}')
-        2
+        
         status_msg = server_data.get('status_msg', 'unknown')
         logging.info(f'status_msg: {status_msg}')
         
@@ -458,7 +503,7 @@ def send(json_data): # 🛫
 def handle_server_message(json_message, server_socket):
     if json_message['action'] == 'authorise':
         logging.info(f'authorisation recieved: {json_message}')
-        if active_session['user'] == json_message['user']:
+        if  json_message['user'] == active_session['user']:
 
             # try request.session['user']
             message = json.dumps({'status_code': '200'})
@@ -541,13 +586,14 @@ class MyEventHandler(FileSystemEventHandler):
 
     def dispatch(self, event):
         if is_temp_file(event.src_path):
-            print(f'⚠️ Ignoring temporary file: {event.src_path}')
+            # print(f'⚠️ Ignoring temporary file: {event.src_path}')
             return  # ❌ You should return here to **stop** processing
         return super().dispatch(event)  # ✅ This goes ahead **only if the file is not temporary**
 
-
+                                                # TODO MODIFY DATABASE + ADD IT TO SYNC_QUEUE 
     def on_moved(self, event):# 💥
         print(f'🟣 {event}')
+        # TODO MODIFY DATABASE + ADD IT TO SYNC_QUEUE
     
     def on_created(self, event):# 💥
         print(f'🟢 {event.src_path} has been {event.event_type}')
@@ -564,7 +610,7 @@ class MyEventHandler(FileSystemEventHandler):
             print(f'File size: {stats.st_size} bytes')  # Added to log file size
             print(f'Last modified: {time.ctime(stats.st_mtime)}')  # Added to log last modified time
     def on_closed(self, event):
-        print(f'🔵 {event}')
+        print(f'🔵 {event.src_path} has been {event.event_type}')
 
 event_handler = MyEventHandler()
 observer = Observer()
@@ -598,7 +644,99 @@ def start_watchdog(dirs):
 
 
 #################################### WATCHDOG # 🐕 #####################################
+
+################################### SYNC-QUEUE #########################################
+sync_queue = queue.Queue()
+
+if os.path.exists("sync_queue.json"):
+    with open("sync_queue.json", "r") as f:
+        for item in json.load(f):
+            sync_queue.put(item)
+else:
+    logging.info("No sync_queue.json file found. Starting with empty queue.")
+
+def sync_worker():
+    while True:
+        filepath = sync_queue.get()
+        try:
+            # Replace this with your actual sync logic
+            print(f'📤 Syncing: {filepath}')
+            # sync_to_server(filepath) 
+            time.sleep(1)  # simulate sync delay
+        except Exception as e:
+            print(f"❌ Failed to sync {filepath}: {e}")
+        finally:
+            sync_queue.task_done()
+
+def generate_event_id():
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    uid = str(uuid.uuid4())[:6]  # Short unique suffix (6 hex chars)
+    return f"event_{timestamp}_{uid}"
+
+
+################################### SYNC-QUEUE #########################################
+################################# folder traversal algo ################################
+
+class FolderInitializer:
+    def __init__(self, event_id, path, event_type="created", origin="mkdir"):
+        self.event_id = event_id
+        self.path = path
+        self.event_type = event_type
+        self.origin = origin
+
+    def preorderTraversal(self):
+        stack = [self.path]
+        directories = []
+        files = []
+
+        while stack:
+            current = stack.pop()
+            logging.info(f'📂 Traversing: {current}')
+            directories.append(current)
+
+            event = {
+                "id": self.event_id,
+                "event_type": self.event_type,
+                "path": current,
+                "is_directory": True,
+                "origin": "mkdir"
+                }
+            sync_queue.put(event)
+
+            try:
+                children = os.listdir(current)
+            except PermissionError:
+                logging.error(f'❌ Permission denied: {current}')
+                continue
+
+            for item in reversed(children):  # reversed to keep order consistent
+                full_path = os.path.join(current, item)
+                if os.path.isdir(full_path):
+                    stack.append(full_path)
+                else:
+                    logging.info(f'📖 Found file: {full_path}')
+                    files.append(full_path)
+
+                    event = {
+                        "id": self.event_id,
+                        "event_type": self.event_type,
+                        "path": full_path,
+                        "is_directory": False,
+                        "origin": "mkdir"
+                        }
+                    sync_queue.put(event)
+        
+        logging.info('\n✅ Traversal Complete')
+        logging.info(f'Directories:\n{directories}')
+        logging.info(f'Files:\n{files}')
+
+        all_events = list(sync_queue.queue)
+        with open("sync_queue.json", "w") as f:
+            json.dump(all_events, f, indent=2)
+
+################################# folder traversal algo ################################
 if __name__ == "__main__":
+
     dir_file = "dir.json"
     if os.path.exists(dir_file):
         with open(dir_file, "r") as file: # Load data from the file if it exists
@@ -609,9 +747,7 @@ if __name__ == "__main__":
             #    'id': 'x2su29dr3', 
             #    'size': 123456,
             #    'type': 'bothways'
-        }
-    log()  # Start the logging system
-    active_session = {}
+        }  
 
     system = input("windows(w) or linux(l)? ")
     ip = w_wlan_ip() if system == "w" else l_wlan_ip()
@@ -627,6 +763,12 @@ if __name__ == "__main__":
     with app.test_request_context("/"):
         request.session = session
         db.create_all()
+
+        global active_session
+        active_session = {}
+        for key, value in session.items():
+            active_session[key] = value
+        logging.info(f'active_session dict: {active_session}')
 
     # Start the Flask server in a separate thread
     flask_thread = threading.Thread(target=run_flask, daemon=True)
