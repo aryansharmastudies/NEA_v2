@@ -23,6 +23,18 @@ import re
 import queue
 from datetime import datetime
 import uuid
+import base64
+import struct
+
+'''
+Basically, in order to sync folders, we have sync_queue with the different
+folders/files that need to be synced. 
+sync_active and sync_worker are used to control the events from sync_queue 
+into the class outgoing!
+'''
+sync_active = threading.Event()
+sync_active.clear()  # Sync is paused initially
+
 ########## NOTES ################################
 # NOTE: session stores: server_name, user, email, (not password!),
 ########## IP ADDRESS ###########################
@@ -37,28 +49,6 @@ def log() -> None:
         filename="basic.log",)
     
 log()  
-
-# def log():
-#     log_dir = "logs"
-#     if not os.path.exists(log_dir):
-#         os.makedirs(log_dir)
-
-#     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-#     filename = f"{log_dir}/log_{current_time}.log"
-
-#     # Remove all existing handlers before reconfiguring
-#     for handler in logging.root.handlers[:]:
-#         logging.root.removeHandler(handler)
-
-#     logging.basicConfig(
-#         level=logging.INFO,
-#         format='%(asctime)s - %(levelname)s - %(message)s',
-#         handlers=[
-#             logging.FileHandler(filename),
-#             logging.StreamHandler()
-#         ]
-#     )
-#     logging.info(f"📝 Logging system initialized. Writing to {filename}")
 
 ########## FLASK ################################
 app = Flask(__name__)
@@ -75,13 +65,45 @@ class servers(db.Model):
     def __init__(self, name):
         self.name = name
 
-class File(db.Model):
-    path = db.Column(db.String(255), primary_key=True) 
-    version = db.Column(db.String(10)) 
+class Folder(db.Model):
+    folder_id = db.Column(db.String(100), primary_key=True)
+    name = db.Column(db.String(100))
+    # mac_addr = db.Column(db.String(100))
+    path = db.Column(db.String(255))
+    type = db.Column(db.String(50))
+    size = db.Column(db.Integer)
 
-    def __init__(self, path, version='v1'):
+class File(db.Model):
+    folder_id = db.Column(db.String(100), primary_key=True)
+    path = db.Column(db.String(255), primary_key=True) 
+    size = db.Column(db.Integer)
+    hash = db.Column(db.String(32))  # MD5 hash = 32 chars
+    version = db.Column(db.String(10))
+
+    def __init__(self, folder_id, path, size=None, hash=None, version='v1.0'):
+        self.folder_id = folder_id
         self.path = path
+        self.size = size or self._find_size()
         self.version = version
+        self.hash = hash or self._find_hash() # basically, if hash is None, then use _find_hash to compute it!!
+
+    def _find_size(self):
+        try:
+            return os.path.getsize(self.path)
+        except FileNotFoundError:
+            raise FileNotFoundError(f"The file at path {self.path} does not exist.")
+    
+    def _find_hash(self):
+        hash_md5 = hashlib.md5()
+        try:
+            with open(self.path, "rb") as f:
+                for block in iter(lambda: f.read(4096), b""):
+                    hash_md5.update(block)
+            return hash_md5.hexdigest()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"The file at path {self.path} does not exist.")
+
+        
 ########## WEB SOCKETS ##########################
 socketio = SocketIO(app)
 
@@ -120,7 +142,7 @@ def pair():
             s.connect((server_name, 8000))
             json_data = json.dumps({'action': 'ping', 'ip_addr':ip})
             logging.info(f'ping sent: {json_data}') 
-            s.send(json_data.encode('utf-8'))       # TODO MAYBE USE SEND FUNCTION TO GENERALISE EVERYTHING?
+            s.send(json_data.encode('utf-8'))       # TODO 🆘 MAYBE USE SEND FUNCTION TO GENERALISE EVERYTHING?
             if s.recv(1024).decode('utf-8') == 'pong':
                 logging.info(f"status: pong")
                 session['server_name'] = server_name
@@ -144,11 +166,13 @@ def pair():
             flash(f'Could not connect to server!', 'info')
             return redirect(url_for('pair'))
     else:
-        if 'server_name' in session:
-            flash(f'Already Connected with {session['server_name']}!', 'info')
+        if 'server_name' in session and 'user' in session:
+            flash(f'Already Connected with {session["server_name"]} and logged in!', 'info')
+            return redirect(url_for('dashboard'))
+        elif 'server_name' in session:
+            flash(f'Already Connected with {session["server_name"]}!', 'info')
             return redirect(url_for('login'))
-        
-        return render_template('pair.html')
+    return render_template('pair.html') # if the user is not logged in, then redirect to login page.
     
     # DONE: if the user is already connected to a pi and in a session, redirect to dashboard page.
     # DONE: do a GET request and get the hostname to connect to.
@@ -227,8 +251,8 @@ def register():
             return redirect(url_for('register'))
     else: # BUG - if user in session, it auto redirects to dashboard.(even if user is not logged in)
         if 'user' in session and 'server_name' in session:
-            logging.info(f'Already Logged In {session['user']} in Server {session['server_name']}!')
-            flash('Already Logged In!', 'info')
+            logging.info(f'Already Logged In {session["user"]} in Server {session["server_name"]}!')
+            flash('Already Logged In! to register, please log out', 'info')
             return redirect(url_for('dashboard'))
         elif 'server_name' not in session:
             flash('You are not connected to a server!', 'info')
@@ -297,6 +321,9 @@ def dashboard():
         status, status_msg, data = send(ip_tracking_data)        
         session['alerts'] = data
         logging.info(f'storing alerts to sessions!: {data}')
+        if status == '200':
+            if not sync_active.is_set():
+                sync_active.set() # 🧵
 
         # socketio.emit('alerts', data) #⭐
         # echo_alerts(data) #⭐
@@ -305,7 +332,7 @@ def dashboard():
 
         random_folder_id = get_random_id()
 
-        # TODO - get any notifications from the server.
+        # TODO 🆘 - get any notifications from the server.
         return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id) # pass in server_name to the dashboard.html file.
     elif 'server_name' in session:
         flash('You are not logged in!', 'info')
@@ -353,10 +380,12 @@ def unpair():
         server_name = session["server_name"]
         flash(f"{server_name} has been unpaired!", "info")
         session.pop("server_name", None)
+        session['connected_to_server'] = False
         return redirect(url_for('pair'))
     else:
         flash("You are not connected to a server!", "info")
         return redirect(url_for('pair'))
+        
     
 @app.route('/logout')
 def logout():
@@ -366,7 +395,8 @@ def logout():
     session.pop('user', None)
     active_session.pop('user', None)
     session.pop('hash', None) # SECURITY: to ensure hash removed from session incase someone tries to access it.
-    logging.info(f'{session}')
+    session['connected_to_server'] = False
+    logging.info(f'session after logging out: {session}')
     return redirect(url_for('login'))
 
 # 😳
@@ -394,33 +424,39 @@ def mkdir(data): # 🥝
     folder_label = data['folder_label']
     folder_type = data['folder_type']
     raw_dir = data['directory']
-    fmt_dir = os.path.expanduser(raw_dir)
-    logging.info(f'creating directory: {fmt_dir}')
-    os.makedirs(fmt_dir, exist_ok=True)
+    formatted_dir = os.path.expanduser(raw_dir)
+    logging.info(f'creating formatted directory: {formatted_dir}')
+    os.makedirs(formatted_dir, exist_ok=True)
 
-    dirs[fmt_dir] = {}
-    dirs[fmt_dir]['id'] = folder_id
-    dirs[fmt_dir]['label'] = folder_label
-    dirs[fmt_dir]['type'] = folder_type
-    dirs[fmt_dir]['size'] = 0
-    dirs[fmt_dir]['status'] = 'ACTIVE'
+    dirs[formatted_dir] = {}
+    dirs[formatted_dir]['id'] = folder_id
+    dirs[formatted_dir]['label'] = folder_label
+    dirs[formatted_dir]['type'] = folder_type
+    dirs[formatted_dir]['size'] = 0
+    dirs[formatted_dir]['status'] = 'ACTIVE'
     logging.info(f'dir.json: {dirs}')
 
     with open('dir.json', 'w') as file:
         json.dump(dirs, file, indent=2)
 
     if observer.is_alive():
-        observer.schedule(event_handler, fmt_dir, recursive=True)
-        logging.info(f'added {fmt_dir} to watchdog!')
+        observer.schedule(event_handler, formatted_dir, recursive=True)
+        logging.info(f'added {formatted_dir} to watchdog!')
     else:
-        logging.info(f'watchdog is not alive, cannot add {fmt_dir}!')
+        logging.info(f'watchdog is not alive, cannot add {formatted_dir}!')
     
+    ################# adding folder to database! #################
+    new_folder = Folder(folder_id=folder_id, name=folder_label, path=formatted_dir, type=folder_type, size=0)
+    db.session.add(new_folder)
+    db.session.commit()
+    logging.info(f'added folder to database: {new_folder}')
+    #############################################################
     event_id = generate_event_id()
-    Initializer = FolderInitializer(event_id, fmt_dir)
-    logging.info(f'Created FolderInitializer Object: {Initializer}')
-    Initializer.preorderTraversal()
+    initializer = FolderInitializer(event_id, formatted_dir, folder_id)
+    logging.info(f'Created FolderInitializer Object: {initializer}')
+    initializer.preorderTraversal()
     logging.info(f'========Completed Folder Traversal!========')
-    del Initializer
+    del initializer
 
 ########## SEND #################################
 def send(json_data): # 🛫
@@ -429,9 +465,12 @@ def send(json_data): # 🛫
             logging.info(f'trying to connect to server: {session["server_name"]} on port 8000')
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((session['server_name'], 8000))
+            session['connected_to_server'] = True
+
         except: 
             logging.info(f'503 Server Offline')
             flash(f'Server inactive, please retry!', 'info')
+            session['connected_to_server'] = False
             
             action = json.loads(json_data)['action']
             if action in ['login', 'register_user', 'add_device', 'add_folder']:
@@ -442,7 +481,7 @@ def send(json_data): # 🛫
                 return False
             
         s.send(json_data.encode('utf-8')) # sending data to server 📨
-        json_response = s.recv(1024).decode('utf-8') # server's response back 📩 # TODO recieves 1024 bits, add buffering feature !!
+        json_response = s.recv(1024).decode('utf-8') # server's response back 📩 # TODO 🆘 recieves 1024 bits, add buffering feature !!
         logging.info(f'server response: {json_response}, type: {type(json_response)}')
         
         server_data = json.loads(json_response)
@@ -512,7 +551,7 @@ def handle_server_message(json_message, server_socket):
     elif json_message['action'] == 'share_folder':
         # need to create a popup on dashboard to accept or decline the folder.
         logging.info(f'sharing folder: {json_message}')
-        # TODO toggle the modal to popup.
+        # TODO 🆘 toggle the modal to popup.
         random_folder_id = get_random_id()
         return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, share_folder=json_message)
         # continue with the rest of code.
@@ -581,34 +620,100 @@ def is_temp_file(filepath):
 class MyEventHandler(FileSystemEventHandler):
     #def on_any_event(self, event: FileSystemEvent) -> None:
     #    print(event)
+    def __init__(self):
+        super().__init__()
+        self._supressed_dirs: set[str] = set()
+
+    def _persist_queue(self):
+        try:
+            all_events = list(sync_queue.queue)
+            with open("sync_queue.json", "w") as f:
+                json.dump(all_events, f, indent=2)
+        except Exception as e:
+            logging.error(f"Failed to persist sync queue: {e}")
 
     def dispatch(self, event):
+        path = event.src_path
         if is_temp_file(event.src_path):
-            # print(f'⚠️ Ignoring temporary file: {event.src_path}')
-            return  # ❌ You should return here to **stop** processing
-        return super().dispatch(event)  # ✅ This goes ahead **only if the file is not temporary**
+            '''
+            Unfortunately using some text editiors like the one in ubuntu, 
+            they dont show the file has been modified rather, they create a temp file and store
+            stuff there, then when we are done, it copies it to the original file.
+            So we need to ignore these temp files.
 
-                                                # TODO MODIFY DATABASE + ADD IT TO SYNC_QUEUE 
-    def on_moved(self, event):# 💥
-        print(f'🟣 {event}')
-        # TODO MODIFY DATABASE + ADD IT TO SYNC_QUEUE
+            thats why sometimes for a file modification we just see 🔵 rather than a 🟡
+            '''
+            logging.info(f'⚠️ Ignoring temporary file: {event.src_path}')
+            return  # ❌ You should return here to **stop** processing
+
+        for parent in self._supressed_dirs:
+            if path.startswith(parent + os.sep):
+                logging.debug(f'Supressed event for {path!r} under {parent!r}')
+                return
+        logging.info(f'Processing event: {event}')
+        return super().dispatch(event)  # ✅ This goes ahead **only if the file is not temporary AND  if its not within supressed_dirs**
+
+                                                # TODO 🆘 MODIFY DATABASE + ADD IT TO SYNC_QUEUE 
+    def on_moved(self, event):
+        logging.info(f"🟣 Moved: {event.src_path} → {event.dest_path}")
+
+        # suppress further events from the old folder
+        if event.is_directory:
+            self._supressed_dirs.append(event.src_path)
+
+        sync_queue.put({
+            "id": generate_event_id(),
+            "event_type":  "move",
+            "src_path":     event.src_path,
+            "dest_path":    event.dest_path,
+            "is_dir":  event.is_directory,
+            "origin": "user" # user made modification.
+        })
+        self._persist_queue()
     
-    def on_created(self, event):# 💥
-        print(f'🟢 {event.src_path} has been {event.event_type}')
+    def on_created(self, event):
+        logging.info(f"🟢 Created: {event.src_path}")
+
+        # if you recreated a suppressed directory, stop suppressing it
+        if event.is_directory and event.src_path in self._supressed_dirs:
+            self._supressed_dirs.remove(event.src_path)
+
+        sync_queue.put({
+            "id": generate_event_id(),
+            "event_type":  "create",
+            "path":    event.src_path,
+            "is_dir":  event.is_directory,
+            "origin":  "user"
+        })
+        self._persist_queue()
     
-    def on_deleted(self, event):# 💥
-        print(f'🔴 {event.src_path} has been {event.event_type}') 
+    def on_deleted(self, event):
+        logging.info(f"🔴 Deleted: {event.src_path}")
+
+        # if it was a directory, remember to suppress its children
+        if event.is_directory:
+            self._supressed_dirs.add(event.src_path)
+
+        sync_queue.put({
+            "id": generate_event_id(),
+            "event_type":  "delete",
+            "path":    event.src_path,
+            "is_dir":  event.is_directory,
+            "origin":  "user"
+        })
+        self._persist_queue()
     
     def on_modified(self, event): # 💥
+        logging.info(f'🟡 {event.src_path} has been {event.event_type}')
         if event.is_directory == True:
             pass
         else:
             stats = os.stat(event.src_path)  # Added to get file stats
-            print(f'🟡 {event.src_path} has been {event.event_type}. Current size {stats.st_size} bytes') # 💥
-            print(f'File size: {stats.st_size} bytes')  # Added to log file size
-            print(f'Last modified: {time.ctime(stats.st_mtime)}')  # Added to log last modified time
+            logging.info(f'🟡 {event.src_path} has been {event.event_type}. Current size {stats.st_size} bytes') # 💥
+            logging.info(f'File size: {stats.st_size} bytes')  # Added to log file size
+            logging.info(f'Last modified: {time.ctime(stats.st_mtime)}')  # Added to log last modified time
     def on_closed(self, event):
-        print(f'🔵 {event.src_path} has been {event.event_type}')
+        logging.info(f'🔵 {event.src_path} has been {event.event_type}')
 
 event_handler = MyEventHandler()
 observer = Observer()
@@ -653,19 +758,6 @@ if os.path.exists("sync_queue.json"):
 else:
     logging.info("No sync_queue.json file found. Starting with empty queue.")
 
-def sync_worker():
-    while True:
-        filepath = sync_queue.get()
-        try:
-            # Replace this with your actual sync logic
-            print(f'📤 Syncing: {filepath}')
-            # sync_to_server(filepath) 
-            time.sleep(1)  # simulate sync delay
-        except Exception as e:
-            print(f"❌ Failed to sync {filepath}: {e}")
-        finally:
-            sync_queue.task_done()
-
 def generate_event_id():
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     uid = str(uuid.uuid4())[:6]  # Short unique suffix (6 hex chars)
@@ -675,10 +767,13 @@ def generate_event_id():
 ################################### SYNC-QUEUE #########################################
 ################################# folder traversal algo ################################
 
+# NOTE: This class is used to traverse the folder and add files to the database as well as to the sync queue!!!
+
 class FolderInitializer:
-    def __init__(self, event_id, path, event_type="created", origin="mkdir"):
+    def __init__(self, event_id, path, folder_id, event_type="created", origin="initialise"):
         self.event_id = event_id
         self.path = path
+        self.folder_id = folder_id
         self.event_type = event_type
         self.origin = origin
 
@@ -696,7 +791,7 @@ class FolderInitializer:
                 "id": self.event_id,
                 "event_type": self.event_type,
                 "path": current,
-                "is_directory": True,
+                "is_dir": True,
                 "origin": "mkdir"
                 }
             sync_queue.put(event)
@@ -719,12 +814,12 @@ class FolderInitializer:
                         "id": self.event_id,
                         "event_type": self.event_type,
                         "path": full_path,
-                        "is_directory": False,
+                        "is_dir": False,
                         "origin": "mkdir"
                         }
                     sync_queue.put(event)
 
-                    new_file = File(path=full_path, version="v1")
+                    new_file = File(folder_id=self.folder_id, path=full_path)
                     try:
                         db.session.add(new_file)
                         db.session.commit()
@@ -743,7 +838,159 @@ class FolderInitializer:
         
         logging.info(f'Sync queue saved to sync_queue.json')
 
-################################# folder traversal algo ################################
+
+'''
+                TODO 🆘 : for all the files that were added to the database, sum up the total file size and assign it to the folder size.
+
+'''
+########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
+def sync_worker():
+    while True:
+        sync_active.wait()  # Wait until resumed
+        event = sync_queue.get()
+        logging.info(f"Processing event: {event}")
+        try:
+            logging.info(f"Creating sync job for {event['path']}")
+            sync_job = Outgoing(path=event['path'], is_dir=event['is_dir'], origin=event['origin'])  # TODO 🆘 Custom logic i.e. OUTGOING
+            logging.info(f"Sync job created: {sync_job}")
+            status = sync_job.start_server()  # Start the server to send the packet
+            logging.info(f"Sync job status: {status}")
+            
+            if status == 'FAIL':
+                logging.error(f"❌ Sync job failed for {event['path']}")
+                sync_active.clear()
+                logging.info("⏸️Paused sync worker due to connection error.")  # Pause instead of exit
+                sync_queue.put(event)  # Requeue the event
+                logging.info(f"🔁Requeued event: {event}")
+            
+            elif status == 'PASS':
+                logging.info(f"✅ Sync job completed for {event['path']}")
+        
+        except Exception as e:
+            logging.error(f"❌ Sync failed: {e}")
+            sync_active.clear()  # Pause on failure
+            logging.info(f"⏸️paused sync worker due to error: {e}")
+            sync_queue.put(event)  # Requeue the event
+            logging.info(f"🔁Requeued event: {event}")
+        
+        finally:
+            sync_queue.task_done()
+########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
+# class Sync()
+
+# class Outgoing(Sync)
+#   self.path
+#   self.hash
+#   self.size
+#   self.version
+#   self.packets
+#   def encode_file_chunks
+#   def send_packet
+#   def start_server
+class Sync:
+    def __init__(self):
+        self.BLOCK_SIZE = 1024
+        self.PORT = 6969
+        self.HEADER_SIZE = 4
+        self.RESPONSE_OK = b'ACK'
+        self.RESPONSE_ERR = b'ERR'
+
+class Outgoing(Sync):
+    def __init__(self, path, is_dir, origin):
+        super().__init__()
+        self.path = path
+        self.is_dir = is_dir
+        self.origin = origin
+
+        if self.is_dir:
+            pass
+        else:
+            self.packets = self.create_packet()
+            self.packet_count = len(self.packets)
+            self.hash = file_to_hash.get(self.path)
+
+
+    def rmdir(self): # COMMAND
+        pass
+    def mkdir(self): # COMMAND
+        pass
+    def touch(self):
+        self.start_server()
+    def rm(self): # COMMAND
+        pass
+    def mv(self): # COMMAND
+        pass
+    def initialise(self):
+        pass
+    
+    
+    def create_metadata(self) -> dict:
+        return {
+            "index" : 0,
+            "packet_count" : self.packet_count,
+            "hash" : self.hash, #using dictionary(built by scraping db) to get file's hash
+            "path" : self.path,
+            "origin" : self.origin, # how this event was made.
+            "is_dir" : self.is_dir
+        }
+    
+    def create_packet(self) -> list: # whole purpose is to generate packets from blocks
+        with open(self.path, 'rb') as f:
+            file_data = f.read()
+
+        blocks = [file_data[i:i + self.BLOCK_SIZE] for i in range(0, len(file_data), self.BLOCK_SIZE)]
+        return [
+            {
+                "index": i,
+                "data": base64.b64encode(block).decode(),
+                "checksum": hashlib.md5(block).hexdigest()
+            }
+            for i, block in enumerate(blocks)
+        ]
+
+    def send_packet(self, outgoingsock: socket.socket, packet: dict) -> None:
+        payload = json.dumps(packet).encode()
+        header = struct.pack('!I', len(payload))
+        message = f"{header + payload:<1024}"
+        sent = False   
+        while not sent:
+            outgoingsock.sendall(message)
+            response = outgoingsock.recv(3)
+            if response == self.RESPONSE_OK:
+                logging.info(f"Packet {packet['index']} transmitted successfully.")
+                sent = True
+            else:
+                logging.info(f"Packet {packet['index']} failed checksum, retrying...")
+
+    def start_server(self) -> None:
+        outgoingsock = socket.socket()
+        try:
+            logging.info(f"Connecting to server at {active_session['server_name']}:{self.PORT}")
+            outgoingsock.connect((active_session['server_name'], self.PORT))
+            logging.info(f"[+] Connected to server at {active_session['server_name']}:{self.PORT}")
+        except Exception as e:
+            logging.error(f"❌ Failed to connect to server: {e}")
+            return 'FAIL'
+        
+
+        metadata = self.create_metadata()
+        self.send_packet(outgoingsock, metadata)
+        for packet in self.packets:
+            self.send_packet(outgoingsock, packet)
+
+
+        logging.info("[+] All packets sent.")
+        return 'PASS'
+
+# class Incoming()
+# def recv_exact
+# def receive_valid_chunk
+# def receive_file
+# def connect_to_server
+class incoming(Sync):
+    def __init__():
+        pass
+########################################################################################
 if __name__ == "__main__":
 
     dir_file = "dir.json"
@@ -764,7 +1011,7 @@ if __name__ == "__main__":
     print(f"Binding IP: {ip}")
 
     # Start the listener thread for message listening
-    listener_thread = threading.Thread(target=listen_for_messages, daemon=True)
+    listener_thread = threading.Thread(target=listen_for_messages, daemon=True) # 🧵
     # daemon=True ensures thread exits when main program exits!!
     listener_thread.start()
 
@@ -773,6 +1020,11 @@ if __name__ == "__main__":
         request.session = session
         db.create_all()
 
+        global file_to_hash
+        file_to_hash = {f.path: f.hash for f in File.query.all()}
+        logging.info(f'Loaded file_to_hash with {len(file_to_hash)} entries.')
+        logging.info(f'{file_to_hash}')
+
         global active_session
         active_session = {}
         for key, value in session.items():
@@ -780,15 +1032,13 @@ if __name__ == "__main__":
         logging.info(f'active_session dict: {active_session}')
 
     # Start the Flask server in a separate thread
-    flask_thread = threading.Thread(target=run_flask, daemon=True)
+    flask_thread = threading.Thread(target=run_flask, daemon=True) # 🧵
     flask_thread.start()
 
-    watchdog = threading.Thread(target=start_watchdog, args=(dirs,))
+    watchdog = threading.Thread(target=start_watchdog, args=(dirs,)) # 🧵
     watchdog.start()
-    # socketio_thread = threading.Thread(target=run_socketio, daemon=True)
-    # socketio_thread.start()
 
-    # socket = threading.Thread(target=socketio.run, args=(app,))
-    # socket.start()
+    sync_worker_thread = threading.Thread(target=sync_worker, daemon=True) # 🧵
+    sync_worker_thread.start()  # ✅ Start just once
 
     socketio.run(app)

@@ -1,87 +1,74 @@
 [
   {
-    "id": "event_20250417_143615_62c5d7",
-    "time_added": "2025-04-17T14:36:15.296805",
-    "event_type": "created",
-    "path": "/home/osaka/Documents/Shared/akina",
-    "is_directory": true,
-    "origin": "mkdir"
-  },
-  {
-    "id": "event_20250417_210742_0cf618",
-    "event_type": "created",
-    "path": "/home/osaka/Documents/Shared/fuji",
-    "is_directory": true,
-    "origin": "mkdir"
-  },
-  {
-    "id": "event_20250417_210742_0cf618",
-    "event_type": "created",
-    "path": "/home/osaka/Documents/Shared/fuji/fuji_speedway",
-    "is_directory": true,
-    "origin": "mkdir"
-  },
-  {
-    "id": "event_20250417_210742_0cf618",
-    "event_type": "created",
-    "path": "/home/osaka/Documents/Shared/fuji/fuji_speedway/supra.txt",
-    "is_directory": false,
-    "origin": "mkdir"
-  },
-  {
-    "id": "event_20250417_210742_0cf618",
-    "event_type": "created",
-    "path": "/home/osaka/Documents/Shared/fuji/mt_fuji",
-    "is_directory": true,
-    "origin": "mkdir"
-  },
-  {
-    "id": "event_20250417_214801_2372d7",
-    "event_type": "created",
-    "path": "/home/osaka/Documents/Shared/ebisu",
-    "is_directory": true,
-    "origin": "mkdir"
-  },
-  {
-    "id": "event_20250417_214801_2372d7",
-    "event_type": "created",
-    "path": "/home/osaka/Documents/Shared/ebisu/track-details.txt",
-    "is_directory": false,
-    "origin": "mkdir"
-  },
-  {
-    "id": "event_20250417_214801_2372d7",
+    "id": "event_20250418_171442_3c9676",
     "event_type": "created",
     "path": "/home/osaka/Documents/Shared/ebisu/ebisu-drift-track",
-    "is_directory": true,
+    "is_dir": true,
     "origin": "mkdir"
   },
   {
-    "id": "event_20250417_214801_2372d7",
+    "id": "event_20250418_171442_3c9676",
     "event_type": "created",
     "path": "/home/osaka/Documents/Shared/ebisu/tyres",
-    "is_directory": true,
+    "is_dir": true,
     "origin": "mkdir"
   },
   {
-    "id": "event_20250417_214801_2372d7",
+    "id": "event_20250418_171442_3c9676",
     "event_type": "created",
     "path": "/home/osaka/Documents/Shared/ebisu/tyres/slick",
-    "is_directory": true,
+    "is_dir": true,
     "origin": "mkdir"
   },
   {
-    "id": "event_20250417_214801_2372d7",
+    "id": "event_20250418_171442_3c9676",
     "event_type": "created",
     "path": "/home/osaka/Documents/Shared/ebisu/tyres/slick/grip-info.txt",
-    "is_directory": false,
+    "is_dir": false,
     "origin": "mkdir"
   },
   {
-    "id": "event_20250417_214801_2372d7",
+    "id": "event_20250418_171442_3c9676",
     "event_type": "created",
     "path": "/home/osaka/Documents/Shared/ebisu/tyres/semi-slick",
-    "is_directory": true,
+    "is_dir": true,
     "origin": "mkdir"
+  },
+  {
+    "id": "event_20250418_171442_3c9676",
+    "event_type": "created",
+    "path": "/home/osaka/Documents/Shared/ebisu/track-details.txt",
+    "is_dir": false,
+    "origin": "mkdir"
+  },
+  {
+    "id": "event_20250419_203355_8885d0",
+    "event_type": "create",
+    "path": "/home/osaka/Documents/Shared/ebisu/tyres/semi-slick/grip-info.txt",
+    "is_dir": false,
+    "origin": "user"
+  },
+  {
+    "id": "event_20250419_203705_a4f0e7",
+    "event_type": "move",
+    "src_path": "/home/osaka/Documents/Shared/ebisu/tyres/grip-info.txt",
+    "dest_path": "/home/osaka/Documents/Shared/ebisu/tyres/bruh.txt",
+    "is_dir": false,
+    "origin": "user"
+  },
+  {
+    "id": "event_20250419_203715_d682eb",
+    "event_type": "move",
+    "src_path": "/home/osaka/Documents/Shared/ebisu/tyres/bruh.txt",
+    "dest_path": "/home/osaka/Documents/Shared/ebisu/tyres/semi-slick/bruh.txt",
+    "is_dir": false,
+    "origin": "user"
+  },
+  {
+    "id": "event_20250419_204004_aab572",
+    "event_type": "delete",
+    "path": "/home/osaka/Documents/Shared/ebisu/tyres/semi-slick",
+    "is_dir": true,
+    "origin": "user"
   }
 ]

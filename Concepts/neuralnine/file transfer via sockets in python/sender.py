@@ -1,25 +1,18 @@
-import socket
 import os
-
-gw = os.popen('ip -4 route show default').read().split()
-print(f"gw: {gw}")
+import socket
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# client.connect((socket.gethostbyname(socket.gethostname()), 80))
-client.connect((gw[-3], 80))
-
-print(f'{socket.gethostbyname(socket.gethostname())}')
-
+client.connect(("localhost", 9999))
 
 file = open("virus.png", "rb")
-filesize = os.path.getsize("virus.png")
+file_size = os.path.getsize("virus.png")
 
-client.send("virus_2.png".encode())
-client.send(str(filesize).encode())
+client.send("received_virus.png".encode())
+client.send(str(file_size).encode())
 
 data = file.read()
 client.sendall(data)
-client.send(b'<END>')
+client.send(b"<END>")
 
 file.close()
 client.close()

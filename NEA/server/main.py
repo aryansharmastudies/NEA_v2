@@ -66,6 +66,15 @@ class Share(Base):
     mac_addr = Column(String, primary_key=True)
     path = Column(String)
 
+class File(Base):
+    __tablename__ = 'files'
+
+    folder_id = Column(String, primary_key=True)
+    path = Column(String, primary_key=True)
+    size = Column(Integer)
+    hash = Column(String)
+    version = Column(String)
+
 Base.metadata.create_all(engine)
 
 # RESPONSE CLASS
@@ -279,23 +288,28 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
 
             # ❗no need to return if user is offline, as the user will get the invite when they log in.
             # return json.dumps({'status': '400', 'status_msg': 'Ping failed'})
-        elif status == '200': # if authorisation is successful.
+        
+        
+        ############# TODO - if the user is online, send folder invite to them... ##################
+        
+        
+        
+        elif status == '200': # if authorisation is successful.  
             logging.info(f'Authorisation successful for {username} with ip: {ip}')
             data = send(json.dumps({'action': 'add_folder', 'folder_label': folder_label, 'folder_id': folder_id}), ip, 6000) # TODO needs to be displayed on clients side through websockets.
             if data != False: # NOTE MAYBE SHOULD SCRAP THIS SINCE IT WILL WAIT UNNECESSARILY
                 data = json.loads(data)
-                directory = data['directory']
-                shared_user = Share(folder_id=folder_id, mac_addr=mac_addr, path=directory)
+                guest_dir = data['directory']
+                shared_user = Share(folder_id=folder_id, mac_addr=mac_addr, path=guest_dir)
                 session.add(shared_user) # im sure with a for loop you can itterate and add many 'share' objects to the session, then commit them.
+                session.commit()
             else:
                 logging.info(f'data {username} sent has failed: {data}')
+
+
     # use async to ask the currently active users
     # or else, put instruction in a json file!!!
     # and whenever user logs in, check if they are in the file.
-
-    folder = Folder(mac_addr=mac_addr, name=folder_label, folder_id=folder_id, path=directory, type=folder_type)
-    session.add(folder)
-    session.commit()
 
     # directory = ~/Desktop/LINUX
     # e.g. ~/Desktop/LINUX -> ~/02/290128321/Desktop/LINUX i.e. ~/<user_id>/<mac_addr>/<folder_name>
@@ -305,7 +319,16 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
     directory.insert(2, str(mac_addr)) # insert mac_addr
     directory = '/'.join(directory)
     directory = os.path.expanduser(directory) 
-    os.makedirs(directory)
+    logging.info(f'Creating folder directory: {directory}')
+    try: 
+        os.makedirs(directory)
+    except FileExistsError:
+        logging.info(f'⚠️ Directory {directory} already exists, skipping creation.')
+
+    # NOTE: ADD TO DB ONLY AFTER DIRECTORY PATH IS FORMATTED CORRECTLY! AND DIRECTORY IS CREATED!
+    folder = Folder(mac_addr=mac_addr, name=folder_label, folder_id=folder_id, path=directory, type=folder_type)
+    session.add(folder)
+    session.commit()
 
     logging.info(f'Directory created: {directory}')
 

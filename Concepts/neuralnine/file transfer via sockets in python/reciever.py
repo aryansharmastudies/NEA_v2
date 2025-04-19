@@ -1,14 +1,9 @@
+
 import socket
 import tqdm
-import os
-
-gw = os.popen('ip -4 route show default').read().split()
-print(f"gw: {gw}")
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((gw[-3], 1234))
-
-print(f'{socket.gethostbyname(socket.gethostname())}')
+server.bind(("localhost", 9999))
 server.listen()
 
 client, addr = server.accept()
@@ -19,16 +14,14 @@ file_size = client.recv(1024).decode()
 print(file_size)
 
 file = open(file_name, "wb")
-
 file_bytes = b""
-
 done = False
 
 progress = tqdm.tqdm(unit="B", unit_scale=True, unit_divisor=1000, total=int(file_size))
 
 while not done:
     data = client.recv(1024)
-    if file_bytes[-5:] == "b<END>":
+    if file_bytes[-5:] == b"<END>":
         done = True
     else:
         file_bytes += data

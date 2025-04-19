@@ -15226,3 +15226,1253 @@
 2025-04-17 21:54:57 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
 2025-04-17 21:54:57 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
 2025-04-17 21:54:57 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 12:13:52 INFO INITIALISING invites: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 12:14:44 INFO Connection from ('192.168.1.75', 60680) has been established!
+2025-04-18 12:14:44 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 12:14:44 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 12:14:44 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 12:14:44 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 12:14:44 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 12:14:44 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 12:14:44 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 12:14:44 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 12:14:44 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 12:14:44 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 12:19:17 INFO Connection from ('192.168.1.75', 59878) has been established!
+2025-04-18 12:19:17 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 12:19:17 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 12:19:17 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 12:19:17 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 12:19:17 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 12:19:17 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 12:19:17 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 12:19:17 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 12:19:17 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 12:19:17 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 12:19:19 INFO Connection from ('192.168.1.75', 59886) has been established!
+2025-04-18 12:19:19 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 12:19:19 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 12:19:19 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 12:19:19 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 12:19:19 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 12:19:19 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 12:19:19 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 12:19:19 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 12:19:19 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 12:19:19 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 12:19:36 INFO Connection from ('192.168.1.75', 41336) has been established!
+2025-04-18 12:19:36 INFO message: {"action": "login", "l_user": "takumi", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 12:19:36 INFO User: takumi has logged in
+2025-04-18 12:19:36 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-04-18 12:19:36 INFO Connection from ('192.168.1.75', 41338) has been established!
+2025-04-18 12:19:36 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 12:19:36 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 12:19:36 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 12:19:36 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 12:19:36 INFO user's invite: ['akina', 'QijTog8iyj', 'ryosuke']
+2025-04-18 12:19:36 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-18 12:19:36 INFO sending alerts to takumi with mac_addr 4681952839112: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-18 12:19:36 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["akina", "QijTog8iyj", "ryosuke"]]}
+2025-04-18 12:19:43 INFO Connection from ('192.168.1.75', 39952) has been established!
+2025-04-18 12:19:43 INFO message: {"action": "login", "l_user": "ryosuke", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 12:19:43 INFO User: ryosuke has logged in
+2025-04-18 12:19:43 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-04-18 12:19:43 INFO Connection from ('192.168.1.75', 39956) has been established!
+2025-04-18 12:19:43 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 12:19:43 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 12:19:43 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 12:19:43 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 12:19:43 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 12:19:43 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 12:19:43 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 12:19:43 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 12:19:43 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 12:19:43 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 12:19:44 INFO Connection from ('192.168.1.75', 39968) has been established!
+2025-04-18 12:19:44 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 12:19:44 INFO Data_Response Object is made
+2025-04-18 12:19:44 INFO scraped data to be returned!: {'users': [[1, 'takumi'], [2, 'ryosuke']], 'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']]}
+2025-04-18 12:19:44 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "desktop-computer"
+      ],
+      [
+        2,
+        "desktop-computer"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 12:23:38 INFO Connection from ('192.168.1.75', 34604) has been established!
+2025-04-18 12:23:38 INFO message: {"action": "add_folder", "folder_label": "tokyo_expressway", "folder_id": "lRa2NKpqih", "directory": "~/Documents/Shared/tokyo_expressway", "shared_users": ["takumi:desktop-computer"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "ryosuke"}
+2025-04-18 12:23:38 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'tokyo_expressway', 'folder_id': 'lRa2NKpqih', 'directory': '~/Documents/Shared/tokyo_expressway', 'shared_users': ['takumi:desktop-computer'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'ryosuke'}
+2025-04-18 12:23:38 INFO Unix format directory: ~/Documents/Shared/tokyo_expressway
+2025-04-18 12:23:38 INFO 👤Host: ryosuke with User_ID: 2 is creating folder📂: tokyo_expressway with folder_id: lRa2NKpqih in directory: ~/Documents/Shared/tokyo_expressway
+2025-04-18 12:23:38 INFO User: takumi found with User_ID: 1
+2025-04-18 12:23:38 INFO Device: desktop-computer found with Mac_addr: 4681952839112
+2025-04-18 12:23:38 INFO {'4681952839112': '192.168.1.75'}
+2025-04-18 12:23:38 INFO ip of device: 192.168.1.75
+2025-04-18 12:23:38 INFO Sending authorisation request to takumi, device: desktop-computer, mac_addr: 4681952839112,  ip: 192.168.1.75
+2025-04-18 12:23:38 INFO Sending: {"action": "authorise", "user": "takumi"} to 192.168.1.75 on port 6000
+2025-04-18 12:23:38 INFO client_data: {"status_code": "404"}
+2025-04-18 12:23:38 INFO User Status: 404 (400/404 -> failed, 200 -> success)
+2025-04-18 12:23:38 INFO Authorisation failed for takumi with ip: 192.168.1.75
+2025-04-18 12:23:38 INFO invites.json BEFORE adding: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 12:23:38 INFO invites.json AFTER adding: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 12:23:38 INFO Directory created: /home/osaka/2/4681952839112/Documents/Shared/tokyo_expressway
+2025-04-18 12:23:38 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-04-18 13:04:11 INFO Connection from ('192.168.1.75', 48858) has been established!
+2025-04-18 13:04:11 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 13:04:11 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:04:11 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:04:11 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 13:04:11 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 13:04:11 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 13:04:11 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 13:04:11 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:04:11 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:04:11 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 13:05:09 INFO INITIALISING invites: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:05:14 INFO Connection from ('192.168.1.75', 51506) has been established!
+2025-04-18 13:05:14 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 13:05:14 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:05:14 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:05:14 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 13:05:14 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 13:05:14 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 13:05:14 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 13:05:14 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:05:14 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:05:14 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 13:05:18 INFO Connection from ('192.168.1.75', 51514) has been established!
+2025-04-18 13:05:18 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 13:05:18 INFO Data_Response Object is made
+2025-04-18 13:05:18 INFO scraped data to be returned!: {'users': [[1, 'takumi'], [2, 'ryosuke']], 'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']]}
+2025-04-18 13:05:18 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "desktop-computer"
+      ],
+      [
+        2,
+        "desktop-computer"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 13:05:45 INFO Connection from ('192.168.1.75', 50070) has been established!
+2025-04-18 13:05:45 INFO message: {"action": "add_folder", "folder_label": "tokyo_expressway", "folder_id": "1BSqze29i4", "directory": "~/Documents/Shared/tokyo_expressway", "shared_users": ["takumi:desktop-computer"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "ryosuke"}
+2025-04-18 13:05:45 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'tokyo_expressway', 'folder_id': '1BSqze29i4', 'directory': '~/Documents/Shared/tokyo_expressway', 'shared_users': ['takumi:desktop-computer'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'ryosuke'}
+2025-04-18 13:05:45 INFO Unix format directory: ~/Documents/Shared/tokyo_expressway
+2025-04-18 13:05:45 INFO 👤Host: ryosuke with User_ID: 2 is creating folder📂: tokyo_expressway with folder_id: 1BSqze29i4 in directory: ~/Documents/Shared/tokyo_expressway
+2025-04-18 13:05:45 INFO User: takumi found with User_ID: 1
+2025-04-18 13:05:45 INFO Device: desktop-computer found with Mac_addr: 4681952839112
+2025-04-18 13:05:45 INFO {'4681952839112': '192.168.1.75'}
+2025-04-18 13:05:45 INFO ip of device: 192.168.1.75
+2025-04-18 13:05:45 INFO Sending authorisation request to takumi, device: desktop-computer, mac_addr: 4681952839112,  ip: 192.168.1.75
+2025-04-18 13:05:45 INFO Sending: {"action": "authorise", "user": "takumi"} to 192.168.1.75 on port 6000
+2025-04-18 13:05:45 INFO client_data: {"status_code": "404"}
+2025-04-18 13:05:45 INFO User Status: 404 (400/404 -> failed, 200 -> success)
+2025-04-18 13:05:45 INFO Authorisation failed for takumi with ip: 192.168.1.75
+2025-04-18 13:05:45 INFO invites.json BEFORE adding: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:05:45 INFO invites.json AFTER adding: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:06:35 INFO INITIALISING invites: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:06:39 INFO Connection from ('192.168.1.75', 60364) has been established!
+2025-04-18 13:06:39 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 13:06:39 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:06:39 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:06:39 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 13:06:39 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 13:06:39 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 13:06:39 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 13:06:39 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:06:39 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:06:39 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 13:06:40 INFO Connection from ('192.168.1.75', 60368) has been established!
+2025-04-18 13:06:40 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 13:06:40 INFO Data_Response Object is made
+2025-04-18 13:06:40 INFO scraped data to be returned!: {'users': [[1, 'takumi'], [2, 'ryosuke']], 'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']]}
+2025-04-18 13:06:40 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "desktop-computer"
+      ],
+      [
+        2,
+        "desktop-computer"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 13:07:16 INFO Connection from ('192.168.1.75', 43664) has been established!
+2025-04-18 13:07:16 INFO message: {"action": "add_folder", "folder_label": "tokyo-expressway", "folder_id": "iV6g7OBiSx", "directory": "~/Documents/Shared/tokyo_expressway", "shared_users": ["takumi:desktop-computer"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "ryosuke"}
+2025-04-18 13:07:16 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'tokyo-expressway', 'folder_id': 'iV6g7OBiSx', 'directory': '~/Documents/Shared/tokyo_expressway', 'shared_users': ['takumi:desktop-computer'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'ryosuke'}
+2025-04-18 13:07:16 INFO Unix format directory: ~/Documents/Shared/tokyo_expressway
+2025-04-18 13:07:16 INFO 👤Host: ryosuke with User_ID: 2 is creating folder📂: tokyo-expressway with folder_id: iV6g7OBiSx in directory: ~/Documents/Shared/tokyo_expressway
+2025-04-18 13:07:16 INFO User: takumi found with User_ID: 1
+2025-04-18 13:07:16 INFO Device: desktop-computer found with Mac_addr: 4681952839112
+2025-04-18 13:07:16 INFO {'4681952839112': '192.168.1.75'}
+2025-04-18 13:07:16 INFO ip of device: 192.168.1.75
+2025-04-18 13:07:16 INFO Sending authorisation request to takumi, device: desktop-computer, mac_addr: 4681952839112,  ip: 192.168.1.75
+2025-04-18 13:07:16 INFO Sending: {"action": "authorise", "user": "takumi"} to 192.168.1.75 on port 6000
+2025-04-18 13:07:16 INFO client_data: {"status_code": "404"}
+2025-04-18 13:07:16 INFO User Status: 404 (400/404 -> failed, 200 -> success)
+2025-04-18 13:07:16 INFO Authorisation failed for takumi with ip: 192.168.1.75
+2025-04-18 13:07:16 INFO invites.json BEFORE adding: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:07:16 INFO invites.json AFTER adding: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:08:48 INFO INITIALISING invites: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:12:41 INFO INITIALISING invites: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:12:44 INFO Connection from ('192.168.1.75', 48110) has been established!
+2025-04-18 13:12:44 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 13:12:44 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:12:44 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:12:44 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 13:12:44 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 13:12:44 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 13:12:44 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 13:12:44 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:12:44 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:12:44 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 13:12:46 INFO Connection from ('192.168.1.75', 48124) has been established!
+2025-04-18 13:12:46 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 13:12:46 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:12:46 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:12:46 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 13:12:46 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 13:12:46 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 13:12:46 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 13:12:46 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:12:46 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:12:46 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 13:12:46 INFO Connection from ('192.168.1.75', 48130) has been established!
+2025-04-18 13:12:46 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 13:12:46 INFO Data_Response Object is made
+2025-04-18 13:12:46 INFO scraped data to be returned!: {'users': [[1, 'takumi'], [2, 'ryosuke']], 'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']]}
+2025-04-18 13:12:46 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "desktop-computer"
+      ],
+      [
+        2,
+        "desktop-computer"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 13:12:47 INFO Connection from ('192.168.1.75', 48138) has been established!
+2025-04-18 13:12:47 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 13:12:47 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:12:47 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:12:47 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 13:12:47 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 13:12:47 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 13:12:47 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 13:12:47 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:12:47 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:12:47 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 13:12:49 INFO Connection from ('192.168.1.75', 48146) has been established!
+2025-04-18 13:12:49 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 13:12:49 INFO Data_Response Object is made
+2025-04-18 13:12:49 INFO scraped data to be returned!: {'users': [[1, 'takumi'], [2, 'ryosuke']], 'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']]}
+2025-04-18 13:12:49 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "desktop-computer"
+      ],
+      [
+        2,
+        "desktop-computer"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 13:13:16 INFO Connection from ('192.168.1.75', 45970) has been established!
+2025-04-18 13:13:16 INFO message: {"action": "add_folder", "folder_label": "tokyo-expressway", "folder_id": "GAHc8PFMeS", "directory": "~/Documents/Shared/tokyo_expressway", "shared_users": ["takumi:desktop-computer"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "ryosuke"}
+2025-04-18 13:13:16 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'tokyo-expressway', 'folder_id': 'GAHc8PFMeS', 'directory': '~/Documents/Shared/tokyo_expressway', 'shared_users': ['takumi:desktop-computer'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'ryosuke'}
+2025-04-18 13:13:16 INFO Unix format directory: ~/Documents/Shared/tokyo_expressway
+2025-04-18 13:13:16 INFO 👤Host: ryosuke with User_ID: 2 is creating folder📂: tokyo-expressway with folder_id: GAHc8PFMeS in directory: ~/Documents/Shared/tokyo_expressway
+2025-04-18 13:13:16 INFO User: takumi found with User_ID: 1
+2025-04-18 13:13:16 INFO Device: desktop-computer found with Mac_addr: 4681952839112
+2025-04-18 13:13:16 INFO {'4681952839112': '192.168.1.75'}
+2025-04-18 13:13:16 INFO ip of device: 192.168.1.75
+2025-04-18 13:13:16 INFO Sending authorisation request to takumi, device: desktop-computer, mac_addr: 4681952839112,  ip: 192.168.1.75
+2025-04-18 13:13:16 INFO Sending: {"action": "authorise", "user": "takumi"} to 192.168.1.75 on port 6000
+2025-04-18 13:13:16 INFO client_data: {"status_code": "404"}
+2025-04-18 13:13:16 INFO User Status: 404 (400/404 -> failed, 200 -> success)
+2025-04-18 13:13:16 INFO Authorisation failed for takumi with ip: 192.168.1.75
+2025-04-18 13:13:16 INFO invites.json BEFORE adding: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:13:16 INFO invites.json AFTER adding: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:13:16 INFO Directory created: /home/osaka/2/4681952839112/Documents/Shared/tokyo_expressway
+2025-04-18 13:13:16 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-04-18 13:14:50 INFO INITIALISING invites: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:15:26 INFO Connection from ('192.168.1.75', 52786) has been established!
+2025-04-18 13:15:26 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 13:15:26 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:15:26 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:15:26 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 13:15:26 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 13:15:26 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 13:15:26 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 13:15:26 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:15:26 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:15:26 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 13:15:49 INFO Connection from ('192.168.1.75', 41140) has been established!
+2025-04-18 13:15:49 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 13:15:49 INFO Data_Response Object is made
+2025-04-18 13:15:49 INFO scraped data to be returned!: {'users': [[1, 'takumi'], [2, 'ryosuke']], 'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']]}
+2025-04-18 13:15:49 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "desktop-computer"
+      ],
+      [
+        2,
+        "desktop-computer"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 13:15:49 INFO Connection from ('192.168.1.75', 41156) has been established!
+2025-04-18 13:15:49 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 13:15:49 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:15:49 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:15:49 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 13:15:49 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 13:15:49 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 13:15:49 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 13:15:49 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:15:49 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:15:49 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 13:16:00 INFO Connection from ('192.168.1.75', 43850) has been established!
+2025-04-18 13:16:00 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 13:16:00 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:16:00 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:16:00 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 13:16:00 INFO user's invite: ['Fuji', 'uF7lP3j1xI', 'takumi']
+2025-04-18 13:16:00 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi']]
+2025-04-18 13:16:00 INFO user's invite: ['ebisu', 'uXQaqSCpV3', 'takumi']
+2025-04-18 13:16:00 INFO building alerts: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:16:00 INFO sending alerts to ryosuke with mac_addr 4681952839112: [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]
+2025-04-18 13:16:00 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Fuji", "uF7lP3j1xI", "takumi"], ["ebisu", "uXQaqSCpV3", "takumi"]]}
+2025-04-18 13:16:01 INFO Connection from ('192.168.1.75', 43856) has been established!
+2025-04-18 13:16:01 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 13:16:01 INFO Data_Response Object is made
+2025-04-18 13:16:01 INFO scraped data to be returned!: {'users': [[1, 'takumi'], [2, 'ryosuke']], 'devices': [[1, 'desktop-computer'], [2, 'desktop-computer']]}
+2025-04-18 13:16:01 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "desktop-computer"
+      ],
+      [
+        2,
+        "desktop-computer"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 13:16:25 INFO Connection from ('192.168.1.75', 33510) has been established!
+2025-04-18 13:16:25 INFO message: {"action": "add_folder", "folder_label": "tokyo-expressway", "folder_id": "0UZtrO83iQ", "directory": "~/Documents/Shared/tokyo_expressway", "shared_users": ["takumi:desktop-computer"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "ryosuke"}
+2025-04-18 13:16:25 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'tokyo-expressway', 'folder_id': '0UZtrO83iQ', 'directory': '~/Documents/Shared/tokyo_expressway', 'shared_users': ['takumi:desktop-computer'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'ryosuke'}
+2025-04-18 13:16:25 INFO Unix format directory: ~/Documents/Shared/tokyo_expressway
+2025-04-18 13:16:25 INFO 👤Host: ryosuke with User_ID: 2 is creating folder📂: tokyo-expressway with folder_id: 0UZtrO83iQ in directory: ~/Documents/Shared/tokyo_expressway
+2025-04-18 13:16:25 INFO User: takumi found with User_ID: 1
+2025-04-18 13:16:25 INFO Device: desktop-computer found with Mac_addr: 4681952839112
+2025-04-18 13:16:25 INFO {'4681952839112': '192.168.1.75'}
+2025-04-18 13:16:25 INFO ip of device: 192.168.1.75
+2025-04-18 13:16:25 INFO Sending authorisation request to takumi, device: desktop-computer, mac_addr: 4681952839112,  ip: 192.168.1.75
+2025-04-18 13:16:25 INFO Sending: {"action": "authorise", "user": "takumi"} to 192.168.1.75 on port 6000
+2025-04-18 13:16:25 INFO client_data: {"status_code": "404"}
+2025-04-18 13:16:25 INFO User Status: 404 (400/404 -> failed, 200 -> success)
+2025-04-18 13:16:25 INFO Authorisation failed for takumi with ip: 192.168.1.75
+2025-04-18 13:16:25 INFO invites.json BEFORE adding: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:16:25 INFO invites.json AFTER adding: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke'], ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:16:25 INFO Directory created: /home/osaka/2/4681952839112/Documents/Shared/tokyo_expressway
+2025-04-18 13:16:25 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-04-18 13:18:14 INFO Connection from ('192.168.1.75', 45750) has been established!
+2025-04-18 13:18:14 INFO message: {"action": "login", "l_user": "takumi", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 13:18:14 INFO User: takumi has logged in
+2025-04-18 13:18:14 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-04-18 13:18:14 INFO Connection from ('192.168.1.75', 45754) has been established!
+2025-04-18 13:18:14 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 13:18:14 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:18:14 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:18:14 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 13:18:14 INFO user's invite: ['akina', 'QijTog8iyj', 'ryosuke']
+2025-04-18 13:18:14 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-18 13:18:14 INFO user's invite: ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke']
+2025-04-18 13:18:14 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke']]
+2025-04-18 13:18:14 INFO user's invite: ['tokyo_expressway', '1BSqze29i4', 'ryosuke']
+2025-04-18 13:18:14 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke']]
+2025-04-18 13:18:14 INFO user's invite: ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke']
+2025-04-18 13:18:14 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke']]
+2025-04-18 13:18:14 INFO user's invite: ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke']
+2025-04-18 13:18:14 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke']]
+2025-04-18 13:18:14 INFO user's invite: ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']
+2025-04-18 13:18:14 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke'], ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']]
+2025-04-18 13:18:14 INFO sending alerts to takumi with mac_addr 4681952839112: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke'], ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']]
+2025-04-18 13:18:14 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["akina", "QijTog8iyj", "ryosuke"], ["tokyo_expressway", "lRa2NKpqih", "ryosuke"], ["tokyo_expressway", "1BSqze29i4", "ryosuke"], ["tokyo-expressway", "iV6g7OBiSx", "ryosuke"], ["tokyo-expressway", "GAHc8PFMeS", "ryosuke"], ["tokyo-expressway", "0UZtrO83iQ", "ryosuke"]]}
+2025-04-18 13:19:10 INFO Connection from ('192.168.1.75', 46834) has been established!
+2025-04-18 13:19:10 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 13:19:10 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:19:10 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:19:10 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 13:19:10 INFO user's invite: ['akina', 'QijTog8iyj', 'ryosuke']
+2025-04-18 13:19:10 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-18 13:19:10 INFO user's invite: ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke']
+2025-04-18 13:19:10 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke']]
+2025-04-18 13:19:10 INFO user's invite: ['tokyo_expressway', '1BSqze29i4', 'ryosuke']
+2025-04-18 13:19:10 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke']]
+2025-04-18 13:19:10 INFO user's invite: ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke']
+2025-04-18 13:19:10 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke']]
+2025-04-18 13:19:10 INFO user's invite: ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke']
+2025-04-18 13:19:10 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke']]
+2025-04-18 13:19:10 INFO user's invite: ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']
+2025-04-18 13:19:10 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke'], ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']]
+2025-04-18 13:19:10 INFO sending alerts to takumi with mac_addr 4681952839112: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke'], ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']]
+2025-04-18 13:19:10 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["akina", "QijTog8iyj", "ryosuke"], ["tokyo_expressway", "lRa2NKpqih", "ryosuke"], ["tokyo_expressway", "1BSqze29i4", "ryosuke"], ["tokyo-expressway", "iV6g7OBiSx", "ryosuke"], ["tokyo-expressway", "GAHc8PFMeS", "ryosuke"], ["tokyo-expressway", "0UZtrO83iQ", "ryosuke"]]}
+2025-04-18 13:19:18 INFO Connection from ('192.168.1.75', 52126) has been established!
+2025-04-18 13:19:18 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 13:19:18 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:19:18 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:19:18 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 13:19:18 INFO user's invite: ['akina', 'QijTog8iyj', 'ryosuke']
+2025-04-18 13:19:18 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-18 13:19:18 INFO user's invite: ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke']
+2025-04-18 13:19:18 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke']]
+2025-04-18 13:19:18 INFO user's invite: ['tokyo_expressway', '1BSqze29i4', 'ryosuke']
+2025-04-18 13:19:18 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke']]
+2025-04-18 13:19:18 INFO user's invite: ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke']
+2025-04-18 13:19:18 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke']]
+2025-04-18 13:19:18 INFO user's invite: ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke']
+2025-04-18 13:19:18 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke']]
+2025-04-18 13:19:18 INFO user's invite: ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']
+2025-04-18 13:19:18 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke'], ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']]
+2025-04-18 13:19:18 INFO sending alerts to takumi with mac_addr 4681952839112: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo_expressway', 'lRa2NKpqih', 'ryosuke'], ['tokyo_expressway', '1BSqze29i4', 'ryosuke'], ['tokyo-expressway', 'iV6g7OBiSx', 'ryosuke'], ['tokyo-expressway', 'GAHc8PFMeS', 'ryosuke'], ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']]
+2025-04-18 13:19:18 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["akina", "QijTog8iyj", "ryosuke"], ["tokyo_expressway", "lRa2NKpqih", "ryosuke"], ["tokyo_expressway", "1BSqze29i4", "ryosuke"], ["tokyo-expressway", "iV6g7OBiSx", "ryosuke"], ["tokyo-expressway", "GAHc8PFMeS", "ryosuke"], ["tokyo-expressway", "0UZtrO83iQ", "ryosuke"]]}
+2025-04-18 13:22:26 INFO INITIALISING invites: {'folders': {'takumi': {'4681952839112': [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']]}, 'ryosuke': {'4681952839112': [['Fuji', 'uF7lP3j1xI', 'takumi'], ['ebisu', 'uXQaqSCpV3', 'takumi']]}}, 'groups': {}}
+2025-04-18 13:22:28 INFO Connection from ('192.168.1.75', 43496) has been established!
+2025-04-18 13:22:28 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 13:22:28 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 13:22:28 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 13:22:28 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 13:22:28 INFO user's invite: ['akina', 'QijTog8iyj', 'ryosuke']
+2025-04-18 13:22:28 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke']]
+2025-04-18 13:22:28 INFO user's invite: ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']
+2025-04-18 13:22:28 INFO building alerts: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']]
+2025-04-18 13:22:28 INFO sending alerts to takumi with mac_addr 4681952839112: [['akina', 'QijTog8iyj', 'ryosuke'], ['tokyo-expressway', '0UZtrO83iQ', 'ryosuke']]
+2025-04-18 13:22:28 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["akina", "QijTog8iyj", "ryosuke"], ["tokyo-expressway", "0UZtrO83iQ", "ryosuke"]]}
+2025-04-18 16:50:08 INFO INITIALISING invites: {'folders': {}, 'groups': {}}
+2025-04-18 16:50:38 INFO Connection from ('192.168.1.75', 39624) has been established!
+2025-04-18 16:50:38 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 16:50:38 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 16:50:38 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 16:50:38 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 16:50:38 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 16:50:38 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 16:50:40 INFO Connection from ('192.168.1.75', 39628) has been established!
+2025-04-18 16:50:40 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 16:50:40 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 16:50:40 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 16:50:40 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 16:50:40 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 16:50:40 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 16:51:07 INFO INITIALISING invites: {'folders': {}, 'groups': {}}
+2025-04-18 16:59:44 INFO INITIALISING invites: {'folders': {}, 'groups': {}}
+2025-04-18 16:59:50 INFO Connection from ('192.168.1.75', 60882) has been established!
+2025-04-18 16:59:50 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-04-18 16:59:50 INFO Received ping from 192.168.1.75
+2025-04-18 16:59:50 INFO Pong sent to 192.168.1.75
+2025-04-18 17:00:17 INFO Connection from ('192.168.1.75', 34946) has been established!
+2025-04-18 17:00:17 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-04-18 17:00:17 INFO Received ping from 192.168.1.75
+2025-04-18 17:00:17 INFO Pong sent to 192.168.1.75
+2025-04-18 17:01:58 INFO Connection from ('192.168.1.75', 50260) has been established!
+2025-04-18 17:01:58 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-04-18 17:01:58 INFO Received ping from 192.168.1.75
+2025-04-18 17:01:58 INFO Pong sent to 192.168.1.75
+2025-04-18 17:02:03 INFO Connection from ('192.168.1.75', 41040) has been established!
+2025-04-18 17:02:03 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "takumi", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 17:02:03 INFO Creating user: takumi with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-04-18 17:02:03 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-04-18 17:02:03 INFO Connection from ('192.168.1.75', 41056) has been established!
+2025-04-18 17:02:03 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 17:02:03 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:02:03 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:02:03 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 17:02:03 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 17:02:03 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:02:10 INFO Connection from ('192.168.1.75', 41068) has been established!
+2025-04-18 17:02:10 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "ryosuke", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 17:02:10 INFO Creating user: ryosuke with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-04-18 17:02:10 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-04-18 17:02:10 INFO Connection from ('192.168.1.75', 41082) has been established!
+2025-04-18 17:02:10 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 17:02:10 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:02:10 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:02:10 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 17:02:10 INFO sending alerts to ryosuke with mac_addr 4681952839112: []
+2025-04-18 17:02:10 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:02:14 INFO Connection from ('192.168.1.75', 59810) has been established!
+2025-04-18 17:02:14 INFO message: {"action": "login", "l_user": "takumi", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 17:02:14 INFO User: takumi has logged in
+2025-04-18 17:02:14 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-04-18 17:02:14 INFO Connection from ('192.168.1.75', 59826) has been established!
+2025-04-18 17:02:14 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 17:02:14 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:02:14 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:02:14 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 17:02:14 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 17:02:14 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:02:16 INFO Connection from ('192.168.1.75', 59834) has been established!
+2025-04-18 17:02:16 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 17:02:16 INFO Data_Response Object is made
+2025-04-18 17:02:16 INFO scraped data to be returned!: {'users': [[1, 'takumi'], [2, 'ryosuke']], 'devices': []}
+2025-04-18 17:02:16 INFO SENDING: {
+  "data": {
+    "devices": [],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 17:02:31 INFO Connection from ('192.168.1.75', 47702) has been established!
+2025-04-18 17:02:31 INFO message: {"action": "add_device", "user": "takumi", "r_dev_name": "takumi-pc", "mac_addr": 4681952839112}
+2025-04-18 17:02:31 INFO User_ID: 1
+2025-04-18 17:02:31 INFO Adding device: takumi-pc with Mac_addr: 4681952839112 for User: takumi with User_ID: 1
+2025-04-18 17:02:31 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-04-18 17:02:31 INFO Connection from ('192.168.1.75', 47718) has been established!
+2025-04-18 17:02:31 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 17:02:31 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:02:31 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:02:31 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 17:02:31 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 17:02:31 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:02:35 INFO Connection from ('192.168.1.75', 44426) has been established!
+2025-04-18 17:02:35 INFO message: {"action": "login", "l_user": "ryosuke", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 17:02:35 INFO User: ryosuke has logged in
+2025-04-18 17:02:35 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-04-18 17:02:35 INFO Connection from ('192.168.1.75', 44428) has been established!
+2025-04-18 17:02:35 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 17:02:35 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:02:35 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:02:35 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 17:02:35 INFO sending alerts to ryosuke with mac_addr 4681952839112: []
+2025-04-18 17:02:35 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:02:36 INFO Connection from ('192.168.1.75', 44438) has been established!
+2025-04-18 17:02:36 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 17:02:36 INFO Data_Response Object is made
+2025-04-18 17:02:36 INFO scraped data to be returned!: {'users': [[1, 'takumi'], [2, 'ryosuke']], 'devices': [[1, 'takumi-pc']]}
+2025-04-18 17:02:36 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "takumi-pc"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 17:02:46 INFO Connection from ('192.168.1.75', 37502) has been established!
+2025-04-18 17:02:46 INFO message: {"action": "add_device", "user": "ryosuke", "r_dev_name": "ryosuke-pc", "mac_addr": 4681952839112}
+2025-04-18 17:02:46 INFO User_ID: 2
+2025-04-18 17:02:46 INFO Adding device: ryosuke-pc with Mac_addr: 4681952839112 for User: ryosuke with User_ID: 2
+2025-04-18 17:02:46 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-04-18 17:02:46 INFO Connection from ('192.168.1.75', 37518) has been established!
+2025-04-18 17:02:46 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 17:02:46 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:02:46 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:02:46 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 17:02:46 INFO sending alerts to ryosuke with mac_addr 4681952839112: []
+2025-04-18 17:02:46 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:02:48 INFO Connection from ('192.168.1.75', 37534) has been established!
+2025-04-18 17:02:48 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 17:02:48 INFO Data_Response Object is made
+2025-04-18 17:02:48 INFO scraped data to be returned!: {'users': [[1, 'takumi'], [2, 'ryosuke']], 'devices': [[1, 'takumi-pc'], [2, 'ryosuke-pc']]}
+2025-04-18 17:02:48 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "takumi-pc"
+      ],
+      [
+        2,
+        "ryosuke-pc"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 17:04:35 INFO Connection from ('192.168.1.75', 34978) has been established!
+2025-04-18 17:04:35 INFO message: {"action": "add_folder", "folder_label": "ebisu", "folder_id": "Zr6K3ekX6M", "directory": "~/Documents/Shared/ebisu", "shared_users": ["takumi:takumi-pc"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "ryosuke"}
+2025-04-18 17:04:35 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'ebisu', 'folder_id': 'Zr6K3ekX6M', 'directory': '~/Documents/Shared/ebisu', 'shared_users': ['takumi:takumi-pc'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'ryosuke'}
+2025-04-18 17:04:35 INFO Unix format directory: ~/Documents/Shared/ebisu
+2025-04-18 17:04:35 INFO 👤Host: ryosuke with User_ID: 2 is creating folder📂: ebisu with folder_id: Zr6K3ekX6M in directory: ~/Documents/Shared/ebisu
+2025-04-18 17:04:35 INFO User: takumi found with User_ID: 1
+2025-04-18 17:04:35 INFO Device: takumi-pc found with Mac_addr: 4681952839112
+2025-04-18 17:04:35 INFO {'4681952839112': '192.168.1.75'}
+2025-04-18 17:04:35 INFO ip of device: 192.168.1.75
+2025-04-18 17:04:35 INFO Sending authorisation request to takumi, device: takumi-pc, mac_addr: 4681952839112,  ip: 192.168.1.75
+2025-04-18 17:04:35 INFO Sending: {"action": "authorise", "user": "takumi"} to 192.168.1.75 on port 6000
+2025-04-18 17:04:35 INFO client_data: {"status_code": "404"}
+2025-04-18 17:04:35 INFO User Status: 404 (400/404 -> failed, 200 -> success)
+2025-04-18 17:04:35 INFO Authorisation failed for takumi with ip: 192.168.1.75
+2025-04-18 17:04:35 INFO invites.json BEFORE adding: {'folders': {}, 'groups': {}}
+2025-04-18 17:04:35 INFO invites.json AFTER adding: {'folders': {'takumi': {'4681952839112': [['ebisu', 'Zr6K3ekX6M', 'ryosuke']]}}, 'groups': {}}
+2025-04-18 17:04:35 INFO Creating folder directory: /home/osaka/2/4681952839112/Documents/Shared/ebisu
+2025-04-18 17:04:35 INFO Directory created: /home/osaka/2/4681952839112/Documents/Shared/ebisu
+2025-04-18 17:04:35 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-04-18 17:06:20 INFO INITIALISING invites: {'folders': {}, 'groups': {}}
+2025-04-18 17:07:05 INFO Connection from ('192.168.1.75', 40644) has been established!
+2025-04-18 17:07:05 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-04-18 17:07:05 INFO Received ping from 192.168.1.75
+2025-04-18 17:07:05 INFO Pong sent to 192.168.1.75
+2025-04-18 17:09:51 INFO Connection from ('192.168.1.75', 37386) has been established!
+2025-04-18 17:09:51 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-04-18 17:09:51 INFO Received ping from 192.168.1.75
+2025-04-18 17:09:51 INFO Pong sent to 192.168.1.75
+2025-04-18 17:09:55 INFO Connection from ('192.168.1.75', 41438) has been established!
+2025-04-18 17:09:55 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "ryosuke", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 17:09:55 INFO Creating user: ryosuke with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-04-18 17:09:55 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-04-18 17:09:55 INFO Connection from ('192.168.1.75', 41446) has been established!
+2025-04-18 17:09:55 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 17:09:55 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:09:55 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:09:55 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 17:09:55 INFO sending alerts to ryosuke with mac_addr 4681952839112: []
+2025-04-18 17:09:55 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:10:16 INFO Connection from ('192.168.1.75', 57700) has been established!
+2025-04-18 17:10:16 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-04-18 17:10:16 INFO Received ping from 192.168.1.75
+2025-04-18 17:10:16 INFO Pong sent to 192.168.1.75
+2025-04-18 17:10:22 INFO Connection from ('192.168.1.75', 55944) has been established!
+2025-04-18 17:10:22 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "takumi", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 17:10:22 INFO Creating user: takumi with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-04-18 17:10:22 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-04-18 17:10:22 INFO Connection from ('192.168.1.75', 55960) has been established!
+2025-04-18 17:10:22 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 17:10:22 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:10:22 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:10:22 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 17:10:22 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 17:10:22 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:10:30 INFO Connection from ('192.168.1.75', 55976) has been established!
+2025-04-18 17:10:30 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-04-18 17:10:30 INFO Received ping from 192.168.1.75
+2025-04-18 17:10:30 INFO Pong sent to 192.168.1.75
+2025-04-18 17:10:47 INFO Connection from ('192.168.1.75', 56786) has been established!
+2025-04-18 17:10:47 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "Itsuki", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 17:10:47 INFO Creating user: Itsuki with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-04-18 17:10:47 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-04-18 17:10:47 INFO Connection from ('192.168.1.75', 56792) has been established!
+2025-04-18 17:10:47 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "Itsuki", "mac_addr": 4681952839112}
+2025-04-18 17:10:47 INFO Recieved tracking info from Itsuki with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:10:47 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:10:47 INFO building alerts for Itsuki with mac_addr 4681952839112
+2025-04-18 17:10:47 INFO sending alerts to Itsuki with mac_addr 4681952839112: []
+2025-04-18 17:10:47 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:11:11 INFO Connection from ('192.168.1.75', 41120) has been established!
+2025-04-18 17:11:11 INFO message: {"action": "add_device", "user": "Itsuki", "r_dev_name": "AE85", "mac_addr": 4681952839112}
+2025-04-18 17:11:11 INFO User_ID: 3
+2025-04-18 17:11:11 INFO Adding device: AE85 with Mac_addr: 4681952839112 for User: Itsuki with User_ID: 3
+2025-04-18 17:11:11 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-04-18 17:11:11 INFO Connection from ('192.168.1.75', 41124) has been established!
+2025-04-18 17:11:11 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "Itsuki", "mac_addr": 4681952839112}
+2025-04-18 17:11:11 INFO Recieved tracking info from Itsuki with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:11:11 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:11:11 INFO building alerts for Itsuki with mac_addr 4681952839112
+2025-04-18 17:11:11 INFO sending alerts to Itsuki with mac_addr 4681952839112: []
+2025-04-18 17:11:11 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:11:21 INFO Connection from ('192.168.1.75', 54948) has been established!
+2025-04-18 17:11:21 INFO message: {"action": "login", "l_user": "ryosuke", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 17:11:21 INFO User: ryosuke has logged in
+2025-04-18 17:11:21 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-04-18 17:11:21 INFO Connection from ('192.168.1.75', 54962) has been established!
+2025-04-18 17:11:21 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 17:11:21 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:11:21 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:11:21 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 17:11:21 INFO sending alerts to ryosuke with mac_addr 4681952839112: []
+2025-04-18 17:11:21 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:11:55 INFO Connection from ('192.168.1.75', 37924) has been established!
+2025-04-18 17:11:55 INFO message: {"action": "add_device", "user": "ryosuke", "r_dev_name": "RX-7", "mac_addr": 4681952839112}
+2025-04-18 17:11:55 INFO User_ID: 1
+2025-04-18 17:11:55 INFO Adding device: RX-7 with Mac_addr: 4681952839112 for User: ryosuke with User_ID: 1
+2025-04-18 17:11:55 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-04-18 17:11:55 INFO Connection from ('192.168.1.75', 37930) has been established!
+2025-04-18 17:11:55 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "ryosuke", "mac_addr": 4681952839112}
+2025-04-18 17:11:55 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:11:55 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:11:55 INFO building alerts for ryosuke with mac_addr 4681952839112
+2025-04-18 17:11:55 INFO sending alerts to ryosuke with mac_addr 4681952839112: []
+2025-04-18 17:11:55 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:12:00 INFO Connection from ('192.168.1.75', 37938) has been established!
+2025-04-18 17:12:00 INFO message: {"action": "login", "l_user": "takumi", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 17:12:00 INFO User: takumi has logged in
+2025-04-18 17:12:00 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-04-18 17:12:00 INFO Connection from ('192.168.1.75', 37948) has been established!
+2025-04-18 17:12:00 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 17:12:00 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:12:00 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:12:00 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 17:12:00 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 17:12:00 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:12:11 INFO Connection from ('192.168.1.75', 33480) has been established!
+2025-04-18 17:12:11 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 17:12:11 INFO Data_Response Object is made
+2025-04-18 17:12:11 INFO scraped data to be returned!: {'users': [[1, 'ryosuke'], [2, 'takumi'], [3, 'Itsuki']], 'devices': [[3, 'AE85'], [1, 'RX-7']]}
+2025-04-18 17:12:11 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        3,
+        "AE85"
+      ],
+      [
+        1,
+        "RX-7"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "ryosuke"
+      ],
+      [
+        2,
+        "takumi"
+      ],
+      [
+        3,
+        "Itsuki"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 17:12:11 INFO Connection from ('192.168.1.75', 33486) has been established!
+2025-04-18 17:12:11 INFO message: {"action": "add_device", "user": "takumi", "r_dev_name": "AE86", "mac_addr": 4681952839112}
+2025-04-18 17:12:11 INFO User_ID: 2
+2025-04-18 17:12:11 INFO Adding device: AE86 with Mac_addr: 4681952839112 for User: takumi with User_ID: 2
+2025-04-18 17:12:11 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-04-18 17:12:11 INFO Connection from ('192.168.1.75', 33498) has been established!
+2025-04-18 17:12:11 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 17:12:11 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:12:11 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:12:11 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 17:12:11 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 17:12:11 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:12:46 INFO Connection from ('192.168.1.75', 59372) has been established!
+2025-04-18 17:12:46 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 17:12:46 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:12:46 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:12:46 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 17:12:46 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 17:12:46 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:12:51 INFO Connection from ('192.168.1.75', 59388) has been established!
+2025-04-18 17:12:51 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 17:12:51 INFO Data_Response Object is made
+2025-04-18 17:12:51 INFO scraped data to be returned!: {'users': [[1, 'ryosuke'], [2, 'takumi'], [3, 'Itsuki']], 'devices': [[3, 'AE85'], [1, 'RX-7'], [2, 'AE86']]}
+2025-04-18 17:12:51 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        3,
+        "AE85"
+      ],
+      [
+        1,
+        "RX-7"
+      ],
+      [
+        2,
+        "AE86"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "ryosuke"
+      ],
+      [
+        2,
+        "takumi"
+      ],
+      [
+        3,
+        "Itsuki"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 17:12:51 INFO Connection from ('192.168.1.75', 59396) has been established!
+2025-04-18 17:12:51 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 17:12:51 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:12:51 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:12:51 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 17:12:51 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 17:12:51 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:12:56 INFO Connection from ('192.168.1.75', 33048) has been established!
+2025-04-18 17:12:56 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 17:12:56 INFO Data_Response Object is made
+2025-04-18 17:12:56 INFO scraped data to be returned!: {'users': [[1, 'ryosuke'], [2, 'takumi'], [3, 'Itsuki']], 'devices': [[3, 'AE85'], [1, 'RX-7'], [2, 'AE86']]}
+2025-04-18 17:12:56 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        3,
+        "AE85"
+      ],
+      [
+        1,
+        "RX-7"
+      ],
+      [
+        2,
+        "AE86"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "ryosuke"
+      ],
+      [
+        2,
+        "takumi"
+      ],
+      [
+        3,
+        "Itsuki"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 17:12:59 INFO INITIALISING invites: {'folders': {}, 'groups': {}}
+2025-04-18 17:13:32 INFO Connection from ('192.168.1.75', 54038) has been established!
+2025-04-18 17:13:32 INFO message: {"action": "login", "l_user": "takumi", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-18 17:13:32 INFO User: takumi has logged in
+2025-04-18 17:13:32 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-04-18 17:13:32 INFO Connection from ('192.168.1.75', 54042) has been established!
+2025-04-18 17:13:32 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-18 17:13:32 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-18 17:13:32 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-18 17:13:32 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-18 17:13:32 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-18 17:13:32 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-18 17:13:36 INFO Connection from ('192.168.1.75', 54046) has been established!
+2025-04-18 17:13:36 INFO message: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-18 17:13:36 INFO Data_Response Object is made
+2025-04-18 17:13:36 INFO scraped data to be returned!: {'users': [[1, 'ryosuke'], [2, 'takumi'], [3, 'Itsuki']], 'devices': [[3, 'AE85'], [1, 'RX-7'], [2, 'AE86']]}
+2025-04-18 17:13:36 INFO SENDING: {
+  "data": {
+    "devices": [
+      [
+        3,
+        "AE85"
+      ],
+      [
+        1,
+        "RX-7"
+      ],
+      [
+        2,
+        "AE86"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "ryosuke"
+      ],
+      [
+        2,
+        "takumi"
+      ],
+      [
+        3,
+        "Itsuki"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}
+2025-04-18 17:14:42 INFO Connection from ('192.168.1.75', 52596) has been established!
+2025-04-18 17:14:42 INFO message: {"action": "add_folder", "folder_label": "ebisu", "folder_id": "dZ7GOLZnb9", "directory": "~/Documents/Shared/ebisu", "shared_users": ["ryosuke:RX-7"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "takumi"}
+2025-04-18 17:14:42 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'ebisu', 'folder_id': 'dZ7GOLZnb9', 'directory': '~/Documents/Shared/ebisu', 'shared_users': ['ryosuke:RX-7'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'takumi'}
+2025-04-18 17:14:42 INFO Unix format directory: ~/Documents/Shared/ebisu
+2025-04-18 17:14:42 INFO 👤Host: takumi with User_ID: 2 is creating folder📂: ebisu with folder_id: dZ7GOLZnb9 in directory: ~/Documents/Shared/ebisu
+2025-04-18 17:14:42 INFO User: ryosuke found with User_ID: 1
+2025-04-18 17:14:42 INFO Device: RX-7 found with Mac_addr: 4681952839112
+2025-04-18 17:14:42 INFO {'4681952839112': '192.168.1.75'}
+2025-04-18 17:14:42 INFO ip of device: 192.168.1.75
+2025-04-18 17:14:42 INFO Sending authorisation request to ryosuke, device: RX-7, mac_addr: 4681952839112,  ip: 192.168.1.75
+2025-04-18 17:14:42 INFO Sending: {"action": "authorise", "user": "ryosuke"} to 192.168.1.75 on port 6000
+2025-04-18 17:14:42 INFO client_data: {"status_code": "404"}
+2025-04-18 17:14:42 INFO User Status: 404 (400/404 -> failed, 200 -> success)
+2025-04-18 17:14:42 INFO Authorisation failed for ryosuke with ip: 192.168.1.75
+2025-04-18 17:14:42 INFO invites.json BEFORE adding: {'folders': {}, 'groups': {}}
+2025-04-18 17:14:42 INFO invites.json AFTER adding: {'folders': {'ryosuke': {'4681952839112': [['ebisu', 'dZ7GOLZnb9', 'takumi']]}}, 'groups': {}}
+2025-04-18 17:14:42 INFO Creating folder directory: /home/osaka/2/4681952839112/Documents/Shared/ebisu
+2025-04-18 17:14:42 INFO Directory created: /home/osaka/2/4681952839112/Documents/Shared/ebisu
+2025-04-18 17:14:42 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-04-19 16:32:51 INFO INITIALISING invites: {'folders': {'ryosuke': {'4681952839112': [['ebisu', 'dZ7GOLZnb9', 'takumi']]}}, 'groups': {}}
+2025-04-19 16:33:14 INFO Connection from ('192.168.1.75', 43210) has been established!
+2025-04-19 16:33:14 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 16:33:14 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 16:33:14 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 16:33:14 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 16:33:14 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 16:33:14 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 16:36:08 INFO Connection from ('192.168.1.75', 37320) has been established!
+2025-04-19 16:36:08 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 16:36:08 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 16:36:08 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 16:36:08 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 16:36:08 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 16:36:08 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 16:39:01 INFO Connection from ('192.168.1.75', 56866) has been established!
+2025-04-19 16:39:01 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 16:39:01 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 16:39:01 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 16:39:01 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 16:39:01 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 16:39:01 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 16:40:17 INFO Connection from ('192.168.1.75', 33866) has been established!
+2025-04-19 16:40:17 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 16:40:17 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 16:40:17 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 16:40:17 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 16:40:17 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 16:40:17 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 16:41:23 INFO Connection from ('192.168.1.75', 35038) has been established!
+2025-04-19 16:41:23 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 16:41:23 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 16:41:23 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 16:41:23 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 16:41:23 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 16:41:23 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 16:42:43 INFO Connection from ('192.168.1.75', 58742) has been established!
+2025-04-19 16:42:43 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 16:42:43 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 16:42:43 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 16:42:43 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 16:42:43 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 16:42:43 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 16:44:54 INFO Connection from ('192.168.1.75', 36514) has been established!
+2025-04-19 16:44:54 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 16:44:54 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 16:44:54 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 16:44:54 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 16:44:54 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 16:44:54 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 16:48:47 INFO Connection from ('192.168.1.75', 39668) has been established!
+2025-04-19 16:48:47 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 16:48:47 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 16:48:47 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 16:48:47 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 16:48:47 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 16:48:47 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 16:50:31 INFO Connection from ('192.168.1.75', 38500) has been established!
+2025-04-19 16:50:31 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 16:50:31 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 16:50:31 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 16:50:31 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 16:50:31 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 16:50:31 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 18:41:47 INFO INITIALISING invites: {'folders': {'ryosuke': {'4681952839112': [['ebisu', 'dZ7GOLZnb9', 'takumi']]}}, 'groups': {}}
+2025-04-19 18:42:06 INFO Connection from ('192.168.1.75', 35550) has been established!
+2025-04-19 18:42:06 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 18:42:06 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 18:42:06 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 18:42:06 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 18:42:06 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 18:42:06 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 18:43:34 INFO INITIALISING invites: {'folders': {'ryosuke': {'4681952839112': [['ebisu', 'dZ7GOLZnb9', 'takumi']]}}, 'groups': {}}
+2025-04-19 18:43:36 INFO Connection from ('192.168.1.75', 52772) has been established!
+2025-04-19 18:43:36 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 18:43:36 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 18:43:36 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 18:43:36 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 18:43:36 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 18:43:36 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 18:45:47 INFO Connection from ('192.168.1.75', 59162) has been established!
+2025-04-19 18:45:47 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 18:45:47 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 18:45:47 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 18:45:47 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 18:45:47 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 18:45:47 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 18:49:12 INFO Connection from ('192.168.1.75', 58684) has been established!
+2025-04-19 18:49:12 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 18:49:12 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 18:49:12 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 18:49:12 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 18:49:12 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 18:49:12 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 20:20:28 INFO INITIALISING invites: {'folders': {'ryosuke': {'4681952839112': [['ebisu', 'dZ7GOLZnb9', 'takumi']]}}, 'groups': {}}
+2025-04-19 20:20:35 INFO Connection from ('192.168.1.75', 51288) has been established!
+2025-04-19 20:20:35 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 20:20:35 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 20:20:35 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 20:20:35 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 20:20:35 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 20:20:35 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-19 20:33:27 INFO Connection from ('192.168.1.75', 41818) has been established!
+2025-04-19 20:33:27 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-19 20:33:27 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-19 20:33:27 INFO ip_map: {'users': {'ryosuke': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'Itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-19 20:33:27 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-19 20:33:27 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-19 20:33:27 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
