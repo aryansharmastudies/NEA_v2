@@ -10,14 +10,19 @@ from get_wip import *
 from get_lip import *
 from sqlalchemy.orm import sessionmaker
 
+import struct
+import base64
+import hashlib
+import threading
+
 ########## LOGGING ##############################
-def main() -> None:
+def log() -> None:
     logging.basicConfig(
         level=logging.DEBUG,
         format='%(asctime)s %(levelname)s %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
         filename='basic.log',)
-main()
+log()
 ########## IP ADDRESS ############################
 # NOTE - gets the ip. hash the one you don't want.
 system = input('windows(w) or linux(l)?')
@@ -410,7 +415,7 @@ def send(message, ip, port):
 
 
 
-def handle_client_message(message):
+def handle_client_message(clientsocket, message):
     #NOTE 'status' here includes both the status-code and status-description e.g. 
     # {'status': '201', 'status_msg': 'Device added successfully'}
     try:
@@ -532,19 +537,184 @@ else:
     }
 logging.info(f'INITIALISING invites: {invites}')
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-s.bind((ip, 8000))
-s.listen(10)
 
-while True:
-    clientsocket, address = s.accept() # if client does s.connect((server_name, 8000))
-    logging.info(f'Connection from {address} has been established!')
-    # Receive data
-    message = clientsocket.recv(1024).decode('utf-8')
-    logging.info(f'message: {message}')
-    handle_client_message(message)
-    
-    clientsocket.close()
+def main():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    s.bind((ip, 8000))
+    s.listen(10)
+
+    while True:
+        clientsocket, address = s.accept() # if client does s.connect((server_name, 8000))
+        logging.info(f'Connection from {address} has been established!')
+        # Receive data
+        message = clientsocket.recv(1024).decode('utf-8')
+        logging.info(f'message: {message}')
+        handle_client_message(clientsocket, message)
+        
+        clientsocket.close()
 
 # NOTE if sending and receiving data dont work concurrently, use THREADS/asyncio
+
+def sync_worker(): # bridges barrier between incoming data and sync class
+    incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    incomingsock.bind((ip, 7000))
+    incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
+
+    while True:
+        connection, address = incomingsock.accept() # if client does s.connect((server_name, 8000))
+        
+        
+        # logging.info(f'Connection from {address} has been established!')
+        # # Receive data
+        # message = clientsocket.recv(1024).decode('utf-8')
+        # logging.info(f'message: {message}')
+        # handle_client_message(message)
+        
+        
+        # connection.close()
+        server_socket = socket.socket()
+        server_socket.bind((ip, 6000))
+        server_socket.listen(1)
+        print(f"[+] Listening on {ip}:6000...")
+
+        connection, addr = server_socket.accept() # accepted some device
+        print(f"[+] Connection from {addr}")
+        # with conn:
+        #     print(f"[+] Connection from {addr}")
+        # return connection
+        sync_job = Incoming(connection, address)
+        sync_job.receive_data()
+        connection.close()
+        del sync_job
+
+class Sync:
+    def __init__(self):
+        self.BLOCK_SIZE = 1024
+        self.PORT = 6000
+        self.HEADER_SIZE = 4
+        self.RESPONSE_OK = b'ACK'
+        self.RESPONSE_ERR = b'ERR'
+
+class Incoming(Sync):
+    def __init__(self, connection, address):
+        super().__init__()
+        self.connection = connection
+        self.address = address
+        
+    def recv_exact(self, connection: socket.socket, num_bytes: int) -> bytes:
+            """Receive an exact number of bytes from the socket."""
+            data = b''
+            while len(data) < num_bytes:
+                packet = connection.recv(num_bytes - len(data))
+                if not packet:
+                    raise ConnectionError("Connection closed prematurely")
+                data += packet
+            return data
+
+    def receive_valid_packet(self, connection: socket.socket, index: int) -> bytes:
+        """Receive and validate a packet until the checksum matches."""
+        while True:
+            header = self.recv_exact(connection, self.HEADER_SIZE)
+            payload_length = struct.unpack('!I', header)[0]
+            payload = self.recv_exact(connection, payload_length)
+
+            packet = json.loads(payload.decode())
+            decoded_data = base64.b64decode(packet['data'])
+            checksum = packet['checksum']
+
+            actual_checksum = hashlib.md5(decoded_data).hexdigest()
+            if actual_checksum == checksum:
+                connection.send(self.RESPONSE_OK)
+                print(f"[+] Packet {index} received and verified.")
+                return decoded_data
+            else:
+                connection.send(self.RESPONSE_ERR)
+                print(f"[!] Checksum mismatch on packet {index}. Retrying...")
+
+    def receive_data(self) -> None:
+        metadata = self.recv_exact(self.connection, 1024).decode()
+        metadata = json.loads(metadata)
+        print(f"[+] Metadata received: {metadata}")
+        event_type = metadata['event_type']
+        # TODO CHECK IF ITS DIRECTORY OR FILE
+        
+        if metadata['is_dir'] and event_type == 'created':
+            CreateDir(metadata, self.address).apply()
+        elif not metadata['is_dir'] and event_type == 'created': # i.e. a file is created
+            CreateFile(metadata, self.address).apply()
+        elif event_type == 'deleted':
+            Delete(metadata, self.address).apply()
+        elif event_type == 'moved':
+            pass
+        else:
+            pass
+
+class SyncEvent:
+    def __init__(self, metadata, address):
+        self.metadata = metadata
+        self.address = address
+    def apply(self):
+        pass
+    def format_path(self):
+        user = self.metadata['user']
+        user_id = session.query(User).filter_by(name=user).first().user_id
+        mac_addr = ip_map[self.address]
+
+        raw_path = self.metadata['src_path']
+        src_path = os.path.normpath(raw_path).replace('\\', '/')
+        src_path = src_path.split('/')
+        src_path = src_path[3:]
+        src_path.insert(0, str(mac_addr))
+        src_path.insert(0, str(user_id))
+        src_path.insert(0, '~')
+        src_path = '/'.join(src_path)       
+        formatted_path = os.path.expanduser(src_path)
+        return formatted_path
+    
+class CreateDir(SyncEvent):
+    
+    def apply(self):
+        self.formatted_path = self.format_path()
+        os.makedirs(os.path.dirname(self.formatted_path), exist_ok=True)
+
+class CreateFile(SyncEvent):
+    def apply(self):
+        file_data = b''
+        packet_count = self.metadata['packet_count']
+        print(f"[+] Expecting {packet_count} packets...")
+
+        for index in range(packet_count): # 🧠
+            data = self.receive_valid_packet(self.connection, index) # 🧠
+            file_data += data # 🧠
+
+        self.formatted_path = self.format_path()
+        with open(self.formatted_path, 'wb') as f:
+            f.write(file_data)
+        print(f"[+] File '{self.formatted_path}' received successfully.")
+
+        # TODO add to database.
+        
+
+class Delete(SyncEvent):
+    def apply(self):
+        pass
+class Modify(SyncEvent):
+    def apply(self):
+        pass
+
+
+
+
+
+
+class Outgoing(Sync):
+    def __init__(self):
+        super().__init__()
+        pass
+if __name__ == "__main__":
+    main_thread = threading.Thread(target=main, daemon=True)
+    main_thread.start()
+    sync_worker_thread = threading.Thread(target=sync_worker)
+    sync_worker_thread.start()

@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
   <diagram name="Page-1" id="ekimDS5NgHhW3DlAZh_F">
-    <mxGraphModel dx="4040" dy="2595" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3329" dy="2164" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1044,84 +1044,90 @@
         <mxCell id="AW1KD88CR2pTuOweZwSN-4" value="&lt;h1 class=&quot;fs-headline1 ow-anywhere mb8 flex--item fl1&quot;&gt;&lt;a href=&quot;https://stackoverflow.com/questions/48126663/why-not-use-pickle-instead-of-struct&quot; class=&quot;question-hyperlink&quot;&gt;Why not use pickle instead of struct?&lt;/a&gt;&lt;/h1&gt;&lt;h1&gt;Struct&lt;/h1&gt;&lt;p&gt;Struct is &lt;em&gt;not&lt;/em&gt; meant to store &lt;em&gt;Python&lt;/em&gt; objects into a byte stream. What it does is producing a byte stream by &lt;em&gt;transforming&lt;/em&gt; Python &lt;em&gt;objects&lt;/em&gt; into &lt;em&gt;structures&lt;/em&gt; that represent the &lt;em&gt;data&lt;/em&gt; the objects contained. For instance used a signed 32-bit representation for an integer. But a &lt;code&gt;struct&lt;/code&gt; for instance is &lt;em&gt;not&lt;/em&gt; designed to store a dictionary, since there are a lot of ways to serialize a dictionary.&lt;/p&gt;&lt;p&gt;It is used to construct a (binary) file that meets the criteria of a &lt;br&gt;protocol. For instance if you have a 3d model, then you perhaps want to &lt;br&gt;write an exporter to the &lt;em&gt;&lt;code&gt;.3ds&lt;/code&gt; file format&lt;/em&gt;. This format follows a certain protocol (for instance it will start with &lt;code&gt;0x4d4d&lt;/code&gt;). You can not use pickle to dump to such format, since Pickle is actually a specific protocol.&lt;/p&gt;&lt;p&gt;The same with reading binary files into Python objects. You can not run Pickle over a &lt;code&gt;.3ds&lt;/code&gt; file, since Pickle does &lt;em&gt;not&lt;/em&gt; know the protocol. It does not know what &lt;code&gt;0x4d4d&lt;/code&gt; in the beginning of the file means. It can be a 16-bit integer (&lt;code&gt;19789&lt;/code&gt;), it can be a 2-character ASCII string (&lt;code&gt;&#39;MM&#39;)&lt;/code&gt;, etc. Usually most binary files are designed for one purpose. And you need to understand the &lt;em&gt;protocol&lt;/em&gt; in order to read/write such files.&lt;/p&gt;&lt;h1&gt;Pickle&lt;/h1&gt;&lt;p&gt;Pickle on the other hand is a tool designed to store &lt;em&gt;Python objects&lt;/em&gt;&lt;br&gt; in a binary stream, such that we can load these objects back once we &lt;br&gt;need these. It defines a protocol. For instance pickle always starts the&lt;br&gt; stream with byte &lt;code&gt;128&lt;/code&gt;, followed by the protocol version (&lt;code&gt;1&lt;/code&gt;, &lt;code&gt;2&lt;/code&gt;, or &lt;code&gt;3&lt;/code&gt;). The next byte specifies an identifier of the type of object we are going to pickle (for instance &lt;code&gt;75&lt;/code&gt; for an integer, &lt;code&gt;88&lt;/code&gt; for a string, etc.&lt;/p&gt;&lt;p&gt;Pickle also has to serialize all references of the object, and keep &lt;br&gt;track of the objects it has already serialized, since there can be &lt;br&gt;cyclic structures into it. For instance if we have two dictionaries:&lt;/p&gt;&lt;pre class=&quot;lang-py s-code-block&quot;&gt;&lt;code data-highlighted=&quot;yes&quot; class=&quot;hljs language-python&quot;&gt;d = {}&lt;br&gt;e = {&lt;span class=&quot;hljs-string&quot;&gt;&#39;a&#39;&lt;/span&gt;: d}&lt;br&gt;d[&lt;span class=&quot;hljs-string&quot;&gt;&#39;a&#39;&lt;/span&gt;] = e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;then we can not simply serialize &lt;code&gt;d&lt;/code&gt;, and serialize &lt;code&gt;e&lt;/code&gt; as part of &lt;code&gt;e&lt;/code&gt;. We have to keep track that we serialized &lt;code&gt;d&lt;/code&gt; already, since serializing &lt;code&gt;e&lt;/code&gt; would otherwise resulting serializing &lt;code&gt;d&lt;/code&gt;, etc. until we run out of memory.&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Pickle is thus a specific protocol to store &lt;/span&gt;&lt;em style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Python&lt;/em&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt; objects. But we can not use it to serialize to a specific format, such that other (non-Python) programs can read it.&lt;/span&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="400" y="1810" width="700" height="570" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="710qVrC2aBygnq5VRLGS-1" target="710qVrC2aBygnq5VRLGS-3">
+        <mxCell id="710qVrC2aBygnq5VRLGS-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="710qVrC2aBygnq5VRLGS-1" target="710qVrC2aBygnq5VRLGS-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="710qVrC2aBygnq5VRLGS-1" target="710qVrC2aBygnq5VRLGS-2">
+        <mxCell id="710qVrC2aBygnq5VRLGS-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="710qVrC2aBygnq5VRLGS-1" target="710qVrC2aBygnq5VRLGS-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-1" value="Sync" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-1" value="Sync" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-590" y="-910" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-2" value="Outgoing" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-2" value="Outgoing" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-500" y="-800" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-3" value="Incoming" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-3" value="Incoming" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-680" y="-800" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-4" value="Sync Worker" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-4" value="Sync Worker" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-280" y="-970" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-5" value="sync_queue" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-5" value="sync_queue" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-110" y="-1130" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-6" value="Watchdog" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-6" value="Watchdog" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="60" y="-1250" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-8" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;entryX=0.917;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.167;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="710qVrC2aBygnq5VRLGS-6" target="710qVrC2aBygnq5VRLGS-5">
+        <mxCell id="710qVrC2aBygnq5VRLGS-8" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;entryX=0.917;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.167;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="710qVrC2aBygnq5VRLGS-6" target="710qVrC2aBygnq5VRLGS-5" edge="1">
           <mxGeometry width="100" relative="1" as="geometry">
             <mxPoint x="-190" y="-1200" as="sourcePoint" />
             <mxPoint x="-90" y="-1200" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-9" value="watchdog watches&lt;div&gt;over dirs in dir.json&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-x- anytime there is an event&lt;/div&gt;&lt;div&gt;appends it to sync_queue&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-9" value="watchdog watches&lt;div&gt;over dirs in dir.json&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-x- anytime there is an event&lt;/div&gt;&lt;div&gt;appends it to sync_queue&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="35" y="-1160" width="170" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-10" value="dir.json" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-10" value="dir.json" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
           <mxGeometry x="230" y="-1400" width="80" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-11" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.833;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.375;exitY=0.8;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="710qVrC2aBygnq5VRLGS-10">
+        <mxCell id="710qVrC2aBygnq5VRLGS-11" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.833;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.375;exitY=0.8;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="710qVrC2aBygnq5VRLGS-10" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-20" y="-1059.98" as="sourcePoint" />
             <mxPoint x="159.96000000000004" y="-1219.9999999999998" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-12" value="when we run app&lt;div&gt;watchdog pulls dirs from dir.json and&amp;nbsp;&lt;/div&gt;&lt;div&gt;watches them all&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-12" value="when we run app&lt;div&gt;watchdog pulls dirs from dir.json and&amp;nbsp;&lt;/div&gt;&lt;div&gt;watches them all&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="210" y="-1280" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.167;entryY=0.833;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.833;exitY=0.167;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="710qVrC2aBygnq5VRLGS-4" target="710qVrC2aBygnq5VRLGS-5">
+        <mxCell id="710qVrC2aBygnq5VRLGS-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.167;entryY=0.833;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.833;exitY=0.167;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="710qVrC2aBygnq5VRLGS-4" target="710qVrC2aBygnq5VRLGS-5" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-170" y="-900" as="sourcePoint" />
             <mxPoint x="-120" y="-950" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-14" value="syncworker detects if there is any&amp;nbsp;&lt;div&gt;events currently in sync_queue&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-14" value="syncworker detects if there is any&amp;nbsp;&lt;div&gt;events currently in sync_queue&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-120" y="-1030" width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-15" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0.167;exitY=0.833;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-15" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0.167;exitY=0.833;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-260.0000000000005" y="-929.9999999999998" as="sourcePoint" />
             <mxPoint x="-410" y="-769.98" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-16" value="if there is any events, delegates it to outgoing" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-16" value="if there is any events, delegates it to outgoing" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-380" y="-842" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-19" value="only activates when&lt;div&gt;session[&#39;server_status&#39;] = &#39;active&#39;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-19" value="only activates when&lt;div&gt;session[&#39;server_status&#39;] = &#39;active&#39;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-190" y="-920" width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-20" value="basically a thread" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-20" value="basically a thread" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-320" y="-990" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-21" value="Server process Vs Clients" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1190" y="-1260" width="340" height="60" as="geometry" />
+        <mxCell id="710qVrC2aBygnq5VRLGS-21" value="Server process Vs Clients" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="990" y="-1230" width="340" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-22" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Server&lt;/h1&gt;&lt;p&gt;- server does non-empty folder deletion using traversal rather than client sending it instructions for each file.&lt;/p&gt;&lt;p&gt;- handles hashblocks comparasion&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-22" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Server&lt;/h1&gt;&lt;p&gt;- server does non-empty folder deletion using traversal rather than client sending it instructions for each file.&lt;/p&gt;&lt;p&gt;- handles hashblocks comparasion&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1210" y="-1180" width="320" height="260" as="geometry" />
         </mxCell>
-        <mxCell id="710qVrC2aBygnq5VRLGS-23" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Client&lt;/h1&gt;&lt;p&gt;- detects changes and sends them to server&lt;/p&gt;&lt;p&gt;- upon modification simply sends the blocklist - no questions asked&lt;/p&gt;&lt;p&gt;-&amp;nbsp;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="710qVrC2aBygnq5VRLGS-23" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Client&lt;/h1&gt;&lt;p&gt;- detects changes and sends them to server&lt;/p&gt;&lt;p&gt;- upon modification simply sends the blocklist - no questions asked&lt;/p&gt;&lt;p&gt;-&amp;nbsp;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="930" y="-1170" width="260" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="P8Pul82vvoi14rpilPZ--1" value="Sync                        ← framing logic (pack/unpack)&#xa;└── IncomingSync            ← main “listen and dispatch” loop&#xa;    ├── CommandEvent        ← abstract base for filesystem commands&#xa;    │    ├── CreateDirEvent&#xa;    │    ├── CreateFileEvent  (server pushing full file)&#xa;    │    ├── DeleteEvent&#xa;    │    └── MoveEvent&#xa;    └── DataEvent           ← abstract base for data‐related messages&#xa;         ├── PatchInstructionEvent  (server says “apply this diff”)&#xa;         └── FileDataEvent          (server sending raw file chunks)" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-930" y="-720" width="410" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="P8Pul82vvoi14rpilPZ--2" value="Sync(pack_message, send_message)                      ← holds framing constants &amp; low‑level send_packet&#xa;└── Outgoing(build_metadata, send)              ← generic “send metadata” + hook for file‑data&#xa;    ├── CreateEvent       ← abstract base for create‑type events&#xa;    │    ├── CreateFile   ← file‑create (metadata + data packets)&#xa;    │    └── CreateDir    ← dir‑create  (metadata only)&#xa;    ├── DeleteEvent       ← delete file or dir (metadata only)&#xa;    ├── MoveEvent         ← move file or dir   (metadata only)&#xa;    └── InitialiseEvent   ← bulk folder init   (metadata only)" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-480" y="-720" width="640" height="220" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

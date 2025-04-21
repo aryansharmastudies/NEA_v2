@@ -53,7 +53,7 @@ def start_server(filename: str, port: int = PORT) -> None:
         with conn:
             print(f"[+] Connection from {addr}")
             packet_count = len(packets)
-            conn.sendall(f'{packet_count:<5}'.encode())  # 5-byte padded count
+            conn.sendall(f'{packet_count:<10}'.encode())  # 5-byte padded count
 
             for packet in packets:
                 send_packet(conn, packet)

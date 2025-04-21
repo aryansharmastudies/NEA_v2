@@ -7,7 +7,7 @@ import hashlib
 import os
 
 CHUNK_HEADER_SIZE = 4
-PORT = 6969
+PORT = 6000
 RESPONSE_OK = b'ACK'
 RESPONSE_ERR = b'ERR'
 
@@ -53,7 +53,12 @@ def format(path) -> str:
     path = path.split('/')
     path = path[1:]
     path = '/'.join(path)
-    
+
+    # TODO look up ip_map to find mac_addr then userid then add into directory!!
+    # DONE os.path.expanduser(path)
+    path = os.path.expanduser(path)
+
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     return path
 
 def receive_file(connection) -> None:

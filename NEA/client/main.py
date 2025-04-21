@@ -137,7 +137,7 @@ def pair():
         session.permanent = True
         server_name = request.form['nm'] # nm is dictionary key.
         logging.info(f'server_name: {server_name}')
-        try: 
+        try:  # TODO 🆘 - USE THE SEND FUNCTION!!!
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((server_name, 8000))
             json_data = json.dumps({'action': 'ping', 'ip_addr':ip})
@@ -167,9 +167,11 @@ def pair():
             return redirect(url_for('pair'))
     else:
         if 'server_name' in session and 'user' in session:
+            # TODO 🆘 - ASK SERVER IF USER IS IN DATABASE. IF YES, REDIRECT TO DASHBOARD.
             flash(f'Already Connected with {session["server_name"]} and logged in!', 'info')
             return redirect(url_for('dashboard'))
         elif 'server_name' in session:
+            # TODO 🆘 - PING SERVER TO SEE IF IT IS ACTIVE.
             flash(f'Already Connected with {session["server_name"]}!', 'info')
             return redirect(url_for('login'))
     return render_template('pair.html') # if the user is not logged in, then redirect to login page.
@@ -424,7 +426,7 @@ def mkdir(data): # 🥝
     folder_label = data['folder_label']
     folder_type = data['folder_type']
     raw_dir = data['directory']
-    formatted_dir = os.path.expanduser(raw_dir)
+    formatted_dir = os.path.expanduser(raw_dir) # for linux it will add /home/user/ and for windows it will add C:/User/username/
     logging.info(f'creating formatted directory: {formatted_dir}')
     os.makedirs(formatted_dir, exist_ok=True)
 
@@ -464,7 +466,9 @@ def send(json_data): # 🛫
         try: 
             logging.info(f'trying to connect to server: {session["server_name"]} on port 8000')
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((session['server_name'], 8000))
+            # s.connect((session['server_name'], 8000))
+            s.connect(('192.168.1.75', 8000))
+            logging.info(f'Connected to server: {session["server_name"]} on port 8000')
             session['connected_to_server'] = True
 
         except: 
@@ -624,6 +628,21 @@ class MyEventHandler(FileSystemEventHandler):
         super().__init__()
         self._supressed_dirs: set[str] = set()
 
+    def _get_parent_folder_id(self, file_path: str) -> str | None:
+        parent_dir = os.path.dirname(file_path) # if you have home/osaka/bye.txt, it will return home/osaka
+        candidates = Folder.query.all() # loading all the registered folders once
+        best = None
+        best_len = -1
+        for f in candidates:
+            # ensure exact directory match (add os.sep so "/foo" doesn't match "/foobar")
+            prefix = f.path.rstrip(os.sep) + os.sep
+            if parent_dir.startswith(prefix):
+                plen = len(prefix)
+                if plen > best_len: # find out which which folder has longest similarity
+                    best = f
+                    best_len = plen
+        return best.folder_id if best else None
+
     def _persist_queue(self):
         try:
             all_events = list(sync_queue.queue)
@@ -659,11 +678,11 @@ class MyEventHandler(FileSystemEventHandler):
 
         # suppress further events from the old folder
         if event.is_directory:
-            self._supressed_dirs.append(event.src_path)
+            self._supressed_dirs.add(event.src_path)
 
         sync_queue.put({
             "id": generate_event_id(),
-            "event_type":  "move",
+            "event_type":  "moved",
             "src_path":     event.src_path,
             "dest_path":    event.dest_path,
             "is_dir":  event.is_directory,
@@ -680,12 +699,27 @@ class MyEventHandler(FileSystemEventHandler):
 
         sync_queue.put({
             "id": generate_event_id(),
-            "event_type":  "create",
-            "path":    event.src_path,
-            "is_dir":  event.is_directory,
-            "origin":  "user"
+            "event_type": "created",
+            "src_path": event.src_path,
+            "is_dir": event.is_directory,
+            "origin": "user"
         })
         self._persist_queue()
+
+        # Only for files (not directories), look up its parent folder_id and insert
+        if not event.is_directory:
+            folder_id = self._get_parent_folder_id(event.src_path)
+            if folder_id is None:
+                logging.error(f"No registered folder found for {event.src_path}; skipping DB insert")
+            else:
+                new_file = File(folder_id=folder_id, path=event.src_path)
+                try:
+                    db.session.add(new_file)
+                    db.session.commit()
+                    logging.info(f"File {event.src_path} added to database under folder {folder_id}")
+                except Exception as e:
+                    db.session.rollback()
+                    logging.error(f"❌ Failed to add {event.src_path} to database: {e}")
     
     def on_deleted(self, event):
         logging.info(f"🔴 Deleted: {event.src_path}")
@@ -696,8 +730,8 @@ class MyEventHandler(FileSystemEventHandler):
 
         sync_queue.put({
             "id": generate_event_id(),
-            "event_type":  "delete",
-            "path":    event.src_path,
+            "event_type":  "deleted",
+            "src_path":    event.src_path,
             "is_dir":  event.is_directory,
             "origin":  "user"
         })
@@ -823,7 +857,7 @@ class FolderInitializer:
                     try:
                         db.session.add(new_file)
                         db.session.commit()
-                        logging.info(f'File {full_path} added to database with version v1')
+                        logging.info(f'File {full_path} added to database with version v1.0')
                     except Exception as e:
                         db.session.rollback()  # just used to rollback in case of errors.
                         logging.error(f'❌ Failed to add {full_path} to database: {e}')
@@ -850,22 +884,22 @@ def sync_worker():
         event = sync_queue.get()
         logging.info(f"Processing event: {event}")
         try:
-            logging.info(f"Creating sync job for {event['path']}")
-            sync_job = Outgoing(path=event['path'], is_dir=event['is_dir'], origin=event['origin'])  # TODO 🆘 Custom logic i.e. OUTGOING
+            logging.info(f"Creating sync job for {event['src_path']}")
+            sync_job = Outgoing(event)  # TODO 🆘 Custom logic i.e. OUTGOING
             logging.info(f"Sync job created: {sync_job}")
             status = sync_job.start_server()  # Start the server to send the packet
             logging.info(f"Sync job status: {status}")
             
-            if status == 'FAIL':
-                logging.error(f"❌ Sync job failed for {event['path']}")
+            if status:
+                logging.info(f"✅ Sync job completed for {event['src_path']}")
+                sync_active.set() 
+            else:
+                logging.error(f"❌ Sync job failed for {event['src_path']}")
                 sync_active.clear()
                 logging.info("⏸️Paused sync worker due to connection error.")  # Pause instead of exit
                 sync_queue.put(event)  # Requeue the event
                 logging.info(f"🔁Requeued event: {event}")
             
-            elif status == 'PASS':
-                logging.info(f"✅ Sync job completed for {event['path']}")
-        
         except Exception as e:
             logging.error(f"❌ Sync failed: {e}")
             sync_active.clear()  # Pause on failure
@@ -876,66 +910,49 @@ def sync_worker():
         finally:
             sync_queue.task_done()
 ########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
-# class Sync()
-
-# class Outgoing(Sync)
-#   self.path
-#   self.hash
-#   self.size
-#   self.version
-#   self.packets
-#   def encode_file_chunks
-#   def send_packet
-#   def start_server
 class Sync:
     def __init__(self):
         self.BLOCK_SIZE = 1024
-        self.PORT = 6969
+        self.PORT = 7000
         self.HEADER_SIZE = 4
         self.RESPONSE_OK = b'ACK'
         self.RESPONSE_ERR = b'ERR'
 
 class Outgoing(Sync):
-    def __init__(self, path, is_dir, origin):
+    def __init__(self, event):
         super().__init__()
-        self.path = path
-        self.is_dir = is_dir
-        self.origin = origin
+        self.src_path = event['src_path']
+        self.is_dir = event['is_dir']  # Updated to use 'is_dir' from event
+        self.origin = event['origin']  # Updated to use 'origin' from event
+        self.event_type = event['event_type']
 
-        if self.is_dir:
-            pass
-        else:
+        if not self.is_dir:
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
-            self.hash = file_to_hash.get(self.path)
+            self.hash = file_to_hash.get(self.src_path)
 
-
-    def rmdir(self): # COMMAND
-        pass
-    def mkdir(self): # COMMAND
-        pass
-    def touch(self):
-        self.start_server()
-    def rm(self): # COMMAND
-        pass
-    def mv(self): # COMMAND
-        pass
-    def initialise(self):
-        pass
+        if self.event_type == 'moved':
+            self.dest_path = event['dest_path']
     
-    
-    def create_metadata(self) -> dict:
-        return {
-            "index" : 0,
-            "packet_count" : self.packet_count,
-            "hash" : self.hash, #using dictionary(built by scraping db) to get file's hash
-            "path" : self.path,
-            "origin" : self.origin, # how this event was made.
-            "is_dir" : self.is_dir
+    def _build_metadata(self) -> dict:
+        metadata = {
+            "index":      0,
+            "user":      active_session['user'],
+            "packet_count": self.packet_count,
+            "event_type": self.event_type,
+            "src_path":       self.src_path,
+            "is_dir":     self.is_dir,
+            "origin":     self.origin,
         }
+        if not self.is_dir:
+            metadata['hash'] = self.hash
+        
+        if self.event_type == 'moved':
+            metadata['dest_path'] = self.dest_path
+        return metadata
     
     def create_packet(self) -> list: # whole purpose is to generate packets from blocks
-        with open(self.path, 'rb') as f:
+        with open(self.src_path, 'rb') as f:
             file_data = f.read()
 
         blocks = [file_data[i:i + self.BLOCK_SIZE] for i in range(0, len(file_data), self.BLOCK_SIZE)]
@@ -962,25 +979,27 @@ class Outgoing(Sync):
             else:
                 logging.info(f"Packet {packet['index']} failed checksum, retrying...")
 
-    def start_server(self) -> None:
+    def start_server(self) -> bool:
         outgoingsock = socket.socket()
         try:
             logging.info(f"Connecting to server at {active_session['server_name']}:{self.PORT}")
             outgoingsock.connect((active_session['server_name'], self.PORT))
             logging.info(f"[+] Connected to server at {active_session['server_name']}:{self.PORT}")
+            
+            metadata = self._build_metadata()
+            self.send_packet(outgoingsock, metadata)
+            if hasattr(self, 'packets'):
+                for packet in self.packets:
+                    self.send_packet(outgoingsock, packet)
+        
+            logging.info("[+] All packets sent.")
         except Exception as e:
             logging.error(f"❌ Failed to connect to server: {e}")
-            return 'FAIL'
-        
-
-        metadata = self.create_metadata()
-        self.send_packet(outgoingsock, metadata)
-        for packet in self.packets:
-            self.send_packet(outgoingsock, packet)
-
-
-        logging.info("[+] All packets sent.")
-        return 'PASS'
+            return False
+        finally:
+            outgoingsock.close()
+    
+        return True
 
 # class Incoming()
 # def recv_exact
