@@ -14,6 +14,7 @@ import struct
 import base64
 import hashlib
 import threading
+import shutil
 
 ########## LOGGING ##############################
 def log() -> None:
@@ -30,7 +31,7 @@ if system == 'w':
     ip = w_wlan_ip()
 else:
     ip = l_wlan_ip()
-print(ip)
+logging.info(ip)
 ########## DATA BASE #############################
 db_url = 'sqlite:///database/database.db'
 engine = create_engine(db_url)
@@ -422,9 +423,9 @@ def handle_client_message(clientsocket, message):
         client_data = json.loads(message)  # Parse JSON message
         action = client_data.get('action')
     except json.JSONDecodeError:
-        print('Invalid JSON received.')
+        logging.info('Invalid JSON received.')
     except KeyError as e:
-        print(f'Missing field: {e}')
+        logging.info(f'Missing field: {e}')
 
     if action == 'ping':
         logging.info(f'Received ping from {client_data['ip_addr']}')
@@ -490,7 +491,7 @@ def handle_client_message(clientsocket, message):
 
     elif action == 'remove_user': # TODO should be a potential option for admin.
         username = client_data['username']
-        print(f'Removing user: {username}')
+        logging.info(f'Removing user: {username}')
         # Remove user logic here
 
     elif action == 'request':
@@ -512,7 +513,7 @@ def handle_client_message(clientsocket, message):
         pass
 
     else:
-        print('Unknown action!')
+        logging.info('Unknown action!')
     
 
 # SERVER LOOP
@@ -560,39 +561,25 @@ def sync_worker(): # bridges barrier between incoming data and sync class
     incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     incomingsock.bind((ip, 7000))
+    logging.info(f"[+] Listening on {ip}:7000...")
     incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
 
     while True:
         connection, address = incomingsock.accept() # if client does s.connect((server_name, 8000))
-        
-        
-        # logging.info(f'Connection from {address} has been established!')
-        # # Receive data
-        # message = clientsocket.recv(1024).decode('utf-8')
-        # logging.info(f'message: {message}')
-        # handle_client_message(message)
-        
-        
-        # connection.close()
-        server_socket = socket.socket()
-        server_socket.bind((ip, 6000))
-        server_socket.listen(1)
-        print(f"[+] Listening on {ip}:6000...")
-
-        connection, addr = server_socket.accept() # accepted some device
-        print(f"[+] Connection from {addr}")
-        # with conn:
-        #     print(f"[+] Connection from {addr}")
-        # return connection
+        logging.info(f'Connection from {address} has been established!')
         sync_job = Incoming(connection, address)
-        sync_job.receive_data()
+        logging.info(f"[+] Sync job created for {address}...")
+        sync_job.receive_metadata()
+        logging.info(f"[+] Sync job completed for {address}...")
         connection.close()
+        logging.info(f"[-] Connection closed for {address}...")
         del sync_job
+        logging.info(f"[-] Sync job deleted for {address}...")
 
 class Sync:
     def __init__(self):
         self.BLOCK_SIZE = 1024
-        self.PORT = 6000
+        self.PORT = 7000
         self.HEADER_SIZE = 4
         self.RESPONSE_OK = b'ACK'
         self.RESPONSE_ERR = b'ERR'
@@ -604,65 +591,78 @@ class Incoming(Sync):
         self.address = address
         
     def recv_exact(self, connection: socket.socket, num_bytes: int) -> bytes:
-            """Receive an exact number of bytes from the socket."""
-            data = b''
-            while len(data) < num_bytes:
-                packet = connection.recv(num_bytes - len(data))
-                if not packet:
-                    raise ConnectionError("Connection closed prematurely")
-                data += packet
-            return data
+        """Receive an exact number of bytes from the socket."""
+        data = b''
+        while len(data) < num_bytes:
+            packet = connection.recv(num_bytes - len(data))
+            # logging.info(f"[+] Packet received: {packet}") # 🔔
+            if not packet:
+                raise ConnectionError("Connection closed prematurely")
+            data += packet
+        return data
 
     def receive_valid_packet(self, connection: socket.socket, index: int) -> bytes:
         """Receive and validate a packet until the checksum matches."""
-        while True:
+        while True: # using while loop so we can retry
             header = self.recv_exact(connection, self.HEADER_SIZE)
             payload_length = struct.unpack('!I', header)[0]
+            # logging.info(f"[+] Packet: {index} | Payload length: {payload_length}") # 🔔
             payload = self.recv_exact(connection, payload_length)
+            payload = json.loads(payload.decode())
+            # logging.info(f"[+] Packet: {index} | Payload received: {payload}") # 🔔
 
-            packet = json.loads(payload.decode())
-            decoded_data = base64.b64decode(packet['data'])
-            checksum = packet['checksum']
+            if index == 0: # if its metadata!
+                connection.send(self.RESPONSE_OK)
+                return payload
+            
+            decoded_data = base64.b64decode(payload['data'])
+            checksum = payload['checksum']
 
             actual_checksum = hashlib.md5(decoded_data).hexdigest()
             if actual_checksum == checksum:
                 connection.send(self.RESPONSE_OK)
-                print(f"[+] Packet {index} received and verified.")
+                # logging.info(f"[+] Packet {index} received and verified.") # 🔔
                 return decoded_data
             else:
                 connection.send(self.RESPONSE_ERR)
-                print(f"[!] Checksum mismatch on packet {index}. Retrying...")
+                logging.info(f"[!] Checksum mismatch on packet {index}. Retrying...")
 
-    def receive_data(self) -> None:
-        metadata = self.recv_exact(self.connection, 1024).decode()
-        metadata = json.loads(metadata)
-        print(f"[+] Metadata received: {metadata}")
+    def receive_metadata(self) -> None:
+        metadata = self.receive_valid_packet(self.connection, 0)
+        logging.info(f"[+] Metadata received: {metadata}")
         event_type = metadata['event_type']
         # TODO CHECK IF ITS DIRECTORY OR FILE
         
         if metadata['is_dir'] and event_type == 'created':
-            CreateDir(metadata, self.address).apply()
+            CreateDir(metadata, self.address).apply() # ↙️
         elif not metadata['is_dir'] and event_type == 'created': # i.e. a file is created
-            CreateFile(metadata, self.address).apply()
+            CreateFile(metadata, self.address, self.connection).apply() # ↙️
         elif event_type == 'deleted':
-            Delete(metadata, self.address).apply()
+            Delete(metadata, self.address).apply() # ↙️
         elif event_type == 'moved':
-            pass
+            Move(metadata, self.address).apply() # ↙️
         else:
             pass
 
-class SyncEvent:
-    def __init__(self, metadata, address):
+class SyncEvent(Incoming):
+    def __init__(self, metadata, address, connection=None): # ⬅️ added connection parameter!
         self.metadata = metadata
-        self.address = address
+        super().__init__(connection, address) 
+
     def apply(self):
         pass
-    def format_path(self):
+
+    def _get_mac_addr(self, user) -> str:
+        for mac_addr in ip_map["users"][user]:
+            if mac_addr == str(mac_addr):
+                return mac_addr
+            
+    def format_path(self) -> str:
         user = self.metadata['user']
         user_id = session.query(User).filter_by(name=user).first().user_id
-        mac_addr = ip_map[self.address]
-
+        mac_addr = self._get_mac_addr(user)
         raw_path = self.metadata['src_path']
+        logging.info(f"[+] Formatting path: {raw_path}")
         src_path = os.path.normpath(raw_path).replace('\\', '/')
         src_path = src_path.split('/')
         src_path = src_path[3:]
@@ -671,44 +671,186 @@ class SyncEvent:
         src_path.insert(0, '~')
         src_path = '/'.join(src_path)       
         formatted_path = os.path.expanduser(src_path)
+        logging.info(f"[+] Formatted path: {formatted_path}")
         return formatted_path
     
 class CreateDir(SyncEvent):
-    
     def apply(self):
-        self.formatted_path = self.format_path()
-        os.makedirs(os.path.dirname(self.formatted_path), exist_ok=True)
+        formatted_path = self.format_path()
+        os.makedirs(formatted_path, exist_ok=True)
+        logging.info(f"[+] Directory created at: {formatted_path}")
 
 class CreateFile(SyncEvent):
     def apply(self):
         file_data = b''
         packet_count = self.metadata['packet_count']
-        print(f"[+] Expecting {packet_count} packets...")
+        logging.info(f"[+] Expecting {packet_count} packets...")
 
-        for index in range(packet_count): # 🧠
-            data = self.receive_valid_packet(self.connection, index) # 🧠
-            file_data += data # 🧠
+        for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
+            data = self.receive_valid_packet(self.connection, index)
+            file_data += data
 
-        self.formatted_path = self.format_path()
-        with open(self.formatted_path, 'wb') as f:
+        formatted_path = self.format_path()
+        with open(formatted_path, 'wb') as f:
             f.write(file_data)
-        print(f"[+] File '{self.formatted_path}' received successfully.")
+        logging.info(f"[+] File '{formatted_path}' received successfully.")
 
-        # TODO add to database.
-        
+        folder_id = self.metadata['folder_id']
+        hash = self.metadata['hash']
+        size = self.metadata['size']
+
+        # Create a new file entry in the database
+        file_entry = File(
+            folder_id=folder_id,
+            path=formatted_path,
+            size=size,
+            hash=hash,
+            version="v1.0"
+        )
+        session.add(file_entry)
+        session.commit()
+        logging.info(f"[+] Added file entry to database: {formatted_path}")
 
 class Delete(SyncEvent):
+    def purge_directory(self):
+        formatted_path = self.format_path()
+        logging.info(f"[+] Deleting directory and its contents: {formatted_path}")
+        
+        # Use post-order traversal to delete directory contents
+        for root, dirs, files in os.walk(formatted_path, topdown=False):
+            # First delete all files in the current directory
+            for file in files:
+                file_path = os.path.join(root, file)
+                try:
+                    os.remove(file_path)
+                    logging.info(f"[-] Deleted file: {file_path}")
+                    
+                    # Delete file entry from database
+                    file_entry = session.query(File).filter_by(path=file_path).first()
+                    if file_entry:
+                        session.delete(file_entry)
+                        session.commit()
+                except Exception as e:
+                    logging.error(f"[!] Error deleting file {file_path}: {e}")
+            
+            # Then delete the directory itself
+            try:
+                os.rmdir(root)
+                logging.info(f"[-] Deleted directory: {root}")
+            except Exception as e:
+                logging.error(f"[!] Error deleting directory {root}: {e}")
+        
+        # Remove folder from database
+        folder_entry = session.query(Folder).filter_by(path=formatted_path).first()
+        if folder_entry:
+            # Remove related share entries
+            share_entries = session.query(Share).filter_by(folder_id=folder_entry.folder_id).all()
+            for share in share_entries:
+                session.delete(share)
+            
+            session.delete(folder_entry)
+            session.commit()
+            logging.info(f"[-] Folder and shares removed from database")
+
     def apply(self):
-        pass
-class Modify(SyncEvent):
+        # TODO check if file or folder
+        if self.metadata['is_dir']:
+            self.purge_directory()
+            logging.info(f"[-] Directory '{self.metadata['src_path']}' deleted successfully.")
+        else: 
+            formatted_path = self.format_path()
+            os.remove(formatted_path)
+            logging.info(f"[-] File '{formatted_path}' deleted successfully.")
+            file_entry = session.query(File).filter_by(path=formatted_path).first()
+
+            if file_entry:
+                session.delete(file_entry)
+                session.commit()
+                logging.info(f"[-] File entry for '{formatted_path}' deleted from database.")
+            else:
+                logging.error(f"[-] No file entry found for '{formatted_path}' in database.")
+
+class Move(SyncEvent):
+    def format_dest_path(self) -> str:
+        """Format the destination path using the same logic as format_path()"""
+        user = self.metadata['user']
+        user_id = session.query(User).filter_by(name=user).first().user_id
+        mac_addr = self._get_mac_addr(user)
+        raw_path = self.metadata['dest_path']
+        logging.info(f"[+] Formatting dest path: {raw_path}")
+        dest_path = os.path.normpath(raw_path).replace('\\', '/')
+        dest_path = dest_path.split('/')
+        dest_path = dest_path[3:]
+        dest_path.insert(0, str(mac_addr))
+        dest_path.insert(0, str(user_id))
+        dest_path.insert(0, '~')
+        dest_path = '/'.join(dest_path)       
+        formatted_path = os.path.expanduser(dest_path)
+        logging.info(f"[+] Formatted dest path: {formatted_path}")
+        return formatted_path
+    
     def apply(self):
-        pass
-
-
-
-
-
-
+        
+        # Format source and destination paths
+        src_path = self.format_path()
+        dest_path = self.format_dest_path()
+        
+        logging.info(f"[+] Moving from {src_path} to {dest_path}")
+        
+        if not self.metadata['is_dir']:
+            # Handle file move
+            try:
+                # Create destination directory if needed
+                os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                
+                # Move the file
+                os.replace(src_path, dest_path)
+                logging.info(f"[+] File moved from {src_path} to {dest_path}")
+                
+                # Update database entry
+                file_entry = session.query(File).filter_by(path=src_path).first()
+                if file_entry:
+                    file_entry.path = dest_path
+                    session.commit()
+                    logging.info(f"[+] Database entry updated for file: {dest_path}")
+                else:
+                    logging.warning(f"[!] No database entry found for file: {src_path}")
+            except Exception as e:
+                logging.error(f"[!] Error moving file: {e}")
+        else:
+            # Handle directory move
+            try:
+                # Make sure destination parent exists
+                os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                
+                # Move the directory
+                os.replace(src_path, dest_path)
+                logging.info(f"[+] Directory moved from {src_path} to {dest_path}")
+                
+                # Update folder entry in database
+                folder_entry = session.query(Folder).filter_by(path=src_path).first()
+                if folder_entry:
+                    folder_entry.path = dest_path
+                    session.commit()
+                    logging.info(f"[+] Database entry updated for folder: {dest_path}")
+                
+                # Update all file paths in database that were under this directory
+                files = session.query(File).all()
+                updated_count = 0
+                
+                for file in files:
+                    if file.path.startswith(src_path + '/') or file.path == src_path:
+                        new_file_path = file.path.replace(src_path, dest_path, 1)
+                        file.path = new_file_path
+                        updated_count += 1
+                
+                if updated_count > 0:
+                    session.commit()
+                    logging.info(f"[+] Updated {updated_count} file entries in database")
+                    
+            except Exception as e:
+                logging.error(f"[!] Error moving directory: {e}")
+    
 class Outgoing(Sync):
     def __init__(self):
         super().__init__()
@@ -718,3 +860,9 @@ if __name__ == "__main__":
     main_thread.start()
     sync_worker_thread = threading.Thread(target=sync_worker)
     sync_worker_thread.start()
+
+
+
+
+
+# TODO: need to create a queue to send out outgoing data to other clients!

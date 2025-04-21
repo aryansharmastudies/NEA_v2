@@ -77,7 +77,7 @@ class File(db.Model):
     folder_id = db.Column(db.String(100), primary_key=True)
     path = db.Column(db.String(255), primary_key=True) 
     size = db.Column(db.Integer)
-    hash = db.Column(db.String(32))  # MD5 hash = 32 chars
+    hash = db.Column(db.String(32))  # MD5 hash = 32 chars NOTE: it automatically hashes the file.
     version = db.Column(db.String(10))
 
     def __init__(self, folder_id, path, size=None, hash=None, version='v1.0'):
@@ -629,19 +629,47 @@ class MyEventHandler(FileSystemEventHandler):
         self._supressed_dirs: set[str] = set()
 
     def _get_parent_folder_id(self, file_path: str) -> str | None:
-        parent_dir = os.path.dirname(file_path) # if you have home/osaka/bye.txt, it will return home/osaka
-        candidates = Folder.query.all() # loading all the registered folders once
-        best = None
-        best_len = -1
-        for f in candidates:
-            # ensure exact directory match (add os.sep so "/foo" doesn't match "/foobar")
-            prefix = f.path.rstrip(os.sep) + os.sep
-            if parent_dir.startswith(prefix):
-                plen = len(prefix)
-                if plen > best_len: # find out which which folder has longest similarity
-                    best = f
-                    best_len = plen
-        return best.folder_id if best else None
+        # Convert to absolute path to ensure consistent comparisons
+        parent_dir = os.path.abspath(os.path.dirname(file_path))
+        logging.info(f'parent_dir: {parent_dir}')
+        
+        # Only query the needed columns (folder_id and path)
+        if not hasattr(self, '_cached_folders') or self._cached_folders is None:
+            with app.app_context():
+                self._cached_folders = [(f.folder_id, os.path.abspath(f.path)) 
+                                      for f in Folder.query.with_entities(Folder.folder_id, Folder.path).all()]
+                logging.info(f'Loaded {len(self._cached_folders)} folder candidates with folder_id and path only')
+        
+        # Variables to track the best match
+        best_folder_id = None
+        best_path_length = -1
+        
+        # Iterate through all folders to find the best match
+        for folder_id, folder_path in self._cached_folders:
+            logging.info(f'Checking folder: {folder_id} - {folder_path}')
+            # Ensure exact directory match by adding separator
+            prefix = folder_path.rstrip(os.sep) + os.sep
+            prefix_length = len(prefix)
+            logging.info(f'prefix: {prefix} - prefix_length: {prefix_length}')
+            
+            # Check if this folder contains the file's parent directory
+            # Either the parent_dir exactly matches folder_path (without trailing separator)
+            # or parent_dir starts with folder_path + separator (indicating proper directory hierarchy)
+            if parent_dir == folder_path.rstrip(os.sep) or parent_dir.startswith(prefix):
+                logging.info(f'Found match: {folder_id} - {folder_path}')
+                # If this path is longer than our current best, it's more specific
+                if prefix_length > best_path_length:
+                    best_folder_id = folder_id
+                    best_path_length = prefix_length
+                    logging.info(f'Found better match: {folder_id} - {folder_path}')
+        
+        # Return the best match if one was found
+        if best_folder_id:
+            logging.info(f'Best folder match for {parent_dir}: {best_folder_id}')
+            return best_folder_id
+        else:
+            logging.warning(f'No matching folder found for {parent_dir}')
+            return None
 
     def _persist_queue(self):
         try:
@@ -651,8 +679,19 @@ class MyEventHandler(FileSystemEventHandler):
         except Exception as e:
             logging.error(f"Failed to persist sync queue: {e}")
 
+    def _find_hash(self):
+        hash_md5 = hashlib.md5()
+        try:
+            with open(self.src_path, "rb") as f:
+                for block in iter(lambda: f.read(4096), b""):
+                    hash_md5.update(block)
+            return hash_md5.hexdigest()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"The file at path {self.path} does not exist.")
+
     def dispatch(self, event):
         path = event.src_path
+        self.src_path = path
         if is_temp_file(event.src_path):
             '''
             Unfortunately using some text editiors like the one in ubuntu, 
@@ -693,34 +732,56 @@ class MyEventHandler(FileSystemEventHandler):
     def on_created(self, event):
         logging.info(f"🟢 Created: {event.src_path}")
 
+        # TODO get folder_id
+        # sync_queue.put
+        # add to db
+
         # if you recreated a suppressed directory, stop suppressing it
         if event.is_directory and event.src_path in self._supressed_dirs:
             self._supressed_dirs.remove(event.src_path)
-
-        sync_queue.put({
-            "id": generate_event_id(),
-            "event_type": "created",
-            "src_path": event.src_path,
-            "is_dir": event.is_directory,
-            "origin": "user"
-        })
-        self._persist_queue()
-
         # Only for files (not directories), look up its parent folder_id and insert
-        if not event.is_directory:
+        if not event.is_directory: # i.e. if it is a file
             folder_id = self._get_parent_folder_id(event.src_path)
             if folder_id is None:
                 logging.error(f"No registered folder found for {event.src_path}; skipping DB insert")
             else:
+                logging.info(f"Creating event for file: {event.src_path} in folder {folder_id}")
+                sync_queue.put({
+                    "id": generate_event_id(),
+                    "event_type": "created",
+                    "src_path": event.src_path, 
+                    "is_dir": event.is_directory,
+                    "origin": "user",
+                    "folder_id": folder_id, 
+                    "hash": self._find_hash(),
+                    "size": os.path.getsize(event.src_path)
+                    })
+                logging.info(f"Added to sync_queue: {event.src_path} with folder_id {folder_id}")
+                
                 new_file = File(folder_id=folder_id, path=event.src_path)
+                logging.info(f"Creating new file object: {new_file}")
                 try:
-                    db.session.add(new_file)
-                    db.session.commit()
-                    logging.info(f"File {event.src_path} added to database under folder {folder_id}")
+                    with app.app_context():
+                        db.session.add(new_file)
+                        db.session.commit()
+                        logging.info(f"File {event.src_path} added to database under folder {folder_id}")
                 except Exception as e:
-                    db.session.rollback()
+                    with app.app_context():
+                        db.session.rollback()
                     logging.error(f"❌ Failed to add {event.src_path} to database: {e}")
     
+        else:
+            logging.info(f"Creating event for directory: {event.src_path}")
+            sync_queue.put({
+                "id": generate_event_id(),
+                "event_type": "created",
+                "src_path": event.src_path,
+                "is_dir": event.is_directory,
+                "origin": "user"
+            })
+
+        self._persist_queue() # save to sync_queue.json
+        logging.info(f'saved to sync_queue.json')
     def on_deleted(self, event):
         logging.info(f"🔴 Deleted: {event.src_path}")
 
@@ -736,6 +797,22 @@ class MyEventHandler(FileSystemEventHandler):
             "origin":  "user"
         })
         self._persist_queue()
+        # If it's a file, remove it from the database
+        if not event.is_directory:
+            try:
+                with app.app_context():
+                    file_to_delete = File.query.filter_by(path=event.src_path).first()
+                    if file_to_delete:
+                        db.session.delete(file_to_delete)
+                        db.session.commit()
+                        logging.info(f"File {event.src_path} deleted from database")
+                    else:
+                        logging.warning(f"File {event.src_path} not found in database")
+            except Exception as e:
+                with app.app_context():
+                    db.session.rollback()
+                logging.error(f"❌ Failed to delete {event.src_path} from database: {e}")
+        # TODO delete from data base!!!
     
     def on_modified(self, event): # 💥
         logging.info(f'🟡 {event.src_path} has been {event.event_type}')
@@ -811,6 +888,16 @@ class FolderInitializer:
         self.event_type = event_type
         self.origin = origin
 
+    def _find_hash(self) -> str:
+        hash_md5 = hashlib.md5()
+        try:
+            with open(self.path, "rb") as f:
+                for block in iter(lambda: f.read(4096), b""):
+                    hash_md5.update(block)
+            return hash_md5.hexdigest()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"The file at path {self.path} does not exist.")
+        
     def preorderTraversal(self):
         stack = [self.path]
         directories = []
@@ -843,17 +930,19 @@ class FolderInitializer:
                 else:
                     logging.info(f'📖 Found file: {full_path}')
                     files.append(full_path)
-
                     event = {
                         "id": self.event_id,
                         "event_type": self.event_type,
                         "path": full_path,
                         "is_dir": False,
-                        "origin": "mkdir"
+                        "origin": "mkdir",
+                        "folder_id": self.folder_id,
+                        "hash": self._find_hash(),
+                        "size": os.path.getsize(full_path)
                         }
                     sync_queue.put(event)
 
-                    new_file = File(folder_id=self.folder_id, path=full_path)
+                    new_file = File(folder_id=self.folder_id, path=full_path, hash=event['hash'], size=event['size'])
                     try:
                         db.session.add(new_file)
                         db.session.commit()
@@ -878,7 +967,7 @@ class FolderInitializer:
 
 '''
 ########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
-def sync_worker():
+def sync_worker(): 
     while True:
         sync_active.wait()  # Wait until resumed
         event = sync_queue.get()
@@ -909,10 +998,13 @@ def sync_worker():
         
         finally:
             sync_queue.task_done()
+            all_events = list(sync_queue.queue)
+            with open("sync_queue.json", "w") as f:
+                json.dump(all_events, f, indent=2)
 ########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
 class Sync:
     def __init__(self):
-        self.BLOCK_SIZE = 1024
+        self.BLOCK_SIZE = 10000000 # 1MB
         self.PORT = 7000
         self.HEADER_SIZE = 4
         self.RESPONSE_OK = b'ACK'
@@ -926,10 +1018,12 @@ class Outgoing(Sync):
         self.origin = event['origin']  # Updated to use 'origin' from event
         self.event_type = event['event_type']
 
-        if not self.is_dir:
+        if not self.is_dir and self.event_type == 'created':
+            logging.info(f"Adding packets, packet_count, hash, folder_id")
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
             self.hash = file_to_hash.get(self.src_path)
+            self.folder_id = event['folder_id']  # Updated to use 'folder_id' from event
 
         if self.event_type == 'moved':
             self.dest_path = event['dest_path']
@@ -938,14 +1032,16 @@ class Outgoing(Sync):
         metadata = {
             "index":      0,
             "user":      active_session['user'],
-            "packet_count": self.packet_count,
             "event_type": self.event_type,
             "src_path":       self.src_path,
             "is_dir":     self.is_dir,
             "origin":     self.origin,
         }
-        if not self.is_dir:
+        if not self.is_dir and self.event_type == 'created':
             metadata['hash'] = self.hash
+            metadata["packet_count"] = self.packet_count
+            metadata["folder_id"] = self.folder_id
+            metadata["size"] = os.path.getsize(self.src_path)
         
         if self.event_type == 'moved':
             metadata['dest_path'] = self.dest_path
@@ -966,18 +1062,18 @@ class Outgoing(Sync):
         ]
 
     def send_packet(self, outgoingsock: socket.socket, packet: dict) -> None:
-        payload = json.dumps(packet).encode()
+        payload = json.dumps(packet).encode('utf-8')
         header = struct.pack('!I', len(payload))
-        message = f"{header + payload:<1024}"
+        message = header + payload  # You can join header and payload using the '+' operator
         sent = False   
         while not sent:
             outgoingsock.sendall(message)
             response = outgoingsock.recv(3)
             if response == self.RESPONSE_OK:
-                logging.info(f"Packet {packet['index']} transmitted successfully.")
+                # logging.info(f"[+] Packet {packet['index']} transmitted successfully.") # 🔔
                 sent = True
             else:
-                logging.info(f"Packet {packet['index']} failed checksum, retrying...")
+                logging.info(f"[-] Packet {packet['index']} failed checksum, retrying...")
 
     def start_server(self) -> bool:
         outgoingsock = socket.socket()
@@ -987,10 +1083,14 @@ class Outgoing(Sync):
             logging.info(f"[+] Connected to server at {active_session['server_name']}:{self.PORT}")
             
             metadata = self._build_metadata()
-            self.send_packet(outgoingsock, metadata)
+            logging.info(f"[+] Sending metadata: {metadata}")
+            self.send_packet(outgoingsock, metadata) # metadata is dict
+            logging.info(f"[+] Metadata sent: {metadata}")
+
             if hasattr(self, 'packets'):
                 for packet in self.packets:
                     self.send_packet(outgoingsock, packet)
+                    # logging.info(f"[+] Packet {packet} sent.") # 🔔
         
             logging.info("[+] All packets sent.")
         except Exception as e:
@@ -1006,7 +1106,7 @@ class Outgoing(Sync):
 # def receive_valid_chunk
 # def receive_file
 # def connect_to_server
-class incoming(Sync):
+class Incoming(Sync):
     def __init__():
         pass
 ########################################################################################
