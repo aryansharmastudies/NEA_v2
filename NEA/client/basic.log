@@ -44126,3 +44126,14 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 2025-04-21 09:40:26 INFO 200 : OK
 2025-04-21 09:40:26 INFO Sending to frontend: {'takumi': ['AE86'], 'ryosuke': ['RX-7'], 'itsuki': ['AE85']}
 2025-04-21 09:40:26 INFO 127.0.0.1 - - [21/Apr/2025 09:40:26] "GET /get_users_and_devices HTTP/1.1" 200 -
+2025-04-21 10:02:43 INFO binding to ip: 192.168.1.75
+2025-04-21 10:02:43 INFO Listening for incoming messages on port 6000...
+2025-04-21 10:02:43 INFO Loaded file_to_hash with 0 entries.
+2025-04-21 10:02:43 INFO {}
+2025-04-21 10:02:43 INFO active_session dict: {}
+2025-04-21 10:02:43 INFO 🐕 watchdog started! 🐕
+2025-04-21 10:02:43 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.75:5000
+2025-04-21 10:02:43 INFO [33mPress CTRL+C to quit[0m
