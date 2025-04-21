@@ -691,6 +691,8 @@ class CreateFile(SyncEvent):
             file_data += data
 
         formatted_path = self.format_path()
+        os.makedirs(os.path.dirname(formatted_path), exist_ok=True)
+        logging.info(f"[+] Writing file to: {formatted_path}")
         with open(formatted_path, 'wb') as f:
             f.write(file_data)
         logging.info(f"[+] File '{formatted_path}' received successfully.")

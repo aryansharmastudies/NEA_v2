@@ -25,6 +25,7 @@ from datetime import datetime
 import uuid
 import base64
 import struct
+import time
 
 '''
 Basically, in order to sync folders, we have sync_queue with the different
@@ -130,6 +131,24 @@ def handle_connect():
     logging.info(f'connected to frontend!')
     socketio.emit('alerts', session['alerts']) # ⭐
     logging.info(f'sending alerts to frontend!: {session["alerts"]}')
+    socketio.emit('users_devices_data', session['users_and_devices']) # ⭐
+
+@socketio.on('wtf')
+def wtf():
+    logging.info(f'wtf called!')
+
+@socketio.on('request_users_devices')
+def handle_users_devices_request():
+    try:
+        if 'users_and_devices' in session and session['users_and_devices']:
+            socketio.emit('users_devices_data', session['users_and_devices'])
+        else:
+            socketio.emit('users_devices_data', {})
+            logging.warning("No users and devices data available")
+    except Exception as e:
+        logging.error(f"💥 Error in WebSocket request_users_devices: {e}", exc_info=True)
+        emit('users_devices_data', {'error': str(e)})
+
 ########## WEBSITE ##############################
 @app.route('/pair', methods=['POST','GET'])
 def pair():
@@ -323,6 +342,28 @@ def dashboard():
         status, status_msg, data = send(ip_tracking_data)        
         session['alerts'] = data
         logging.info(f'storing alerts to sessions!: {data}')
+
+        user_and_device_data = json.dumps({'action': 'request', 'data': {'users': ['user_id', 'name'], 'devices': ['user_id', 'name']}})
+        logging.info(f'getting users and devices info... sending: {user_and_device_data}')
+        data = send(user_and_device_data)
+        logging.info(f'users and devices data: {data}')
+
+        devices = data['devices']
+        users = data['users']
+
+        id_to_users = {}
+        users_and_device = {}
+        
+        for user in users:
+            id_to_users[user[0]] = user[1]
+            users_and_device[user[1]] = []
+
+        for device in devices:
+            username = id_to_users[device[0]]
+            users_and_device[username].append(device[1])
+
+        session['users_and_devices'] = users_and_device
+        logging.info(f'Added users and devices to session: {session["users_and_devices"]}')
         if status == '200':
             if not sync_active.is_set():
                 sync_active.set() # 🧵
@@ -345,28 +386,34 @@ def dashboard():
 
 @app.route("/get_users_and_devices", methods=["GET"])
 def get_users_and_devices():
-    json_data = json.dumps({'action': 'request', 'data': {'users': ['user_id', 'name'], 'devices': ['user_id', 'name']}})
-    logging.info(f'getting users and devices info... sending: {json_data}')
-    data = send(json_data)
+    # return jsonify({'error': 'GET method not allowed'}), 405
+    try:
+        json_data = json.dumps({'action': 'request', 'data': {'users': ['user_id', 'name'], 'devices': ['user_id', 'name']}})
+        logging.info(f'getting users and devices info... sending: {json_data}')
+        data = send(json_data)
+        logging.info(f'users and devices data: {data}')
 
-    devices = data['devices']
-    users = data['users']
+        devices = data['devices']
+        users = data['users']
 
-    id_to_users = {}
-    users_and_device = {}
+        id_to_users = {}
+        users_and_device = {}
+        
+        for user in users:
+            id_to_users[user[0]] = user[1]
+            users_and_device[user[1]] = []
+
+        for device in devices:
+            username = id_to_users[device[0]]
+            users_and_device[username].append(device[1])
+        
+        logging.info(f'Sending to frontend: {users_and_device}')
+        return jsonify(users_and_device)
     
-    for user in users:
-        id_to_users[user[0]] = user[1]
-        users_and_device[user[1]] = []
-
-    for device in devices:
-        username = id_to_users[device[0]]
-        users_and_device[username].append(device[1])
+    except Exception as e:
+        logging.error(f"💥 Error in /get_users_and_devices: {e}", exc_info=True)
+        return jsonify({'error': str(e)}), 500
     
-    logging.info(f'Sending to frontend: {users_and_device}')
-
-    return jsonify(users_and_device)
-
 @app.route("/unpair")
 def unpair():
     if "user" in session:
@@ -462,6 +509,7 @@ def mkdir(data): # 🥝
 
 ########## SEND #################################
 def send(json_data): # 🛫
+        start = time.time()
         logging.info(f'sending data to server: {json_data}')
         try: 
             logging.info(f'trying to connect to server: {session["server_name"]} on port 8000')
@@ -487,7 +535,9 @@ def send(json_data): # 🛫
         s.send(json_data.encode('utf-8')) # sending data to server 📨
         json_response = s.recv(1024).decode('utf-8') # server's response back 📩 # TODO 🆘 recieves 1024 bits, add buffering feature !!
         logging.info(f'server response: {json_response}, type: {type(json_response)}')
-        
+        end = time.time()
+        logging.info(f'⏰ time taken to send data: {end - start} seconds')
+
         server_data = json.loads(json_response)
         logging.info(f'server_data: {server_data}')
         
@@ -888,15 +938,15 @@ class FolderInitializer:
         self.event_type = event_type
         self.origin = origin
 
-    def _find_hash(self) -> str:
+    def _find_hash(self, full_path) -> str:
         hash_md5 = hashlib.md5()
         try:
-            with open(self.path, "rb") as f:
+            with open(full_path, "rb") as f:
                 for block in iter(lambda: f.read(4096), b""):
                     hash_md5.update(block)
             return hash_md5.hexdigest()
         except FileNotFoundError:
-            raise FileNotFoundError(f"The file at path {self.path} does not exist.")
+            raise FileNotFoundError(f"The file at path {full_path} does not exist.")
         
     def preorderTraversal(self):
         stack = [self.path]
@@ -911,7 +961,7 @@ class FolderInitializer:
             event = {
                 "id": self.event_id,
                 "event_type": self.event_type,
-                "path": current,
+                "src_path": current,
                 "is_dir": True,
                 "origin": "mkdir"
                 }
@@ -933,11 +983,11 @@ class FolderInitializer:
                     event = {
                         "id": self.event_id,
                         "event_type": self.event_type,
-                        "path": full_path,
+                        "src_path": full_path,
                         "is_dir": False,
                         "origin": "mkdir",
                         "folder_id": self.folder_id,
-                        "hash": self._find_hash(),
+                        "hash": self._find_hash(full_path),
                         "size": os.path.getsize(full_path)
                         }
                     sync_queue.put(event)

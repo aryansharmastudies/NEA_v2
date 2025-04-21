@@ -1,99 +1,94 @@
 var socket = io();
+
+var user_device_data = "";
+
 socket.on('connect', function() {
     console.log("Connected to WebSocket");
 }); 
 
-// listens up for 'alerts' messages from the backend
+socket.on('wtf', function() {
+    console.log("wtf"); 
+});
+
+// Listen for alerts
 socket.on('alerts', function(data) {
-    var alerts_data = data // emit an event to the server
-    document.getElementById('alert_box').innerText = alerts_data;
+    document.getElementById('alert_box').innerText = data;
 });
+socket.on('users_devices_data', function(data) {
+    console.log("Received users and devices data:", data);
+    user_device_data = data; });
 
+// socket.on('users_devices_data', function(data) {
+//     console.log("Received users and devices data:", data);
+//     if (data.error) {
+//         console.error("Error received:", data.error);
+//         // Show error to user
+//         const sharingForm = document.getElementById("sharingForm");
+//         if (sharingForm) {
+//             sharingForm.innerHTML = `<p class="error">Error loading data: ${data.error}</p>`;
+//         }
+//     } else {
+//         console.log("Received users and devices data:", data);
+//         if (Object.keys(data).length === 0) {
+//             // Handle empty data case
+//             const sharingForm = document.getElementById("sharingForm");
+//             if (sharingForm) {
+//                 sharingForm.innerHTML = "<p>No users or devices available</p>";
+//             }
+//         } else {
+//             // Make sharingForm a global variable at the top of your file
+//             sharingForm = document.getElementById("sharingForm");
+//             displayRawData(data);
+//         }
+//     }
+// });
 
-/*
-function changemsg() {
-    socket.emit('change message', {data: 'Request to changemsg!'}); // emit an event to the server
-}
-
-// Listen for incoming messages from the server
-socket.on('message', function(data) {
-    const new_msg = data;
-    document.getElementById('msg').innerText = new_msg;
-});
-*/
-
-// Register Device Modal
-const openDeviceBtn = document.getElementById('openModalDevice');
-const closeDeviceBtn = document.getElementById('closeModalDevice');
-const modalDevice = document.getElementById('modalDevice');
-
-openDeviceBtn.addEventListener('click', () => {
-    modalDevice.classList.add('open');
-});
-
-closeDeviceBtn.addEventListener('click', () => {
-    modalDevice.classList.remove('open');
-});
-
-// Add Folder Modal
+// Modal button logic
 const openFolderBtn = document.getElementById('openModalFolder');
 const closeFolderBtn = document.getElementById('closeModalFolder');
 const modalFolder = document.getElementById('modalFolder');
 
 openFolderBtn.addEventListener('click', () => {
     modalFolder.classList.add('open');
-    fetchUsersAndDevices(); // Fetch data when modal opens
+    console.log("openFolderBtn clicked");
+    socket.emit('request_users_devices');
+    displayRawData(user_device_data)  // ✅ Emit WebSocket event instead of fetch
 });
 
 closeFolderBtn.addEventListener('click', () => {
     modalFolder.classList.remove('open');
 });
 
-// Function to fetch users and devices
-function fetchUsersAndDevices() {
-    fetch("/get_users_and_devices") // Flask route to fetch data
-        .then((response) => response.json())
-        .then((data) => {
-            // Display the raw JSON data in the modal
-            displayRawData(data); // Call the correct function here
-        })
-        .catch((error) => {
-            console.error("Error fetching data:", error);
-        });
-}
-
-// Function to display raw JSON data
-function displayRawData(data) {
+// Render data
+function displayRawData(user_device_data) {
     const sharingForm = document.getElementById("sharingForm");
-
-    // Clear existing content
     sharingForm.innerHTML = "";
 
-    // Iterate through the data and create checkboxes
-    for (const [user, devices] of Object.entries(data)) {
+    for (const [user, devices] of Object.entries(user_device_data)) {
         const userHeading = document.createElement("h4");
         userHeading.textContent = user;
         sharingForm.appendChild(userHeading);
 
         devices.forEach((device) => {
-            const checkboxContainer = document.createElement("div");
+            const container = document.createElement("div");
 
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             checkbox.name = "selected_devices";
-            checkbox.value = `${user}:${device}`; // Store user and device as value
+            checkbox.value = `${user}:${device}`;
             checkbox.id = device;
 
             const label = document.createElement("label");
             label.htmlFor = device;
             label.textContent = device;
 
-            checkboxContainer.appendChild(checkbox);
-            checkboxContainer.appendChild(label);
-            sharingForm.appendChild(checkboxContainer);
+            container.appendChild(checkbox);
+            container.appendChild(label);
+            sharingForm.appendChild(container);
         });
     }
 }
+
 // Tab functionality
 const tablinks = document.querySelectorAll(".tablink");
 const tabcontents = document.querySelectorAll(".tabcontent");

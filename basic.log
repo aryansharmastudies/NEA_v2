@@ -146,3 +146,734 @@
 2025-04-16 16:05:16 INFO 127.0.0.1 - - [16/Apr/2025 16:05:16] "GET /socket.io/?EIO=4&transport=polling&t=PO_8WKj.0&sid=ERYZ134YpbfdJNbgAAAA HTTP/1.1" 200 -
 2025-04-16 16:05:16 INFO 127.0.0.1 - - [16/Apr/2025 16:05:16] "POST /socket.io/?EIO=4&transport=polling&t=PO_8WKj&sid=ERYZ134YpbfdJNbgAAAA HTTP/1.1" 200 -
 2025-04-16 16:05:16 INFO 127.0.0.1 - - [16/Apr/2025 16:05:16] "GET /socket.io/?EIO=4&transport=polling&t=PO_8WKn&sid=ERYZ134YpbfdJNbgAAAA HTTP/1.1" 200 -
+2025-04-22 00:06:06 INFO No sync_queue.json file found. Starting with empty queue.
+2025-04-22 00:06:06 INFO binding to ip: 192.168.1.221
+2025-04-22 00:06:06 INFO Listening for incoming messages on port 6000...
+2025-04-22 00:06:06 INFO Loaded file_to_hash with 0 entries.
+2025-04-22 00:06:06 INFO {}
+2025-04-22 00:06:06 INFO active_session dict: {}
+2025-04-22 00:06:06 INFO 🐕 watchdog started! 🐕
+2025-04-22 00:06:06 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.221:5000
+2025-04-22 00:06:06 INFO [33mPress CTRL+C to quit[0m
+2025-04-22 00:06:11 INFO active_session updated: {'user': 'takumi', 'server_name': 'osaka'}
+2025-04-22 00:06:11 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-22 00:06:11 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-22 00:06:11 INFO trying to connect to server: osaka on port 8000
+2025-04-22 00:06:11 INFO Connected to server: osaka on port 8000
+2025-04-22 00:06:11 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-22 00:06:11 INFO ⏰ time taken to send data: 0.09573483467102051 seconds
+2025-04-22 00:06:11 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-22 00:06:11 INFO status: 200
+2025-04-22 00:06:11 INFO status_msg: IP updated successfully
+2025-04-22 00:06:11 INFO data: []
+2025-04-22 00:06:11 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-22 00:06:11 INFO 200 : OK
+2025-04-22 00:06:11 INFO storing alerts to sessions!: []
+2025-04-22 00:06:11 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-22 00:06:11 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-22 00:06:11 INFO trying to connect to server: osaka on port 8000
+2025-04-22 00:06:11 INFO Connected to server: osaka on port 8000
+2025-04-22 00:06:11 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "AE86"
+      ],
+      [
+        2,
+        "RX-7"
+      ],
+      [
+        3,
+        "AE85"
+      ],
+      [
+        1,
+        "AE86(mbp)"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ],
+      [
+        3,
+        "itsuki"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-22 00:06:11 INFO ⏰ time taken to send data: 0.20492076873779297 seconds
+2025-04-22 00:06:11 INFO server_data: {'data': {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-22 00:06:11 INFO status: 200
+2025-04-22 00:06:11 INFO status_msg: unknown
+2025-04-22 00:06:11 INFO data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:06:11 INFO status: 200 status_msg: unknown data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:06:11 INFO 200 : OK
+2025-04-22 00:06:11 INFO users and devices data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:06:11 INFO Added users and devices to session: {'takumi': ['AE86', 'AE86(mbp)'], 'ryosuke': ['RX-7'], 'itsuki': ['AE85']}
+2025-04-22 00:06:11 INFO 127.0.0.1 - - [22/Apr/2025 00:06:11] "GET /dashboard HTTP/1.1" 200 -
+2025-04-22 00:06:12 INFO 127.0.0.1 - - [22/Apr/2025 00:06:12] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-22 00:06:12 INFO 127.0.0.1 - - [22/Apr/2025 00:06:12] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-04-22 00:06:12 INFO 127.0.0.1 - - [22/Apr/2025 00:06:12] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-22 00:06:12 INFO 127.0.0.1 - - [22/Apr/2025 00:06:12] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-22 00:06:12 INFO 127.0.0.1 - - [22/Apr/2025 00:06:12] "GET /socket.io/?EIO=4&transport=polling&t=PPQcY2V HTTP/1.1" 200 -
+2025-04-22 00:06:12 INFO 127.0.0.1 - - [22/Apr/2025 00:06:12] "GET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1" 200 -
+2025-04-22 00:06:12 INFO connected to frontend!
+2025-04-22 00:06:12 INFO sending alerts to frontend!: []
+2025-04-22 00:06:12 INFO 127.0.0.1 - - [22/Apr/2025 00:06:12] "POST /socket.io/?EIO=4&transport=polling&t=PPQcY2o&sid=FdHlZ2RA05iUbapLAAAA HTTP/1.1" 200 -
+2025-04-22 00:06:12 INFO 127.0.0.1 - - [22/Apr/2025 00:06:12] "GET /socket.io/?EIO=4&transport=polling&t=PPQcY2q&sid=FdHlZ2RA05iUbapLAAAA HTTP/1.1" 200 -
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "GET /socket.io/?EIO=4&transport=websocket&sid=FdHlZ2RA05iUbapLAAAA HTTP/1.1" 200 -
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "GET /socket.io/?EIO=4&transport=polling&t=PPQcY3s&sid=FdHlZ2RA05iUbapLAAAA HTTP/1.1" 200 -
+2025-04-22 00:06:14 INFO active_session updated: {'user': 'takumi', 'server_name': 'osaka'}
+2025-04-22 00:06:14 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-22 00:06:14 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-22 00:06:14 INFO trying to connect to server: osaka on port 8000
+2025-04-22 00:06:14 INFO Connected to server: osaka on port 8000
+2025-04-22 00:06:14 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-22 00:06:14 INFO ⏰ time taken to send data: 0.08271121978759766 seconds
+2025-04-22 00:06:14 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-22 00:06:14 INFO status: 200
+2025-04-22 00:06:14 INFO status_msg: IP updated successfully
+2025-04-22 00:06:14 INFO data: []
+2025-04-22 00:06:14 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-22 00:06:14 INFO 200 : OK
+2025-04-22 00:06:14 INFO storing alerts to sessions!: []
+2025-04-22 00:06:14 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-22 00:06:14 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-22 00:06:14 INFO trying to connect to server: osaka on port 8000
+2025-04-22 00:06:14 INFO Connected to server: osaka on port 8000
+2025-04-22 00:06:14 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "AE86"
+      ],
+      [
+        2,
+        "RX-7"
+      ],
+      [
+        3,
+        "AE85"
+      ],
+      [
+        1,
+        "AE86(mbp)"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ],
+      [
+        3,
+        "itsuki"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-22 00:06:14 INFO ⏰ time taken to send data: 0.11766982078552246 seconds
+2025-04-22 00:06:14 INFO server_data: {'data': {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-22 00:06:14 INFO status: 200
+2025-04-22 00:06:14 INFO status_msg: unknown
+2025-04-22 00:06:14 INFO data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:06:14 INFO status: 200 status_msg: unknown data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:06:14 INFO 200 : OK
+2025-04-22 00:06:14 INFO users and devices data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:06:14 INFO Added users and devices to session: {'takumi': ['AE86', 'AE86(mbp)'], 'ryosuke': ['RX-7'], 'itsuki': ['AE85']}
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "GET /dashboard HTTP/1.1" 200 -
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-22 00:06:14 ERROR The client is using an unsupported version of the Socket.IO or Engine.IO protocols (further occurrences of this error will be logged with level INFO)
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "[31m[1mGET /socket.io/socket.io.js HTTP/1.1[0m" 400 -
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "[31m[1mGET /socket.io/socket.io.js HTTP/1.1[0m" 400 -
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "GET /socket.io/?EIO=4&transport=polling&t=PPQcYbl HTTP/1.1" 200 -
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-04-22 00:06:14 INFO connected to frontend!
+2025-04-22 00:06:14 INFO sending alerts to frontend!: []
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "POST /socket.io/?EIO=4&transport=polling&t=PPQcYcL&sid=k85kFZP64Fjb23PTAAAC HTTP/1.1" 200 -
+2025-04-22 00:06:14 INFO 127.0.0.1 - - [22/Apr/2025 00:06:14] "GET /socket.io/?EIO=4&transport=polling&t=PPQcYcN&sid=k85kFZP64Fjb23PTAAAC HTTP/1.1" 200 -
+2025-04-22 00:06:20 INFO 127.0.0.1 - - [22/Apr/2025 00:06:20] "GET /socket.io/?EIO=4&transport=websocket&sid=k85kFZP64Fjb23PTAAAC HTTP/1.1" 200 -
+2025-04-22 00:06:20 INFO 127.0.0.1 - - [22/Apr/2025 00:06:20] "GET /socket.io/?EIO=4&transport=polling&t=PPQcYd5&sid=k85kFZP64Fjb23PTAAAC HTTP/1.1" 200 -
+2025-04-22 00:06:20 INFO active_session updated: {'user': 'takumi', 'server_name': 'osaka'}
+2025-04-22 00:06:20 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-22 00:06:20 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-22 00:06:20 INFO trying to connect to server: osaka on port 8000
+2025-04-22 00:06:20 INFO Connected to server: osaka on port 8000
+2025-04-22 00:06:20 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-22 00:06:20 INFO ⏰ time taken to send data: 0.1197824478149414 seconds
+2025-04-22 00:06:20 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-22 00:06:20 INFO status: 200
+2025-04-22 00:06:20 INFO status_msg: IP updated successfully
+2025-04-22 00:06:20 INFO data: []
+2025-04-22 00:06:20 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-22 00:06:20 INFO 200 : OK
+2025-04-22 00:06:20 INFO storing alerts to sessions!: []
+2025-04-22 00:06:20 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-22 00:06:20 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-22 00:06:20 INFO trying to connect to server: osaka on port 8000
+2025-04-22 00:06:21 INFO Connected to server: osaka on port 8000
+2025-04-22 00:06:21 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "AE86"
+      ],
+      [
+        2,
+        "RX-7"
+      ],
+      [
+        3,
+        "AE85"
+      ],
+      [
+        1,
+        "AE86(mbp)"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ],
+      [
+        3,
+        "itsuki"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-22 00:06:21 INFO ⏰ time taken to send data: 0.11019682884216309 seconds
+2025-04-22 00:06:21 INFO server_data: {'data': {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-22 00:06:21 INFO status: 200
+2025-04-22 00:06:21 INFO status_msg: unknown
+2025-04-22 00:06:21 INFO data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:06:21 INFO status: 200 status_msg: unknown data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:06:21 INFO 200 : OK
+2025-04-22 00:06:21 INFO users and devices data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:06:21 INFO Added users and devices to session: {'takumi': ['AE86', 'AE86(mbp)'], 'ryosuke': ['RX-7'], 'itsuki': ['AE85']}
+2025-04-22 00:06:21 INFO 127.0.0.1 - - [22/Apr/2025 00:06:21] "GET /dashboard HTTP/1.1" 200 -
+2025-04-22 00:06:21 INFO 127.0.0.1 - - [22/Apr/2025 00:06:21] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-22 00:06:21 INFO 127.0.0.1 - - [22/Apr/2025 00:06:21] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-22 00:06:21 INFO 127.0.0.1 - - [22/Apr/2025 00:06:21] "[31m[1mGET /socket.io/socket.io.js HTTP/1.1[0m" 400 -
+2025-04-22 00:06:21 INFO 127.0.0.1 - - [22/Apr/2025 00:06:21] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-22 00:06:21 INFO 127.0.0.1 - - [22/Apr/2025 00:06:21] "[31m[1mGET /socket.io/socket.io.js HTTP/1.1[0m" 400 -
+2025-04-22 00:06:21 INFO 127.0.0.1 - - [22/Apr/2025 00:06:21] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-22 00:06:21 INFO 127.0.0.1 - - [22/Apr/2025 00:06:21] "GET /socket.io/?EIO=4&transport=polling&t=PPQcaGR HTTP/1.1" 200 -
+2025-04-22 00:06:21 INFO connected to frontend!
+2025-04-22 00:06:21 INFO sending alerts to frontend!: []
+2025-04-22 00:06:21 INFO 127.0.0.1 - - [22/Apr/2025 00:06:21] "POST /socket.io/?EIO=4&transport=polling&t=PPQcaGr&sid=-LBBWFg7pG4yFKlUAAAE HTTP/1.1" 200 -
+2025-04-22 00:06:21 INFO 127.0.0.1 - - [22/Apr/2025 00:06:21] "GET /socket.io/?EIO=4&transport=polling&t=PPQcaGu&sid=-LBBWFg7pG4yFKlUAAAE HTTP/1.1" 200 -
+2025-04-22 00:07:06 INFO 127.0.0.1 - - [22/Apr/2025 00:07:06] "GET /socket.io/?EIO=4&transport=websocket&sid=-LBBWFg7pG4yFKlUAAAE HTTP/1.1" 200 -
+2025-04-22 00:07:06 INFO 127.0.0.1 - - [22/Apr/2025 00:07:06] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-04-22 00:07:06 INFO 127.0.0.1 - - [22/Apr/2025 00:07:06] "GET /socket.io/?EIO=4&transport=polling&t=PPQcaJS&sid=-LBBWFg7pG4yFKlUAAAE HTTP/1.1" 200 -
+2025-04-22 00:07:07 INFO 127.0.0.1 - - [22/Apr/2025 00:07:07] "GET /socket.io/?EIO=4&transport=polling&t=PPQclTn HTTP/1.1" 200 -
+2025-04-22 00:07:07 INFO connected to frontend!
+2025-04-22 00:07:07 INFO sending alerts to frontend!: []
+2025-04-22 00:07:07 INFO 127.0.0.1 - - [22/Apr/2025 00:07:07] "POST /socket.io/?EIO=4&transport=polling&t=PPQclUI&sid=FtDtv75FGcQNI5wcAAAG HTTP/1.1" 200 -
+2025-04-22 00:07:52 INFO 127.0.0.1 - - [22/Apr/2025 00:07:52] "GET /socket.io/?EIO=4&transport=websocket&sid=FtDtv75FGcQNI5wcAAAG HTTP/1.1" 200 -
+2025-04-22 00:07:52 INFO 127.0.0.1 - - [22/Apr/2025 00:07:52] "GET /socket.io/?EIO=4&transport=polling&t=PPQclUO&sid=FtDtv75FGcQNI5wcAAAG HTTP/1.1" 200 -
+2025-04-22 00:07:57 INFO No sync_queue.json file found. Starting with empty queue.
+2025-04-22 00:07:58 INFO binding to ip: 192.168.1.221
+2025-04-22 00:07:58 INFO Listening for incoming messages on port 6000...
+2025-04-22 00:07:58 INFO Loaded file_to_hash with 0 entries.
+2025-04-22 00:07:58 INFO {}
+2025-04-22 00:07:58 INFO active_session dict: {}
+2025-04-22 00:07:58 INFO 🐕 watchdog started! 🐕
+2025-04-22 00:07:58 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.221:5000
+2025-04-22 00:07:58 INFO [33mPress CTRL+C to quit[0m
+2025-04-22 00:08:00 INFO active_session updated: {'user': 'takumi', 'server_name': 'osaka'}
+2025-04-22 00:08:00 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-22 00:08:00 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-22 00:08:00 INFO trying to connect to server: osaka on port 8000
+2025-04-22 00:08:00 INFO Connected to server: osaka on port 8000
+2025-04-22 00:08:00 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-22 00:08:00 INFO ⏰ time taken to send data: 0.19607901573181152 seconds
+2025-04-22 00:08:00 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-22 00:08:00 INFO status: 200
+2025-04-22 00:08:00 INFO status_msg: IP updated successfully
+2025-04-22 00:08:00 INFO data: []
+2025-04-22 00:08:00 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-22 00:08:00 INFO 200 : OK
+2025-04-22 00:08:00 INFO storing alerts to sessions!: []
+2025-04-22 00:08:00 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-22 00:08:00 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-22 00:08:00 INFO trying to connect to server: osaka on port 8000
+2025-04-22 00:08:00 INFO Connected to server: osaka on port 8000
+2025-04-22 00:08:00 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "AE86"
+      ],
+      [
+        2,
+        "RX-7"
+      ],
+      [
+        3,
+        "AE85"
+      ],
+      [
+        1,
+        "AE86(mbp)"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ],
+      [
+        3,
+        "itsuki"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-22 00:08:00 INFO ⏰ time taken to send data: 0.17647624015808105 seconds
+2025-04-22 00:08:00 INFO server_data: {'data': {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-22 00:08:00 INFO status: 200
+2025-04-22 00:08:00 INFO status_msg: unknown
+2025-04-22 00:08:00 INFO data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:08:00 INFO status: 200 status_msg: unknown data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:08:00 INFO 200 : OK
+2025-04-22 00:08:00 INFO users and devices data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:08:00 INFO Added users and devices to session: {'takumi': ['AE86', 'AE86(mbp)'], 'ryosuke': ['RX-7'], 'itsuki': ['AE85']}
+2025-04-22 00:08:00 INFO 127.0.0.1 - - [22/Apr/2025 00:08:00] "GET /dashboard HTTP/1.1" 200 -
+2025-04-22 00:08:01 INFO 127.0.0.1 - - [22/Apr/2025 00:08:01] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-22 00:08:01 INFO 127.0.0.1 - - [22/Apr/2025 00:08:01] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-04-22 00:08:01 ERROR The client is using an unsupported version of the Socket.IO or Engine.IO protocols (further occurrences of this error will be logged with level INFO)
+2025-04-22 00:08:01 INFO 127.0.0.1 - - [22/Apr/2025 00:08:01] "[31m[1mGET /socket.io/socket.io.js HTTP/1.1[0m" 400 -
+2025-04-22 00:08:01 INFO 127.0.0.1 - - [22/Apr/2025 00:08:01] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-22 00:08:01 INFO 127.0.0.1 - - [22/Apr/2025 00:08:01] "[31m[1mGET /socket.io/socket.io.js HTTP/1.1[0m" 400 -
+2025-04-22 00:08:01 INFO 127.0.0.1 - - [22/Apr/2025 00:08:01] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-22 00:08:01 INFO 127.0.0.1 - - [22/Apr/2025 00:08:01] "GET /socket.io/?EIO=4&transport=polling&t=PPQcyi5 HTTP/1.1" 200 -
+2025-04-22 00:08:02 INFO connected to frontend!
+2025-04-22 00:08:02 INFO sending alerts to frontend!: []
+2025-04-22 00:08:02 INFO 127.0.0.1 - - [22/Apr/2025 00:08:02] "POST /socket.io/?EIO=4&transport=polling&t=PPQcyoK&sid=-vHOvBMaQRSxPQY4AAAA HTTP/1.1" 200 -
+2025-04-22 00:08:02 INFO 127.0.0.1 - - [22/Apr/2025 00:08:02] "GET /socket.io/?EIO=4&transport=polling&t=PPQcyoQ&sid=-vHOvBMaQRSxPQY4AAAA HTTP/1.1" 200 -
+2025-04-22 00:08:47 INFO 127.0.0.1 - - [22/Apr/2025 00:08:47] "GET /socket.io/?EIO=4&transport=websocket&sid=-vHOvBMaQRSxPQY4AAAA HTTP/1.1" 200 -
+2025-04-22 00:08:47 INFO 127.0.0.1 - - [22/Apr/2025 00:08:47] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-04-22 00:08:47 INFO 127.0.0.1 - - [22/Apr/2025 00:08:47] "GET /socket.io/?EIO=4&transport=polling&t=PPQcyqP&sid=-vHOvBMaQRSxPQY4AAAA HTTP/1.1" 200 -
+2025-04-22 00:08:48 INFO 127.0.0.1 - - [22/Apr/2025 00:08:48] "GET /socket.io/?EIO=4&transport=polling&t=PPQd85q HTTP/1.1" 200 -
+2025-04-22 00:08:48 INFO connected to frontend!
+2025-04-22 00:08:48 INFO sending alerts to frontend!: []
+2025-04-22 00:08:48 INFO 127.0.0.1 - - [22/Apr/2025 00:08:48] "POST /socket.io/?EIO=4&transport=polling&t=PPQd863&sid=bPU11a4DLD0wbcRVAAAC HTTP/1.1" 200 -
+2025-04-22 00:09:33 INFO 127.0.0.1 - - [22/Apr/2025 00:09:33] "GET /socket.io/?EIO=4&transport=websocket&sid=bPU11a4DLD0wbcRVAAAC HTTP/1.1" 200 -
+2025-04-22 00:09:33 INFO 127.0.0.1 - - [22/Apr/2025 00:09:33] "GET /socket.io/?EIO=4&transport=polling&t=PPQd868&sid=bPU11a4DLD0wbcRVAAAC HTTP/1.1" 200 -
+2025-04-22 00:09:34 INFO 127.0.0.1 - - [22/Apr/2025 00:09:34] "GET /socket.io/?EIO=4&transport=polling&t=PPQdJTX HTTP/1.1" 200 -
+2025-04-22 00:09:34 INFO connected to frontend!
+2025-04-22 00:09:34 INFO sending alerts to frontend!: []
+2025-04-22 00:09:34 INFO 127.0.0.1 - - [22/Apr/2025 00:09:34] "POST /socket.io/?EIO=4&transport=polling&t=PPQdJTw&sid=9PLpOlvVZyz5JOGdAAAE HTTP/1.1" 200 -
+2025-04-22 00:10:20 INFO 127.0.0.1 - - [22/Apr/2025 00:10:20] "GET /socket.io/?EIO=4&transport=websocket&sid=9PLpOlvVZyz5JOGdAAAE HTTP/1.1" 200 -
+2025-04-22 00:10:20 INFO 127.0.0.1 - - [22/Apr/2025 00:10:20] "GET /socket.io/?EIO=4&transport=polling&t=PPQdJT-&sid=9PLpOlvVZyz5JOGdAAAE HTTP/1.1" 200 -
+2025-04-22 00:10:21 INFO 127.0.0.1 - - [22/Apr/2025 00:10:21] "GET /socket.io/?EIO=4&transport=polling&t=PPQdUmu HTTP/1.1" 200 -
+2025-04-22 00:10:21 INFO connected to frontend!
+2025-04-22 00:10:21 INFO sending alerts to frontend!: []
+2025-04-22 00:10:21 INFO 127.0.0.1 - - [22/Apr/2025 00:10:21] "POST /socket.io/?EIO=4&transport=polling&t=PPQdUnH&sid=dvlmgsDjB4exLldTAAAG HTTP/1.1" 200 -
+2025-04-22 00:11:06 INFO 127.0.0.1 - - [22/Apr/2025 00:11:06] "GET /socket.io/?EIO=4&transport=websocket&sid=dvlmgsDjB4exLldTAAAG HTTP/1.1" 200 -
+2025-04-22 00:11:06 INFO 127.0.0.1 - - [22/Apr/2025 00:11:06] "GET /socket.io/?EIO=4&transport=polling&t=PPQdUnM&sid=dvlmgsDjB4exLldTAAAG HTTP/1.1" 200 -
+2025-04-22 00:11:06 INFO 127.0.0.1 - - [22/Apr/2025 00:11:06] "GET /socket.io/?EIO=4&transport=polling&t=PPQdfx0 HTTP/1.1" 200 -
+2025-04-22 00:11:06 INFO connected to frontend!
+2025-04-22 00:11:06 INFO sending alerts to frontend!: []
+2025-04-22 00:11:06 INFO 127.0.0.1 - - [22/Apr/2025 00:11:06] "POST /socket.io/?EIO=4&transport=polling&t=PPQdfxM&sid=LJ4QWCp5h8j7WHWqAAAI HTTP/1.1" 200 -
+2025-04-22 00:11:52 INFO 127.0.0.1 - - [22/Apr/2025 00:11:52] "GET /socket.io/?EIO=4&transport=websocket&sid=LJ4QWCp5h8j7WHWqAAAI HTTP/1.1" 200 -
+2025-04-22 00:11:52 INFO 127.0.0.1 - - [22/Apr/2025 00:11:52] "GET /socket.io/?EIO=4&transport=polling&t=PPQdfxR&sid=LJ4QWCp5h8j7WHWqAAAI HTTP/1.1" 200 -
+2025-04-22 00:11:53 INFO 127.0.0.1 - - [22/Apr/2025 00:11:53] "GET /socket.io/?EIO=4&transport=polling&t=PPQdrEM HTTP/1.1" 200 -
+2025-04-22 00:11:53 INFO connected to frontend!
+2025-04-22 00:11:53 INFO sending alerts to frontend!: []
+2025-04-22 00:11:53 INFO 127.0.0.1 - - [22/Apr/2025 00:11:53] "POST /socket.io/?EIO=4&transport=polling&t=PPQdrEg&sid=zzlogtCTPA1NF95NAAAK HTTP/1.1" 200 -
+2025-04-22 00:12:38 INFO 127.0.0.1 - - [22/Apr/2025 00:12:38] "GET /socket.io/?EIO=4&transport=websocket&sid=zzlogtCTPA1NF95NAAAK HTTP/1.1" 200 -
+2025-04-22 00:12:38 INFO 127.0.0.1 - - [22/Apr/2025 00:12:38] "GET /socket.io/?EIO=4&transport=polling&t=PPQdrEl&sid=zzlogtCTPA1NF95NAAAK HTTP/1.1" 200 -
+2025-04-22 00:12:39 INFO 127.0.0.1 - - [22/Apr/2025 00:12:39] "GET /socket.io/?EIO=4&transport=polling&t=PPQe0Ua HTTP/1.1" 200 -
+2025-04-22 00:12:39 INFO connected to frontend!
+2025-04-22 00:12:39 INFO sending alerts to frontend!: []
+2025-04-22 00:12:39 INFO 127.0.0.1 - - [22/Apr/2025 00:12:39] "POST /socket.io/?EIO=4&transport=polling&t=PPQe0Ut&sid=IqmuGGoV6xrQyMP2AAAM HTTP/1.1" 200 -
+2025-04-22 00:13:24 INFO 127.0.0.1 - - [22/Apr/2025 00:13:24] "GET /socket.io/?EIO=4&transport=websocket&sid=IqmuGGoV6xrQyMP2AAAM HTTP/1.1" 200 -
+2025-04-22 00:13:24 INFO 127.0.0.1 - - [22/Apr/2025 00:13:24] "GET /socket.io/?EIO=4&transport=polling&t=PPQe0Uy&sid=IqmuGGoV6xrQyMP2AAAM HTTP/1.1" 200 -
+2025-04-22 00:13:25 INFO 127.0.0.1 - - [22/Apr/2025 00:13:25] "GET /socket.io/?EIO=4&transport=polling&t=PPQeBjA HTTP/1.1" 200 -
+2025-04-22 00:13:25 INFO connected to frontend!
+2025-04-22 00:13:25 INFO sending alerts to frontend!: []
+2025-04-22 00:13:25 INFO 127.0.0.1 - - [22/Apr/2025 00:13:25] "POST /socket.io/?EIO=4&transport=polling&t=PPQeBjb&sid=iVJGTDB9gyeZ2iyyAAAO HTTP/1.1" 200 -
+2025-04-22 00:14:10 INFO 127.0.0.1 - - [22/Apr/2025 00:14:10] "GET /socket.io/?EIO=4&transport=websocket&sid=iVJGTDB9gyeZ2iyyAAAO HTTP/1.1" 200 -
+2025-04-22 00:14:10 INFO 127.0.0.1 - - [22/Apr/2025 00:14:10] "GET /socket.io/?EIO=4&transport=polling&t=PPQeBjf&sid=iVJGTDB9gyeZ2iyyAAAO HTTP/1.1" 200 -
+2025-04-22 00:14:11 INFO 127.0.0.1 - - [22/Apr/2025 00:14:11] "GET /socket.io/?EIO=4&transport=polling&t=PPQeMyH HTTP/1.1" 200 -
+2025-04-22 00:14:11 INFO connected to frontend!
+2025-04-22 00:14:11 INFO sending alerts to frontend!: []
+2025-04-22 00:14:11 INFO 127.0.0.1 - - [22/Apr/2025 00:14:11] "POST /socket.io/?EIO=4&transport=polling&t=PPQeMyZ&sid=Hi_0u_FHObcYFhaVAAAQ HTTP/1.1" 200 -
+2025-04-22 00:14:56 INFO 127.0.0.1 - - [22/Apr/2025 00:14:56] "GET /socket.io/?EIO=4&transport=websocket&sid=Hi_0u_FHObcYFhaVAAAQ HTTP/1.1" 200 -
+2025-04-22 00:14:56 INFO 127.0.0.1 - - [22/Apr/2025 00:14:56] "GET /socket.io/?EIO=4&transport=polling&t=PPQeMye&sid=Hi_0u_FHObcYFhaVAAAQ HTTP/1.1" 200 -
+2025-04-22 00:14:57 INFO 127.0.0.1 - - [22/Apr/2025 00:14:57] "GET /socket.io/?EIO=4&transport=polling&t=PPQeYBo HTTP/1.1" 200 -
+2025-04-22 00:14:57 INFO connected to frontend!
+2025-04-22 00:14:57 INFO sending alerts to frontend!: []
+2025-04-22 00:14:57 INFO 127.0.0.1 - - [22/Apr/2025 00:14:57] "POST /socket.io/?EIO=4&transport=polling&t=PPQeYCA&sid=5Mp2YwUTeSVC8vtfAAAS HTTP/1.1" 200 -
+2025-04-22 00:15:42 INFO 127.0.0.1 - - [22/Apr/2025 00:15:42] "GET /socket.io/?EIO=4&transport=websocket&sid=5Mp2YwUTeSVC8vtfAAAS HTTP/1.1" 200 -
+2025-04-22 00:15:42 INFO 127.0.0.1 - - [22/Apr/2025 00:15:42] "GET /socket.io/?EIO=4&transport=polling&t=PPQeYCD&sid=5Mp2YwUTeSVC8vtfAAAS HTTP/1.1" 200 -
+2025-04-22 00:15:43 INFO 127.0.0.1 - - [22/Apr/2025 00:15:43] "GET /socket.io/?EIO=4&transport=polling&t=PPQejSX HTTP/1.1" 200 -
+2025-04-22 00:15:43 INFO connected to frontend!
+2025-04-22 00:15:43 INFO sending alerts to frontend!: []
+2025-04-22 00:15:43 INFO 127.0.0.1 - - [22/Apr/2025 00:15:43] "POST /socket.io/?EIO=4&transport=polling&t=PPQejSs&sid=QYKSAcldV2zSlLACAAAU HTTP/1.1" 200 -
+2025-04-22 00:16:28 INFO 127.0.0.1 - - [22/Apr/2025 00:16:28] "GET /socket.io/?EIO=4&transport=websocket&sid=QYKSAcldV2zSlLACAAAU HTTP/1.1" 200 -
+2025-04-22 00:16:28 INFO 127.0.0.1 - - [22/Apr/2025 00:16:28] "GET /socket.io/?EIO=4&transport=polling&t=PPQejSz&sid=QYKSAcldV2zSlLACAAAU HTTP/1.1" 200 -
+2025-04-22 00:16:29 INFO 127.0.0.1 - - [22/Apr/2025 00:16:29] "GET /socket.io/?EIO=4&transport=polling&t=PPQeugn HTTP/1.1" 200 -
+2025-04-22 00:16:29 INFO connected to frontend!
+2025-04-22 00:16:29 INFO sending alerts to frontend!: []
+2025-04-22 00:16:29 INFO 127.0.0.1 - - [22/Apr/2025 00:16:29] "POST /socket.io/?EIO=4&transport=polling&t=PPQeuhA&sid=SBZMJZUcXtJF5rUTAAAW HTTP/1.1" 200 -
+2025-04-22 00:17:14 INFO 127.0.0.1 - - [22/Apr/2025 00:17:14] "GET /socket.io/?EIO=4&transport=websocket&sid=SBZMJZUcXtJF5rUTAAAW HTTP/1.1" 200 -
+2025-04-22 00:17:14 INFO 127.0.0.1 - - [22/Apr/2025 00:17:14] "GET /socket.io/?EIO=4&transport=polling&t=PPQeuhG&sid=SBZMJZUcXtJF5rUTAAAW HTTP/1.1" 200 -
+2025-04-22 00:17:15 INFO 127.0.0.1 - - [22/Apr/2025 00:17:15] "GET /socket.io/?EIO=4&transport=polling&t=PPQf3x9 HTTP/1.1" 200 -
+2025-04-22 00:17:15 INFO connected to frontend!
+2025-04-22 00:17:15 INFO sending alerts to frontend!: []
+2025-04-22 00:17:15 INFO 127.0.0.1 - - [22/Apr/2025 00:17:15] "POST /socket.io/?EIO=4&transport=polling&t=PPQf3xS&sid=05LX_7rVnnqoJsRLAAAY HTTP/1.1" 200 -
+2025-04-22 00:18:00 INFO 127.0.0.1 - - [22/Apr/2025 00:18:00] "GET /socket.io/?EIO=4&transport=websocket&sid=05LX_7rVnnqoJsRLAAAY HTTP/1.1" 200 -
+2025-04-22 00:18:00 INFO 127.0.0.1 - - [22/Apr/2025 00:18:00] "GET /socket.io/?EIO=4&transport=polling&t=PPQf3xW&sid=05LX_7rVnnqoJsRLAAAY HTTP/1.1" 200 -
+2025-04-22 00:18:01 INFO 127.0.0.1 - - [22/Apr/2025 00:18:01] "GET /socket.io/?EIO=4&transport=polling&t=PPQfF9s HTTP/1.1" 200 -
+2025-04-22 00:18:01 INFO connected to frontend!
+2025-04-22 00:18:01 INFO sending alerts to frontend!: []
+2025-04-22 00:18:01 INFO 127.0.0.1 - - [22/Apr/2025 00:18:01] "POST /socket.io/?EIO=4&transport=polling&t=PPQfFAB&sid=zebVWSmD2ySIbeuFAAAa HTTP/1.1" 200 -
+2025-04-22 00:18:46 INFO 127.0.0.1 - - [22/Apr/2025 00:18:46] "GET /socket.io/?EIO=4&transport=websocket&sid=zebVWSmD2ySIbeuFAAAa HTTP/1.1" 200 -
+2025-04-22 00:18:46 INFO 127.0.0.1 - - [22/Apr/2025 00:18:46] "GET /socket.io/?EIO=4&transport=polling&t=PPQfFAH&sid=zebVWSmD2ySIbeuFAAAa HTTP/1.1" 200 -
+2025-04-22 00:18:47 INFO 127.0.0.1 - - [22/Apr/2025 00:18:47] "GET /socket.io/?EIO=4&transport=polling&t=PPQfQNQ HTTP/1.1" 200 -
+2025-04-22 00:18:47 INFO connected to frontend!
+2025-04-22 00:18:47 INFO sending alerts to frontend!: []
+2025-04-22 00:18:47 INFO 127.0.0.1 - - [22/Apr/2025 00:18:47] "POST /socket.io/?EIO=4&transport=polling&t=PPQfQNk&sid=RYWKWJWQvOUXLOzIAAAc HTTP/1.1" 200 -
+2025-04-22 00:19:32 INFO 127.0.0.1 - - [22/Apr/2025 00:19:32] "GET /socket.io/?EIO=4&transport=websocket&sid=RYWKWJWQvOUXLOzIAAAc HTTP/1.1" 200 -
+2025-04-22 00:19:32 INFO 127.0.0.1 - - [22/Apr/2025 00:19:32] "GET /socket.io/?EIO=4&transport=polling&t=PPQfQNo&sid=RYWKWJWQvOUXLOzIAAAc HTTP/1.1" 200 -
+2025-04-22 00:19:33 INFO 127.0.0.1 - - [22/Apr/2025 00:19:33] "GET /socket.io/?EIO=4&transport=polling&t=PPQfbeb HTTP/1.1" 200 -
+2025-04-22 00:19:33 INFO connected to frontend!
+2025-04-22 00:19:33 INFO sending alerts to frontend!: []
+2025-04-22 00:19:33 INFO 127.0.0.1 - - [22/Apr/2025 00:19:33] "POST /socket.io/?EIO=4&transport=polling&t=PPQfbev&sid=n4Vq9tWLZeOrP2EeAAAe HTTP/1.1" 200 -
+2025-04-22 00:20:18 INFO 127.0.0.1 - - [22/Apr/2025 00:20:18] "GET /socket.io/?EIO=4&transport=websocket&sid=n4Vq9tWLZeOrP2EeAAAe HTTP/1.1" 200 -
+2025-04-22 00:20:18 INFO 127.0.0.1 - - [22/Apr/2025 00:20:18] "GET /socket.io/?EIO=4&transport=polling&t=PPQfbe-&sid=n4Vq9tWLZeOrP2EeAAAe HTTP/1.1" 200 -
+2025-04-22 00:20:19 INFO 127.0.0.1 - - [22/Apr/2025 00:20:19] "GET /socket.io/?EIO=4&transport=polling&t=PPQfmy3 HTTP/1.1" 200 -
+2025-04-22 00:20:19 INFO connected to frontend!
+2025-04-22 00:20:19 INFO sending alerts to frontend!: []
+2025-04-22 00:20:19 INFO 127.0.0.1 - - [22/Apr/2025 00:20:19] "POST /socket.io/?EIO=4&transport=polling&t=PPQfmyM&sid=lVtMGxCnH5EAKl2jAAAg HTTP/1.1" 200 -
+2025-04-22 00:20:50 INFO No sync_queue.json file found. Starting with empty queue.
+2025-04-22 00:20:51 INFO binding to ip: 192.168.1.221
+2025-04-22 00:20:51 INFO Listening for incoming messages on port 6000...
+2025-04-22 00:20:51 INFO Loaded file_to_hash with 0 entries.
+2025-04-22 00:20:51 INFO {}
+2025-04-22 00:20:51 INFO active_session dict: {}
+2025-04-22 00:20:51 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.221:5000
+2025-04-22 00:20:51 INFO 🐕 watchdog started! 🐕
+2025-04-22 00:20:51 INFO [33mPress CTRL+C to quit[0m
+2025-04-22 00:20:52 INFO 127.0.0.1 - - [22/Apr/2025 00:20:52] "GET /socket.io/?EIO=4&transport=polling&t=PPQfuzw HTTP/1.1" 200 -
+2025-04-22 00:20:52 INFO connected to frontend!
+2025-04-22 00:20:52 INFO sending alerts to frontend!: []
+2025-04-22 00:20:52 INFO 127.0.0.1 - - [22/Apr/2025 00:20:52] "POST /socket.io/?EIO=4&transport=polling&t=PPQfu-T&sid=LkgSAan4Gx-wk8DMAAAA HTTP/1.1" 200 -
+2025-04-22 00:20:53 INFO 127.0.0.1 - - [22/Apr/2025 00:20:53] "GET /socket.io/?EIO=4&transport=websocket&sid=LkgSAan4Gx-wk8DMAAAA HTTP/1.1" 200 -
+2025-04-22 00:20:53 INFO 127.0.0.1 - - [22/Apr/2025 00:20:53] "GET /socket.io/?EIO=4&transport=polling&t=PPQfu-X&sid=LkgSAan4Gx-wk8DMAAAA HTTP/1.1" 200 -
+2025-04-22 00:20:53 INFO active_session updated: {'user': 'takumi', 'server_name': 'osaka'}
+2025-04-22 00:20:53 INFO tracking_data sent: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-22 00:20:53 INFO sending data to server: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-22 00:20:53 INFO trying to connect to server: osaka on port 8000
+2025-04-22 00:20:53 INFO Connected to server: osaka on port 8000
+2025-04-22 00:20:53 INFO server response: {"status": "200", "status_msg": "IP updated successfully", "data": []}, type: <class 'str'>
+2025-04-22 00:20:53 INFO ⏰ time taken to send data: 0.1415402889251709 seconds
+2025-04-22 00:20:53 INFO server_data: {'status': '200', 'status_msg': 'IP updated successfully', 'data': []}
+2025-04-22 00:20:53 INFO status: 200
+2025-04-22 00:20:53 INFO status_msg: IP updated successfully
+2025-04-22 00:20:53 INFO data: []
+2025-04-22 00:20:53 INFO status: 200 status_msg: IP updated successfully data: []
+2025-04-22 00:20:53 INFO 200 : OK
+2025-04-22 00:20:53 INFO storing alerts to sessions!: []
+2025-04-22 00:20:53 INFO getting users and devices info... sending: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-22 00:20:53 INFO sending data to server: {"action": "request", "data": {"users": ["user_id", "name"], "devices": ["user_id", "name"]}}
+2025-04-22 00:20:53 INFO trying to connect to server: osaka on port 8000
+2025-04-22 00:20:53 INFO Connected to server: osaka on port 8000
+2025-04-22 00:20:54 INFO server response: {
+  "data": {
+    "devices": [
+      [
+        1,
+        "AE86"
+      ],
+      [
+        2,
+        "RX-7"
+      ],
+      [
+        3,
+        "AE85"
+      ],
+      [
+        1,
+        "AE86(mbp)"
+      ]
+    ],
+    "users": [
+      [
+        1,
+        "takumi"
+      ],
+      [
+        2,
+        "ryosuke"
+      ],
+      [
+        3,
+        "itsuki"
+      ]
+    ]
+  },
+  "requested_data": {
+    "devices": [
+      "user_id",
+      "name"
+    ],
+    "users": [
+      "user_id",
+      "name"
+    ]
+  }
+}, type: <class 'str'>
+2025-04-22 00:20:54 INFO ⏰ time taken to send data: 0.09988713264465332 seconds
+2025-04-22 00:20:54 INFO server_data: {'data': {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}, 'requested_data': {'devices': ['user_id', 'name'], 'users': ['user_id', 'name']}}
+2025-04-22 00:20:54 INFO status: 200
+2025-04-22 00:20:54 INFO status_msg: unknown
+2025-04-22 00:20:54 INFO data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:20:54 INFO status: 200 status_msg: unknown data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:20:54 INFO 200 : OK
+2025-04-22 00:20:54 INFO users and devices data: {'devices': [[1, 'AE86'], [2, 'RX-7'], [3, 'AE85'], [1, 'AE86(mbp)']], 'users': [[1, 'takumi'], [2, 'ryosuke'], [3, 'itsuki']]}
+2025-04-22 00:20:54 INFO Added users and devices to session: {'takumi': ['AE86', 'AE86(mbp)'], 'ryosuke': ['RX-7'], 'itsuki': ['AE85']}
+2025-04-22 00:20:54 INFO 127.0.0.1 - - [22/Apr/2025 00:20:54] "GET /dashboard HTTP/1.1" 200 -
+2025-04-22 00:20:54 INFO 127.0.0.1 - - [22/Apr/2025 00:20:54] "[36mGET /static/css/minimal_style.css HTTP/1.1[0m" 304 -
+2025-04-22 00:20:54 INFO 127.0.0.1 - - [22/Apr/2025 00:20:54] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-04-22 00:20:54 ERROR The client is using an unsupported version of the Socket.IO or Engine.IO protocols (further occurrences of this error will be logged with level INFO)
+2025-04-22 00:20:54 INFO 127.0.0.1 - - [22/Apr/2025 00:20:54] "[31m[1mGET /socket.io/socket.io.js HTTP/1.1[0m" 400 -
+2025-04-22 00:20:54 INFO 127.0.0.1 - - [22/Apr/2025 00:20:54] "[36mGET /static/images/initial_d03.jpg HTTP/1.1[0m" 304 -
+2025-04-22 00:20:54 INFO 127.0.0.1 - - [22/Apr/2025 00:20:54] "[31m[1mGET /socket.io/socket.io.js HTTP/1.1[0m" 400 -
+2025-04-22 00:20:54 INFO 127.0.0.1 - - [22/Apr/2025 00:20:54] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-04-22 00:20:54 INFO 127.0.0.1 - - [22/Apr/2025 00:20:54] "GET /socket.io/?EIO=4&transport=polling&t=PPQfvPS HTTP/1.1" 200 -
+2025-04-22 00:20:54 INFO connected to frontend!
+2025-04-22 00:20:54 INFO sending alerts to frontend!: []
+2025-04-22 00:20:54 INFO 127.0.0.1 - - [22/Apr/2025 00:20:54] "POST /socket.io/?EIO=4&transport=polling&t=PPQfvRZ&sid=-_ak4zZZ8oIfli_HAAAC HTTP/1.1" 200 -
+2025-04-22 00:20:54 INFO 127.0.0.1 - - [22/Apr/2025 00:20:54] "GET /socket.io/?EIO=4&transport=polling&t=PPQfvRc&sid=-_ak4zZZ8oIfli_HAAAC HTTP/1.1" 200 -
+2025-04-22 00:21:39 INFO 127.0.0.1 - - [22/Apr/2025 00:21:39] "GET /socket.io/?EIO=4&transport=websocket&sid=-_ak4zZZ8oIfli_HAAAC HTTP/1.1" 200 -
+2025-04-22 00:21:39 INFO 127.0.0.1 - - [22/Apr/2025 00:21:39] "[36mGET /static/images/favicons/bouncing-frog-head.gif HTTP/1.1[0m" 304 -
+2025-04-22 00:21:39 INFO 127.0.0.1 - - [22/Apr/2025 00:21:39] "GET /socket.io/?EIO=4&transport=polling&t=PPQfvU2&sid=-_ak4zZZ8oIfli_HAAAC HTTP/1.1" 200 -
+2025-04-22 00:21:40 INFO 127.0.0.1 - - [22/Apr/2025 00:21:40] "GET /socket.io/?EIO=4&transport=polling&t=PPQg4d2 HTTP/1.1" 200 -
+2025-04-22 00:21:40 INFO connected to frontend!
+2025-04-22 00:21:40 INFO sending alerts to frontend!: []
+2025-04-22 00:21:40 INFO 127.0.0.1 - - [22/Apr/2025 00:21:40] "POST /socket.io/?EIO=4&transport=polling&t=PPQg4dP&sid=QD2UmFvw3OH7dyYYAAAE HTTP/1.1" 200 -
+2025-04-22 00:22:25 INFO 127.0.0.1 - - [22/Apr/2025 00:22:25] "GET /socket.io/?EIO=4&transport=websocket&sid=QD2UmFvw3OH7dyYYAAAE HTTP/1.1" 200 -
+2025-04-22 00:22:25 INFO 127.0.0.1 - - [22/Apr/2025 00:22:25] "GET /socket.io/?EIO=4&transport=polling&t=PPQg4dW&sid=QD2UmFvw3OH7dyYYAAAE HTTP/1.1" 200 -
+2025-04-22 00:22:27 INFO 127.0.0.1 - - [22/Apr/2025 00:22:27] "GET /socket.io/?EIO=4&transport=polling&t=PPQgFzQ HTTP/1.1" 200 -
+2025-04-22 00:22:27 INFO connected to frontend!
+2025-04-22 00:22:27 INFO sending alerts to frontend!: []
+2025-04-22 00:22:27 INFO 127.0.0.1 - - [22/Apr/2025 00:22:27] "POST /socket.io/?EIO=4&transport=polling&t=PPQgFzn&sid=9SzlXZyK3-dLvO4TAAAG HTTP/1.1" 200 -
+2025-04-22 00:23:12 INFO 127.0.0.1 - - [22/Apr/2025 00:23:12] "GET /socket.io/?EIO=4&transport=websocket&sid=9SzlXZyK3-dLvO4TAAAG HTTP/1.1" 200 -
+2025-04-22 00:23:12 INFO 127.0.0.1 - - [22/Apr/2025 00:23:12] "GET /socket.io/?EIO=4&transport=polling&t=PPQgFzt&sid=9SzlXZyK3-dLvO4TAAAG HTTP/1.1" 200 -
+2025-04-22 00:23:13 INFO 127.0.0.1 - - [22/Apr/2025 00:23:13] "GET /socket.io/?EIO=4&transport=polling&t=PPQgRFu HTTP/1.1" 200 -
+2025-04-22 00:23:13 INFO connected to frontend!
+2025-04-22 00:23:13 INFO sending alerts to frontend!: []
+2025-04-22 00:23:13 INFO 127.0.0.1 - - [22/Apr/2025 00:23:13] "POST /socket.io/?EIO=4&transport=polling&t=PPQgRG1&sid=DHjb8VbDRSgvxZzwAAAI HTTP/1.1" 200 -
+2025-04-22 00:23:58 INFO 127.0.0.1 - - [22/Apr/2025 00:23:58] "GET /socket.io/?EIO=4&transport=websocket&sid=DHjb8VbDRSgvxZzwAAAI HTTP/1.1" 200 -
+2025-04-22 00:23:58 INFO 127.0.0.1 - - [22/Apr/2025 00:23:58] "GET /socket.io/?EIO=4&transport=polling&t=PPQgRG6&sid=DHjb8VbDRSgvxZzwAAAI HTTP/1.1" 200 -
+2025-04-22 00:23:59 INFO 127.0.0.1 - - [22/Apr/2025 00:23:59] "GET /socket.io/?EIO=4&transport=polling&t=PPQgcRC HTTP/1.1" 200 -
+2025-04-22 00:23:59 INFO connected to frontend!
+2025-04-22 00:23:59 INFO sending alerts to frontend!: []
+2025-04-22 00:23:59 INFO 127.0.0.1 - - [22/Apr/2025 00:23:59] "POST /socket.io/?EIO=4&transport=polling&t=PPQgcRW&sid=Bmj4DGzhDEeupmFVAAAK HTTP/1.1" 200 -
+2025-04-22 00:24:44 INFO 127.0.0.1 - - [22/Apr/2025 00:24:44] "GET /socket.io/?EIO=4&transport=websocket&sid=Bmj4DGzhDEeupmFVAAAK HTTP/1.1" 200 -
+2025-04-22 00:24:44 INFO 127.0.0.1 - - [22/Apr/2025 00:24:44] "GET /socket.io/?EIO=4&transport=polling&t=PPQgcRa&sid=Bmj4DGzhDEeupmFVAAAK HTTP/1.1" 200 -
+2025-04-22 00:24:44 INFO 127.0.0.1 - - [22/Apr/2025 00:24:44] "GET /socket.io/?EIO=4&transport=polling&t=PPQgnaZ HTTP/1.1" 200 -
+2025-04-22 00:24:44 INFO connected to frontend!
+2025-04-22 00:24:44 INFO sending alerts to frontend!: []
+2025-04-22 00:24:44 INFO 127.0.0.1 - - [22/Apr/2025 00:24:44] "POST /socket.io/?EIO=4&transport=polling&t=PPQgnau&sid=cU5tH5VzJ3Qll1_eAAAM HTTP/1.1" 200 -
+2025-04-22 00:25:29 INFO 127.0.0.1 - - [22/Apr/2025 00:25:29] "GET /socket.io/?EIO=4&transport=websocket&sid=cU5tH5VzJ3Qll1_eAAAM HTTP/1.1" 200 -
+2025-04-22 00:25:29 INFO 127.0.0.1 - - [22/Apr/2025 00:25:29] "GET /socket.io/?EIO=4&transport=polling&t=PPQgnax&sid=cU5tH5VzJ3Qll1_eAAAM HTTP/1.1" 200 -
+2025-04-22 00:25:30 INFO 127.0.0.1 - - [22/Apr/2025 00:25:30] "GET /socket.io/?EIO=4&transport=polling&t=PPQgyl1 HTTP/1.1" 200 -
+2025-04-22 00:25:30 INFO connected to frontend!
+2025-04-22 00:25:30 INFO sending alerts to frontend!: []
+2025-04-22 00:25:30 INFO 127.0.0.1 - - [22/Apr/2025 00:25:30] "POST /socket.io/?EIO=4&transport=polling&t=PPQgylK&sid=5dXgGR4_sMzASWGKAAAO HTTP/1.1" 200 -
+2025-04-22 00:26:15 INFO 127.0.0.1 - - [22/Apr/2025 00:26:15] "GET /socket.io/?EIO=4&transport=websocket&sid=5dXgGR4_sMzASWGKAAAO HTTP/1.1" 200 -
+2025-04-22 00:26:15 INFO 127.0.0.1 - - [22/Apr/2025 00:26:15] "GET /socket.io/?EIO=4&transport=polling&t=PPQgylO&sid=5dXgGR4_sMzASWGKAAAO HTTP/1.1" 200 -
+2025-04-22 00:26:16 INFO 127.0.0.1 - - [22/Apr/2025 00:26:16] "GET /socket.io/?EIO=4&transport=polling&t=PPQh7tZ HTTP/1.1" 200 -
+2025-04-22 00:26:16 INFO connected to frontend!
+2025-04-22 00:26:16 INFO sending alerts to frontend!: []
+2025-04-22 00:26:16 INFO 127.0.0.1 - - [22/Apr/2025 00:26:16] "POST /socket.io/?EIO=4&transport=polling&t=PPQh7t-&sid=__ztl4HSnneh-YCTAAAQ HTTP/1.1" 200 -
+2025-04-22 00:27:01 INFO 127.0.0.1 - - [22/Apr/2025 00:27:01] "GET /socket.io/?EIO=4&transport=websocket&sid=__ztl4HSnneh-YCTAAAQ HTTP/1.1" 200 -
+2025-04-22 00:27:01 INFO 127.0.0.1 - - [22/Apr/2025 00:27:01] "GET /socket.io/?EIO=4&transport=polling&t=PPQh7u3&sid=__ztl4HSnneh-YCTAAAQ HTTP/1.1" 200 -
+2025-04-22 00:27:02 INFO 127.0.0.1 - - [22/Apr/2025 00:27:02] "GET /socket.io/?EIO=4&transport=polling&t=PPQhJAs HTTP/1.1" 200 -
+2025-04-22 00:27:02 INFO connected to frontend!
+2025-04-22 00:27:02 INFO sending alerts to frontend!: []
+2025-04-22 00:27:02 INFO 127.0.0.1 - - [22/Apr/2025 00:27:02] "POST /socket.io/?EIO=4&transport=polling&t=PPQhJBF&sid=2wjpZHxhMhKLewNjAAAS HTTP/1.1" 200 -
+2025-04-22 00:27:47 INFO 127.0.0.1 - - [22/Apr/2025 00:27:47] "GET /socket.io/?EIO=4&transport=websocket&sid=2wjpZHxhMhKLewNjAAAS HTTP/1.1" 200 -
+2025-04-22 00:27:47 INFO 127.0.0.1 - - [22/Apr/2025 00:27:47] "GET /socket.io/?EIO=4&transport=polling&t=PPQhJBK&sid=2wjpZHxhMhKLewNjAAAS HTTP/1.1" 200 -
+2025-04-22 00:27:48 INFO 127.0.0.1 - - [22/Apr/2025 00:27:48] "GET /socket.io/?EIO=4&transport=polling&t=PPQhUMn HTTP/1.1" 200 -
+2025-04-22 00:27:48 INFO connected to frontend!
+2025-04-22 00:27:48 INFO sending alerts to frontend!: []
+2025-04-22 00:27:48 INFO 127.0.0.1 - - [22/Apr/2025 00:27:48] "POST /socket.io/?EIO=4&transport=polling&t=PPQhUNA&sid=luaa5XoFx0xAQ-7DAAAU HTTP/1.1" 200 -
+2025-04-22 00:28:33 INFO 127.0.0.1 - - [22/Apr/2025 00:28:33] "GET /socket.io/?EIO=4&transport=websocket&sid=luaa5XoFx0xAQ-7DAAAU HTTP/1.1" 200 -
+2025-04-22 00:28:33 INFO 127.0.0.1 - - [22/Apr/2025 00:28:33] "GET /socket.io/?EIO=4&transport=polling&t=PPQhUNG&sid=luaa5XoFx0xAQ-7DAAAU HTTP/1.1" 200 -
+2025-04-22 00:28:34 INFO 127.0.0.1 - - [22/Apr/2025 00:28:34] "GET /socket.io/?EIO=4&transport=polling&t=PPQhfhX HTTP/1.1" 200 -
+2025-04-22 00:28:34 INFO connected to frontend!
+2025-04-22 00:28:34 INFO sending alerts to frontend!: []
+2025-04-22 00:28:34 INFO 127.0.0.1 - - [22/Apr/2025 00:28:34] "POST /socket.io/?EIO=4&transport=polling&t=PPQhfht&sid=g00V2t1Ly60ecVTaAAAW HTTP/1.1" 200 -
+2025-04-22 00:29:19 INFO 127.0.0.1 - - [22/Apr/2025 00:29:19] "GET /socket.io/?EIO=4&transport=websocket&sid=g00V2t1Ly60ecVTaAAAW HTTP/1.1" 200 -
+2025-04-22 00:29:19 INFO 127.0.0.1 - - [22/Apr/2025 00:29:19] "GET /socket.io/?EIO=4&transport=polling&t=PPQhfhx&sid=g00V2t1Ly60ecVTaAAAW HTTP/1.1" 200 -
+2025-04-22 00:29:20 INFO 127.0.0.1 - - [22/Apr/2025 00:29:20] "GET /socket.io/?EIO=4&transport=polling&t=PPQhqz8 HTTP/1.1" 200 -
+2025-04-22 00:29:20 INFO connected to frontend!
+2025-04-22 00:29:20 INFO sending alerts to frontend!: []
+2025-04-22 00:29:20 INFO 127.0.0.1 - - [22/Apr/2025 00:29:20] "POST /socket.io/?EIO=4&transport=polling&t=PPQhqzU&sid=wO4Q3Q3V4fgHbnAnAAAY HTTP/1.1" 200 -
+2025-04-22 00:30:05 INFO 127.0.0.1 - - [22/Apr/2025 00:30:05] "GET /socket.io/?EIO=4&transport=websocket&sid=wO4Q3Q3V4fgHbnAnAAAY HTTP/1.1" 200 -
+2025-04-22 00:30:05 INFO 127.0.0.1 - - [22/Apr/2025 00:30:05] "GET /socket.io/?EIO=4&transport=polling&t=PPQhqzX&sid=wO4Q3Q3V4fgHbnAnAAAY HTTP/1.1" 200 -
+2025-04-22 00:30:07 INFO 127.0.0.1 - - [22/Apr/2025 00:30:07] "GET /socket.io/?EIO=4&transport=polling&t=PPQi0M0 HTTP/1.1" 200 -
+2025-04-22 00:30:07 INFO connected to frontend!
+2025-04-22 00:30:07 INFO sending alerts to frontend!: []
+2025-04-22 00:30:07 INFO 127.0.0.1 - - [22/Apr/2025 00:30:07] "POST /socket.io/?EIO=4&transport=polling&t=PPQi0MM&sid=lH5Pf9yMzhFgdb66AAAa HTTP/1.1" 200 -
+2025-04-22 00:30:52 INFO 127.0.0.1 - - [22/Apr/2025 00:30:52] "GET /socket.io/?EIO=4&transport=websocket&sid=lH5Pf9yMzhFgdb66AAAa HTTP/1.1" 200 -
+2025-04-22 00:30:52 INFO 127.0.0.1 - - [22/Apr/2025 00:30:52] "GET /socket.io/?EIO=4&transport=polling&t=PPQi0MP&sid=lH5Pf9yMzhFgdb66AAAa HTTP/1.1" 200 -
+2025-04-22 00:30:52 INFO 127.0.0.1 - - [22/Apr/2025 00:30:52] "GET /socket.io/?EIO=4&transport=polling&t=PPQiBUP HTTP/1.1" 200 -
+2025-04-22 00:30:52 INFO connected to frontend!
+2025-04-22 00:30:52 INFO sending alerts to frontend!: []
+2025-04-22 00:30:52 INFO 127.0.0.1 - - [22/Apr/2025 00:30:52] "POST /socket.io/?EIO=4&transport=polling&t=PPQiBUl&sid=AaVRI2kPwL031NUlAAAc HTTP/1.1" 200 -
+2025-04-22 00:31:37 INFO 127.0.0.1 - - [22/Apr/2025 00:31:37] "GET /socket.io/?EIO=4&transport=websocket&sid=AaVRI2kPwL031NUlAAAc HTTP/1.1" 200 -
+2025-04-22 00:31:37 INFO 127.0.0.1 - - [22/Apr/2025 00:31:37] "GET /socket.io/?EIO=4&transport=polling&t=PPQiBUp&sid=AaVRI2kPwL031NUlAAAc HTTP/1.1" 200 -
+2025-04-22 00:31:38 INFO 127.0.0.1 - - [22/Apr/2025 00:31:38] "GET /socket.io/?EIO=4&transport=polling&t=PPQiMjG HTTP/1.1" 200 -
+2025-04-22 00:31:38 INFO connected to frontend!
+2025-04-22 00:31:38 INFO sending alerts to frontend!: []
+2025-04-22 00:31:38 INFO 127.0.0.1 - - [22/Apr/2025 00:31:38] "POST /socket.io/?EIO=4&transport=polling&t=PPQiMje&sid=AjmXSCpuMFKtETR5AAAe HTTP/1.1" 200 -
+2025-04-22 00:32:24 INFO 127.0.0.1 - - [22/Apr/2025 00:32:24] "GET /socket.io/?EIO=4&transport=websocket&sid=AjmXSCpuMFKtETR5AAAe HTTP/1.1" 200 -
+2025-04-22 00:32:24 INFO 127.0.0.1 - - [22/Apr/2025 00:32:24] "GET /socket.io/?EIO=4&transport=polling&t=PPQiMjj&sid=AjmXSCpuMFKtETR5AAAe HTTP/1.1" 200 -
+2025-04-22 00:32:25 INFO 127.0.0.1 - - [22/Apr/2025 00:32:25] "GET /socket.io/?EIO=4&transport=polling&t=PPQiY5d HTTP/1.1" 200 -
+2025-04-22 00:32:25 INFO connected to frontend!
+2025-04-22 00:32:25 INFO sending alerts to frontend!: []
+2025-04-22 00:32:25 INFO 127.0.0.1 - - [22/Apr/2025 00:32:25] "POST /socket.io/?EIO=4&transport=polling&t=PPQiY60&sid=J4NVsSaD4_QCInQDAAAg HTTP/1.1" 200 -
+2025-04-22 00:33:10 INFO 127.0.0.1 - - [22/Apr/2025 00:33:10] "GET /socket.io/?EIO=4&transport=websocket&sid=J4NVsSaD4_QCInQDAAAg HTTP/1.1" 200 -
+2025-04-22 00:33:10 INFO 127.0.0.1 - - [22/Apr/2025 00:33:10] "GET /socket.io/?EIO=4&transport=polling&t=PPQiY64&sid=J4NVsSaD4_QCInQDAAAg HTTP/1.1" 200 -
+2025-04-22 00:33:11 INFO 127.0.0.1 - - [22/Apr/2025 00:33:11] "GET /socket.io/?EIO=4&transport=polling&t=PPQijLH HTTP/1.1" 200 -
+2025-04-22 00:33:56 INFO 127.0.0.1 - - [22/Apr/2025 00:33:56] "GET /socket.io/?EIO=4&transport=websocket&sid=Y-TdVx_L_Corwof7AAAi HTTP/1.1" 200 -
+2025-04-22 00:33:56 INFO 127.0.0.1 - - [22/Apr/2025 00:33:56] "GET /socket.io/?EIO=4&transport=polling&t=PPQijLn&sid=Y-TdVx_L_Corwof7AAAi HTTP/1.1" 200 -
+2025-04-22 00:33:56 INFO connected to frontend!
+2025-04-22 00:33:56 INFO sending alerts to frontend!: []
+2025-04-22 00:33:56 INFO 127.0.0.1 - - [22/Apr/2025 00:33:56] "POST /socket.io/?EIO=4&transport=polling&t=PPQijLh&sid=Y-TdVx_L_Corwof7AAAi HTTP/1.1" 200 -
+2025-04-22 00:33:57 INFO 127.0.0.1 - - [22/Apr/2025 00:33:57] "GET /socket.io/?EIO=4&transport=polling&t=PPQiuWd HTTP/1.1" 200 -
+2025-04-22 00:33:57 INFO connected to frontend!
+2025-04-22 00:33:57 INFO sending alerts to frontend!: []
+2025-04-22 00:33:57 INFO 127.0.0.1 - - [22/Apr/2025 00:33:57] "POST /socket.io/?EIO=4&transport=polling&t=PPQiuW-&sid=ZNLwC7sFUt72CEleAAAk HTTP/1.1" 200 -
+2025-04-22 00:34:42 INFO 127.0.0.1 - - [22/Apr/2025 00:34:42] "GET /socket.io/?EIO=4&transport=websocket&sid=ZNLwC7sFUt72CEleAAAk HTTP/1.1" 200 -
+2025-04-22 00:34:42 INFO 127.0.0.1 - - [22/Apr/2025 00:34:42] "GET /socket.io/?EIO=4&transport=polling&t=PPQiuX1&sid=ZNLwC7sFUt72CEleAAAk HTTP/1.1" 200 -
+2025-04-22 00:34:43 INFO 127.0.0.1 - - [22/Apr/2025 00:34:43] "GET /socket.io/?EIO=4&transport=polling&t=PPQj3lM HTTP/1.1" 200 -
+2025-04-22 00:34:43 INFO connected to frontend!
+2025-04-22 00:34:43 INFO sending alerts to frontend!: []
+2025-04-22 00:34:43 INFO 127.0.0.1 - - [22/Apr/2025 00:34:43] "POST /socket.io/?EIO=4&transport=polling&t=PPQj3ln&sid=B9nBMGIbze719MPTAAAm HTTP/1.1" 200 -
+2025-04-22 00:35:28 INFO 127.0.0.1 - - [22/Apr/2025 00:35:28] "GET /socket.io/?EIO=4&transport=websocket&sid=B9nBMGIbze719MPTAAAm HTTP/1.1" 200 -
+2025-04-22 00:35:28 INFO 127.0.0.1 - - [22/Apr/2025 00:35:28] "GET /socket.io/?EIO=4&transport=polling&t=PPQj3lq&sid=B9nBMGIbze719MPTAAAm HTTP/1.1" 200 -
+2025-04-22 00:35:29 INFO 127.0.0.1 - - [22/Apr/2025 00:35:29] "GET /socket.io/?EIO=4&transport=polling&t=PPQjE-5 HTTP/1.1" 200 -
+2025-04-22 00:35:29 INFO connected to frontend!
+2025-04-22 00:35:29 INFO sending alerts to frontend!: []
+2025-04-22 00:35:29 INFO 127.0.0.1 - - [22/Apr/2025 00:35:29] "POST /socket.io/?EIO=4&transport=polling&t=PPQjE-V&sid=kjWUkcs8NNsHA63uAAAo HTTP/1.1" 200 -
+2025-04-22 00:36:14 INFO 127.0.0.1 - - [22/Apr/2025 00:36:14] "GET /socket.io/?EIO=4&transport=websocket&sid=kjWUkcs8NNsHA63uAAAo HTTP/1.1" 200 -
+2025-04-22 00:36:14 INFO 127.0.0.1 - - [22/Apr/2025 00:36:14] "GET /socket.io/?EIO=4&transport=polling&t=PPQjE-Y&sid=kjWUkcs8NNsHA63uAAAo HTTP/1.1" 200 -
+2025-04-22 00:36:15 INFO 127.0.0.1 - - [22/Apr/2025 00:36:15] "GET /socket.io/?EIO=4&transport=polling&t=PPQjQAP HTTP/1.1" 200 -
+2025-04-22 00:36:15 INFO connected to frontend!
+2025-04-22 00:36:15 INFO sending alerts to frontend!: []
+2025-04-22 00:36:15 INFO 127.0.0.1 - - [22/Apr/2025 00:36:15] "POST /socket.io/?EIO=4&transport=polling&t=PPQjQBR&sid=uXSmQpxGxY32wYbmAAAq HTTP/1.1" 200 -
+2025-04-22 00:37:00 INFO 127.0.0.1 - - [22/Apr/2025 00:37:00] "GET /socket.io/?EIO=4&transport=websocket&sid=uXSmQpxGxY32wYbmAAAq HTTP/1.1" 200 -
+2025-04-22 00:37:00 INFO 127.0.0.1 - - [22/Apr/2025 00:37:00] "GET /socket.io/?EIO=4&transport=polling&t=PPQjQBW&sid=uXSmQpxGxY32wYbmAAAq HTTP/1.1" 200 -
+2025-04-22 00:37:01 INFO 127.0.0.1 - - [22/Apr/2025 00:37:01] "GET /socket.io/?EIO=4&transport=polling&t=PPQjbWJ HTTP/1.1" 200 -
+2025-04-22 00:37:01 INFO connected to frontend!
+2025-04-22 00:37:01 INFO sending alerts to frontend!: []
+2025-04-22 00:37:01 INFO 127.0.0.1 - - [22/Apr/2025 00:37:01] "POST /socket.io/?EIO=4&transport=polling&t=PPQjbWj&sid=LZz-_LliGO0BmPjBAAAs HTTP/1.1" 200 -
+2025-04-22 00:37:46 INFO 127.0.0.1 - - [22/Apr/2025 00:37:46] "GET /socket.io/?EIO=4&transport=websocket&sid=LZz-_LliGO0BmPjBAAAs HTTP/1.1" 200 -
+2025-04-22 00:37:46 INFO 127.0.0.1 - - [22/Apr/2025 00:37:46] "GET /socket.io/?EIO=4&transport=polling&t=PPQjbWn&sid=LZz-_LliGO0BmPjBAAAs HTTP/1.1" 200 -
+2025-04-22 00:37:47 INFO 127.0.0.1 - - [22/Apr/2025 00:37:47] "GET /socket.io/?EIO=4&transport=polling&t=PPQjml8 HTTP/1.1" 200 -
+2025-04-22 00:37:47 INFO connected to frontend!
+2025-04-22 00:37:47 INFO sending alerts to frontend!: []
+2025-04-22 00:37:47 INFO 127.0.0.1 - - [22/Apr/2025 00:37:47] "POST /socket.io/?EIO=4&transport=polling&t=PPQjmlZ&sid=BA577zarH3DzKVINAAAu HTTP/1.1" 200 -
+2025-04-22 00:38:32 INFO 127.0.0.1 - - [22/Apr/2025 00:38:32] "GET /socket.io/?EIO=4&transport=websocket&sid=BA577zarH3DzKVINAAAu HTTP/1.1" 200 -
+2025-04-22 00:38:32 INFO 127.0.0.1 - - [22/Apr/2025 00:38:32] "GET /socket.io/?EIO=4&transport=polling&t=PPQjmlc&sid=BA577zarH3DzKVINAAAu HTTP/1.1" 200 -
+2025-04-22 00:38:34 INFO 127.0.0.1 - - [22/Apr/2025 00:38:34] "GET /socket.io/?EIO=4&transport=polling&t=PPQjy2Y HTTP/1.1" 200 -
+2025-04-22 00:38:34 INFO connected to frontend!
+2025-04-22 00:38:34 INFO sending alerts to frontend!: []
+2025-04-22 00:38:34 INFO 127.0.0.1 - - [22/Apr/2025 00:38:34] "POST /socket.io/?EIO=4&transport=polling&t=PPQjy2x&sid=k_eC0-cP3S234qu_AAAw HTTP/1.1" 200 -
+2025-04-22 00:39:19 INFO 127.0.0.1 - - [22/Apr/2025 00:39:19] "GET /socket.io/?EIO=4&transport=websocket&sid=k_eC0-cP3S234qu_AAAw HTTP/1.1" 200 -
+2025-04-22 00:39:19 INFO 127.0.0.1 - - [22/Apr/2025 00:39:19] "GET /socket.io/?EIO=4&transport=polling&t=PPQjy31&sid=k_eC0-cP3S234qu_AAAw HTTP/1.1" 200 -
+2025-04-22 00:39:20 INFO 127.0.0.1 - - [22/Apr/2025 00:39:20] "GET /socket.io/?EIO=4&transport=polling&t=PPQk7M3 HTTP/1.1" 200 -
+2025-04-22 00:39:20 INFO connected to frontend!
+2025-04-22 00:39:20 INFO sending alerts to frontend!: []
+2025-04-22 00:39:20 INFO 127.0.0.1 - - [22/Apr/2025 00:39:20] "POST /socket.io/?EIO=4&transport=polling&t=PPQk7MQ&sid=KOxiuyWTvX8bju3iAAAy HTTP/1.1" 200 -
+2025-04-22 00:40:05 INFO 127.0.0.1 - - [22/Apr/2025 00:40:05] "GET /socket.io/?EIO=4&transport=websocket&sid=KOxiuyWTvX8bju3iAAAy HTTP/1.1" 200 -
+2025-04-22 00:40:05 INFO 127.0.0.1 - - [22/Apr/2025 00:40:05] "GET /socket.io/?EIO=4&transport=polling&t=PPQk7MV&sid=KOxiuyWTvX8bju3iAAAy HTTP/1.1" 200 -
+2025-04-22 00:40:06 INFO 127.0.0.1 - - [22/Apr/2025 00:40:06] "GET /socket.io/?EIO=4&transport=polling&t=PPQkIfK HTTP/1.1" 200 -
+2025-04-22 00:40:06 INFO connected to frontend!
+2025-04-22 00:40:06 INFO sending alerts to frontend!: []
+2025-04-22 00:40:06 INFO 127.0.0.1 - - [22/Apr/2025 00:40:06] "POST /socket.io/?EIO=4&transport=polling&t=PPQkIfp&sid=kV4X5pNf3eJoCVVXAAA0 HTTP/1.1" 200 -

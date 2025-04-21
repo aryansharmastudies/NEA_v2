@@ -5,5 +5,19 @@
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"
+  },
+  "/home/kyoto/Documents/Shared/akina": {
+    "id": "nlzZec5MPb",
+    "label": "akina",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/kyoto/Documents/Shared/akina_v2": {
+    "id": "N1iXbQvt4P",
+    "label": "akina_v2",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
   }
 }
