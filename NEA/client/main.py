@@ -842,7 +842,7 @@ class MyEventHandler(FileSystemEventHandler):
         if event.is_directory:
             self._supressed_dirs.add(event.src_path)
         
-        #### checks sync_queue for any creation/deletion of current file, since delete overrides creation and modification! ####
+        #### 🧹🧹🧹 checks sync_queue for any creation/deletion of current file, since delete overrides creation and modification! ####
         removed_created = False
         removed_modified = False
         new_queue = queue.Queue()
@@ -867,7 +867,7 @@ class MyEventHandler(FileSystemEventHandler):
             logging.info(f"🧹 Skipping deletion for {event.src_path} since it was only queued for creation")
             self._persist_queue()
             return
-        ########################################################################################################################
+        ###########################################################################################################################
         sync_queue.put({
             "id": generate_event_id(),
             "event_type":  "deleted",
@@ -875,7 +875,9 @@ class MyEventHandler(FileSystemEventHandler):
             "is_dir":  event.is_directory,
             "origin":  "user"
         })
-        self._persist_queue()
+        
+        self._persist_queue() # save to sync_queue.json
+        logging.info(f'saved to sync_queue.json')
         # If it's a file, remove it from the database
         if not event.is_directory:
             try:
@@ -936,7 +938,14 @@ class MyEventHandler(FileSystemEventHandler):
                             logging.info(f"🟠 Content change detected in {path}, updating hash from {file.hash} to {new_hash}")
                             file.hash = new_hash
                             file.size = size
+                            # Increment the version number
+                            current_version = file.version
+                            version_num = float(current_version[1:])  # Remove 'v' and convert to float
+                            new_version_num = version_num + 0.1  # Increment by 0.1
+                            file.version = f"v{new_version_num:.1f}"  # Format back to string with v prefix
+                            
                             db.session.commit()
+                            logging.info(f"File {path} version updated to {file.version}")
                     else:
                         # File doesn't exist in database yet
                         logging.warning(f"File {path} not found in database but was modified. Will add to sync queue.")
