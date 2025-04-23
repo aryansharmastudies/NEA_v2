@@ -654,6 +654,11 @@ class SyncEvent(Incoming):
     def apply(self):
         pass
 
+    def handle_global_blocklist(self, action: str, blocklist: dict = None, query = None) -> None:
+        # action could be 'add' 'delete' 'move' 'query'!
+        # blocklist only sent if action is 'add' or 'delete'
+        global_blocklist(action=action, blocklist=blocklist, query=query)
+
     def _get_mac_addr(self, user) -> str:
         for mac_addr in ip_map["users"][user]:
             if mac_addr == str(mac_addr):
@@ -683,17 +688,44 @@ class CreateDir(SyncEvent):
         logging.info(f"[+] Directory created at: {formatted_path}")
 
 class CreateFile(SyncEvent):
+    def get_blocksize(self) -> int:
+        """Determine block size based on file size."""
+        try:
+            file_size = os.path.getsize(self.src_path)
+            
+            # Convert to MiB for easier comparison
+            file_size_mib = file_size / (1024 * 1024)
+            
+            if file_size_mib <= 1:
+                return 128 * 1024  # 128 KiB
+            elif file_size_mib <= 10:
+                return 512 * 1024  # 512 KiB
+            elif file_size_mib <= 100:
+                return 1024 * 1024  # 1 MiB
+            elif file_size_mib <= 500:
+                return 4 * 1024 * 1024  # 4 MiB
+            else:
+                return 8 * 1024 * 1024  # 8 MiB
+        except FileNotFoundError:
+            logging.error(f"File not found: {self.src_path}")
+            return 128 * 1024  # Default to smallest block size if file not found
+        except Exception as e:
+            logging.error(f"Error getting file size: {e}")
+            return 128 * 1024  # Default to smallest block size on error
+    
     def apply(self):
+        offset = 0
         file_data = b''
-        block_list = dict()
+        blocklist = dict()
         packet_count = self.metadata['packet_count']
         logging.info(f"[+] Expecting {packet_count} packets...")
 
         for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
             data, hash = self.receive_valid_packet(self.connection, index)
             file_data += data
-            block_list[hash] = data # data is binary data, hash is checksum
-
+            blocklist[hash] = {"offset": offset, "size": len(data)} # data is binary data, hash is checksum
+            offset += len(data)
+        
         formatted_path = self.format_path()
         os.makedirs(os.path.dirname(formatted_path), exist_ok=True)
         logging.info(f"[+] Writing file to: {formatted_path}")
@@ -701,14 +733,23 @@ class CreateFile(SyncEvent):
             f.write(file_data)
         logging.info(f"[+] File '{formatted_path}' received successfully.")
 
+        self.handle_global_blocklist('add', blocklist)
+
+        blocklist_serialised = {}
+        for hash, data in blocklist.items():
+            blocklist_serialised[hash] = base64.b64encode(json.dumps(data).encode()).decode()
+
         folder_id = self.metadata['folder_id']
         hash = self.metadata['hash']
         size = self.metadata['size']
 
-
-        block_list_serialised = {}
-        for hash, data in block_list.items():
-            block_list_serialised[hash] = base64.b64encode(data).decode()
+        # Verify that the received file's hash matches the metadata hash
+        calculated_hash = hashlib.md5(file_data).hexdigest()
+        if calculated_hash != hash:
+            logging.error(f"[!] Hash mismatch for file {formatted_path}. Expected: {hash}, Got: {calculated_hash}")
+            # Consider whether to reject the file or mark it as corrupted
+        else:
+            logging.info(f"[+] File hash verified for {formatted_path}")
 
         # Create a new file entry in the database
         file_entry = File(
@@ -717,7 +758,7 @@ class CreateFile(SyncEvent):
             size=size,
             hash=hash,
             version="v1.0",
-            block_list=json.dumps(block_list_serialised) # creates initial block_list
+            block_list=json.dumps(blocklist_serialised) # creates initial block_list
         )
         
         session.add(file_entry)
@@ -874,8 +915,41 @@ if __name__ == "__main__":
     sync_worker_thread = threading.Thread(target=sync_worker)
     sync_worker_thread.start()
 
-
-
-
-
 # TODO: need to create a queue to send out outgoing data to other clients!
+
+
+# TODO make system wide blocklist
+class global_blocklist():
+    def __init__(self, action=None, blocklist=None, query=None):
+        self.action = action # command
+        self.blocklist = blocklist # blocklist/lists
+        self.query = query
+        self.handle_request()
+    def handle_request(self):
+        if self.action == 'add':
+            self.add_blocklist()
+        elif self.action == 'delete':
+            self.delete_blocklist()
+        elif self.action == 'move':
+            self.update_blocklist()
+        elif self.action == 'query':
+            self.query_blocklist()
+        pass
+    def write_blocklist(self): # TODO in the case of writing a blocklist to a file.
+        pass
+    def read_blocklist(self): # TODO in the case of reading a blocklist from a file.
+        pass
+    def add_blocklist(self): # TODO in the case of adding a hash to a file.
+        pass
+    def delete_blocklist(self): # TODO in the case of removing a hash from a file.
+        pass
+    def update_blocklist(self): # TODO in case file is moved
+        pass
+    def query_blocklist(self):
+        # could be many queries
+        '''
+        for q in self.query ...'''
+        pass
+
+
+# QUEUE SYSTEM

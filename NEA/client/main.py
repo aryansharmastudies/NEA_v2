@@ -508,6 +508,96 @@ def mkdir(data): # 🥝
     logging.info(f'========Completed Folder Traversal!========')
     del initializer
 
+################################# folder traversal algo ################################
+
+# NOTE: This class is used to traverse the folder and add files to the database as well as to the sync queue!!!
+
+class FolderInitializer:
+    def __init__(self, event_id, path, folder_id, event_type="created", origin="initialise"):
+        self.event_id = event_id
+        self.path = path
+        self.folder_id = folder_id
+        self.event_type = event_type
+        self.origin = origin
+
+    def _find_hash(self, full_path) -> str:
+        hash_md5 = hashlib.md5()
+        try:
+            with open(full_path, "rb") as f:
+                for block in iter(lambda: f.read(4096), b""):
+                    hash_md5.update(block)
+            return hash_md5.hexdigest()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"The file at path {full_path} does not exist.")
+        
+    def preorderTraversal(self):
+        stack = [self.path]
+        directories = []
+        files = []
+
+        while stack:
+            current = stack.pop()
+            logging.info(f'📂 Traversing: {current}')
+            directories.append(current)
+
+            event = {
+                "id": self.event_id,
+                "event_type": self.event_type,
+                "src_path": current,
+                "is_dir": True,
+                "origin": "mkdir"
+                }
+            sync_queue.put(event)
+
+            try:
+                children = os.listdir(current)
+            except PermissionError:
+                logging.error(f'❌ Permission denied: {current}')
+                continue
+
+            for item in reversed(children):  # reversed to keep the order of traversal consistent.
+                full_path = os.path.join(current, item)
+                if os.path.isdir(full_path):
+                    stack.append(full_path)
+                else:
+                    logging.info(f'📖 Found file: {full_path}')
+                    files.append(full_path)
+                    event = {
+                        "id": self.event_id,
+                        "event_type": self.event_type,
+                        "src_path": full_path,
+                        "is_dir": False,
+                        "origin": "mkdir",
+                        "folder_id": self.folder_id,
+                        "hash": self._find_hash(full_path),
+                        "size": os.path.getsize(full_path)
+                        }
+                    sync_queue.put(event)
+
+                    new_file = File(folder_id=self.folder_id, path=full_path, hash=event['hash'], size=event['size'])
+                    try:
+                        db.session.add(new_file)
+                        db.session.commit()
+                        logging.info(f'File {full_path} added to database with version v1.0')
+                    except Exception as e:
+                        db.session.rollback()  # just used to rollback in case of errors.
+                        logging.error(f'❌ Failed to add {full_path} to database: {e}')
+        
+        logging.info('✅ Traversal Complete')
+        logging.info(f'🗃️ Directories: {directories}')
+        logging.info(f'📑 Files: {files}')
+
+        all_events = list(sync_queue.queue)
+        with open("sync_queue.json", "w") as f:
+            json.dump(all_events, f, indent=2)
+        
+        logging.info(f'Sync queue saved to sync_queue.json')
+
+
+'''
+                TODO 🆘 : for all the files that were added to the database, sum up the total file size and assign it to the folder size.
+
+'''
 ########## SEND #################################
 def send(json_data): # 🛫
         start = time.time()
@@ -586,9 +676,6 @@ def send(json_data): # 🛫
             return status, status_msg, data
         elif action in ['request']:
             return data
-            
-
-
 
 ########## HANDLE SERVER MESSAGE ################
 
@@ -741,7 +828,41 @@ class MyEventHandler(FileSystemEventHandler):
             return hash_md5.hexdigest()
         except FileNotFoundError:
             raise FileNotFoundError(f"The file at path {self.path} does not exist.")
+    
+    def generate_event_id(self):
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        uid = str(uuid.uuid4())[:6]  # Short unique suffix (6 hex chars)
+        return f"event_{timestamp}_{uid}"
 
+    def clean(self, event):
+        removed_created = False
+        removed_modified = False
+        current_event_type = event.event_type
+        temp_events = []
+
+        while not sync_queue.empty():
+            item = sync_queue.get()
+            if item['src_path'] == event.src_path:
+                if item['event_type'] == 'created':
+                    if current_event_type == 'deleted':
+                        removed_created = True
+                        logging.info(f"🧹 Removed 'created' event for {event.src_path}")
+                        continue # dont append to temp_event
+                    elif current_event_type == 'modified':
+                        removed_created = True
+                        logging.info(f"🧹 Removed 'created' event for {event.src_path} due to modification")
+                        continue # dont append to temp_event
+                elif item['event_type'] == 'modified':
+                    removed_modified = True
+                    logging.info(f"🧹 Removed 'modified' event for {event.src_path}")
+                    continue # Dont append to temp_event
+            temp_events.append(item)
+
+        for item in temp_events:
+            sync_queue.put(item)
+        
+        return removed_created, removed_modified
+    
     def dispatch(self, event):
         path = event.src_path
         self.src_path = path
@@ -773,7 +894,7 @@ class MyEventHandler(FileSystemEventHandler):
             self._supressed_dirs.add(event.src_path)
 
         sync_queue.put({
-            "id": generate_event_id(),
+            "id": self.generate_event_id(),
             "event_type":  "moved",
             "src_path":     event.src_path,
             "dest_path":    event.dest_path,
@@ -800,7 +921,7 @@ class MyEventHandler(FileSystemEventHandler):
             else:
                 logging.info(f"Creating event for file: {event.src_path} in folder {folder_id}")
                 sync_queue.put({
-                    "id": generate_event_id(),
+                    "id": self.generate_event_id(),
                     "event_type": "created",
                     "src_path": event.src_path, 
                     "is_dir": event.is_directory,
@@ -826,7 +947,7 @@ class MyEventHandler(FileSystemEventHandler):
         else:
             logging.info(f"Creating event for directory: {event.src_path}")
             sync_queue.put({
-                "id": generate_event_id(),
+                "id": self.generate_event_id(),
                 "event_type": "created",
                 "src_path": event.src_path,
                 "is_dir": event.is_directory,
@@ -835,6 +956,7 @@ class MyEventHandler(FileSystemEventHandler):
 
         self._persist_queue() # save to sync_queue.json
         logging.info(f'saved to sync_queue.json')
+    
     def on_deleted(self, event):
         logging.info(f"🔴 Deleted: {event.src_path}")
 
@@ -843,33 +965,19 @@ class MyEventHandler(FileSystemEventHandler):
             self._supressed_dirs.add(event.src_path)
         
         #### 🧹🧹🧹 checks sync_queue for any creation/deletion of current file, since delete overrides creation and modification! ####
-        removed_created = False
-        removed_modified = False
-        new_queue = queue.Queue()
+        '''
+        IF WE HAVE A FILE THAT HAS BEEN CREATED OFFLINE. 
+        THEN ITS BEEN DELETED OFFLINE.
+        WE HAVE TO REMOVE THE CREATED EVENT FROM THE QUEUE.
 
-        # Remove 'created' or 'modified' events for this path
-        with sync_queue.mutex:
-            while not sync_queue.empty():
-                item = sync_queue.get()
-                if item['src_path'] == event.src_path:
-                    if item['event_type'] == 'created':
-                        removed_created = True
-                        logging.info(f"🧹 Removed 'created' event for {event.src_path}")
-                        continue
-                    elif item['event_type'] == 'modified':
-                        removed_modified = True
-                        logging.info(f"🧹 Removed 'modified' event for {event.src_path}")
-                        continue
-                new_queue.put(item)
-            sync_queue.queue = new_queue.queue
-
-        if removed_created and not removed_modified:
-            logging.info(f"🧹 Skipping deletion for {event.src_path} since it was only queued for creation")
-            self._persist_queue()
-            return
+        IF WE HAVE A FILE THAT HAS BEEN MODIFIED OFFLINE. 
+        THEN ITS BEEN DELETED OFFLINE.
+        WE HAVE TO REMOVE THE MODIFIED EVENT FROM THE QUEUE.
+        '''
+        removed_created, removed_modified = self.clean(event) # 
         ###########################################################################################################################
         sync_queue.put({
-            "id": generate_event_id(),
+            "id": self.generate_event_id(),
             "event_type":  "deleted",
             "src_path":    event.src_path,
             "is_dir":  event.is_directory,
@@ -946,6 +1054,11 @@ class MyEventHandler(FileSystemEventHandler):
                             
                             db.session.commit()
                             logging.info(f"File {path} version updated to {file.version}")
+                            '''
+                            OFFLINE MODIFICATION OVERRIDES OFFLINE MODIFICATION AND CREATION.
+                            '''
+                            removed_created, removed_modified = self.clean(event) # 🧹🧹🧹
+
                     else:
                         # File doesn't exist in database yet
                         logging.warning(f"File {path} not found in database but was modified. Will add to sync queue.")
@@ -954,7 +1067,7 @@ class MyEventHandler(FileSystemEventHandler):
                         db.session.commit()
                         logging.info(f"File {path} added to database with version 1.0")
                         sync_queue.put({ # 
-                                "id": generate_event_id(),
+                                "id": self.generate_event_id(),
                                 "event_type": "created",
                                 "src_path": path, 
                                 "is_dir": False,
@@ -971,22 +1084,40 @@ class MyEventHandler(FileSystemEventHandler):
                 # Continue with sync anyway to be safe
                 with app.app_context():
                     db.session.rollback()  # Ensure transaction is cleaned up
-
-            sync_queue.put({
-                "id": generate_event_id(),
-                "event_type": "modified",
-                "src_path": path,
-                "is_dir": False,
-                "origin": session['user'],
-                "folder_id": folder_id,
-                "hash": new_hash,
-                "size": size
-            })
-            self._persist_queue()
-            logging.info(f'🟡 Modified file {path} added to sync_queue!')
+        # TODO 🆘 : MODIFICATIONS OVERRIDE OTHER MODIFICATIONS! 
+            
+            if removed_modified:
+                logging.warning("[!] Handling modifications that override other modifications.")
+                sync_queue.put({ 
+                    "id": self.generate_event_id(),
+                    "event_type": "modified",
+                    "src_path": path,
+                    "is_dir": False,
+                    "origin": "user",
+                    "folder_id": folder_id,
+                    "hash": new_hash,
+                    "size": size
+                })
+                self._persist_queue()
+                logging.info(f'🟡 Modified file {path} added to sync_queue!')
+            
+            elif removed_created:
+                logging.warning("[!] Handling modifications that override file creation.")
+                sync_queue.put({
+                    "id": self.generate_event_id(),
+                    "event_type": "created",
+                    "src_path": path, 
+                    "is_dir": False,
+                    "origin": "user",
+                    "folder_id": folder_id, 
+                    "hash": new_hash,
+                    "size": size
+                    })
+                self._persist_queue()
+                logging.info(f'🟡 ---> 🟢 Modified file {path} added to sync_queue AS CREATED!')
     
     def on_closed(self, event):
-        logging.info(f'🔵 {event.src_path} has been {event.event_type}')
+        logging.info(f'🔵 {event}')
 
 event_handler = MyEventHandler()
 observer = Observer()
@@ -1038,96 +1169,7 @@ def generate_event_id():
 
 
 ################################### SYNC-QUEUE #########################################
-################################# folder traversal algo ################################
 
-# NOTE: This class is used to traverse the folder and add files to the database as well as to the sync queue!!!
-
-class FolderInitializer:
-    def __init__(self, event_id, path, folder_id, event_type="created", origin="initialise"):
-        self.event_id = event_id
-        self.path = path
-        self.folder_id = folder_id
-        self.event_type = event_type
-        self.origin = origin
-
-    def _find_hash(self, full_path) -> str:
-        hash_md5 = hashlib.md5()
-        try:
-            with open(full_path, "rb") as f:
-                for block in iter(lambda: f.read(4096), b""):
-                    hash_md5.update(block)
-            return hash_md5.hexdigest()
-        except FileNotFoundError:
-            raise FileNotFoundError(f"The file at path {full_path} does not exist.")
-        
-    def preorderTraversal(self):
-        stack = [self.path]
-        directories = []
-        files = []
-
-        while stack:
-            current = stack.pop()
-            logging.info(f'📂 Traversing: {current}')
-            directories.append(current)
-
-            event = {
-                "id": self.event_id,
-                "event_type": self.event_type,
-                "src_path": current,
-                "is_dir": True,
-                "origin": "mkdir"
-                }
-            sync_queue.put(event)
-
-            try:
-                children = os.listdir(current)
-            except PermissionError:
-                logging.error(f'❌ Permission denied: {current}')
-                continue
-
-            for item in reversed(children):  # reversed to keep the order of traversal consistent.
-                full_path = os.path.join(current, item)
-                if os.path.isdir(full_path):
-                    stack.append(full_path)
-                else:
-                    logging.info(f'📖 Found file: {full_path}')
-                    files.append(full_path)
-                    event = {
-                        "id": self.event_id,
-                        "event_type": self.event_type,
-                        "src_path": full_path,
-                        "is_dir": False,
-                        "origin": "mkdir",
-                        "folder_id": self.folder_id,
-                        "hash": self._find_hash(full_path),
-                        "size": os.path.getsize(full_path)
-                        }
-                    sync_queue.put(event)
-
-                    new_file = File(folder_id=self.folder_id, path=full_path, hash=event['hash'], size=event['size'])
-                    try:
-                        db.session.add(new_file)
-                        db.session.commit()
-                        logging.info(f'File {full_path} added to database with version v1.0')
-                    except Exception as e:
-                        db.session.rollback()  # just used to rollback in case of errors.
-                        logging.error(f'❌ Failed to add {full_path} to database: {e}')
-        
-        logging.info('✅ Traversal Complete')
-        logging.info(f'🗃️ Directories: {directories}')
-        logging.info(f'📑 Files: {files}')
-
-        all_events = list(sync_queue.queue)
-        with open("sync_queue.json", "w") as f:
-            json.dump(all_events, f, indent=2)
-        
-        logging.info(f'Sync queue saved to sync_queue.json')
-
-
-'''
-                TODO 🆘 : for all the files that were added to the database, sum up the total file size and assign it to the folder size.
-
-'''
 ########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
 def sync_worker(): 
     while True:
@@ -1166,7 +1208,7 @@ def sync_worker():
 ########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
 class Sync:
     def __init__(self):
-        self.BLOCK_SIZE = 1000000 # 1MB
+        # self.BLOCK_SIZE = 1024 * 1024 # 1048576 Bytes -> 1 MebiByte
         self.PORT = 7000
         self.HEADER_SIZE = 4
         self.RESPONSE_OK = b'ACK'
@@ -1186,6 +1228,15 @@ class Outgoing(Sync):
             self.packet_count = len(self.packets)
             self.hash = file_to_hash.get(self.src_path)
             self.folder_id = event['folder_id']  # Updated to use 'folder_id' from event
+        
+        elif not self.is_dir and self.event_type == 'modified':
+            logging.info(f"Creating block list for modified file")
+            self.blocks = self.create_blocklist()
+            self.hash = file_to_hash.get(self.src_path) or event.get('hash')
+            self.folder_id = event['folder_id']
+            self.size = event.get('size', os.path.getsize(self.src_path))
+            self.packets = self.create_packet()
+            self.packet_count = len(self.packets)
 
         if self.event_type == 'moved':
             self.dest_path = event['dest_path']
@@ -1205,20 +1256,88 @@ class Outgoing(Sync):
             metadata["folder_id"] = self.folder_id
             metadata["size"] = os.path.getsize(self.src_path)
         
+        elif not self.is_dir and self.event_type == 'modified':
+            metadata['hash'] = self.hash
+            metadata["packet_count"] = self.packet_count
+            metadata["folder_id"] = self.folder_id
+            metadata["size"] = self.size
+            metadata["block_count"] = len(self.blocks) if hasattr(self, 'blocks') else 0
+        
         if self.event_type == 'moved':
             metadata['dest_path'] = self.dest_path
         return metadata
     
-    def create_packet(self) -> list: # whole purpose is to generate packets from blocks
+    def get_blocksize(self) -> int:
+        """Determine block size based on file size."""
+        try:
+            file_size = os.path.getsize(self.src_path)
+            
+            # Convert to MiB for easier comparison
+            file_size_mib = file_size / (1024 * 1024)
+            
+            if file_size_mib <= 1:
+                return 128 * 1024  # 128 KiB
+            elif file_size_mib <= 10:
+                return 512 * 1024  # 512 KiB
+            elif file_size_mib <= 100:
+                return 1024 * 1024  # 1 MiB
+            elif file_size_mib <= 500:
+                return 4 * 1024 * 1024  # 4 MiB
+            else:
+                return 8 * 1024 * 1024  # 8 MiB
+        except FileNotFoundError:
+            logging.error(f"File not found: {self.src_path}")
+            return 128 * 1024  # Default to smallest block size if file not found
+        except Exception as e:
+            logging.error(f"Error getting file size: {e}")
+            return 128 * 1024  # Default to smallest block size on error
+
+    def create_blocklist(self) -> dict: # Returns: dictionary mapping block hashes to their offset and size.
+        if self.event_type != 'modified':
+            return {}
+        
+        block_size = self.get_blocksize()
+        block_list = {}
+        
+        try:
+            with open(self.src_path, 'rb') as f:
+                offset = 0
+                while True:
+                    block = f.read(block_size)
+                    if not block:  # EOF - end of file
+                        break
+                    
+                    block_hash = hashlib.md5(block).hexdigest()
+                    block_list[block_hash] = {
+                        "offset": offset,
+                        "size": len(block) # Use actual size in case of partial blocks
+                    }
+
+                    offset += len(block)
+            # Store the block list in self
+            logging.info(f"🧱 Block list created with {len(block_list)} entries.")
+            return block_list
+        
+        except FileNotFoundError:
+            logging.error(f"File not found: {self.src_path}")
+            return {}
+        except Exception as e:
+            logging.error(f"Error creating block list: {e}")
+            return {}
+    
+    def create_packet(self) -> list:
+        # Use dynamic block size based on file size
+        block_size = self.get_blocksize()
+        
         with open(self.src_path, 'rb') as f:
             file_data = f.read()
 
-        blocks = [file_data[i:i + self.BLOCK_SIZE] for i in range(0, len(file_data), self.BLOCK_SIZE)] # binary data
+        blocks = [file_data[i:i + block_size] for i in range(0, len(file_data), block_size)]
         return [
             {
                 "index": i,
-                "data": base64.b64encode(block).decode(), # binary data to base64 string
-                "checksum": hashlib.md5(block).hexdigest() # binary data checksum
+                "data": base64.b64encode(block).decode(),
+                "checksum": hashlib.md5(block).hexdigest()
             }
             for i, block in enumerate(blocks)
         ]
@@ -1249,6 +1368,17 @@ class Outgoing(Sync):
             self.send_packet(outgoingsock, metadata) # metadata is dict
             logging.info(f"[+] Metadata sent: {metadata}")
 
+            # Send blocklist for modified files
+            if self.event_type == 'modified' and hasattr(self, 'blocks'):
+                block_info_packet = {
+                    "index": "blocks",
+                    "blocks": self.blocks
+                }
+                logging.info(f"[+] Sending block list for modified file")
+                self.send_packet(outgoingsock, block_info_packet)
+                logging.info(f"[+] Block list sent for modified file")
+            
+            # Send file packets for created and modified files
             if hasattr(self, 'packets'):
                 for packet in self.packets:
                     self.send_packet(outgoingsock, packet)
