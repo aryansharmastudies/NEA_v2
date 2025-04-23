@@ -18,6 +18,21 @@ socket.on('users_devices_data', function(data) {
     console.log("Received users and devices data:", data);
     user_device_data = data; });
 
+
+
+// Register Device Modal
+const openDeviceBtn = document.getElementById('openModalDevice');
+const closeDeviceBtn = document.getElementById('closeModalDevice');
+const modalDevice = document.getElementById('modalDevice');
+
+openDeviceBtn.addEventListener('click', () => {
+    modalDevice.classList.add('open');
+});
+
+closeDeviceBtn.addEventListener('click', () => {
+    modalDevice.classList.remove('open');
+});
+
 // socket.on('users_devices_data', function(data) {
 //     console.log("Received users and devices data:", data);
 //     if (data.error) {

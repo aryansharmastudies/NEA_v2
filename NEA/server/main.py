@@ -75,11 +75,12 @@ class Share(Base):
 class File(Base):
     __tablename__ = 'files'
 
-    folder_id = Column(String, primary_key=True)
-    path = Column(String, primary_key=True)
+    folder_id = Column(String)
+    path = Column(String, primary_key=True, index=True)
     size = Column(Integer)
     hash = Column(String)
     version = Column(String)
+    block_list = Column(String)
 
 Base.metadata.create_all(engine)
 
@@ -613,16 +614,17 @@ class Incoming(Sync):
 
             if index == 0: # if its metadata!
                 connection.send(self.RESPONSE_OK)
-                return payload
+                metadata = payload
+                return metadata
             
-            decoded_data = base64.b64decode(payload['data'])
+            decoded_data = base64.b64decode(payload['data']) # DECODE FROM BASE64 TO BINARY
             checksum = payload['checksum']
 
-            actual_checksum = hashlib.md5(decoded_data).hexdigest()
+            actual_checksum = hashlib.md5(decoded_data).hexdigest() # CHECKING TO SEE INTEGRITY OF THE DATA
             if actual_checksum == checksum:
                 connection.send(self.RESPONSE_OK)
                 # logging.info(f"[+] Packet {index} received and verified.") # 🔔
-                return decoded_data
+                return decoded_data, actual_checksum # SENDING BACK DATA AND HASH/CHECKSUM
             else:
                 connection.send(self.RESPONSE_ERR)
                 logging.info(f"[!] Checksum mismatch on packet {index}. Retrying...")
@@ -683,12 +685,14 @@ class CreateDir(SyncEvent):
 class CreateFile(SyncEvent):
     def apply(self):
         file_data = b''
+        block_list = dict()
         packet_count = self.metadata['packet_count']
         logging.info(f"[+] Expecting {packet_count} packets...")
 
         for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
-            data = self.receive_valid_packet(self.connection, index)
+            data, hash = self.receive_valid_packet(self.connection, index)
             file_data += data
+            block_list[hash] = data # data is binary data, hash is checksum
 
         formatted_path = self.format_path()
         os.makedirs(os.path.dirname(formatted_path), exist_ok=True)
@@ -701,14 +705,21 @@ class CreateFile(SyncEvent):
         hash = self.metadata['hash']
         size = self.metadata['size']
 
+
+        block_list_serialised = {}
+        for hash, data in block_list.items():
+            block_list_serialised[hash] = base64.b64encode(data).decode()
+
         # Create a new file entry in the database
         file_entry = File(
             folder_id=folder_id,
             path=formatted_path,
             size=size,
             hash=hash,
-            version="v1.0"
+            version="v1.0",
+            block_list=json.dumps(block_list_serialised) # creates initial block_list
         )
+        
         session.add(file_entry)
         session.commit()
         logging.info(f"[+] Added file entry to database: {formatted_path}")

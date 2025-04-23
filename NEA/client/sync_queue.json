@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "id": "event_20250423_061617_4c6a54",
+    "event_type": "created",
+    "src_path": "/home/osaka/Documents/Shared/Initial-D/pfp_2.jpg",
+    "is_dir": false,
+    "origin": "user",
+    "folder_id": "ZEOxcztA9f",
+    "hash": "c90fd60bf9ba242b5ad260ec7d3cd7a2",
+    "size": 367374
+  },
+  {
+    "id": "event_20250423_061755_e1cd5f",
+    "event_type": "created",
+    "src_path": "/home/osaka/Documents/Shared/Initial-D/IMG-20250109-WA0021.jpg",
+    "is_dir": false,
+    "origin": "user",
+    "folder_id": "ZEOxcztA9f",
+    "hash": "c64299d167e57d7f900fc14233258f1e",
+    "size": 253957
+  },
+  {
+    "id": "event_20250423_062157_1697a6",
+    "event_type": "created",
+    "src_path": "/home/osaka/Documents/Shared/Initial-D/initial-D",
+    "is_dir": false,
+    "origin": "user",
+    "folder_id": "ZEOxcztA9f",
+    "hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "size": 0
+  },
+  {
+    "id": "event_20250423_062224_f0fe55",
+    "event_type": "deleted",
+    "src_path": "/home/osaka/Documents/Shared/Initial-D/initial-D",
+    "is_dir": false,
+    "origin": "user"
+  }
+]

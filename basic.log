@@ -877,3 +877,15 @@
 2025-04-22 00:40:06 INFO connected to frontend!
 2025-04-22 00:40:06 INFO sending alerts to frontend!: []
 2025-04-22 00:40:06 INFO 127.0.0.1 - - [22/Apr/2025 00:40:06] "POST /socket.io/?EIO=4&transport=polling&t=PPQkIfp&sid=kV4X5pNf3eJoCVVXAAA0 HTTP/1.1" 200 -
+2025-04-22 00:40:51 INFO 127.0.0.1 - - [22/Apr/2025 00:40:51] "GET /socket.io/?EIO=4&transport=websocket&sid=kV4X5pNf3eJoCVVXAAA0 HTTP/1.1" 200 -
+2025-04-22 00:40:51 INFO 127.0.0.1 - - [22/Apr/2025 00:40:51] "GET /socket.io/?EIO=4&transport=polling&t=PPQkIfu&sid=kV4X5pNf3eJoCVVXAAA0 HTTP/1.1" 200 -
+2025-04-22 00:40:52 INFO 127.0.0.1 - - [22/Apr/2025 00:40:52] "GET /socket.io/?EIO=4&transport=polling&t=PPQkTrt HTTP/1.1" 200 -
+2025-04-22 00:40:52 INFO connected to frontend!
+2025-04-22 00:40:52 INFO sending alerts to frontend!: []
+2025-04-22 00:40:52 INFO 127.0.0.1 - - [22/Apr/2025 00:40:52] "POST /socket.io/?EIO=4&transport=polling&t=PPQkTsH&sid=dro-t9IWzHxK1H6YAAA2 HTTP/1.1" 200 -
+2025-04-22 00:41:37 INFO 127.0.0.1 - - [22/Apr/2025 00:41:37] "GET /socket.io/?EIO=4&transport=websocket&sid=dro-t9IWzHxK1H6YAAA2 HTTP/1.1" 200 -
+2025-04-22 00:41:37 INFO 127.0.0.1 - - [22/Apr/2025 00:41:37] "GET /socket.io/?EIO=4&transport=polling&t=PPQkTsL&sid=dro-t9IWzHxK1H6YAAA2 HTTP/1.1" 200 -
+2025-04-22 00:41:39 INFO 127.0.0.1 - - [22/Apr/2025 00:41:39] "GET /socket.io/?EIO=4&transport=polling&t=PPQkfEO HTTP/1.1" 200 -
+2025-04-22 00:41:39 INFO connected to frontend!
+2025-04-22 00:41:39 INFO sending alerts to frontend!: []
+2025-04-22 00:41:39 INFO 127.0.0.1 - - [22/Apr/2025 00:41:39] "POST /socket.io/?EIO=4&transport=polling&t=PPQkfFl&sid=_sC_GlljOcrey1f8AAA4 HTTP/1.1" 200 -

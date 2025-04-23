@@ -16,6 +16,7 @@ import hashlib
 import random
 import string
 import threading
+from threading import Timer
 import time
 from watchdog.events import FileSystemEvent, FileSystemEventHandler
 from watchdog.observers import Observer
@@ -271,11 +272,11 @@ def register():
             flash(f'{status}: {status_msg}', 'error')
             return redirect(url_for('register'))
     else: # BUG - if user in session, it auto redirects to dashboard.(even if user is not logged in)
-        if 'user' in session and 'server_name' in session:
-            logging.info(f'Already Logged In {session["user"]} in Server {session["server_name"]}!')
-            flash('Already Logged In! to register, please log out', 'info')
-            return redirect(url_for('dashboard'))
-        elif 'server_name' not in session:
+        # if 'user' in session and 'server_name' in session:
+        #     logging.info(f'Already Logged In {session["user"]} in Server {session["server_name"]}!')
+        #     flash('Already Logged In! to register, please log out', 'info')
+        #     return redirect(url_for('dashboard'))
+        if 'server_name' not in session:
             flash('You are not connected to a server!', 'info')
             return redirect(url_for('pair'))
         return render_template('register.html')
@@ -677,6 +678,8 @@ class MyEventHandler(FileSystemEventHandler):
     def __init__(self):
         super().__init__()
         self._supressed_dirs: set[str] = set()
+        self._debounce_timers = {}  # debounce timers for file modification events
+        self.debounce_delay = 1.5  # seconds
 
     def _get_parent_folder_id(self, file_path: str) -> str | None:
         # Convert to absolute path to ensure consistent comparisons
@@ -838,7 +841,33 @@ class MyEventHandler(FileSystemEventHandler):
         # if it was a directory, remember to suppress its children
         if event.is_directory:
             self._supressed_dirs.add(event.src_path)
+        
+        #### checks sync_queue for any creation/deletion of current file, since delete overrides creation and modification! ####
+        removed_created = False
+        removed_modified = False
+        new_queue = queue.Queue()
 
+        # Remove 'created' or 'modified' events for this path
+        with sync_queue.mutex:
+            while not sync_queue.empty():
+                item = sync_queue.get()
+                if item['src_path'] == event.src_path:
+                    if item['event_type'] == 'created':
+                        removed_created = True
+                        logging.info(f"🧹 Removed 'created' event for {event.src_path}")
+                        continue
+                    elif item['event_type'] == 'modified':
+                        removed_modified = True
+                        logging.info(f"🧹 Removed 'modified' event for {event.src_path}")
+                        continue
+                new_queue.put(item)
+            sync_queue.queue = new_queue.queue
+
+        if removed_created and not removed_modified:
+            logging.info(f"🧹 Skipping deletion for {event.src_path} since it was only queued for creation")
+            self._persist_queue()
+            return
+        ########################################################################################################################
         sync_queue.put({
             "id": generate_event_id(),
             "event_type":  "deleted",
@@ -862,17 +891,91 @@ class MyEventHandler(FileSystemEventHandler):
                 with app.app_context():
                     db.session.rollback()
                 logging.error(f"❌ Failed to delete {event.src_path} from database: {e}")
-        # TODO delete from data base!!!
+        
     
-    def on_modified(self, event): # 💥
-        logging.info(f'🟡 {event.src_path} has been {event.event_type}')
-        if event.is_directory == True:
-            pass
-        else:
-            stats = os.stat(event.src_path)  # Added to get file stats
-            logging.info(f'🟡 {event.src_path} has been {event.event_type}. Current size {stats.st_size} bytes') # 💥
-            logging.info(f'File size: {stats.st_size} bytes')  # Added to log file size
-            logging.info(f'Last modified: {time.ctime(stats.st_mtime)}')  # Added to log last modified time
+    def on_modified(self, event):
+        if event.is_directory:
+            return
+
+        path = event.src_path
+
+        if path in self._debounce_timers:
+            self._debounce_timers[path].cancel()
+
+        timer = Timer(self.debounce_delay, lambda: self._debounce_timers.pop(path, None))
+        timer.start()
+        self._debounce_timers[path] = timer
+
+        if timer.finished:
+            logging.info(f"🟡 Debounced: {path} really modified!")
+            stats = os.stat(path)
+            size = stats.st_size
+            mtime = time.ctime(stats.st_mtime)
+            logging.info(f"🟡 {path} size: {size} bytes, last modified: {mtime}")
+
+            folder_id = self._get_parent_folder_id(path)
+            if folder_id is None:
+                logging.warning(f"Skipping sync for modified file {path} (no matching folder)")
+                return
+
+            self.src_path = path
+            new_hash = self._find_hash()
+
+            try:
+                with app.app_context():
+                    # Try to find the file in the database
+                    file = File.query.filter_by(path=path).first()
+                    
+                    if file:
+                        # File exists in database, check if content actually changed
+                        if file.hash == new_hash:
+                            logging.info(f"🚫 No content change detected in {path}, skipping sync")
+                            return
+                        else:
+                            # Update the hash and size in the database since file has changed
+                            logging.info(f"🟠 Content change detected in {path}, updating hash from {file.hash} to {new_hash}")
+                            file.hash = new_hash
+                            file.size = size
+                            db.session.commit()
+                    else:
+                        # File doesn't exist in database yet
+                        logging.warning(f"File {path} not found in database but was modified. Will add to sync queue.")
+                        new_file = File(folder_id=folder_id, path=path, hash=new_hash, size=size) # version will automatically be set to 1.0
+                        db.session.add(new_file)
+                        db.session.commit()
+                        logging.info(f"File {path} added to database with version 1.0")
+                        sync_queue.put({ # 
+                                "id": generate_event_id(),
+                                "event_type": "created",
+                                "src_path": path, 
+                                "is_dir": False,
+                                "origin": session['user'],
+                                "folder_id": folder_id, 
+                                "hash": new_hash,
+                                "size": size
+                                })
+                        logging.info(f"🟢 Added to sync_queue: {path} with folder_id {folder_id}")
+                        
+            except Exception as e:
+                # Handle any database errors safely
+                logging.error(f"Database error checking file hash: {e}")
+                # Continue with sync anyway to be safe
+                with app.app_context():
+                    db.session.rollback()  # Ensure transaction is cleaned up
+
+            sync_queue.put({
+                "id": generate_event_id(),
+                "event_type": "modified",
+                "src_path": path,
+                "is_dir": False,
+                "origin": session['user'],
+                "folder_id": folder_id,
+                "hash": new_hash,
+                "size": size
+            })
+            self._persist_queue()
+            logging.info(f'🟡 Modified file {path} added to sync_queue!')
+    
     def on_closed(self, event):
         logging.info(f'🔵 {event.src_path} has been {event.event_type}')
 
@@ -1054,7 +1157,7 @@ def sync_worker():
 ########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
 class Sync:
     def __init__(self):
-        self.BLOCK_SIZE = 10000000 # 1MB
+        self.BLOCK_SIZE = 1000000 # 1MB
         self.PORT = 7000
         self.HEADER_SIZE = 4
         self.RESPONSE_OK = b'ACK'
@@ -1101,12 +1204,12 @@ class Outgoing(Sync):
         with open(self.src_path, 'rb') as f:
             file_data = f.read()
 
-        blocks = [file_data[i:i + self.BLOCK_SIZE] for i in range(0, len(file_data), self.BLOCK_SIZE)]
+        blocks = [file_data[i:i + self.BLOCK_SIZE] for i in range(0, len(file_data), self.BLOCK_SIZE)] # binary data
         return [
             {
                 "index": i,
-                "data": base64.b64encode(block).decode(),
-                "checksum": hashlib.md5(block).hexdigest()
+                "data": base64.b64encode(block).decode(), # binary data to base64 string
+                "checksum": hashlib.md5(block).hexdigest() # binary data checksum
             }
             for i, block in enumerate(blocks)
         ]
