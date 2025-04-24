@@ -518,26 +518,7 @@ def handle_client_message(clientsocket, message):
     
 
 # SERVER LOOP
-ip_file = "ip_map.json"
-if os.path.exists(ip_file):
-    with open(ip_file, "r") as file: # Load data from the file if it exists
-        ip_map = json.load(file)
-else:
-    ip_map = {
-        "users": {}
-    } # NOTE: it dont create the file just yet, create the varible. 
-    # when stuff is being added to the varible, the file will be created then.
 
-invites_file = "invites.json"
-if os.path.exists(invites_file):
-    with open(invites_file, "r") as file: # Load data from the file if it exists
-        invites = json.load(file)
-else:
-    invites = {
-        "folders": {},
-        "groups": {}
-    }
-logging.info(f'INITIALISING invites: {invites}')
 
 
 def main():
@@ -654,10 +635,14 @@ class SyncEvent(Incoming):
     def apply(self):
         pass
 
-    def handle_global_blocklist(self, action: str, blocklist: dict = None, query = None) -> None:
+    def handle_global_blocklist(self, action: str, blocklist: dict = None, hashlist: list = None, query = None) -> None:
         # action could be 'add' 'delete' 'move' 'query'!
         # blocklist only sent if action is 'add' or 'delete'
-        global_blocklist(action=action, blocklist=blocklist, query=query)
+        Global_Blocklist(action=action, blocklist=blocklist, hashlist=hashlist, query=query)
+        # action='add' blocklist=[{'hash1':{'offset':offset, 'size':size}}, {'hash2':{'offset':offset, 'size':size}}] src_path='/home/...'
+        # action='delete' delete that block as well as all instances of it. send: src_path='/home/...' + hashlist(list of hashes to be deleted!)
+        # action='move' renames source path of file for specified hash. e.g. {'hash1':{'src_path':'/home/file.txt', ...}} -> {'hash1':{'src_path':'/home/FILE.txt', ...}} 
+        # action='query' asks back file data in binary for hash specified!
 
     def _get_mac_addr(self, user) -> str:
         for mac_addr in ip_map["users"][user]:
@@ -919,10 +904,15 @@ if __name__ == "__main__":
 
 
 # TODO make system wide blocklist
-class global_blocklist():
-    def __init__(self, action=None, blocklist=None, query=None):
+class Global_Blocklist():
+        # action='add' blocklist=[{'hash1':{'offset':offset, 'size':size}}, {'hash2':{'offset':offset, 'size':size}}] src_path='/home/...'
+        # action='delete' delete that block as well as all instances of it. send: src_path='/home/...' + hashlist(list of hashes to be deleted!)
+        # action='move' renames source path of file for specified hash. e.g. {'hash1':{'src_path':'/home/file.txt', ...}} -> {'hash1':{'src_path':'/home/FILE.txt', ...}} 
+        # action='query' asks back file data in binary for hash specified!
+    def __init__(self, action=None, blocklist=None, hashlist=None, src_path=None ,query=None):
         self.action = action # command
         self.blocklist = blocklist # blocklist/lists
+        self.src_path = src_path
         self.query = query
         self.handle_request()
     def handle_request(self):
@@ -936,12 +926,20 @@ class global_blocklist():
             self.query_blocklist()
         pass
     def write_blocklist(self): # TODO in the case of writing a blocklist to a file.
-        pass
-    def read_blocklist(self): # TODO in the case of reading a blocklist from a file.
-        pass
+        with open(ip_file, "w") as file:
+            json.dump(ip_map, file, indent=2)
+
     def add_blocklist(self): # TODO in the case of adding a hash to a file.
-        pass
+        for hash, position in self.blocklist:
+            position['src_path'] = self.src_path
+            global_blocklist[hash] = position
+        self.write_blocklist()
+
     def delete_blocklist(self): # TODO in the case of removing a hash from a file.
+        for hash in self.hashlist: # TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        # TODO delete all instances of src_path inside the blocklist
+        # TODO use hash
         pass
     def update_blocklist(self): # TODO in case file is moved
         pass
@@ -951,5 +949,43 @@ class global_blocklist():
         for q in self.query ...'''
         pass
 
+class build_instruction():
+    def __init__(self):
+        pass
 
+    # NOTE: rest of the instruction's such as create/delete/moved can be stored and sent as it was received from client -> server
+    # NOTE: event_type = 'created'. just store in sync_queue the instructions for created.
 # QUEUE SYSTEM
+
+if __name__ == '__main__':
+    global_blocklist_file = "blocklist.json"
+    if os.path.exists(global_blocklist_file):
+        with open(global_blocklist_file, "r") as file: # Load data from the file if it exists
+            global_blocklist = json.load(file)
+    else:
+        global_blocklist = {}
+    logging.info(f'INITIALISING global_blocklist {global_blocklist}')
+
+ip_file = "ip_map.json"
+if os.path.exists(ip_file):
+    with open(ip_file, "r") as file: # Load data from the file if it exists
+        ip_map = json.load(file)
+else:
+    ip_map = {
+        "users": {}
+    } # NOTE: it dont create the file just yet, create the varible. 
+    # when stuff is being added to the varible, the file will be created then.
+logging.info(f'INITIALISING ip_map: {ip_map}')
+
+invites_file = "invites.json"
+if os.path.exists(invites_file):
+    with open(invites_file, "r") as file: # Load data from the file if it exists
+        invites = json.load(file)
+else:
+    invites = {
+        "folders": {},
+        "groups": {}
+    }
+logging.info(f'INITIALISING invites: {invites}')
+
+# NOTE: all these are dictionaries therefore automatically global variables

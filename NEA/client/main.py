@@ -1076,7 +1076,7 @@ class MyEventHandler(FileSystemEventHandler):
                                 "hash": new_hash,
                                 "size": size
                                 })
-                        logging.info(f"🟢 Added to sync_queue: {path} with folder_id {folder_id}")
+                        logging.info(f"🟡 ---> 🟢 Added to sync_queue: {path} with folder_id {folder_id}")
                         
             except Exception as e:
                 # Handle any database errors safely
