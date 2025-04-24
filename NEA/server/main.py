@@ -625,7 +625,7 @@ class Incoming(Sync):
         elif event_type == 'moved':
             Move(metadata, self.address).apply() # ↙️
         elif event_type == 'modify':
-            Modify(metadata, self.address).apply() # ↙️
+            Modify(metadata, self.address, self.connection).apply() # ↙️
             pass
 
 class SyncEvent(Incoming):
@@ -636,10 +636,10 @@ class SyncEvent(Incoming):
     def apply(self):
         pass
 
-    def handle_global_blocklist(self, action: str, blocklist: dict = None, hashlist: list = None, query = None) -> None:
+    def handle_global_blocklist(self, action: str, blocklist: dict = None, hashlist: list = None, src_path: str = None, dest_path: str = None, query = None) -> None:
         # action could be 'add' 'delete' 'move' 'query'!
         # blocklist only sent if action is 'add' or 'delete'
-        Global_Blocklist(action=action, blocklist=blocklist, hashlist=hashlist, query=query)
+        Global_Blocklist(action=action, blocklist=blocklist, hashlist=hashlist, src_path=src_path, dest_path=dest_path, query=query)
         # action='add' blocklist=[{'hash1':{'offset':offset, 'size':size}}, {'hash2':{'offset':offset, 'size':size}}] src_path='/home/...'
         # action='delete' delete that block as well as all instances of it. send: src_path='/home/...' + hashlist(list of hashes to be deleted!)
         # action='move' renames source path of file for specified hash. e.g. {'hash1':{'src_path':'/home/file.txt', ...}} -> {'hash1':{'src_path':'/home/FILE.txt', ...}} 
@@ -720,7 +720,7 @@ class CreateFile(SyncEvent):
             f.write(file_data)
         logging.info(f"[+] File '{formatted_path}' received successfully.")
 
-        self.handle_global_blocklist('add', blocklist)
+        self.handle_global_blocklist('add', blocklist, src_path=formatted_path) # 🌍 Adding to global_blocklist
 
         blocklist_serialised = {}
         for hash, data in blocklist.items():
@@ -895,8 +895,10 @@ class Move(SyncEvent):
 class Modify(SyncEvent):
     def apply(self):
         formatted_path = self.format_path()
-        blocklist = session.query(File).filter_by(=).first()
-        pass
+        blocklist = session.query(File).filter_by(path=formatted_path).first()
+        logging.info(f"[+] Blocklist entry found for file: {formatted_path}")
+        
+        
 
 class Outgoing(Sync):
     def __init__(self):
@@ -916,13 +918,16 @@ class Global_Blocklist():
         # action='add' blocklist=[{'hash1':{'offset':offset, 'size':size}}, {'hash2':{'offset':offset, 'size':size}}] src_path='/home/...'
         # action='delete' delete that block as well as all instances of it. send: src_path='/home/...' + hashlist(list of hashes to be deleted!)
         # action='move' renames source path of file for specified hash. e.g. {'hash1':{'src_path':'/home/file.txt', ...}} -> {'hash1':{'src_path':'/home/FILE.txt', ...}} 
-        # action='query' asks back file data in binary for hash specified!
-    def __init__(self, action=None, blocklist=None, hashlist=None, src_path=None ,query=None):
+        # action='query' asks back file data in binary for hash specified in parameter 'query'!
+    def __init__(self, action=None, blocklist=None, hashlist=None, src_path=None, dest_path=None, query=None):
         self.action = action # command
         self.blocklist = blocklist # blocklist/lists
+        self.hashlist = hashlist # list of hashes to be deleted usually given at the end of modifying a file.
         self.src_path = src_path
+        self.dest_path = dest_path
         self.query = query
         self.handle_request()
+
     def handle_request(self):
         if self.action == 'add':
             self.add_blocklist()
@@ -933,6 +938,7 @@ class Global_Blocklist():
         elif self.action == 'query':
             self.query_blocklist()
         pass
+
     def write_blocklist(self): # TODO in the case of writing a blocklist to a file.
         with open(ip_file, "w") as file:
             json.dump(ip_map, file, indent=2)
@@ -944,17 +950,41 @@ class Global_Blocklist():
         self.write_blocklist()
 
     def delete_blocklist(self): # TODO in the case of removing a hash from a file.
-        for hash in self.hashlist: # TODO 
-            global_blocklist.pop(hash, None) # removes block from blocklist
-        # 
-        # TODO delete all instances of src_path inside the blocklist
-        # TODO use hash
-            pass
+        for hash in self.hashlist:
+            if hash in global_blocklist and global_blocklist[hash].get('src_path') == self.src_path:
+                global_blocklist.pop(hash)  # Only remove if hash exists and path matches
+        self.write_blocklist()  # save changes to file
+
     def update_blocklist(self): # TODO in case file is moved
-        pass
+        for hash, data in global_blocklist.items():
+            if data.get('src_path') == self.src_path:
+                data['src_path'] = self.dest_path
+        self.write_blocklist()  # Save changes to file
+
     def query_blocklist(self):
-         
-        pass
+        hash_to_query = self.query
+        if hash_to_query in global_blocklist:
+            block_info = global_blocklist[hash_to_query]
+            src_path = block_info.get('src_path')
+            offset = block_info.get('offset')
+            size = block_info.get('size')
+            
+            if src_path and offset is not None and size is not None:
+                try:
+                    with open(src_path, 'rb') as file:
+                        file.seek(offset)
+                        data = file.read(size)
+                        logging.info(f"Successfully read block data for hash: {hash_to_query}")
+                        return data
+                except Exception as e:
+                    logging.error(f"Error reading block data: {e}")
+                    return None
+            else:
+                logging.error(f"Incomplete block information for hash: {hash_to_query}")
+                return None
+        else:
+            logging.error(f"Hash not found in global blocklist: {hash_to_query}")
+            return None
 
 class build_instruction():
     def __init__(self):

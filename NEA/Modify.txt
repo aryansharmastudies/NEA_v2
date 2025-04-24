@@ -1,0 +1,11 @@
+add the following functionality to class Modify.
+
+go through each block in updated_blocklist and see if it exists in the current_blocklist. if the hash can be found!
+go ahead and read that current file from the position data that hash stores in current_blocklist dictionary.
+read it in binary and store it into a new temporary file created in the same directory as the current file. ensure to add a naming scheme of the temp file. similarly go through each of the hash in updated_blocklist and if you find a hash that is not within current_blocklist, then query the global_blocklist to see if it exists. if it does, simply query it so it returns the data for that hash and append it into the temporary file. finally if the hash is not within the current file, the global_blocklist, then using the self.connection and self.address, create a request to the user to send the desired hash. this means sending the location of the file as well as the offset and size of data that is to be requested. upon receiving that(make sure we can receive it using streaming and buffering so we could use something like receive_valid_packet) then append to temp file.
+keep doing that until updated_blocklist is done. through out the whole process,
+additionally add these three functionality:
+
+for any unused hash in the current_blocklist dictionary make sure to remove it from the global_blocklist
+for any new hashes that is appended to the current_blocklist, make sure to all add it to global_blocklist
+ensure to rebuild(either while appending data to temp file) the current_blocklist so at the end it can replace the old current_blocklist stored in the database.

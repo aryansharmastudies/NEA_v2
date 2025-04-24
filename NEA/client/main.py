@@ -1237,6 +1237,12 @@ class Outgoing(Sync):
             self.folder_id = event['folder_id']
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
+            with app.app_context():
+                file = File.query.filter_by(path=self.src_path).first()
+                if file:
+                    self.version = file.version
+                else:
+                    self.version = 'v1.0'  # Default version
 
         if self.event_type == 'moved':
             self.dest_path = event['dest_path']
@@ -1262,6 +1268,7 @@ class Outgoing(Sync):
             metadata["block_count"] = self.block_count
             metadata["folder_id"] = self.folder_id
             metadata["size"] = os.path.getsize(self.src_path)
+            metadata["version"] = self.version
             
         
         if self.event_type == 'moved':
@@ -1375,12 +1382,12 @@ class Outgoing(Sync):
 
             # Send blocklist for modified files
             if self.event_type == 'modified' and hasattr(self, 'blocks'):
-                block_info_packet = {
-                    "index": "blocks",
-                    "blocks": self.blocks
+                blocklist_packet = {
+                    "index": "blocklist",
+                    "blocklist": self.blocks
                 }
                 logging.info(f"[+] Sending block list for modified file")
-                self.send_packet(outgoingsock, block_info_packet)
+                self.send_packet(outgoingsock, blocklist_packet)
                 logging.info(f"[+] Block list sent for modified file")
 
             # Send file packets for created and modified files
