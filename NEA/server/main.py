@@ -624,7 +624,8 @@ class Incoming(Sync):
             Delete(metadata, self.address).apply() # ↙️
         elif event_type == 'moved':
             Move(metadata, self.address).apply() # ↙️
-        else:
+        elif event_type == 'modify':
+            Modify(metadata, self.address).apply() # ↙️
             pass
 
 class SyncEvent(Incoming):
@@ -673,6 +674,7 @@ class CreateDir(SyncEvent):
         logging.info(f"[+] Directory created at: {formatted_path}")
 
 class CreateFile(SyncEvent):
+    
     def get_blocksize(self) -> int:
         """Determine block size based on file size."""
         try:
@@ -889,7 +891,13 @@ class Move(SyncEvent):
                     
             except Exception as e:
                 logging.error(f"[!] Error moving directory: {e}")
-    
+
+class Modify(SyncEvent):
+    def apply(self):
+        formatted_path = self.format_path()
+        blocklist = session.query(File).filter_by(=).first()
+        pass
+
 class Outgoing(Sync):
     def __init__(self):
         super().__init__()
@@ -936,17 +944,16 @@ class Global_Blocklist():
         self.write_blocklist()
 
     def delete_blocklist(self): # TODO in the case of removing a hash from a file.
-        for hash in self.hashlist: # TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+        for hash in self.hashlist: # TODO 
+            global_blocklist.pop(hash, None) # removes block from blocklist
+        # 
         # TODO delete all instances of src_path inside the blocklist
         # TODO use hash
-        pass
+            pass
     def update_blocklist(self): # TODO in case file is moved
         pass
     def query_blocklist(self):
-        # could be many queries
-        '''
-        for q in self.query ...'''
+         
         pass
 
 class build_instruction():

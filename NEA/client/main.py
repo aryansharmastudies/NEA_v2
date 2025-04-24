@@ -1231,10 +1231,10 @@ class Outgoing(Sync):
         
         elif not self.is_dir and self.event_type == 'modified':
             logging.info(f"Creating block list for modified file")
-            self.blocks = self.create_blocklist()
+            self.blocks = self.create_blocklist() # {'hash1'={},'hash2'={},'hash3'={}} 
+            self.block_count = len(self.blocks)
             self.hash = file_to_hash.get(self.src_path) or event.get('hash')
             self.folder_id = event['folder_id']
-            self.size = event.get('size', os.path.getsize(self.src_path))
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
 
@@ -1259,9 +1259,10 @@ class Outgoing(Sync):
         elif not self.is_dir and self.event_type == 'modified':
             metadata['hash'] = self.hash
             metadata["packet_count"] = self.packet_count
+            metadata["block_count"] = self.block_count
             metadata["folder_id"] = self.folder_id
-            metadata["size"] = self.size
-            metadata["block_count"] = len(self.blocks) if hasattr(self, 'blocks') else 0
+            metadata["size"] = os.path.getsize(self.src_path)
+            
         
         if self.event_type == 'moved':
             metadata['dest_path'] = self.dest_path
@@ -1325,6 +1326,10 @@ class Outgoing(Sync):
             logging.error(f"Error creating block list: {e}")
             return {}
     
+        '''
+        block_list looks like {'hash1'={},'hash2'={},'hash3'={}}
+        '''
+    
     def create_packet(self) -> list:
         # Use dynamic block size based on file size
         block_size = self.get_blocksize()
@@ -1377,7 +1382,7 @@ class Outgoing(Sync):
                 logging.info(f"[+] Sending block list for modified file")
                 self.send_packet(outgoingsock, block_info_packet)
                 logging.info(f"[+] Block list sent for modified file")
-            
+
             # Send file packets for created and modified files
             if hasattr(self, 'packets'):
                 for packet in self.packets:
