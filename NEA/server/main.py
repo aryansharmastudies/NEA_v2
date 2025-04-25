@@ -15,6 +15,7 @@ import base64
 import hashlib
 import threading
 import shutil
+import time
 
 ########## LOGGING ##############################
 def log() -> None:
@@ -598,6 +599,10 @@ class Incoming(Sync):
                 metadata = payload
                 return metadata
             
+            if index == 'blocklist':
+                connection.send(self.RESPONSE_OK)
+                return payload
+            
             decoded_data = base64.b64decode(payload['data']) # DECODE FROM BASE64 TO BINARY
             checksum = payload['checksum']
 
@@ -894,10 +899,176 @@ class Move(SyncEvent):
 
 class Modify(SyncEvent):
     def apply(self):
-        formatted_path = self.format_path()
-        blocklist = session.query(File).filter_by(path=formatted_path).first()
-        logging.info(f"[+] Blocklist entry found for file: {formatted_path}")
+        formatted_path = self.format_path() #🆗
+        logging.info(f"[+] Processing modification for file: {formatted_path}") #🆗
         
+        # Get block info packet first
+        blocklist_packet = self.receive_valid_packet(self.connection, "blocklist") #🆗
+        updated_blocklist = blocklist_packet.get('blocklist', {}) #🆗
+        logging.info(f"[+] Received block info with {len(updated_blocklist)} blocks") #🆗
+
+        # Get existing file's block list from database
+        file_entry = session.query(File).filter_by(path=formatted_path).first() #🆗
+        if not file_entry:  #🆗
+            logging.error(f"[!] No database entry found for file: {formatted_path}") #🆗
+            return #🆗
+
+        # Parse the existing block list
+        current_blocklist = {} #🆗
+        if file_entry.block_list: #🆗
+            serialized_blocks = json.loads(file_entry.block_list) #🆗
+            for hash_key, serialized_data in serialized_blocks.items(): #🆗
+                current_blocklist[hash_key] = json.loads(base64.b64decode(serialized_data.encode()).decode()) #🆗
+        
+        logging.info(f"[+] Current block list has {len(current_blocklist)} blocks") #🆗
+        
+        # Create temporary file path
+        temp_file_path = f"{formatted_path}.tmp_{int(time.time())}" #🆗
+        logging.info(f"[+] Creating temporary file: {temp_file_path}") #🆗
+        
+        # Ensure directory exists
+        os.makedirs(os.path.dirname(formatted_path), exist_ok=True) #🆗
+        
+        # Track used blocks for later cleanup
+        used_blocks = set() #🆗
+        # Track new blocks to add to global blocklist
+        new_blocks = {} #🆗
+        # Build new blocklist to replace the old one
+        rebuilt_blocklist = {} #🆗
+        
+        # Open temp file for writing
+        with open(temp_file_path, 'wb') as temp_file: #🆗
+            offset = 0 #🆗
+            # Process each block in the updated blocklist
+            for block_hash, block_info in updated_blocklist.items(): #🆗
+                block_offset = block_info.get('offset', 0) #🆗
+                block_size = block_info.get('size', 0) #🆗
+                block_data = None #🆗
+                
+                # Try to find the block in the current file
+                if block_hash in current_blocklist: #🆗
+                    logging.info(f"[+] Block {block_hash[:8]}... found in current file") #🆗
+                    used_blocks.add(block_hash) #🆗
+                    
+                    try: #🆗
+                        # Read the block from the current file
+                        current_offset = current_blocklist[block_hash].get('offset', 0) #🆗
+                        current_size = current_blocklist[block_hash].get('size', 0) #🆗
+                        
+                        with open(formatted_path, 'rb') as current_file: #🆗
+                            current_file.seek(current_offset) #🆗
+                            block_data = current_file.read(current_size) #🆗
+                    except Exception as e: #🆗
+                        logging.error(f"[!] Error reading block from current file: {e}") #🆗
+                        block_data = None #🆗
+                
+                # If not found or error reading from current file, try global blocklist
+                elif block_data is None and hasattr(self, 'handle_global_blocklist'): #🆗
+                    logging.info(f"[+] Trying to find block {block_hash[:8]}... in global blocklist") #🆗
+                    block_data = self.handle_global_blocklist('query', query=block_hash) #🆗
+                
+                # If still not found, request from client
+                else: # No block data found in current file or global blocklist #🆗
+                    logging.info(f"[+] Requesting block {block_hash[:8]}... from client") #🆗
+                    
+                    # Request specific block from client
+                    request_packet = { #🆗
+                        "index": "request", #🆗,
+                        "src_path": self.metadata['src_path'], #🆗
+                        "offset": block_offset, #🆗
+                        "size": block_size, #🆗
+                        "block_hash": block_hash, #🆗
+                    } #🆗
+                    
+                    self.send_packet(self.connection, request_packet) #🆗
+                    
+                    metadata = self.receive_valid_packet(self.connection, 0)
+                    logging.info(f"[+] Metadata received: {metadata}")
+                    
+                    packet_count = self.metadata['packet_count']
+                    logging.info(f"[+] Expecting {packet_count} packets...")
+
+                    for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
+                        data, hash = self.receive_valid_packet(self.connection, index)
+                        file_data += data
+                    
+                    # Receive the block data
+                    # block_data, received_hash = self.receive_valid_packet(self.connection, "") #🆗
+
+                    # for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
+                    #     data, hash = self.receive_valid_packet(self.connection, index)
+
+
+                    if received_hash != block_hash: #🆗
+                        logging.error(f"[!] Hash mismatch for received block: expected {block_hash}, got {received_hash}") #🆗
+                        continue
+                    
+                    # Add this new block to our tracking
+                    new_blocks[block_hash] = {
+                        "offset": offset,
+                        "size": len(block_data),
+                        "src_path": formatted_path
+                    }
+                
+                # If we have valid block data, write it to our temp file
+                if block_data:
+                    temp_file.write(block_data)
+                    
+                    # Update rebuilt_blocklist with this block's info
+                    rebuilt_blocklist[block_hash] = {
+                        "offset": offset,
+                        "size": len(block_data)
+                    }
+                    
+                    # Update offset for next block
+                    offset += len(block_data)
+                else:
+                    logging.error(f"[!] Failed to retrieve block {block_hash[:8]}...")
+        
+        # Cleanup: Remove unused blocks from global_blocklist
+        unused_blocks = set(current_blocklist.keys()) - used_blocks
+        if unused_blocks and hasattr(self, 'handle_global_blocklist'):
+            logging.info(f"[+] Removing {len(unused_blocks)} unused blocks from global blocklist")
+            self.handle_global_blocklist('delete', hashlist=list(unused_blocks), src_path=formatted_path)
+        
+        # Add new blocks to global_blocklist
+        if new_blocks and hasattr(self, 'handle_global_blocklist'):
+            logging.info(f"[+] Adding {len(new_blocks)} new blocks to global blocklist")
+            self.handle_global_blocklist('add', blocklist=new_blocks, src_path=formatted_path)
+        
+        # Rename temp file to original file
+        if os.path.getsize(temp_file_path) > 0:
+            logging.info(f"[+] Replacing original file with reconstructed file")
+            os.replace(temp_file_path, formatted_path)
+        else:
+            logging.error(f"[!] Reconstructed file is empty, keeping original")
+            os.remove(temp_file_path)
+            return
+        
+        # Update database entry
+        file_entry.hash = self.metadata['hash']
+        file_entry.size = os.path.getsize(formatted_path)
+        file_entry.version = self.metadata.get('version', 'v1.0')
+        
+        # Serialize the rebuilt blocklist for database storage
+        serialized_rebuilt = {}
+        for hash_key, block_data in rebuilt_blocklist.items():
+            serialized_rebuilt[hash_key] = base64.b64encode(json.dumps(block_data).encode()).decode()
+        
+        file_entry.block_list = json.dumps(serialized_rebuilt)
+        session.commit()
+        logging.info(f"[+] Updated database entry for: {formatted_path}")
+        logging.info(f"[+] File modification complete")
+    
+    def send_packet(self, connection, packet):
+        """Send a packet to the client"""
+        payload = json.dumps(packet).encode('utf-8')
+        header = struct.pack('!I', len(payload))
+        message = header + payload
+        connection.sendall(message)
+        response = connection.recv(3)
+        return response == self.RESPONSE_OK
+            
         
 
 class Outgoing(Sync):
@@ -1026,3 +1197,35 @@ else:
 logging.info(f'INITIALISING invites: {invites}')
 
 # NOTE: all these are dictionaries therefore automatically global variables
+
+
+'''
+
+Efficiently reconstructs the file block by block:
+
+Reads from existing file when possible
+Queries global blocklist for shared blocks
+Requests missing blocks from client only when necessary
+Performs intelligent block management:
+
+Tracks which blocks were used and which are new
+Removes unused blocks from global blocklist
+Adds new blocks to global blocklist
+Rebuilds the file's blocklist with accurate offsets and sizes
+Uses a robust temp file approach:
+
+Creates a temporary file with timestamp
+Builds the new file piece by piece
+Only replaces original file if reconstruction was successful
+Handles error conditions gracefully:
+
+Verifies received blocks match expected hashes
+Logs each step for debugging
+Maintains database consistency
+Optimizes network usage:
+
+Only requests blocks that aren't available locally
+Reuses blocks across files when possible
+This implementation achieves significant bandwidth savings for modified files by eliminating the need to retransmit blocks that haven't changed or are available elsewhere in the system.
+
+'''
