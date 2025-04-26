@@ -133,6 +133,7 @@ def handle_connect():
     socketio.emit('alerts', session['alerts']) # ⭐
     logging.info(f'sending alerts to frontend!: {session["alerts"]}')
     socketio.emit('users_devices_data', session['users_and_devices']) # ⭐
+    logging.info(f'sending users and devices data to frontend!: {session["users_and_devices"]}')
 
 @socketio.on('wtf')
 def wtf():
@@ -1115,6 +1116,22 @@ class MyEventHandler(FileSystemEventHandler):
                     })
                 self._persist_queue()
                 logging.info(f'🟡 ---> 🟢 Modified file {path} added to sync_queue AS CREATED!')
+            
+            else:
+                # Handle case when neither removed_modified nor removed_created is True
+                logging.info("Normal file modification detected, adding to sync queue.")
+                sync_queue.put({ 
+                    "id": self.generate_event_id(),
+                    "event_type": "modified",
+                    "src_path": path,
+                    "is_dir": False,
+                    "origin": "user",
+                    "folder_id": folder_id,
+                    "hash": new_hash,
+                    "size": size
+                })
+                self._persist_queue()
+                logging.info(f'🟡 Modified file {path} added to sync_queue!')
     
     def on_closed(self, event):
         logging.info(f'🔵 {event}')
@@ -1178,7 +1195,7 @@ def sync_worker():
         logging.info(f"Processing event: {event}")
         try:
             logging.info(f"Creating sync job for {event['src_path']}")
-            sync_job = Outgoing(event)  # TODO 🆘 Custom logic i.e. OUTGOING
+            sync_job = Outgoing(event)  # JUST RUNS INITIALISERS
             logging.info(f"Sync job created: {sync_job}")
             status = sync_job.start_server()  # Start the server to send the packet
             logging.info(f"Sync job status: {status}")
@@ -1209,7 +1226,6 @@ def sync_worker():
 class Sync:
     def __init__(self):
         # self.BLOCK_SIZE = 1024 * 1024 # 1048576 Bytes -> 1 MebiByte
-        self.PORT = 7000
         self.HEADER_SIZE = 4
         self.RESPONSE_OK = b'ACK'
         self.RESPONSE_ERR = b'ERR'
@@ -1217,6 +1233,7 @@ class Sync:
 class Outgoing(Sync):
     def __init__(self, event):
         super().__init__()
+        self.PORT = 9696
         self.src_path = event['src_path']
         self.is_dir = event['is_dir']  # Updated to use 'is_dir' from event
         self.origin = event['origin']  # Updated to use 'origin' from event
@@ -1390,8 +1407,11 @@ class Outgoing(Sync):
                 self.send_packet(outgoingsock, blocklist_packet)
                 logging.info(f"[+] Block list sent for modified file")
 
+                return True
+
             # Send file packets for created and modified files
             if hasattr(self, 'packets'):
+                logging.info(f"[+] Sending {len(self.packets)} packets for {self.src_path}")
                 for packet in self.packets:
                     self.send_packet(outgoingsock, packet)
                     # logging.info(f"[+] Packet {packet} sent.") # 🔔
@@ -1410,9 +1430,206 @@ class Outgoing(Sync):
 # def receive_valid_chunk
 # def receive_file
 # def connect_to_server
+
+########################################################################################
+########################################################################################
+########################################################################################
+########################################################################################
+########################################################################################
+
 class Incoming(Sync):
-    def __init__():
-        pass
+    def __init__(self):
+        super().__init__()
+        self.PORT = 6969
+        
+    def listen_for_requests(self):
+        """Listen for block requests from server on port 6969."""
+        request_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        request_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        
+        try:
+            request_socket.bind((ip, self.PORT))
+            request_socket.listen(5)
+            logging.info(f"[BLOCK LISTENER] Started on {ip}:{self.PORT}, waiting for block requests...")
+            
+            while True:
+                connection, address = request_socket.accept()
+                connection.settimeout(10.0)  # Add timeout to prevent hanging
+                logging.info(f"[BLOCK LISTENER] Received connection from {address}")
+                # Handle request in a separate thread to allow multiple concurrent requests
+                threading.Thread(target=self.handle_request, args=(connection, address), daemon=True).start()
+        except Exception as e:
+            logging.error(f"[BLOCK LISTENER] Error: {e}")
+        finally:
+            request_socket.close()
+    
+    def recv_exact(self, connection, num_bytes):
+        """Receive an exact number of bytes from the socket."""
+        data = b''
+        while len(data) < num_bytes:
+            packet = connection.recv(num_bytes - len(data))
+            if not packet:
+                raise ConnectionError("Connection closed prematurely")
+            data += packet
+        return data
+    
+    def receive_valid_packet(self, connection, index):
+        """Receive and validate a packet."""
+        header = self.recv_exact(connection, self.HEADER_SIZE)
+        payload_length = struct.unpack('!I', header)[0]
+        payload = self.recv_exact(connection, payload_length)
+        payload = json.loads(payload.decode())
+        
+        if isinstance(index, str) or index == 0:  # Metadata or special packet
+            connection.send(self.RESPONSE_OK)
+            return payload
+            
+        decoded_data = base64.b64decode(payload['data'])
+        checksum = payload['checksum']
+        
+        actual_checksum = hashlib.md5(decoded_data).hexdigest()
+        if actual_checksum == checksum:
+            logging.info(f"[BLOCK LISTENER] Checksum verified for packet {index}")
+            connection.send(self.RESPONSE_OK)
+            return decoded_data, actual_checksum
+        else:
+            connection.send(self.RESPONSE_ERR)
+            logging.error(f"[BLOCK LISTENER] Checksum mismatch on packet {index}")
+            return None
+    
+    def handle_request(self, connection, address):
+        """Handle a block request from the server."""
+        try:
+            # Receive the request metadata
+            metadata = self.receive_valid_packet(connection, 0)
+            logging.info(f"[BLOCK HANDLER] Request metadata: {metadata}")
+            
+            if metadata['event_type'] == 'request':
+                src_path = metadata['src_path']
+                block_offset = metadata.get('block_offset', 0)
+                block_size = metadata.get('block_size', 0)
+                block_hash = metadata.get('block_hash')
+                
+                # Create response event for Outgoing class
+                response_event = {
+                    'event_type': 'block_response',
+                    'src_path': src_path,
+                    'is_dir': False,
+                    'origin': 'response',
+                    'block_offset': block_offset,
+                    'block_size': block_size,
+                    'block_hash': block_hash
+                }
+                
+                # Read the requested block
+                block_data = self.read_block(src_path, block_offset, block_size, block_hash)
+                
+                # Send the block data back
+                self.send_block_data(connection, response_event, block_data)
+                logging.info(f"[BLOCK HANDLER] Sent block data for {block_hash[:8]}...")
+                
+                # Keep connection open briefly to ensure server receives all data
+                time.sleep(0.5)
+                
+            else:
+                logging.warning(f"[BLOCK HANDLER] Unknown request type: {metadata['event_type']}")
+                
+        except Exception as e:
+            logging.error(f"[BLOCK HANDLER] Error handling request: {e}")
+        finally:
+            # Log before closing to help with debugging
+            logging.info("[BLOCK HANDLER] Closing connection after handling request")
+            connection.close()
+    
+    def read_block(self, src_path, offset, size, expected_hash):
+        """Read a block from the specified file at given offset."""
+        try:
+            with open(src_path, 'rb') as f:
+                f.seek(offset)
+                block_data = f.read(size)
+                
+                # Verify the hash
+                self.actual_hash = hashlib.md5(block_data).hexdigest()
+                logging.info(f'checking Actual hash: {self.actual_hash} against expected hash: {expected_hash}')
+                if self.actual_hash != expected_hash:
+                    logging.warning(f"[BLOCK HANDLER] Hash mismatch: expected {expected_hash}, got {self.actual_hash}")
+                else:
+                    logging.info(f"[BLOCK HANDLER] Hash verified for block {expected_hash[:8]}")
+                return block_data
+                    
+        except FileNotFoundError:
+            logging.error(f"[BLOCK HANDLER] File not found: {src_path}")
+            return None
+        except Exception as e:
+            logging.error(f"[BLOCK HANDLER] Error reading block: {e}")
+            return None
+    
+    def send_block_data(self, connection, event, block_data):
+        """Send block data back to the server."""
+        try:
+            if not block_data:
+                # Send error metadata
+                error_metadata = {
+                    'index': 0,
+                    'event_type': 'block_response',
+                    'status': 'error',
+                    'message': 'Failed to read block data',
+                    'is_dir': False,
+                    'src_path': event['src_path'],
+                    'packet_count': 0
+                }
+                payload = json.dumps(error_metadata).encode('utf-8')
+                header = struct.pack('!I', len(payload))
+                connection.sendall(header + payload)
+                response = connection.recv(3)
+                logging.info(f"[BLOCK HANDLER] Error metadata acknowledged: {response == self.RESPONSE_OK}")
+                return
+
+            # Send metadata
+            metadata = {
+                'index': 0,
+                'event_type': 'block_response',
+                'src_path': event['src_path'],
+                'block_hash': self.actual_hash,
+                'size': len(block_data),
+                'packet_count': 1,
+                'is_dir': False,
+                'status': 'success'
+            }
+            
+            payload = json.dumps(metadata).encode('utf-8')
+            header = struct.pack('!I', len(payload))
+            connection.sendall(header + payload)
+            response = connection.recv(3)
+            
+            if response != self.RESPONSE_OK:
+                logging.error("[BLOCK HANDLER] Failed to send metadata")
+                return
+            
+            # Send the actual block data
+            block_hash = hashlib.md5(block_data).hexdigest()
+            logging.info(f"[BLOCK HANDLER] Sending block data with hash: {block_hash[:8]}")
+            
+            packet = {
+                'index': 1,
+                'data': base64.b64encode(block_data).decode(),
+                'checksum': block_hash
+            }
+            
+            payload = json.dumps(packet).encode('utf-8')
+            header = struct.pack('!I', len(payload))
+            connection.sendall(header + payload)
+            logging.info(f"[BLOCK HANDLER] Sent block data for {block_hash[:8]}")
+            
+            response = connection.recv(3)
+            logging.info(f"[BLOCK HANDLER] Block data acknowledged: {response == self.RESPONSE_OK}")
+        except Exception as e:
+            logging.error(f"[BLOCK HANDLER] Error sending block data: {e}")
+
+########################################################################################
+########################################################################################
+########################################################################################
+########################################################################################
 ########################################################################################
 if __name__ == "__main__":
 
@@ -1463,5 +1680,10 @@ if __name__ == "__main__":
 
     sync_worker_thread = threading.Thread(target=sync_worker, daemon=True) # 🧵
     sync_worker_thread.start()  # ✅ Start just once
+
+    incoming_handler = Incoming()
+    block_request_thread = threading.Thread(target=incoming_handler.listen_for_requests, daemon=True)
+    block_request_thread.start()
+    logging.info("Started block request listener thread")
 
     socketio.run(app)

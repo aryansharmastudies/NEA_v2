@@ -16,6 +16,27 @@ import hashlib
 import threading
 import shutil
 import time
+import queue
+
+
+################################################################################
+################################################################################
+################################################################################
+################################################################################
+################################################################################
+
+
+# sync_active = threading.Event()
+# sync_active.clear()  # Sync is paused initially
+
+
+################################################################################
+################################################################################
+################################################################################
+################################################################################
+################################################################################
+
+
 
 ########## LOGGING ##############################
 def log() -> None:
@@ -543,14 +564,14 @@ def main():
 def sync_worker(): # bridges barrier between incoming data and sync class
     incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    incomingsock.bind((ip, 7000))
-    logging.info(f"[+] Listening on {ip}:7000...")
+    incomingsock.bind((ip, 9696))
+    logging.info(f"[+] Listening on {ip}:9000...")
     incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
 
     while True:
         connection, address = incomingsock.accept() # if client does s.connect((server_name, 8000))
         logging.info(f'Connection from {address} has been established!')
-        sync_job = Incoming(connection, address)
+        sync_job = Incoming(address, connection)
         logging.info(f"[+] Sync job created for {address}...")
         sync_job.receive_metadata()
         logging.info(f"[+] Sync job completed for {address}...")
@@ -562,19 +583,22 @@ def sync_worker(): # bridges barrier between incoming data and sync class
 class Sync:
     def __init__(self):
         self.BLOCK_SIZE = 1024
-        self.PORT = 7000
         self.HEADER_SIZE = 4
         self.RESPONSE_OK = b'ACK'
         self.RESPONSE_ERR = b'ERR'
 
 class Incoming(Sync):
-    def __init__(self, connection, address):
+    def __init__(self, address=None, connection=None):
         super().__init__()
+        self.PORT = 9696
         self.connection = connection
         self.address = address
         
     def recv_exact(self, connection: socket.socket, num_bytes: int) -> bytes:
         """Receive an exact number of bytes from the socket."""
+        if connection is None:
+            raise ValueError("Connection object is None. Make sure a valid socket connection is passed.")
+        
         data = b''
         while len(data) < num_bytes:
             packet = connection.recv(num_bytes - len(data))
@@ -622,21 +646,35 @@ class Incoming(Sync):
         # TODO CHECK IF ITS DIRECTORY OR FILE
         
         if metadata['is_dir'] and event_type == 'created':
+            logging.info(f"[+] Initiating CreateDir.apply()")
             CreateDir(metadata, self.address).apply() # ↙️
+            
         elif not metadata['is_dir'] and event_type == 'created': # i.e. a file is created
+            logging.info(f"[+] Initiating CreateFile.apply()")
             CreateFile(metadata, self.address, self.connection).apply() # ↙️
+            
         elif event_type == 'deleted':
+            logging.info(f"[+] Initiating Delete.apply()")
             Delete(metadata, self.address).apply() # ↙️
+            
         elif event_type == 'moved':
+            logging.info(f"[+] Initiating Move.apply()")
             Move(metadata, self.address).apply() # ↙️
-        elif event_type == 'modify':
+            
+        elif event_type == 'modified':
+            logging.info(f"[+] Initiating Modify.apply()")
             Modify(metadata, self.address, self.connection).apply() # ↙️
-            pass
+            
+        elif event_type == 'block_response':
+            logging.info(f"[+] Initiating Block.apply() with self.address: {self.address} and connection: {self.connection}")
+            block_data, actual_hash = Block(metadata, self.address, self.connection).apply() # ↙️
+            logging.info(f"[+] Block data received! Actual hash of Block Data: {actual_hash}")
+            return block_data, actual_hash
 
 class SyncEvent(Incoming):
-    def __init__(self, metadata, address, connection=None): # ⬅️ added connection parameter!
+    def __init__(self, metadata, address=None, connection=None): # ⬅️ added connection parameter!
         self.metadata = metadata
-        super().__init__(connection, address) 
+        super().__init__(address, connection) 
 
     def apply(self):
         pass
@@ -805,8 +843,14 @@ class Delete(SyncEvent):
             logging.info(f"[-] Directory '{self.metadata['src_path']}' deleted successfully.")
         else: 
             formatted_path = self.format_path()
-            os.remove(formatted_path)
-            logging.info(f"[-] File '{formatted_path}' deleted successfully.")
+            try:
+                os.remove(formatted_path)
+                logging.info(f"[-] File '{formatted_path}' deleted successfully.")
+            except FileNotFoundError:
+                logging.info(f"[-] File '{formatted_path}' already deleted or not found.")
+            except Exception as e:
+                logging.error(f"[-] Error deleting file '{formatted_path}': {e}")
+
             file_entry = session.query(File).filter_by(path=formatted_path).first()
 
             if file_entry:
@@ -932,7 +976,7 @@ class Modify(SyncEvent):
         # Track used blocks for later cleanup
         used_blocks = set() #🆗
         # Track new blocks to add to global blocklist
-        new_blocks = {} #🆗
+        new_globalblocks = {} #🆗
         # Build new blocklist to replace the old one
         rebuilt_blocklist = {} #🆗
         
@@ -968,118 +1012,377 @@ class Modify(SyncEvent):
                     block_data = self.handle_global_blocklist('query', query=block_hash) #🆗
                 
                 # If still not found, request from client
-                else: # No block data found in current file or global blocklist #🆗
+                if not block_data: # No block data found in current file or global blocklist #🆗
                     logging.info(f"[+] Requesting block {block_hash[:8]}... from client") #🆗
                     
                     # Request specific block from client
-                    request_packet = { #🆗
-                        "index": "request", #🆗,
+                    request = { #🆗
+                        "event_type": "request", #🆗,
+                        "is_dir": False, #🆗
+                        "origin": "NoHash", #🆗
                         "src_path": self.metadata['src_path'], #🆗
-                        "offset": block_offset, #🆗
-                        "size": block_size, #🆗
+                        "block_offset": block_offset, #🆗
+                        "block_size": block_size, #🆗
                         "block_hash": block_hash, #🆗
                     } #🆗
                     
-                    self.send_packet(self.connection, request_packet) #🆗
+                    # Maximum retries and initial delay
+                    max_retries = 3
+                    delay = 1  # seconds
                     
-                    metadata = self.receive_valid_packet(self.connection, 0)
-                    logging.info(f"[+] Metadata received: {metadata}")
+                    # Try to get the block data with simple retry
+                    for attempt in range(max_retries):
+                        try:
+                            # Request the block
+                            sync_job = Outgoing(request)
+                            logging.info(f"[+] Requesting block {block_hash[:8]}... (attempt {attempt+1}/{max_retries})")
+                            result = sync_job.start_server(self.address)
+                            
+                            # Check if we got a valid result
+                            if isinstance(result, tuple) and len(result) == 2:
+                                block_data, actual_hash = result
+                                
+                                # Verify the hash if data was received
+                                if block_data and actual_hash == block_hash:
+                                    logging.info(f"[+] Block {block_hash[:8]}... successfully received")
+                                    break
+                                else:
+                                    logging.warning(f"[!] Block verification failed - Hash mismatch, retrying...")
+                                    block_data = None  # Reset for retry
+                                    time.sleep(delay)
+                            else:
+                                logging.warning(f"[!] Invalid result format from start_server, retrying...")
+                                block_data = None
+                                time.sleep(delay)
+                        except Exception as e:
+                            logging.error(f"[!] Error requesting block: {e}")
+                            block_data = None
+                            time.sleep(delay)
                     
-                    packet_count = self.metadata['packet_count']
-                    logging.info(f"[+] Expecting {packet_count} packets...")
-
-                    for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
-                        data, hash = self.receive_valid_packet(self.connection, index)
-                        file_data += data
+                    if not block_data:
+                        logging.error(f"[!] Failed to retrieve block {block_hash[:8]}... after {max_retries} attempts")
                     
-                    # Receive the block data
-                    # block_data, received_hash = self.receive_valid_packet(self.connection, "") #🆗
-
-                    # for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
-                    #     data, hash = self.receive_valid_packet(self.connection, index)
-
-
-                    if received_hash != block_hash: #🆗
-                        logging.error(f"[!] Hash mismatch for received block: expected {block_hash}, got {received_hash}") #🆗
-                        continue
-                    
-                    # Add this new block to our tracking
-                    new_blocks[block_hash] = {
-                        "offset": offset,
-                        "size": len(block_data),
-                        "src_path": formatted_path
+                    # Add this new block to our global_blocklist tracking
+                    new_globalblocks[block_hash] = {#🆗
+                        "offset": offset,#🆗
+                        "size": len(block_data),#🆗
+                        "src_path": formatted_path#🆗
                     }
                 
                 # If we have valid block data, write it to our temp file
-                if block_data:
-                    temp_file.write(block_data)
+                if block_data:#🆗
+                    temp_file.write(block_data)#🆗
                     
                     # Update rebuilt_blocklist with this block's info
-                    rebuilt_blocklist[block_hash] = {
-                        "offset": offset,
-                        "size": len(block_data)
-                    }
+                    rebuilt_blocklist[block_hash] = {#🆗
+                        "offset": offset,#🆗
+                        "size": len(block_data)#🆗
+                    }#🆗
                     
                     # Update offset for next block
-                    offset += len(block_data)
-                else:
-                    logging.error(f"[!] Failed to retrieve block {block_hash[:8]}...")
+                    offset += len(block_data)#🆗
+                else:#🆗
+                    logging.error(f"[!] Failed to retrieve block {block_hash[:8]}...") #🆗
         
         # Cleanup: Remove unused blocks from global_blocklist
-        unused_blocks = set(current_blocklist.keys()) - used_blocks
-        if unused_blocks and hasattr(self, 'handle_global_blocklist'):
-            logging.info(f"[+] Removing {len(unused_blocks)} unused blocks from global blocklist")
-            self.handle_global_blocklist('delete', hashlist=list(unused_blocks), src_path=formatted_path)
+        unused_blocks = set(current_blocklist.keys()) - used_blocks #🆗
+        if unused_blocks and hasattr(self, 'handle_global_blocklist'): #🆗
+            logging.info(f"[+] Removing {len(unused_blocks)} unused blocks from global blocklist") #🆗
+            self.handle_global_blocklist('delete', hashlist=list(unused_blocks), src_path=formatted_path) #🆗
         
         # Add new blocks to global_blocklist
-        if new_blocks and hasattr(self, 'handle_global_blocklist'):
-            logging.info(f"[+] Adding {len(new_blocks)} new blocks to global blocklist")
-            self.handle_global_blocklist('add', blocklist=new_blocks, src_path=formatted_path)
+        if new_globalblocks and hasattr(self, 'handle_global_blocklist'): #🆗
+            logging.info(f"[+] Adding {len(new_globalblocks)} new blocks to global blocklist")#🆗
+            self.handle_global_blocklist('add', blocklist=new_globalblocks, src_path=formatted_path) #🆗
         
-        # Rename temp file to original file
-        if os.path.getsize(temp_file_path) > 0:
-            logging.info(f"[+] Replacing original file with reconstructed file")
-            os.replace(temp_file_path, formatted_path)
-        else:
-            logging.error(f"[!] Reconstructed file is empty, keeping original")
-            os.remove(temp_file_path)
-            return
+        # Rename temp file to original file 
+        logging.info(f"[+] Replacing original file with reconstructed file") #🆗
+        os.replace(temp_file_path, formatted_path) #🆗
         
         # Update database entry
-        file_entry.hash = self.metadata['hash']
-        file_entry.size = os.path.getsize(formatted_path)
-        file_entry.version = self.metadata.get('version', 'v1.0')
+        file_entry.hash = self.metadata['hash'] #🆗
+        file_entry.size = os.path.getsize(formatted_path) #🆗
+        file_entry.version = self.metadata.get('version', 'v1.0') # if version not provided, default to 'v1.0' #🆗
         
         # Serialize the rebuilt blocklist for database storage
-        serialized_rebuilt = {}
-        for hash_key, block_data in rebuilt_blocklist.items():
-            serialized_rebuilt[hash_key] = base64.b64encode(json.dumps(block_data).encode()).decode()
+        serialized_rebuilt = {} #🆗
+        for hash_key, block_data in rebuilt_blocklist.items(): #🆗
+            serialized_rebuilt[hash_key] = base64.b64encode(json.dumps(block_data).encode()).decode() #🆗
         
-        file_entry.block_list = json.dumps(serialized_rebuilt)
-        session.commit()
-        logging.info(f"[+] Updated database entry for: {formatted_path}")
-        logging.info(f"[+] File modification complete")
-    
-    def send_packet(self, connection, packet):
-        """Send a packet to the client"""
-        payload = json.dumps(packet).encode('utf-8')
-        header = struct.pack('!I', len(payload))
-        message = header + payload
-        connection.sendall(message)
-        response = connection.recv(3)
-        return response == self.RESPONSE_OK
+        file_entry.block_list = json.dumps(serialized_rebuilt) #🆗 
+        session.commit() #🆗
+        logging.info(f"[+] Updated database entry for: {formatted_path}") #🆗
+        logging.info(f"[+] File modification complete") #🆗
+        
+class Block(SyncEvent):
+
+    def apply(self):
+        packet_count = self.metadata['packet_count']
+        logging.info(f"[+] Expecting {packet_count} packets to build requested block...")
+        block_data = b''
+        actual_hash = None
+        
+        try:
+            for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
+                try:
+                    result = self.receive_valid_packet(self.connection, index)
+                    if isinstance(result, tuple) and len(result) == 2:
+                        decoded_data, hash_value = result
+                        block_data += decoded_data
+                        actual_hash = hash_value  # Use the hash from the last packet
+                    else:
+                        logging.error(f"[!] Invalid result from receive_valid_packet: {result}")
+                        return None, None
+                except Exception as e:
+                    logging.error(f"[!] Error receiving packet {index}: {e}")
+                    return None, None
             
+            return block_data, actual_hash
+        except Exception as e:
+            logging.error(f"[!] Error in Block.apply(): {e}")
+            return None, None
         
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
 
 class Outgoing(Sync):
-    def __init__(self):
+    def __init__(self, event):
+        '''
+            request = { #🆗
+        "event_type": "request", #🆗,
+        "is_dir": False, #🆗
+        "origin": "NoHash", #🆗
+        "src_path": self.metadata['src_path'], #🆗
+        "offset": block_offset, #🆗
+        "size": block_size, #🆗
+        "block_hash": block_hash, #🆗
+    } #🆗
+        '''
         super().__init__()
+        self.PORT = 6969
+        self.src_path = event['src_path']
+        self.is_dir = event['is_dir']  # Updated to use 'is_dir' from event
+        self.origin = event['origin']  # Updated to use 'origin' from event
+        self.event_type = event['event_type']
+
+        if not self.is_dir and self.event_type == 'created':
+            logging.info(f"Adding packets, packet_count, hash, folder_id")
+            self.packets = self.create_packet()
+            self.packet_count = len(self.packets)
+            self.hash = file_to_hash.get(self.src_path)
+            self.folder_id = event['folder_id']  # Updated to use 'folder_id' from event
+        
+        elif not self.is_dir and self.event_type == 'modified':
+            logging.info(f"Creating block list for modified file")
+            self.blocks = self.create_blocklist() # {'hash1'={},'hash2'={},'hash3'={}} 
+            self.block_count = len(self.blocks)
+            self.hash = file_to_hash.get(self.src_path) or event.get('hash')
+            self.folder_id = event['folder_id']
+            self.packets = self.create_packet()
+            self.packet_count = len(self.packets)
+            file = session.query(File).filter_by(path=self.src_path).first()
+            if file:
+                self.version = file.version
+            else:
+                self.version = 'v1.0'  # Default version
+
+        if self.event_type == 'moved':
+            self.dest_path = event['dest_path']
+
+        if self.event_type == 'request':
+            self.block_offset = event['block_offset']
+            self.block_size = event['block_size']
+            self.block_hash = event['block_hash']
+    
+    def _build_metadata(self) -> dict:
+        metadata = {
+            "index":      0,
+            "event_type": self.event_type,
+            "src_path":     self.src_path,
+            "is_dir":     self.is_dir,
+            "origin":     self.origin,
+        }
+        if not self.is_dir and self.event_type == 'created':
+            metadata['hash'] = self.hash
+            metadata["packet_count"] = self.packet_count
+            metadata["folder_id"] = self.folder_id
+            metadata["size"] = os.path.getsize(self.src_path)
+        
+        elif not self.is_dir and self.event_type == 'modified':
+            metadata['hash'] = self.hash
+            metadata["packet_count"] = self.packet_count
+            metadata["block_count"] = self.block_count
+            metadata["folder_id"] = self.folder_id
+            metadata["size"] = os.path.getsize(self.src_path)
+            metadata["version"] = self.version
+        
+        if self.event_type == 'moved':
+            metadata['dest_path'] = self.dest_path
+
+        if self.event_type == 'request':
+            metadata['block_offset'] = self.block_offset
+            metadata['block_size'] = self.block_size
+            metadata['block_hash'] = self.block_hash
+        
+        return metadata
+    
+        '''
+        block_list looks like {'hash1'={},'hash2'={},'hash3'={}}
+        '''
+    def create_packet(self) -> list:
+        # Use dynamic block size based on file size
+        block_size = self.get_blocksize()
+        
+        with open(self.src_path, 'rb') as f:
+            file_data = f.read()
+
+        blocks = [file_data[i:i + block_size] for i in range(0, len(file_data), block_size)]
+        return [
+            {
+                "index": i,
+                "data": base64.b64encode(block).decode(),
+                "checksum": hashlib.md5(block).hexdigest()
+            }
+            for i, block in enumerate(blocks)
+        ]
+
+    def send_packet(self, outgoingsock: socket.socket, packet: dict) -> None:
+        payload = json.dumps(packet).encode('utf-8')
+        header = struct.pack('!I', len(payload))
+        message = header + payload  # You can join header and payload using the '+' operator
+        sent = False   
+        while not sent:
+            outgoingsock.sendall(message)
+            response = outgoingsock.recv(3)
+            if response == self.RESPONSE_OK:
+                # logging.info(f"[+] Packet {packet['index']} transmitted successfully.") # 🔔
+                sent = True
+            else:
+                logging.info(f"[-] Packet {packet['index']} failed checksum, retrying...")
+
+    def start_server(self, address) -> bool:
+        outgoingsock = socket.socket()
+        ip = address[0]
+        try:
+            logging.info(f"Connecting to client at {ip}:{self.PORT}") # i.e. PORT 6969
+            outgoingsock.connect((ip, self.PORT))
+            logging.info(f"[+] Connected to client at {ip}:{self.PORT}")
+            
+            metadata = self._build_metadata()
+            logging.info(f"[+] Sending metadata: {metadata}")
+            self.send_packet(outgoingsock, metadata) # metadata is dict
+            logging.info(f"[+] Metadata sent: {metadata}")
+
+            if self.event_type == 'request':
+                # Reveive the requested block
+                # receive_valid_packet(self, connection: socket.socket, index: int) -> bytes:
+                # Incoming just needs a connection
+                # TODO create incoming object to receive the block
+
+                incoming_block = Incoming(connection=outgoingsock)     # 🗣️ REUSING INCOMING CLASS
+                logging.info(f"[+] Created incoming_block object: {incoming_block}")
+                # TODO receive metadata.
+                block_data, actual_hash = incoming_block.receive_metadata()
+                logging.info(f"[+] Block data received: {block_data}, actual hash: {actual_hash}")
+                return block_data, actual_hash
+
+
+
+            # Send file packets for created and modified files
+            if hasattr(self, 'packets'):
+                for packet in self.packets:
+                    self.send_packet(outgoingsock, packet)
+                    # logging.info(f"[+] Packet {packet} sent.") # 🔔
+        
+            logging.info("[+] All packets sent.")
+        except Exception as e:
+            logging.error(f"❌ Failed to connect to server: {e}")
+            return False
+        finally:
+            outgoingsock.close()
+    
+        return True
+class Build_Instructions(Outgoing):
+    pass
+class Requests(Outgoing):
+    pass
+
+
+    '''
+        request_packet = { #🆗
+        "index": "request", #🆗,
+        "src_path": self.metadata['src_path'], #🆗
+        "offset": block_offset, #🆗
+        "size": block_size, #🆗
+        "block_hash": block_hash, #🆗
+    } #🆗
+    '''
+    def __init__(self, request_packet):
         pass
-if __name__ == "__main__":
-    main_thread = threading.Thread(target=main, daemon=True)
-    main_thread.start()
-    sync_worker_thread = threading.Thread(target=sync_worker)
-    sync_worker_thread.start()
+
+################################### SYNC-QUEUE #########################################
+# sync_queue = queue.Queue()
+
+# if os.path.exists("sync_queue.json"):
+#     with open("sync_queue.json", "r") as f:
+#         for item in json.load(f):
+#             sync_queue.put(item)
+# else:
+#     logging.info("No sync_queue.json file found. Starting with empty queue.")
+
+# def generate_event_id():
+#     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+#     uid = str(uuid.uuid4())[:6]  # Short unique suffix (6 hex chars)
+#     return f"event_{timestamp}_{uid}"
+
+
+################################### SYNC-QUEUE #########################################
+########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
+# def sync_worker(): 
+#     while True:
+#         sync_active.wait()  # Wait until resumed
+#         event = sync_queue.get()
+#         logging.info(f"Processing event: {event}")
+#         try:
+#             logging.info(f"Creating sync job for {event['src_path']}")
+#             sync_job = Outgoing(event)  # TODO 🆘 Custom logic i.e. OUTGOING
+#             logging.info(f"Sync job created: {sync_job}")
+#             status = sync_job.start_server()  # Start the server to send the packet
+#             logging.info(f"Sync job status: {status}")
+            
+#             if status:
+#                 logging.info(f"✅ Sync job completed for {event['src_path']}")
+#                 sync_active.set() 
+#             else:
+#                 logging.error(f"❌ Sync job failed for {event['src_path']}")
+#                 sync_active.clear()
+#                 logging.info("⏸️Paused sync worker due to connection error.")  # Pause instead of exit
+#                 sync_queue.put(event)  # Requeue the event
+#                 logging.info(f"🔁Requeued event: {event}")
+            
+#         except Exception as e:
+#             logging.error(f"❌ Sync failed: {e}")
+#             sync_active.clear()  # Pause on failure
+#             logging.info(f"⏸️paused sync worker due to error: {e}")
+#             sync_queue.put(event)  # Requeue the event
+#             logging.info(f"🔁Requeued event: {event}")
+        
+#         finally:
+#             sync_queue.task_done()
+#             all_events = list(sync_queue.queue)
+#             with open("sync_queue.json", "w") as f:
+#                 json.dump(all_events, f, indent=2)
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+
+
 
 # TODO: need to create a queue to send out outgoing data to other clients!
 
@@ -1115,7 +1418,7 @@ class Global_Blocklist():
             json.dump(ip_map, file, indent=2)
 
     def add_blocklist(self): # TODO in the case of adding a hash to a file.
-        for hash, position in self.blocklist:
+        for hash, position in self.blocklist.items():
             position['src_path'] = self.src_path
             global_blocklist[hash] = position
         self.write_blocklist()
@@ -1165,7 +1468,25 @@ class build_instruction():
     # NOTE: event_type = 'created'. just store in sync_queue the instructions for created.
 # QUEUE SYSTEM
 
-if __name__ == '__main__':
+
+
+
+if __name__ == "__main__":
+    main_thread = threading.Thread(target=main, daemon=True)
+    main_thread.start()
+    
+    sync_worker_thread = threading.Thread(target=sync_worker)
+    sync_worker_thread.start()
+
+    ##################################################################################
+    ##################################################################################
+    ##################################################################################
+    # sync_worker_thread = threading.Thread(target=sync_worker, daemon=True) # 🧵
+    # sync_worker_thread.start()  # ✅ Start just once
+    ##################################################################################
+    ##################################################################################
+    ##################################################################################
+
     global_blocklist_file = "blocklist.json"
     if os.path.exists(global_blocklist_file):
         with open(global_blocklist_file, "r") as file: # Load data from the file if it exists
@@ -1174,29 +1495,34 @@ if __name__ == '__main__':
         global_blocklist = {}
     logging.info(f'INITIALISING global_blocklist {global_blocklist}')
 
-ip_file = "ip_map.json"
-if os.path.exists(ip_file):
-    with open(ip_file, "r") as file: # Load data from the file if it exists
-        ip_map = json.load(file)
-else:
-    ip_map = {
-        "users": {}
-    } # NOTE: it dont create the file just yet, create the varible. 
-    # when stuff is being added to the varible, the file will be created then.
-logging.info(f'INITIALISING ip_map: {ip_map}')
+    ip_file = "ip_map.json"
+    if os.path.exists(ip_file):
+        with open(ip_file, "r") as file: # Load data from the file if it exists
+            ip_map = json.load(file)
+    else:
+        ip_map = {
+            "users": {}
+        } # NOTE: it dont create the file just yet, create the varible. 
+        # when stuff is being added to the varible, the file will be created then.
+    logging.info(f'INITIALISING ip_map: {ip_map}')
 
-invites_file = "invites.json"
-if os.path.exists(invites_file):
-    with open(invites_file, "r") as file: # Load data from the file if it exists
-        invites = json.load(file)
-else:
-    invites = {
-        "folders": {},
-        "groups": {}
-    }
-logging.info(f'INITIALISING invites: {invites}')
+    invites_file = "invites.json"
+    if os.path.exists(invites_file):
+        with open(invites_file, "r") as file: # Load data from the file if it exists
+            invites = json.load(file)
+    else:
+        invites = {
+            "folders": {},
+            "groups": {}
+        }
+    logging.info(f'INITIALISING invites: {invites}')
 
-# NOTE: all these are dictionaries therefore automatically global variables
+    # Initialize file_to_hash mapping
+    file_to_hash = {f.path: f.hash for f in session.query(File).all()}
+    logging.info(f'Loaded file_to_hash with {len(file_to_hash)} entries.')
+    logging.info(f'{file_to_hash}')
+
+    # NOTE: all these are dictionaries therefore automatically global variables
 
 
 '''
