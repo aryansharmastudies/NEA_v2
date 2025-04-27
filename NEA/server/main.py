@@ -93,6 +93,7 @@ class Share(Base):
     
     folder_id = Column(String, primary_key=True)
     mac_addr = Column(String, primary_key=True)
+    folder_label = Column(String)
     path = Column(String)
 
 class File(Base):
@@ -354,16 +355,26 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
         
         elif status == '200': # if authorisation is successful.  
             logging.info(f'Authorisation successful for {username} with ip: {ip}')
-            data = send(json.dumps({'action': 'add_folder', 'folder_label': folder_label, 'folder_id': folder_id}), ip, 6000) # TODO needs to be displayed on clients side through websockets.
-            if data != False: # NOTE MAYBE SHOULD SCRAP THIS SINCE IT WILL WAIT UNNECESSARILY
-                data = json.loads(data)
-                guest_dir = data['directory']
-                shared_user = Share(folder_id=folder_id, mac_addr=mac_addr, path=guest_dir)
-                session.add(shared_user) # im sure with a for loop you can itterate and add many 'share' objects to the session, then commit them.
-                session.commit()
-            else:
-                logging.info(f'data {username} sent has failed: {data}')
+            data = send(json.dumps({'action': 'share_folder', 'folder_label': folder_label, 'folder_id': folder_id}), ip, 6000) # TODO needs to be displayed on clients side through websockets.
+            # if data != False: # NOTE MAYBE SHOULD SCRAP THIS SINCE IT WILL WAIT UNNECESSARILY
+            #     data = json.loads(data)
+            #     guest_dir = data['directory']
+            #     shared_user = Share(folder_id=folder_id, mac_addr=mac_addr, path=guest_dir)
+            #     session.add(shared_user) # im sure with a for loop you can itterate and add many 'share' objects to the session, then commit them.
+            #     session.commit()
+            # else:
+            #     logging.info(f'data {username} sent has failed: {data}')
+            logging.info(f'invites.json BEFORE adding: {invites}')
+            if username not in invites["folders"]: # first check if the user is in the invites file 🌸
+                invites["folders"][username] = {} # 🌸
+                invites["folders"][username][device_mac_addr] = [] # if not, add them 🌸
+            elif device_mac_addr not in invites["folders"][username]: # then check if the device is in the invites file 🌸
+                invites["folders"][username][device_mac_addr] = [] # if not, add it 🌸
 
+            invites["folders"][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
+            logging.info(f'invites.json AFTER adding: {invites}')
+            with open(invites_file, "w") as file:
+                json.dump(invites, file, indent=2)
 
     # use async to ask the currently active users
     # or else, put instruction in a json file!!!
@@ -446,22 +457,89 @@ def alert(user, mac_addr): # TODO make it send back any unanswered invites to th
     return alerts
 
 
+def accept_share(client_data):
+    try:
+        folder_id = client_data.get('folder_id')
+        folder_label = client_data.get('folder_label')
+        directory = client_data.get('directory')
+        mac_addr = client_data.get('mac_addr')
+        
+        logging.info(f"Processing share acceptance for folder_id: {folder_id}, from device: {mac_addr}")
+        
+        # Check if entry already exists to avoid duplicates
+        existing_share = session.query(Share).filter_by(folder_id=folder_id, mac_addr=mac_addr).first()
+        
+        if existing_share:
+            logging.info(f"Share entry already exists for folder_id: {folder_id}, mac_addr: {mac_addr}")
+            response = json.dumps({'status': '200', 'status_msg': 'Share already accepted'})
+            return response
+            
+        # Create a new Share entry
+        new_share = Share(
+            folder_id=folder_id,
+            mac_addr=mac_addr,
+            folder_label=folder_label,
+            path=directory
+        )
+        
+        # Add to database
+        session.add(new_share)
+        
+        # Check for invites to clean up
+        # If this share was from an invite, remove it from the invites list
+        username = None
+        for user, devices in ip_map['users'].items():
+            if str(mac_addr) in devices:
+                username = user
+                break
+                
+        if username and username in invites['folders']:
+            if str(mac_addr) in invites['folders'][username]:
+                # Search for and remove the invite with matching folder_id
+                invites_to_keep = []
+                for invite in invites['folders'][username][str(mac_addr)]:
+                    if invite[1] != folder_id:  # invite[1] is the folder_id in the invite array
+                        invites_to_keep.append(invite)
+                
+                invites['folders'][username][str(mac_addr)] = invites_to_keep
+                
+                # Save updated invites
+                with open(invites_file, 'w') as file:
+                    json.dump(invites, file, indent=2)
+                logging.info(f"Removed accepted invite for folder_id: {folder_id} from user: {username}")
+        
+        try:
+            session.commit()
+            logging.info(f"Share entry added successfully for folder_id: {folder_id}, mac_addr: {mac_addr}")
+            response = json.dumps({'status': '201', 'status_msg': 'Share accepted successfully'})
+        except Exception as e:
+            session.rollback()
+            logging.error(f"Error adding share entry: {e}")
+            response = json.dumps({'status': '500', 'status_msg': f'Database error: {str(e)}'})
+            
+        return response
+        
+    except Exception as e:
+        logging.error(f"Error processing share acceptance: {e}")
+        response = json.dumps({'status': '400', 'status_msg': f'Error processing request: {str(e)}'})
+        return response
+
 ########## SOCKETS ###############################
 def send(message, ip, port): 
     logging.info(f'Sending: {message} to {ip} on port {port}')
     c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         c.connect((ip, port))
+        c.send(message.encode('utf-8'))
+        client_data = c.recv(1024).decode('utf-8')
+        logging.info(f'client_data: {client_data}')
+        client_data = json.loads(client_data)
+        
+        status_code = client_data.get('status_code', '400')
+        status_msg = client_data.get('status_msg', False)
+        data = client_data.get('data', False)
     except: 
         return '400' 
-    c.send(message.encode('utf-8'))
-    client_data = c.recv(1024).decode('utf-8')
-    logging.info(f'client_data: {client_data}')
-    client_data = json.loads(client_data)
-    
-    status_code = client_data.get('status_code', '400')
-    status_msg = client_data.get('status_msg', False)
-    data = client_data.get('data', False)
 
     if json.loads(message)['action'] == 'authorise':
         return status_code
@@ -564,7 +642,12 @@ def handle_client_message(clientsocket, message):
             otherwise would include a 'accept' or 'decline' as well as 'user_id' and 'group_id' for group invite response
         '''
         pass
-
+    
+    elif action =='accept_share':
+        response = accept_share(client_data)
+        logging.info(f'Accepting share: {response}')
+        clientsocket.send(str(response).encode('utf-8'))
+        
     else:
         logging.info('Unknown action!')
     

@@ -176,8 +176,12 @@ def handle_folder_request():
             folder.type
         ])
     
+
+    # TODO rather ask server for the folders instead of getting it from the database.
+
     # Send back to client
     folder_data = {'folders': folder_list}
+    logging.info(f'sending folder data to frontend via dedicated function!: {folder_data}')
     emit('folder_data', folder_data)
 
 ########## WEBSITE ##############################
@@ -387,7 +391,16 @@ def dashboard():
         logging.info(f'users and devices data: {data}')
 
         #{'devices': [{'name': 'AE86', 'user_id': 1}, {'name': 'RX-7', 'user_id': 2}, {'name': 'AE85', 'user_id': 3}], 'users': [{'name': 'takumi', 'user_id': 1}, {'name': 'ryosuke', 'user_id': 2}, {'name': 'itsuki', 'user_id': 3}]}
-        try:
+        if data == False:
+            logging.info(f'users and devices data: {data}')
+            session['users_and_devices'] = {}
+            flash('Server is offline, please try again!', 'info')
+            return render_template('dashboard.html', server_name=session['server_name'], 
+                                user=session['user'], 
+                                random_folder_id=get_random_id(),
+                                mac_addr=mac_addr,
+                                status=session['connected_to_server']) # pass in server_name to the dashboard.html file.
+        else:
             devices = data['devices']
             users = data['users']
 
@@ -404,10 +417,7 @@ def dashboard():
 
             session['users_and_devices'] = users_and_device
             logging.info(f'Added users and devices to session: {session["users_and_devices"]}')
-        except:
-            logging.error(f"💥 Error in /dashboard: {e}", exc_info=True)
-            session['users_and_devices'] = {}
-            logging.info(f'Added empty users and devices to session: {session["users_and_devices"]}')
+        
         if status == '200':
             if not sync_active.is_set():
                 sync_active.set() # 🧵
@@ -417,19 +427,20 @@ def dashboard():
         # socketio.emit('message', 'new notification!!!', broadcast=True)
         # change_message('new notification!!!')
 
-        random_folder_id = get_random_id()
-
         # TODO 🆘 - get any notifications from the server.
         return render_template('dashboard.html', server_name=session['server_name'], 
-                               user=session['user'], 
-                               random_folder_id=random_folder_id,
-                               mac_addr=mac_addr) # pass in server_name to the dashboard.html file.
+                                user=session['user'], 
+                                random_folder_id=get_random_id(),
+                                mac_addr=mac_addr,
+                                status=session['connected_to_server'])
+    
     elif 'server_name' in session:
         flash('You are not logged in!', 'info')
         return render_template('login.html')
     else:    
         flash('You are not connected to a server!', 'info')
         return render_template('pair.html')
+    
 @app.route('/accept_share', methods=['POST'])
 def accept_share():
     try:
@@ -446,15 +457,13 @@ def accept_share():
             'folder_id': folder_id,
             'folder_label': folder_label,
             'directory': folder_path,
-            'folder_type': 'sync_bothways',  # Default to sync both ways
-            'user': session.get('user'),
-            'device_name': device_name
+            'mac_addr': get_mac()
         }
         
         # Send acceptance to server
-        server_response = send(json.dumps(folder_data))
-        
-        if server_response == '200' or server_response == '201':
+        status = send(json.dumps(folder_data))
+        logging.info(f'accept_share status from server: {status}')
+        if str(status) == '200' or status == '201':
             # Create folder locally
             mkdir(folder_data)
             
@@ -462,6 +471,7 @@ def accept_share():
             if 'alerts' in session and len(session['alerts']) > index:
                 session['alerts'].pop(index)
                 
+            flash(f"Folder '{folder_label}' accepted successfully!", 'info')
             return jsonify({'status': 'success', 'message': 'Share accepted successfully'})
         else:
             return jsonify({'status': 'error', 'message': 'Server returned an error'})
@@ -770,7 +780,7 @@ def send(json_data): # 🛫
                 return '503', 'server offline'
             elif action in ['track']:
                 return '503', 'server offline', False
-            elif action in ['request']:
+            elif action in ['request', 'accept_share', 'decline_share']:
                 return False
             
         s.send(json_data.encode('utf-8')) # sending data to server 📨
@@ -826,6 +836,8 @@ def send(json_data): # 🛫
             return status, status_msg, data
         elif action in ['request']:
             return data
+        elif action in ['accept_share', 'decline_share']:
+            return status
 
 ########## HANDLE SERVER MESSAGE ################
 
@@ -1842,4 +1854,5 @@ if __name__ == "__main__":
     block_request_thread.start()
     logging.info("Started block request listener thread")
 
-    socketio.run(app)
+    # socketio.run(app)
+    socketio.run(app, debug=True, host='0.0.0.0')

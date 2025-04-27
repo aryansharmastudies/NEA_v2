@@ -9615,3 +9615,2053 @@
     }
   }
 }
+2025-04-27 01:41:15 INFO Connection from ('192.168.1.75', 58162) has been established!
+2025-04-27 01:41:15 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 01:41:15 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 01:41:15 INFO ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 01:41:15 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 01:41:15 INFO user's invite: ['initial-d', 'cJfMMZSY4M', 'itsuki']
+2025-04-27 01:41:15 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki']]
+2025-04-27 01:41:15 INFO user's invite: ['Vagabond', 'EyFd3VUInX', 'itsuki']
+2025-04-27 01:41:15 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 01:41:15 INFO sending alerts to takumi with mac_addr 4681952839112: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 01:41:15 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["initial-d", "cJfMMZSY4M", "itsuki"], ["Vagabond", "EyFd3VUInX", "itsuki"]]}
+2025-04-27 01:41:15 INFO Connection from ('192.168.1.75', 58164) has been established!
+2025-04-27 01:41:15 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 01:41:15 INFO Data_Response Object is made
+2025-04-27 01:41:15 INFO Scraped 2 records from folders
+2025-04-27 01:41:15 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'cJfMMZSY4M', 'name': 'initial-d', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'EyFd3VUInX', 'name': 'Vagabond', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Vagabond', 'type': 'sync_bothways'}]}
+2025-04-27 01:41:15 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "cJfMMZSY4M",
+        "mac_addr": "4681952839112",
+        "name": "initial-d",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Initial-D",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "EyFd3VUInX",
+        "mac_addr": "4681952839112",
+        "name": "Vagabond",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Vagabond",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 01:41:15 INFO Connection from ('192.168.1.75', 58176) has been established!
+2025-04-27 01:41:15 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 01:41:15 INFO Data_Response Object is made
+2025-04-27 01:41:15 INFO Scraped 3 records from users
+2025-04-27 01:41:15 INFO Scraped 3 records from devices
+2025-04-27 01:41:15 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'takumi'}, {'user_id': 2, 'name': 'ryosuke'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'AE86'}, {'user_id': 2, 'name': 'RX-7'}, {'user_id': 3, 'name': 'AE85'}]}
+2025-04-27 01:41:15 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "AE86",
+        "user_id": 1
+      },
+      {
+        "name": "RX-7",
+        "user_id": 2
+      },
+      {
+        "name": "AE85",
+        "user_id": 3
+      }
+    ],
+    "users": [
+      {
+        "name": "takumi",
+        "user_id": 1
+      },
+      {
+        "name": "ryosuke",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 01:41:19 INFO Connection from ('192.168.1.75', 58178) has been established!
+2025-04-27 01:41:19 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 01:41:19 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 01:41:19 INFO ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 01:41:19 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 01:41:19 INFO user's invite: ['initial-d', 'cJfMMZSY4M', 'itsuki']
+2025-04-27 01:41:19 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki']]
+2025-04-27 01:41:19 INFO user's invite: ['Vagabond', 'EyFd3VUInX', 'itsuki']
+2025-04-27 01:41:19 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 01:41:19 INFO sending alerts to takumi with mac_addr 4681952839112: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 01:41:19 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["initial-d", "cJfMMZSY4M", "itsuki"], ["Vagabond", "EyFd3VUInX", "itsuki"]]}
+2025-04-27 01:41:19 INFO Connection from ('192.168.1.75', 58190) has been established!
+2025-04-27 01:41:19 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 01:41:19 INFO Data_Response Object is made
+2025-04-27 01:41:19 INFO Scraped 2 records from folders
+2025-04-27 01:41:19 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'cJfMMZSY4M', 'name': 'initial-d', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'EyFd3VUInX', 'name': 'Vagabond', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Vagabond', 'type': 'sync_bothways'}]}
+2025-04-27 01:41:19 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "cJfMMZSY4M",
+        "mac_addr": "4681952839112",
+        "name": "initial-d",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Initial-D",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "EyFd3VUInX",
+        "mac_addr": "4681952839112",
+        "name": "Vagabond",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Vagabond",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 01:41:19 INFO Connection from ('192.168.1.75', 58206) has been established!
+2025-04-27 01:41:19 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 01:41:19 INFO Data_Response Object is made
+2025-04-27 01:41:19 INFO Scraped 3 records from users
+2025-04-27 01:41:19 INFO Scraped 3 records from devices
+2025-04-27 01:41:19 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'takumi'}, {'user_id': 2, 'name': 'ryosuke'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'AE86'}, {'user_id': 2, 'name': 'RX-7'}, {'user_id': 3, 'name': 'AE85'}]}
+2025-04-27 01:41:19 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "AE86",
+        "user_id": 1
+      },
+      {
+        "name": "RX-7",
+        "user_id": 2
+      },
+      {
+        "name": "AE85",
+        "user_id": 3
+      }
+    ],
+    "users": [
+      {
+        "name": "takumi",
+        "user_id": 1
+      },
+      {
+        "name": "ryosuke",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 09:50:16 INFO 192.168.1.75
+2025-04-27 09:50:16 INFO INITIALISING global_blocklist {}
+2025-04-27 09:50:16 INFO [+] Listening on 192.168.1.75:9000...
+2025-04-27 09:50:16 INFO INITIALISING ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 09:50:16 INFO INITIALISING invites: {'folders': {'ryosuke': {'4681952839112': [['initial-d', 'cJfMMZSY4M', 'itsuki']]}, 'takumi': {'4681952839112': [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]}}, 'groups': {}}
+2025-04-27 09:50:16 INFO Loaded file_to_hash with 10 entries.
+2025-04-27 09:50:16 INFO {'/home/osaka/3/4681952839112/Documents/Shared/Initial-D/20250420_1129_AE86 in Space_remix_01js9bv2zcey9vgx3h2jaz60nb.png': None, '/home/osaka/3/4681952839112/Documents/Shared/Initial-D/20250420_1310_Anime Character Realism_remix_01js9hmhqsfdntq2sqxqpsbhkw.png': None, '/home/osaka/3/4681952839112/Documents/Shared/Initial-D/20250420_1216_Space Race Drift_remix_01js9ehjq5e99t81exx51p6m1b.png': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Manga/quotes.txt': 'b1b2fc213146675e14071195f230e1d8', '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Nujabes - Luv (Sic), Part 2 (feat. Shing02).mp3': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Nujabes & Shing02 - Luv(sic.) Part 4 (a cappella).mp3': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Nujabes & Shing02 - Nujabes - Luv(sic) feat.Shing02.mp3': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Shing02 & Nujabes - Luv (sic.), Part 3.mp3': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Shing02 & Nujabes - Luv(sic) Grand Finale feat.Shing02.mp3': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Shing02 & Nujabes - Luv(sic) Part 5.mp3': None}
+2025-04-27 09:50:19 INFO Connection from ('192.168.1.75', 36998) has been established!
+2025-04-27 09:50:19 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 09:50:19 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 09:50:19 INFO ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 09:50:19 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 09:50:19 INFO user's invite: ['initial-d', 'cJfMMZSY4M', 'itsuki']
+2025-04-27 09:50:19 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki']]
+2025-04-27 09:50:19 INFO user's invite: ['Vagabond', 'EyFd3VUInX', 'itsuki']
+2025-04-27 09:50:19 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 09:50:19 INFO sending alerts to takumi with mac_addr 4681952839112: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 09:50:19 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["initial-d", "cJfMMZSY4M", "itsuki"], ["Vagabond", "EyFd3VUInX", "itsuki"]]}
+2025-04-27 09:50:19 INFO Connection from ('192.168.1.75', 37004) has been established!
+2025-04-27 09:50:19 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 09:50:19 INFO Data_Response Object is made
+2025-04-27 09:50:19 INFO Scraped 2 records from folders
+2025-04-27 09:50:19 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'cJfMMZSY4M', 'name': 'initial-d', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'EyFd3VUInX', 'name': 'Vagabond', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Vagabond', 'type': 'sync_bothways'}]}
+2025-04-27 09:50:19 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "cJfMMZSY4M",
+        "mac_addr": "4681952839112",
+        "name": "initial-d",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Initial-D",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "EyFd3VUInX",
+        "mac_addr": "4681952839112",
+        "name": "Vagabond",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Vagabond",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 09:50:19 INFO Connection from ('192.168.1.75', 37006) has been established!
+2025-04-27 09:50:19 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 09:50:19 INFO Data_Response Object is made
+2025-04-27 09:50:19 INFO Scraped 3 records from users
+2025-04-27 09:50:19 INFO Scraped 3 records from devices
+2025-04-27 09:50:19 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'takumi'}, {'user_id': 2, 'name': 'ryosuke'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'AE86'}, {'user_id': 2, 'name': 'RX-7'}, {'user_id': 3, 'name': 'AE85'}]}
+2025-04-27 09:50:19 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "AE86",
+        "user_id": 1
+      },
+      {
+        "name": "RX-7",
+        "user_id": 2
+      },
+      {
+        "name": "AE85",
+        "user_id": 3
+      }
+    ],
+    "users": [
+      {
+        "name": "takumi",
+        "user_id": 1
+      },
+      {
+        "name": "ryosuke",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 09:50:28 INFO Connection from ('192.168.1.75', 41250) has been established!
+2025-04-27 09:50:28 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 09:50:28 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 09:50:28 INFO ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 09:50:28 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 09:50:28 INFO user's invite: ['initial-d', 'cJfMMZSY4M', 'itsuki']
+2025-04-27 09:50:28 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki']]
+2025-04-27 09:50:28 INFO user's invite: ['Vagabond', 'EyFd3VUInX', 'itsuki']
+2025-04-27 09:50:28 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 09:50:28 INFO sending alerts to takumi with mac_addr 4681952839112: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 09:50:28 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["initial-d", "cJfMMZSY4M", "itsuki"], ["Vagabond", "EyFd3VUInX", "itsuki"]]}
+2025-04-27 09:50:28 INFO Connection from ('192.168.1.75', 41262) has been established!
+2025-04-27 09:50:28 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 09:50:28 INFO Data_Response Object is made
+2025-04-27 09:50:28 INFO Scraped 2 records from folders
+2025-04-27 09:50:28 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'cJfMMZSY4M', 'name': 'initial-d', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'EyFd3VUInX', 'name': 'Vagabond', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Vagabond', 'type': 'sync_bothways'}]}
+2025-04-27 09:50:28 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "cJfMMZSY4M",
+        "mac_addr": "4681952839112",
+        "name": "initial-d",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Initial-D",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "EyFd3VUInX",
+        "mac_addr": "4681952839112",
+        "name": "Vagabond",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Vagabond",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 09:50:28 INFO Connection from ('192.168.1.75', 41274) has been established!
+2025-04-27 09:50:28 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 09:50:28 INFO Data_Response Object is made
+2025-04-27 09:50:28 INFO Scraped 3 records from users
+2025-04-27 09:50:28 INFO Scraped 3 records from devices
+2025-04-27 09:50:28 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'takumi'}, {'user_id': 2, 'name': 'ryosuke'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'AE86'}, {'user_id': 2, 'name': 'RX-7'}, {'user_id': 3, 'name': 'AE85'}]}
+2025-04-27 09:50:28 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "AE86",
+        "user_id": 1
+      },
+      {
+        "name": "RX-7",
+        "user_id": 2
+      },
+      {
+        "name": "AE85",
+        "user_id": 3
+      }
+    ],
+    "users": [
+      {
+        "name": "takumi",
+        "user_id": 1
+      },
+      {
+        "name": "ryosuke",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 09:50:44 INFO Connection from ('192.168.1.75', 44584) has been established!
+2025-04-27 09:50:44 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 09:50:44 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 09:50:44 INFO ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 09:50:44 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 09:50:44 INFO user's invite: ['initial-d', 'cJfMMZSY4M', 'itsuki']
+2025-04-27 09:50:44 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki']]
+2025-04-27 09:50:44 INFO user's invite: ['Vagabond', 'EyFd3VUInX', 'itsuki']
+2025-04-27 09:50:44 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 09:50:44 INFO sending alerts to takumi with mac_addr 4681952839112: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 09:50:44 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["initial-d", "cJfMMZSY4M", "itsuki"], ["Vagabond", "EyFd3VUInX", "itsuki"]]}
+2025-04-27 09:50:44 INFO Connection from ('192.168.1.75', 44586) has been established!
+2025-04-27 09:50:44 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 09:50:44 INFO Data_Response Object is made
+2025-04-27 09:50:44 INFO Scraped 2 records from folders
+2025-04-27 09:50:44 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'cJfMMZSY4M', 'name': 'initial-d', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'EyFd3VUInX', 'name': 'Vagabond', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Vagabond', 'type': 'sync_bothways'}]}
+2025-04-27 09:50:44 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "cJfMMZSY4M",
+        "mac_addr": "4681952839112",
+        "name": "initial-d",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Initial-D",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "EyFd3VUInX",
+        "mac_addr": "4681952839112",
+        "name": "Vagabond",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Vagabond",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 09:50:44 INFO Connection from ('192.168.1.75', 44588) has been established!
+2025-04-27 09:50:44 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 09:50:44 INFO Data_Response Object is made
+2025-04-27 09:50:44 INFO Scraped 3 records from users
+2025-04-27 09:50:44 INFO Scraped 3 records from devices
+2025-04-27 09:50:44 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'takumi'}, {'user_id': 2, 'name': 'ryosuke'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'AE86'}, {'user_id': 2, 'name': 'RX-7'}, {'user_id': 3, 'name': 'AE85'}]}
+2025-04-27 09:50:44 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "AE86",
+        "user_id": 1
+      },
+      {
+        "name": "RX-7",
+        "user_id": 2
+      },
+      {
+        "name": "AE85",
+        "user_id": 3
+      }
+    ],
+    "users": [
+      {
+        "name": "takumi",
+        "user_id": 1
+      },
+      {
+        "name": "ryosuke",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 09:51:18 INFO Connection from ('192.168.1.75', 49770) has been established!
+2025-04-27 09:51:18 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 09:51:18 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 09:51:18 INFO ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 09:51:18 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 09:51:18 INFO user's invite: ['initial-d', 'cJfMMZSY4M', 'itsuki']
+2025-04-27 09:51:18 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki']]
+2025-04-27 09:51:18 INFO user's invite: ['Vagabond', 'EyFd3VUInX', 'itsuki']
+2025-04-27 09:51:18 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 09:51:18 INFO sending alerts to takumi with mac_addr 4681952839112: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 09:51:18 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["initial-d", "cJfMMZSY4M", "itsuki"], ["Vagabond", "EyFd3VUInX", "itsuki"]]}
+2025-04-27 09:51:18 INFO Connection from ('192.168.1.75', 49774) has been established!
+2025-04-27 09:51:18 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 09:51:18 INFO Data_Response Object is made
+2025-04-27 09:51:18 INFO Scraped 2 records from folders
+2025-04-27 09:51:18 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'cJfMMZSY4M', 'name': 'initial-d', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'EyFd3VUInX', 'name': 'Vagabond', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Vagabond', 'type': 'sync_bothways'}]}
+2025-04-27 09:51:18 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "cJfMMZSY4M",
+        "mac_addr": "4681952839112",
+        "name": "initial-d",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Initial-D",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "EyFd3VUInX",
+        "mac_addr": "4681952839112",
+        "name": "Vagabond",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Vagabond",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 09:51:18 INFO Connection from ('192.168.1.75', 49784) has been established!
+2025-04-27 09:51:18 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 09:51:18 INFO Data_Response Object is made
+2025-04-27 09:51:18 INFO Scraped 3 records from users
+2025-04-27 09:51:18 INFO Scraped 3 records from devices
+2025-04-27 09:51:18 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'takumi'}, {'user_id': 2, 'name': 'ryosuke'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'AE86'}, {'user_id': 2, 'name': 'RX-7'}, {'user_id': 3, 'name': 'AE85'}]}
+2025-04-27 09:51:18 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "AE86",
+        "user_id": 1
+      },
+      {
+        "name": "RX-7",
+        "user_id": 2
+      },
+      {
+        "name": "AE85",
+        "user_id": 3
+      }
+    ],
+    "users": [
+      {
+        "name": "takumi",
+        "user_id": 1
+      },
+      {
+        "name": "ryosuke",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 09:52:49 INFO Connection from ('192.168.1.75', 58458) has been established!
+2025-04-27 09:52:49 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 09:52:49 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 09:52:49 INFO ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 09:52:49 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 09:52:49 INFO user's invite: ['initial-d', 'cJfMMZSY4M', 'itsuki']
+2025-04-27 09:52:49 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki']]
+2025-04-27 09:52:49 INFO user's invite: ['Vagabond', 'EyFd3VUInX', 'itsuki']
+2025-04-27 09:52:49 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 09:52:49 INFO sending alerts to takumi with mac_addr 4681952839112: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 09:52:49 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["initial-d", "cJfMMZSY4M", "itsuki"], ["Vagabond", "EyFd3VUInX", "itsuki"]]}
+2025-04-27 09:52:49 INFO Connection from ('192.168.1.75', 58464) has been established!
+2025-04-27 09:52:49 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 09:52:49 INFO Data_Response Object is made
+2025-04-27 09:52:49 INFO Scraped 2 records from folders
+2025-04-27 09:52:49 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'cJfMMZSY4M', 'name': 'initial-d', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'EyFd3VUInX', 'name': 'Vagabond', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Vagabond', 'type': 'sync_bothways'}]}
+2025-04-27 09:52:49 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "cJfMMZSY4M",
+        "mac_addr": "4681952839112",
+        "name": "initial-d",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Initial-D",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "EyFd3VUInX",
+        "mac_addr": "4681952839112",
+        "name": "Vagabond",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Vagabond",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 09:52:49 INFO Connection from ('192.168.1.75', 58476) has been established!
+2025-04-27 09:52:49 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 09:52:49 INFO Data_Response Object is made
+2025-04-27 09:52:49 INFO Scraped 3 records from users
+2025-04-27 09:52:49 INFO Scraped 3 records from devices
+2025-04-27 09:52:49 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'takumi'}, {'user_id': 2, 'name': 'ryosuke'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'AE86'}, {'user_id': 2, 'name': 'RX-7'}, {'user_id': 3, 'name': 'AE85'}]}
+2025-04-27 09:52:49 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "AE86",
+        "user_id": 1
+      },
+      {
+        "name": "RX-7",
+        "user_id": 2
+      },
+      {
+        "name": "AE85",
+        "user_id": 3
+      }
+    ],
+    "users": [
+      {
+        "name": "takumi",
+        "user_id": 1
+      },
+      {
+        "name": "ryosuke",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 10:02:03 INFO 192.168.1.75
+2025-04-27 10:02:03 INFO INITIALISING global_blocklist {}
+2025-04-27 10:02:03 INFO [+] Listening on 192.168.1.75:9000...
+2025-04-27 10:02:03 INFO INITIALISING ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 10:02:03 INFO INITIALISING invites: {'folders': {'ryosuke': {'4681952839112': [['initial-d', 'cJfMMZSY4M', 'itsuki']]}, 'takumi': {'4681952839112': [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]}}, 'groups': {}}
+2025-04-27 10:02:03 INFO Loaded file_to_hash with 10 entries.
+2025-04-27 10:02:03 INFO {'/home/osaka/3/4681952839112/Documents/Shared/Initial-D/20250420_1129_AE86 in Space_remix_01js9bv2zcey9vgx3h2jaz60nb.png': None, '/home/osaka/3/4681952839112/Documents/Shared/Initial-D/20250420_1310_Anime Character Realism_remix_01js9hmhqsfdntq2sqxqpsbhkw.png': None, '/home/osaka/3/4681952839112/Documents/Shared/Initial-D/20250420_1216_Space Race Drift_remix_01js9ehjq5e99t81exx51p6m1b.png': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Manga/quotes.txt': 'b1b2fc213146675e14071195f230e1d8', '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Nujabes - Luv (Sic), Part 2 (feat. Shing02).mp3': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Nujabes & Shing02 - Luv(sic.) Part 4 (a cappella).mp3': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Nujabes & Shing02 - Nujabes - Luv(sic) feat.Shing02.mp3': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Shing02 & Nujabes - Luv (sic.), Part 3.mp3': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Shing02 & Nujabes - Luv(sic) Grand Finale feat.Shing02.mp3': None, '/home/osaka/3/4681952839112/Documents/Shared/Vagabond/Music/Shing02 & Nujabes - Luv(sic) Part 5.mp3': None}
+2025-04-27 10:02:10 INFO Connection from ('192.168.1.75', 43976) has been established!
+2025-04-27 10:02:10 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 10:02:10 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 10:02:10 INFO ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 10:02:10 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 10:02:10 INFO user's invite: ['initial-d', 'cJfMMZSY4M', 'itsuki']
+2025-04-27 10:02:10 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki']]
+2025-04-27 10:02:10 INFO user's invite: ['Vagabond', 'EyFd3VUInX', 'itsuki']
+2025-04-27 10:02:10 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 10:02:10 INFO sending alerts to takumi with mac_addr 4681952839112: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 10:02:10 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["initial-d", "cJfMMZSY4M", "itsuki"], ["Vagabond", "EyFd3VUInX", "itsuki"]]}
+2025-04-27 10:02:10 INFO Connection from ('192.168.1.75', 43986) has been established!
+2025-04-27 10:02:10 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 10:02:10 INFO Data_Response Object is made
+2025-04-27 10:02:10 INFO Scraped 2 records from folders
+2025-04-27 10:02:10 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'cJfMMZSY4M', 'name': 'initial-d', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'EyFd3VUInX', 'name': 'Vagabond', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Vagabond', 'type': 'sync_bothways'}]}
+2025-04-27 10:02:10 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "cJfMMZSY4M",
+        "mac_addr": "4681952839112",
+        "name": "initial-d",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Initial-D",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "EyFd3VUInX",
+        "mac_addr": "4681952839112",
+        "name": "Vagabond",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Vagabond",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 10:02:10 INFO Connection from ('192.168.1.75', 43998) has been established!
+2025-04-27 10:02:10 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 10:02:10 INFO Data_Response Object is made
+2025-04-27 10:02:10 INFO Scraped 3 records from users
+2025-04-27 10:02:10 INFO Scraped 3 records from devices
+2025-04-27 10:02:10 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'takumi'}, {'user_id': 2, 'name': 'ryosuke'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'AE86'}, {'user_id': 2, 'name': 'RX-7'}, {'user_id': 3, 'name': 'AE85'}]}
+2025-04-27 10:02:10 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "AE86",
+        "user_id": 1
+      },
+      {
+        "name": "RX-7",
+        "user_id": 2
+      },
+      {
+        "name": "AE85",
+        "user_id": 3
+      }
+    ],
+    "users": [
+      {
+        "name": "takumi",
+        "user_id": 1
+      },
+      {
+        "name": "ryosuke",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 10:09:19 INFO Connection from ('192.168.1.75', 41156) has been established!
+2025-04-27 10:09:19 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 10:09:19 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 10:09:19 INFO ip_map: {'users': {'takumi': {'4681952839112': '192.168.1.75'}, 'ryosuke': {'4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}}}
+2025-04-27 10:09:19 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 10:09:19 INFO user's invite: ['initial-d', 'cJfMMZSY4M', 'itsuki']
+2025-04-27 10:09:19 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki']]
+2025-04-27 10:09:19 INFO user's invite: ['Vagabond', 'EyFd3VUInX', 'itsuki']
+2025-04-27 10:09:19 INFO building alerts: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 10:09:19 INFO sending alerts to takumi with mac_addr 4681952839112: [['initial-d', 'cJfMMZSY4M', 'itsuki'], ['Vagabond', 'EyFd3VUInX', 'itsuki']]
+2025-04-27 10:09:19 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["initial-d", "cJfMMZSY4M", "itsuki"], ["Vagabond", "EyFd3VUInX", "itsuki"]]}
+2025-04-27 10:09:19 INFO Connection from ('192.168.1.75', 41158) has been established!
+2025-04-27 10:09:19 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 10:09:19 INFO Data_Response Object is made
+2025-04-27 10:09:19 INFO Scraped 2 records from folders
+2025-04-27 10:09:19 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'cJfMMZSY4M', 'name': 'initial-d', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'EyFd3VUInX', 'name': 'Vagabond', 'path': '/home/osaka/3/4681952839112/Documents/Shared/Vagabond', 'type': 'sync_bothways'}]}
+2025-04-27 10:09:19 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "cJfMMZSY4M",
+        "mac_addr": "4681952839112",
+        "name": "initial-d",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Initial-D",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "EyFd3VUInX",
+        "mac_addr": "4681952839112",
+        "name": "Vagabond",
+        "path": "/home/osaka/3/4681952839112/Documents/Shared/Vagabond",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 10:09:19 INFO Connection from ('192.168.1.75', 41166) has been established!
+2025-04-27 10:09:19 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 10:09:19 INFO Data_Response Object is made
+2025-04-27 10:09:19 INFO Scraped 3 records from users
+2025-04-27 10:09:19 INFO Scraped 3 records from devices
+2025-04-27 10:09:19 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'takumi'}, {'user_id': 2, 'name': 'ryosuke'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'AE86'}, {'user_id': 2, 'name': 'RX-7'}, {'user_id': 3, 'name': 'AE85'}]}
+2025-04-27 10:09:19 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "AE86",
+        "user_id": 1
+      },
+      {
+        "name": "RX-7",
+        "user_id": 2
+      },
+      {
+        "name": "AE85",
+        "user_id": 3
+      }
+    ],
+    "users": [
+      {
+        "name": "takumi",
+        "user_id": 1
+      },
+      {
+        "name": "ryosuke",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:08:02 INFO 192.168.1.75
+2025-04-27 11:08:02 INFO [+] Listening on 192.168.1.75:9000...
+2025-04-27 11:08:02 INFO INITIALISING global_blocklist {}
+2025-04-27 11:08:02 INFO INITIALISING ip_map: {'users': {}}
+2025-04-27 11:08:02 INFO INITIALISING invites: {'folders': {}, 'groups': {}}
+2025-04-27 11:08:02 INFO Loaded file_to_hash with 0 entries.
+2025-04-27 11:08:02 INFO {}
+2025-04-27 11:08:51 INFO Connection from ('192.168.1.221', 59106) has been established!
+2025-04-27 11:08:51 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "takumi", "mac_addr": 167132875827157}
+2025-04-27 11:08:51 INFO Recieved tracking info from takumi with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-04-27 11:08:51 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:08:51 INFO building alerts for takumi with mac_addr 167132875827157
+2025-04-27 11:08:51 INFO sending alerts to takumi with mac_addr 167132875827157: []
+2025-04-27 11:08:51 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:08:51 INFO Connection from ('192.168.1.221', 59108) has been established!
+2025-04-27 11:08:51 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 167132875827157, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:08:51 INFO Data_Response Object is made
+2025-04-27 11:08:51 INFO Scraped 0 records from folders
+2025-04-27 11:08:51 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:08:51 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 167132875827157,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:08:52 INFO Connection from ('192.168.1.221', 59124) has been established!
+2025-04-27 11:08:52 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:08:52 INFO Data_Response Object is made
+2025-04-27 11:08:52 INFO Scraped 0 records from users
+2025-04-27 11:08:52 INFO Scraped 0 records from devices
+2025-04-27 11:08:52 INFO scraped data to be returned!: {'users': [], 'devices': []}
+2025-04-27 11:08:52 INFO SENDING: {
+  "data": {
+    "devices": [],
+    "users": []
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:09:02 INFO Connection from ('192.168.1.221', 45590) has been established!
+2025-04-27 11:09:02 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-04-27 11:09:02 INFO Received ping from 192.168.1.221
+2025-04-27 11:09:02 INFO Pong sent to 192.168.1.221
+2025-04-27 11:09:08 INFO Connection from ('192.168.1.221', 41132) has been established!
+2025-04-27 11:09:08 INFO message: {"action": "ping", "ip_addr": "192.168.1.221"}
+2025-04-27 11:09:08 INFO Received ping from 192.168.1.221
+2025-04-27 11:09:08 INFO Pong sent to 192.168.1.221
+2025-04-27 11:09:17 INFO Connection from ('192.168.1.221', 40310) has been established!
+2025-04-27 11:09:17 INFO message: {"action": "register_user", "ip_addr": "192.168.1.221", "r_user": "ryosuke", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-27 11:09:17 INFO Creating user: ryosuke with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-04-27 11:09:17 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-04-27 11:09:17 INFO Connection from ('192.168.1.221', 40320) has been established!
+2025-04-27 11:09:18 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "ryosuke", "mac_addr": 167132875827157}
+2025-04-27 11:09:18 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-04-27 11:09:18 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:09:18 INFO building alerts for ryosuke with mac_addr 167132875827157
+2025-04-27 11:09:18 INFO sending alerts to ryosuke with mac_addr 167132875827157: []
+2025-04-27 11:09:18 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:09:18 INFO Connection from ('192.168.1.221', 40328) has been established!
+2025-04-27 11:09:18 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 167132875827157, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:09:18 INFO Data_Response Object is made
+2025-04-27 11:09:18 INFO Scraped 0 records from folders
+2025-04-27 11:09:18 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:09:18 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 167132875827157,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:09:18 INFO Connection from ('192.168.1.221', 40332) has been established!
+2025-04-27 11:09:18 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:09:18 INFO Data_Response Object is made
+2025-04-27 11:09:18 INFO Scraped 1 records from users
+2025-04-27 11:09:18 INFO Scraped 0 records from devices
+2025-04-27 11:09:18 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}], 'devices': []}
+2025-04-27 11:09:18 INFO SENDING: {
+  "data": {
+    "devices": [],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:09:28 INFO Connection from ('192.168.1.75', 41306) has been established!
+2025-04-27 11:09:28 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 11:09:28 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 11:09:28 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:09:28 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 11:09:28 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-27 11:09:28 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:09:28 INFO Connection from ('192.168.1.75', 41318) has been established!
+2025-04-27 11:09:28 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:09:28 INFO Data_Response Object is made
+2025-04-27 11:09:28 INFO Scraped 0 records from folders
+2025-04-27 11:09:28 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:09:28 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:09:28 INFO Connection from ('192.168.1.75', 41326) has been established!
+2025-04-27 11:09:28 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:09:28 INFO Data_Response Object is made
+2025-04-27 11:09:28 INFO Scraped 1 records from users
+2025-04-27 11:09:28 INFO Scraped 0 records from devices
+2025-04-27 11:09:28 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}], 'devices': []}
+2025-04-27 11:09:28 INFO SENDING: {
+  "data": {
+    "devices": [],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:09:37 INFO Connection from ('192.168.1.75', 50788) has been established!
+2025-04-27 11:09:37 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-04-27 11:09:37 INFO Received ping from 192.168.1.75
+2025-04-27 11:09:37 INFO Pong sent to 192.168.1.75
+2025-04-27 11:09:46 INFO Connection from ('192.168.1.75', 59214) has been established!
+2025-04-27 11:09:46 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "takumi", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-04-27 11:09:46 INFO Creating user: takumi with hash: 00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92
+2025-04-27 11:09:46 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-04-27 11:09:46 INFO Connection from ('192.168.1.75', 59224) has been established!
+2025-04-27 11:09:46 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 11:09:46 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 11:09:46 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:09:46 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 11:09:46 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-27 11:09:46 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:09:46 INFO Connection from ('192.168.1.75', 59228) has been established!
+2025-04-27 11:09:46 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:09:46 INFO Data_Response Object is made
+2025-04-27 11:09:46 INFO Scraped 0 records from folders
+2025-04-27 11:09:46 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:09:46 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:09:46 INFO Connection from ('192.168.1.75', 59242) has been established!
+2025-04-27 11:09:46 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:09:46 INFO Data_Response Object is made
+2025-04-27 11:09:46 INFO Scraped 2 records from users
+2025-04-27 11:09:46 INFO Scraped 0 records from devices
+2025-04-27 11:09:46 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': []}
+2025-04-27 11:09:46 INFO SENDING: {
+  "data": {
+    "devices": [],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:09:48 INFO Connection from ('192.168.1.75', 59248) has been established!
+2025-04-27 11:09:48 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 11:09:48 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 11:09:48 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:09:48 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 11:09:48 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-27 11:09:48 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:09:48 INFO Connection from ('192.168.1.75', 59250) has been established!
+2025-04-27 11:09:48 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:09:48 INFO Data_Response Object is made
+2025-04-27 11:09:48 INFO Scraped 0 records from folders
+2025-04-27 11:09:48 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:09:48 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:09:48 INFO Connection from ('192.168.1.75', 59258) has been established!
+2025-04-27 11:09:48 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:09:48 INFO Data_Response Object is made
+2025-04-27 11:09:48 INFO Scraped 2 records from users
+2025-04-27 11:09:48 INFO Scraped 0 records from devices
+2025-04-27 11:09:48 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': []}
+2025-04-27 11:09:48 INFO SENDING: {
+  "data": {
+    "devices": [],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:09:55 INFO Connection from ('192.168.1.221', 42094) has been established!
+2025-04-27 11:09:55 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "ryosuke", "mac_addr": 167132875827157}
+2025-04-27 11:09:55 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-04-27 11:09:55 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:09:55 INFO building alerts for ryosuke with mac_addr 167132875827157
+2025-04-27 11:09:55 INFO sending alerts to ryosuke with mac_addr 167132875827157: []
+2025-04-27 11:09:55 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:09:55 INFO Connection from ('192.168.1.221', 42098) has been established!
+2025-04-27 11:09:55 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 167132875827157, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:09:55 INFO Data_Response Object is made
+2025-04-27 11:09:55 INFO Scraped 0 records from folders
+2025-04-27 11:09:55 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:09:55 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 167132875827157,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:09:55 INFO Connection from ('192.168.1.221', 42110) has been established!
+2025-04-27 11:09:55 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:09:55 INFO Data_Response Object is made
+2025-04-27 11:09:55 INFO Scraped 2 records from users
+2025-04-27 11:09:55 INFO Scraped 0 records from devices
+2025-04-27 11:09:55 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': []}
+2025-04-27 11:09:55 INFO SENDING: {
+  "data": {
+    "devices": [],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:10:02 INFO Connection from ('192.168.1.221', 38416) has been established!
+2025-04-27 11:10:02 INFO message: {"action": "add_device", "user": "ryosuke", "r_dev_name": "RX-7", "mac_addr": 167132875827157}
+2025-04-27 11:10:02 INFO User_ID: 1
+2025-04-27 11:10:02 INFO Adding device: RX-7 with Mac_addr: 167132875827157 for User: ryosuke with User_ID: 1
+2025-04-27 11:10:02 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-04-27 11:10:02 INFO Connection from ('192.168.1.221', 38428) has been established!
+2025-04-27 11:10:02 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "ryosuke", "mac_addr": 167132875827157}
+2025-04-27 11:10:02 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-04-27 11:10:02 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:10:02 INFO building alerts for ryosuke with mac_addr 167132875827157
+2025-04-27 11:10:02 INFO sending alerts to ryosuke with mac_addr 167132875827157: []
+2025-04-27 11:10:02 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:10:02 INFO Connection from ('192.168.1.221', 38434) has been established!
+2025-04-27 11:10:02 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 167132875827157, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:10:02 INFO Data_Response Object is made
+2025-04-27 11:10:02 INFO Scraped 0 records from folders
+2025-04-27 11:10:02 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:10:02 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 167132875827157,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:10:02 INFO Connection from ('192.168.1.221', 38440) has been established!
+2025-04-27 11:10:02 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:10:02 INFO Data_Response Object is made
+2025-04-27 11:10:02 INFO Scraped 2 records from users
+2025-04-27 11:10:02 INFO Scraped 1 records from devices
+2025-04-27 11:10:02 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}]}
+2025-04-27 11:10:02 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:10:08 INFO Connection from ('192.168.1.75', 34484) has been established!
+2025-04-27 11:10:08 INFO message: {"action": "add_device", "user": "takumi", "r_dev_name": "AE86", "mac_addr": 4681952839112}
+2025-04-27 11:10:08 INFO User_ID: 2
+2025-04-27 11:10:08 INFO Adding device: AE86 with Mac_addr: 4681952839112 for User: takumi with User_ID: 2
+2025-04-27 11:10:08 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-04-27 11:10:08 INFO Connection from ('192.168.1.75', 34494) has been established!
+2025-04-27 11:10:08 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 11:10:08 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 11:10:08 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:10:08 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 11:10:08 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-27 11:10:08 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:10:08 INFO Connection from ('192.168.1.75', 34510) has been established!
+2025-04-27 11:10:08 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:10:08 INFO Data_Response Object is made
+2025-04-27 11:10:08 INFO Scraped 0 records from folders
+2025-04-27 11:10:08 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:10:08 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:10:08 INFO Connection from ('192.168.1.75', 34518) has been established!
+2025-04-27 11:10:08 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:10:08 INFO Data_Response Object is made
+2025-04-27 11:10:08 INFO Scraped 2 records from users
+2025-04-27 11:10:08 INFO Scraped 2 records from devices
+2025-04-27 11:10:08 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}, {'user_id': 2, 'name': 'AE86'}]}
+2025-04-27 11:10:08 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      },
+      {
+        "name": "AE86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:10:53 INFO Connection from ('192.168.1.75', 57292) has been established!
+2025-04-27 11:10:53 INFO message: {"action": "add_folder", "folder_label": "Initial-D", "folder_id": "fNlvA1zblE", "directory": "~/Documents/Shared/Initial-D", "shared_users": ["ryosuke:RX-7"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "takumi"}
+2025-04-27 11:10:53 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'Initial-D', 'folder_id': 'fNlvA1zblE', 'directory': '~/Documents/Shared/Initial-D', 'shared_users': ['ryosuke:RX-7'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'takumi'}
+2025-04-27 11:10:53 INFO Unix format directory: ~/Documents/Shared/Initial-D
+2025-04-27 11:10:53 INFO 👤Host: takumi with User_ID: 2 is creating folder📂: Initial-D with folder_id: fNlvA1zblE in directory: ~/Documents/Shared/Initial-D
+2025-04-27 11:10:53 INFO User: ryosuke found with User_ID: 1
+2025-04-27 11:10:53 INFO Device: RX-7 found with Mac_addr: 167132875827157
+2025-04-27 11:10:53 INFO {'167132875827157': '192.168.1.221'}
+2025-04-27 11:10:53 INFO ip of device: 192.168.1.221
+2025-04-27 11:10:53 INFO Sending authorisation request to ryosuke, device: RX-7, mac_addr: 167132875827157,  ip: 192.168.1.221
+2025-04-27 11:10:53 INFO Sending: {"action": "authorise", "user": "ryosuke"} to 192.168.1.221 on port 6000
+2025-04-27 11:10:54 INFO client_data: {"status_code": "200"}
+2025-04-27 11:10:54 INFO User Status: 200 (400/404 -> failed, 200 -> success)
+2025-04-27 11:10:54 INFO Authorisation successful for ryosuke with ip: 192.168.1.221
+2025-04-27 11:10:54 INFO Sending: {"action": "add_folder", "folder_label": "Initial-D", "folder_id": "fNlvA1zblE"} to 192.168.1.221 on port 6000
+2025-04-27 11:10:54 INFO client_data: 
+2025-04-27 11:22:31 INFO 192.168.1.75
+2025-04-27 11:22:31 INFO INITIALISING global_blocklist {}
+2025-04-27 11:22:31 INFO [+] Listening on 192.168.1.75:9000...
+2025-04-27 11:22:31 INFO INITIALISING ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:22:31 INFO INITIALISING invites: {'folders': {}, 'groups': {}}
+2025-04-27 11:22:31 INFO Loaded file_to_hash with 0 entries.
+2025-04-27 11:22:31 INFO {}
+2025-04-27 11:22:34 INFO Connection from ('192.168.1.75', 41686) has been established!
+2025-04-27 11:22:34 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 11:22:34 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 11:22:34 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:22:34 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 11:22:34 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-27 11:22:34 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:22:34 INFO Connection from ('192.168.1.75', 41690) has been established!
+2025-04-27 11:22:34 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:22:34 INFO Data_Response Object is made
+2025-04-27 11:22:34 INFO Scraped 0 records from folders
+2025-04-27 11:22:34 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:22:34 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:22:34 INFO Connection from ('192.168.1.75', 41700) has been established!
+2025-04-27 11:22:34 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:22:34 INFO Data_Response Object is made
+2025-04-27 11:22:34 INFO Scraped 2 records from users
+2025-04-27 11:22:34 INFO Scraped 2 records from devices
+2025-04-27 11:22:34 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}, {'user_id': 2, 'name': 'AE86'}]}
+2025-04-27 11:22:34 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      },
+      {
+        "name": "AE86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:22:36 INFO Connection from ('192.168.1.75', 41712) has been established!
+2025-04-27 11:22:36 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 11:22:36 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 11:22:36 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:22:36 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 11:22:36 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-27 11:22:36 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:22:36 INFO Connection from ('192.168.1.75', 41718) has been established!
+2025-04-27 11:22:36 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:22:36 INFO Data_Response Object is made
+2025-04-27 11:22:36 INFO Scraped 0 records from folders
+2025-04-27 11:22:36 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:22:36 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:22:36 INFO Connection from ('192.168.1.75', 41732) has been established!
+2025-04-27 11:22:36 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:22:36 INFO Data_Response Object is made
+2025-04-27 11:22:36 INFO Scraped 2 records from users
+2025-04-27 11:22:36 INFO Scraped 2 records from devices
+2025-04-27 11:22:36 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}, {'user_id': 2, 'name': 'AE86'}]}
+2025-04-27 11:22:36 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      },
+      {
+        "name": "AE86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:23:21 INFO Connection from ('192.168.1.75', 42032) has been established!
+2025-04-27 11:23:21 INFO message: {"action": "add_folder", "folder_label": "Initial-D", "folder_id": "dMdbXpgrC7", "directory": "~/Documents/Shared/Initial-D", "shared_users": ["ryosuke:RX-7"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "takumi"}
+2025-04-27 11:23:21 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'Initial-D', 'folder_id': 'dMdbXpgrC7', 'directory': '~/Documents/Shared/Initial-D', 'shared_users': ['ryosuke:RX-7'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'takumi'}
+2025-04-27 11:23:21 INFO Unix format directory: ~/Documents/Shared/Initial-D
+2025-04-27 11:23:21 INFO 👤Host: takumi with User_ID: 2 is creating folder📂: Initial-D with folder_id: dMdbXpgrC7 in directory: ~/Documents/Shared/Initial-D
+2025-04-27 11:23:21 INFO User: ryosuke found with User_ID: 1
+2025-04-27 11:23:21 INFO Device: RX-7 found with Mac_addr: 167132875827157
+2025-04-27 11:23:21 INFO {'167132875827157': '192.168.1.221'}
+2025-04-27 11:23:21 INFO ip of device: 192.168.1.221
+2025-04-27 11:23:21 INFO Sending authorisation request to ryosuke, device: RX-7, mac_addr: 167132875827157,  ip: 192.168.1.221
+2025-04-27 11:23:21 INFO Sending: {"action": "authorise", "user": "ryosuke"} to 192.168.1.221 on port 6000
+2025-04-27 11:23:21 INFO client_data: {"status_code": "200"}
+2025-04-27 11:23:21 INFO User Status: 200 (400/404 -> failed, 200 -> success)
+2025-04-27 11:23:21 INFO Authorisation successful for ryosuke with ip: 192.168.1.221
+2025-04-27 11:23:21 INFO Sending: {"action": "share_folder", "folder_label": "Initial-D", "folder_id": "dMdbXpgrC7"} to 192.168.1.221 on port 6000
+2025-04-27 11:23:22 INFO client_data: 
+2025-04-27 11:23:22 INFO invites.json BEFORE adding: {'folders': {}, 'groups': {}}
+2025-04-27 11:23:22 INFO invites.json AFTER adding: {'folders': {'ryosuke': {'167132875827157': [['Initial-D', 'dMdbXpgrC7', 'takumi']]}}, 'groups': {}}
+2025-04-27 11:23:22 INFO Creating folder directory: /home/osaka/2/4681952839112/Documents/Shared/Initial-D
+2025-04-27 11:23:22 INFO Directory created: /home/osaka/2/4681952839112/Documents/Shared/Initial-D
+2025-04-27 11:23:22 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-04-27 11:23:22 INFO Connection from ('192.168.1.75', 33704) has been established!
+2025-04-27 11:23:22 INFO message: {"action": "add_folder", "folder_label": "Initial-D", "folder_id": "dMdbXpgrC7", "directory": "~/Documents/Shared/Initial-D", "shared_users": ["ryosuke:RX-7"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "takumi"}
+2025-04-27 11:23:22 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'Initial-D', 'folder_id': 'dMdbXpgrC7', 'directory': '~/Documents/Shared/Initial-D', 'shared_users': ['ryosuke:RX-7'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'takumi'}
+2025-04-27 11:23:22 INFO Folder_id: dMdbXpgrC7 already exists!
+2025-04-27 11:23:22 INFO Sending folder status: {"status": "409", "status_msg": "Folder with this folder_id already exists"}
+2025-04-27 11:24:43 INFO Connection from ('192.168.1.75', 54844) has been established!
+2025-04-27 11:24:43 INFO message: {"action": "add_folder", "folder_label": "Initial-D", "folder_id": "dMdbXpgrC7", "directory": "~/Documents/Shared/Initial-D", "shared_users": ["ryosuke:RX-7"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "takumi"}
+2025-04-27 11:24:43 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'Initial-D', 'folder_id': 'dMdbXpgrC7', 'directory': '~/Documents/Shared/Initial-D', 'shared_users': ['ryosuke:RX-7'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'takumi'}
+2025-04-27 11:24:43 INFO Folder_id: dMdbXpgrC7 already exists!
+2025-04-27 11:24:43 INFO Sending folder status: {"status": "409", "status_msg": "Folder with this folder_id already exists"}
+2025-04-27 11:24:51 INFO Connection from ('192.168.1.75', 54848) has been established!
+2025-04-27 11:24:51 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-04-27 11:24:51 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-04-27 11:24:51 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:24:51 INFO building alerts for takumi with mac_addr 4681952839112
+2025-04-27 11:24:51 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-04-27 11:24:51 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-04-27 11:24:51 INFO Connection from ('192.168.1.75', 54850) has been established!
+2025-04-27 11:24:51 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:24:51 INFO Data_Response Object is made
+2025-04-27 11:24:51 INFO Scraped 1 records from folders
+2025-04-27 11:24:51 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'dMdbXpgrC7', 'name': 'Initial-D', 'path': '/home/osaka/2/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}]}
+2025-04-27 11:24:51 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "dMdbXpgrC7",
+        "mac_addr": "4681952839112",
+        "name": "Initial-D",
+        "path": "/home/osaka/2/4681952839112/Documents/Shared/Initial-D",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:24:51 INFO Connection from ('192.168.1.75', 54852) has been established!
+2025-04-27 11:24:51 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:24:51 INFO Data_Response Object is made
+2025-04-27 11:24:51 INFO Scraped 2 records from users
+2025-04-27 11:24:51 INFO Scraped 2 records from devices
+2025-04-27 11:24:51 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}, {'user_id': 2, 'name': 'AE86'}]}
+2025-04-27 11:24:51 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      },
+      {
+        "name": "AE86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:25:36 INFO Connection from ('192.168.1.75', 37506) has been established!
+2025-04-27 11:25:36 INFO message: {"action": "add_folder", "folder_label": "initial-d", "folder_id": "Nh9Ii3xZhk", "directory": "~/Documents/Shared/Initial-D", "shared_users": ["ryosuke:RX-7"], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "takumi"}
+2025-04-27 11:25:36 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'initial-d', 'folder_id': 'Nh9Ii3xZhk', 'directory': '~/Documents/Shared/Initial-D', 'shared_users': ['ryosuke:RX-7'], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'takumi'}
+2025-04-27 11:25:36 INFO Unix format directory: ~/Documents/Shared/Initial-D
+2025-04-27 11:25:36 INFO 👤Host: takumi with User_ID: 2 is creating folder📂: initial-d with folder_id: Nh9Ii3xZhk in directory: ~/Documents/Shared/Initial-D
+2025-04-27 11:25:36 INFO User: ryosuke found with User_ID: 1
+2025-04-27 11:25:36 INFO Device: RX-7 found with Mac_addr: 167132875827157
+2025-04-27 11:25:36 INFO {'167132875827157': '192.168.1.221'}
+2025-04-27 11:25:36 INFO ip of device: 192.168.1.221
+2025-04-27 11:25:36 INFO Sending authorisation request to ryosuke, device: RX-7, mac_addr: 167132875827157,  ip: 192.168.1.221
+2025-04-27 11:25:36 INFO Sending: {"action": "authorise", "user": "ryosuke"} to 192.168.1.221 on port 6000
+2025-04-27 11:25:36 INFO User Status: 400 (400/404 -> failed, 200 -> success)
+2025-04-27 11:25:36 INFO Authorisation failed for ryosuke with ip: 192.168.1.221
+2025-04-27 11:25:36 INFO invites.json BEFORE adding: {'folders': {'ryosuke': {'167132875827157': [['Initial-D', 'dMdbXpgrC7', 'takumi']]}}, 'groups': {}}
+2025-04-27 11:25:36 INFO invites.json AFTER adding: {'folders': {'ryosuke': {'167132875827157': [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]}}, 'groups': {}}
+2025-04-27 11:25:36 INFO Creating folder directory: /home/osaka/2/4681952839112/Documents/Shared/Initial-D
+2025-04-27 11:25:36 INFO ⚠️ Directory /home/osaka/2/4681952839112/Documents/Shared/Initial-D already exists, skipping creation.
+2025-04-27 11:25:36 INFO Directory created: /home/osaka/2/4681952839112/Documents/Shared/Initial-D
+2025-04-27 11:25:36 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-04-27 11:25:58 INFO Connection from ('192.168.1.221', 59042) has been established!
+2025-04-27 11:25:59 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "ryosuke", "mac_addr": 167132875827157}
+2025-04-27 11:25:59 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-04-27 11:25:59 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:25:59 INFO building alerts for ryosuke with mac_addr 167132875827157
+2025-04-27 11:25:59 INFO user's invite: ['Initial-D', 'dMdbXpgrC7', 'takumi']
+2025-04-27 11:25:59 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi']]
+2025-04-27 11:25:59 INFO user's invite: ['initial-d', 'Nh9Ii3xZhk', 'takumi']
+2025-04-27 11:25:59 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:25:59 INFO sending alerts to ryosuke with mac_addr 167132875827157: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:25:59 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Initial-D", "dMdbXpgrC7", "takumi"], ["initial-d", "Nh9Ii3xZhk", "takumi"]]}
+2025-04-27 11:25:59 INFO Connection from ('192.168.1.221', 56848) has been established!
+2025-04-27 11:25:59 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 167132875827157, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:25:59 INFO Data_Response Object is made
+2025-04-27 11:25:59 INFO Scraped 0 records from folders
+2025-04-27 11:25:59 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:25:59 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 167132875827157,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:25:59 INFO Connection from ('192.168.1.221', 56856) has been established!
+2025-04-27 11:25:59 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:25:59 INFO Data_Response Object is made
+2025-04-27 11:25:59 INFO Scraped 2 records from users
+2025-04-27 11:25:59 INFO Scraped 2 records from devices
+2025-04-27 11:25:59 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}, {'user_id': 2, 'name': 'AE86'}]}
+2025-04-27 11:25:59 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      },
+      {
+        "name": "AE86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:26:01 INFO Connection from ('192.168.1.221', 56866) has been established!
+2025-04-27 11:26:01 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "ryosuke", "mac_addr": 167132875827157}
+2025-04-27 11:26:01 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-04-27 11:26:01 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:26:01 INFO building alerts for ryosuke with mac_addr 167132875827157
+2025-04-27 11:26:01 INFO user's invite: ['Initial-D', 'dMdbXpgrC7', 'takumi']
+2025-04-27 11:26:01 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi']]
+2025-04-27 11:26:01 INFO user's invite: ['initial-d', 'Nh9Ii3xZhk', 'takumi']
+2025-04-27 11:26:01 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:26:01 INFO sending alerts to ryosuke with mac_addr 167132875827157: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:26:01 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Initial-D", "dMdbXpgrC7", "takumi"], ["initial-d", "Nh9Ii3xZhk", "takumi"]]}
+2025-04-27 11:26:01 INFO Connection from ('192.168.1.221', 56882) has been established!
+2025-04-27 11:26:01 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 167132875827157, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:26:01 INFO Data_Response Object is made
+2025-04-27 11:26:01 INFO Scraped 0 records from folders
+2025-04-27 11:26:01 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:26:01 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 167132875827157,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:26:01 INFO Connection from ('192.168.1.221', 56888) has been established!
+2025-04-27 11:26:01 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:26:01 INFO Data_Response Object is made
+2025-04-27 11:26:01 INFO Scraped 2 records from users
+2025-04-27 11:26:01 INFO Scraped 2 records from devices
+2025-04-27 11:26:01 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}, {'user_id': 2, 'name': 'AE86'}]}
+2025-04-27 11:26:01 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      },
+      {
+        "name": "AE86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:26:49 INFO Connection from ('192.168.1.221', 42924) has been established!
+2025-04-27 11:26:50 INFO message: {"action": "accept_share", "folder_id": "Initial-D", "folder_label": "BRUH", "directory": "~/Desktop/Bruh", "mac_addr": 167132875827157}
+2025-04-27 11:26:50 INFO Processing share acceptance for folder_id: Initial-D, from device: 167132875827157
+2025-04-27 11:26:50 INFO Share entry added successfully for folder_id: Initial-D, mac_addr: 167132875827157
+2025-04-27 11:26:50 INFO Accepting share: {"status": "201", "status_msg": "Share accepted successfully"}
+2025-04-27 11:30:04 INFO Connection from ('192.168.1.221', 53416) has been established!
+2025-04-27 11:30:04 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "ryosuke", "mac_addr": 167132875827157}
+2025-04-27 11:30:04 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-04-27 11:30:04 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:30:04 INFO building alerts for ryosuke with mac_addr 167132875827157
+2025-04-27 11:30:04 INFO user's invite: ['Initial-D', 'dMdbXpgrC7', 'takumi']
+2025-04-27 11:30:04 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi']]
+2025-04-27 11:30:04 INFO user's invite: ['initial-d', 'Nh9Ii3xZhk', 'takumi']
+2025-04-27 11:30:04 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:30:04 INFO sending alerts to ryosuke with mac_addr 167132875827157: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:30:04 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Initial-D", "dMdbXpgrC7", "takumi"], ["initial-d", "Nh9Ii3xZhk", "takumi"]]}
+2025-04-27 11:30:04 INFO Connection from ('192.168.1.221', 53428) has been established!
+2025-04-27 11:30:04 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 167132875827157, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:30:04 INFO Data_Response Object is made
+2025-04-27 11:30:04 INFO Scraped 0 records from folders
+2025-04-27 11:30:04 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:30:04 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 167132875827157,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:30:05 INFO Connection from ('192.168.1.221', 53432) has been established!
+2025-04-27 11:30:05 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:30:05 INFO Data_Response Object is made
+2025-04-27 11:30:05 INFO Scraped 2 records from users
+2025-04-27 11:30:05 INFO Scraped 2 records from devices
+2025-04-27 11:30:05 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}, {'user_id': 2, 'name': 'AE86'}]}
+2025-04-27 11:30:05 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      },
+      {
+        "name": "AE86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:30:07 INFO Connection from ('192.168.1.221', 53444) has been established!
+2025-04-27 11:30:07 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "ryosuke", "mac_addr": 167132875827157}
+2025-04-27 11:30:07 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-04-27 11:30:07 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:30:07 INFO building alerts for ryosuke with mac_addr 167132875827157
+2025-04-27 11:30:07 INFO user's invite: ['Initial-D', 'dMdbXpgrC7', 'takumi']
+2025-04-27 11:30:07 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi']]
+2025-04-27 11:30:07 INFO user's invite: ['initial-d', 'Nh9Ii3xZhk', 'takumi']
+2025-04-27 11:30:07 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:30:07 INFO sending alerts to ryosuke with mac_addr 167132875827157: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:30:07 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Initial-D", "dMdbXpgrC7", "takumi"], ["initial-d", "Nh9Ii3xZhk", "takumi"]]}
+2025-04-27 11:30:07 INFO Connection from ('192.168.1.221', 60624) has been established!
+2025-04-27 11:30:07 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 167132875827157, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:30:07 INFO Data_Response Object is made
+2025-04-27 11:30:07 INFO Scraped 0 records from folders
+2025-04-27 11:30:07 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:30:07 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 167132875827157,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:30:07 INFO Connection from ('192.168.1.221', 60632) has been established!
+2025-04-27 11:30:08 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:30:08 INFO Data_Response Object is made
+2025-04-27 11:30:08 INFO Scraped 2 records from users
+2025-04-27 11:30:08 INFO Scraped 2 records from devices
+2025-04-27 11:30:08 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}, {'user_id': 2, 'name': 'AE86'}]}
+2025-04-27 11:30:08 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      },
+      {
+        "name": "AE86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:30:09 INFO Connection from ('192.168.1.221', 60646) has been established!
+2025-04-27 11:30:09 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "ryosuke", "mac_addr": 167132875827157}
+2025-04-27 11:30:09 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-04-27 11:30:09 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:30:09 INFO building alerts for ryosuke with mac_addr 167132875827157
+2025-04-27 11:30:09 INFO user's invite: ['Initial-D', 'dMdbXpgrC7', 'takumi']
+2025-04-27 11:30:09 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi']]
+2025-04-27 11:30:09 INFO user's invite: ['initial-d', 'Nh9Ii3xZhk', 'takumi']
+2025-04-27 11:30:09 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:30:09 INFO sending alerts to ryosuke with mac_addr 167132875827157: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:30:09 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Initial-D", "dMdbXpgrC7", "takumi"], ["initial-d", "Nh9Ii3xZhk", "takumi"]]}
+2025-04-27 11:30:09 INFO Connection from ('192.168.1.221', 60658) has been established!
+2025-04-27 11:30:09 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 167132875827157, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:30:09 INFO Data_Response Object is made
+2025-04-27 11:30:09 INFO Scraped 0 records from folders
+2025-04-27 11:30:09 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:30:09 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 167132875827157,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:30:09 INFO Connection from ('192.168.1.221', 60662) has been established!
+2025-04-27 11:30:09 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:30:09 INFO Data_Response Object is made
+2025-04-27 11:30:09 INFO Scraped 2 records from users
+2025-04-27 11:30:09 INFO Scraped 2 records from devices
+2025-04-27 11:30:09 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}, {'user_id': 2, 'name': 'AE86'}]}
+2025-04-27 11:30:09 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      },
+      {
+        "name": "AE86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:30:46 INFO Connection from ('192.168.1.221', 38082) has been established!
+2025-04-27 11:30:46 INFO message: {"action": "track", "ip_addr": "192.168.1.221", "user": "ryosuke", "mac_addr": 167132875827157}
+2025-04-27 11:30:46 INFO Recieved tracking info from ryosuke with ip_addr 192.168.1.221 and mac_addr 167132875827157
+2025-04-27 11:30:46 INFO ip_map: {'users': {'takumi': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'ryosuke': {'167132875827157': '192.168.1.221'}}}
+2025-04-27 11:30:46 INFO building alerts for ryosuke with mac_addr 167132875827157
+2025-04-27 11:30:46 INFO user's invite: ['Initial-D', 'dMdbXpgrC7', 'takumi']
+2025-04-27 11:30:46 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi']]
+2025-04-27 11:30:46 INFO user's invite: ['initial-d', 'Nh9Ii3xZhk', 'takumi']
+2025-04-27 11:30:46 INFO building alerts: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:30:46 INFO sending alerts to ryosuke with mac_addr 167132875827157: [['Initial-D', 'dMdbXpgrC7', 'takumi'], ['initial-d', 'Nh9Ii3xZhk', 'takumi']]
+2025-04-27 11:30:46 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": [["Initial-D", "dMdbXpgrC7", "takumi"], ["initial-d", "Nh9Ii3xZhk", "takumi"]]}
+2025-04-27 11:30:46 INFO Connection from ('192.168.1.221', 38092) has been established!
+2025-04-27 11:30:46 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 167132875827157, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-04-27 11:30:46 INFO Data_Response Object is made
+2025-04-27 11:30:46 INFO Scraped 0 records from folders
+2025-04-27 11:30:46 INFO scraped data to be returned!: {'folders': []}
+2025-04-27 11:30:46 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 167132875827157,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-04-27 11:30:46 INFO Connection from ('192.168.1.221', 38094) has been established!
+2025-04-27 11:30:46 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-04-27 11:30:46 INFO Data_Response Object is made
+2025-04-27 11:30:46 INFO Scraped 2 records from users
+2025-04-27 11:30:46 INFO Scraped 2 records from devices
+2025-04-27 11:30:46 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}], 'devices': [{'user_id': 1, 'name': 'RX-7'}, {'user_id': 2, 'name': 'AE86'}]}
+2025-04-27 11:30:46 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "RX-7",
+        "user_id": 1
+      },
+      {
+        "name": "AE86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-04-27 11:31:32 INFO Connection from ('192.168.1.221', 43510) has been established!
+2025-04-27 11:31:32 INFO message: {"action": "accept_share", "folder_id": "initial-d", "folder_label": "OMG", "directory": "~/Desktop/OMG", "mac_addr": 167132875827157}
+2025-04-27 11:31:32 INFO Processing share acceptance for folder_id: initial-d, from device: 167132875827157
+2025-04-27 11:31:32 INFO Share entry added successfully for folder_id: initial-d, mac_addr: 167132875827157
+2025-04-27 11:31:32 INFO Accepting share: {"status": "201", "status_msg": "Share accepted successfully"}

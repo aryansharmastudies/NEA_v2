@@ -16,6 +16,7 @@ when we finish exe code.-->
 {% endwith %}
 
 <body data-mac-address="{{mac_addr}}">
+<body status="{{status}}">
 
 <!-- <script scr = "{{ url_for('static', filename='js/script.js') }}"></script> -->
 <!-- <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='css/style.css') }}"> -->
@@ -215,7 +216,7 @@ when we finish exe code.-->
 </style>
     
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
 <script type="text/javascript" charset="utf-8"></script>
 <!--<script src = "{{ url_for('static', filename='script.js') }}"></script>-->
 
@@ -246,7 +247,7 @@ when we finish exe code.-->
 -->
 
 
-<div id="alert_box" style="background: yellow; padding: 10px; border: 1px solid black;">
+<div id="alert_box" style="background: transparent; padding: 10px; border-left: 3px solid #cbb956;">
     Waiting for updates...
 </div>
 
@@ -280,7 +281,12 @@ when we finish exe code.-->
 
 
 <div class="status-section">
-    <strong>SYSTEM:</strong> Connected to {{server_name}} as {{user}}
+    <strong>SYSTEM:</strong> 
+    {% if status %}
+        Connected to {{server_name}} as {{user}}
+    {% else %}
+        Disconnected from {{server_name}}
+    {% endif %}
 </div>
 
 <h2>Dashboard Control Panel</h2>

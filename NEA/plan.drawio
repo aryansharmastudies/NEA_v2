@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
   <diagram name="Page-1" id="ekimDS5NgHhW3DlAZh_F">
-    <mxGraphModel dx="3329" dy="2164" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="4040" dy="2555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -414,10 +414,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-67" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;share&lt;/font&gt;" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;rounded=0;swimlaneLine=1;strokeColor=default;shadow=0;gradientColor=#4D9900;gradientDirection=radial;" parent="1" vertex="1">
-          <mxGeometry x="430" y="960" width="450" height="150" as="geometry" />
+          <mxGeometry x="430" y="960" width="600" height="150" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-68" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-67" vertex="1">
-          <mxGeometry y="30" width="450" height="30" as="geometry" />
+          <mxGeometry y="30" width="600" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-69" value="&lt;u style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;folder id&lt;/u&gt;" style="shape=partialRectangle;connectable=0;fillColor=#fff2cc;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;swimlaneLine=1;strokeColor=#d6b656;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-68" vertex="1">
           <mxGeometry width="150" height="30" as="geometry">
@@ -429,13 +429,18 @@
             <mxRectangle width="150" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yCGKUtqAQL4sus2Y5JjS-71" value="user directory" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-68" vertex="1">
+        <mxCell id="UdnJiOAlvlTD-gX4nRVH-13" value="name" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;swimlaneLine=1;strokeColor=default;shadow=0;" vertex="1" parent="yCGKUtqAQL4sus2Y5JjS-68">
           <mxGeometry x="300" width="150" height="30" as="geometry">
             <mxRectangle width="150" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="yCGKUtqAQL4sus2Y5JjS-71" value="user directory" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-68" vertex="1">
+          <mxGeometry x="450" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-72" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-67" vertex="1">
-          <mxGeometry y="60" width="450" height="30" as="geometry" />
+          <mxGeometry y="60" width="600" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-73" value="c56j" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-72" vertex="1">
           <mxGeometry width="150" height="30" as="geometry">
@@ -447,13 +452,18 @@
             <mxRectangle width="150" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yCGKUtqAQL4sus2Y5JjS-75" value="C:\Users\krish\Pictures" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-72" vertex="1">
+        <mxCell id="UdnJiOAlvlTD-gX4nRVH-14" value="Pictures" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" vertex="1" parent="yCGKUtqAQL4sus2Y5JjS-72">
           <mxGeometry x="300" width="150" height="30" as="geometry">
             <mxRectangle width="150" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="yCGKUtqAQL4sus2Y5JjS-75" value="C:\Users\krish\Pictures" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-72" vertex="1">
+          <mxGeometry x="450" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-76" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-67" vertex="1">
-          <mxGeometry y="90" width="450" height="30" as="geometry" />
+          <mxGeometry y="90" width="600" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-77" value="m22e" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-76" vertex="1">
           <mxGeometry width="150" height="30" as="geometry">
@@ -465,13 +475,18 @@
             <mxRectangle width="150" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yCGKUtqAQL4sus2Y5JjS-79" value="C:\Users\aryan\Music\lofi" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-76" vertex="1">
+        <mxCell id="UdnJiOAlvlTD-gX4nRVH-15" value="Songs" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" vertex="1" parent="yCGKUtqAQL4sus2Y5JjS-76">
           <mxGeometry x="300" width="150" height="30" as="geometry">
             <mxRectangle width="150" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="yCGKUtqAQL4sus2Y5JjS-79" value="C:\Users\aryan\Music\lofi" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-76" vertex="1">
+          <mxGeometry x="450" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-80" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-67" vertex="1">
-          <mxGeometry y="120" width="450" height="30" as="geometry" />
+          <mxGeometry y="120" width="600" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yCGKUtqAQL4sus2Y5JjS-81" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-80" vertex="1">
           <mxGeometry width="150" height="30" as="geometry">
@@ -483,8 +498,13 @@
             <mxRectangle width="150" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yCGKUtqAQL4sus2Y5JjS-83" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-80" vertex="1">
+        <mxCell id="UdnJiOAlvlTD-gX4nRVH-16" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" vertex="1" parent="yCGKUtqAQL4sus2Y5JjS-80">
           <mxGeometry x="300" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yCGKUtqAQL4sus2Y5JjS-83" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;rounded=0;fontStyle=0;swimlaneLine=1;strokeColor=default;shadow=0;" parent="yCGKUtqAQL4sus2Y5JjS-80" vertex="1">
+          <mxGeometry x="450" width="150" height="30" as="geometry">
             <mxRectangle width="150" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -1123,10 +1143,10 @@
         <mxCell id="710qVrC2aBygnq5VRLGS-23" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Client&lt;/h1&gt;&lt;p&gt;- detects changes and sends them to server&lt;/p&gt;&lt;p&gt;- upon modification simply sends the blocklist - no questions asked&lt;/p&gt;&lt;p&gt;-&amp;nbsp;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="930" y="-1170" width="260" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="P8Pul82vvoi14rpilPZ--1" value="Sync                        ← framing logic (pack/unpack)&#xa;└── IncomingSync            ← main “listen and dispatch” loop&#xa;    ├── CommandEvent        ← abstract base for filesystem commands&#xa;    │    ├── CreateDirEvent&#xa;    │    ├── CreateFileEvent  (server pushing full file)&#xa;    │    ├── DeleteEvent&#xa;    │    └── MoveEvent&#xa;    └── DataEvent           ← abstract base for data‐related messages&#xa;         ├── PatchInstructionEvent  (server says “apply this diff”)&#xa;         └── FileDataEvent          (server sending raw file chunks)" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="P8Pul82vvoi14rpilPZ--1" value="Sync                        ← framing logic (pack/unpack)&#xa;└── IncomingSync            ← main “listen and dispatch” loop&#xa;    ├── CommandEvent        ← abstract base for filesystem commands&#xa;    │    ├── CreateDirEvent&#xa;    │    ├── CreateFileEvent  (server pushing full file)&#xa;    │    ├── DeleteEvent&#xa;    │    └── MoveEvent&#xa;    └── DataEvent           ← abstract base for data‐related messages&#xa;         ├── PatchInstructionEvent  (server says “apply this diff”)&#xa;         └── FileDataEvent          (server sending raw file chunks)" style="text;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="-930" y="-720" width="410" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="P8Pul82vvoi14rpilPZ--2" value="Sync(pack_message, send_message)                      ← holds framing constants &amp; low‑level send_packet&#xa;└── Outgoing(build_metadata, send)              ← generic “send metadata” + hook for file‑data&#xa;    ├── CreateEvent       ← abstract base for create‑type events&#xa;    │    ├── CreateFile   ← file‑create (metadata + data packets)&#xa;    │    └── CreateDir    ← dir‑create  (metadata only)&#xa;    ├── DeleteEvent       ← delete file or dir (metadata only)&#xa;    ├── MoveEvent         ← move file or dir   (metadata only)&#xa;    └── InitialiseEvent   ← bulk folder init   (metadata only)" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="P8Pul82vvoi14rpilPZ--2" value="Sync(pack_message, send_message)                      ← holds framing constants &amp; low‑level send_packet&#xa;└── Outgoing(build_metadata, send)              ← generic “send metadata” + hook for file‑data&#xa;    ├── CreateEvent       ← abstract base for create‑type events&#xa;    │    ├── CreateFile   ← file‑create (metadata + data packets)&#xa;    │    └── CreateDir    ← dir‑create  (metadata only)&#xa;    ├── DeleteEvent       ← delete file or dir (metadata only)&#xa;    ├── MoveEvent         ← move file or dir   (metadata only)&#xa;    └── InitialiseEvent   ← bulk folder init   (metadata only)" style="text;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="-480" y="-720" width="640" height="220" as="geometry" />
         </mxCell>
       </root>

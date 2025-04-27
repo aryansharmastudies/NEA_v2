@@ -1,4 +1,5 @@
 var socket = io();
+//var socket = io.connect(window.location.origin);
 
 var user_device_data = "";
 var folder_data = "";
