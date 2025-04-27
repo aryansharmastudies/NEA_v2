@@ -17,6 +17,9 @@ import threading
 import shutil
 import time
 import queue
+import uuid
+from datetime import timedelta
+import datetime
 
 
 ################################################################################
@@ -26,8 +29,8 @@ import queue
 ################################################################################
 
 
-# sync_active = threading.Event()
-# sync_active.clear()  # Sync is paused initially
+sync_active = threading.Event()
+sync_active.clear()  # Sync is paused initially
 
 
 ################################################################################
@@ -654,8 +657,6 @@ def handle_client_message(clientsocket, message):
 
 # SERVER LOOP
 
-
-
 def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -801,6 +802,14 @@ class SyncEvent(Incoming):
         # action='move' renames source path of file for specified hash. e.g. {'hash1':{'src_path':'/home/file.txt', ...}} -> {'hash1':{'src_path':'/home/FILE.txt', ...}} 
         # action='query' asks back file data in binary for hash specified!
 
+    def _persist_queue(self):
+        try:
+            all_events = list(sync_queue.queue)
+            with open("sync_queue.json", "w") as f:
+                json.dump(all_events, f, indent=2)
+        except Exception as e:
+            logging.error(f"Failed to persist sync queue: {e}")
+
     def _get_mac_addr(self, user) -> str:
         for mac_addr in ip_map["users"][user]:
             if mac_addr == str(mac_addr):
@@ -824,10 +833,57 @@ class SyncEvent(Incoming):
         return formatted_path
     
 class CreateDir(SyncEvent):
+
     def apply(self):
         formatted_path = self.format_path()
         os.makedirs(formatted_path, exist_ok=True)
         logging.info(f"[+] Directory created at: {formatted_path}")
+        
+        # Get folder_id from metadata or path
+        folder_id = self.metadata.get('folder_id')
+        if not folder_id:
+            # Try to extract folder_id from the path
+            parent_folder = session.query(Folder).filter_by(path=os.path.dirname(formatted_path)).first()
+            if parent_folder:
+                folder_id = parent_folder.folder_id
+        
+        if folder_id:
+            # Find all shares for this folder
+            shares = session.query(Share).filter_by(folder_id=folder_id).all()
+            source_mac = self.metadata.get('mac_addr', '')
+            
+            for share in shares:
+                # Skip the source device
+                if share.mac_addr == source_mac:
+                    continue
+                
+                # Get user information for the target device
+                device = session.query(Device).filter_by(mac_addr=share.mac_addr).first()
+                if not device:
+                    logging.warning(f"[!] Device with MAC {share.mac_addr} not found")
+                    continue
+                
+                # Create a relative path from the source folder to the target path
+                rel_path = os.path.relpath(formatted_path, os.path.dirname(formatted_path))
+                target_path = os.path.join(share.path, rel_path)
+                
+                # Create sync event
+                sync_event = {
+                    "event_id": generate_event_id(),
+                    "event_type": "created",
+                    "is_dir": True,
+                    "src_path": target_path,
+                    "origin": "Server",
+                    "user_id": device.user_id,
+                    "mac_addr": share.mac_addr,
+                    "folder_id": folder_id
+                }
+                
+                # Add to sync queue
+                sync_queue.put(sync_event)
+                logging.info(f"[+] Added directory sync event to queue for device {share.mac_addr}")
+        
+        self._persist_queue()
 
 class CreateFile(SyncEvent):
     
@@ -1203,7 +1259,7 @@ class Modify(SyncEvent):
             logging.info(f"[+] Removing {len(unused_blocks)} unused blocks from global blocklist") #🆗
             self.handle_global_blocklist('delete', hashlist=list(unused_blocks), src_path=formatted_path) #🆗
         
-        # Add new blocks to global_blocklist
+        # Add new blocks to global blocklist
         if new_globalblocks and hasattr(self, 'handle_global_blocklist'): #🆗
             logging.info(f"[+] Adding {len(new_globalblocks)} new blocks to global blocklist")#🆗
             self.handle_global_blocklist('add', blocklist=new_globalblocks, src_path=formatted_path) #🆗
@@ -1281,13 +1337,16 @@ class Outgoing(Sync):
         self.origin = event['origin']  # Updated to use 'origin' from event
         self.event_type = event['event_type']
 
+        self.user_id = event['user_id']  or None
+        self.mac_addr = event['mac_addr']  or None
+
         if not self.is_dir and self.event_type == 'created':
             logging.info(f"Adding packets, packet_count, hash, folder_id")
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
             self.hash = file_to_hash.get(self.src_path)
             self.folder_id = event['folder_id']  # Updated to use 'folder_id' from event
-        
+
         elif not self.is_dir and self.event_type == 'modified':
             logging.info(f"Creating block list for modified file")
             self.blocks = self.create_blocklist() # {'hash1'={},'hash2'={},'hash3'={}} 
@@ -1437,57 +1496,153 @@ class Requests(Outgoing):
         pass
 
 ################################### SYNC-QUEUE #########################################
-# sync_queue = queue.Queue()
+sync_queue = queue.Queue()
 
-# if os.path.exists("sync_queue.json"):
-#     with open("sync_queue.json", "r") as f:
-#         for item in json.load(f):
-#             sync_queue.put(item)
-# else:
-#     logging.info("No sync_queue.json file found. Starting with empty queue.")
+if os.path.exists("sync_queue.json"):
+    with open("sync_queue.json", "r") as f:
+        for item in json.load(f):
+            sync_queue.put(item)
+else:
+    logging.info("No sync_queue.json file found. Starting with empty queue.")
 
-# def generate_event_id():
-#     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-#     uid = str(uuid.uuid4())[:6]  # Short unique suffix (6 hex chars)
-#     return f"event_{timestamp}_{uid}"
+def generate_event_id():
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    uid = str(uuid.uuid4())[:6]  # Short unique suffix (6 hex chars)
+    return f"event_{timestamp}_{uid}"
 
 
 ################################### SYNC-QUEUE #########################################
 ########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
-# def sync_worker(): 
-#     while True:
-#         sync_active.wait()  # Wait until resumed
-#         event = sync_queue.get()
-#         logging.info(f"Processing event: {event}")
-#         try:
-#             logging.info(f"Creating sync job for {event['src_path']}")
-#             sync_job = Outgoing(event)  # TODO 🆘 Custom logic i.e. OUTGOING
-#             logging.info(f"Sync job created: {sync_job}")
-#             status = sync_job.start_server()  # Start the server to send the packet
-#             logging.info(f"Sync job status: {status}")
-            
-#             if status:
-#                 logging.info(f"✅ Sync job completed for {event['src_path']}")
-#                 sync_active.set() 
-#             else:
-#                 logging.error(f"❌ Sync job failed for {event['src_path']}")
-#                 sync_active.clear()
-#                 logging.info("⏸️Paused sync worker due to connection error.")  # Pause instead of exit
-#                 sync_queue.put(event)  # Requeue the event
-#                 logging.info(f"🔁Requeued event: {event}")
-            
-#         except Exception as e:
-#             logging.error(f"❌ Sync failed: {e}")
-#             sync_active.clear()  # Pause on failure
-#             logging.info(f"⏸️paused sync worker due to error: {e}")
-#             sync_queue.put(event)  # Requeue the event
-#             logging.info(f"🔁Requeued event: {event}")
+
+def determine_event_recipients(event):
+    """Determine which clients should receive this event."""
+    recipients = []
+    
+    try:
+        # Extract event information
+        folder_id = event.get('folder_id')
+        event_type = event.get('event_type')
+        origin_mac = event.get('mac_addr', None)  # Original source device
         
-#         finally:
-#             sync_queue.task_done()
-#             all_events = list(sync_queue.queue)
-#             with open("sync_queue.json", "w") as f:
-#                 json.dump(all_events, f, indent=2)
+        # For folder-related events, we need to find all devices that share this folder
+        if folder_id:
+            # Get all shares for this folder
+            shares = session.query(Share).filter_by(folder_id=folder_id).all()
+            
+            for share in shares:
+                # Skip the origin device to avoid echo
+                if origin_mac and share.mac_addr == str(origin_mac):
+                    continue
+                
+                # Find device's user and IP
+                device = session.query(Device).filter_by(mac_addr=share.mac_addr).first()
+                if not device:
+                    logging.warning(f"Device with MAC {share.mac_addr} not found")
+                    continue
+                
+                # Find device's IP
+                user = session.query(User).filter_by(user_id=device.user_id).first()
+                if not user:
+                    logging.warning(f"User with ID {device.user_id} not found")
+                    continue
+                
+                # Check if user is in IP map
+                if user.name in ip_map['users'] and share.mac_addr in ip_map['users'][user.name]:
+                    ip_addr = ip_map['users'][user.name][share.mac_addr]
+                    recipients.append({
+                        'user': user.name,
+                        'mac_addr': share.mac_addr,
+                        'ip': ip_addr,
+                        'folder_id': folder_id
+                    })
+        
+        # If no recipients found but we have a specific target
+        if not recipients and 'target_recipient' in event:
+            recipients.append(event['target_recipient'])
+        
+        return recipients
+        
+    except Exception as e:
+        logging.error(f"Error determining recipients: {e}")
+        return []
+
+
+def sync_queue_worker(): 
+    while True:
+        sync_active.wait()  # Wait until resumed
+        
+        try:
+            # Get the next event to process
+            event = sync_queue.get()
+            logging.info(f"Processing event: {event}")
+            
+            # Determine which clients should receive this event
+            recipients = determine_event_recipients(event)
+            
+            if not recipients:
+                logging.warning(f"No recipients found for event: {event['src_path']}")
+                sync_queue.task_done()
+                continue
+            
+            success_count = 0
+            failed_recipients = []
+            
+            # Process each recipient
+            for recipient in recipients:
+                try:
+                    logging.info(f"Sending event to {recipient['user']} on device {recipient['mac_addr']} at {recipient['ip']}")
+                    
+                    # Create a sync job for this specific recipient
+                    sync_job = Outgoing(event)
+                    status = sync_job.start_server((recipient['ip'], 6969))
+                    
+                    if status:
+                        logging.info(f"✅ Successfully sent event to {recipient['user']} ({recipient['ip']})")
+                        success_count += 1
+                    else:
+                        logging.error(f"❌ Failed to send event to {recipient['user']} ({recipient['ip']})")
+                        failed_recipients.append(recipient)
+                        
+                except Exception as e:
+                    logging.error(f"❌ Error sending to {recipient['user']} ({recipient['ip']}): {e}")
+                    failed_recipients.append(recipient)
+            
+            # Handle the overall status
+            if success_count > 0:
+                logging.info(f"✅ Event sent to {success_count}/{len(recipients)} recipients")
+            
+            # If we had failures but some successes, create new events for the failed recipients
+            if failed_recipients and success_count > 0:
+                for recipient in failed_recipients:
+                    new_event = event.copy()
+                    new_event['target_recipient'] = recipient
+                    sync_queue.put(new_event)
+                    logging.info(f"🔁 Requeued event for {recipient['user']} ({recipient['ip']})")
+            
+            # If all recipients failed, requeue the original event and pause
+            elif success_count == 0:
+                sync_queue.put(event)
+                logging.error(f"❌ Failed to send event to ANY recipients. Pausing queue.")
+                sync_active.clear()  # Pause on complete failure
+                
+                # Schedule a retry after 30 seconds
+                threading.Timer(30.0, lambda: sync_active.set()).start()
+                logging.info("⏱️ Scheduled retry in 30 seconds")
+            
+        except Exception as e:
+            logging.error(f"❌ Error in sync queue worker: {e}")
+            sync_active.clear()  # Pause on failure
+            
+            # Schedule a retry after 10 seconds
+            threading.Timer(10.0, lambda: sync_active.set()).start()
+            logging.info("⏱️ Scheduled retry in 10 seconds")
+            
+        finally:
+            sync_queue.task_done()
+            # Save current queue state
+            all_events = list(sync_queue.queue)
+            with open("sync_queue.json", "w") as f:
+                json.dump(all_events, f, indent=2)
 ##############################################################################################
 ##############################################################################################
 ##############################################################################################
@@ -1615,7 +1770,7 @@ if __name__ == "__main__":
     else:
         ip_map = {
             "users": {}
-        } # NOTE: it dont create the file just yet, create the varible. 
+        } # NOTE: it dontcreate the file just yet, create the varible. 
         # when stuff is being added to the varible, the file will be created then.
     logging.info(f'INITIALISING ip_map: {ip_map}')
 

@@ -1383,6 +1383,25 @@ def sync_worker():
             all_events = list(sync_queue.queue)
             with open("sync_queue.json", "w") as f:
                 json.dump(all_events, f, indent=2)
+
+def sync_listener(): # bridges barrier between incoming data and sync class
+    incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    incomingsock.bind((ip, 9696))
+    logging.info(f"[+] Listening on {ip}:9000...")
+    incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
+
+    while True:
+        connection, address = incomingsock.accept() # if client does s.connect((server_name, 8000))
+        logging.info(f'Connection from {address} has been established!')
+        sync_job = Incoming(address, connection)
+        logging.info(f"[+] Sync job created for {address}...")
+        sync_job.receive_metadata()
+        logging.info(f"[+] Sync job completed for {address}...")
+        connection.close()
+        logging.info(f"[-] Connection closed for {address}...")
+        del sync_job
+        logging.info(f"[-] Sync job deleted for {address}...")
 ########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
 class Sync:
     def __init__(self):
