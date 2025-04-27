@@ -1,7 +1,14 @@
 {
   "/home/osaka/Documents/Shared/Initial-D": {
-    "id": "ZEOxcztA9f",
-    "label": "Initial-D",
+    "id": "cJfMMZSY4M",
+    "label": "initial-d",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Documents/Shared/Vagabond": {
+    "id": "EyFd3VUInX",
+    "label": "Vagabond",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"

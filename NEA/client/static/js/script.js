@@ -1,22 +1,29 @@
 var socket = io();
 
 var user_device_data = "";
+var folder_data = "";
+var alerts = "";
 
 socket.on('connect', function() {
     console.log("Connected to WebSocket");
 }); 
 
-socket.on('wtf', function() {
-    console.log("wtf"); 
-});
-
 // Listen for alerts
 socket.on('alerts', function(data) {
     document.getElementById('alert_box').innerText = data;
+    alerts = data;
+    console.log("Received alert:", alerts);
 });
 socket.on('users_devices_data', function(data) {
     console.log("Received users and devices data:", data);
-    user_device_data = data; });
+    user_device_data = data; 
+});
+
+socket.on('folder_data', function(data) {
+    console.log('Received folder_data:', data);
+    folder_data = data;
+});
+
 
 
 
@@ -217,3 +224,364 @@ document.getElementById("submitAllForms").addEventListener("click", (event) => {
     submitAllForms(); // Call the function to submit all forms
 });
 
+
+// Get current device MAC address
+function getCurrentMacAddress() {
+    return document.body.getAttribute('data-mac-address') || '';
+}
+
+// Format file path to show only the last part if it's too long
+function formatPath(path) {
+    if (path.length > 30) {
+        const parts = path.split('/');
+        return '...' + path.slice(path.length - 30);
+    }
+    return path;
+}
+
+// Modify the renderFolders function to handle both array and object formats
+function renderFolders(folderData) {
+    console.log('Rendering folders with data:', folderData);
+    const foldersContainer = document.getElementById('folders-container');
+    if (!foldersContainer) return;
+    
+    // Clear previous content
+    foldersContainer.innerHTML = '';
+    
+    // Check if we have folder data
+    if (!folderData || !folderData.folders || folderData.folders.length === 0) {
+        foldersContainer.innerHTML = '<p>No folders found. Add a folder to get started.</p>';
+        return;
+    }
+    
+    const currentMacAddress = getCurrentMacAddress();
+    
+    // Loop through each folder
+    folderData.folders.forEach(folder => {
+        // Extract folder data - handle both array and object formats
+        let macAddress, folderId, folderName, folderPath, folderType;
+        
+        if (Array.isArray(folder)) {
+            // Handle array format [macAddress, folderId, folderName, folderPath, folderType]
+            [macAddress, folderId, folderName, folderPath, folderType] = folder;
+        } else {
+            // Handle object format {mac_addr, folder_id, name, path, type}
+            macAddress = folder.mac_addr;
+            folderId = folder.folder_id;
+            folderName = folder.name;
+            folderPath = folder.path;
+            folderType = folder.type;
+        }
+        
+        // Create folder box
+        const folderBox = document.createElement('div');
+        folderBox.className = 'folder-box';
+        folderBox.classList.add(macAddress === currentMacAddress ? 'current-device' : 'other-device');
+        
+        // Create folder name element
+        const nameElement = document.createElement('div');
+        nameElement.className = 'folder-name';
+        nameElement.textContent = folderName;
+        
+        // Create folder details container
+        const detailsContainer = document.createElement('div');
+        detailsContainer.className = 'folder-details';
+        
+        // Add folder attributes
+        detailsContainer.innerHTML = `
+            <div class="folder-attribute"><strong>ID:</strong> ${folderId}</div>
+            <div class="folder-attribute"><strong>Path:</strong> ${formatPath(folderPath)}</div>
+            <div class="folder-attribute"><strong>Type:</strong> ${folderType}</div>
+            <div class="folder-attribute"><strong>Device:</strong> ${macAddress}</div>
+        `;
+        
+        // Create edit button
+        const editButton = document.createElement('button');
+        editButton.className = 'edit-icon';
+        editButton.innerHTML = '✏️';
+        editButton.setAttribute('aria-label', 'Edit folder');
+        
+        // Add event listeners
+        folderBox.addEventListener('click', (e) => {
+            // Only toggle if we didn't click the edit button
+            if (e.target !== editButton) {
+                detailsContainer.classList.toggle('expanded');
+            }
+        });
+        
+        editButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent folder box click event
+            openDeleteModal(folderId, folderName);
+        });
+        
+        // Append elements to folder box
+        folderBox.appendChild(nameElement);
+        folderBox.appendChild(detailsContainer);
+        folderBox.appendChild(editButton);
+        
+        // Add folder box to container
+        foldersContainer.appendChild(folderBox);
+    });
+}
+
+// Function to open the delete folder modal
+function openDeleteModal(folderId, folderName) {
+    const modal = document.getElementById('deleteFolderModal');
+    const folderNameSpan = document.getElementById('folderToDelete');
+    
+    // Update modal content
+    folderNameSpan.textContent = folderName;
+    
+    // Store folder ID for delete confirmation
+    document.getElementById('confirmDeleteFolder').setAttribute('data-folder-id', folderId);
+    
+    // Show modal
+    modal.classList.add('open');
+}
+
+// Function to delete a folder
+function deleteFolder(folderId) {
+    fetch("/delete_folder", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ 
+            action: "delete_folder",
+            folder_id: folderId 
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            // Refresh folder display
+            socket.emit('request_folders');
+            alert("✅ Folder deleted successfully");
+        } else {
+            alert("❌ Error: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred while deleting the folder");
+    });
+}
+
+// Set up event listeners when the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial folder rendering if data is available
+    if (folder_data && folder_data.folders) {
+        renderFolders(folder_data);
+    }
+    
+    // Set up delete modal event listeners
+    const confirmDeleteBtn = document.getElementById('confirmDeleteFolder');
+    const cancelDeleteBtn = document.getElementById('cancelDeleteFolder');
+    const deleteFolderModal = document.getElementById('deleteFolderModal');
+    
+    if (confirmDeleteBtn) {
+        confirmDeleteBtn.addEventListener('click', () => {
+            const folderId = confirmDeleteBtn.getAttribute('data-folder-id');
+            deleteFolder(folderId);
+            deleteFolderModal.classList.remove('open');
+        });
+    }
+    
+    if (cancelDeleteBtn) {
+        cancelDeleteBtn.addEventListener('click', () => {
+            deleteFolderModal.classList.remove('open');
+        });
+    }
+    
+    // Listen for folder data updates from WebSocket
+    socket.on('folder_data', function(data) {
+        console.log('Received folder_data:', data);
+        folder_data = data;
+        renderFolders(data);
+    });
+    
+    // Request folders when loading the page
+    socket.emit('request_folders');
+});
+
+
+// Alert box handling for share requests
+socket.on('alerts', function(data) {
+    document.getElementById('alert_box').innerText = "System online";
+    alerts = data;
+    console.log("Received alert:", alerts);
+    
+    // Process and display alert boxes
+    processShareRequests(alerts);
+});
+
+function processShareRequests(alerts) {
+    const container = document.getElementById('share-requests-container');
+    
+    // Clear existing alerts
+    container.innerHTML = '';
+    
+    if (!alerts || alerts.length === 0) {
+        return;
+    }
+    
+    // Create an alert box for each share request
+    alerts.forEach((alert, index) => {
+        const [folderId, folderName, deviceName] = alert;
+        
+        // Create alert box
+        const alertBox = document.createElement('div');
+        alertBox.className = 'share-request';
+        alertBox.setAttribute('data-index', index);
+        alertBox.setAttribute('data-folder-id', folderId);
+        alertBox.setAttribute('data-folder-name', folderName);
+        alertBox.setAttribute('data-device-name', deviceName);
+        
+        // Create message
+        const message = document.createElement('div');
+        message.className = 'share-request-message';
+        message.textContent = `Device "${deviceName}" wants to share the folder "${folderName}" with you`;
+        
+        // Create buttons container
+        const buttons = document.createElement('div');
+        buttons.className = 'share-request-buttons';
+        
+        // Accept button
+        const acceptBtn = document.createElement('button');
+        acceptBtn.className = 'accept-button';
+        acceptBtn.textContent = 'Accept';
+        acceptBtn.addEventListener('click', () => showAcceptModal(folderId, folderName, deviceName, index));
+        
+        // Decline button
+        const declineBtn = document.createElement('button');
+        declineBtn.className = 'decline-button';
+        declineBtn.textContent = 'Decline';
+        declineBtn.addEventListener('click', () => handleDeclineShare(folderId, deviceName, index));
+        
+        // Ignore button
+        const ignoreBtn = document.createElement('button');
+        ignoreBtn.className = 'ignore-button';
+        ignoreBtn.textContent = 'Ignore';
+        ignoreBtn.addEventListener('click', () => handleIgnoreShare(index));
+        
+        // Assemble the alert box
+        buttons.appendChild(acceptBtn);
+        buttons.appendChild(declineBtn);
+        buttons.appendChild(ignoreBtn);
+        
+        alertBox.appendChild(message);
+        alertBox.appendChild(buttons);
+        
+        container.appendChild(alertBox);
+    });
+}
+
+function showAcceptModal(folderId, folderName, deviceName, index) {
+    // Get the modal
+    const modal = document.getElementById('acceptShareModal');
+    
+    // Set hidden fields
+    document.getElementById('share-request-id').value = index;
+    document.getElementById('share-folder-id').value = folderId;
+    document.getElementById('share-device-name').value = deviceName;
+    
+    // Set suggested values
+    document.getElementById('share-folder-label').value = folderName;
+    
+    // Create suggested path (~/Shared/[folderName])
+    const suggestedPath = `~/Shared/${folderName}`;
+    document.getElementById('share-folder-path').value = suggestedPath;
+    
+    // Show the modal
+    modal.classList.add('open');
+}
+
+function handleDeclineShare(folderId, deviceName, index) {
+    fetch('/decline_share', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            folder_id: folderId,
+            device_name: deviceName,
+            index: index
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            // Remove this alert from the alerts array
+            alerts.splice(index, 1);
+            
+            // Refresh the alert boxes
+            processShareRequests(alerts);
+        } else {
+            console.error('Failed to decline share:', data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+function handleIgnoreShare(index) {
+    // Just hide this specific alert
+    const alertBox = document.querySelector(`.share-request[data-index="${index}"]`);
+    if (alertBox) {
+        alertBox.style.display = 'none';
+    }
+}
+
+// Set up event listeners for the Accept Share Modal
+document.addEventListener('DOMContentLoaded', function() {
+    const acceptShareForm = document.getElementById('acceptShareForm');
+    const cancelAcceptShare = document.getElementById('cancelAcceptShare');
+    const acceptShareModal = document.getElementById('acceptShareModal');
+    
+    if (acceptShareForm) {
+        acceptShareForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                index: document.getElementById('share-request-id').value,
+                folder_id: document.getElementById('share-folder-id').value,
+                device_name: document.getElementById('share-device-name').value,
+                folder_label: document.getElementById('share-folder-label').value,
+                folder_path: document.getElementById('share-folder-path').value
+            };
+            
+            fetch('/accept_share', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Remove this alert from the alerts array
+                    alerts.splice(parseInt(formData.index), 1);
+                    
+                    // Refresh the alert boxes
+                    processShareRequests(alerts);
+                    
+                    // Close the modal
+                    acceptShareModal.classList.remove('open');
+                } else {
+                    console.error('Failed to accept share:', data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    }
+    
+    if (cancelAcceptShare) {
+        cancelAcceptShare.addEventListener('click', function() {
+            acceptShareModal.classList.remove('open');
+        });
+    }
+});

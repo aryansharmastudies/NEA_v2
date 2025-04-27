@@ -130,14 +130,19 @@ socketio = SocketIO(app)
 @socketio.on('connect')
 def handle_connect():
     logging.info(f'connected to frontend!')
-    socketio.emit('alerts', session['alerts']) # ⭐
+    
+    # Ensure alerts exist in session
+    if 'alerts' not in session:
+        session['alerts'] = []
+        
+    socketio.emit('alerts', session['alerts'])
     logging.info(f'sending alerts to frontend!: {session["alerts"]}')
-    socketio.emit('users_devices_data', session['users_and_devices']) # ⭐
+    
+    # Rest of the existing code...
+    socketio.emit('users_devices_data', session['users_and_devices'])
     logging.info(f'sending users and devices data to frontend!: {session["users_and_devices"]}')
-
-@socketio.on('wtf')
-def wtf():
-    logging.info(f'wtf called!')
+    socketio.emit('folder_data', session['folder_data'])
+    logging.info(f'sending folder data to frontend!: {session["folder_data"]}')
 
 @socketio.on('request_users_devices')
 def handle_users_devices_request():
@@ -150,6 +155,30 @@ def handle_users_devices_request():
     except Exception as e:
         logging.error(f"💥 Error in WebSocket request_users_devices: {e}", exc_info=True)
         emit('users_devices_data', {'error': str(e)})
+    
+@socketio.on('request_folders')
+def handle_folder_request():
+    if 'user' not in session:
+        return
+    
+    # Get folders from database
+    folders = Folder.query.all()
+    folder_list = []
+    
+    mac_addr = get_mac()
+
+    for folder in folders:
+        folder_list.append([
+            mac_addr,
+            folder.folder_id,
+            folder.name,
+            folder.path,
+            folder.type
+        ])
+    
+    # Send back to client
+    folder_data = {'folders': folder_list}
+    emit('folder_data', folder_data)
 
 ########## WEBSITE ##############################
 @app.route('/pair', methods=['POST','GET'])
@@ -345,27 +374,40 @@ def dashboard():
         session['alerts'] = data
         logging.info(f'storing alerts to sessions!: {data}')
 
-        user_and_device_data = json.dumps({'action': 'request', 'data': {'users': ['user_id', 'name'], 'devices': ['user_id', 'name']}})
+        folder_data = json.dumps({'action': 'request', 'data': {'folders':{ 'mac_addr': mac_addr, 'folder_id':None, 'name':None, 'path':None, 'type':None}}})
+        logging.info(f'getting folder data... sending: {folder_data}')
+        data = send(folder_data)
+        logging.info(f'folder data received: {data}')
+        session['folder_data'] = data
+        logging.info(f"Added folder_data to session: {session['folder_data']}")
+
+        user_and_device_data = json.dumps({'action': 'request', 'data': {'users': {'user_id': None, 'name': None}, 'devices': {'user_id': None, 'name': None}}})
         logging.info(f'getting users and devices info... sending: {user_and_device_data}')
         data = send(user_and_device_data)
         logging.info(f'users and devices data: {data}')
 
-        devices = data['devices']
-        users = data['users']
+        #{'devices': [{'name': 'AE86', 'user_id': 1}, {'name': 'RX-7', 'user_id': 2}, {'name': 'AE85', 'user_id': 3}], 'users': [{'name': 'takumi', 'user_id': 1}, {'name': 'ryosuke', 'user_id': 2}, {'name': 'itsuki', 'user_id': 3}]}
+        try:
+            devices = data['devices']
+            users = data['users']
 
-        id_to_users = {}
-        users_and_device = {}
-        
-        for user in users:
-            id_to_users[user[0]] = user[1]
-            users_and_device[user[1]] = []
+            id_to_users = {}
+            users_and_device = {}
+            
+            for user in users:
+                id_to_users[user['user_id']] = user['name']
+                users_and_device[user['name']] = []
 
-        for device in devices:
-            username = id_to_users[device[0]]
-            users_and_device[username].append(device[1])
+            for device in devices:
+                username = id_to_users[device['user_id']]
+                users_and_device[username].append(device['name'])
 
-        session['users_and_devices'] = users_and_device
-        logging.info(f'Added users and devices to session: {session["users_and_devices"]}')
+            session['users_and_devices'] = users_and_device
+            logging.info(f'Added users and devices to session: {session["users_and_devices"]}')
+        except:
+            logging.error(f"💥 Error in /dashboard: {e}", exc_info=True)
+            session['users_and_devices'] = {}
+            logging.info(f'Added empty users and devices to session: {session["users_and_devices"]}')
         if status == '200':
             if not sync_active.is_set():
                 sync_active.set() # 🧵
@@ -378,14 +420,85 @@ def dashboard():
         random_folder_id = get_random_id()
 
         # TODO 🆘 - get any notifications from the server.
-        return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id) # pass in server_name to the dashboard.html file.
+        return render_template('dashboard.html', server_name=session['server_name'], 
+                               user=session['user'], 
+                               random_folder_id=random_folder_id,
+                               mac_addr=mac_addr) # pass in server_name to the dashboard.html file.
     elif 'server_name' in session:
         flash('You are not logged in!', 'info')
         return render_template('login.html')
     else:    
         flash('You are not connected to a server!', 'info')
         return render_template('pair.html')
+@app.route('/accept_share', methods=['POST'])
+def accept_share():
+    try:
+        data = request.json
+        folder_id = data.get('folder_id')
+        folder_label = data.get('folder_label')
+        folder_path = data.get('folder_path')
+        device_name = data.get('device_name')
+        index = int(data.get('index', 0))
+        
+        # Create folder data
+        folder_data = {
+            'action': 'accept_share',
+            'folder_id': folder_id,
+            'folder_label': folder_label,
+            'directory': folder_path,
+            'folder_type': 'sync_bothways',  # Default to sync both ways
+            'user': session.get('user'),
+            'device_name': device_name
+        }
+        
+        # Send acceptance to server
+        server_response = send(json.dumps(folder_data))
+        
+        if server_response == '200' or server_response == '201':
+            # Create folder locally
+            mkdir(folder_data)
+            
+            # Remove from alerts
+            if 'alerts' in session and len(session['alerts']) > index:
+                session['alerts'].pop(index)
+                
+            return jsonify({'status': 'success', 'message': 'Share accepted successfully'})
+        else:
+            return jsonify({'status': 'error', 'message': 'Server returned an error'})
+            
+    except Exception as e:
+        logging.error(f"Error accepting share: {e}")
+        return jsonify({'status': 'error', 'message': str(e)})
 
+@app.route('/decline_share', methods=['POST'])
+def decline_share():
+    try:
+        data = request.json
+        folder_id = data.get('folder_id')
+        device_name = data.get('device_name')
+        index = int(data.get('index', 0))
+        
+        # Create decline data
+        decline_data = {
+            'action': 'decline_share',
+            'folder_id': folder_id,
+            'user': session.get('user'),
+            'device_name': device_name
+        }
+        
+        # Send decline to server
+        server_response = send(json.dumps(decline_data))
+        
+        # Remove from alerts
+        if 'alerts' in session and len(session['alerts']) > index:
+            session['alerts'].pop(index)
+            
+        return jsonify({'status': 'success', 'message': 'Share declined'})
+            
+    except Exception as e:
+        logging.error(f"Error declining share: {e}")
+        return jsonify({'status': 'error', 'message': str(e)})
+    
 @app.route("/get_users_and_devices", methods=["GET"])
 def get_users_and_devices():
     # return jsonify({'error': 'GET method not allowed'}), 405
@@ -415,6 +528,42 @@ def get_users_and_devices():
     except Exception as e:
         logging.error(f"💥 Error in /get_users_and_devices: {e}", exc_info=True)
         return jsonify({'error': str(e)}), 500
+    
+@app.route("/delete_folder", methods=["POST"])
+def delete_folder():
+    data = request.json
+    folder_id = data.get('folder_id')
+    
+    if not folder_id:
+        return jsonify({"status": "error", "message": "No folder ID provided"})
+    
+    try:
+        # Delete folder from database
+        folder = Folder.query.filter_by(folder_id=folder_id).first()
+        if folder:
+            db.session.delete(folder)
+            db.session.commit()
+            
+            # Also delete from server
+            server_message = json.dumps({
+                "action": "delete_folder",
+                "folder_id": folder_id,
+                "user": session.get('user', 'unknown')
+            })
+            
+            status = send(server_message)
+            if status == '200':
+                flash(f"Folder '{folder_id}' deleted successfully!", 'info')
+                return jsonify({"status": "success", "message": "Folder deleted successfully"})
+            else:
+                flash(f"Failed to delete folder '{folder_id}' on server.", 'error')
+                return jsonify({"status": "error", "message": "Failed to delete folder on server"})
+        else:
+            return jsonify({"status": "error", "message": "Folder not found"})
+    except Exception as e:
+        db.session.rollback()
+        logging.error(f"💥 Error in delete_folder: {e}", exc_info=True)
+        return jsonify({"status": "error", "message": str(e)})
     
 @app.route("/unpair")
 def unpair():
@@ -926,7 +1075,7 @@ class MyEventHandler(FileSystemEventHandler):
                     "event_type": "created",
                     "src_path": event.src_path, 
                     "is_dir": event.is_directory,
-                    "origin": "user",
+                    "origin": "mkdir",
                     "folder_id": folder_id, 
                     "hash": self._find_hash(),
                     "size": os.path.getsize(event.src_path)
@@ -1580,7 +1729,8 @@ class Incoming(Sync):
                 }
                 payload = json.dumps(error_metadata).encode('utf-8')
                 header = struct.pack('!I', len(payload))
-                connection.sendall(header + payload)
+                message = header + payload
+                connection.sendall(message)
                 response = connection.recv(3)
                 logging.info(f"[BLOCK HANDLER] Error metadata acknowledged: {response == self.RESPONSE_OK}")
                 return
@@ -1599,7 +1749,8 @@ class Incoming(Sync):
             
             payload = json.dumps(metadata).encode('utf-8')
             header = struct.pack('!I', len(payload))
-            connection.sendall(header + payload)
+            message = header + payload
+            connection.sendall(message)
             response = connection.recv(3)
             
             if response != self.RESPONSE_OK:
@@ -1618,7 +1769,8 @@ class Incoming(Sync):
             
             payload = json.dumps(packet).encode('utf-8')
             header = struct.pack('!I', len(payload))
-            connection.sendall(header + payload)
+            message = header + payload
+            connection.sendall(message)
             logging.info(f"[BLOCK HANDLER] Sent block data for {block_hash[:8]}")
             
             response = connection.recv(3)
@@ -1646,7 +1798,11 @@ if __name__ == "__main__":
         }  
 
     system = input("windows(w) or linux(l)? ")
-    ip = w_wlan_ip() if system == "w" else l_wlan_ip()
+    
+    if system == "w":
+        ip = w_wlan_ip() 
+    else: 
+        ip = l_wlan_ip()
 
     print(f"Binding IP: {ip}")
 

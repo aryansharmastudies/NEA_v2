@@ -80,6 +80,7 @@ class Device(Base):
 class Folder(Base):
     __tablename__ = 'folders'
 
+    mac_addr = Column(String)
     folder_id = Column(String, primary_key=True)
     name = Column(String)
     mac_addr = Column(String)
@@ -122,18 +123,68 @@ class Status_Response(Response):
         super().__init__()
         logging.info(f'Status_Response Object is made')
 
-class Data_Response(Response): # TODO get this working.
+class Data_Response(Response):
     def __init__(self, requested_data):
         super().__init__()
-        self.requested_data = requested_data # e.g. {'user':['name'], 'device':['user_id', 'name']}
+        self.requested_data = requested_data # e.g. {'users': {'user_id': None, 'name': None}, 'devices': {'user_id': None, 'name': None}}
         self.data = dict() # using a dictionary to store scraped data
         logging.info(f'Data_Response Object is made')
     
     def scrape(self): # used to scrape the database for requested data
-        for table_name in self.requested_data: # itteratively goes through the each requested table!
-            scraped_data = scrape_db(table_name, self.requested_data[table_name]) # self.requested_data[table] => attributes requested for of that table.
+        for table_name in self.requested_data: # iteratively goes through each requested table!
+            scraped_data = self.scrape_db(table_name, self.requested_data[table_name]) 
             self.data[table_name] = scraped_data # scraped_data should be a list returned back!
         logging.info(f'scraped data to be returned!: {self.data}')
+    
+    ########## CRUD(create, read, update, delete) #################
+    def scrape_db(self, table_name, attributes_dict): # scrapes db and returns back data
+        # input: ('devices', {'user_id': None, 'name': None})
+        # or: ('folders', {'mac_addr': 'some_mac_addr', 'folder_id': None, 'name': None, 'path': None, 'type': None})
+        
+        # Map the table name to the corresponding SQLAlchemy model
+        table_map = {
+            'users': User,
+            'devices': Device,
+            'folders': Folder,
+            'share': Share,
+            'files': File
+            # Add other tables here as needed 
+        }
+        
+        # Get the SQLAlchemy model for the table
+        table_model = table_map.get(table_name)
+        if not table_model:
+            logging.warning(f"Table '{table_name}' not found in table_map.")
+            return []
+        
+        # Get the attribute names that we want to return
+        attributes = list(attributes_dict.keys())
+        
+        # Build the query with the requested attributes
+        query = session.query(*[getattr(table_model, attr) for attr in attributes])
+        
+        # Add filters for attributes with non-None values
+        filters = []
+        for attr, value in attributes_dict.items():
+            if value is not None:
+                filters.append(getattr(table_model, attr) == value)
+        
+        if filters:
+            query = query.filter(*filters)
+        
+        # Execute the query
+        results = query.all()
+        
+        # Convert the results into a list of dictionaries for easier access
+        scraped_data = []
+        for row in results:
+            row_dict = {}
+            for i, attr in enumerate(attributes):
+                row_dict[attr] = row[i]
+            scraped_data.append(row_dict)
+        
+        logging.info(f"Scraped {len(scraped_data)} records from {table_name}")
+        return scraped_data
 
 class Instruction_Response(Response):
     def __init__(self):
@@ -144,29 +195,7 @@ class Blockdata_Response(Response):
     def __init__(self):
         super().__init__()
         logging.info(f'Blockdata_Response Object is made')
-########## CRUD(create, read, update, delete) ####
-def scrape_db(table_name, attributes): # scrapes db and returns back data
-    # input: (device', ['user_id', 'name'])
-    # expected output: [['kyoto', 'x230'],['kyoto', 'iphone5s'],['tokyo', 'chromebook']]
-        # Map the table name to the corresponding SQLAlchemy model
-    table_map = {
-        'users': User,
-        'devices': Device,
-        'folders': Folder,
-        # Add other tables here as needed 
-    }
-    # Get the SQLAlchemy model for the table
-    table_model = table_map.get(table_name)
-    if not table_model:
-        logging.warning(f"Table '{table_name}' not found in table_map.")
 
-    # Query the database for the specified attributes
-    query = session.query(*[getattr(table_model, attr) for attr in attributes])
-    results = query.all()
-
-    # Convert the results into a list of lists
-    scraped_data = [list(row) for row in results]
-    return scraped_data
 
 def create_user(r_user, hash):
     user = User(name=r_user, hash=hash, email='default')
@@ -518,6 +547,7 @@ def handle_client_message(clientsocket, message):
         # Remove user logic here
 
     elif action == 'request':
+        # {'action': 'request', 'data': {'users': ['user_id', 'name'], 'devices': ['user_id', 'name']}}
         requested_data = client_data['data']
         response = Data_Response(requested_data) # response is the object made.
         response.scrape()
