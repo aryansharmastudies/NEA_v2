@@ -36559,3 +36559,12 @@ json.decoder.JSONDecodeError: Unterminated string starting at: line 38 column 7 
 2025-04-28 22:42:34 INFO sending folder data to frontend!: {'folders': [{'folder_id': 'Y8pKlmL5IC', 'mac_addr': '4681952839112', 'name': 'Initial-D', 'path': '/home/osaka/1/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}]}
 2025-04-28 22:42:34 INFO 127.0.0.1 - - [28/Apr/2025 22:42:34] "POST /socket.io/?EIO=4&transport=polling&t=PP-MXHI&sid=bit5lzUWpDz1MuV-AAAa HTTP/1.1" 200 -
 2025-04-28 22:42:34 INFO 127.0.0.1 - - [28/Apr/2025 22:42:34] "GET /socket.io/?EIO=4&transport=polling&t=PP-MXHJ&sid=bit5lzUWpDz1MuV-AAAa HTTP/1.1" 200 -
+2025-04-28 22:43:19 INFO 127.0.0.1 - - [28/Apr/2025 22:43:19] "GET /socket.io/?EIO=4&transport=websocket&sid=bit5lzUWpDz1MuV-AAAa HTTP/1.1" 200 -
+2025-04-28 22:43:19 INFO 127.0.0.1 - - [28/Apr/2025 22:43:19] "GET /socket.io/?EIO=4&transport=polling&t=PP-MXHM&sid=bit5lzUWpDz1MuV-AAAa HTTP/1.1" 200 -
+2025-04-28 22:43:20 INFO 127.0.0.1 - - [28/Apr/2025 22:43:20] "GET /socket.io/?EIO=4&transport=polling&t=PP-MiSl HTTP/1.1" 200 -
+2025-04-28 22:43:20 INFO connected to frontend!
+2025-04-28 22:43:20 INFO sending alerts to frontend!: []
+2025-04-28 22:43:20 INFO sending users and devices data to frontend!: {'ryosuke': ['RX-7'], 'takumi': ['AE86']}
+2025-04-28 22:43:20 INFO sending folder data to frontend!: {'folders': [{'folder_id': 'Y8pKlmL5IC', 'mac_addr': '4681952839112', 'name': 'Initial-D', 'path': '/home/osaka/1/4681952839112/Documents/Shared/Initial-D', 'type': 'sync_bothways'}]}
+2025-04-28 22:43:20 INFO 127.0.0.1 - - [28/Apr/2025 22:43:20] "POST /socket.io/?EIO=4&transport=polling&t=PP-MiSp&sid=OAApRjSNFzx0kYaqAAAc HTTP/1.1" 200 -
+2025-04-28 22:43:20 INFO 127.0.0.1 - - [28/Apr/2025 22:43:20] "GET /socket.io/?EIO=4&transport=polling&t=PP-MiSp.0&sid=OAApRjSNFzx0kYaqAAAc HTTP/1.1" 200 -
