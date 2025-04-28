@@ -184,6 +184,72 @@ def handle_folder_request():
     logging.info(f'sending folder data to frontend via dedicated function!: {folder_data}')
     emit('folder_data', folder_data)
 
+@socketio.on('check_sync_status')
+def handle_sync_status(data):
+    folder_id = data.get('folder_id')
+    
+    try:
+        # Find the folder in dir.json
+        folder_path = None
+        for path, info in dirs.items():
+            if info.get('id') == folder_id:
+                folder_path = path
+                break
+        
+        if not folder_path:
+            emit('sync_status', {'status': 'not_found', 'folder_id': folder_id})
+            return
+            
+        # Get folder size and file count
+        folder_size = 0
+        file_count = 0
+        for root, _, files in os.walk(folder_path):
+            for file in files:
+                file_path = os.path.join(root, file)
+                try:
+                    size = os.path.getsize(file_path)
+                    folder_size += size
+                    file_count += 1
+                except:
+                    pass
+        
+        # Update dirs with the latest size
+        dirs[folder_path]['size'] = folder_size
+        
+        # Check if folder is still syncing or complete
+        with app.app_context():
+            # Count expected files from database
+            expected_count = db.session.query(File).filter_by(folder_id=folder_id).count()
+            
+            # If we have pending tasks in sync_queue for this folder, it's still syncing
+            sync_tasks = [task for task in list(sync_queue.queue) 
+                          if task.get('folder_id') == folder_id]
+            
+            if sync_tasks:
+                status = 'syncing'
+            else:
+                # If no pending tasks and expected files match or exceeded, it's complete
+                status = 'complete' if file_count >= expected_count else 'syncing'
+                
+            dirs[folder_path]['status'] = 'ACTIVE' if status == 'complete' else 'SYNCING'
+            
+            # Save the updated status
+            with open('dir.json', 'w') as file:
+                json.dump(dirs, file, indent=2)
+            
+            # Return status information
+            emit('sync_status', {
+                'status': status,
+                'folder_id': folder_id,
+                'file_count': file_count,
+                'folder_size': folder_size,
+                'expected_count': expected_count
+            })
+            
+    except Exception as e:
+        logging.error(f"Error checking sync status: {e}", exc_info=True)
+        emit('sync_status', {'status': 'error', 'message': str(e), 'folder_id': folder_id})
+
 ########## WEBSITE ##############################
 @app.route('/pair', methods=['POST','GET'])
 def pair():
@@ -451,33 +517,79 @@ def accept_share():
         device_name = data.get('device_name')
         index = int(data.get('index', 0))
         
+        # Expand user directory
+        expanded_path = os.path.expanduser(folder_path)
+        
         # Create folder data
         folder_data = {
             'action': 'accept_share',
             'folder_id': folder_id,
             'folder_label': folder_label,
-            'directory': folder_path,
+            'directory': expanded_path,
+            'folder_type': 'sync_bothways',  # Default to sync both ways
+            'username': session.get('user'),
             'mac_addr': get_mac()
         }
         
         # Send acceptance to server
+    
         status = send(json.dumps(folder_data))
         logging.info(f'accept_share status from server: {status}')
+        
         if str(status) == '200' or status == '201':
-            # Create folder locally
-            mkdir(folder_data)
+            # Create the local directory
+            os.makedirs(expanded_path, exist_ok=True)
+            
+            # Add folder to dir.json for tracking
+            dirs[expanded_path] = {
+                'id': folder_id,
+                'label': folder_label,
+                'type': 'sync_bothways',
+                'size': 0,
+                'status': 'SYNCING'  # Set initial status to syncing
+            }
+            
+            # Persist the directory configuration
+            with open('dir.json', 'w') as file:
+                json.dump(dirs, file, indent=2)
+            
+            # Add to watchdog if it's running
+            if observer.is_alive():
+                observer.schedule(event_handler, expanded_path, recursive=True)
+                logging.info(f'Added {expanded_path} to watchdog!')
+            
+            # Add folder to database
+            new_folder = Folder(
+                folder_id=folder_id, 
+                name=folder_label, 
+                path=expanded_path, 
+                type='sync_bothways', 
+                size=0
+            )
+            db.session.add(new_folder)
+            db.session.commit()
+            logging.info(f'Added folder to database: {new_folder}')
             
             # Remove from alerts
             if 'alerts' in session and len(session['alerts']) > index:
                 session['alerts'].pop(index)
                 
-            flash(f"Folder '{folder_label}' accepted successfully!", 'info')
-            return jsonify({'status': 'success', 'message': 'Share accepted successfully'})
+            # Display success message
+            flash(f"Folder '{folder_label}' accepted! Files will sync automatically.", 'info')
+            
+            # Return success response with sync status
+            return jsonify({
+                'status': 'success', 
+                'message': 'Share accepted and synchronization started',
+                'folder_id': folder_id,
+                'folder_label': folder_label,
+                'folder_path': folder_path
+            })
         else:
             return jsonify({'status': 'error', 'message': 'Server returned an error'})
             
     except Exception as e:
-        logging.error(f"Error accepting share: {e}")
+        logging.error(f"Error accepting share: {e}", exc_info=True)
         return jsonify({'status': 'error', 'message': str(e)})
 
 @app.route('/decline_share', methods=['POST'])
@@ -784,7 +896,7 @@ def send(json_data): # 🛫
                 return False
             
         s.send(json_data.encode('utf-8')) # sending data to server 📨
-        json_response = s.recv(1024).decode('utf-8') # server's response back 📩 # TODO 🆘 recieves 1024 bits, add buffering feature !!
+        json_response = s.recv(2048).decode('utf-8') # server's response back 📩 # TODO 🆘 recieves 1024 bits, add buffering feature !!
         logging.info(f'server response: {json_response}, type: {type(json_response)}')
         end = time.time()
         logging.info(f'⏰ time taken to send data: {end - start} seconds')
@@ -1061,7 +1173,8 @@ class MyEventHandler(FileSystemEventHandler):
             "src_path":     event.src_path,
             "dest_path":    event.dest_path,
             "is_dir":  event.is_directory,
-            "origin": "user" # user made modification.
+            "origin": "user",
+            "folder_id": self._get_parent_folder_id(event.src_path) or None
         })
         self._persist_queue()
     
@@ -1078,6 +1191,7 @@ class MyEventHandler(FileSystemEventHandler):
         # Only for files (not directories), look up its parent folder_id and insert
         if not event.is_directory: # i.e. if it is a file
             folder_id = self._get_parent_folder_id(event.src_path)
+            logging.info(f'folder_id: {folder_id}')
             if folder_id is None:
                 logging.error(f"No registered folder found for {event.src_path}; skipping DB insert")
             else:
@@ -1113,7 +1227,8 @@ class MyEventHandler(FileSystemEventHandler):
                 "event_type": "created",
                 "src_path": event.src_path,
                 "is_dir": event.is_directory,
-                "origin": "user"
+                "origin": "user",
+                "folder_id": self._get_parent_folder_id(event.src_path) or None
             })
 
         self._persist_queue() # save to sync_queue.json
@@ -1143,7 +1258,8 @@ class MyEventHandler(FileSystemEventHandler):
             "event_type":  "deleted",
             "src_path":    event.src_path,
             "is_dir":  event.is_directory,
-            "origin":  "user"
+            "origin":  "user",
+            "folder_id": self._get_parent_folder_id(event.src_path) or None
         })
         
         self._persist_queue() # save to sync_queue.json
@@ -1236,7 +1352,8 @@ class MyEventHandler(FileSystemEventHandler):
                                 "origin": session['user'],
                                 "folder_id": folder_id, 
                                 "hash": new_hash,
-                                "size": size
+                                "size": size,
+                                "folder_id": self._get_parent_folder_id(event.src_path) or None
                                 })
                         logging.info(f"🟡 ---> 🟢 Added to sync_queue: {path} with folder_id {folder_id}")
                         
@@ -1256,9 +1373,9 @@ class MyEventHandler(FileSystemEventHandler):
                     "src_path": path,
                     "is_dir": False,
                     "origin": "user",
-                    "folder_id": folder_id,
                     "hash": new_hash,
-                    "size": size
+                    "size": size,
+                    "folder_id": self._get_parent_folder_id(event.src_path) or None
                 })
                 self._persist_queue()
                 logging.info(f'🟡 Modified file {path} added to sync_queue!')
@@ -1273,7 +1390,8 @@ class MyEventHandler(FileSystemEventHandler):
                     "origin": "user",
                     "folder_id": folder_id, 
                     "hash": new_hash,
-                    "size": size
+                    "size": size,
+                    "folder_id": self._get_parent_folder_id(event.src_path) or None
                     })
                 self._persist_queue()
                 logging.info(f'🟡 ---> 🟢 Modified file {path} added to sync_queue AS CREATED!')
@@ -1289,7 +1407,8 @@ class MyEventHandler(FileSystemEventHandler):
                     "origin": "user",
                     "folder_id": folder_id,
                     "hash": new_hash,
-                    "size": size
+                    "size": size,
+                    "folder_id": self._get_parent_folder_id(event.src_path) or None
                 })
                 self._persist_queue()
                 logging.info(f'🟡 Modified file {path} added to sync_queue!')
@@ -1384,24 +1503,25 @@ def sync_worker():
             with open("sync_queue.json", "w") as f:
                 json.dump(all_events, f, indent=2)
 
-def sync_listener(): # bridges barrier between incoming data and sync class
-    incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    incomingsock.bind((ip, 9696))
-    logging.info(f"[+] Listening on {ip}:9000...")
-    incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
+# def sync_listener(): # bridges barrier between incoming data and sync class
+#     incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#     incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+#     incomingsock.bind((ip, 6969))
+#     logging.info(f"[+] Listening on {ip}:6969...")
+#     incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
 
-    while True:
-        connection, address = incomingsock.accept() # if client does s.connect((server_name, 8000))
-        logging.info(f'Connection from {address} has been established!')
-        sync_job = Incoming(address, connection)
-        logging.info(f"[+] Sync job created for {address}...")
-        sync_job.receive_metadata()
-        logging.info(f"[+] Sync job completed for {address}...")
-        connection.close()
-        logging.info(f"[-] Connection closed for {address}...")
-        del sync_job
-        logging.info(f"[-] Sync job deleted for {address}...")
+#     while True:
+#         connection, address = incomingsock.accept() # if client does s.connect((server_name, 8000))
+#         logging.info(f'Connection from {address} has been established!')
+#         sync_job = Incoming(address, connection)
+#         logging.info(f"[+] Sync job created for {address}...")
+#         sync_job.receive_metadata()
+#         logging.info(f"[+] Sync job completed for {address}...")
+#         connection.close()
+#         logging.info(f"[-] Connection closed for {address}...")
+#         del sync_job
+#         logging.info(f"[-] Sync job deleted for {address}...")
+
 ########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
 class Sync:
     def __init__(self):
@@ -1418,6 +1538,7 @@ class Outgoing(Sync):
         self.is_dir = event['is_dir']  # Updated to use 'is_dir' from event
         self.origin = event['origin']  # Updated to use 'origin' from event
         self.event_type = event['event_type']
+        self.folder_id = event['folder_id']
 
         if not self.is_dir and self.event_type == 'created':
             logging.info(f"Adding packets, packet_count, hash, folder_id")
@@ -1452,6 +1573,7 @@ class Outgoing(Sync):
             "src_path":       self.src_path,
             "is_dir":     self.is_dir,
             "origin":     self.origin,
+            "folder_id":  self.folder_id,
         }
         if not self.is_dir and self.event_type == 'created':
             metadata['hash'] = self.hash
@@ -1604,23 +1726,109 @@ class Outgoing(Sync):
             outgoingsock.close()
     
         return True
+########################################################################################
+########################################################################################
+########################################################################################
+########################################################################################
+########################################################################################
 
-# class Incoming()
-# def recv_exact
-# def receive_valid_chunk
-# def receive_file
-# def connect_to_server
 
-########################################################################################
-########################################################################################
-########################################################################################
-########################################################################################
-########################################################################################
+def sync_listener(): # bridges barrier between incoming data and sync class
+    incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    incomingsock.bind((ip, 6969))
+    logging.info(f"[+] Listening on {ip}:6969...")
+    incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
+
+    while True:
+        connection, address = incomingsock.accept() # if client does s.connect((server_name, 8000))
+        logging.info(f'Connection from {address} has been established!')
+        sync_listener_job = Incoming(address, connection)
+        logging.info(f"[+] Sync job created for {address}...")
+        sync_listener_job.receive_metadata()
+        logging.info(f"[+] Sync job completed for {address}...")
+        connection.close()
+        logging.info(f"[-] Connection closed for {address}...")
+        del sync_listener_job
+        logging.info(f"[-] Sync job deleted for {address}...")
 
 class Incoming(Sync):
-    def __init__(self):
+    def __init__(self, address, connection):
         super().__init__()
         self.PORT = 6969
+        self.folderSyncInProgress = False
+        self.address = address
+        self.connection = connection
+        
+    def receive_metadata(self) -> None:
+        metadata = self.receive_valid_packet(self.connection, 0)
+        logging.info(f"[+] Metadata received: {metadata}")
+        event_type = metadata['event_type']
+        origin = metadata.get('origin', '')
+        
+        # Special handling for folder_sync events
+        if origin == 'folder_sync':
+            self.folderSyncInProgress = True
+            logging.info(f"[+] Processing folder sync event")
+            
+        if metadata['is_dir'] and event_type == 'created':
+            logging.info(f"[+] Initiating CreateDir.apply()")
+            CreateDir(metadata, self.address).apply()
+            
+        elif not metadata['is_dir'] and event_type == 'created':
+            logging.info(f"[+] Initiating CreateFile.apply()")
+            CreateFile(metadata, self.address, self.connection).apply()
+            
+        elif event_type == 'deleted':
+            logging.info(f"[+] Initiating Delete.apply()")
+            Delete(metadata, self.address).apply()
+            
+        elif event_type == 'moved':
+            logging.info(f"[+] Initiating Move.apply()")
+            Move(metadata, self.address).apply()
+        
+        elif event_type == 'add_watchdog':
+            logging.info(f"[+] Initiating Add_Watchdog.apply()")
+            Add_Watchdog(metadata, self.address).apply()
+        
+        elif metadata['event_type'] == 'request':
+            src_path = metadata['src_path']
+            block_offset = metadata.get('block_offset', 0)
+            block_size = metadata.get('block_size', 0)
+            block_hash = metadata.get('block_hash')
+            
+            # Create response event for Outgoing class
+            response_event = {
+                'event_type': 'block_response',
+                'src_path': src_path,
+                'is_dir': False,
+                'origin': 'response',
+                'block_offset': block_offset,
+                'block_size': block_size,
+                'block_hash': block_hash
+            }
+            
+            # Read the requested block
+            block_data = self.read_block(src_path, block_offset, block_size, block_hash)
+            
+            # Send the block data back
+            self.send_block_data(self.connection, response_event, block_data)
+            logging.info(f"[BLOCK HANDLER] Sent block data for {block_hash[:8]}...")
+            
+            # Keep connection open briefly to ensure server receives all data
+            time.sleep(0.5)
+        # elif event_type == 'modified':
+        #     logging.info(f"[+] Initiating Modify.apply()")
+        #     Modify(metadata, self.address, self.connection).apply()
+        
+        # If this was part of a folder sync, update the UI via Socket.IO
+        if self.folderSyncInProgress and 'folder_id' in metadata:
+            socketio.emit('folder_sync_progress', {
+                'folder_id': metadata['folder_id'],
+                'event_type': event_type,
+                'is_dir': metadata['is_dir'],
+                'path': os.path.basename(metadata['src_path'])
+            })
         
     def listen_for_requests(self):
         """Listen for block requests from server on port 6969."""
@@ -1633,11 +1841,12 @@ class Incoming(Sync):
             logging.info(f"[BLOCK LISTENER] Started on {ip}:{self.PORT}, waiting for block requests...")
             
             while True:
-                connection, address = request_socket.accept()
-                connection.settimeout(10.0)  # Add timeout to prevent hanging
-                logging.info(f"[BLOCK LISTENER] Received connection from {address}")
+                self.connection, self.address = request_socket.accept()
+                self.connection.settimeout(10.0)  # Add timeout to prevent hanging
+                logging.info(f"[BLOCK LISTENER] Received connection from {self.address}")
                 # Handle request in a separate thread to allow multiple concurrent requests
-                threading.Thread(target=self.handle_request, args=(connection, address), daemon=True).start()
+                threading.Thread(target=self.handle_request, args=(self.connection, self.address), daemon=True).start()
+
         except Exception as e:
             logging.error(f"[BLOCK LISTENER] Error: {e}")
         finally:
@@ -1681,38 +1890,7 @@ class Incoming(Sync):
         """Handle a block request from the server."""
         try:
             # Receive the request metadata
-            metadata = self.receive_valid_packet(connection, 0)
-            logging.info(f"[BLOCK HANDLER] Request metadata: {metadata}")
-            
-            if metadata['event_type'] == 'request':
-                src_path = metadata['src_path']
-                block_offset = metadata.get('block_offset', 0)
-                block_size = metadata.get('block_size', 0)
-                block_hash = metadata.get('block_hash')
-                
-                # Create response event for Outgoing class
-                response_event = {
-                    'event_type': 'block_response',
-                    'src_path': src_path,
-                    'is_dir': False,
-                    'origin': 'response',
-                    'block_offset': block_offset,
-                    'block_size': block_size,
-                    'block_hash': block_hash
-                }
-                
-                # Read the requested block
-                block_data = self.read_block(src_path, block_offset, block_size, block_hash)
-                
-                # Send the block data back
-                self.send_block_data(connection, response_event, block_data)
-                logging.info(f"[BLOCK HANDLER] Sent block data for {block_hash[:8]}...")
-                
-                # Keep connection open briefly to ensure server receives all data
-                time.sleep(0.5)
-                
-            else:
-                logging.warning(f"[BLOCK HANDLER] Unknown request type: {metadata['event_type']}")
+            sync_job = self.receive_metadata(connection, 0)
                 
         except Exception as e:
             logging.error(f"[BLOCK HANDLER] Error handling request: {e}")
@@ -1721,6 +1899,57 @@ class Incoming(Sync):
             logging.info("[BLOCK HANDLER] Closing connection after handling request")
             connection.close()
     
+
+    # def receive_metadata(self) -> None:
+    #     metadata = self.receive_valid_packet(self.connection, 0)
+    #     logging.info(f"[+] Metadata received: {metadata}")
+    #     event_type = metadata['event_type']
+    #     # TODO CHECK IF ITS DIRECTORY OR FILE
+        
+    #     if metadata['is_dir'] and event_type == 'created':
+    #         logging.info(f"[+] Initiating CreateDir.apply()")
+    #         CreateDir(metadata, self.address).apply() # ↙️
+            
+    #     elif not metadata['is_dir'] and event_type == 'created': # i.e. a file is created
+    #         logging.info(f"[+] Initiating CreateFile.apply()")
+    #         CreateFile(metadata, self.address, self.connection).apply() # ↙️
+            
+    #     elif event_type == 'deleted':
+    #         logging.info(f"[+] Initiating Delete.apply()")
+    #         Delete(metadata, self.address).apply() # ↙️
+            
+    #     elif event_type == 'moved':
+    #         logging.info(f"[+] Initiating Move.apply()")
+    #         Move(metadata, self.address).apply() # ↙️
+
+        # elif metadata['event_type'] == 'request':
+        #         src_path = metadata['src_path']
+        #         block_offset = metadata.get('block_offset', 0)
+        #         block_size = metadata.get('block_size', 0)
+        #         block_hash = metadata.get('block_hash')
+                
+        #         # Create response event for Outgoing class
+        #         response_event = {
+        #             'event_type': 'block_response',
+        #             'src_path': src_path,
+        #             'is_dir': False,
+        #             'origin': 'response',
+        #             'block_offset': block_offset,
+        #             'block_size': block_size,
+        #             'block_hash': block_hash
+        #         }
+                
+        #         # Read the requested block
+        #         block_data = self.read_block(src_path, block_offset, block_size, block_hash)
+                
+        #         # Send the block data back
+        #         self.send_block_data(self.connection, response_event, block_data)
+        #         logging.info(f"[BLOCK HANDLER] Sent block data for {block_hash[:8]}...")
+                
+        #         # Keep connection open briefly to ensure server receives all data
+        #         time.sleep(0.5)
+            
+
     def read_block(self, src_path, offset, size, expected_hash):
         """Read a block from the specified file at given offset."""
         try:
@@ -1809,6 +2038,246 @@ class Incoming(Sync):
         except Exception as e:
             logging.error(f"[BLOCK HANDLER] Error sending block data: {e}")
 
+
+class SyncEvent(Incoming):
+    def __init__(self, metadata, address=None, connection=None): # ⬅️ added connection parameter!
+        self.metadata = metadata
+        super().__init__(address, connection) 
+
+    def apply(self):
+        pass
+    
+    def _get_mac_addr(self, user) -> str:
+        for mac_addr in ip_map["users"][user]:
+            if mac_addr == str(mac_addr):
+                return mac_addr
+            
+    def format_path(self) -> str:
+        user = self.metadata['user']
+        user_id = session.query(User).filter_by(name=user).first().user_id
+        mac_addr = self._get_mac_addr(user)
+        raw_path = self.metadata['src_path']
+        logging.info(f"[+] Formatting path: {raw_path}")
+        src_path = os.path.normpath(raw_path).replace('\\', '/')
+        src_path = src_path.split('/')
+        src_path = src_path[3:]
+        src_path.insert(0, str(mac_addr))
+        src_path.insert(0, str(user_id))
+        src_path.insert(0, '~')
+        src_path = '/'.join(src_path)       
+        formatted_path = os.path.expanduser(src_path)
+        logging.info(f"[+] Formatted path: {formatted_path}")
+        return formatted_path
+    
+class Add_Watchdog(SyncEvent):
+    # TODO adds file to watchdog
+    pass
+
+class CreateDir(SyncEvent):
+    def apply(self):
+        src_path = self.metadata['src_path']
+        os.makedirs(src_path, exist_ok=True)
+        logging.info(f"[+] Directory created at: {src_path}")
+    
+class CreateFile(SyncEvent):
+    def apply(self):
+        offset = 0
+        file_data = b''
+        blocklist = dict()
+        packet_count = self.metadata['packet_count']
+        logging.info(f"[+] Expecting {packet_count} packets...")
+
+        for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
+            data, hash = self.receive_valid_packet(self.connection, index)
+            file_data += data
+            blocklist[hash] = {"offset": offset, "size": len(data)} # data is binary data, hash is checksum
+            offset += len(data)
+        
+        formatted_path = self.format_path()
+        os.makedirs(os.path.dirname(formatted_path), exist_ok=True)
+        logging.info(f"[+] Writing file to: {formatted_path}")
+        with open(formatted_path, 'wb') as f:
+            f.write(file_data)
+        logging.info(f"[+] File '{formatted_path}' received successfully.")
+
+        self.handle_global_blocklist('add', blocklist, src_path=formatted_path) # 🌍 Adding to global_blocklist
+
+        blocklist_serialised = {}
+        for hash, data in blocklist.items():
+            blocklist_serialised[hash] = base64.b64encode(json.dumps(data).encode()).decode()
+
+        folder_id = self.metadata['folder_id']
+        hash = self.metadata['hash']
+        size = self.metadata['size']
+
+        # Verify that the received file's hash matches the metadata hash
+        calculated_hash = hashlib.md5(file_data).hexdigest()
+        if calculated_hash != hash:
+            logging.error(f"[!] Hash mismatch for file {formatted_path}. Expected: {hash}, Got: {calculated_hash}")
+            # Consider whether to reject the file or mark it as corrupted
+        else:
+            logging.info(f"[+] File hash verified for {formatted_path}")
+
+        # Create a new file entry in the database
+        file_entry = File(
+            folder_id=folder_id,
+            path=formatted_path,
+            size=size,
+            hash=hash,
+            version="v1.0",
+            block_list=json.dumps(blocklist_serialised) # creates initial block_list
+        )
+        
+        session.add(file_entry)
+        session.commit()
+        logging.info(f"[+] Added file entry to database: {formatted_path}")
+
+class Delete(SyncEvent):
+    def purge_directory(self):
+        formatted_path = self.format_path()
+        logging.info(f"[+] Deleting directory and its contents: {formatted_path}")
+        
+        # Use post-order traversal to delete directory contents
+        for root, dirs, files in os.walk(formatted_path, topdown=False):
+            # First delete all files in the current directory
+            for file in files:
+                file_path = os.path.join(root, file)
+                try:
+                    os.remove(file_path)
+                    logging.info(f"[-] Deleted file: {file_path}")
+                    
+                    # Delete file entry from database
+                    file_entry = session.query(File).filter_by(path=file_path).first()
+                    if file_entry:
+                        session.delete(file_entry)
+                        session.commit()
+                except Exception as e:
+                    logging.error(f"[!] Error deleting file {file_path}: {e}")
+            
+            # Then delete the directory itself
+            try:
+                os.rmdir(root)
+                logging.info(f"[-] Deleted directory: {root}")
+            except Exception as e:
+                logging.error(f"[!] Error deleting directory {root}: {e}")
+        
+        # Remove folder from database
+        folder_entry = session.query(Folder).filter_by(path=formatted_path).first()
+        if folder_entry:
+            # Remove related share entries
+            share_entries = session.query(Share).filter_by(folder_id=folder_entry.folder_id).all()
+            for share in share_entries:
+                session.delete(share)
+            
+            session.delete(folder_entry)
+            session.commit()
+            logging.info(f"[-] Folder and shares removed from database")
+
+    def apply(self):
+        # TODO check if file or folder
+        if self.metadata['is_dir']:
+            self.purge_directory()
+            logging.info(f"[-] Directory '{self.metadata['src_path']}' deleted successfully.")
+        else: 
+            formatted_path = self.format_path()
+            try:
+                os.remove(formatted_path)
+                logging.info(f"[-] File '{formatted_path}' deleted successfully.")
+            except FileNotFoundError:
+                logging.info(f"[-] File '{formatted_path}' already deleted or not found.")
+            except Exception as e:
+                logging.error(f"[-] Error deleting file '{formatted_path}': {e}")
+
+            file_entry = session.query(File).filter_by(path=formatted_path).first()
+
+            if file_entry:
+                session.delete(file_entry)
+                session.commit()
+                logging.info(f"[-] File entry for '{formatted_path}' deleted from database.")
+            else:
+                logging.error(f"[-] No file entry found for '{formatted_path}' in database.")
+
+class Move(SyncEvent):
+    def format_dest_path(self) -> str:
+        """Format the destination path using the same logic as format_path()"""
+        user = self.metadata['user']
+        user_id = session.query(User).filter_by(name=user).first().user_id
+        mac_addr = self._get_mac_addr(user)
+        raw_path = self.metadata['dest_path']
+        logging.info(f"[+] Formatting dest path: {raw_path}")
+        dest_path = os.path.normpath(raw_path).replace('\\', '/')
+        dest_path = dest_path.split('/')
+        dest_path = dest_path[3:]
+        dest_path.insert(0, str(mac_addr))
+        dest_path.insert(0, str(user_id))
+        dest_path.insert(0, '~')
+        dest_path = '/'.join(dest_path)       
+        formatted_path = os.path.expanduser(dest_path)
+        logging.info(f"[+] Formatted dest path: {formatted_path}")
+        return formatted_path
+    
+    def apply(self):
+        
+        # Format source and destination paths
+        src_path = self.format_path()
+        dest_path = self.format_dest_path()
+        
+        logging.info(f"[+] Moving from {src_path} to {dest_path}")
+        
+        if not self.metadata['is_dir']:
+            # Handle file move
+            try:
+                # Create destination directory if needed
+                os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                
+                # Move the file
+                os.replace(src_path, dest_path)
+                logging.info(f"[+] File moved from {src_path} to {dest_path}")
+                
+                # Update database entry
+                file_entry = session.query(File).filter_by(path=src_path).first()
+                if file_entry:
+                    file_entry.path = dest_path
+                    session.commit()
+                    logging.info(f"[+] Database entry updated for file: {dest_path}")
+                else:
+                    logging.warning(f"[!] No database entry found for file: {src_path}")
+            except Exception as e:
+                logging.error(f"[!] Error moving file: {e}")
+        else:
+            # Handle directory move
+            try:
+                # Make sure destination parent exists
+                os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                
+                # Move the directory
+                os.replace(src_path, dest_path)
+                logging.info(f"[+] Directory moved from {src_path} to {dest_path}")
+                
+                # Update folder entry in database
+                folder_entry = session.query(Folder).filter_by(path=src_path).first()
+                if folder_entry:
+                    folder_entry.path = dest_path
+                    session.commit()
+                    logging.info(f"[+] Database entry updated for folder: {dest_path}")
+                
+                # Update all file paths in database that were under this directory
+                files = session.query(File).all()
+                updated_count = 0
+                
+                for file in files:
+                    if file.path.startswith(src_path + '/') or file.path == src_path:
+                        new_file_path = file.path.replace(src_path, dest_path, 1)
+                        file.path = new_file_path
+                        updated_count += 1
+                
+                if updated_count > 0:
+                    session.commit()
+                    logging.info(f"[+] Updated {updated_count} file entries in database")
+                    
+            except Exception as e:
+                logging.error(f"[!] Error moving directory: {e}")
+
 ########################################################################################
 ########################################################################################
 ########################################################################################
@@ -1868,10 +2337,14 @@ if __name__ == "__main__":
     sync_worker_thread = threading.Thread(target=sync_worker, daemon=True) # 🧵
     sync_worker_thread.start()  # ✅ Start just once
 
-    incoming_handler = Incoming()
-    block_request_thread = threading.Thread(target=incoming_handler.listen_for_requests, daemon=True)
-    block_request_thread.start()
-    logging.info("Started block request listener thread")
+    sync_listener_thread = threading.Thread(target=sync_listener)
+    sync_listener_thread.start()
+    logging.info("Started sync listener thread")
 
-    # socketio.run(app)
-    socketio.run(app, debug=True, host='0.0.0.0')
+    # incoming_handler = Incoming()
+    # block_request_thread = threading.Thread(target=incoming_handler.listen_for_requests, daemon=True)
+    # block_request_thread.start()
+    # logging.info("Started block request listener thread")
+
+    socketio.run(app)
+    # socketio.run(app, debug=True, host='0.0.0.0')

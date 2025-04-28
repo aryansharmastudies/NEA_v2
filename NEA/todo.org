@@ -1,0 +1,60 @@
+ok so what happens uptill now...
+- client2 receives the invitation.
+- now lets say client2 accepts that invitation.
+- what should happen?
+
+Broadly speaking:
+we want that folder to sync to the client2 where client2 specified.
+and if client2 makes any changes to that folder, those changes should be reflected in the server and also in client1.
+
+Now, how do we do that?
+1. well, firstly, when client2 accepts, the data is sent to server. 
+2. from then, server must add client2 to shared table. 
+3. server must send through the folder to client2 INITIALLY.
+    3.1. similar to how client1 sends data to server, server should send data to client2.
+    3.2. i.e. traversing down that folder, adding each file to sync queue/linked list, then, sending file to client2
+    3.3. server sends client2 special message to add folder to watchdog.
+4. client2 adds folder directory to watchdog.
+
+
+How are changes reflected from client1 to client2?
+1. client1 makes changes to the folder.
+2. client1 sends those changes to server.
+3. server receives those changes and updates the folder.
+    3.1. server checks shared table.
+    3.2. for each client in the shared table, server adds event to sync queue.
+        3.2.1. could we create a linked list of client events?
+
+e.g.
+[[<event for client2><index 2>], [<event for client3><null>], [<event for client2><index 3>], [event for client2><null>]]
+
+so lets say we get a 'track' from client2.
+we check the sync_queue. and see if there are any events for client2.
+if there are, using linked lists, we can traverse the list and send each event to client2.
+
+ORDER
+1. client1 makes folder
+2. client1 makes file in folder
+
+3. sync queue is updated in that ORDER
+
+4. changes are sent to client2 in that order.
+
+Outgoing class which sends data from server to client2 - depending on type of event, send data appropriatly. (3)
+Sync_listner - if we get track from user. User is online. Fetch event data from linked list. (1)
+Linked_List - sends data to Sync_listner. (2)
+
+
+
+
+MODIFY
+if client1 modifies file
+server:
+blockA it gets from current file
+blockB it gets from global file
+blockC it gets from client1
+
+build_instructions:
+1. copy blockA from current file (/home/02/123456/Documents/notes.txt <offset=128,size=128> --> always remove first 3 directories --> ~/Documents/notes.txt)
+2. copy blockB from global file (/home/02/123456/Desktop/calc.txt <offset=10,size=256> --> always remove first 3 directories --> ~/Desktop/calc.txt)
+3. sends blockC to client1

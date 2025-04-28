@@ -19,7 +19,7 @@ import time
 import queue
 import uuid
 from datetime import timedelta
-import datetime
+from datetime import datetime
 
 
 ################################################################################
@@ -94,6 +94,7 @@ class Folder(Base):
 class Share(Base):
     __tablename__ = 'share'
     
+    username = Column(String, primary_key=True)
     folder_id = Column(String, primary_key=True)
     mac_addr = Column(String, primary_key=True)
     folder_label = Column(String)
@@ -466,66 +467,194 @@ def accept_share(client_data):
         folder_label = client_data.get('folder_label')
         directory = client_data.get('directory')
         mac_addr = client_data.get('mac_addr')
+        username = client_data.get('username')
         
-        logging.info(f"Processing share acceptance for folder_id: {folder_id}, from device: {mac_addr}")
+        logging.info(f"Processing share acceptance for folder_id: {folder_id}, from device: {mac_addr}, username: {username}")
         
         # Check if entry already exists to avoid duplicates
-        existing_share = session.query(Share).filter_by(folder_id=folder_id, mac_addr=mac_addr).first()
+        existing_share = session.query(Share).filter_by(username=username, folder_id=folder_id, mac_addr=mac_addr).first()
         
         if existing_share:
             logging.info(f"Share entry already exists for folder_id: {folder_id}, mac_addr: {mac_addr}")
+            # Even if share exists, we should still sync the folder
             response = json.dumps({'status': '200', 'status_msg': 'Share already accepted'})
-            return response
+        else:
+            # Create a new Share entry
+            new_share = Share(
+                username=username,
+                folder_id=folder_id,
+                mac_addr=mac_addr,
+                folder_label=folder_label,
+                path=directory
+            )
             
-        # Create a new Share entry
-        new_share = Share(
-            folder_id=folder_id,
-            mac_addr=mac_addr,
-            folder_label=folder_label,
-            path=directory
-        )
-        
-        # Add to database
-        session.add(new_share)
-        
-        # Check for invites to clean up
-        # If this share was from an invite, remove it from the invites list
-        username = None
-        for user, devices in ip_map['users'].items():
-            if str(mac_addr) in devices:
-                username = user
-                break
-                
-        if username and username in invites['folders']:
-            if str(mac_addr) in invites['folders'][username]:
-                # Search for and remove the invite with matching folder_id
-                invites_to_keep = []
-                for invite in invites['folders'][username][str(mac_addr)]:
-                    if invite[1] != folder_id:  # invite[1] is the folder_id in the invite array
-                        invites_to_keep.append(invite)
-                
-                invites['folders'][username][str(mac_addr)] = invites_to_keep
-                
-                # Save updated invites
-                with open(invites_file, 'w') as file:
-                    json.dump(invites, file, indent=2)
-                logging.info(f"Removed accepted invite for folder_id: {folder_id} from user: {username}")
-        
-        try:
-            session.commit()
-            logging.info(f"Share entry added successfully for folder_id: {folder_id}, mac_addr: {mac_addr}")
-            response = json.dumps({'status': '201', 'status_msg': 'Share accepted successfully'})
-        except Exception as e:
-            session.rollback()
-            logging.error(f"Error adding share entry: {e}")
-            response = json.dumps({'status': '500', 'status_msg': f'Database error: {str(e)}'})
+            # Add to database
+            session.add(new_share)
+            logging.info(f"New share entry created for folder_id: {folder_id}, mac_addr: {mac_addr}")
             
-        return response
+            # Clean up invites.json
+            if username and username in invites['folders']:
+                if str(mac_addr) in invites['folders'][username]:
+                    # Remove the accepted invite
+                    invites_to_keep = []
+                    for invite in invites['folders'][username][str(mac_addr)]:
+                        if invite[1] != folder_id:
+                            invites_to_keep.append(invite)
+                    
+                    invites['folders'][username][str(mac_addr)] = invites_to_keep
+                    
+                    # Save updated invites
+                    with open(invites_file, "w") as file:
+                        json.dump(invites, file, indent=2)
+                    logging.info(f"Removed accepted invite for folder_id: {folder_id} from user: {username}")
+            
+            try:
+                session.commit()
+                logging.info(f"Share entry added successfully for folder_id: {folder_id}, mac_addr: {mac_addr}")
+                response = json.dumps({'status': '201', 'status_msg': 'Share accepted successfully'})
+            except Exception as e:
+                session.rollback()
+                logging.error(f"Error adding share entry: {e}")
+                response = json.dumps({'status': '500', 'status_msg': f'Database error: {str(e)}'})
+        
+        # # Find the original folder to initiate sync
+        # original_folder = session.query(Folder).filter_by(folder_id=folder_id).first()
+        # if original_folder:
+        #     # Get client IP address
+        #     client_ip = None
+        #     if username and username in ip_map['users'] and str(mac_addr) in ip_map['users'][username]:
+        #         client_ip = ip_map['users'][username][str(mac_addr)]
+                
+        #         # Start a thread to initiate folder sync
+        #         sync_thread = threading.Thread(
+        #             target=initiate_folder_sync,
+        #             args=(original_folder, folder_id, mac_addr, client_ip, directory),
+        #             daemon=True
+        #         )
+        #         sync_thread.start()
+        #         logging.info(f"Started folder sync thread for {folder_id} to client {mac_addr}")
+        #     else:
+        #         logging.error(f"Could not find IP address for client {mac_addr}")
+        # else:
+        #     logging.error(f"Could not find original folder with ID {folder_id}")
+            
+        # return response
         
     except Exception as e:
         logging.error(f"Error processing share acceptance: {e}")
         response = json.dumps({'status': '400', 'status_msg': f'Error processing request: {str(e)}'})
         return response
+
+# def initiate_folder_sync(folder, folder_id, client_mac, client_ip, client_directory):
+#     """Traverse the folder and queue sync events for all files and directories."""
+#     try:
+#         logging.info(f"Initiating folder sync for {folder.path} to client {client_mac}")
+        
+#         # Use a queue to track directories to process
+#         dirs_to_process = [folder.path]
+#         all_sync_events = []
+        
+#         # Generate a unique event ID for this sync
+#         sync_event_id = generate_event_id()
+        
+#         # First, create the root directory event
+#         root_event = {
+#             "id": sync_event_id,
+#             "event_type": "created",
+#             "src_path": folder.path,
+#             "is_dir": True,
+#             "origin": "folder_sync",
+#             "folder_id": folder_id,
+#             "target_recipient": {
+#                 'user': client_mac,
+#                 'mac_addr': client_mac,
+#                 'ip': client_ip,
+#                 'folder_id': folder_id
+#             }
+#         }
+#         sync_queue.put(root_event)
+#         all_sync_events.append(root_event)
+        
+#         # Process all directories and files
+#         while dirs_to_process:
+#             current_dir = dirs_to_process.pop(0)
+            
+#             for item in os.listdir(current_dir):
+#                 full_path = os.path.join(current_dir, item)
+                
+#                 # Skip hidden files/directories
+#                 if item.startswith('.'):
+#                     continue
+                    
+#                 is_dir = os.path.isdir(full_path)
+                
+#                 # Create sync event for this item
+#                 if is_dir:
+#                     # Queue this directory to process its contents
+#                     dirs_to_process.append(full_path)
+                    
+#                     # Create directory event
+#                     dir_event = {
+#                         "id": sync_event_id,
+#                         "event_type": "created",
+#                         "src_path": full_path,
+#                         "is_dir": True,
+#                         "origin": "folder_sync",
+#                         "folder_id": folder_id,
+#                         "target_recipient": {
+#                             'user': client_mac,
+#                             'mac_addr': client_mac,
+#                             'ip': client_ip,
+#                             'folder_id': folder_id
+#                         }
+#                     }
+#                     sync_queue.put(dir_event)
+#                     all_sync_events.append(dir_event)
+#                 else:
+#                     # Get file information
+#                     file_size = os.path.getsize(full_path)
+#                     file_hash = calculate_file_hash(full_path)
+                    
+#                     # Create file event
+#                     file_event = {
+#                         "id": sync_event_id,
+#                         "event_type": "created",
+#                         "src_path": full_path,
+#                         "is_dir": False,
+#                         "origin": "folder_sync",
+#                         "folder_id": folder_id,
+#                         "hash": file_hash,
+#                         "size": file_size,
+#                         "target_recipient": {
+#                             'user': client_mac,
+#                             'mac_addr': client_mac,
+#                             'ip': client_ip,
+#                             'folder_id': folder_id
+#                         }
+#                     }
+#                     sync_queue.put(file_event)
+#                     all_sync_events.append(file_event)
+        
+#         # Make sure sync is active
+#         if not sync_active.is_set():
+#             sync_active.set()
+            
+#         logging.info(f"Queued {len(all_sync_events)} sync events for folder {folder_id}")
+        
+#         # Update the sync queue file
+#         with open("sync_queue.json", "w") as f:
+#             json.dump(list(sync_queue.queue), f, indent=2)
+            
+#     except Exception as e:
+#         logging.error(f"Error initiating folder sync: {e}", exc_info=True)
+
+def calculate_file_hash(file_path):
+    """Calculate MD5 hash of a file."""
+    hash_md5 = hashlib.md5()
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            hash_md5.update(chunk)
+    return hash_md5.hexdigest()
 
 ########## SOCKETS ###############################
 def send(message, ip, port): 
@@ -583,6 +712,7 @@ def handle_client_message(clientsocket, message):
         # 😋 data is {'status': '200', 'status_msg': 'IP updated successfully', 'alerts': []}
         logging.info(f'Sending tracking results + alerts: {response}')
         clientsocket.send(str(response).encode('utf-8'))
+
 
     elif action == 'login':
         l_user = client_data['l_user']
@@ -679,7 +809,7 @@ def sync_worker(): # bridges barrier between incoming data and sync class
     incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     incomingsock.bind((ip, 9696))
-    logging.info(f"[+] Listening on {ip}:9000...")
+    logging.info(f"[+] Listening on {ip}:9696...")
     incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
 
     while True:
@@ -810,6 +940,14 @@ class SyncEvent(Incoming):
         except Exception as e:
             logging.error(f"Failed to persist sync queue: {e}")
 
+
+    def persist_sync_list(self):
+        try:
+            with open("sync_list.json", "w") as f:
+                json.dump(sync_list, f, indent=2)
+        except Exception as e:
+            logging.error(f"Failed to persist sync list: {e}")
+
     def _get_mac_addr(self, user) -> str:
         for mac_addr in ip_map["users"][user]:
             if mac_addr == str(mac_addr):
@@ -832,6 +970,55 @@ class SyncEvent(Incoming):
         logging.info(f"[+] Formatted path: {formatted_path}")
         return formatted_path
     
+    def echo(self): # sends event/data to client2 OR if client2 offline, adds to sync_queue 🔊🔊🔊
+        folder_id = self.metadata.get('folder_id')
+        logging.info(f"[+] Folder ID: {folder_id}")
+        event_type = self.metadata.get('event_type')
+        logging.info(f"[+] Event type: {event_type}")
+        root_folder = session.query(Folder).filter_by(folder_id=folder_id).first()
+        logging.info(f"[+] Folder we got from table: {root_folder}")
+        formatted_path = self.format_path()
+        try:
+            # Get the relative path from folder.path to formatted_path
+            src_path = os.path.relpath(formatted_path, root_folder.path)
+            logging.info(f"Calculated relative path: {src_path}")
+        except ValueError as e:
+            # Handle case where paths are on different drives (Windows)
+            logging.error(f"Error calculating relative path: {e}")
+            src_path = formatted_path  # Fallback to using the full path
+
+        shared_users = session.query(Share).filter_by(folder_id=folder_id).all()
+        for user in shared_users:
+            src_path = user.path + '/' + src_path
+            new_metadata = self.metadata
+            new_metadata['src_path'] = src_path
+            logging.info(f"[+] Sending event to {user.mac_addr} to src_path: {src_path}")
+            # just forward that metadata to client.
+            ip_addr = ip_map["users"][user.username][user.mac_addr]
+            try: 
+                # TODO bind to client
+                outgoingsock = socket.socket()
+                outgoingsock.connect((ip_addr, 6969))
+                echo_event = Outgoing(new_metadata)
+                echo_event.OG_send_packet(outgoingsock, new_metadata)
+                logging.info(f"[+] Event sent to {user.mac_addr} at {ip_addr}")
+                outgoingsock.close()
+                pass
+            
+            except socket.error as e:
+                logging.error(f"[!] Failed to send event to {user.mac_addr} at {ip_addr}: {e}") 
+                logging.info(f"[!] Client {user.mac_addr} is offline. Adding to sync queue.")
+                if user.username not in sync_list:
+                    sync_list[user.username] = {}
+                if user.mac_addr not in sync_list[user.username]:
+                    sync_list[user.username][user.mac_addr] = []
+                sync_list[user.username][user.mac_addr].append(new_metadata)
+                
+                self.persist_sync_list()
+
+            
+
+
 class CreateDir(SyncEvent):
 
     def apply(self):
@@ -884,6 +1071,8 @@ class CreateDir(SyncEvent):
                 logging.info(f"[+] Added directory sync event to queue for device {share.mac_addr}")
         
         self._persist_queue()
+        logging.info(f"[+] Persisted sync queue to file.")
+        self.echo() # 🔊
 
 class CreateFile(SyncEvent):
     
@@ -1319,55 +1508,34 @@ class Block(SyncEvent):
 
 class Outgoing(Sync):
     def __init__(self, event):
-        '''
-            request = { #🆗
-        "event_type": "request", #🆗,
-        "is_dir": False, #🆗
-        "origin": "NoHash", #🆗
-        "src_path": self.metadata['src_path'], #🆗
-        "offset": block_offset, #🆗
-        "size": block_size, #🆗
-        "block_hash": block_hash, #🆗
-    } #🆗
-        '''
         super().__init__()
         self.PORT = 6969
         self.src_path = event['src_path']
-        self.is_dir = event['is_dir']  # Updated to use 'is_dir' from event
-        self.origin = event['origin']  # Updated to use 'origin' from event
+        self.is_dir = event['is_dir']
+        self.origin = event['origin']
         self.event_type = event['event_type']
 
-        self.user_id = event['user_id']  or None
-        self.mac_addr = event['mac_addr']  or None
-
+        # Additional properties based on event type
         if not self.is_dir and self.event_type == 'created':
-            logging.info(f"Adding packets, packet_count, hash, folder_id")
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
-            self.hash = file_to_hash.get(self.src_path)
-            self.folder_id = event['folder_id']  # Updated to use 'folder_id' from event
-
+            self.hash = event.get('hash') or file_to_hash.get(self.src_path)
+            self.folder_id = event['folder_id']
+            
         elif not self.is_dir and self.event_type == 'modified':
-            logging.info(f"Creating block list for modified file")
-            self.blocks = self.create_blocklist() # {'hash1'={},'hash2'={},'hash3'={}} 
+            self.blocks = self.create_blocklist()
             self.block_count = len(self.blocks)
-            self.hash = file_to_hash.get(self.src_path) or event.get('hash')
+            self.hash = event.get('hash') or file_to_hash.get(self.src_path)
             self.folder_id = event['folder_id']
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
+            
+            # Get file version from database
             file = session.query(File).filter_by(path=self.src_path).first()
-            if file:
-                self.version = file.version
-            else:
-                self.version = 'v1.0'  # Default version
+            self.version = file.version if file else 'v1.0'
 
         if self.event_type == 'moved':
             self.dest_path = event['dest_path']
-
-        if self.event_type == 'request':
-            self.block_offset = event['block_offset']
-            self.block_size = event['block_size']
-            self.block_hash = event['block_hash']
     
     def _build_metadata(self) -> dict:
         metadata = {
@@ -1422,61 +1590,115 @@ class Outgoing(Sync):
         ]
 
     def send_packet(self, outgoingsock: socket.socket, packet: dict) -> None:
+        """Send a packet with retry logic."""
         payload = json.dumps(packet).encode('utf-8')
         header = struct.pack('!I', len(payload))
-        message = header + payload  # You can join header and payload using the '+' operator
-        sent = False   
-        while not sent:
+        message = header + payload
+        
+        max_retries = 3
+        retry_count = 0
+        sent = False
+        
+        while not sent and retry_count < max_retries:
+            try:
+                outgoingsock.sendall(message)
+                
+                # Wait for acknowledgement with timeout
+                outgoingsock.settimeout(5.0)
+                response = outgoingsock.recv(3)
+                
+                if response == self.RESPONSE_OK:
+                    sent = True
+                else:
+                    logging.warning(f"[-] Packet {packet.get('index', 'metadata')} failed checksum, retrying")
+                    retry_count += 1
+                    time.sleep(0.5)  # Brief delay before retry
+                    
+            except socket.timeout:
+                logging.warning(f"[-] Timeout waiting for acknowledgement, retrying")
+                retry_count += 1
+                time.sleep(0.5)
+                
+            except Exception as e:
+                logging.error(f"[-] Error sending packet: {e}")
+                retry_count += 1
+                time.sleep(0.5)
+        
+        if not sent:
+            raise ConnectionError(f"Failed to send packet after {max_retries} attempts")
+        
+    def OG_send_packet(self, outgoingsock: socket.socket, packet: dict) -> None:
+        payload = json.dumps(packet).encode('utf-8')
+        header = struct.pack('!I', len(payload))
+        message = header + payload  # Join header and payload
+        sent = False
+        retries = 0
+
+        while not sent and retries < 10:
             outgoingsock.sendall(message)
             response = outgoingsock.recv(3)
             if response == self.RESPONSE_OK:
                 # logging.info(f"[+] Packet {packet['index']} transmitted successfully.") # 🔔
                 sent = True
             else:
-                logging.info(f"[-] Packet {packet['index']} failed checksum, retrying...")
+                retries += 1
+                logging.info(f"[-] Packet {packet['index']} failed checksum, retrying ({retries}/10)...")
+
+        if not sent:
+            logging.error(f"❌ Packet {packet['index']} failed after 10 retries, giving up.")
 
     def start_server(self, address) -> bool:
+        """Send event data to a client."""
         outgoingsock = socket.socket()
         ip = address[0]
+        port = address[1] if isinstance(address, tuple) and len(address) > 1 else self.PORT
+        
         try:
-            logging.info(f"Connecting to client at {ip}:{self.PORT}") # i.e. PORT 6969
-            outgoingsock.connect((ip, self.PORT))
-            logging.info(f"[+] Connected to client at {ip}:{self.PORT}")
+            # Set a reasonable timeout
+            outgoingsock.settimeout(10.0)
             
+            logging.info(f"Connecting to client at {ip}:{port}")
+            outgoingsock.connect((ip, port))
+            logging.info(f"[+] Connected to client at {ip}:{port}")
+            
+            # Build and send metadata
             metadata = self._build_metadata()
-            logging.info(f"[+] Sending metadata: {metadata}")
-            self.send_packet(outgoingsock, metadata) # metadata is dict
-            logging.info(f"[+] Metadata sent: {metadata}")
-
-            if self.event_type == 'request':
-                # Reveive the requested block
-                # receive_valid_packet(self, connection: socket.socket, index: int) -> bytes:
-                # Incoming just needs a connection
-                # TODO create incoming object to receive the block
-
-                incoming_block = Incoming(connection=outgoingsock)     # 🗣️ REUSING INCOMING CLASS
-                logging.info(f"[+] Created incoming_block object: {incoming_block}")
-                # TODO receive metadata.
-                block_data, actual_hash = incoming_block.receive_metadata()
-                logging.info(f"[+] Block data received: {block_data}, actual hash: {actual_hash}")
-                return block_data, actual_hash
-
-
-
-            # Send file packets for created and modified files
-            if hasattr(self, 'packets'):
+            logging.info(f"[+] Sending metadata for {self.event_type} event: {self.src_path}")
+            self.send_packet(outgoingsock, metadata)
+            
+            # For modified files, send the blocklist
+            if self.event_type == 'modified' and hasattr(self, 'blocks'):
+                blocklist_packet = {
+                    "index": "blocklist",
+                    "blocklist": self.blocks
+                }
+                logging.info(f"[+] Sending block list for modified file")
+                self.send_packet(outgoingsock, blocklist_packet)
+            
+            # For file content (created or modified files)
+            if hasattr(self, 'packets') and self.packets:
+                logging.info(f"[+] Sending {len(self.packets)} data packets")
                 for packet in self.packets:
                     self.send_packet(outgoingsock, packet)
-                    # logging.info(f"[+] Packet {packet} sent.") # 🔔
-        
-            logging.info("[+] All packets sent.")
+            
+            logging.info(f"[+] Successfully sent {self.event_type} event data")
+            return True
+            
+        except socket.timeout:
+            logging.error(f"[!] Connection timed out to {ip}:{port}")
+            return False
+        except ConnectionRefusedError:
+            logging.error(f"[!] Connection refused by {ip}:{port}")
+            return False
         except Exception as e:
-            logging.error(f"❌ Failed to connect to server: {e}")
+            logging.error(f"[!] Error sending to {ip}:{port}: {e}")
             return False
         finally:
-            outgoingsock.close()
-    
-        return True
+            try:
+                outgoingsock.close()
+            except:
+                pass
+            
 class Build_Instructions(Outgoing):
     pass
 class Requests(Outgoing):
@@ -1723,8 +1945,7 @@ class Global_Blocklist():
                     return None
             else:
                 logging.error(f"Incomplete block information for hash: {hash_to_query}")
-                return None
-        else:
+                return None 
             logging.error(f"Hash not found in global blocklist: {hash_to_query}")
             return None
 
@@ -1740,55 +1961,66 @@ class build_instruction():
 
 
 if __name__ == "__main__":
+    # Start the main server socket
     main_thread = threading.Thread(target=main, daemon=True)
     main_thread.start()
+    logging.info("[START] Started main server thread")
     
+    # Start the sync worker thread
+    sync_active.set()  # Make sure it's active from the start
     sync_worker_thread = threading.Thread(target=sync_worker)
     sync_worker_thread.start()
-
-    ##################################################################################
-    ##################################################################################
-    ##################################################################################
-    # sync_worker_thread = threading.Thread(target=sync_worker, daemon=True) # 🧵
-    # sync_worker_thread.start()  # ✅ Start just once
-    ##################################################################################
-    ##################################################################################
-    ##################################################################################
-
+    logging.info("[START] Started sync queue worker thread")
+    
+    # Load the global blocklist
     global_blocklist_file = "blocklist.json"
     if os.path.exists(global_blocklist_file):
-        with open(global_blocklist_file, "r") as file: # Load data from the file if it exists
+        with open(global_blocklist_file, "r") as file:
             global_blocklist = json.load(file)
     else:
         global_blocklist = {}
-    logging.info(f'INITIALISING global_blocklist {global_blocklist}')
+    logging.info(f'[LOAD] Loaded global blocklist with {len(global_blocklist)} entries')
 
+    # Load IP mapping
     ip_file = "ip_map.json"
     if os.path.exists(ip_file):
-        with open(ip_file, "r") as file: # Load data from the file if it exists
+        with open(ip_file, "r") as file:
             ip_map = json.load(file)
     else:
-        ip_map = {
-            "users": {}
-        } # NOTE: it dontcreate the file just yet, create the varible. 
-        # when stuff is being added to the varible, the file will be created then.
-    logging.info(f'INITIALISING ip_map: {ip_map}')
+        ip_map = {"users": {}}
+    logging.info(f'[LOAD] Loaded IP map with {len(ip_map["users"])} users')
 
+    sync_list_file = "sync_list.json"
+    if os.path.exists(sync_list_file):
+        with open(sync_list_file, "r") as file:
+            sync_list = json.load(file)
+    else:
+        sync_list = {}
+    logging.info(f'Loaded sync list with {len(sync_list)} events')
+
+    # Load pending invites
     invites_file = "invites.json"
     if os.path.exists(invites_file):
-        with open(invites_file, "r") as file: # Load data from the file if it exists
+        with open(invites_file, "r") as file:
             invites = json.load(file)
     else:
-        invites = {
-            "folders": {},
-            "groups": {}
-        }
-    logging.info(f'INITIALISING invites: {invites}')
-
-    # Initialize file_to_hash mapping
+        invites = {"folders": {}, "groups": {}}
+    logging.info(f'[LOAD] Loaded invites data')
+    
+    # Build file hash mappings
     file_to_hash = {f.path: f.hash for f in session.query(File).all()}
-    logging.info(f'Loaded file_to_hash with {len(file_to_hash)} entries.')
-    logging.info(f'{file_to_hash}')
+    logging.info(f'[LOAD] Loaded file_to_hash with {len(file_to_hash)} entries')
+    
+    # Keep main thread alive
+    # try:
+    #     while True:
+    #         time.sleep(60)  # Check every minute
+    #         # Log current queue status
+    #         queue_size = sync_queue.qsize()
+    #         if queue_size > 0:
+    #             logging.info(f"Current sync queue size: {queue_size}")
+    # except KeyboardInterrupt:
+    #     logging.info("Server shutting down")
 
     # NOTE: all these are dictionaries therefore automatically global variables
 

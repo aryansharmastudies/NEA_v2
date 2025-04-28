@@ -428,7 +428,7 @@ function processShareRequests(alerts) {
     
     // Create an alert box for each share request
     alerts.forEach((alert, index) => {
-        const [folderId, folderName, deviceName] = alert;
+        const [folderName, folderId, deviceName] = alert;
         
         // Create alert box
         const alertBox = document.createElement('div');
@@ -585,4 +585,62 @@ document.addEventListener('DOMContentLoaded', function() {
             acceptShareModal.classList.remove('open');
         });
     }
+    
+    // Listen for folder sync progress
+    socket.on('folder_sync_progress', function(data) {
+        console.log('Folder sync progress:', data);
+        const folderContainer = document.getElementById('folders-container');
+        if (!folderContainer) return;
+        
+        // Find the folder box for this folder
+        const folderBox = document.querySelector(`.folder-box[data-folder-id="${data.folder_id}"]`);
+        if (folderBox) {
+            // Update the status display
+            let statusElement = folderBox.querySelector('.sync-status');
+            if (!statusElement) {
+                statusElement = document.createElement('div');
+                statusElement.className = 'sync-status';
+                folderBox.appendChild(statusElement);
+            }
+            
+            // Show the latest activity
+            statusElement.textContent = `Syncing: ${data.is_dir ? 'Directory' : 'File'} ${data.path}`;
+            
+            // Add a visual indicator
+            folderBox.classList.add('syncing');
+            
+            // Remove the indicator after 5 seconds unless updated again
+            setTimeout(() => {
+                if (folderBox.querySelector('.sync-status').textContent === statusElement.textContent) {
+                    folderBox.classList.remove('syncing');
+                    // Check if sync is complete
+                    socket.emit('check_sync_status', { folder_id: data.folder_id });
+                }
+            }, 5000);
+        }
+    });
+
+    socket.on('sync_status', function(data) {
+        console.log('Sync status update:', data);
+        if (data.status === 'complete') {
+            const folderBox = document.querySelector(`.folder-box[data-folder-id="${data.folder_id}"]`);
+            if (folderBox) {
+                folderBox.classList.remove('syncing');
+                folderBox.classList.add('sync-complete');
+                
+                const statusElement = folderBox.querySelector('.sync-status');
+                if (statusElement) {
+                    statusElement.textContent = `Sync complete: ${data.file_count} files`;
+                    
+                    // Hide the status after 3 seconds
+                    setTimeout(() => {
+                        statusElement.style.opacity = '0';
+                        setTimeout(() => {
+                            statusElement.remove();
+                        }, 500);
+                    }, 3000);
+                }
+            }
+        }
+    });
 });
