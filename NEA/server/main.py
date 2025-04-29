@@ -975,12 +975,16 @@ class SyncEvent(Incoming):
         logging.info(f"[+] Folder ID: {folder_id}")
         event_type = self.metadata.get('event_type')
         logging.info(f"[+] Event type: {event_type}")
+        is_dir = self.metadata.get('is_dir')
+        logging.info(f"[+] Is directory: {is_dir}")
         root_folder = session.query(Folder).filter_by(folder_id=folder_id).first()
         logging.info(f"[+] Folder we got from table: {root_folder}")
-        formatted_path = self.format_path()
+        formatted_path = self.format_path() # /home/kyoto/Documents/Shared/Wallpaper becomes /home/pi/02/123123/Documents/Shared/Wallpaper/Nature
+            
         try:
             # Get the relative path from folder.path to formatted_path
-            src_path = os.path.relpath(formatted_path, root_folder.path)
+            src_path = os.path.relpath(formatted_path, root_folder.path) # root_folder.path gives /home/pi/02/123123/Documents/Shared/Wallpaper
+            # so you end up getting /Nature
             logging.info(f"Calculated relative path: {src_path}")
         except ValueError as e:
             # Handle case where paths are on different drives (Windows)
@@ -992,7 +996,7 @@ class SyncEvent(Incoming):
             src_path = user.path + '/' + src_path
             new_metadata = self.metadata
             new_metadata['src_path'] = src_path
-            logging.info(f"[+] Sending event to {user.mac_addr} to src_path: {src_path}")
+            logging.info(f"[+] Sending event {event_type} to {user.mac_addr} to src_path: {src_path}")
             # just forward that metadata to client.
             ip_addr = ip_map["users"][user.username][user.mac_addr]
             try: 
@@ -1001,7 +1005,13 @@ class SyncEvent(Incoming):
                 outgoingsock.connect((ip_addr, 6969))
                 echo_event = Outgoing(new_metadata)
                 echo_event.OG_send_packet(outgoingsock, new_metadata)
-                logging.info(f"[+] Event sent to {user.mac_addr} at {ip_addr}")
+                logging.info(f"[+] metadata packet sent to {user.mac_addr} at {ip_addr}")
+
+                if event_type == 'created' and is_dir == False:
+                    echo_event.create_packet(formatted_path)
+                    for packet in self.packets:
+                        self.send_packet(outgoingsock, packet)
+
                 outgoingsock.close()
                 pass
             
@@ -1015,9 +1025,6 @@ class SyncEvent(Incoming):
                 sync_list[user.username][user.mac_addr].append(new_metadata)
                 
                 self.persist_sync_list()
-
-            
-
 
 class CreateDir(SyncEvent):
 
@@ -1217,6 +1224,8 @@ class Delete(SyncEvent):
                 logging.info(f"[-] File entry for '{formatted_path}' deleted from database.")
             else:
                 logging.error(f"[-] No file entry found for '{formatted_path}' in database.")
+        
+        self.echo() # 🔊
 
 class Move(SyncEvent):
     def format_dest_path(self) -> str:
@@ -1298,6 +1307,8 @@ class Move(SyncEvent):
                     
             except Exception as e:
                 logging.error(f"[!] Error moving directory: {e}")
+        
+        self.echo() # 🔊
 
 class Modify(SyncEvent):
     def apply(self):
@@ -1514,19 +1525,18 @@ class Outgoing(Sync):
         self.is_dir = event['is_dir']
         self.origin = event['origin']
         self.event_type = event['event_type']
+        self.folder_id = event.get('folder_id')
 
         # Additional properties based on event type
         if not self.is_dir and self.event_type == 'created':
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
             self.hash = event.get('hash') or file_to_hash.get(self.src_path)
-            self.folder_id = event['folder_id']
             
         elif not self.is_dir and self.event_type == 'modified':
             self.blocks = self.create_blocklist()
             self.block_count = len(self.blocks)
             self.hash = event.get('hash') or file_to_hash.get(self.src_path)
-            self.folder_id = event['folder_id']
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
             
@@ -1572,11 +1582,11 @@ class Outgoing(Sync):
         '''
         block_list looks like {'hash1'={},'hash2'={},'hash3'={}}
         '''
-    def create_packet(self) -> list:
+    def create_packet(self, formatted_path=None) -> list: # If formatted_path is None, use self.src_path
         # Use dynamic block size based on file size
         block_size = self.get_blocksize()
         
-        with open(self.src_path, 'rb') as f:
+        with open(formatted_path or self.src_path, 'rb') as f:
             file_data = f.read()
 
         blocks = [file_data[i:i + block_size] for i in range(0, len(file_data), block_size)]

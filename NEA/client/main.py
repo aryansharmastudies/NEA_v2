@@ -1545,14 +1545,12 @@ class Outgoing(Sync):
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
             self.hash = file_to_hash.get(self.src_path)
-            self.folder_id = event['folder_id']  # Updated to use 'folder_id' from event
         
         elif not self.is_dir and self.event_type == 'modified':
             logging.info(f"Creating block list for modified file")
             self.blocks = self.create_blocklist() # {'hash1'={},'hash2'={},'hash3'={}} 
             self.block_count = len(self.blocks)
             self.hash = file_to_hash.get(self.src_path) or event.get('hash')
-            self.folder_id = event['folder_id']
             self.packets = self.create_packet()
             self.packet_count = len(self.packets)
             with app.app_context():
@@ -2100,12 +2098,6 @@ class CreateFile(SyncEvent):
             f.write(file_data)
         logging.info(f"[+] File '{formatted_path}' received successfully.")
 
-        self.handle_global_blocklist('add', blocklist, src_path=formatted_path) # 🌍 Adding to global_blocklist
-
-        blocklist_serialised = {}
-        for hash, data in blocklist.items():
-            blocklist_serialised[hash] = base64.b64encode(json.dumps(data).encode()).decode()
-
         folder_id = self.metadata['folder_id']
         hash = self.metadata['hash']
         size = self.metadata['size']
@@ -2124,8 +2116,7 @@ class CreateFile(SyncEvent):
             path=formatted_path,
             size=size,
             hash=hash,
-            version="v1.0",
-            block_list=json.dumps(blocklist_serialised) # creates initial block_list
+            version="v1.0"
         )
         
         session.add(file_entry)
