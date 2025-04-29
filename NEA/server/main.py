@@ -545,6 +545,29 @@ def accept_share(client_data):
         response = json.dumps({'status': '400', 'status_msg': f'Error processing request: {str(e)}'})
         return response
 
+    # TODO send folder!
+
+    # client2 is ONLINE
+    # folder path to traverse
+    # username, mac_address to send it to.
+    '''
+        self.src_path = event['src_path']
+        self.is_dir = event['is_dir']
+        self.origin = event['origin']
+        self.event_type = event['event_type']
+        self.folder_id = event.get('folder_id')
+    '''
+    event = {
+        'folder_id' : folder_id,
+        'src_path' : session.query(Folder).filter_by(folder_id=folder_id).first().path,
+        'is_dir' : False,
+        'event_type' : 'Initialise',
+        'origin' : 'accept_share'
+    }
+    initialise_folder = Outgoing(event)
+    initialise_folder.initialise_folder_traversal()
+    
+
 # def initiate_folder_sync(folder, folder_id, client_mac, client_ip, client_directory):
 #     """Traverse the folder and queue sync events for all files and directories."""
 #     try:
@@ -1003,7 +1026,7 @@ class SyncEvent(Incoming):
                 # TODO bind to client
                 outgoingsock = socket.socket()
                 outgoingsock.connect((ip_addr, 6969))
-                echo_event = Outgoing(new_metadata)
+                echo_event = Outgoing(new_metadata) # OUTGOING OBJECT
                 echo_event.OG_send_packet(outgoingsock, new_metadata)
                 logging.info(f"[+] metadata packet sent to {user.mac_addr} at {ip_addr}")
 
@@ -1656,6 +1679,69 @@ class Outgoing(Sync):
 
         if not sent:
             logging.error(f"❌ Packet {packet['index']} failed after 10 retries, giving up.")
+
+    def initialise_folder_traversal(self):
+        stack = [self.path]
+        directories = []
+        files = []
+
+        while stack:
+            current = stack.pop()
+            logging.info(f'📂 Traversing: {current}')
+            directories.append(current)
+
+            event = {
+                "id": self.event_id,
+                "event_type": self.event_type,
+                "src_path": current,
+                "is_dir": True,
+                "origin": "mkdir"
+                }
+            sync_queue.put(event)
+
+            try:
+                children = os.listdir(current)
+            except PermissionError:
+                logging.error(f'❌ Permission denied: {current}')
+                continue
+
+            for item in reversed(children):  # reversed to keep the order of traversal consistent.
+                full_path = os.path.join(current, item)
+                if os.path.isdir(full_path):
+                    stack.append(full_path)
+                else:
+                    logging.info(f'📖 Found file: {full_path}')
+                    files.append(full_path)
+                    event = {
+                        "id": self.event_id,
+                        "event_type": self.event_type,
+                        "src_path": full_path,
+                        "is_dir": False,
+                        "origin": "mkdir",
+                        "folder_id": self.folder_id,
+                        "hash": self._find_hash(full_path),
+                        "size": os.path.getsize(full_path)
+                        }
+                    sync_queue.put(event)
+
+                    new_file = File(folder_id=self.folder_id, path=full_path, hash=event['hash'], size=event['size'])
+                    try:
+                        db.session.add(new_file)
+                        db.session.commit()
+                        logging.info(f'File {full_path} added to database with version v1.0')
+                    except Exception as e:
+                        db.session.rollback()  # just used to rollback in case of errors.
+                        logging.error(f'❌ Failed to add {full_path} to database: {e}')
+        
+        logging.info('✅ Traversal Complete')
+        logging.info(f'🗃️ Directories: {directories}')
+        logging.info(f'📑 Files: {files}')
+
+        all_events = list(sync_queue.queue)
+        with open("sync_queue.json", "w") as f:
+            json.dump(all_events, f, indent=2)
+        
+        logging.info(f'Sync queue saved to sync_queue.json')
 
     def start_server(self, address) -> bool:
         """Send event data to a client."""
