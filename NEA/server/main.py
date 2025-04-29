@@ -517,29 +517,6 @@ def accept_share(client_data):
                 logging.error(f"Error adding share entry: {e}")
                 response = json.dumps({'status': '500', 'status_msg': f'Database error: {str(e)}'})
         
-        # # Find the original folder to initiate sync
-        # original_folder = session.query(Folder).filter_by(folder_id=folder_id).first()
-        # if original_folder:
-        #     # Get client IP address
-        #     client_ip = None
-        #     if username and username in ip_map['users'] and str(mac_addr) in ip_map['users'][username]:
-        #         client_ip = ip_map['users'][username][str(mac_addr)]
-                
-        #         # Start a thread to initiate folder sync
-        #         sync_thread = threading.Thread(
-        #             target=initiate_folder_sync,
-        #             args=(original_folder, folder_id, mac_addr, client_ip, directory),
-        #             daemon=True
-        #         )
-        #         sync_thread.start()
-        #         logging.info(f"Started folder sync thread for {folder_id} to client {mac_addr}")
-        #     else:
-        #         logging.error(f"Could not find IP address for client {mac_addr}")
-        # else:
-        #     logging.error(f"Could not find original folder with ID {folder_id}")
-            
-        # return response
-        
     except Exception as e:
         logging.error(f"Error processing share acceptance: {e}")
         response = json.dumps({'status': '400', 'status_msg': f'Error processing request: {str(e)}'})
@@ -557,119 +534,21 @@ def accept_share(client_data):
         self.event_type = event['event_type']
         self.folder_id = event.get('folder_id')
     '''
+
+    root_folder = session.query(Folder).filter_by(folder_id=folder_id).first()
+    root_folder_path = root_folder.path
     event = {
         'folder_id' : folder_id,
-        'src_path' : session.query(Folder).filter_by(folder_id=folder_id).first().path,
+        'src_path' : root_folder_path,
         'is_dir' : False,
         'event_type' : 'Initialise',
         'origin' : 'accept_share'
     }
-    initialise_folder = Outgoing(event)
-    initialise_folder.initialise_folder_traversal()
-    
 
-# def initiate_folder_sync(folder, folder_id, client_mac, client_ip, client_directory):
-#     """Traverse the folder and queue sync events for all files and directories."""
-#     try:
-#         logging.info(f"Initiating folder sync for {folder.path} to client {client_mac}")
-        
-#         # Use a queue to track directories to process
-#         dirs_to_process = [folder.path]
-#         all_sync_events = []
-        
-#         # Generate a unique event ID for this sync
-#         sync_event_id = generate_event_id()
-        
-#         # First, create the root directory event
-#         root_event = {
-#             "id": sync_event_id,
-#             "event_type": "created",
-#             "src_path": folder.path,
-#             "is_dir": True,
-#             "origin": "folder_sync",
-#             "folder_id": folder_id,
-#             "target_recipient": {
-#                 'user': client_mac,
-#                 'mac_addr': client_mac,
-#                 'ip': client_ip,
-#                 'folder_id': folder_id
-#             }
-#         }
-#         sync_queue.put(root_event)
-#         all_sync_events.append(root_event)
-        
-#         # Process all directories and files
-#         while dirs_to_process:
-#             current_dir = dirs_to_process.pop(0)
-            
-#             for item in os.listdir(current_dir):
-#                 full_path = os.path.join(current_dir, item)
-                
-#                 # Skip hidden files/directories
-#                 if item.startswith('.'):
-#                     continue
-                    
-#                 is_dir = os.path.isdir(full_path)
-                
-#                 # Create sync event for this item
-#                 if is_dir:
-#                     # Queue this directory to process its contents
-#                     dirs_to_process.append(full_path)
-                    
-#                     # Create directory event
-#                     dir_event = {
-#                         "id": sync_event_id,
-#                         "event_type": "created",
-#                         "src_path": full_path,
-#                         "is_dir": True,
-#                         "origin": "folder_sync",
-#                         "folder_id": folder_id,
-#                         "target_recipient": {
-#                             'user': client_mac,
-#                             'mac_addr': client_mac,
-#                             'ip': client_ip,
-#                             'folder_id': folder_id
-#                         }
-#                     }
-#                     sync_queue.put(dir_event)
-#                     all_sync_events.append(dir_event)
-#                 else:
-#                     # Get file information
-#                     file_size = os.path.getsize(full_path)
-#                     file_hash = calculate_file_hash(full_path)
-                    
-#                     # Create file event
-#                     file_event = {
-#                         "id": sync_event_id,
-#                         "event_type": "created",
-#                         "src_path": full_path,
-#                         "is_dir": False,
-#                         "origin": "folder_sync",
-#                         "folder_id": folder_id,
-#                         "hash": file_hash,
-#                         "size": file_size,
-#                         "target_recipient": {
-#                             'user': client_mac,
-#                             'mac_addr': client_mac,
-#                             'ip': client_ip,
-#                             'folder_id': folder_id
-#                         }
-#                     }
-#                     sync_queue.put(file_event)
-#                     all_sync_events.append(file_event)
-        
-#         # Make sure sync is active
-#         if not sync_active.is_set():
-#             sync_active.set()
-            
-#         logging.info(f"Queued {len(all_sync_events)} sync events for folder {folder_id}")
-        
-#         # Update the sync queue file
-#         with open("sync_queue.json", "w") as f:
-#             json.dump(list(sync_queue.queue), f, indent=2)
-            
-#     except Exception as e:
-#         logging.error(f"Error initiating folder sync: {e}", exc_info=True)
+    outgoingsock = socket.socket() 
+    outgoingsock.connect((ip_map["users"][username][mac_addr], 6969))
+    copy = Outgoing(event)
+    copy.initialise_copy(outgoingsock, directory, root_folder_path, folder_id)
 
 def calculate_file_hash(file_path):
     """Calculate MD5 hash of a file."""
@@ -1680,8 +1559,9 @@ class Outgoing(Sync):
         if not sent:
             logging.error(f"❌ Packet {packet['index']} failed after 10 retries, giving up.")
 
-    def initialise_folder_traversal(self):
-        stack = [self.path]
+    def initialise_copy(self, outgoingsock, user_path, root_folder_path, folder_id):
+
+        stack = [self.src_path]
         directories = []
         files = []
 
@@ -1690,14 +1570,17 @@ class Outgoing(Sync):
             logging.info(f'📂 Traversing: {current}')
             directories.append(current)
 
-            event = {
-                "id": self.event_id,
-                "event_type": self.event_type,
-                "src_path": current,
-                "is_dir": True,
-                "origin": "mkdir"
-                }
-            sync_queue.put(event)
+            src_path = user_path + '/' + os.path.relpath(current, root_folder_path)
+
+            metadata = {
+            "index":      0,
+            "event_type": 'created',
+            "src_path": src_path,
+            "is_dir": True,
+            "origin": 'initialise_copy',
+            }
+
+            self.send_packet(outgoingsock, metadata)
 
             try:
                 children = os.listdir(current)
@@ -1710,38 +1593,33 @@ class Outgoing(Sync):
                 if os.path.isdir(full_path):
                     stack.append(full_path)
                 else:
-                    logging.info(f'📖 Found file: {full_path}')
+                    
                     files.append(full_path)
+                    # TODO send the files to be made
+
+                    src_path = user_path + '/' + os.path.relpath(full_path, root_folder_path)
+
+                    logging.info(f'📖 Found file: {full_path} i.e. for User: {src_path}')
                     event = {
-                        "id": self.event_id,
-                        "event_type": self.event_type,
-                        "src_path": full_path,
+                        "event_type": "created",
+                        "src_path": src_path,
                         "is_dir": False,
                         "origin": "mkdir",
-                        "folder_id": self.folder_id,
-                        "hash": self._find_hash(full_path),
-                        "size": os.path.getsize(full_path)
-                        }
-                    sync_queue.put(event)
+                        "folder_id":folder_id
+                    }
+                    
+                    send_file = Outgoing(event)
+                    if hasattr(send_file, 'packets') and send_file.packets:
+                        logging.info(f"[+] Sending {send_file.packet_count} data packets")
+                        for packet in send_file.packets:
+                            self.send_packet(outgoingsock, packet)
 
-                    new_file = File(folder_id=self.folder_id, path=full_path, hash=event['hash'], size=event['size'])
-                    try:
-                        db.session.add(new_file)
-                        db.session.commit()
-                        logging.info(f'File {full_path} added to database with version v1.0')
-                    except Exception as e:
-                        db.session.rollback()  # just used to rollback in case of errors.
-                        logging.error(f'❌ Failed to add {full_path} to database: {e}')
-        
+                        logging.info(f"[+] Successfully sent {self.event_type} event data")
+                    del send_file
+                    
         logging.info('✅ Traversal Complete')
         logging.info(f'🗃️ Directories: {directories}')
         logging.info(f'📑 Files: {files}')
-
-        all_events = list(sync_queue.queue)
-        with open("sync_queue.json", "w") as f:
-            json.dump(all_events, f, indent=2)
-        
-        logging.info(f'Sync queue saved to sync_queue.json')
 
     def start_server(self, address) -> bool:
         """Send event data to a client."""
@@ -2151,3 +2029,4 @@ Reuses blocks across files when possible
 This implementation achieves significant bandwidth savings for modified files by eliminating the need to retransmit blocks that haven't changed or are available elsewhere in the system.
 
 '''
+

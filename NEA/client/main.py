@@ -1763,11 +1763,6 @@ class Incoming(Sync):
         logging.info(f"[+] Metadata received: {metadata}")
         event_type = metadata['event_type']
         origin = metadata.get('origin', '')
-        
-        # Special handling for folder_sync events
-        if origin == 'folder_sync':
-            self.folderSyncInProgress = True
-            logging.info(f"[+] Processing folder sync event")
             
         if metadata['is_dir'] and event_type == 'created':
             logging.info(f"[+] Initiating CreateDir.apply()")
@@ -2049,23 +2044,6 @@ class SyncEvent(Incoming):
         for mac_addr in ip_map["users"][user]:
             if mac_addr == str(mac_addr):
                 return mac_addr
-            
-    def format_path(self) -> str:
-        user = self.metadata['user']
-        user_id = session.query(User).filter_by(name=user).first().user_id
-        mac_addr = self._get_mac_addr(user)
-        raw_path = self.metadata['src_path']
-        logging.info(f"[+] Formatting path: {raw_path}")
-        src_path = os.path.normpath(raw_path).replace('\\', '/')
-        src_path = src_path.split('/')
-        src_path = src_path[3:]
-        src_path.insert(0, str(mac_addr))
-        src_path.insert(0, str(user_id))
-        src_path.insert(0, '~')
-        src_path = '/'.join(src_path)       
-        formatted_path = os.path.expanduser(src_path)
-        logging.info(f"[+] Formatted path: {formatted_path}")
-        return formatted_path
     
 class Add_Watchdog(SyncEvent):
     # TODO adds file to watchdog
@@ -2090,13 +2068,12 @@ class CreateFile(SyncEvent):
             file_data += data
             blocklist[hash] = {"offset": offset, "size": len(data)} # data is binary data, hash is checksum
             offset += len(data)
-        
-        formatted_path = self.format_path()
-        os.makedirs(os.path.dirname(formatted_path), exist_ok=True)
-        logging.info(f"[+] Writing file to: {formatted_path}")
-        with open(formatted_path, 'wb') as f:
+
+        os.makedirs(os.path.dirname(self.metadata['src_path']), exist_ok=True)
+        logging.info(f"[+] Writing file to: {self.metadata['src_path']}")
+        with open(self.metadata['src_path'], 'wb') as f:  # Updated to use self.metadata['src_path']
             f.write(file_data)
-        logging.info(f"[+] File '{formatted_path}' received successfully.")
+        logging.info(f"[+] File '{self.metadata['src_path']}' received successfully.")  # Updated to use self.metadata['src_path']
 
         folder_id = self.metadata['folder_id']
         hash = self.metadata['hash']
@@ -2105,15 +2082,15 @@ class CreateFile(SyncEvent):
         # Verify that the received file's hash matches the metadata hash
         calculated_hash = hashlib.md5(file_data).hexdigest()
         if calculated_hash != hash:
-            logging.error(f"[!] Hash mismatch for file {formatted_path}. Expected: {hash}, Got: {calculated_hash}")
+            logging.error(f"[!] Hash mismatch for file {self.metadata['src_path']}. Expected: {hash}, Got: {calculated_hash}")  # Updated to use self.metadata['src_path']
             # Consider whether to reject the file or mark it as corrupted
         else:
-            logging.info(f"[+] File hash verified for {formatted_path}")
+            logging.info(f"[+] File hash verified for {self.metadata['src_path']}")  # Updated to use self.metadata['src_path']
 
         # Create a new file entry in the database
         file_entry = File(
             folder_id=folder_id,
-            path=formatted_path,
+            path=self.metadata['src_path'],  # Updated to use self.metadata['src_path']
             size=size,
             hash=hash,
             version="v1.0"
@@ -2121,15 +2098,14 @@ class CreateFile(SyncEvent):
         
         session.add(file_entry)
         session.commit()
-        logging.info(f"[+] Added file entry to database: {formatted_path}")
+        logging.info(f"[+] Added file entry to database: {self.metadata['src_path']}")  # Updated to use self.metadata['src_path']
 
 class Delete(SyncEvent):
     def purge_directory(self):
-        formatted_path = self.format_path()
-        logging.info(f"[+] Deleting directory and its contents: {formatted_path}")
+        logging.info(f"[+] Deleting directory and its contents: {self.metadata['src_path']}")
         
         # Use post-order traversal to delete directory contents
-        for root, dirs, files in os.walk(formatted_path, topdown=False):
+        for root, dirs, files in os.walk(self.metadata['src_path'], topdown=False):
             # First delete all files in the current directory
             for file in files:
                 file_path = os.path.join(root, file)
@@ -2151,67 +2127,37 @@ class Delete(SyncEvent):
                 logging.info(f"[-] Deleted directory: {root}")
             except Exception as e:
                 logging.error(f"[!] Error deleting directory {root}: {e}")
-        
-        # Remove folder from database
-        folder_entry = session.query(Folder).filter_by(path=formatted_path).first()
-        if folder_entry:
-            # Remove related share entries
-            share_entries = session.query(Share).filter_by(folder_id=folder_entry.folder_id).all()
-            for share in share_entries:
-                session.delete(share)
-            
-            session.delete(folder_entry)
-            session.commit()
-            logging.info(f"[-] Folder and shares removed from database")
 
     def apply(self):
         # TODO check if file or folder
         if self.metadata['is_dir']:
             self.purge_directory()
             logging.info(f"[-] Directory '{self.metadata['src_path']}' deleted successfully.")
-        else: 
-            formatted_path = self.format_path()
+        else:
             try:
-                os.remove(formatted_path)
-                logging.info(f"[-] File '{formatted_path}' deleted successfully.")
+                os.remove(self.metadata['src_path'])
+                logging.info(f"[-] File '{self.metadata['src_path']}' deleted successfully.")
             except FileNotFoundError:
-                logging.info(f"[-] File '{formatted_path}' already deleted or not found.")
+                logging.info(f"[-] File '{self.metadata['src_path']}' already deleted or not found.")
             except Exception as e:
-                logging.error(f"[-] Error deleting file '{formatted_path}': {e}")
+                logging.error(f"[-] Error deleting file '{self.metadata['src_path']}': {e}")
 
-            file_entry = session.query(File).filter_by(path=formatted_path).first()
+            file_entry = session.query(File).filter_by(path=self.metadata['src_path']).first()
 
             if file_entry:
                 session.delete(file_entry)
                 session.commit()
-                logging.info(f"[-] File entry for '{formatted_path}' deleted from database.")
+                logging.info(f"[-] File entry for '{self.metadata['src_path']}' deleted from database.")
             else:
-                logging.error(f"[-] No file entry found for '{formatted_path}' in database.")
+                logging.error(f"[-] No file entry found for '{self.metadata['src_path']}' in database.")
 
 class Move(SyncEvent):
-    def format_dest_path(self) -> str:
-        """Format the destination path using the same logic as format_path()"""
-        user = self.metadata['user']
-        user_id = session.query(User).filter_by(name=user).first().user_id
-        mac_addr = self._get_mac_addr(user)
-        raw_path = self.metadata['dest_path']
-        logging.info(f"[+] Formatting dest path: {raw_path}")
-        dest_path = os.path.normpath(raw_path).replace('\\', '/')
-        dest_path = dest_path.split('/')
-        dest_path = dest_path[3:]
-        dest_path.insert(0, str(mac_addr))
-        dest_path.insert(0, str(user_id))
-        dest_path.insert(0, '~')
-        dest_path = '/'.join(dest_path)       
-        formatted_path = os.path.expanduser(dest_path)
-        logging.info(f"[+] Formatted dest path: {formatted_path}")
-        return formatted_path
     
     def apply(self):
         
         # Format source and destination paths
-        src_path = self.format_path()
-        dest_path = self.format_dest_path()
+        src_path = self.metadata['src_path']
+        dest_path = self.metadata['dest_path']
         
         logging.info(f"[+] Moving from {src_path} to {dest_path}")
         
