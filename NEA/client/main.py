@@ -817,7 +817,8 @@ class FolderInitializer:
                 "event_type": self.event_type,
                 "src_path": current,
                 "is_dir": True,
-                "origin": "mkdir"
+                "origin": "mkdir",
+                "folder_id": self.folder_id,
                 }
             sync_queue.put(event)
 
@@ -972,6 +973,8 @@ def handle_server_message(json_message, server_socket):
         return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, share_folder=json_message)
         # continue with the rest of code.
 
+        # TODO 🆘 - MAKE SESSION GLOBAL!.
+
 
 def listen_for_messages():
     # Create a socket to listen for incoming messages
@@ -1048,12 +1051,12 @@ class MyEventHandler(FileSystemEventHandler):
         logging.info(f'parent_dir: {parent_dir}')
         
         # Only query the needed columns (folder_id and path)
-        if not hasattr(self, '_cached_folders') or self._cached_folders is None:
-            with app.app_context():
-                self._cached_folders = [(f.folder_id, os.path.abspath(f.path)) 
-                                      for f in Folder.query.with_entities(Folder.folder_id, Folder.path).all()]
-                logging.info(f'Loaded {len(self._cached_folders)} folder candidates with folder_id and path only')
-        
+        # if not hasattr(self, '_cached_folders') or self._cached_folders is None:
+        with app.app_context():
+            self._cached_folders = [(f.folder_id, os.path.abspath(f.path)) 
+                                    for f in Folder.query.with_entities(Folder.folder_id, Folder.path).all()]
+            logging.info(f'Loaded {len(self._cached_folders)} folder candidates with folder_id and path only')
+    
         # Variables to track the best match
         best_folder_id = None
         best_path_length = -1
@@ -1856,6 +1859,7 @@ class Incoming(Sync):
         return data
     
     def receive_valid_packet(self, connection, index):
+        logging.info(f"Receiving packet {index}...")
         """Receive and validate a packet."""
         header = self.recv_exact(connection, self.HEADER_SIZE)
         payload_length = struct.unpack('!I', header)[0]
@@ -1864,6 +1868,7 @@ class Incoming(Sync):
         
         if isinstance(index, str) or index == 0:  # Metadata or special packet
             connection.send(self.RESPONSE_OK)
+            logging.info(f'valid packet {index} received sent ACK')
             return payload
             
         decoded_data = base64.b64decode(payload['data'])
@@ -2096,9 +2101,10 @@ class CreateFile(SyncEvent):
             version="v1.0"
         )
         
-        session.add(file_entry)
-        session.commit()
-        logging.info(f"[+] Added file entry to database: {self.metadata['src_path']}")  # Updated to use self.metadata['src_path']
+        with app.app_context():
+            db.session.add(file_entry)
+            db.session.commit()
+            logging.info(f"[+] Added file entry to database: {self.metadata['src_path']}")  # Updated to use self.metadata['src_path']
 
 class Delete(SyncEvent):
     def purge_directory(self):
@@ -2142,14 +2148,18 @@ class Delete(SyncEvent):
             except Exception as e:
                 logging.error(f"[-] Error deleting file '{self.metadata['src_path']}': {e}")
 
-            file_entry = session.query(File).filter_by(path=self.metadata['src_path']).first()
-
-            if file_entry:
-                session.delete(file_entry)
-                session.commit()
-                logging.info(f"[-] File entry for '{self.metadata['src_path']}' deleted from database.")
-            else:
-                logging.error(f"[-] No file entry found for '{self.metadata['src_path']}' in database.")
+            try:
+                with app.app_context():
+                    file_entry = session.query(File).filter_by(path=self.metadata['src_path']).first()
+                    if file_entry:
+                        session.delete(file_entry)
+                        session.commit()
+                        logging.info(f"[-] File entry for '{self.metadata['src_path']}' deleted from database.")
+                    else:
+                        logging.info(f"[-] No file entry found for '{self.metadata['src_path']}' in database.")
+            except Exception as e:
+                session.rollback()
+                logging.error(f"[-] Database error while deleting file entry: {e}")
 
 class Move(SyncEvent):
     
@@ -2172,13 +2182,15 @@ class Move(SyncEvent):
                 logging.info(f"[+] File moved from {src_path} to {dest_path}")
                 
                 # Update database entry
-                file_entry = session.query(File).filter_by(path=src_path).first()
-                if file_entry:
-                    file_entry.path = dest_path
-                    session.commit()
-                    logging.info(f"[+] Database entry updated for file: {dest_path}")
-                else:
-                    logging.warning(f"[!] No database entry found for file: {src_path}")
+                with app.app_context():
+                    # Check if the file entry exists in the database
+                    file_entry = session.query(File).filter_by(path=src_path).first()
+                    if file_entry:
+                        file_entry.path = dest_path
+                        session.commit()
+                        logging.info(f"[+] Database entry updated for file: {dest_path}")
+                    else:
+                        logging.warning(f"[!] No database entry found for file: {src_path}")
             except Exception as e:
                 logging.error(f"[!] Error moving file: {e}")
         else:

@@ -1,7 +1,42 @@
 {
   "/home/osaka/Documents/Shared/Initial-D": {
-    "id": "Y8pKlmL5IC",
+    "id": "sbz2L21Mky",
     "label": "Initial-D",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Documents/SharedVagabond": {
+    "id": "lvGe8cFzFK",
+    "label": "vagabond",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Documents/Shared/Vagabond": {
+    "id": "yI3clp4Ec4",
+    "label": "Real_Vagabond",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Documents/Shared/Python": {
+    "id": "NpY8V3uN4d",
+    "label": "Python",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Documents/Shared/Rebirth": {
+    "id": "uaOtxFjTbT",
+    "label": "Rebirth",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Documents/Shared/PLZ": {
+    "id": "EeEfFNZeGW",
+    "label": "PLZ",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"

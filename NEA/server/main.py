@@ -546,7 +546,7 @@ def accept_share(client_data):
     }
 
     outgoingsock = socket.socket() 
-    outgoingsock.connect((ip_map["users"][username][mac_addr], 6969))
+    outgoingsock.connect((ip_map["users"][username][str(mac_addr)], 6969))
     copy = Outgoing(event)
     copy.initialise_copy(outgoingsock, directory, root_folder_path, folder_id)
 
@@ -855,11 +855,11 @@ class SyncEvent(Incoming):
             if mac_addr == str(mac_addr):
                 return mac_addr
             
-    def format_path(self) -> str:
+    def format_path(self, dest_path=None) -> str:
         user = self.metadata['user']
         user_id = session.query(User).filter_by(name=user).first().user_id
         mac_addr = self._get_mac_addr(user)
-        raw_path = self.metadata['src_path']
+        raw_path = dest_path or self.metadata['src_path']
         logging.info(f"[+] Formatting path: {raw_path}")
         src_path = os.path.normpath(raw_path).replace('\\', '/')
         src_path = src_path.split('/')
@@ -869,7 +869,7 @@ class SyncEvent(Incoming):
         src_path.insert(0, '~')
         src_path = '/'.join(src_path)       
         formatted_path = os.path.expanduser(src_path)
-        logging.info(f"[+] Formatted path: {formatted_path}")
+        # logging.info(f"[+] Formatted path: {formatted_path}")
         return formatted_path
     
     def echo(self): # sends event/data to client2 OR if client2 offline, adds to sync_queue 🔊🔊🔊
@@ -881,38 +881,60 @@ class SyncEvent(Incoming):
         logging.info(f"[+] Is directory: {is_dir}")
         root_folder = session.query(Folder).filter_by(folder_id=folder_id).first()
         logging.info(f"[+] Folder we got from table: {root_folder}")
-        formatted_path = self.format_path() # /home/kyoto/Documents/Shared/Wallpaper becomes /home/pi/02/123123/Documents/Shared/Wallpaper/Nature
-            
+        formatted_src_path = self.format_path() # /home/kyoto/Documents/Shared/Wallpaper/Nature becomes /home/pi/02/123123/Documents/Shared/Wallpaper/Nature
+        logging.info(f"[+] Formatted path: {formatted_src_path}")
+        if event_type == 'moved':
+            formatted_dest_path = self.format_path(self.metadata['dest_path'])
+            logging.info(f"[+] Formatted Destination path: {formatted_dest_path}")
+            try: 
+                dest_path = os.path.relpath(formatted_dest_path, root_folder.path) # root_folder.path gives /home/pi/02/123123/Documents/Shared/Wallpaper
+                logging.info(f"Calculated relative dest path: {dest_path}")
+
+            except ValueError as e:
+                # Handle case where paths are on different drives (Windows)
+                logging.error(f"Error calculating relative path: {e}")
+                src_path = formatted_src_path  # Fallback to using the full path
         try:
-            # Get the relative path from folder.path to formatted_path
-            src_path = os.path.relpath(formatted_path, root_folder.path) # root_folder.path gives /home/pi/02/123123/Documents/Shared/Wallpaper
+            # Get the relative path from folder.path to formatted_src_path
+            src_path = os.path.relpath(formatted_src_path, root_folder.path) # root_folder.path gives /home/pi/02/123123/Documents/Shared/Wallpaper
             # so you end up getting /Nature
-            logging.info(f"Calculated relative path: {src_path}")
+            logging.info(f"Calculated relative src path: {src_path}")
         except ValueError as e:
             # Handle case where paths are on different drives (Windows)
             logging.error(f"Error calculating relative path: {e}")
-            src_path = formatted_path  # Fallback to using the full path
+            src_path = formatted_src_path  # Fallback to using the full path
 
         shared_users = session.query(Share).filter_by(folder_id=folder_id).all()
         for user in shared_users:
             src_path = user.path + '/' + src_path
             new_metadata = self.metadata
             new_metadata['src_path'] = src_path
+            new_metadata['local_path'] = formatted_src_path
+            logging.info(f"[+] Users src path: {src_path}")
+
+            if event_type == 'moved':
+                dest_path = user.path + '/' + dest_path
+                new_metadata['dest_path'] = dest_path
+                logging.info(f"[+] Users dest path: {dest_path}")
+
             logging.info(f"[+] Sending event {event_type} to {user.mac_addr} to src_path: {src_path}")
             # just forward that metadata to client.
             ip_addr = ip_map["users"][user.username][user.mac_addr]
+            logging.info(f"[+] IP address of {user.username}: {ip_addr}")
             try: 
                 # TODO bind to client
                 outgoingsock = socket.socket()
                 outgoingsock.connect((ip_addr, 6969))
+                logging.info(f"[+] Connected to {user.mac_addr} at {ip_addr}")
                 echo_event = Outgoing(new_metadata) # OUTGOING OBJECT
+                logging.info(f"[+] Created new Outgoing object - echo_event")
                 echo_event.OG_send_packet(outgoingsock, new_metadata)
                 logging.info(f"[+] metadata packet sent to {user.mac_addr} at {ip_addr}")
 
                 if event_type == 'created' and is_dir == False:
-                    echo_event.create_packet(formatted_path)
-                    for packet in self.packets:
-                        self.send_packet(outgoingsock, packet)
+                    # echo_event.create_packet(formatted_path)
+                    for packet in echo_event.packets:
+                        echo_event.send_packet(outgoingsock, packet)
 
                 outgoingsock.close()
                 pass
@@ -1061,6 +1083,8 @@ class CreateFile(SyncEvent):
         session.add(file_entry)
         session.commit()
         logging.info(f"[+] Added file entry to database: {formatted_path}")
+
+        self.echo() # 🔊
 
 class Delete(SyncEvent):
     def purge_directory(self):
@@ -1428,19 +1452,23 @@ class Outgoing(Sync):
         self.origin = event['origin']
         self.event_type = event['event_type']
         self.folder_id = event.get('folder_id')
-
+        logging.info(f"Created base attributes of Outgoing object")
         # Additional properties based on event type
         if not self.is_dir and self.event_type == 'created':
-            self.packets = self.create_packet()
+            logging.info(f"Creating packet for file creation")
+            self.local_path = event['local_path'] or None
+            self.packets = self.create_packet(self.local_path)
             self.packet_count = len(self.packets)
             self.hash = event.get('hash') or file_to_hash.get(self.src_path)
-            
+            logging.info(f"added attributes: {self.packets}, {self.packet_count}, {self.hash}, {self.local_path}")
+
         elif not self.is_dir and self.event_type == 'modified':
             self.blocks = self.create_blocklist()
             self.block_count = len(self.blocks)
             self.hash = event.get('hash') or file_to_hash.get(self.src_path)
-            self.packets = self.create_packet()
+            self.packets = self.create_packet(self.local_path)
             self.packet_count = len(self.packets)
+            logging.info(f"added attributes: {self.blocks}, {self.block_count}, {self.hash}, {self.packets}, {self.packet_count}")
             
             # Get file version from database
             file = session.query(File).filter_by(path=self.src_path).first()
@@ -1484,7 +1512,33 @@ class Outgoing(Sync):
         '''
         block_list looks like {'hash1'={},'hash2'={},'hash3'={}}
         '''
-    def create_packet(self, formatted_path=None) -> list: # If formatted_path is None, use self.src_path
+    def get_blocksize(self) -> int:
+        """Determine block size based on file size."""
+        logging.info(f"[+] Getting block size for: {self.local_path}")
+        try:
+            file_size = os.path.getsize(self.local_path)
+            
+            # Convert to MiB for easier comparison
+            file_size_mib = file_size / (1024 * 1024)
+            
+            if file_size_mib <= 1:
+                return 128 * 1024  # 128 KiB
+            elif file_size_mib <= 10:
+                return 512 * 1024  # 512 KiB
+            elif file_size_mib <= 100:
+                return 1024 * 1024  # 1 MiB
+            elif file_size_mib <= 500:
+                return 4 * 1024 * 1024  # 4 MiB
+            else:
+                return 8 * 1024 * 1024  # 8 MiB
+        except FileNotFoundError:
+            logging.error(f"File not found: {self.local_path}")
+            return 128 * 1024  # Default to smallest block size if file not found
+        except Exception as e:
+            logging.error(f"Error getting file size: {e}")
+            return 128 * 1024  # Default to smallest block size on error
+
+    def create_packet(self, formatted_path) -> list: # If formatted_path is None, use self.src_path
         # Use dynamic block size based on file size
         block_size = self.get_blocksize()
         
@@ -1502,6 +1556,7 @@ class Outgoing(Sync):
         ]
 
     def send_packet(self, outgoingsock: socket.socket, packet: dict) -> None:
+        logging.info(f"[+] Sending packet {packet.get('index', 'metadata')} to {self.src_path}")
         """Send a packet with retry logic."""
         payload = json.dumps(packet).encode('utf-8')
         header = struct.pack('!I', len(payload))
@@ -1580,7 +1635,7 @@ class Outgoing(Sync):
             "origin": 'initialise_copy',
             }
 
-            self.send_packet(outgoingsock, metadata)
+            self.OG_send_packet(outgoingsock, metadata)
 
             try:
                 children = os.listdir(current)
@@ -1605,14 +1660,15 @@ class Outgoing(Sync):
                         "src_path": src_path,
                         "is_dir": False,
                         "origin": "mkdir",
-                        "folder_id":folder_id
+                        "folder_id":folder_id,
+                        "local_path":full_path
                     }
                     
                     send_file = Outgoing(event)
                     if hasattr(send_file, 'packets') and send_file.packets:
                         logging.info(f"[+] Sending {send_file.packet_count} data packets")
                         for packet in send_file.packets:
-                            self.send_packet(outgoingsock, packet)
+                            self.OG_send_packet(outgoingsock, packet)
 
                         logging.info(f"[+] Successfully sent {self.event_type} event data")
                     del send_file
