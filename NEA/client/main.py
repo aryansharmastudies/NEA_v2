@@ -250,6 +250,14 @@ def handle_sync_status(data):
         logging.error(f"Error checking sync status: {e}", exc_info=True)
         emit('sync_status', {'status': 'error', 'message': str(e), 'folder_id': folder_id})
 
+# @socketio.on('connect')
+# def handle_connect():
+#     global active_session
+#     active_session = {}
+#     for key, value in session.items():
+#         active_session[key] = value
+#     logging.info(f'✅ active_session set: {active_session}')
+
 ########## WEBSITE ##############################
 @app.route('/pair', methods=['POST','GET'])
 def pair():
@@ -432,6 +440,12 @@ def dashboard():
             return jsonify({"error": "Unknown action type"}), 400
 
     elif 'server_name' in session and 'user' in session: # if used logs in/registers,
+        
+        global active_session
+        active_session = {}
+        for key, value in session.items():
+            active_session[key] = value
+        logging.info(f'✅ active_session dict: {active_session}')
 
         active_session['user'] = session['user']
         active_session['server_name'] = session['server_name']
@@ -970,7 +984,7 @@ def handle_server_message(json_message, server_socket):
         logging.info(f'sharing folder: {json_message}')
         # TODO 🆘 toggle the modal to popup.
         random_folder_id = get_random_id()
-        return render_template('dashboard.html', server_name=session['server_name'], user=session['user'], random_folder_id=random_folder_id, share_folder=json_message)
+        return render_template('dashboard.html', server_name=active_session['server_name'], user=active_session['user'], random_folder_id=random_folder_id, share_folder=json_message)
         # continue with the rest of code.
 
         # TODO 🆘 - MAKE SESSION GLOBAL!.
@@ -1044,6 +1058,7 @@ class MyEventHandler(FileSystemEventHandler):
         self._supressed_dirs: set[str] = set()
         self._debounce_timers = {}  # debounce timers for file modification events
         self.debounce_delay = 1.5  # seconds
+        self._ignored_paths = set()
 
     def _get_parent_folder_id(self, file_path: str) -> str | None:
         # Convert to absolute path to ensure consistent comparisons
@@ -1154,6 +1169,11 @@ class MyEventHandler(FileSystemEventHandler):
             '''
             logging.info(f'⚠️ Ignoring temporary file: {event.src_path}')
             return  # ❌ You should return here to **stop** processing
+
+        if path in self._ignored_paths:
+            logging.debug(f"Ignoring sync-generated event for {path}")
+            self._ignored_paths.remove(path)  # Only suppress once!
+            return
 
         for parent in self._supressed_dirs:
             if path.startswith(parent + os.sep):
@@ -1575,6 +1595,7 @@ class Outgoing(Sync):
             "is_dir":     self.is_dir,
             "origin":     self.origin,
             "folder_id":  self.folder_id,
+            "mac_addr": get_mac(),
         }
         if not self.is_dir and self.event_type == 'created':
             metadata['hash'] = self.hash
@@ -1762,10 +1783,14 @@ class Incoming(Sync):
         self.connection = connection
         
     def receive_metadata(self) -> None:
+
         metadata = self.receive_valid_packet(self.connection, 0)
         logging.info(f"[+] Metadata received: {metadata}")
         event_type = metadata['event_type']
-        origin = metadata.get('origin', '')
+
+        if event_type in ['created', 'deleted', 'modified', 'moved']:
+            # event_handler._supressed_dirs(metadata['src_path'])
+            event_handler._ignored_paths.add(metadata['src_path'])
 
         if metadata['is_dir'] and event_type == 'created':
             logging.info(f"[+] Initiating CreateDir.apply()")
@@ -1782,10 +1807,6 @@ class Incoming(Sync):
         elif event_type == 'moved':
             logging.info(f"[+] Initiating Move.apply()")
             Move(metadata, self.address).apply()
-        
-        elif event_type == 'add_watchdog':
-            logging.info(f"[+] Initiating Add_Watchdog.apply()")
-            Add_Watchdog(metadata, self.address).apply()
         
         elif metadata['event_type'] == 'request':
             src_path = metadata['src_path']
@@ -1920,54 +1941,7 @@ class Incoming(Sync):
             connection.close()
     
 
-    # def receive_metadata(self) -> None:
-    #     metadata = self.receive_valid_packet(self.connection, 0)
-    #     logging.info(f"[+] Metadata received: {metadata}")
-    #     event_type = metadata['event_type']
-    #     # TODO CHECK IF ITS DIRECTORY OR FILE
-        
-    #     if metadata['is_dir'] and event_type == 'created':
-    #         logging.info(f"[+] Initiating CreateDir.apply()")
-    #         CreateDir(metadata, self.address).apply() # ↙️
-            
-    #     elif not metadata['is_dir'] and event_type == 'created': # i.e. a file is created
-    #         logging.info(f"[+] Initiating CreateFile.apply()")
-    #         CreateFile(metadata, self.address, self.connection).apply() # ↙️
-            
-    #     elif event_type == 'deleted':
-    #         logging.info(f"[+] Initiating Delete.apply()")
-    #         Delete(metadata, self.address).apply() # ↙️
-            
-    #     elif event_type == 'moved':
-    #         logging.info(f"[+] Initiating Move.apply()")
-    #         Move(metadata, self.address).apply() # ↙️
 
-        # elif metadata['event_type'] == 'request':
-        #         src_path = metadata['src_path']
-        #         block_offset = metadata.get('block_offset', 0)
-        #         block_size = metadata.get('block_size', 0)
-        #         block_hash = metadata.get('block_hash')
-                
-        #         # Create response event for Outgoing class
-        #         response_event = {
-        #             'event_type': 'block_response',
-        #             'src_path': src_path,
-        #             'is_dir': False,
-        #             'origin': 'response',
-        #             'block_offset': block_offset,
-        #             'block_size': block_size,
-        #             'block_hash': block_hash
-        #         }
-                
-        #         # Read the requested block
-        #         block_data = self.read_block(src_path, block_offset, block_size, block_hash)
-                
-        #         # Send the block data back
-        #         self.send_block_data(self.connection, response_event, block_data)
-        #         logging.info(f"[BLOCK HANDLER] Sent block data for {block_hash[:8]}...")
-                
-        #         # Keep connection open briefly to ensure server receives all data
-        #         time.sleep(0.5)
             
 
     def read_block(self, src_path, offset, size, expected_hash):
@@ -2071,10 +2045,6 @@ class SyncEvent(Incoming):
         for mac_addr in ip_map["users"][user]:
             if mac_addr == str(mac_addr):
                 return mac_addr
-    
-class Add_Watchdog(SyncEvent):
-    # TODO adds file to watchdog
-    pass
 
 class CreateDir(SyncEvent):
     def apply(self):
@@ -2292,11 +2262,11 @@ if __name__ == "__main__":
         logging.info(f'Loaded file_to_hash with {len(file_to_hash)} entries.')
         logging.info(f'{file_to_hash}')
 
-        global active_session
-        active_session = {}
-        for key, value in session.items():
-            active_session[key] = value
-        logging.info(f'active_session dict: {active_session}')
+        # global active_session
+        # active_session = {}
+        # for key, value in session.items():
+        #     active_session[key] = value
+        # logging.info(f'active_session dict: {active_session}')
 
     # Start the Flask server in a separate thread
     flask_thread = threading.Thread(target=run_flask, daemon=True) # 🧵

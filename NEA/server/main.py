@@ -461,7 +461,7 @@ def alert(user, mac_addr): # TODO make it send back any unanswered invites to th
     return alerts
 
 
-def accept_share(client_data):
+def accept_share(client_data, clientsocket):
     try:
         folder_id = client_data.get('folder_id')
         folder_label = client_data.get('folder_label')
@@ -478,8 +478,13 @@ def accept_share(client_data):
             logging.info(f"Share entry already exists for folder_id: {folder_id}, mac_addr: {mac_addr}")
             # Even if share exists, we should still sync the folder
             response = json.dumps({'status': '200', 'status_msg': 'Share already accepted'})
+        
         else:
             # Create a new Share entry
+            response = json.dumps({'status': '201', 'status_msg': 'Share accepted successfully'})
+            clientsocket.send(str(response).encode('utf-8'))
+            logging.info(f"sent response: {json.loads(response)}")
+
             new_share = Share(
                 username=username,
                 folder_id=folder_id,
@@ -520,7 +525,7 @@ def accept_share(client_data):
     except Exception as e:
         logging.error(f"Error processing share acceptance: {e}")
         response = json.dumps({'status': '400', 'status_msg': f'Error processing request: {str(e)}'})
-        return response
+        # return response
 
     # TODO send folder!
 
@@ -536,7 +541,10 @@ def accept_share(client_data):
     '''
 
     root_folder = session.query(Folder).filter_by(folder_id=folder_id).first()
+    logging.info(f'root_folder: {root_folder}')
     root_folder_path = root_folder.path
+    logging.info(f'root_folder_path: {root_folder_path} to be traversed...')
+
     event = {
         'folder_id' : folder_id,
         'src_path' : root_folder_path,
@@ -679,9 +687,9 @@ def handle_client_message(clientsocket, message):
         pass
     
     elif action =='accept_share':
-        response = accept_share(client_data)
+        response = accept_share(client_data, clientsocket)
         logging.info(f'Accepting share: {response}')
-        clientsocket.send(str(response).encode('utf-8'))
+        # clientsocket.send(str(response).encode('utf-8'))
         
     else:
         logging.info('Unknown action!')
@@ -858,7 +866,8 @@ class SyncEvent(Incoming):
     def format_path(self, dest_path=None) -> str:
         user = self.metadata['user']
         user_id = session.query(User).filter_by(name=user).first().user_id
-        mac_addr = self._get_mac_addr(user)
+        # mac_addr = self._get_mac_addr(user)
+        mac_addr = self.metadata['mac_addr']
         raw_path = dest_path or self.metadata['src_path']
         logging.info(f"[+] Formatting path: {raw_path}")
         src_path = os.path.normpath(raw_path).replace('\\', '/')
@@ -1460,7 +1469,7 @@ class Outgoing(Sync):
             self.packets = self.create_packet(self.local_path)
             self.packet_count = len(self.packets)
             self.hash = event.get('hash') or file_to_hash.get(self.src_path)
-            logging.info(f"added attributes: {self.packets}, {self.packet_count}, {self.hash}, {self.local_path}")
+            logging.info(f"added attributes: self.packets(too long to display) packet_count: {self.packet_count}, hash: {self.hash}, local_path: {self.local_path}")
 
         elif not self.is_dir and self.event_type == 'modified':
             self.blocks = self.create_blocklist()
@@ -1665,6 +1674,9 @@ class Outgoing(Sync):
                     }
                     
                     send_file = Outgoing(event)
+
+                    send_file.OG_send_packet(outgoingsock, event)
+
                     if hasattr(send_file, 'packets') and send_file.packets:
                         logging.info(f"[+] Sending {send_file.packet_count} data packets")
                         for packet in send_file.packets:
@@ -1674,17 +1686,17 @@ class Outgoing(Sync):
                     del send_file
                     
         
-        folder = session.query(Share).filter_by(folder_id=folder_id).first()
-        if folder.type == 'sync_bothways':
-            establish_packet = {
-                "event_type" = "establish",
-                "folder_id" = folder_id,
-                "folder_label" = folder_label,
-                "src_path" = user_path + '/' + os.path.relpath(self.src_path, root_folder_path),
-                "size" = folder.size,
-                "type": "sync_bothways"
-            }
-            self.OG_send_packet(outgoingsock, establish_packet)
+        # folder = session.query(Share).filter_by(folder_id=folder_id).first()
+        # if folder.type == 'sync_bothways':
+        #     establish_packet = {
+        #         "event_type": "establish",
+        #         "folder_id": folder_id,
+        #         "folder_label": folder_label,
+        #         "src_path": user_path + '/' + os.path.relpath(self.src_path, root_folder_path),
+        #         "size": folder.size,
+        #         "type": "sync_bothways"
+        #     }
+        #     self.OG_send_packet(outgoingsock, establish_packet)
 
         logging.info('✅ Traversal Complete')
         logging.info(f'🗃️ Directories: {directories}')
