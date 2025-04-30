@@ -548,7 +548,7 @@ def accept_share(client_data):
     outgoingsock = socket.socket() 
     outgoingsock.connect((ip_map["users"][username][str(mac_addr)], 6969))
     copy = Outgoing(event)
-    copy.initialise_copy(outgoingsock, directory, root_folder_path, folder_id)
+    copy.initialise_copy(outgoingsock, directory, root_folder_path, folder_id, folder_label)
 
 def calculate_file_hash(file_path):
     """Calculate MD5 hash of a file."""
@@ -1614,7 +1614,7 @@ class Outgoing(Sync):
         if not sent:
             logging.error(f"❌ Packet {packet['index']} failed after 10 retries, giving up.")
 
-    def initialise_copy(self, outgoingsock, user_path, root_folder_path, folder_id):
+    def initialise_copy(self, outgoingsock, user_path, root_folder_path, folder_id, folder_label):
 
         stack = [self.src_path]
         directories = []
@@ -1673,6 +1673,19 @@ class Outgoing(Sync):
                         logging.info(f"[+] Successfully sent {self.event_type} event data")
                     del send_file
                     
+        
+        folder = session.query(Share).filter_by(folder_id=folder_id).first()
+        if folder.type == 'sync_bothways':
+            establish_packet = {
+                "event_type" = "establish",
+                "folder_id" = folder_id,
+                "folder_label" = folder_label,
+                "src_path" = user_path + '/' + os.path.relpath(self.src_path, root_folder_path),
+                "size" = folder.size,
+                "type": "sync_bothways"
+            }
+            self.OG_send_packet(outgoingsock, establish_packet)
+
         logging.info('✅ Traversal Complete')
         logging.info(f'🗃️ Directories: {directories}')
         logging.info(f'📑 Files: {files}')

@@ -1766,7 +1766,7 @@ class Incoming(Sync):
         logging.info(f"[+] Metadata received: {metadata}")
         event_type = metadata['event_type']
         origin = metadata.get('origin', '')
-            
+
         if metadata['is_dir'] and event_type == 'created':
             logging.info(f"[+] Initiating CreateDir.apply()")
             CreateDir(metadata, self.address).apply()
@@ -1818,6 +1818,28 @@ class Incoming(Sync):
         #     Modify(metadata, self.address, self.connection).apply()
         
         # If this was part of a folder sync, update the UI via Socket.IO
+        
+        elif metadata['event_type'] == 'establish':
+            src_path = metadata['src_path']
+            dirs[src_path] = {}
+            dirs[src_path]['id'] = metadata['folder_id']
+            dirs[src_path]['label'] = metadata['folder_label']
+            dirs[src_path]['type'] = metadata['type']
+            dirs[src_path]['size'] = metadata['size']
+            dirs[src_path]['status'] = 'ACTIVE'
+            logging.info(f'dir.json: {dirs}')
+
+            with open('dir.json', 'w') as file:
+                json.dump(dirs, file, indent=2)
+
+            if observer.is_alive():
+                observer.schedule(event_handler, src_path, recursive=True)
+                logging.info(f'added {src_path} to watchdog!')
+            else:
+                logging.info(f'watchdog is not alive, cannot add {src_path}!')
+            
+
+        
         if self.folderSyncInProgress and 'folder_id' in metadata:
             socketio.emit('folder_sync_progress', {
                 'folder_id': metadata['folder_id'],
