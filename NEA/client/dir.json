@@ -1,42 +1,56 @@
 {
-  "/home/osaka/Documents/Shared/Initial-D": {
-    "id": "YaktNeGWF0",
+  "/home/osaka/Documents/Initial-D": {
+    "id": "6jbmnPBIsl",
     "label": "Initial-D",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"
   },
-  "/home/osaka/Documents/Shared/Vagabond": {
-    "id": "ph5i74L1Sc",
-    "label": "Vagabond",
+  "/home/osaka/Documents/Ruby": {
+    "id": "bfHhncaFs0",
+    "label": "ruby",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"
   },
-  "/home/osaka/Documents/Shared/Rebirth": {
-    "id": "vEl79fd2PE",
-    "label": "bruh",
+  "/home/osaka/Documents/Wallpaper": {
+    "id": "kHRsR3UAP4",
+    "label": "wallpapers",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"
   },
-  "/home/osaka/Desktop/sigma": {
-    "id": "Y6ihPTMnU2",
-    "label": "sigma",
+  "/home/osaka/Documents/Sora": {
+    "id": "a9mMwH9UhM",
+    "label": "sora",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"
   },
-  "/home/osaka/Desktop/zyz": {
-    "id": "x2V5ltF9eP",
-    "label": "zyz",
+  "/home/osaka/Documents/Vagabond": {
+    "id": "pS4b6OFQ7X",
+    "label": "vagabond",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"
   },
-  "/home/osaka/Desktop/zyzz": {
-    "id": "JGtqDFNx7G",
-    "label": "zyzz",
+  "/home/osaka/Documents/Rebirth": {
+    "id": "vHejNozjsi",
+    "label": "rebirth",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Documents/Python": {
+    "id": "xRLFZU2O3t",
+    "label": "python",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Documents/Vagabond2": {
+    "id": "1lcJNyH9x4",
+    "label": "vagabond_v2",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"

@@ -302,6 +302,10 @@ def pair():
             # TODO 🆘 - PING SERVER TO SEE IF IT IS ACTIVE.
             flash(f'Already Connected with {session["server_name"]}!', 'info')
             return redirect(url_for('login'))
+        
+    for key, value in session.items():
+        active_session[key] = value
+    logging.info(f'✅ active_session dict: {active_session}')
     return render_template('pair.html') # if the user is not logged in, then redirect to login page.
     
     # DONE: if the user is already connected to a pi and in a session, redirect to dashboard page.
@@ -350,6 +354,10 @@ def login():
         elif 'server_name' not in session:
             flash('You are not connected to a server!', 'info')
             return redirect(url_for('pair'))
+    
+        for key, value in session.items():
+            active_session[key] = value
+        logging.info(f'✅ active_session dict: {active_session}')
         return render_template("login.html")
     
 @app.route('/register', methods=['POST', 'GET'])
@@ -387,6 +395,10 @@ def register():
         if 'server_name' not in session:
             flash('You are not connected to a server!', 'info')
             return redirect(url_for('pair'))
+        
+        for key, value in session.items():
+            active_session[key] = value
+        logging.info(f'✅ active_session dict: {active_session}')
         return render_template('register.html')
 
 @app.route('/dashboard', methods=['POST', 'GET'])
@@ -440,9 +452,7 @@ def dashboard():
             return jsonify({"error": "Unknown action type"}), 400
 
     elif 'server_name' in session and 'user' in session: # if used logs in/registers,
-        
-        global active_session
-        active_session = {}
+
         for key, value in session.items():
             active_session[key] = value
         logging.info(f'✅ active_session dict: {active_session}')
@@ -911,7 +921,7 @@ def send(json_data): # 🛫
                 return False
             
         s.send(json_data.encode('utf-8')) # sending data to server 📨
-        json_response = s.recv(2048).decode('utf-8') # server's response back 📩 # TODO 🆘 recieves 1024 bits, add buffering feature !!
+        json_response = s.recv(4096).decode('utf-8') # server's response back 📩 # TODO 🆘 recieves 1024 bits, add buffering feature !!
         logging.info(f'server response: {json_response}, type: {type(json_response)}')
         end = time.time()
         logging.info(f'⏰ time taken to send data: {end - start} seconds')
@@ -1169,12 +1179,7 @@ class MyEventHandler(FileSystemEventHandler):
             '''
             logging.info(f'⚠️ Ignoring temporary file: {event.src_path}')
             return  # ❌ You should return here to **stop** processing
-
-        if path in self._ignored_paths:
-            logging.debug(f"Ignoring sync-generated event for {path}")
-            self._ignored_paths.remove(path)  # Only suppress once!
-            return
-
+        
         for parent in self._supressed_dirs:
             if path.startswith(parent + os.sep):
                 logging.debug(f'Supressed event for {path!r} under {parent!r}')
@@ -1184,6 +1189,13 @@ class MyEventHandler(FileSystemEventHandler):
 
                                                 # TODO 🆘 MODIFY DATABASE + ADD IT TO SYNC_QUEUE 
     def on_moved(self, event):
+        
+        path = event.src_path
+        if path in self._ignored_paths:
+            logging.debug(f"😏 Ignoring sync-generated event for {path}")
+            self._ignored_paths.remove(path)  # Only suppress once!
+            return
+        
         logging.info(f"🟣 Moved: {event.src_path} → {event.dest_path}")
 
         # suppress further events from the old folder
@@ -1202,6 +1214,12 @@ class MyEventHandler(FileSystemEventHandler):
         self._persist_queue()
     
     def on_created(self, event):
+        path = event.src_path
+        if path in self._ignored_paths:
+            logging.debug(f"😏 Ignoring sync-generated event for {path}")
+            self._ignored_paths.remove(path)  # Only suppress once!
+            return
+        
         logging.info(f"🟢 Created: {event.src_path}")
 
         # TODO get folder_id
@@ -1258,6 +1276,12 @@ class MyEventHandler(FileSystemEventHandler):
         logging.info(f'saved to sync_queue.json')
     
     def on_deleted(self, event):
+        path = event.src_path
+        if path in self._ignored_paths:
+            logging.debug(f"😏 Ignoring sync-generated event for {path}")
+            self._ignored_paths.remove(path)  # Only suppress once!
+            return
+        
         logging.info(f"🔴 Deleted: {event.src_path}")
 
         # if it was a directory, remember to suppress its children
@@ -1305,6 +1329,12 @@ class MyEventHandler(FileSystemEventHandler):
         
     
     def on_modified(self, event):
+        path = event.src_path
+        if path in self._ignored_paths:
+            logging.debug(f"😏 Ignoring sync-generated event for {path}")
+            self._ignored_paths.remove(path)  # Only suppress once!
+            return
+        
         if event.is_directory:
             return
 
@@ -1791,11 +1821,12 @@ class Incoming(Sync):
         if event_type in ['created', 'deleted', 'modified', 'moved']:
             # event_handler._supressed_dirs(metadata['src_path'])
             event_handler._ignored_paths.add(metadata['src_path'])
+            logging.info(f"😏 Ignoring sync-generated event for {metadata['src_path']}")
 
         if metadata['is_dir'] and event_type == 'created':
             logging.info(f"[+] Initiating CreateDir.apply()")
             CreateDir(metadata, self.address).apply()
-            
+                        
         elif not metadata['is_dir'] and event_type == 'created':
             logging.info(f"[+] Initiating CreateFile.apply()")
             CreateFile(metadata, self.address, self.connection).apply()
@@ -1807,6 +1838,10 @@ class Incoming(Sync):
         elif event_type == 'moved':
             logging.info(f"[+] Initiating Move.apply()")
             Move(metadata, self.address).apply()
+
+        elif not metadata['is_dir'] and event_type == 'modified':
+            logging.info(f"[+] Initiating Modify.apply()")
+            Modify(metadata, self.address, self.connection).apply()
         
         elif metadata['event_type'] == 'request':
             src_path = metadata['src_path']
@@ -2056,14 +2091,14 @@ class CreateFile(SyncEvent):
     def apply(self):
         offset = 0
         file_data = b''
-        blocklist = dict()
+        # blocklist = dict()
         packet_count = self.metadata['packet_count']
         logging.info(f"[+] Expecting {packet_count} packets...")
 
         for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
             data, hash = self.receive_valid_packet(self.connection, index)
             file_data += data
-            blocklist[hash] = {"offset": offset, "size": len(data)} # data is binary data, hash is checksum
+            # blocklist[hash] = {"offset": offset, "size": len(data)} # data is binary data, hash is checksum
             offset += len(data)
 
         os.makedirs(os.path.dirname(self.metadata['src_path']), exist_ok=True)
@@ -2150,7 +2185,8 @@ class Delete(SyncEvent):
                     else:
                         logging.info(f"[-] No file entry found for '{self.metadata['src_path']}' in database.")
             except Exception as e:
-                session.rollback()
+                with app.app_context():
+                    session.rollback()
                 logging.error(f"[-] Database error while deleting file entry: {e}")
 
 class Move(SyncEvent):
@@ -2219,12 +2255,88 @@ class Move(SyncEvent):
             except Exception as e:
                 logging.error(f"[!] Error moving directory: {e}")
 
+class Modify(SyncEvent):
+    
+    def apply(self):
+        offset = 0
+        file_data = b''
+        # blocklist = dict()
+        packet_count = self.metadata['packet_count']
+        logging.info(f"[+] Expecting {packet_count} packets...")
+
+        for index in range(1, packet_count + 1): # Start from 1 to skip metadata packet
+            data, hash = self.receive_valid_packet(self.connection, index)
+            file_data += data
+            # blocklist[hash] = {"offset": offset, "size": len(data)} # data is binary data, hash is checksum
+            offset += len(data)
+
+        # os.makedirs(os.path.dirname(self.metadata['src_path']), exist_ok=True)
+        # logging.info(f"[+] Writing file to: {self.metadata['src_path']}")
+
+        temp_file_path = f"{self.metadata['src_path']}.tmp_{int(time.time())}" #🆗
+        logging.info(f"[+] Creating temporary file: {temp_file_path}") #🆗
+
+        with open(temp_file_path, 'wb') as f:
+            f.write(file_data)
+        logging.info(f"[+] File '{self.metadata['src_path']}' written into {temp_file_path} received successfully.")  # Updated to use self.metadata['src_path']
+
+        # folder_id = self.metadata['folder_id']
+        hash = self.metadata['hash']
+        size = self.metadata['size']
+        version = self.metadata['version']
+
+        # Verify that the received file's hash matches the metadata hash
+        calculated_hash = hashlib.md5(file_data).hexdigest()
+        if calculated_hash != hash:
+            logging.error(f"[!] Hash mismatch for file {self.metadata['src_path']}. Expected: {hash}, Got: {calculated_hash}")  # Updated to use self.metadata['src_path']
+            # Consider whether to reject the file or mark it as corrupted
+        else:
+            logging.info(f"[+] File hash verified for {self.metadata['src_path']}")  # Updated to use self.metadata['src_path']
+
+        # # Create a new file entry in the database
+        # file_entry = File(
+        #     folder_id=folder_id,
+        #     path=self.metadata['src_path'],  # Updated to use self.metadata['src_path']
+        #     size=size,
+        #     hash=hash,
+        #     version=version
+        # )
+        
+        # with app.app_context():
+        #     db.session.add(file_entry)
+        #     db.session.commit()
+        #     logging.info(f"[+] Added file entry to database: {self.metadata['src_path']}")  # Updated to use self.metadata['src_path']
+
+
+        # TODO Update version
+        # TODO copy file to original location
+        # TODO delete temp file
+        
+        file_entry = session.query(File).filter_by(path=self.metadata['src_path']).first()
+        file_entry.hash = hash
+        file_entry.size = size
+        file_entry.version = version
+        
+        with app.app_context():
+            session.commit()
+            logging.info(f"[+] Database entry updated for file: {self.metadata['src_path']}")
+
+        os.rename(temp_file_path, self.metadata['src_path'])
+        logging.info(f"[+] File: {temp_file_path} moved to original location: {self.metadata['src_path']}")
+
+        os.remove(temp_file_path)
+        logging.info(f"[+] Temporary file {temp_file_path} deleted.")
+
 ########################################################################################
 ########################################################################################
 ########################################################################################
 ########################################################################################
 ########################################################################################
+
 if __name__ == "__main__":
+
+    global active_session
+    active_session = {}
 
     dir_file = "dir.json"
     if os.path.exists(dir_file):

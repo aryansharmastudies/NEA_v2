@@ -324,61 +324,62 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
             logging.info(f'Device: {device_name} not found in ip_map')
             return json.dumps({'status': '404', 'status_msg': 'Device not found in ip_map'})
         
-        logging.info(f'ip of device: {ip_map["users"][username][device_mac_addr]}')
-        ip = ip_map["users"][username][device_mac_addr] # gets users ip address
+        # logging.info(f'ip of device: {ip_map["users"][username][device_mac_addr]}')
+        # ip = ip_map["users"][username][device_mac_addr] # gets users ip address
         
-        logging.info(f'Sending authorisation request to {username}, device: {device.name}, mac_addr: {device_mac_addr},  ip: {ip}')
-        status = send(json.dumps({'action': 'authorise', 'user': username}), ip, 6000) # sends a ping through!
-        logging.info(f'User Status: {status} (400/404 -> failed, 200 -> success)')
-        # either no response -> add to list of invites!!
-        # or another user is online(from same ip - maybe ip changed/user logged into device)
-        # or correct user is online
-        if status == '400' or status == '404': # if request fails
-            logging.info(f'Authorisation failed for {username} with ip: {ip}')
+        # logging.info(f'Sending authorisation request to {username}, device: {device.name}, mac_addr: {device_mac_addr},  ip: {ip}')
+        # status = send(json.dumps({'action': 'authorise', 'user': username}), ip, 6000) # sends a ping through!
+        # logging.info(f'User Status: {status} (400/404 -> failed, 200 -> success)')
+        # # either no response -> add to list of invites!!
+        # # or another user is online(from same ip - maybe ip changed/user logged into device)
+        # # or correct user is online
+        # if status == '400' or status == '404': # if request fails
+        #     logging.info(f'Authorisation failed for {username} with ip: {ip}')
             # adds to invites.json
-            logging.info(f'invites.json BEFORE adding: {invites}')
-            if username not in invites["folders"]: # first check if the user is in the invites file 🌸
-                invites["folders"][username] = {} # 🌸
-                invites["folders"][username][device_mac_addr] = [] # if not, add them 🌸
-            elif device_mac_addr not in invites["folders"][username]: # then check if the device is in the invites file 🌸
-                invites["folders"][username][device_mac_addr] = [] # if not, add it 🌸
 
-            invites["folders"][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
-            logging.info(f'invites.json AFTER adding: {invites}')
-            with open(invites_file, "w") as file:
-                json.dump(invites, file, indent=2)
-         # everytime user logs in, check if they are in the invites file!!
+        logging.info(f'invites.json BEFORE adding: {invites}')
+        if username not in invites["folders"]: # first check if the user is in the invites file 🌸
+            invites["folders"][username] = {} # 🌸
+            invites["folders"][username][device_mac_addr] = [] # if not, add them 🌸
+        elif device_mac_addr not in invites["folders"][username]: # then check if the device is in the invites file 🌸
+            invites["folders"][username][device_mac_addr] = [] # if not, add it 🌸
 
-            # ❗no need to return if user is offline, as the user will get the invite when they log in.
-            # return json.dumps({'status': '400', 'status_msg': 'Ping failed'})
+        invites["folders"][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
+        logging.info(f'invites.json AFTER adding: {invites}')
+        with open(invites_file, "w") as file:
+            json.dump(invites, file, indent=2)
+        # everytime user logs in, check if they are in the invites file!!
+
+        # ❗no need to return if user is offline, as the user will get the invite when they log in.
+        # return json.dumps({'status': '400', 'status_msg': 'Ping failed'})
         
         
         ############# TODO - if the user is online, send folder invite to them... ##################
         
         
         
-        elif status == '200': # if authorisation is successful.  
-            logging.info(f'Authorisation successful for {username} with ip: {ip}')
-            data = send(json.dumps({'action': 'share_folder', 'folder_label': folder_label, 'folder_id': folder_id}), ip, 6000) # TODO needs to be displayed on clients side through websockets.
-            # if data != False: # NOTE MAYBE SHOULD SCRAP THIS SINCE IT WILL WAIT UNNECESSARILY
-            #     data = json.loads(data)
-            #     guest_dir = data['directory']
-            #     shared_user = Share(folder_id=folder_id, mac_addr=mac_addr, path=guest_dir)
-            #     session.add(shared_user) # im sure with a for loop you can itterate and add many 'share' objects to the session, then commit them.
-            #     session.commit()
-            # else:
-            #     logging.info(f'data {username} sent has failed: {data}')
-            logging.info(f'invites.json BEFORE adding: {invites}')
-            if username not in invites["folders"]: # first check if the user is in the invites file 🌸
-                invites["folders"][username] = {} # 🌸
-                invites["folders"][username][device_mac_addr] = [] # if not, add them 🌸
-            elif device_mac_addr not in invites["folders"][username]: # then check if the device is in the invites file 🌸
-                invites["folders"][username][device_mac_addr] = [] # if not, add it 🌸
+        # elif status == '200': # if authorisation is successful.  
+        #     logging.info(f'Authorisation successful for {username} with ip: {ip}')
+        #     data = send(json.dumps({'action': 'share_folder', 'folder_label': folder_label, 'folder_id': folder_id}), ip, 6000) # TODO needs to be displayed on clients side through websockets.
+        #     # if data != False: # NOTE MAYBE SHOULD SCRAP THIS SINCE IT WILL WAIT UNNECESSARILY
+        #     #     data = json.loads(data)
+        #     #     guest_dir = data['directory']
+        #     #     shared_user = Share(folder_id=folder_id, mac_addr=mac_addr, path=guest_dir)
+        #     #     session.add(shared_user) # im sure with a for loop you can itterate and add many 'share' objects to the session, then commit them.
+        #     #     session.commit()
+        #     # else:
+        #     #     logging.info(f'data {username} sent has failed: {data}')
+        #     logging.info(f'invites.json BEFORE adding: {invites}')
+        #     if username not in invites["folders"]: # first check if the user is in the invites file 🌸
+        #         invites["folders"][username] = {} # 🌸
+        #         invites["folders"][username][device_mac_addr] = [] # if not, add them 🌸
+        #     elif device_mac_addr not in invites["folders"][username]: # then check if the device is in the invites file 🌸
+        #         invites["folders"][username][device_mac_addr] = [] # if not, add it 🌸
 
-            invites["folders"][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
-            logging.info(f'invites.json AFTER adding: {invites}')
-            with open(invites_file, "w") as file:
-                json.dump(invites, file, indent=2)
+        #     invites["folders"][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
+        #     logging.info(f'invites.json AFTER adding: {invites}')
+        #     with open(invites_file, "w") as file:
+        #         json.dump(invites, file, indent=2)
 
     # use async to ask the currently active users
     # or else, put instruction in a json file!!!
@@ -553,10 +554,10 @@ def accept_share(client_data, clientsocket):
         'origin' : 'accept_share'
     }
 
-    outgoingsock = socket.socket() 
-    outgoingsock.connect((ip_map["users"][username][str(mac_addr)], 6969))
+    # outgoingsock = socket.socket() 
+    # outgoingsock.connect((ip_map["users"][username][str(mac_addr)], 6969))
     copy = Outgoing(event)
-    copy.initialise_copy(outgoingsock, directory, root_folder_path, folder_id, folder_label)
+    copy.initialise_copy(directory, root_folder_path, folder_id, folder_label, username, mac_addr)
 
 def calculate_file_hash(file_path):
     """Calculate MD5 hash of a file."""
@@ -940,7 +941,7 @@ class SyncEvent(Incoming):
                 echo_event.OG_send_packet(outgoingsock, new_metadata)
                 logging.info(f"[+] metadata packet sent to {user.mac_addr} at {ip_addr}")
 
-                if event_type == 'created' and is_dir == False:
+                if event_type in ['created', 'modified'] and is_dir == False:
                     # echo_event.create_packet(formatted_path)
                     for packet in echo_event.packets:
                         echo_event.send_packet(outgoingsock, packet)
@@ -1418,6 +1419,8 @@ class Modify(SyncEvent):
         logging.info(f"[+] Updated database entry for: {formatted_path}") #🆗
         logging.info(f"[+] File modification complete") #🆗
         
+        self.echo() # 🔊
+        
 class Block(SyncEvent):
 
     def apply(self):
@@ -1463,7 +1466,7 @@ class Outgoing(Sync):
         self.folder_id = event.get('folder_id')
         logging.info(f"Created base attributes of Outgoing object")
         # Additional properties based on event type
-        if not self.is_dir and self.event_type == 'created':
+        if not self.is_dir and self.event_type in ['created', 'modified']:
             logging.info(f"Creating packet for file creation")
             self.local_path = event['local_path'] or None
             self.packets = self.create_packet(self.local_path)
@@ -1471,17 +1474,17 @@ class Outgoing(Sync):
             self.hash = event.get('hash') or file_to_hash.get(self.src_path)
             logging.info(f"added attributes: self.packets(too long to display) packet_count: {self.packet_count}, hash: {self.hash}, local_path: {self.local_path}")
 
-        elif not self.is_dir and self.event_type == 'modified':
-            self.blocks = self.create_blocklist()
-            self.block_count = len(self.blocks)
-            self.hash = event.get('hash') or file_to_hash.get(self.src_path)
-            self.packets = self.create_packet(self.local_path)
-            self.packet_count = len(self.packets)
-            logging.info(f"added attributes: {self.blocks}, {self.block_count}, {self.hash}, {self.packets}, {self.packet_count}")
+        # elif not self.is_dir and self.event_type == 'modified':
+        #     self.blocks = self.create_blocklist()
+        #     self.block_count = len(self.blocks)
+        #     self.hash = event.get('hash') or file_to_hash.get(self.src_path)
+        #     self.packets = self.create_packet(self.local_path)
+        #     self.packet_count = len(self.packets)
+        #     logging.info(f"added attributes: {self.blocks}, {self.block_count}, {self.hash}, {self.packets}, {self.packet_count}")
             
-            # Get file version from database
-            file = session.query(File).filter_by(path=self.src_path).first()
-            self.version = file.version if file else 'v1.0'
+        #     # Get file version from database
+        #     file = session.query(File).filter_by(path=self.src_path).first()
+        #     self.version = file.version if file else 'v1.0'
 
         if self.event_type == 'moved':
             self.dest_path = event['dest_path']
@@ -1623,7 +1626,7 @@ class Outgoing(Sync):
         if not sent:
             logging.error(f"❌ Packet {packet['index']} failed after 10 retries, giving up.")
 
-    def initialise_copy(self, outgoingsock, user_path, root_folder_path, folder_id, folder_label):
+    def initialise_copy(self, user_path, root_folder_path, folder_id, folder_label, username, mac_addr):
 
         stack = [self.src_path]
         directories = []
@@ -1635,6 +1638,7 @@ class Outgoing(Sync):
             directories.append(current)
 
             src_path = user_path + '/' + os.path.relpath(current, root_folder_path)
+            logging.info(f'📂 Found directory: {current} i.e. for User: {src_path}')
 
             metadata = {
             "index":      0,
@@ -1644,6 +1648,10 @@ class Outgoing(Sync):
             "origin": 'initialise_copy',
             }
 
+            outgoingsock = socket.socket() 
+            outgoingsock.connect((ip_map["users"][username][str(mac_addr)], 6969))
+
+            logging.info(f"[+] Sending metadata packet: {metadata}")
             self.OG_send_packet(outgoingsock, metadata)
 
             try:
@@ -1670,12 +1678,23 @@ class Outgoing(Sync):
                         "is_dir": False,
                         "origin": "mkdir",
                         "folder_id":folder_id,
-                        "local_path":full_path
+                        "local_path":full_path,
+                        "index" : '0',
+                        "hash": file_to_hash.get(full_path),
+                        "size": os.path.getsize(full_path),
                     }
                     
-                    send_file = Outgoing(event)
+                    outgoingsock = socket.socket() 
+                    outgoingsock.connect((ip_map["users"][username][str(mac_addr)], 6969))
 
+                    send_file = Outgoing(event)
+                    
+                    logging.info('[+] initialised send_file object using class Outgoing')
+                    event['packet_count'] = len(send_file.packets)
+                    
+                    logging.info(f"[+] Sending metadata packet: {event}")
                     send_file.OG_send_packet(outgoingsock, event)
+                    logging.info(f"[+] Sent metadata for {send_file.event_type} event: {send_file.src_path}")
 
                     if hasattr(send_file, 'packets') and send_file.packets:
                         logging.info(f"[+] Sending {send_file.packet_count} data packets")
@@ -1754,10 +1773,10 @@ class Outgoing(Sync):
             except:
                 pass
             
-class Build_Instructions(Outgoing):
-    pass
-class Requests(Outgoing):
-    pass
+# class Build_Instructions(Outgoing):
+#     pass
+# class Requests(Outgoing):
+#     pass
 
 
     '''
@@ -1768,9 +1787,9 @@ class Requests(Outgoing):
         "size": block_size, #🆗
         "block_hash": block_hash, #🆗
     } #🆗
-    '''
-    def __init__(self, request_packet):
-        pass
+    # '''
+    # def __init__(self, request_packet):
+    #     pass
 
 ################################### SYNC-QUEUE #########################################
 sync_queue = queue.Queue()
