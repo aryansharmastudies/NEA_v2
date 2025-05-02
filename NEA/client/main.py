@@ -28,6 +28,17 @@ import base64
 import struct
 import time
 
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
+db_url = 'sqlite:///instance/database.sqlite3'
+engine = create_engine(db_url)
+Base = declarative_base()
+
+Session = sessionmaker(bind=engine)
+db_session = Session()
+
 '''
 Basically, in order to sync folders, we have sync_queue with the different
 folders/files that need to be synced. 
@@ -557,10 +568,17 @@ def accept_share():
         
         # Send acceptance to server
     
-        status = send(json.dumps(folder_data))
+        status, folder_type = send(json.dumps(folder_data))
         logging.info(f'accept_share status from server: {status}')
         
-        if str(status) == '200' or status == '201':
+        if str(status) == '409':
+            if 'alerts' in session and len(session['alerts']) > index:
+                session['alerts'].pop(index)
+                
+            # Display success message
+            flash(f"Folder '{folder_label}' accepted! Files will sync automatically.", 'info')
+
+        elif str(status) == '200' or status == '201':
             # Create the local directory
             os.makedirs(expanded_path, exist_ok=True)
             
@@ -577,17 +595,19 @@ def accept_share():
             with open('dir.json', 'w') as file:
                 json.dump(dirs, file, indent=2)
             
-            # Add to watchdog if it's running
-            if observer.is_alive():
-                observer.schedule(event_handler, expanded_path, recursive=True)
-                logging.info(f'Added {expanded_path} to watchdog!')
-            
+            if folder_type == 'sync_bothways':
+
+                logging.info(f'Folder type is sync_bothways for folder_id: {folder_id}')
+                if observer.is_alive():
+                    observer.schedule(event_handler, expanded_path, recursive=True)
+                    logging.info(f'Added {expanded_path} to watchdog!')
+                
             # Add folder to database
             new_folder = Folder(
                 folder_id=folder_id, 
                 name=folder_label, 
                 path=expanded_path, 
-                type='sync_bothways', 
+                type=folder_type,
                 size=0
             )
             db.session.add(new_folder)
@@ -753,6 +773,7 @@ def submit_folder():
     mac_addr = get_mac()
     data['mac_addr'] = mac_addr
     data['user'] = active_session['user']
+    data['directory'] = os.path.expanduser(data['directory']) # for linux it will add /home/user/ and for windows it will add C:/User/username/
     logging.info(f'DATA FROM ADDING FOLDER FORMS(front front end)!: {data}')
     data = json.dumps(data)
     status, status_msg = send(data)
@@ -938,34 +959,15 @@ def send(json_data): # 🛫
         data = server_data.get('data', False) # incase 'data' key don't exist, simply set data = False
         logging.info(f'data: {data}')
         
+        folder_type = server_data.get('folder_type', 'Sync_Bothways')
+        logging.info(f'folder_type: {folder_type}')
+
         logging.info(f'status: {status} status_msg: {status_msg} data: {data}')
         
         # could use hashmap i.e. {200: 'ok', 201: 'created', 401: 'unauthorized'} then returns in O(1) time.
         status_to_codes = {'200': 'OK', '201': 'Added', '401': 'Unauthorized', '404': 'Not Found', '409': 'Conflict'}
         logging.info(f'{status} : {status_to_codes[status]}')
-        
-        # if status == '200': # The request is OK (this is the standard response for successful HTTP requests)
-        #     logging.info(f"200 OK")
-        #     if data: # but if data is recieved, if we as the client made a request. 
-        #         # e.g. adding a user), simply return the status and status_msg!
-        #         return status, status_msg, data
-        #     else: # if there is NO DATA incomming (which means, we as the client DIDNT request for data
-        #         return status, status_msg # return the data.
-        # elif status == '201': # The request has been fulfilled, and a new resource(user/device/...) is created
-        #     logging.info(f"201 Added")
-        #     return status, status_msg
-        # elif status == '401':
-        #     logging.info(f'401 Unauthorized') #  The request was a legal request, but the server is refusing to respond to it. For use when authentication is possible but has failed or not yet been provided
-        #     return status, status_msg
-        # elif status == '404':
-        #     logging.info(f'404 Not Found') # The requested page/item could not be found but may be available again in the future
-        #     return status, status_msg
-        # elif status == '409':
-        #     logging.info(f'409 Conflict') # The request could not be completed because of a conflict in the request
-        #     return status, status_msg
-        
-        # else:
-        #     return '500', 'server error - check return status for CRUD!' 
+
         action = json.loads(json_data)['action']
         if action in ['login', 'register_user', 'add_device', 'add_folder']:
             return status, status_msg
@@ -974,7 +976,7 @@ def send(json_data): # 🛫
         elif action in ['request']:
             return data
         elif action in ['accept_share', 'decline_share']:
-            return status
+            return status, folder_type
 
 ########## HANDLE SERVER MESSAGE ################
 
@@ -1192,7 +1194,7 @@ class MyEventHandler(FileSystemEventHandler):
         
         path = event.src_path
         if path in self._ignored_paths:
-            logging.debug(f"😏 Ignoring sync-generated event for {path}")
+            logging.debug(f"😏 <on_moved> Ignoring sync-generated event for {path}")
             self._ignored_paths.remove(path)  # Only suppress once!
             return
         
@@ -1216,8 +1218,8 @@ class MyEventHandler(FileSystemEventHandler):
     def on_created(self, event):
         path = event.src_path
         if path in self._ignored_paths:
-            logging.debug(f"😏 Ignoring sync-generated event for {path}")
-            self._ignored_paths.remove(path)  # Only suppress once!
+            logging.debug(f"😏 <on_created> Ignoring sync-generated event for {path}")
+            #  NOTE: WE DONT YET REMOVE IT, SINCE WATCHDOG WILL ALERT IS WITH 'MODIFIED' -> THATS WHEN IT IS REMOVED
             return
         
         logging.info(f"🟢 Created: {event.src_path}")
@@ -1278,7 +1280,7 @@ class MyEventHandler(FileSystemEventHandler):
     def on_deleted(self, event):
         path = event.src_path
         if path in self._ignored_paths:
-            logging.debug(f"😏 Ignoring sync-generated event for {path}")
+            logging.debug(f"😏 <on_deleted> Ignoring sync-generated event for {path}")
             self._ignored_paths.remove(path)  # Only suppress once!
             return
         
@@ -1331,7 +1333,7 @@ class MyEventHandler(FileSystemEventHandler):
     def on_modified(self, event):
         path = event.src_path
         if path in self._ignored_paths:
-            logging.debug(f"😏 Ignoring sync-generated event for {path}")
+            logging.debug(f"😏 <on_modified> Ignoring sync-generated event for {path}")
             self._ignored_paths.remove(path)  # Only suppress once!
             return
         
@@ -1817,11 +1819,16 @@ class Incoming(Sync):
         metadata = self.receive_valid_packet(self.connection, 0)
         logging.info(f"[+] Metadata received: {metadata}")
         event_type = metadata['event_type']
+        # folder = session.query(Folder).filter_by(folder_id=metadata['folder_id']).first()
 
-        if event_type in ['created', 'deleted', 'modified', 'moved']:
+        if event_type in ['created', 'deleted', 'modified', 'moved'] and folder.type == 'sync_bothways':
+            folder = db_session.query(Folder).filter_by(folder_id=metadata['folder_id']).first()
+            logging.info(f"Event inside folder {folder.name}({folder.folder_id}) with folder type: {folder.type}")
+            if folder.type == "sync_bothways":
+            
             # event_handler._supressed_dirs(metadata['src_path'])
-            event_handler._ignored_paths.add(metadata['src_path'])
-            logging.info(f"😏 Ignoring sync-generated event for {metadata['src_path']}")
+                event_handler._ignored_paths.add(metadata['src_path'])
+                logging.info(f"😏 Added {metadata['src_path']} to _ignored_paths")
 
         if metadata['is_dir'] and event_type == 'created':
             logging.info(f"[+] Initiating CreateDir.apply()")
@@ -2176,17 +2183,15 @@ class Delete(SyncEvent):
                 logging.error(f"[-] Error deleting file '{self.metadata['src_path']}': {e}")
 
             try:
-                with app.app_context():
-                    file_entry = session.query(File).filter_by(path=self.metadata['src_path']).first()
-                    if file_entry:
-                        session.delete(file_entry)
-                        session.commit()
-                        logging.info(f"[-] File entry for '{self.metadata['src_path']}' deleted from database.")
-                    else:
-                        logging.info(f"[-] No file entry found for '{self.metadata['src_path']}' in database.")
+                file_entry = db_session.query(File).filter_by(path=self.metadata['src_path']).first()
+                if file_entry:
+                    db_session.delete(file_entry)
+                    db_session.commit()
+                    logging.info(f"[-] File entry for '{self.metadata['src_path']}' deleted from database.")
+                else:
+                    logging.info(f"[-] No file entry found for '{self.metadata['src_path']}' in database.")
             except Exception as e:
-                with app.app_context():
-                    session.rollback()
+                db_session.rollback()
                 logging.error(f"[-] Database error while deleting file entry: {e}")
 
 class Move(SyncEvent):
@@ -2273,8 +2278,13 @@ class Modify(SyncEvent):
         # os.makedirs(os.path.dirname(self.metadata['src_path']), exist_ok=True)
         # logging.info(f"[+] Writing file to: {self.metadata['src_path']}")
 
-        temp_file_path = f"{self.metadata['src_path']}.tmp_{int(time.time())}" #🆗
-        logging.info(f"[+] Creating temporary file: {temp_file_path}") #🆗
+        original_filename = os.path.basename(self.metadata['src_path'])
+        temp_file_path = os.path.join(
+            os.path.dirname(self.metadata['src_path']),
+            f".{original_filename}.tmp"
+        )
+
+        logging.info(f"😶‍🌫️ Creating temporary file: {temp_file_path}") #🆗
 
         with open(temp_file_path, 'wb') as f:
             f.write(file_data)
@@ -2312,20 +2322,23 @@ class Modify(SyncEvent):
         # TODO copy file to original location
         # TODO delete temp file
         
-        file_entry = session.query(File).filter_by(path=self.metadata['src_path']).first()
+        file_entry = db_session.query(File).filter_by(path=self.metadata['src_path']).first()
         file_entry.hash = hash
         file_entry.size = size
         file_entry.version = version
         
-        with app.app_context():
-            session.commit()
+        try:
+            db_session.commit()
             logging.info(f"[+] Database entry updated for file: {self.metadata['src_path']}")
+        except Exception as e:
+            db_session.rollback()
+            logging.error(f"[!] Error updating database entry for file: {self.metadata['src_path']}: {e}")
 
         os.rename(temp_file_path, self.metadata['src_path'])
         logging.info(f"[+] File: {temp_file_path} moved to original location: {self.metadata['src_path']}")
 
-        os.remove(temp_file_path)
-        logging.info(f"[+] Temporary file {temp_file_path} deleted.")
+        # os.remove(temp_file_path)
+        # logging.info(f"[+] Temporary file {temp_file_path} deleted.")
 
 ########################################################################################
 ########################################################################################

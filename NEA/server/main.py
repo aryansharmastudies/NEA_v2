@@ -267,13 +267,13 @@ class Share(Base):
 # {'action': 'add_folder', 'name': "anjali's folder", 'directory': '~/HqZYgro3ux',
 #  'shared_users': ['admin:x230', 'admin:admins_MBP', 'joel:joels_pixel'], 'folder_type': 'sync_bothways'}
 
-def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type, user):
+def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type, user, ):
     # DONE check if folder_id exists!
     # DONE convert windows path to linux! USE REGEX!
     # TODO share it to all users... :<
     for folder in session.query(Folder):
         if folder.folder_id == str(folder_id):
-            logging.info(f'Folder_id: {folder_id} already exists!')
+            logging.info(f'[F] Folder_id: {folder_id} already exists!')
             return json.dumps({'status': '409', 'status_msg': 'Folder with this folder_id already exists'})
     
     result = validate_directory(directory)
@@ -287,7 +287,7 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
     host_id = session.query(User).filter_by(name=host_name).first().user_id
     # host_id = session.query(Device).filter_by(mac_addr=mac_addr).first().user_id
     # hostname = session.query(User).filter_by(user_id=host_id).first().name
-    logging.info(f'👤Host: {user} with User_ID: {host_id} is creating folder📂: {folder_label} with folder_id: {folder_id} in directory: {directory}')
+    logging.info(f'[F] 👤Host: {user} with User_ID: {host_id} is creating folder📂: {folder_label} with folder_id: {folder_id} in directory: {directory}')
 
     for shared_user in shared_users:  # 😳😿
         # find the shared_user and its devices MAC ADDRESS
@@ -302,24 +302,24 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
         target_user_id = user.user_id # 🌸
 
         if not user:
-            logging.info(f'User: {username} not found')
+            logging.info(f'[F] User: {username} not found')
             return json.dumps({'status': '404', 'status_msg': 'User not found'})
         
-        logging.info(f'User: {username} found with User_ID: {target_user_id}')
+        logging.info(f'[F] User: {username} found with User_ID: {target_user_id}')
         device = session.query(Device).filter_by(user_id=target_user_id, name=device_name).first() # 🌸
         
         if not device:
-            logging.info(f'Device: {device_name} not found for User: {username}')
+            logging.info(f'[F] Device: {device_name} not found for User: {username}')
             return json.dumps({'status': '404', 'status_msg': 'Device not found'})
         
         device_mac_addr = device.mac_addr # gets devices mac addr # 🌸
-        logging.info(f'Device: {device_name} found with Mac_addr: {device_mac_addr}')
+        logging.info(f'[F] Device: {device_name} found with Mac_addr: {device_mac_addr}')
 
         if username not in ip_map["users"]:
-            logging.info(f'User: {username} not found in ip_map')
+            logging.info(f'[F] User: {username} not found in ip_map')
             return json.dumps({'status': '404', 'status_msg': 'User not found in ip_map'})
 
-        logging.info(f'{ip_map["users"][username]}')        
+        logging.info(f'[F] {ip_map["users"][username]}')        
         if str(device_mac_addr) not in ip_map["users"][username]:
             logging.info(f'Device: {device_name} not found in ip_map')
             return json.dumps({'status': '404', 'status_msg': 'Device not found in ip_map'})
@@ -337,7 +337,7 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
         #     logging.info(f'Authorisation failed for {username} with ip: {ip}')
             # adds to invites.json
 
-        logging.info(f'invites.json BEFORE adding: {invites}')
+        logging.info(f'[F] invites.json BEFORE adding: {invites}')
         if username not in invites["folders"]: # first check if the user is in the invites file 🌸
             invites["folders"][username] = {} # 🌸
             invites["folders"][username][device_mac_addr] = [] # if not, add them 🌸
@@ -345,72 +345,65 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
             invites["folders"][username][device_mac_addr] = [] # if not, add it 🌸
 
         invites["folders"][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
-        logging.info(f'invites.json AFTER adding: {invites}')
+        logging.info(f'[F] invites.json AFTER adding: {invites}')
         with open(invites_file, "w") as file:
             json.dump(invites, file, indent=2)
         # everytime user logs in, check if they are in the invites file!!
 
         # ❗no need to return if user is offline, as the user will get the invite when they log in.
         # return json.dumps({'status': '400', 'status_msg': 'Ping failed'})
-        
-        
-        ############# TODO - if the user is online, send folder invite to them... ##################
-        
-        
-        
-        # elif status == '200': # if authorisation is successful.  
-        #     logging.info(f'Authorisation successful for {username} with ip: {ip}')
-        #     data = send(json.dumps({'action': 'share_folder', 'folder_label': folder_label, 'folder_id': folder_id}), ip, 6000) # TODO needs to be displayed on clients side through websockets.
-        #     # if data != False: # NOTE MAYBE SHOULD SCRAP THIS SINCE IT WILL WAIT UNNECESSARILY
-        #     #     data = json.loads(data)
-        #     #     guest_dir = data['directory']
-        #     #     shared_user = Share(folder_id=folder_id, mac_addr=mac_addr, path=guest_dir)
-        #     #     session.add(shared_user) # im sure with a for loop you can itterate and add many 'share' objects to the session, then commit them.
-        #     #     session.commit()
-        #     # else:
-        #     #     logging.info(f'data {username} sent has failed: {data}')
-        #     logging.info(f'invites.json BEFORE adding: {invites}')
-        #     if username not in invites["folders"]: # first check if the user is in the invites file 🌸
-        #         invites["folders"][username] = {} # 🌸
-        #         invites["folders"][username][device_mac_addr] = [] # if not, add them 🌸
-        #     elif device_mac_addr not in invites["folders"][username]: # then check if the device is in the invites file 🌸
-        #         invites["folders"][username][device_mac_addr] = [] # if not, add it 🌸
 
-        #     invites["folders"][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
-        #     logging.info(f'invites.json AFTER adding: {invites}')
-        #     with open(invites_file, "w") as file:
-        #         json.dump(invites, file, indent=2)
+    # /home/aryan/desktop/python/client.txt
+    server_directory = directory.split('/')# [home aryan desktop python client.txt]
 
-    # use async to ask the currently active users
-    # or else, put instruction in a json file!!!
-    # and whenever user logs in, check if they are in the file.
-
-    # directory = ~/Desktop/LINUX
-    # e.g. ~/Desktop/LINUX -> ~/02/290128321/Desktop/LINUX i.e. ~/<user_id>/<mac_addr>/<folder_name>
+    server_directory[0] = str('~') # insert user_id
+    server_directory[1] = str(host_id) # insert user_id
+    server_directory[2] = str(mac_addr) # insert mac_addr
+    server_directory = '/'.join(server_directory)
+    server_directory = os.path.expanduser(server_directory) # expands the ~ to the home directory of the user.
+    logging.info(f'[F] Creating folder directory: {server_directory}')
     
-    directory = directory.split('/')
-    directory.insert(1, str(host_id)) # insert user_id
-    directory.insert(2, str(mac_addr)) # insert mac_addr
-    directory = '/'.join(directory)
-    directory = os.path.expanduser(directory) 
-    logging.info(f'Creating folder directory: {directory}')
     try: 
-        os.makedirs(directory)
+        os.makedirs(server_directory)
+        logging.info(f'[F] Directory {server_directory} created successfully.')
     except FileExistsError:
-        logging.info(f'⚠️ Directory {directory} already exists, skipping creation.')
+        logging.info(f'[F] ⚠️ Directory {server_directory} already exists, skipping creation.')
 
     # NOTE: ADD TO DB ONLY AFTER DIRECTORY PATH IS FORMATTED CORRECTLY! AND DIRECTORY IS CREATED!
-    folder = Folder(mac_addr=mac_addr, name=folder_label, folder_id=folder_id, path=directory, type=folder_type)
-    session.add(folder)
-    session.commit()
+    try: 
+        logging.info(f'[F] Adding folder entry to database for folder_id: {folder_id}, mac_addr: {mac_addr}')
+        folder = Folder(mac_addr=mac_addr, name=folder_label, folder_id=folder_id, path=server_directory, type=folder_type)
+        session.add(folder)
+        session.commit()
+        logging.info(f"[F] New folder entry created for folder_id: {folder_id}, mac_addr: {mac_addr}")
+    except Exception as e:
+        session.rollback()
+        logging.error(f"[F] Error adding folder entry: {e}")
+        return json.dumps({'status': '500', 'status_msg': f'Database error: {str(e)}'})
 
-    logging.info(f'Directory created: {directory}')
+    new_share = Share(
+        username=user,
+        folder_id=folder_id,
+        mac_addr=mac_addr,
+        folder_label=folder_label,
+        path=directory
+    )
 
+    try:
+        logging.info(f'[F] Creating new share for folder_id: {folder_id}, mac_addr: {mac_addr}, user: {user}')    
+        session.add(new_share)
+        session.commit()
+        logging.info(f"[F] New share entry created for folder_id: {folder_id}, mac_addr: {mac_addr}")
+    except Exception as e:
+        session.rollback()
+        logging.error(f"[F] Error adding share entry: {e}")
+        return json.dumps({'status': '500', 'status_msg': f'Database error: {str(e)}'})
+    
     return json.dumps({'status': '201', 'status_msg': 'Folder added successfully'})
 
 def validate_directory(directory): # NOTE need this for checking if directory is either valid unix or windows. if windows -> convert to unix.
         # Check if the directory is in Unix format
-    unix_format_check = re.search(r'^~(/.+)*', directory)
+    unix_format_check = re.search(r'(/.+)*', directory)
     # Check if the directory is in Windows format
     windows_format_check = re.search(r'^C:\\Users\\.+', directory)
     
@@ -478,11 +471,14 @@ def accept_share(client_data, clientsocket):
         if existing_share:
             logging.info(f"Share entry already exists for folder_id: {folder_id}, mac_addr: {mac_addr}")
             # Even if share exists, we should still sync the folder
-            response = json.dumps({'status': '200', 'status_msg': 'Share already accepted'})
+            response = json.dumps({'status': '409', 'status_msg': 'Share already exists'})
         
         else:
-            # Create a new Share entry
-            response = json.dumps({'status': '201', 'status_msg': 'Share accepted successfully'})
+            folder = session.query(Folder).filter_by(folder_id=folder_id).first()
+            if folder.type == 'sync_bothways':
+                response = json.dumps({'status': '201', 'status_msg': 'Share accepted successfully', 'folder_type': folder.type})
+            else:
+                response = json.dumps({'status': '201', 'status_msg': 'Share accepted successfully', 'folder_type' : folder.type})
             clientsocket.send(str(response).encode('utf-8'))
             logging.info(f"sent response: {json.loads(response)}")
 
@@ -581,7 +577,7 @@ def send(message, ip, port):
         status_code = client_data.get('status_code', '400')
         status_msg = client_data.get('status_msg', False)
         data = client_data.get('data', False)
-    except: 
+    except:
         return '400' 
 
     if json.loads(message)['action'] == 'authorise':
@@ -624,6 +620,20 @@ def handle_client_message(clientsocket, message):
         logging.info(f'Sending tracking results + alerts: {response}')
         clientsocket.send(str(response).encode('utf-8'))
 
+
+        to_remove = []
+        try: 
+            for index, pending_event in enumerate(sync_list[user][mac_addr]):
+
+                pending_sync = SyncEvent(pending_event)
+                pending_sync.echo()
+                to_remove.append(index)
+            
+            for index in reversed(to_remove):
+                sync_list[user][mac_addr].pop(index)
+        except Exception as e:
+            logging.info(f'Error in sync_list {e}')
+            pass
 
     elif action == 'login':
         l_user = client_data['l_user']
@@ -865,24 +875,43 @@ class SyncEvent(Incoming):
                 return mac_addr
             
     def format_path(self, dest_path=None) -> str:
-        user = self.metadata['user']
-        user_id = session.query(User).filter_by(name=user).first().user_id
-        # mac_addr = self._get_mac_addr(user)
-        mac_addr = self.metadata['mac_addr']
-        raw_path = dest_path or self.metadata['src_path']
-        logging.info(f"[+] Formatting path: {raw_path}")
-        src_path = os.path.normpath(raw_path).replace('\\', '/')
-        src_path = src_path.split('/')
-        src_path = src_path[3:]
-        src_path.insert(0, str(mac_addr))
-        src_path.insert(0, str(user_id))
-        src_path.insert(0, '~')
-        src_path = '/'.join(src_path)       
-        formatted_path = os.path.expanduser(src_path)
-        # logging.info(f"[+] Formatted path: {formatted_path}")
-        return formatted_path
+
+        # DONE remove client's local root directory e.g. '/home/aryan/'
+        # DONE replace it with owners directory e.g. '/home/pi/02/123123/'
+
+        remove_prefix = session.query(Share).filter_by(folder_id=self.metadata['folder_id'], username=self.metadata['user']).first().path
+        new_prefix = session.query(Folder).filter_by(folder_id=self.metadata['folder_id']).first().path
+
+        # Remove the old prefix and add the new one
+        if self.metadata['src_path'].startswith(remove_prefix):
+            relative_path = self.metadata['src_path'][len(remove_prefix):]  # Get the path after the prefix
+            updated_path = new_prefix + relative_path
+            logging.info(f"[F] Formatted Path: {updated_path}")
+        else:
+            logging.info("Prefix not found in path")
+
+        # user = self.metadata['user']
+        # user_id = session.query(User).filter_by(name=user).first().user_id
+        # # mac_addr = self._get_mac_addr(user)
+        # mac_addr = self.metadata['mac_addr']
+        # raw_path = dest_path or self.metadata['src_path']
+        # logging.info(f"[+] Formatting path: {raw_path}")
+        # src_path = os.path.normpath(raw_path).replace('\\', '/')
+        # src_path = src_path.split('/')
+        # src_path = src_path[3:]
+        # src_path.insert(0, str(mac_addr))
+        # src_path.insert(0, str(user_id))
+        # src_path.insert(0, '~')
+        # src_path = '/'.join(src_path)       
+        # formatted_path = os.path.expanduser(src_path)
+        # # logging.info(f"[+] Formatted path: {formatted_path}")
+        # return formatted_path
+
+        return updated_path
     
     def echo(self): # sends event/data to client2 OR if client2 offline, adds to sync_queue 🔊🔊🔊
+        user = self.metadata['user']
+        logging.info(f"[+] User: {user}")
         folder_id = self.metadata.get('folder_id')
         logging.info(f"[+] Folder ID: {folder_id}")
         event_type = self.metadata.get('event_type')
@@ -914,7 +943,11 @@ class SyncEvent(Incoming):
             logging.error(f"Error calculating relative path: {e}")
             src_path = formatted_src_path  # Fallback to using the full path
 
-        shared_users = session.query(Share).filter_by(folder_id=folder_id).all()
+        shared_users = session.query(Share).filter(
+            Share.folder_id == folder_id,
+            Share.username != user
+        ).all()
+
         for user in shared_users:
             src_path = user.path + '/' + src_path
             new_metadata = self.metadata
@@ -1488,6 +1521,11 @@ class Outgoing(Sync):
 
         if self.event_type == 'moved':
             self.dest_path = event['dest_path']
+
+        if self.event_type == 'request':
+            self.block_offset = event['block_offset']
+            self.block_size = event['block_size']
+            self.block_hash = event['block_hash']
     
     def _build_metadata(self) -> dict:
         metadata = {
@@ -1646,6 +1684,7 @@ class Outgoing(Sync):
             "src_path": src_path,
             "is_dir": True,
             "origin": 'initialise_copy',
+            "folder_id": folder_id,
             }
 
             outgoingsock = socket.socket() 
@@ -1725,8 +1764,9 @@ class Outgoing(Sync):
         """Send event data to a client."""
         outgoingsock = socket.socket()
         ip = address[0]
-        port = address[1] if isinstance(address, tuple) and len(address) > 1 else self.PORT
-        
+        # port = address[1] if isinstance(address, tuple) and len(address) > 1 else self.PORT
+        port = self.PORT
+
         try:
             # Set a reasonable timeout
             outgoingsock.settimeout(10.0)
@@ -1740,6 +1780,19 @@ class Outgoing(Sync):
             logging.info(f"[+] Sending metadata for {self.event_type} event: {self.src_path}")
             self.send_packet(outgoingsock, metadata)
             
+            if self.event_type == 'request':
+                # Reveive the requested block
+                # receive_valid_packet(self, connection: socket.socket, index: int) -> bytes:
+                # Incoming just needs a connection
+                # TODO create incoming object to receive the block
+
+                incoming_block = Incoming(connection=outgoingsock)     # 🗣️ REUSING INCOMING CLASS
+                logging.info(f"[+] Created incoming_block object: {incoming_block}")
+                # TODO receive metadata.
+                block_data, actual_hash = incoming_block.receive_metadata()
+                logging.info(f"[+] Block data received: {block_data}, actual hash: {actual_hash}")
+                return block_data, actual_hash
+
             # For modified files, send the blocklist
             if self.event_type == 'modified' and hasattr(self, 'blocks'):
                 blocklist_packet = {
