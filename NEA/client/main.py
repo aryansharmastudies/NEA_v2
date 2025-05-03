@@ -1821,7 +1821,7 @@ class Incoming(Sync):
         event_type = metadata['event_type']
         # folder = session.query(Folder).filter_by(folder_id=metadata['folder_id']).first()
 
-        if event_type in ['created', 'deleted', 'modified', 'moved'] and folder.type == 'sync_bothways':
+        if event_type in ['created', 'deleted', 'modified', 'moved']:
             folder = db_session.query(Folder).filter_by(folder_id=metadata['folder_id']).first()
             logging.info(f"Event inside folder {folder.name}({folder.folder_id}) with folder type: {folder.type}")
             if folder.type == "sync_bothways":

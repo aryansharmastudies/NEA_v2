@@ -267,7 +267,7 @@ class Share(Base):
 # {'action': 'add_folder', 'name': "anjali's folder", 'directory': '~/HqZYgro3ux',
 #  'shared_users': ['admin:x230', 'admin:admins_MBP', 'joel:joels_pixel'], 'folder_type': 'sync_bothways'}
 
-def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type, user, ):
+def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type, owner_username):
     # DONE check if folder_id exists!
     # DONE convert windows path to linux! USE REGEX!
     # TODO share it to all users... :<
@@ -283,11 +283,11 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
 
     # DONE find username given mac_addr of host
     # mac_addr -> user_id -> username
-    host_name = user
+    host_name = owner_username
     host_id = session.query(User).filter_by(name=host_name).first().user_id
     # host_id = session.query(Device).filter_by(mac_addr=mac_addr).first().user_id
     # hostname = session.query(User).filter_by(user_id=host_id).first().name
-    logging.info(f'[F] 👤Host: {user} with User_ID: {host_id} is creating folder📂: {folder_label} with folder_id: {folder_id} in directory: {directory}')
+    logging.info(f'[F] 👤Host: {host_name} with User_ID: {host_id} is creating folder📂: {folder_label} with folder_id: {folder_id} in directory: {directory}')
 
     for shared_user in shared_users:  # 😳😿
         # find the shared_user and its devices MAC ADDRESS
@@ -382,7 +382,7 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
         return json.dumps({'status': '500', 'status_msg': f'Database error: {str(e)}'})
 
     new_share = Share(
-        username=user,
+        username=owner_username,
         folder_id=folder_id,
         mac_addr=mac_addr,
         folder_label=folder_label,
@@ -390,7 +390,7 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
     )
 
     try:
-        logging.info(f'[F] Creating new share for folder_id: {folder_id}, mac_addr: {mac_addr}, user: {user}')    
+        logging.info(f'[F] Creating new share for folder_id: {folder_id}, mac_addr: {mac_addr}, user: {owner_username}')    
         session.add(new_share)
         session.commit()
         logging.info(f"[F] New share entry created for folder_id: {folder_id}, mac_addr: {mac_addr}")
@@ -668,8 +668,8 @@ def handle_client_message(clientsocket, message):
         directory = client_data['directory']
         shared_users = client_data['shared_users']
         folder_type = client_data['folder_type']
-        user = client_data['user']
-        status = create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type, user)
+        owner_username = client_data['user']
+        status = create_folder(mac_addr, folder_label, folder_id, directory, shared_users, folder_type, owner_username)
         logging.info(f'Sending folder status: {status}')
         clientsocket.send(str(status).encode('utf-8'))
 
@@ -874,7 +874,7 @@ class SyncEvent(Incoming):
             if mac_addr == str(mac_addr):
                 return mac_addr
             
-    def format_path(self, dest_path=None) -> str:
+    def format_path(self, path) -> str:
 
         # DONE remove client's local root directory e.g. '/home/aryan/'
         # DONE replace it with owners directory e.g. '/home/pi/02/123123/'
@@ -883,35 +883,17 @@ class SyncEvent(Incoming):
         new_prefix = session.query(Folder).filter_by(folder_id=self.metadata['folder_id']).first().path
 
         # Remove the old prefix and add the new one
-        if self.metadata['src_path'].startswith(remove_prefix):
-            relative_path = self.metadata['src_path'][len(remove_prefix):]  # Get the path after the prefix
+        if path.startswith(remove_prefix):
+            relative_path = path[len(remove_prefix):]  # Get the path after the prefix
             updated_path = new_prefix + relative_path
             logging.info(f"[F] Formatted Path: {updated_path}")
         else:
             logging.info("Prefix not found in path")
-
-        # user = self.metadata['user']
-        # user_id = session.query(User).filter_by(name=user).first().user_id
-        # # mac_addr = self._get_mac_addr(user)
-        # mac_addr = self.metadata['mac_addr']
-        # raw_path = dest_path or self.metadata['src_path']
-        # logging.info(f"[+] Formatting path: {raw_path}")
-        # src_path = os.path.normpath(raw_path).replace('\\', '/')
-        # src_path = src_path.split('/')
-        # src_path = src_path[3:]
-        # src_path.insert(0, str(mac_addr))
-        # src_path.insert(0, str(user_id))
-        # src_path.insert(0, '~')
-        # src_path = '/'.join(src_path)       
-        # formatted_path = os.path.expanduser(src_path)
-        # # logging.info(f"[+] Formatted path: {formatted_path}")
-        # return formatted_path
-
         return updated_path
-    
+
     def echo(self): # sends event/data to client2 OR if client2 offline, adds to sync_queue 🔊🔊🔊
-        user = self.metadata['user']
-        logging.info(f"[+] User: {user}")
+        sender_user = self.metadata['user']
+        logging.info(f"[+] User: {sender_user}")
         folder_id = self.metadata.get('folder_id')
         logging.info(f"[+] Folder ID: {folder_id}")
         event_type = self.metadata.get('event_type')
@@ -920,7 +902,7 @@ class SyncEvent(Incoming):
         logging.info(f"[+] Is directory: {is_dir}")
         root_folder = session.query(Folder).filter_by(folder_id=folder_id).first()
         logging.info(f"[+] Folder we got from table: {root_folder}")
-        formatted_src_path = self.format_path() # /home/kyoto/Documents/Shared/Wallpaper/Nature becomes /home/pi/02/123123/Documents/Shared/Wallpaper/Nature
+        formatted_src_path = self.format_path(self.metadata['src_path']) # /home/kyoto/Documents/Shared/Wallpaper/Nature becomes /home/pi/02/123123/Documents/Shared/Wallpaper/Nature
         logging.info(f"[+] Formatted path: {formatted_src_path}")
         if event_type == 'moved':
             formatted_dest_path = self.format_path(self.metadata['dest_path'])
@@ -945,7 +927,7 @@ class SyncEvent(Incoming):
 
         shared_users = session.query(Share).filter(
             Share.folder_id == folder_id,
-            Share.username != user
+            Share.username != sender_user
         ).all()
 
         for user in shared_users:
@@ -1088,7 +1070,7 @@ class CreateFile(SyncEvent):
             blocklist[hash] = {"offset": offset, "size": len(data)} # data is binary data, hash is checksum
             offset += len(data)
         
-        formatted_path = self.format_path()
+        formatted_path = self.format_path(self.metadata['src_path'])
         os.makedirs(os.path.dirname(formatted_path), exist_ok=True)
         logging.info(f"[+] Writing file to: {formatted_path}")
         with open(formatted_path, 'wb') as f:
@@ -1131,7 +1113,7 @@ class CreateFile(SyncEvent):
 
 class Delete(SyncEvent):
     def purge_directory(self):
-        formatted_path = self.format_path()
+        formatted_path = self.format_path(self.metadata['src_path'])
         logging.info(f"[+] Deleting directory and its contents: {formatted_path}")
         
         # Use post-order traversal to delete directory contents
@@ -1176,7 +1158,7 @@ class Delete(SyncEvent):
             self.purge_directory()
             logging.info(f"[-] Directory '{self.metadata['src_path']}' deleted successfully.")
         else: 
-            formatted_path = self.format_path()
+            formatted_path = self.format_path(self.metadata['src_path'])
             try:
                 os.remove(formatted_path)
                 logging.info(f"[-] File '{formatted_path}' deleted successfully.")
@@ -1197,29 +1179,25 @@ class Delete(SyncEvent):
         self.echo() # 🔊
 
 class Move(SyncEvent):
-    def format_dest_path(self) -> str:
-        """Format the destination path using the same logic as format_path()"""
-        user = self.metadata['user']
-        user_id = session.query(User).filter_by(name=user).first().user_id
-        mac_addr = self._get_mac_addr(user)
-        raw_path = self.metadata['dest_path']
-        logging.info(f"[+] Formatting dest path: {raw_path}")
-        dest_path = os.path.normpath(raw_path).replace('\\', '/')
-        dest_path = dest_path.split('/')
-        dest_path = dest_path[3:]
-        dest_path.insert(0, str(mac_addr))
-        dest_path.insert(0, str(user_id))
-        dest_path.insert(0, '~')
-        dest_path = '/'.join(dest_path)       
-        formatted_path = os.path.expanduser(dest_path)
-        logging.info(f"[+] Formatted dest path: {formatted_path}")
-        return formatted_path
+    # def format_dest_path(self) -> str:
+
+    #     remove_prefix = session.query(Share).filter_by(folder_id=self.metadata['folder_id'], username=self.metadata['user']).first().path
+    #     new_prefix = session.query(Folder).filter_by(folder_id=self.metadata['folder_id']).first().path
+
+    #     # Remove the old prefix and add the new one
+    #     if self.metadata['dest_path'].startswith(remove_prefix):
+    #         relative_path = self.metadata['dest_path'][len(remove_prefix):]  # Get the path after the prefix
+    #         updated_path = new_prefix + relative_path
+    #         logging.info(f"[F] Formatted Path: {updated_path}")
+    #     else:
+    #         logging.info("Prefix not found in path")
+    #     return updated_path
     
     def apply(self):
         
         # Format source and destination paths
-        src_path = self.format_path()
-        dest_path = self.format_dest_path()
+        src_path = self.format_path(self.metadata['src_path'])  
+        dest_path = self.format_path(self.metadata['dest_path'])
         
         logging.info(f"[+] Moving from {src_path} to {dest_path}")
         
@@ -1281,7 +1259,7 @@ class Move(SyncEvent):
 
 class Modify(SyncEvent):
     def apply(self):
-        formatted_path = self.format_path() #🆗
+        formatted_path = self.format_path(self.metadata['src_path']) #🆗
         logging.info(f"[+] Processing modification for file: {formatted_path}") #🆗
         
         # Get block info packet first
