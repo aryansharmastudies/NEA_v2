@@ -1561,8 +1561,8 @@ def sync_worker():
 # def sync_listener(): # bridges barrier between incoming data and sync class
 #     incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 #     incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-#     incomingsock.bind((ip, 6969))
-#     logging.info(f"[+] Listening on {ip}:6969...")
+#     incomingsock.bind((ip, 7000))
+#     logging.info(f"[+] Listening on {ip}:7000...")
 #     incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
 
 #     while True:
@@ -1588,7 +1588,7 @@ class Sync:
 class Outgoing(Sync):
     def __init__(self, event):
         super().__init__()
-        self.PORT = 9696
+        self.PORT = 9000
         self.src_path = event['src_path']
         self.is_dir = event['is_dir']  # Updated to use 'is_dir' from event
         self.origin = event['origin']  # Updated to use 'origin' from event
@@ -1790,8 +1790,8 @@ class Outgoing(Sync):
 def sync_listener(): # bridges barrier between incoming data and sync class
     incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    incomingsock.bind((ip, 6969))
-    logging.info(f"[+] Listening on {ip}:6969...")
+    incomingsock.bind((ip, 7000))
+    logging.info(f"[+] Listening on {ip}:7000...")
     incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
 
     while True:
@@ -1809,7 +1809,7 @@ def sync_listener(): # bridges barrier between incoming data and sync class
 class Incoming(Sync):
     def __init__(self, address, connection):
         super().__init__()
-        self.PORT = 6969
+        self.PORT = 7000
         self.folderSyncInProgress = False
         self.address = address
         self.connection = connection
@@ -1912,7 +1912,7 @@ class Incoming(Sync):
             })
         
     def listen_for_requests(self):
-        """Listen for block requests from server on port 6969."""
+        """Listen for block requests from server on port 7000."""
         request_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         request_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         
