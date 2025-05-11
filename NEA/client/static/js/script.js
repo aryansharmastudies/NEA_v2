@@ -644,3 +644,521 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+
+
+// // Format bytes to human-readable format
+// function formatBytes(bytes, decimals = 2) {
+//     if (bytes === 0) return '0 Bytes';
+    
+//     const k = 1024;
+//     const dm = decimals < 0 ? 0 : decimals;
+//     const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    
+//     const i = Math.floor(Math.log(bytes) / Math.log(k));
+    
+//     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+// }
+
+// // // Load and display storage stats
+// // function loadStorageStats() {
+// //     document.getElementById('total-storage').textContent = 'Loading...';
+// //     document.getElementById('free-space').textContent = 'Loading...';
+// //     document.getElementById('your-usage').textContent = 'Loading...';
+    
+// //     fetch('/get_storage_stats')
+// //         .then(response => response.json())
+// //         .then(data => {
+// //             if (data.status === 'success') {
+// //                 // Update summary boxes
+// //                 document.getElementById('total-storage').textContent = formatBytes(data.total_storage);
+// //                 document.getElementById('free-space').textContent = formatBytes(data.free_space);
+                
+// //                 // Find current user's usage
+// //                 const currentUser = document.body.getAttribute('data-username') || '';
+// //                 const yourUsage = data.user_usage.find(item => item.username === currentUser)?.bytes_used || 0;
+// //                 document.getElementById('your-usage').textContent = formatBytes(yourUsage);
+                
+// //                 // Create pie chart
+// //                 createStorageChart(data);
+// //             } else {
+// //                 console.error('Error loading storage stats:', data.message);
+// //                 document.getElementById('total-storage').textContent = 'Error loading data';
+// //                 document.getElementById('free-space').textContent = 'Error loading data';
+// //                 document.getElementById('your-usage').textContent = 'Error loading data';
+// //             }
+// //         })
+// //         .catch(error => {
+// //             console.error('Error:', error);
+// //             document.getElementById('total-storage').textContent = 'Error loading data';
+// //             document.getElementById('free-space').textContent = 'Error loading data';
+// //             document.getElementById('your-usage').textContent = 'Error loading data';
+// //         });
+// // }
+
+// // // Create pie chart for storage usage
+// // let storageChart = null;
+// // function createStorageChart(data) {
+// //     // Destroy existing chart if it exists
+// //     if (storageChart) {
+// //         storageChart.destroy();
+// //     }
+    
+// //     // Prepare chart data
+// //     const labels = data.user_usage.map(item => item.username);
+// //     const values = data.user_usage.map(item => item.bytes_used);
+    
+// //     // Generate colors
+// //     const colors = [];
+// //     for (let i = 0; i < labels.length; i++) {
+// //         const hue = (i * 137) % 360; // Use golden ratio for good color distribution
+// //         colors.push(`hsl(${hue}, 70%, 60%)`);
+// //     }
+    
+// //     // Create chart
+// //     const ctx = document.getElementById('storage-chart').getContext('2d');
+// //     storageChart = new Chart(ctx, {
+// //         type: 'pie',
+// //         data: {
+// //             labels: labels,
+// //             datasets: [{
+// //                 data: values,
+// //                 backgroundColor: colors,
+// //                 borderWidth: 1
+// //             }]
+// //         },
+// //         options: {
+// //             responsive: true,
+// //             maintainAspectRatio: false,
+// //             plugins: {
+// //                 tooltip: {
+// //                     callbacks: {
+// //                         label: function(context) {
+// //                             const label = context.label || '';
+// //                             const value = context.raw || 0;
+// //                             return `${label}: ${formatBytes(value)}`;
+// //                         }
+// //                     }
+// //                 }
+// //             }
+// //         }
+// //     });
+    
+// //     // Create custom legend
+// //     createChartLegend(labels, values, colors);
+// // }
+
+// // // Create custom legend for the chart
+// // function createChartLegend(labels, values, colors) {
+// //     const legendContainer = document.getElementById('chart-legend');
+// //     legendContainer.innerHTML = '';
+    
+// //     for (let i = 0; i < labels.length; i++) {
+// //         const item = document.createElement('div');
+// //         item.className = 'legend-item';
+        
+// //         const colorBox = document.createElement('div');
+// //         colorBox.className = 'legend-color';
+// //         colorBox.style.backgroundColor = colors[i];
+        
+// //         const label = document.createElement('span');
+// //         label.textContent = `${labels[i]} (${formatBytes(values[i])})`;
+        
+// //         item.appendChild(colorBox);
+// //         item.appendChild(label);
+// //         legendContainer.appendChild(item);
+// //     }
+// // }
+
+// // // Add event listeners when DOM is loaded
+// // document.addEventListener('DOMContentLoaded', function() {
+// //     // Add username as data attribute for the stats function to use
+// //     const statusSection = document.querySelector('.status-section');
+// //     if (statusSection) {
+// //         const match = statusSection.textContent.match(/Connected to .* as (\w+)/);
+// //         if (match && match[1]) {
+// //             document.body.setAttribute('data-username', match[1]);
+// //         }
+// //     }
+    
+// //     // Add event listeners for the stats modal
+// //     const statsModal = document.getElementById('statsModal');
+// //     const openStatsBtn = document.getElementById('openStatsModal');
+// //     const closeStatsBtn = document.getElementById('closeStatsModal');
+// //     const refreshStatsBtn = document.getElementById('refreshStats');
+    
+// //     if (openStatsBtn) {
+// //         openStatsBtn.addEventListener('click', function() {
+// //             statsModal.classList.add('open');
+// //             loadStorageStats();
+// //         });
+// //     }
+    
+// //     if (closeStatsBtn) {
+// //         closeStatsBtn.addEventListener('click', function() {
+// //             statsModal.classList.remove('open');
+// //         });
+// //     }
+    
+// //     if (refreshStatsBtn) {
+// //         refreshStatsBtn.addEventListener('click', loadStorageStats);
+// //     }
+// // });
+
+// // document.addEventListener('DOMContentLoaded', function() {
+// //     // Add other existing code...
+    
+// //     // Add event listeners for the stats modal
+// //     const statsModal = document.getElementById('statsModal');
+// //     const openStatsBtn = document.getElementById('openStatsModal');
+// //     const closeStatsBtn = document.getElementById('closeStatsModal');
+// //     const refreshStatsBtn = document.getElementById('refreshStats');
+    
+// //     if (openStatsBtn) {
+// //         openStatsBtn.addEventListener('click', function() {
+// //             statsModal.classList.add('open');
+// //             loadStorageStats(); // This loads and renders the chart
+// //         });
+// //     }
+    
+// //     if (closeStatsBtn) {
+// //         closeStatsBtn.addEventListener('click', function() {
+// //             statsModal.classList.remove('open');
+// //         });
+// //     }
+    
+// //     if (refreshStatsBtn) {
+// //         refreshStatsBtn.addEventListener('click', loadStorageStats);
+// //     }
+    
+// //     // Add username as data attribute for the stats function to use
+// //     const statusSection = document.querySelector('.status-section');
+// //     if (statusSection) {
+// //         const match = statusSection.textContent.match(/Connected to .* as (\w+)/);
+// //         if (match && match[1]) {
+// //             document.body.setAttribute('data-username', match[1]);
+// //         }
+// //     }
+// // });
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Add username as data attribute for the stats function to use
+//     const statusSection = document.querySelector('.status-section');
+//     if (statusSection) {
+//         const match = statusSection.textContent.match(/Connected to .* as (\w+)/);
+//         if (match && match[1]) {
+//             document.body.setAttribute('data-username', match[1]);
+//         }
+//     }
+    
+//     // Add event listeners for the stats modal
+//     const statsModal = document.getElementById('statsModal');
+//     const openStatsBtn = document.getElementById('openStatsModal');
+//     const closeStatsBtn = document.getElementById('closeStatsModal');
+//     const refreshStatsBtn = document.getElementById('refreshStats');
+    
+//     if (openStatsBtn) {
+//         openStatsBtn.addEventListener('click', function() {
+//             statsModal.classList.add('open');
+//             loadStorageStats(); // This loads and renders the chart
+//         });
+//     }
+    
+//     if (closeStatsBtn) {
+//         closeStatsBtn.addEventListener('click', function() {
+//             statsModal.classList.remove('open');
+//         });
+//     }
+    
+//     if (refreshStatsBtn) {
+//         refreshStatsBtn.addEventListener('click', loadStorageStats);
+//     }
+// });
+
+// let storageChart = null;
+// function createStorageChart(data) {
+//     // Destroy existing chart if it exists
+//     if (storageChart) {
+//         storageChart.destroy();
+//     }
+    
+//     // Prepare chart data
+//     const labels = data.user_usage.map(item => item.username);
+//     const values = data.user_usage.map(item => item.bytes_used);
+    
+//     // Generate colors
+//     const colors = [];
+//     for (let i = 0; i < labels.length; i++) {
+//         const hue = (i * 137) % 360; // Use golden ratio for good color distribution
+//         colors.push(`hsl(${hue}, 70%, 60%)`);
+//     }
+    
+//     // Create chart
+//     const ctx = document.getElementById('storage-chart').getContext('2d');
+//     storageChart = new Chart(ctx, {
+//         type: 'pie',
+//         data: {
+//             labels: labels,
+//             datasets: [{
+//                 data: values,
+//                 backgroundColor: colors,
+//                 borderWidth: 1
+//             }]
+//         },
+//         options: {
+//             responsive: true,
+//             maintainAspectRatio: false,
+//             plugins: {
+//                 tooltip: {
+//                     callbacks: {
+//                         label: function(context) {
+//                             const label = context.label || '';
+//                             const value = context.raw || 0;
+//                             return `${label}: ${formatBytes(value)}`;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     });
+    
+//     // Create custom legend
+//     createChartLegend(labels, values, colors);
+// }
+
+// // Create custom legend for the chart
+// function createChartLegend(labels, values, colors) {
+//     const legendContainer = document.getElementById('chart-legend');
+//     legendContainer.innerHTML = '';
+    
+//     for (let i = 0; i < labels.length; i++) {
+//         const item = document.createElement('div');
+//         item.className = 'legend-item';
+        
+//         const colorBox = document.createElement('div');
+//         colorBox.className = 'legend-color';
+//         colorBox.style.backgroundColor = colors[i];
+        
+//         const label = document.createElement('span');
+//         label.textContent = `${labels[i]} (${formatBytes(values[i])})`;
+        
+//         item.appendChild(colorBox);
+//         item.appendChild(label);
+//         legendContainer.appendChild(item);
+//     }
+// }
+
+// // Update this function in your script.js file
+// function loadStorageStats() {
+//     document.getElementById('total-storage').textContent = 'Loading...';
+//     document.getElementById('free-space').textContent = 'Loading...';
+//     document.getElementById('your-usage').textContent = 'Loading...';
+//     document.getElementById('stats-timestamp').textContent = 'Last updated: Loading...';
+    
+//     fetch('/get_storage_stats')
+//         .then(response => response.json())
+//         .then(data => {
+//             if (data.status === 'success') {
+//                 console.log('Received storage stats:', data);
+                
+//                 // Update summary boxes
+//                 document.getElementById('total-storage').textContent = formatBytes(data.total_storage);
+//                 document.getElementById('free-space').textContent = formatBytes(data.free_space);
+                
+//                 // Find current user's usage
+//                 const currentUser = document.body.getAttribute('data-username') || '';
+//                 const yourUsage = data.user_usage.find(item => item.username === currentUser)?.bytes_used || 0;
+//                 document.getElementById('your-usage').textContent = formatBytes(yourUsage);
+                
+//                 // Update timestamp
+//                 document.getElementById('stats-timestamp').textContent = 
+//                     'Last updated: ' + (data.timestamp || new Date().toLocaleString());
+                
+//                 // Create pie chart
+//                 createStorageChart(data);
+//             } else {
+//                 console.error('Error loading storage stats:', data.message);
+//                 document.getElementById('total-storage').textContent = 'Error loading data';
+//                 document.getElementById('free-space').textContent = 'Error loading data';
+//                 document.getElementById('your-usage').textContent = 'Error loading data';
+//                 document.getElementById('stats-timestamp').textContent = 'Failed to load data';
+//             }
+//         })
+//         .catch(error => {
+//             console.error('Error:', error);
+//             document.getElementById('total-storage').textContent = 'Error loading data';
+//             document.getElementById('free-space').textContent = 'Error loading data';
+//             document.getElementById('your-usage').textContent = 'Error loading data';
+//             document.getElementById('stats-timestamp').textContent = 'Failed to load data';
+//         });
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Add this to your existing socket listeners in script.js
+socket.on('storage_stats', function(data) {
+    console.log('Received storage stats via websocket:', data);
+    displayStorageStats(data);
+});
+
+// Function to format bytes into readable format
+function formatBytes(bytes, decimals = 2) {
+    if (bytes === 0) return '0 Bytes';
+    
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
+
+// Function to display the stats in the modal
+function displayStorageStats(data) {
+    // Update summary boxes
+    document.getElementById('total-storage').textContent = formatBytes(data.total_storage);
+    document.getElementById('free-space').textContent = formatBytes(data.free_space);
+    
+    // Find current user's usage
+    const currentUser = document.body.getAttribute('data-username');
+    let yourUsage = 0;
+    if (data.user_usage && data.user_usage.length) {
+        const userStats = data.user_usage.find(item => item.username === currentUser);
+        if (userStats) {
+            yourUsage = userStats.bytes_used;
+        }
+    }
+    document.getElementById('your-usage').textContent = formatBytes(yourUsage);
+    
+    // Update timestamp
+    document.getElementById('stats-timestamp').textContent = 
+        'Last updated: ' + (data.timestamp || new Date().toLocaleString());
+    
+    // Create the chart
+    createStorageChart(data);
+}
+
+// Add this function to create the pie chart
+function createStorageChart(data) {
+    const ctx = document.getElementById('storage-chart').getContext('2d');
+    
+    // Destroy existing chart if it exists
+    if (window.storageChart) {
+        window.storageChart.destroy();
+    }
+    
+    // Prepare data for the chart
+    const chartData = {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: [
+                '#4CAF50', '#2196F3', '#FF9800', '#E91E63', '#9C27B0',
+                '#00BCD4', '#FFEB3B', '#795548', '#607D8B', '#3F51B5'
+            ],
+            borderWidth: 1
+        }]
+    };
+    
+    // Add user data
+    if (data.user_usage && data.user_usage.length) {
+        data.user_usage.forEach((user, index) => {
+            chartData.labels.push(user.username);
+            chartData.datasets[0].data.push(user.bytes_used);
+        });
+    }
+    
+    // Add free space
+    chartData.labels.push('Free Space');
+    chartData.datasets[0].data.push(data.free_space);
+    
+    // Create the chart
+    window.storageChart = new Chart(ctx, {
+        type: 'pie',
+        data: chartData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+}
+
+// Function to request storage stats
+function requestStorageStats() {
+    console.log('Requesting storage stats...');
+    socket.emit('request_storage_stats');
+    
+    // Show loading indicators
+    document.getElementById('total-storage').textContent = 'Loading...';
+    document.getElementById('free-space').textContent = 'Loading...';
+    document.getElementById('your-usage').textContent = 'Loading...';
+    document.getElementById('stats-timestamp').textContent = 'Updating...';
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get username from somewhere in your UI 
+    // (adjust selector based on where username is shown)
+    const statusElement = document.querySelector('.status-section');
+    if (statusElement) {
+        const usernameMatch = statusElement.textContent.match(/as (\w+)/);
+        if (usernameMatch && usernameMatch[1]) {
+            document.body.setAttribute('data-username', usernameMatch[1]);
+        }
+    }
+    
+    // Set up modal event listeners
+    const statsModal = document.getElementById('statsModal');
+    const openStatsBtn = document.getElementById('openStatsModal');
+    const closeStatsBtn = document.getElementById('closeStatsModal');
+    const refreshStatsBtn = document.getElementById('refreshStats');
+    
+    if (openStatsBtn && statsModal) {
+        openStatsBtn.addEventListener('click', function() {
+            statsModal.classList.add('open');
+            requestStorageStats(); // Request stats when opening modal
+        });
+    }
+    
+    if (closeStatsBtn && statsModal) {
+        closeStatsBtn.addEventListener('click', function() {
+            statsModal.classList.remove('open');
+        });
+    }
+    
+    if (refreshStatsBtn) {
+        refreshStatsBtn.addEventListener('click', requestStorageStats);
+    }
+    
+    // Close modal if clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target === statsModal) {
+            statsModal.classList.remove('open');
+        }
+    });
+});

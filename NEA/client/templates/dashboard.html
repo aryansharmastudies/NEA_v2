@@ -291,7 +291,6 @@ when we finish exe code.-->
 
 <h2>Dashboard Control Panel</h2>
 
-<img src="{{ url_for('static', filename='images/initial_d03.jpg') }}" class="image" />
 <style>
     .image {
       width: 200px;
@@ -384,15 +383,61 @@ when we finish exe code.-->
 
 </body>
 
-<!-- Join Group Form -->
-<div class="form-container">
-<form method="POST" action="#">
-    <input type="hidden" name="action" value="join_group">
-    <label for="group_name">group name:</label>
-    <input type="text" id="group_name" name="group_name", required>
-    <button type="submit">join group</button>
-</form>
+
+<!-- Storage Stats Modal -->
+<div id="statsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="closeStatsModal">&times;</span>
+        <h2>Storage Statistics</h2>
+        <div class="stats-container">
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Total Storage</div>
+                    <div class="stat-value" id="total-storage">Loading...</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Free Space</div>
+                    <div class="stat-value" id="free-space">Loading...</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Your Usage</div>
+                    <div class="stat-value" id="your-usage">Loading...</div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="storage-chart"></canvas>
+            </div>
+            <div class="stats-footer">
+                <span id="stats-timestamp">Last updated: Never</span>
+                <button id="refreshStats" class="btn-refresh">Refresh</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+<br>
+<!-- Button to open the stats modal -->
+<button id="openStatsModal" class="btn-stats">View Storage Statistics</button>
+
+<!-- Include Chart.js before your script.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    .timestamp {
+        color: #808080;
+        font-size: 12px;
+        margin-top: -10px;
+        margin-bottom: 15px;
+        font-style: italic;
+        font-family: 'Courier New', monospace;
+    }
+    
+    /* Make sure modal is wide enough for the chart */
+    #statsModal .modal-inner {
+        width: 600px;
+        max-width: 90%;
+    }
+</style>
 
 <!-- Folders Display Section -->
 <div class="section-container">
@@ -418,7 +463,10 @@ when we finish exe code.-->
 </div>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/static/js/script.js" defer></script>
+
 
 
 {% endblock %}

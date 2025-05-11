@@ -1,4 +1,4 @@
-from sqlalchemy import URL, create_engine, Column, Integer, String
+from sqlalchemy import URL, create_engine, Column, Integer, String, func
 from sqlalchemy.orm import declarative_base
 import socket
 import json
@@ -123,11 +123,6 @@ class Response: # 👑
     def tojson(self):
         return json.dumps(self,default=lambda o: o.__dict__, sort_keys=True, indent=2)
 
-class Status_Response(Response):
-    def __init__(self):
-        super().__init__()
-        logging.info(f'Status_Response Object is made')
-
 class Data_Response(Response):
     def __init__(self, requested_data):
         super().__init__()
@@ -191,15 +186,24 @@ class Data_Response(Response):
         logging.info(f'Scraped {len(scraped_data)} records from {table_name}')
         return scraped_data
 
-class Instruction_Response(Response):
-    def __init__(self):
-        super().__init__()
-        logging.info(f'Instruction_Response Object is made')
-
-class Blockdata_Response(Response):
-    def __init__(self):
-        super().__init__()
-        logging.info(f'Blockdata_Response Object is made')
+def update_folder_size(folder_id):
+    """Update the size of a folder based on its files in the database."""
+    try:
+        # Get the total size of all files in the folder
+        total_size = session.query(func.sum(File.size)).filter_by(folder_id=folder_id).scalar() or 0
+        
+        # Update the folder's size in the database
+        folder = session.query(Folder).filter_by(folder_id=folder_id).first()
+        if folder:
+            folder.size = total_size
+            session.commit()
+            logging.info(f'[📊] Updated folder {folder_id} size to {total_size} bytes')
+        else:
+            logging.warning(f'[❓] Folder {folder_id} not found when updating size')
+            
+    except Exception as e:
+        logging.error(f'[❌] Error updating folder size: {e}')
+        session.rollback()
 
 
 def create_user(r_user, hash):
@@ -289,13 +293,13 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
     # hostname = session.query(User).filter_by(user_id=host_id).first().name
     logging.info(f'[F] 👤Host: {host_name} with User_ID: {host_id} is creating folder📂: {folder_label} with folder_id: {folder_id} in directory: {directory}')
 
-    for shared_user in shared_users:  # 😳😿
+    for shared_user in shared_users: 
 
         shared_user = shared_user.split(':') # ['admin', 'x230']
-        username = shared_user[0] # 🌸
-        device_name = shared_user[1] # 🌸
-        user = session.query(User).filter_by(name=username).first() # 🌸
-        target_user_id = user.user_id # 🌸
+        username = shared_user[0] 
+        device_name = shared_user[1] 
+        user = session.query(User).filter_by(name=username).first()
+        target_user_id = user.user_id 
 
         if not user:
             logging.info(f'[F] User: {username} not found')
@@ -308,7 +312,7 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
             logging.info(f'[F] Device: {device_name} not found for User: {username}')
             return json.dumps({'status': '404', 'status_msg': 'Device not found'})
         
-        device_mac_addr = device.mac_addr # gets devices mac addr # 🌸
+        device_mac_addr = device.mac_addr # gets devices mac addr 
         logging.info(f'[F] Device: {device_name} found with Mac_addr: {device_mac_addr}')
 
         if username not in ip_map['users']:
@@ -322,10 +326,10 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
 
         logging.info(f'[F] invites.json BEFORE adding: {invites}')
         if username not in invites['folders']: # first check if the user is in the invites file 🌸
-            invites['folders'][username] = {} # 🌸
-            invites['folders'][username][device_mac_addr] = [] # if not, add them 🌸
+            invites['folders'][username] = {} 
+            invites['folders'][username][device_mac_addr] = [] # if not, add them
         elif device_mac_addr not in invites['folders'][username]: # then check if the device is in the invites file 🌸
-            invites['folders'][username][device_mac_addr] = [] # if not, add it 🌸
+            invites['folders'][username][device_mac_addr] = [] # if not, add it
 
         invites['folders'][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
         logging.info(f'[F] invites.json AFTER adding: {invites}')
@@ -437,6 +441,81 @@ def alert(user, mac_addr): # TODO make it send back any unanswered invites to th
     logging.info(f'sending alerts to {user} with mac_addr {mac_addr}: {alerts}')
     return alerts
 
+def get_storage_stats(client_data):
+    """Calculate and return storage statistics for the server and per user."""
+    try:
+        # Get total storage information
+        if system == 'l':  # Linux
+            total, used, free = shutil.disk_usage('/')
+        else:  # Windows
+            total, used, free = shutil.disk_usage('C:\\')
+        
+        # Calculate per-user storage usage
+        user_usage = []
+        
+        # Group by username and sum file sizes
+        user_sizes = {}
+        
+        # Get all shares to identify folder owners
+        shares = session.query(Share).all()
+        folder_owners = {}
+        
+        # Map folder IDs to their owners
+        for share in shares:
+            if share.folder_id not in folder_owners:
+                folder_owners[share.folder_id] = share.username
+        
+        # Calculate total size per folder
+        folder_sizes = {}
+        for folder_id in folder_owners:
+            # Sum the size of all files in this folder
+            total_size = session.query(func.sum(File.size)).filter_by(folder_id=folder_id).scalar() or 0
+            folder_sizes[folder_id] = total_size
+            
+            # Attribute size to owner
+            owner = folder_owners[folder_id]
+            if owner not in user_sizes:
+                user_sizes[owner] = 0
+            user_sizes[owner] += total_size
+        
+        # Format the user usage data
+        for username, size in user_sizes.items():
+            user_usage.append({
+                'username': username,
+                'bytes_used': size
+            })
+        
+        # Add "System" for remaining spacew
+        system_usage = used - sum(user.get('bytes_used', 0) for user in user_usage)
+        if system_usage > 0:
+            user_usage.append({
+                'username': 'System',
+                'bytes_used': system_usage
+            })
+        
+        # Build response
+        response = {
+            'status': '200',
+            'data': {
+            'total_storage': total,
+            'used_space': used,
+            'free_space': free,
+            'user_usage': user_usage,
+            'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            }
+        }
+        
+        logging.info(f"Generated storage statistics: {len(user_usage)} users, {free/(1024*1024*1024):.2f}GB free")
+        logging.info(f"Stats Response: {response}")
+        return json.dumps(response)
+        
+    except Exception as e:
+        logging.error(f"Error generating storage statistics: {e}", exc_info=True)
+        return json.dumps({
+            'status': '400',
+            'message': str(e)
+        })
+    
 
 def accept_share(client_data, clientsocket):
     try:
@@ -524,6 +603,53 @@ def accept_share(client_data, clientsocket):
     # outgoingsock.connect((ip_map['users'][username][str(mac_addr)], 7000))
     copy = Outgoing(event)
     copy.initialise_copy(directory, root_folder_path, folder_id, folder_label, username, mac_addr)
+
+def decline_share(client_data):
+    try:
+        folder_id = client_data.get('folder_id')
+        username = client_data.get('username') or client_data.get('user')
+        mac_addr = str(client_data.get('mac_addr'))
+        
+        logging.info(f'Processing share decline for folder_id: {folder_id}, from user: {username}, device: {mac_addr}')
+        
+        # Check if user exists in invites
+        if username not in invites['folders']:
+            logging.info(f'No invites found for user: {username}')
+            return json.dumps({'status': '404', 'status_msg': 'No invites found for user'})
+            
+        # Check if mac_addr exists for user
+        if mac_addr not in invites['folders'][username]:
+            logging.info(f'No invites found for device: {mac_addr}')
+            return json.dumps({'status': '404', 'status_msg': 'No invites found for device'})
+        
+        # Find the matching invite
+        invites_to_keep = []
+        invitation_found = False
+        
+        for invite in invites['folders'][username][mac_addr]:
+            if invite[1] != folder_id:  # invite[1] is the folder_id
+                invites_to_keep.append(invite)
+            else:
+                invitation_found = True
+                logging.info(f'Found and removed invitation for folder_id: {folder_id}')
+        
+        if not invitation_found:
+            logging.info(f'No invitation found for folder_id: {folder_id}')
+            return json.dumps({'status': '404', 'status_msg': 'Invitation not found'})
+        
+        # Update the invites list 
+        invites['folders'][username][mac_addr] = invites_to_keep
+        
+        # Save updated invites
+        with open(invites_file, 'w') as file:
+            json.dump(invites, file, indent=2)
+        
+        logging.info(f'Successfully declined invitation for folder_id: {folder_id}')
+        return json.dumps({'status': '200', 'status_msg': 'Share declined successfully'})
+        
+    except Exception as e:
+        logging.error(f'Error processing share decline: {e}')
+        return json.dumps({'status': '500', 'status_msg': f'Error: {str(e)}'})
 
 def calculate_file_hash(file_path):
     '''Calculate MD5 hash of a file.'''
@@ -671,7 +797,21 @@ def handle_client_message(clientsocket, message):
         response = accept_share(client_data, clientsocket)
         logging.info(f'Accepting share: {response}')
         # clientsocket.send(str(response).encode('utf-8'))
+    
+    elif action == 'decline_share':
+        logging.info(f'Received data: {client_data}')
         
+        # Call the existing decline_share function
+        response = decline_share(client_data)
+        logging.info(f'Declining share status: {response}')
+        clientsocket.send(str(response).encode('utf-8'))
+
+    elif action == 'get_storage_stats':
+        logging.info(f'Received storage statistics request from {client_data.get("user")}')
+        response = get_storage_stats(client_data)
+        logging.info(f'Sending storage statistics response {response}')
+        clientsocket.send(str(response).encode('utf-8'))
+
     else:
         logging.info('Unknown action!')
     
@@ -787,11 +927,11 @@ class Incoming(Sync):
             
         elif not metadata['is_dir'] and event_type == 'created': # i.e. a file is created
             logging.info(f'[+] Initiating CreateFile.apply()')
-            CreateFile(metadata, self.address, self.connection).apply() # ↙️
+            CreateFile(metadata, self.address, self.connection).apply() # ↙️ # inherits method from SyncEvent class
             
         elif event_type == 'deleted':
             logging.info(f'[+] Initiating Delete.apply()')
-            Delete(metadata, self.address).apply() # ↙️
+            Delete(metadata, self.address).apply() # ↙️ # overwrites apply method from SyncEvent class
             
         elif event_type == 'moved':
             logging.info(f'[+] Initiating Move.apply()')
@@ -868,9 +1008,10 @@ class SyncEvent(Incoming):
             logging.info(f'[+] Committed file entry to database: {formatted_path}')
         except Exception as e:
             logging.info(f'[!] Error adding file entry to database: {e}')
+         
             session.rollback()
-
-
+        
+        update_folder_size(folder_id)
         self.echo() # 🔊
 
     def handle_global_blocklist(self, action: str, blocklist: dict = None, hashlist: list = None, src_path: str = None, dest_path: str = None, query = None) -> None:
@@ -1093,6 +1234,8 @@ class Delete(SyncEvent):
                 session.delete(file_entry)
                 session.commit()
                 logging.info(f'[-] File entry for "{formatted_path}" deleted from database.')
+
+                update_folder_size(self.metadata.get('folder_id'))
             else:
                 logging.error(f'[-] No file entry found for "{formatted_path}" in database.')
         
@@ -1137,6 +1280,8 @@ class Move(SyncEvent):
                     file_entry.path = dest_path
                     session.commit()
                     logging.info(f'[+] Database entry updated for file: {dest_path}')
+
+                    update_folder_size(self.metadata.get('folder_id'))
                 else:
                     logging.warning(f'[!] No database entry found for file: {src_path}')
             except Exception as e:
@@ -1348,6 +1493,9 @@ class Modify(SyncEvent):
         file_entry.block_list = json.dumps(serialized_rebuilt)  
         session.commit() 
         logging.info(f'[+] Updated database entry for: {formatted_path}') 
+
+        update_folder_size(self.metadata.get('folder_id'))
+
         logging.info(f'[+] File modification complete') 
         
         self.echo() # 🔊
@@ -1632,6 +1780,9 @@ class Outgoing(Sync):
         logging.info(f'🗃️ Directories: {directories}')
         logging.info(f'📑 Files: {files}')
 
+        update_folder_size(folder_id)
+        logging.info(f'📊 Updated folder size for {folder_id} after initialization')
+
     def start_server(self, address) -> bool:
         '''Send event data to a client.'''
         outgoingsock = socket.socket()
@@ -1777,10 +1928,15 @@ class Global_Blocklist():
         elif self.action == 'query':
             self.query_blocklist()
         pass
-
+    
     def write_blocklist(self): # TODO in the case of writing a blocklist to a file.
-        with open(ip_file, 'w') as file:
-            json.dump(ip_map, file, indent=2)
+        global global_blocklist, global_blocklist_file  # Access global variables
+        try:
+            with open(global_blocklist_file, 'w') as file:
+                json.dump(global_blocklist, file, indent=2)
+            logging.info(f'[BLOCKLIST] Successfully wrote {len(global_blocklist)} entries to {global_blocklist_file}')
+        except Exception as e:
+            logging.error(f'[BLOCKLIST] Error writing blocklist to file: {e}')
 
     def add_blocklist(self): # TODO in the case of adding a hash to a file.
         for hash, position in self.blocklist.items():
@@ -1823,17 +1979,6 @@ class Global_Blocklist():
                 return None 
             logging.error(f'Hash not found in global blocklist: {hash_to_query}')
             return None
-
-class build_instruction():
-    def __init__(self):
-        pass
-
-    # NOTE: rest of the instruction's such as create/delete/moved can be stored and sent as it was received from client -> server
-    # NOTE: event_type = 'created'. just store in sync_queue the instructions for created.
-# QUEUE SYSTEM
-
-
-
 
 if __name__ == '__main__':
     # Start the main server socket

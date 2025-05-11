@@ -138,6 +138,19 @@ socketio = SocketIO(app)
 # def handle_my_custom_event(json):
 #     print('received json: ' + str(json))
 
+
+@socketio.on('request_storage_stats')
+def handle_stats_request():
+    if 'storage_stats' in session:
+        # Send the storage stats that are already in the session
+        emit('storage_stats', session['storage_stats'])
+    else:
+        # If stats aren't available, send a response with error
+        emit('storage_stats', {
+            'status': 'error',
+            'message': 'Storage statistics not available'
+        })
+
 @socketio.on('connect')
 def handle_connect():
     logging.info(f'connected to frontend!')
@@ -154,6 +167,12 @@ def handle_connect():
     logging.info(f'sending users and devices data to frontend!: {session["users_and_devices"]}')
     socketio.emit('folder_data', session['folder_data'])
     logging.info(f'sending folder data to frontend!: {session["folder_data"]}')
+
+    if 'storage_stats' not in session:
+        session['storage_stats'] = {'status': 'error', 'message': 'Storage statistics not available'}
+    
+    socketio.emit('storage_stats', session['storage_stats'])
+    logging.info(f'sending storage stats to frontend!: {session["storage_stats"]}')
 
 @socketio.on('request_users_devices')
 def handle_users_devices_request():
@@ -322,7 +341,7 @@ def pair():
     # DONE: if the user is already connected to a pi and in a session, redirect to dashboard page.
     # DONE: do a GET request and get the hostname to connect to.
     # DONE: then try establish a connection and display it onto the page.
-@app.route("/login", methods=['POST', 'GET']) # in the url if we type localhost:5000/login we are returned with login page.
+@app.route("/login", methods=['POST', 'GET'])
 def login():
     # Handle the form submission
     if request.method == 'POST':
@@ -331,7 +350,7 @@ def login():
         hash = hashlib.new("SHA256")
         hash.update(pwd.encode('utf-8'))
         hash = hash.hexdigest()
-        json_data = json.dumps({'action': 'login','l_user':user, 'hash':hash}) # convertes dictionary to json string.
+        json_data = json.dumps({'action': 'login','l_user':user, 'hash':hash}) # converts dictionary to json
         logging.info(f'hashed password: {hash}')
         logging.info(f'json_data: {json_data}')         
         
@@ -341,7 +360,7 @@ def login():
             session['user']=user
 
             active_session['user'] = user
-            logging.info(f'active_session dict: {active_session}') # global dictionary of session that can be passed to threads
+            logging.info(f'active_session dict: {active_session}') 
 
             flash(f'{status}: {status_msg}', 'info')
             return redirect(url_for('dashboard')) # nm is the dictionary key for name of user input.
@@ -358,8 +377,8 @@ def login():
             logging.info(f'503: server offline, please try again')
             return redirect(url_for('login'))
         
-    else: # BUG: if the user connects to different server, but has 'user' in sessions, then it will redirect to dashboard !!!
-        if 'user' in session and 'server_name' in session: # if user is already logged in, then redirect to user page.
+    else:
+        if 'user' in session and 'server_name' in session: # if user is already logged in, redirect to user page.
             flash(f'Already Logged In {session['user']}!', 'info')
             return redirect(url_for('dashboard'))
         elif 'server_name' not in session:
@@ -486,6 +505,16 @@ def dashboard():
         session['folder_data'] = data
         logging.info(f"Added folder_data to session: {session['folder_data']}")
 
+        stats_data = json.dumps({'action': 'get_storage_stats', 'user': session['user'], 'mac_addr': get_mac()})
+        logging.info(f'Requesting storage statistics... sending: {stats_data}')
+        stats_data = send(stats_data)
+        
+        if stats_data:
+            session['storage_stats'] = stats_data
+            logging.info(f"Added storage statistics to session: {session['storage_stats']}")
+        else:
+            session['storage_stats'] = {'status': 'error', 'message': 'Failed to retrieve storage statistics'}
+
         user_and_device_data = json.dumps({'action': 'request', 'data': {'users': {'user_id': None, 'name': None}, 'devices': {'user_id': None, 'name': None}}})
         logging.info(f'getting users and devices info... sending: {user_and_device_data}')
         data = send(user_and_device_data)
@@ -519,6 +548,8 @@ def dashboard():
             session['users_and_devices'] = users_and_device
             logging.info(f'Added users and devices to session: {session["users_and_devices"]}')
         
+        
+        
         if status == '200':
             if not sync_active.is_set():
                 sync_active.set() # 🧵
@@ -541,6 +572,32 @@ def dashboard():
     else:    
         flash('You are not connected to a server!', 'info')
         return render_template('pair.html')
+
+@app.route('/get_storage_stats', methods=['GET'])
+def get_storage_stats():
+    try:
+        if 'storage_stats' in session:
+            return jsonify(session['storage_stats'])
+        else:
+            # If stats aren't in session yet, request them from server
+            stats_data = json.dumps({'action': 'get_storage_stats', 'user': session.get('user'), 'mac_addr': get_mac()})
+            logging.info(f'Requesting storage statistics on demand... sending: {stats_data}')
+            stats_response = send(stats_data)
+            
+            if stats_response:
+                session['storage_stats'] = stats_response
+                return jsonify(stats_response)
+            else:
+                return jsonify({
+                    'status': 'error', 
+                    'message': 'Failed to retrieve storage statistics'
+                }), 500
+    except Exception as e:
+        logging.error(f"Error getting storage stats: {e}", exc_info=True)
+        return jsonify({
+            'status': 'error',
+            'message': str(e)
+        }), 500
     
 @app.route('/accept_share', methods=['POST'])
 def accept_share():
@@ -636,6 +693,8 @@ def accept_share():
         logging.error(f"Error accepting share: {e}", exc_info=True)
         return jsonify({'status': 'error', 'message': str(e)})
 
+# Replace line 545 that has "accept_sh" with the proper implementation:
+
 @app.route('/decline_share', methods=['POST'])
 def decline_share():
     try:
@@ -644,26 +703,66 @@ def decline_share():
         device_name = data.get('device_name')
         index = int(data.get('index', 0))
         
-        # Create decline data
+        logging.info(f"Declining share request: folder_id={folder_id}, device={device_name}")
+        
+        # Create decline data with all required fields
         decline_data = {
             'action': 'decline_share',
             'folder_id': folder_id,
             'user': session.get('user'),
-            'device_name': device_name
+            'mac_addr': str(get_mac())  # Server expects mac_addr as string
         }
         
         # Send decline to server
-        server_response = send(json.dumps(decline_data))
+        status, status_msg = send(json.dumps(decline_data))
         
-        # Remove from alerts
-        if 'alerts' in session and len(session['alerts']) > index:
-            session['alerts'].pop(index)
+        if status == '200':
+            # Successfully declined on server
+            logging.info(f"Successfully declined share {folder_id} on server")
             
-        return jsonify({'status': 'success', 'message': 'Share declined'})
+            # Remove from alerts
+            if 'alerts' in session and len(session['alerts']) > index:
+                session['alerts'].pop(index)
+                socketio.emit('alerts', session['alerts'])
+                
+            return jsonify({'status': 'success', 'message': 'Share declined'})
+        else:
+            logging.error(f"Server returned error {status} when declining share: {status_msg}")
+            return jsonify({'status': 'error', 'message': f'Server error: {status}'})
             
     except Exception as e:
-        logging.error(f"Error declining share: {e}")
+        logging.error(f"Error declining share: {e}", exc_info=True)
         return jsonify({'status': 'error', 'message': str(e)})
+
+
+# @app.route('/decline_share', methods=['POST'])
+# def decline_share():
+#     try:
+#         data = request.json
+#         folder_id = data.get('folder_id')
+#         device_name = data.get('device_name')
+#         index = int(data.get('index', 0))
+        
+#         # Create decline data
+#         decline_data = {
+#             'action': 'decline_share',
+#             'folder_id': folder_id,
+#             'user': session.get('user'),
+#             'device_name': device_name
+#         }
+        
+#         # Send decline to server
+#         server_response = send(json.dumps(decline_data))
+        
+#         # Remove from alerts
+#         if 'alerts' in session and len(session['alerts']) > index:
+#             session['alerts'].pop(index)
+            
+#         return jsonify({'status': 'success', 'message': 'Share declined'})
+            
+#     except Exception as e:
+#         logging.error(f"Error declining share: {e}")
+#         return jsonify({'status': 'error', 'message': str(e)})
     
 @app.route("/get_users_and_devices", methods=["GET"])
 def get_users_and_devices():
@@ -911,7 +1010,6 @@ class FolderInitializer:
         
         logging.info(f'Sync queue saved to sync_queue.json')
 
-
 '''
                 TODO 🆘 : for all the files that were added to the database, sum up the total file size and assign it to the folder size.
 
@@ -973,7 +1071,7 @@ def send(json_data): # 🛫
             return status, status_msg
         elif action in ['track']:
             return status, status_msg, data
-        elif action in ['request']:
+        elif action in ['request', 'get_storage_stats']:
             return data
         elif action in ['accept_share', 'decline_share']:
             return status, folder_type
@@ -1780,12 +1878,6 @@ class Outgoing(Sync):
             outgoingsock.close()
     
         return True
-########################################################################################
-########################################################################################
-########################################################################################
-########################################################################################
-########################################################################################
-
 
 def sync_listener(): # bridges barrier between incoming data and sync class
     incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -1828,7 +1920,7 @@ class Incoming(Sync):
             
             # event_handler._supressed_dirs(metadata['src_path'])
                 event_handler._ignored_paths.add(metadata['src_path'])
-                logging.info(f"😏 Added {metadata['src_path']} to _ignored_paths")
+                logging.info(f"Added {metadata['src_path']} to _ignored_paths")
 
         if metadata['is_dir'] and event_type == 'created':
             logging.info(f"[+] Initiating CreateDir.apply()")
@@ -2082,11 +2174,6 @@ class SyncEvent(Incoming):
 
     def apply(self):
         pass
-    
-    def _get_mac_addr(self, user) -> str:
-        for mac_addr in ip_map["users"][user]:
-            if mac_addr == str(mac_addr):
-                return mac_addr
 
 class CreateDir(SyncEvent):
     def apply(self):
