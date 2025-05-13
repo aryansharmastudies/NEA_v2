@@ -24695,3 +24695,207 @@
     }
   }
 }
+2025-05-13 17:11:19 INFO 192.168.1.75
+2025-05-13 17:11:19 INFO [START] Started main server thread
+2025-05-13 17:11:19 INFO [START] Started sync queue worker thread
+2025-05-13 17:11:19 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-13 17:11:19 INFO [LOAD] Loaded global blocklist with 1 entries
+2025-05-13 17:11:19 INFO [LOAD] Loaded IP map with 3 users
+2025-05-13 17:11:19 INFO Loaded sync list with 2 events
+2025-05-13 17:11:19 INFO [LOAD] Loaded invites data
+2025-05-13 17:11:19 INFO [LOAD] Loaded file_to_hash with 340 entries
+2025-05-13 17:11:23 INFO Connection from ('192.168.1.75', 55668) has been established!
+2025-05-13 17:11:23 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-05-13 17:11:23 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-13 17:11:23 INFO ip_map: {'users': {'ryosuke': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-05-13 17:11:23 INFO building alerts for takumi with mac_addr 4681952839112
+2025-05-13 17:11:23 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-05-13 17:11:23 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-13 17:11:23 INFO Error in sync_list 4681952839112
+2025-05-13 17:11:23 INFO Connection from ('192.168.1.75', 55678) has been established!
+2025-05-13 17:11:23 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-13 17:11:23 INFO Data_Response Object is made
+2025-05-13 17:11:23 INFO Scraped 2 records from folders
+2025-05-13 17:11:23 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'k27lqqQliy', 'name': 'nea_ss', 'path': '/home/osaka/2/4681952839112/Desktop/nea_code_to_image', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'WA1JfREFY6', 'name': 'bruh', 'path': '/home/osaka/2/4681952839112/Documents/Initial-D', 'type': 'sync_bothways'}]}
+2025-05-13 17:11:23 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "k27lqqQliy",
+        "mac_addr": "4681952839112",
+        "name": "nea_ss",
+        "path": "/home/osaka/2/4681952839112/Desktop/nea_code_to_image",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "WA1JfREFY6",
+        "mac_addr": "4681952839112",
+        "name": "bruh",
+        "path": "/home/osaka/2/4681952839112/Documents/Initial-D",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-13 17:11:23 INFO Connection from ('192.168.1.75', 55692) has been established!
+2025-05-13 17:11:23 INFO message: {"action": "get_storage_stats", "user": "takumi", "mac_addr": 4681952839112}
+2025-05-13 17:11:23 INFO Received storage statistics request from takumi
+2025-05-13 17:11:23 INFO Generated storage statistics: 2 users, 194.53GB free
+2025-05-13 17:11:23 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 46793932800, 'free_space': 208873697280, 'user_usage': [{'username': 'takumi', 'bytes_used': 1730561570}, {'username': 'System', 'bytes_used': 45063371230}], 'timestamp': '2025-05-13 17:11:23'}}
+2025-05-13 17:11:23 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 46793932800, "free_space": 208873697280, "user_usage": [{"username": "takumi", "bytes_used": 1730561570}, {"username": "System", "bytes_used": 45063371230}], "timestamp": "2025-05-13 17:11:23"}}
+2025-05-13 17:11:23 INFO Connection from ('192.168.1.75', 55698) has been established!
+2025-05-13 17:11:23 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-13 17:11:23 INFO Data_Response Object is made
+2025-05-13 17:11:23 INFO Scraped 3 records from users
+2025-05-13 17:11:23 INFO Scraped 2 records from devices
+2025-05-13 17:11:23 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'rx7'}, {'user_id': 2, 'name': 'ae86'}]}
+2025-05-13 17:11:23 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "rx7",
+        "user_id": 1
+      },
+      {
+        "name": "ae86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-13 17:11:33 INFO Connection from ('192.168.1.75', 44080) has been established!
+2025-05-13 17:11:33 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-05-13 17:11:33 INFO Received ping from 192.168.1.75
+2025-05-13 17:11:33 INFO Pong sent to 192.168.1.75
+2025-05-13 17:11:43 INFO Connection from ('192.168.1.75', 53938) has been established!
+2025-05-13 17:11:43 INFO message: {"action": "login", "l_user": "takumi", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-05-13 17:11:43 INFO User: takumi has logged in
+2025-05-13 17:11:43 INFO Sending login status: {"status": "200", "status_msg": "Login successful"}
+2025-05-13 17:11:43 INFO Connection from ('192.168.1.75', 53942) has been established!
+2025-05-13 17:11:43 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "takumi", "mac_addr": 4681952839112}
+2025-05-13 17:11:43 INFO Recieved tracking info from takumi with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-13 17:11:43 INFO ip_map: {'users': {'ryosuke': {'167132875827157': '192.168.1.221', '4681952839112': '192.168.1.75'}, 'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}}}
+2025-05-13 17:11:43 INFO building alerts for takumi with mac_addr 4681952839112
+2025-05-13 17:11:43 INFO sending alerts to takumi with mac_addr 4681952839112: []
+2025-05-13 17:11:43 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-13 17:11:43 INFO Error in sync_list 4681952839112
+2025-05-13 17:11:43 INFO Connection from ('192.168.1.75', 53950) has been established!
+2025-05-13 17:11:43 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-13 17:11:43 INFO Data_Response Object is made
+2025-05-13 17:11:43 INFO Scraped 2 records from folders
+2025-05-13 17:11:43 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'k27lqqQliy', 'name': 'nea_ss', 'path': '/home/osaka/2/4681952839112/Desktop/nea_code_to_image', 'type': 'sync_bothways'}, {'mac_addr': '4681952839112', 'folder_id': 'WA1JfREFY6', 'name': 'bruh', 'path': '/home/osaka/2/4681952839112/Documents/Initial-D', 'type': 'sync_bothways'}]}
+2025-05-13 17:11:43 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "k27lqqQliy",
+        "mac_addr": "4681952839112",
+        "name": "nea_ss",
+        "path": "/home/osaka/2/4681952839112/Desktop/nea_code_to_image",
+        "type": "sync_bothways"
+      },
+      {
+        "folder_id": "WA1JfREFY6",
+        "mac_addr": "4681952839112",
+        "name": "bruh",
+        "path": "/home/osaka/2/4681952839112/Documents/Initial-D",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-13 17:11:43 INFO Connection from ('192.168.1.75', 53962) has been established!
+2025-05-13 17:11:43 INFO message: {"action": "get_storage_stats", "user": "takumi", "mac_addr": 4681952839112}
+2025-05-13 17:11:43 INFO Received storage statistics request from takumi
+2025-05-13 17:11:43 INFO Generated storage statistics: 2 users, 194.53GB free
+2025-05-13 17:11:43 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 46794526720, 'free_space': 208873103360, 'user_usage': [{'username': 'takumi', 'bytes_used': 1730561570}, {'username': 'System', 'bytes_used': 45063965150}], 'timestamp': '2025-05-13 17:11:43'}}
+2025-05-13 17:11:43 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 46794526720, "free_space": 208873103360, "user_usage": [{"username": "takumi", "bytes_used": 1730561570}, {"username": "System", "bytes_used": 45063965150}], "timestamp": "2025-05-13 17:11:43"}}
+2025-05-13 17:11:43 INFO Connection from ('192.168.1.75', 53976) has been established!
+2025-05-13 17:11:43 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-13 17:11:43 INFO Data_Response Object is made
+2025-05-13 17:11:43 INFO Scraped 3 records from users
+2025-05-13 17:11:43 INFO Scraped 2 records from devices
+2025-05-13 17:11:43 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'ryosuke'}, {'user_id': 2, 'name': 'takumi'}, {'user_id': 3, 'name': 'itsuki'}], 'devices': [{'user_id': 1, 'name': 'rx7'}, {'user_id': 2, 'name': 'ae86'}]}
+2025-05-13 17:11:43 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "rx7",
+        "user_id": 1
+      },
+      {
+        "name": "ae86",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "ryosuke",
+        "user_id": 1
+      },
+      {
+        "name": "takumi",
+        "user_id": 2
+      },
+      {
+        "name": "itsuki",
+        "user_id": 3
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-13 17:12:29 INFO Connection from ('192.168.1.75', 35822) has been established!
+2025-05-13 17:12:29 INFO message: {"action": "delete_folder", "folder_id": "k27lqqQliy", "user": "takumi"}
+2025-05-13 17:12:29 INFO Unknown action!
