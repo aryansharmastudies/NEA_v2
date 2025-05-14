@@ -291,13 +291,26 @@ when we finish exe code.-->
 
 <h2>Dashboard Control Panel</h2>
 
-<style>
-    .image {
-      width: 200px;
-    }
-  </style>
-  
 <br>
+<!-- Add this button somewhere near other account controls, after the storage stats button -->
+
+<button id="openDeleteUserModal" class="btn-danger">Delete Account</button>
+
+<!-- Delete User Confirmation Modal -->
+<div class="modal" id="deleteUserModal">
+    <div class="modal-inner">
+        <h3>Delete Account</h3>
+        <p>Are you sure you want to permanently delete your user account?</p>
+        <p class="warning">This action cannot be undone! All your files and folders will be deleted.</p>
+        
+        <div class="button-container">
+            <button id="confirmDeleteUser" class="danger-button">Delete My Account</button>
+            <button id="cancelDeleteUser">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<br> 
 
 <body>
     <button id="openModalDevice">register device</button>

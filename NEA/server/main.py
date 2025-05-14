@@ -409,7 +409,195 @@ def validate_directory(directory): # NOTE need this for checking if directory is
         logging.info(f'Invalid directory format: {directory}')
         return '400'
 
-                                                                                                                                                                                                                                                                                                                                   
+def delete_user(client_data):
+    username = client_data.get('user')
+    
+    if not username:
+        logging.warning("[U] Missing username in delete_user request")
+        return json.dumps({'status': '400', 'status_msg': 'Missing required parameters'})
+    
+    try:
+        # Get user record
+        user = session.query(User).filter_by(name=username).first()
+        if not user:
+            logging.warning(f"[U] User {username} not found for deletion")
+            return json.dumps({'status': '404', 'status_msg': 'User not found'})
+        
+        user_id = user.user_id
+        
+        # Get all devices for this user
+        devices = session.query(Device).filter_by(user_id=user_id).all()
+        device_macs = [device.mac_addr for device in devices]
+        
+        # Get all folders owned by this user (through shares)
+        owned_folders = session.query(Share).filter_by(username=username).all()
+        folder_ids = [folder.folder_id for folder in owned_folders]
+        
+        # For each folder, check if it's exclusively owned by this user
+        for folder_id in folder_ids:
+            # Get all shares for this folder
+            shares = session.query(Share).filter_by(folder_id=folder_id).all()
+            
+            # If this is the only user sharing this folder, delete the folder and its files
+            if len(shares) == 1 and shares[0].username == username:
+                # Delete physical folder
+                folder = session.query(Folder).filter_by(folder_id=folder_id).first()
+                if folder and os.path.exists(folder.path):
+                    try:
+                        shutil.rmtree(folder.path)
+                        logging.info(f"[U] Deleted folder directory at {folder.path}")
+                    except Exception as e:
+                        logging.error(f"[U] Error deleting folder directory: {e}")
+                
+                # Delete all files for this folder
+                session.query(File).filter_by(folder_id=folder_id).delete()
+                logging.info(f"[U] Deleted file entries for folder {folder_id}")
+                
+                # Delete the folder entry
+                session.query(Folder).filter_by(folder_id=folder_id).delete()
+                logging.info(f"[U] Deleted folder {folder_id}")
+        
+        # Delete all shares for this user
+        session.query(Share).filter_by(username=username).delete()
+        logging.info(f"[U] Deleted share entries for user {username}")
+        
+        # Delete all devices for this user
+        for device in devices:
+            session.delete(device)
+            logging.info(f"[U] Deleted device {device.mac_addr}")
+        
+        # Delete the user
+        session.delete(user)
+        logging.info(f"[U] Deleted user {username}")
+        
+        # Clean up IP map
+        if username in ip_map['users']:
+            del ip_map['users'][username]
+            with open(ip_file, 'w') as file:
+                json.dump(ip_map, file, indent=2)
+            logging.info(f"[U] Removed user from IP map")
+        
+        # Clean up sync list
+        if username in sync_list:
+            del sync_list[username]
+            with open(sync_list_file, 'w') as file:
+                json.dump(sync_list, file, indent=2)
+            logging.info(f"[U] Removed user from sync list")
+        
+        # Clean up invites - both received by the user and sent by the user
+        if username in invites['folders']:
+            del invites['folders'][username]
+            
+            # Also remove any invites this user sent to others
+            for other_user in invites['folders']:
+                for mac_addr in invites['folders'][other_user]:
+                    invites['folders'][other_user][mac_addr] = [
+                        inv for inv in invites['folders'][other_user][mac_addr]
+                        if inv[2] != username  # inv[2] contains the host name who sent the invite
+                    ]
+            
+            with open(invites_file, 'w') as file:
+                json.dump(invites, file, indent=2)
+            logging.info(f"[U] Removed user from invites")
+        
+        # Commit all changes to the database
+        session.commit()
+        
+        logging.info(f"[U] Successfully deleted user {username} and all related data")
+        return json.dumps({'status': '200', 'status_msg': 'User deleted successfully'})
+        
+    except Exception as e:
+        session.rollback()
+        logging.error(f"[U] Error deleting user {username}: {e}", exc_info=True)
+        return json.dumps({'status': '500', 'status_msg': f'Error deleting user: {str(e)}'})
+
+def delete_folder(client_data):
+
+    folder_id = client_data.get('folder_id')
+    username = client_data.get('user')
+    
+    if not folder_id or not username:
+        logging.warning(f"[F] Missing parameters in delete_folder request: {client_data}")
+        return json.dumps({'status': '400', 'status_msg': 'Missing required parameters'})
+    
+    try:
+        # Check if folder exists
+        folder = session.query(Folder).filter_by(folder_id=folder_id).first()
+        if not folder:
+            logging.warning(f"[F] Folder with ID {folder_id} not found for deletion")
+            return json.dumps({'status': '404', 'status_msg': 'Folder not found'})
+            
+        # Check if user has permission (is owner or shared with them)
+        share = session.query(Share).filter_by(folder_id=folder_id, username=username).first()
+        if not share:
+            logging.warning(f"[F] User {username} doesn't have permission to delete folder {folder_id}")
+            return json.dumps({'status': '403', 'status_msg': 'Permission denied'})
+            
+        # Delete physical folder and contents
+        folder_path = folder.path
+        if os.path.exists(folder_path) and os.path.isdir(folder_path):
+            try:
+                shutil.rmtree(folder_path)
+                logging.info(f"[F] Deleted folder directory at {folder_path}")
+            except Exception as e:
+                logging.error(f"[F] Error deleting folder directory: {e}")
+        
+        # Delete all files associated with the folder from database
+        deleted_files = session.query(File).filter_by(folder_id=folder_id).delete()
+        logging.info(f"[F] Deleted {deleted_files} file entries from database for folder {folder_id}")
+        
+        # Delete all shares for this folder
+        deleted_shares = session.query(Share).filter_by(folder_id=folder_id).delete()
+        logging.info(f"[F] Deleted {deleted_shares} share entries for folder {folder_id}")
+        
+        # Delete the folder entry itself
+        session.delete(folder)
+        
+        # Clean up any pending sync events for this folder
+        for u in list(sync_list.keys()):
+            for mac_addr in list(sync_list[u].keys()):
+                # Keep events that don't relate to the deleted folder
+                filtered_events = [event for event in sync_list[u][mac_addr] 
+                                  if event.get('folder_id') != folder_id]
+                
+                # Update the sync list with filtered events
+                if len(filtered_events) < len(sync_list[u][mac_addr]):
+                    sync_list[u][mac_addr] = filtered_events
+                    logging.info(f"[F] Removed pending sync events for folder {folder_id} from user {u}")
+
+        # Persist the updated sync list
+        with open(sync_list_file, 'w') as file:
+            json.dump(sync_list, file, indent=2)
+
+        # Clean up any pending invites for this folder
+        for u in list(invites['folders'].keys()):
+            for mac_addr in list(invites['folders'][u].keys()):
+                # Keep invites that don't relate to the deleted folder
+                filtered_invites = [invite for invite in invites['folders'][u][mac_addr] 
+                                   if invite[1] != folder_id]  # invite[1] is the folder_id
+                
+                # Update the invites list with filtered invites
+                if len(filtered_invites) < len(invites['folders'][u][mac_addr]):
+                    invites['folders'][u][mac_addr] = filtered_invites
+                    logging.info(f"[F] Removed pending invites for folder {folder_id} from user {u}")
+
+        # Persist the updated invites
+        with open(invites_file, 'w') as file:
+            json.dump(invites, file, indent=2)
+        
+        # Commit all database changes
+        session.commit()
+        
+        logging.info(f"[F] Successfully deleted folder {folder_id} and all related data")
+        
+        return json.dumps({'status': '200', 'status_msg': 'Folder deleted successfully'})
+        
+    except Exception as e:
+        session.rollback()
+        logging.error(f"[F] Error deleting folder {folder_id}: {e}", exc_info=True)
+        return json.dumps({'status': '500', 'status_msg': f'Error deleting folder: {str(e)}'})
+
+
 def track_ip(user, mac_addr, ip): # DONE if user logs in with differnet ip from same device! it should update it.
     if user not in ip_map['users']:
         ip_map['users'][user] = {}
@@ -715,7 +903,12 @@ def handle_client_message(clientsocket, message):
         # 😋 data is {'status': '200', 'status_msg': 'IP updated successfully', 'alerts': []}
         logging.info(f'Sending tracking results + alerts: {response}')
         clientsocket.send(str(response).encode('utf-8'))
-
+   
+    elif action == 'delete_folder':
+        logging.info(f"Received delete_folder request: {client_data}")
+        response = delete_folder(client_data)
+        logging.info(f"Delete folder status: {response}")
+        clientsocket.send(str(response).encode('utf-8'))
 
         to_remove = []
         try: 
@@ -731,6 +924,12 @@ def handle_client_message(clientsocket, message):
             logging.info(f'Error in sync_list {e}')
             pass
 
+    elif action == 'delete_user':
+        logging.info(f"Received delete_user request: {client_data}")
+        response = delete_user(client_data)
+        logging.info(f"Delete user status: {response}")
+        clientsocket.send(str(response).encode('utf-8'))
+        
     elif action == 'login':
         l_user = client_data['l_user']
         hash = client_data['hash']

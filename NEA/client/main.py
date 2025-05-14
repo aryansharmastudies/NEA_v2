@@ -295,12 +295,12 @@ def pair():
         session.permanent = True
         server_name = request.form['nm'] # nm is dictionary key.
         logging.info(f'server_name: {server_name}')
-        try:  # TODO 🆘 - USE THE SEND FUNCTION!!!
+        try: 
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((server_name, 8000))
             json_data = json.dumps({'action': 'ping', 'ip_addr':ip})
             logging.info(f'ping sent: {json_data}') 
-            s.send(json_data.encode('utf-8'))       # TODO 🆘 MAYBE USE SEND FUNCTION TO GENERALISE EVERYTHING?
+            s.send(json_data.encode('utf-8'))      
             if s.recv(1024).decode('utf-8') == 'pong':
                 logging.info(f"status: pong")
                 session['server_name'] = server_name
@@ -325,11 +325,9 @@ def pair():
             return redirect(url_for('pair'))
     else:
         if 'server_name' in session and 'user' in session:
-            # TODO 🆘 - ASK SERVER IF USER IS IN DATABASE. IF YES, REDIRECT TO DASHBOARD.
             flash(f'Already Connected with {session["server_name"]} and logged in!', 'info')
             return redirect(url_for('dashboard'))
         elif 'server_name' in session:
-            # TODO 🆘 - PING SERVER TO SEE IF IT IS ACTIVE.
             flash(f'Already Connected with {session["server_name"]}!', 'info')
             return redirect(url_for('login'))
         
@@ -417,11 +415,7 @@ def register():
         elif status == '503':
             flash(f'{status}: {status_msg}', 'error')
             return redirect(url_for('register'))
-    else: # BUG - if user in session, it auto redirects to dashboard.(even if user is not logged in)
-        # if 'user' in session and 'server_name' in session:
-        #     logging.info(f'Already Logged In {session["user"]} in Server {session["server_name"]}!')
-        #     flash('Already Logged In! to register, please log out', 'info')
-        #     return redirect(url_for('dashboard'))
+    else:
         if 'server_name' not in session:
             flash('You are not connected to a server!', 'info')
             return redirect(url_for('pair'))
@@ -453,30 +447,6 @@ def dashboard():
             elif status == '503':
                 flash(f"{status}: {status_msg}", 'error')
                 return redirect(url_for('dashboard'))        
-        
-        elif action == 'add_folder': # 🔴 don't think this is in use.
-            folder_label = request.form.get('folder_label')
-            folder_id = request.form.get('folder_id')
-            folder_path = request.form.get('folder_path')
-            folder_type = request.form.get('folder_type')
-
-            json_data = json.dumps({'action': 'add_folder', 'folder_label': folder_label, 'folder_id': folder_id, 'folder_path': folder_path, 'folder_type': folder_type})
-            status, status_msg = send(json_data)
-            if status == '201':
-                flash(f"{status}: {status_msg}", 'info')
-                return redirect(url_for('dashboard'))
-            elif status == '409':
-                flash(f"{status}: {status_msg}", 'error')
-                return redirect(url_for('dashboard'))
-            elif status == '503':
-                flash(f"{status}: {status_msg}", 'error')
-                return redirect(url_for('dashboard'))
-            return jsonify({'message': f"Folder '{folder_label}' added!"})
-
-        elif action == "join_group":
-            group_name = request.form.get('group_name')
-            # Perform logic to join a group
-            return jsonify({"message": f"Joined group '{group_name}' successfully!"})
 
         else:
             return jsonify({"error": "Unknown action type"}), 400
@@ -554,12 +524,6 @@ def dashboard():
             if not sync_active.is_set():
                 sync_active.set() # 🧵
 
-        # socketio.emit('alerts', data) #⭐
-        # echo_alerts(data) #⭐
-        # socketio.emit('message', 'new notification!!!', broadcast=True)
-        # change_message('new notification!!!')
-
-        # TODO 🆘 - get any notifications from the server.
         return render_template('dashboard.html', server_name=session['server_name'], 
                                 user=session['user'], 
                                 random_folder_id=get_random_id(),
@@ -793,7 +757,36 @@ def get_users_and_devices():
     except Exception as e:
         logging.error(f"💥 Error in /get_users_and_devices: {e}", exc_info=True)
         return jsonify({'error': str(e)}), 500
+
+@app.route('/delete_user', methods=['POST'])
+def delete_user():
+    try:
+        if 'user' not in session:
+            return jsonify({'status': 'error', 'message': 'Not logged in'})
+        
+        # Prepare data to send to the server
+        data = {
+            'action': 'delete_user',
+            'user': session['user'],
+            'mac_addr': get_mac()
+        }
+        
+        # Send delete request to the server
+        logging.info(f"Sending delete user request: {data}")
+        status, message = send(json.dumps(data))
+        logging.info(f"Delete user response: {status}, {message}")
+        
+        if status == '200':
+            # Clear session data
+            session.clear()
+            return jsonify({'status': 'success', 'message': 'Account deleted successfully'})
+        else:
+            return jsonify({'status': 'error', 'message': f'Server error: {message}'})
     
+    except Exception as e:
+        logging.error(f"Error in delete_user: {e}")
+        return jsonify({'status': 'error', 'message': 'An error occurred'})
+
 @app.route("/delete_folder", methods=["POST"])
 def delete_folder():
     data = request.json
@@ -1067,7 +1060,7 @@ def send(json_data): # 🛫
         logging.info(f'{status} : {status_to_codes[status]}')
 
         action = json.loads(json_data)['action']
-        if action in ['login', 'register_user', 'add_device', 'add_folder']:
+        if action in ['login', 'register_user', 'add_device', 'add_folder', 'delete_user']:
             return status, status_msg
         elif action in ['track']:
             return status, status_msg, data
@@ -1075,6 +1068,8 @@ def send(json_data): # 🛫
             return data
         elif action in ['accept_share', 'decline_share']:
             return status, folder_type
+        elif action in ['delete_folder']:
+            return status
 
 ########## HANDLE SERVER MESSAGE ################
 
@@ -1161,8 +1156,6 @@ def is_temp_file(filepath):
 ################################# regex ################################################
 
 class MyEventHandler(FileSystemEventHandler):
-    #def on_any_event(self, event: FileSystemEvent) -> None:
-    #    print(event)
     def __init__(self):
         super().__init__()
         self._supressed_dirs: set[str] = set()
@@ -1287,7 +1280,6 @@ class MyEventHandler(FileSystemEventHandler):
         logging.info(f'Processing event: {event}')
         return super().dispatch(event)  # ✅ This goes ahead **only if the file is not temporary AND  if its not within supressed_dirs**
 
-                                                # TODO 🆘 MODIFY DATABASE + ADD IT TO SYNC_QUEUE 
     def on_moved(self, event):
         
         path = event.src_path
@@ -1321,10 +1313,6 @@ class MyEventHandler(FileSystemEventHandler):
             return
         
         logging.info(f"🟢 Created: {event.src_path}")
-
-        # TODO get folder_id
-        # sync_queue.put
-        # add to db
 
         # if you recreated a suppressed directory, stop suppressing it
         if event.is_directory and event.src_path in self._supressed_dirs:
@@ -1388,7 +1376,6 @@ class MyEventHandler(FileSystemEventHandler):
         if event.is_directory:
             self._supressed_dirs.add(event.src_path)
         
-        #### 🧹🧹🧹 checks sync_queue for any creation/deletion of current file, since delete overrides creation and modification! ####
         '''
         IF WE HAVE A FILE THAT HAS BEEN CREATED OFFLINE. 
         THEN ITS BEEN DELETED OFFLINE.
@@ -1399,7 +1386,7 @@ class MyEventHandler(FileSystemEventHandler):
         WE HAVE TO REMOVE THE MODIFIED EVENT FROM THE QUEUE.
         '''
         removed_created, removed_modified = self.clean(event) # 
-        ###########################################################################################################################
+
         sync_queue.put({
             "id": self.generate_event_id(),
             "event_type":  "deleted",
@@ -1431,7 +1418,7 @@ class MyEventHandler(FileSystemEventHandler):
     def on_modified(self, event):
         path = event.src_path
         if path in self._ignored_paths:
-            logging.debug(f"😏 <on_modified> Ignoring sync-generated event for {path}")
+            logging.debug(f"<on_modified> Ignoring sync-generated event for {path}")
             self._ignored_paths.remove(path)  # Only suppress once!
             return
         
@@ -1488,7 +1475,7 @@ class MyEventHandler(FileSystemEventHandler):
                             '''
                             OFFLINE MODIFICATION OVERRIDES OFFLINE MODIFICATION AND CREATION.
                             '''
-                            removed_created, removed_modified = self.clean(event) # 🧹🧹🧹
+                            removed_created, removed_modified = self.clean(event) 
 
                     else:
                         # File doesn't exist in database yet
@@ -1516,7 +1503,6 @@ class MyEventHandler(FileSystemEventHandler):
                 # Continue with sync anyway to be safe
                 with app.app_context():
                     db.session.rollback()  # Ensure transaction is cleaned up
-        # TODO 🆘 : MODIFICATIONS OVERRIDE OTHER MODIFICATIONS! 
             
             if removed_modified:
                 logging.warning("[!] Handling modifications that override other modifications.")
@@ -1655,25 +1641,6 @@ def sync_worker():
             all_events = list(sync_queue.queue)
             with open("sync_queue.json", "w") as f:
                 json.dump(all_events, f, indent=2)
-
-# def sync_listener(): # bridges barrier between incoming data and sync class
-#     incomingsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#     incomingsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-#     incomingsock.bind((ip, 7000))
-#     logging.info(f"[+] Listening on {ip}:7000...")
-#     incomingsock.listen(1) # only can recieve data from one client at a time otherwise, it can get messy.
-
-#     while True:
-#         connection, address = incomingsock.accept() # if client does s.connect((server_name, 8000))
-#         logging.info(f'Connection from {address} has been established!')
-#         sync_job = Incoming(address, connection)
-#         logging.info(f"[+] Sync job created for {address}...")
-#         sync_job.receive_metadata()
-#         logging.info(f"[+] Sync job completed for {address}...")
-#         connection.close()
-#         logging.info(f"[-] Connection closed for {address}...")
-#         del sync_job
-#         logging.info(f"[-] Sync job deleted for {address}...")
 
 ########################### SYNC WORKER - GLUE BETWEEN SYNC_QUEUE and OUTGOING ##################
 class Sync:
@@ -2362,16 +2329,13 @@ class Modify(SyncEvent):
             # blocklist[hash] = {"offset": offset, "size": len(data)} # data is binary data, hash is checksum
             offset += len(data)
 
-        # os.makedirs(os.path.dirname(self.metadata['src_path']), exist_ok=True)
-        # logging.info(f"[+] Writing file to: {self.metadata['src_path']}")
-
         original_filename = os.path.basename(self.metadata['src_path'])
         temp_file_path = os.path.join(
             os.path.dirname(self.metadata['src_path']),
             f".{original_filename}.tmp"
         )
 
-        logging.info(f"😶‍🌫️ Creating temporary file: {temp_file_path}") #🆗
+        logging.info(f"Creating temporary file: {temp_file_path}")
 
         with open(temp_file_path, 'wb') as f:
             f.write(file_data)
@@ -2390,25 +2354,6 @@ class Modify(SyncEvent):
         else:
             logging.info(f"[+] File hash verified for {self.metadata['src_path']}")  # Updated to use self.metadata['src_path']
 
-        # # Create a new file entry in the database
-        # file_entry = File(
-        #     folder_id=folder_id,
-        #     path=self.metadata['src_path'],  # Updated to use self.metadata['src_path']
-        #     size=size,
-        #     hash=hash,
-        #     version=version
-        # )
-        
-        # with app.app_context():
-        #     db.session.add(file_entry)
-        #     db.session.commit()
-        #     logging.info(f"[+] Added file entry to database: {self.metadata['src_path']}")  # Updated to use self.metadata['src_path']
-
-
-        # TODO Update version
-        # TODO copy file to original location
-        # TODO delete temp file
-        
         file_entry = db_session.query(File).filter_by(path=self.metadata['src_path']).first()
         file_entry.hash = hash
         file_entry.size = size
@@ -2423,15 +2368,6 @@ class Modify(SyncEvent):
 
         os.rename(temp_file_path, self.metadata['src_path'])
         logging.info(f"[+] File: {temp_file_path} moved to original location: {self.metadata['src_path']}")
-
-        # os.remove(temp_file_path)
-        # logging.info(f"[+] Temporary file {temp_file_path} deleted.")
-
-########################################################################################
-########################################################################################
-########################################################################################
-########################################################################################
-########################################################################################
 
 if __name__ == "__main__":
 

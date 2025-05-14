@@ -676,3 +676,22 @@ button:active, .btn:active {
     margin-right: 5px;
     border-radius: 2px;
 }
+
+.btn-danger {
+    background-color: white;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    padding: 8px 16px;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.btn-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
