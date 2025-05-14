@@ -116,28 +116,12 @@ class File(db.Model):
         except FileNotFoundError:
             raise FileNotFoundError(f"The file at path {self.path} does not exist.")
 
-        
+
+
+
+    
 ########## WEB SOCKETS ##########################
 socketio = SocketIO(app)
-
-# NOTE: alerts will be in the form [['folder_label','id','host'],[...],[...]]
-
-# @socketio.on('echo_alerts')
-# def echo_alerts(alerts):
-#     emit('alerts', alerts) # ❓
-
-# def echo_alerts_v2(alerts):
-#     socketio.emit('alerts', alerts) # ❓
-
-# @socketio.on('change message')
-# def change_message(json):
-#     print('recieved json: ' + str(json))
-#     emit('message', json, broadcast=True)
-
-# @socketio.on('my event')
-# def handle_my_custom_event(json):
-#     print('received json: ' + str(json))
-
 
 @socketio.on('request_storage_stats')
 def handle_stats_request():
