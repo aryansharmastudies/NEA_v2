@@ -18,8 +18,6 @@ when we finish exe code.-->
 <body data-mac-address="{{mac_addr}}">
 <body status="{{status}}">
 
-<!-- <script scr = "{{ url_for('static', filename='js/script.js') }}"></script> -->
-<!-- <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='css/style.css') }}"> -->
 
 <style>
     .form-container {
@@ -218,33 +216,6 @@ when we finish exe code.-->
 
 <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
 <script type="text/javascript" charset="utf-8"></script>
-<!--<script src = "{{ url_for('static', filename='script.js') }}"></script>-->
-
-<!--
-<script>
-    var socket = io()
-    socket.on('connect', function(){
-        socket.emit('my event', {data: 'Connection request from Front-end.'})
-    });
-</script>
--->
-
-
-<!--
-<script>
-    var socket = io();
-
-    socket.on('connect', function() {
-        console.log("Connected to WebSocket");
-    });
-
-    socket.on('alerts', function(data) {
-        console.log("Received alerts:", data);
-        document.getElementById('alertBox').innerText = data;
-    });
-</script> 
-
--->
 
 
 <div id="alert_box" style="background: transparent; padding: 10px; border-left: 3px solid #cbb956;">
@@ -292,7 +263,6 @@ when we finish exe code.-->
 <h2>Dashboard Control Panel</h2>
 
 <br>
-<!-- Add this button somewhere near other account controls, after the storage stats button -->
 
 <button id="openDeleteUserModal" class="btn-danger">Delete Account</button>
 
@@ -475,7 +445,6 @@ when we finish exe code.-->
     </div>
 </div>
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script> -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/static/js/script.js" defer></script>

@@ -1,5 +1,6 @@
 from sqlalchemy import URL, create_engine, Column, Integer, String, func
 from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import sessionmaker
 import socket
 import json
 import logging
@@ -8,7 +9,7 @@ import os
 import asyncio
 from get_wip import *
 from get_lip import *
-from sqlalchemy.orm import sessionmaker
+
 
 import struct
 import base64
@@ -1236,9 +1237,6 @@ class SyncEvent(Incoming):
             
     def format_path(self, path) -> str:
 
-        # DONE remove client's local root directory e.g. '/home/aryan/'
-        # DONE replace it with owners directory e.g. '/home/pi/02/123123/'
-
         remove_prefix = session.query(Share).filter_by(folder_id=self.metadata['folder_id'], username=self.metadata['user']).first().path
         new_prefix = session.query(Folder).filter_by(folder_id=self.metadata['folder_id']).first().path
 
@@ -1251,7 +1249,7 @@ class SyncEvent(Incoming):
             logging.info('Prefix not found in path')
         return updated_path
 
-    def echo(self): # sends event/data to client2 OR if client2 offline, adds to sync_list 🔊🔊🔊
+    def echo(self): # sends event/data to client2 OR if client2 offline, adds to sync_list 🔊
         sender_user = self.metadata['user']
         logging.info(f'[+] User: {sender_user}')
         folder_id = self.metadata.get('folder_id')
@@ -1307,7 +1305,6 @@ class SyncEvent(Incoming):
             ip_addr = ip_map['users'][user.username][user.mac_addr]
             logging.info(f'[+] IP address of {user.username}: {ip_addr}')
             try: 
-                # TODO bind to client
                 outgoingsock = socket.socket()
                 outgoingsock.connect((ip_addr, 7000))
                 logging.info(f'[+] Connected to {user.mac_addr} at {ip_addr}')
@@ -1726,12 +1723,6 @@ class Block(SyncEvent):
         except Exception as e:
             logging.error(f'[!] Error in Block.apply(): {e}')
             return None, None
-        
-##############################################################################################
-##############################################################################################
-##############################################################################################
-##############################################################################################
-##############################################################################################
 
 class Outgoing(Sync):
     def __init__(self, event):
@@ -2227,3 +2218,7 @@ if __name__ == '__main__':
     # Build file hash mappings
     file_to_hash = {f.path: f.hash for f in session.query(File).all()}
     logging.info(f'[LOAD] Loaded file_to_hash with {len(file_to_hash)} entries')
+
+
+
+
