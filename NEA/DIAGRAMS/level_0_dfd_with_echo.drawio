@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net">
+	<diagram name="Level 0 DFD with Echo" id="dfd">
+		<mxGraphModel dx="1216" dy="660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
+				<mxCell id="User" value="User" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0f0c0;" vertex="1" parent="1">
+					<mxGeometry x="60" y="60" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="Client" value="Client (Frontend &amp; Flask)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e0e6;" vertex="1" parent="1">
+					<mxGeometry x="200" y="60" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="ClientDB" value="Client DB (SQLAlchemy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9e79f;" vertex="1" parent="1">
+					<mxGeometry x="200" y="140" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="SyncQueue" value="Sync Queue + Watchdog" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f7dc6f;" vertex="1" parent="1">
+					<mxGeometry x="200" y="220" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="TCPSocket" value="TCP Socket 8000/9000" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#add8e6;" vertex="1" parent="1">
+					<mxGeometry x="400" y="60" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="Server" value="Server (Backend)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffb6c1;" vertex="1" parent="1">
+					<mxGeometry x="600" y="60" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="ServerDB" value="Server DB (SQLAlchemy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f4cccc;" vertex="1" parent="1">
+					<mxGeometry x="600" y="140" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="ShareHandler" value="Share &amp; Folder Handler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8c471;" vertex="1" parent="1">
+					<mxGeometry x="600" y="220" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="SyncWorker" value="SyncWorker / Incoming" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a3e4d7;" vertex="1" parent="1">
+					<mxGeometry x="600" y="300" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="EchoHandler" value="Echo Handler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c39bd3;" vertex="1" parent="1">
+					<mxGeometry x="600" y="380" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="SharedClient" value="Shared Client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#aed6f1;" vertex="1" parent="1">
+					<mxGeometry x="850" y="300" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="SharedClientHandler" value="Client Event Handler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9e79f;" vertex="1" parent="1">
+					<mxGeometry x="850" y="380" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="e1" value="Input credentials" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="User" target="Client">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e2" value="Send login/track/add_folder" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="Client" target="TCPSocket">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e3" value="Read/write session data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="ClientDB" target="Client">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e4" value="Update local DB" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="Client" target="ClientDB">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e5" value="Send event metadata" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="SyncQueue" target="TCPSocket">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e6" value="Forward packet" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="TCPSocket" target="Server">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e7" value="Log metadata" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="Server" target="ServerDB">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e8" value="Process folder/user/device" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="Server" target="ShareHandler">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e9" value="Insert/update table" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="ShareHandler" target="ServerDB">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e10" value="Push file sync" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="TCPSocket" target="SyncWorker">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e11" value="Write file data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="SyncWorker" target="ServerDB">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e12" value="Trigger echo" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="SyncWorker" target="EchoHandler">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e13" value="Send event" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="EchoHandler" target="SharedClient">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e14" value="Process sync event" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="SharedClient" target="SharedClientHandler">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>

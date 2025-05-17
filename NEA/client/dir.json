@@ -1,14 +1,35 @@
 {
-  "/home/osaka/Desktop/nea_code_to_image": {
-    "id": "k27lqqQliy",
-    "label": "nea_ss",
+  "/home/osaka/Desktop/Test01": {
+    "id": "FID01",
+    "label": "Test01",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"
   },
-  "/home/osaka/Documents/Initial-D": {
-    "id": "WA1JfREFY6",
-    "label": "bruh",
+  "/home/osaka/Documents/Test02": {
+    "id": "FID02",
+    "label": "Test02",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Documents/Test03": {
+    "id": "FID03",
+    "label": "Test03",
+    "type": "sync_bothways",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Desktop/Test04": {
+    "id": "FID04",
+    "label": "Test04",
+    "type": "sync_oneway",
+    "size": 0,
+    "status": "ACTIVE"
+  },
+  "/home/osaka/Desktop/Lecture-Notes": {
+    "id": "W1Py1wiqE0",
+    "label": "Lecture-Notes",
     "type": "sync_bothways",
     "size": 0,
     "status": "ACTIVE"

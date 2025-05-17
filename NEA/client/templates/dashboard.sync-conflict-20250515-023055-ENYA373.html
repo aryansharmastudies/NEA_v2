@@ -1,0 +1,485 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home page
+{% endblock %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %} <!-- checkout the 'with' statement concept 
+it uhh basically just wraps around the block of code and closes necessary objects
+when we finish exe code.-->
+    {% if messages %}
+        {% for msg in messages%}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<body data-mac-address="{{mac_addr}}">
+<body status="{{status}}">
+
+<!-- <script scr = "{{ url_for('static', filename='js/script.js') }}"></script> -->
+<!-- <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='css/style.css') }}"> -->
+
+<style>
+    .form-container {
+        border: 1px solid #808080; /* Light gray border */
+        border-radius: 8px; /* Rounded corners */
+        padding: 16px; /* Add some padding inside the box */
+        margin-bottom: 16px; /* Add space between the forms */
+        background-color: #f9f9f9; /* Light background color */
+        width: fit-content; /* Adjust width to fit content */
+    }
+    .form-container label {
+        margin-right: 8px; /* Add space between label and input */
+    }
+
+    
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .modal.open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal-inner {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 2px; /* Sharper corners */
+        border-left: 4px solid #228B22; /* Add a vertical accent line */
+        max-width: 500px;
+        width: 80%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    }
+    
+    /* Folders display */
+    .section-container {
+        margin-top: 30px;
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+    }
+    
+    .folders-container {
+        display: grid; /* Use grid instead of flex for more precise layout */
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .folder-box {
+        width: 100%;
+        min-height: 80px;
+        padding: 15px;
+        border-radius: 0; /* Sharp corners */
+        background-color: #f2f2f2;
+        border: 1px solid #ddd;
+        box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1); /* Offset shadow for sharp look */
+        position: relative;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: 'Courier New', monospace; /* Monospace font for technical feel */
+    }
+    
+    .folder-box:hover {
+        transform: translateY(-2px) translateX(-2px); /* Subtle shift */
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15); /* Stronger offset shadow */
+    }
+    
+    .folder-box.current-device {
+        border: none; /* Remove rounded border */
+        border-left: 4px solid #228B22; /* Green left edge instead */
+        border-top: 1px solid #228B22;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    .folder-box.other-device {
+        border: none; /* Remove rounded border */
+        border-left: 4px solid #808080; /* Gray left edge instead */
+        border-top: 1px solid #808080;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    .folder-name {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 8px;
+        padding-bottom: 5px;
+        border-bottom: 1px dashed #ccc; /* Dashed divider line */
+        text-transform: uppercase; /* More technical look */
+        letter-spacing: 1px;
+    }
+    
+    .folder-details {
+        display: none;
+        margin-top: 10px;
+        font-size: 13px;
+        position: relative;
+        padding-left: 5px;
+    }
+    
+    .folder-details.expanded {
+        display: block;
+        border-left: 1px dotted #aaa; /* Add vertical line to details */
+    }
+    
+    .folder-attribute {
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .folder-attribute strong {
+        font-weight: normal; /* Less emphasis */
+        color: #555;
+    }
+    
+    .edit-icon {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        background: none;
+        border: 1px solid #ccc;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 14px;
+        opacity: 0.7;
+        transition: all 0.2s ease;
+    }
+    
+    .edit-icon:hover {
+        opacity: 1;
+        background-color: #eee;
+    }
+    
+    .danger-button {
+        background-color: white;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+        padding: 8px 16px;
+        border-radius: 0; /* Sharp corners */
+        cursor: pointer;
+        font-family: 'Courier New', monospace;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+    }
+    
+    .danger-button:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+    
+    .warning {
+        color: #dc3545;
+        font-weight: normal;
+        border-left: 2px solid #dc3545;
+        padding-left: 8px;
+        font-size: 14px;
+    }
+    
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+    }
+    
+    .loading-folders {
+        font-style: normal;
+        color: #6c757d;
+        border-left: 3px solid #6c757d;
+        padding-left: 10px;
+        font-family: 'Courier New', monospace;
+    }    
+</style>
+    
+
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8"></script>
+<!--<script src = "{{ url_for('static', filename='script.js') }}"></script>-->
+
+<!--
+<script>
+    var socket = io()
+    socket.on('connect', function(){
+        socket.emit('my event', {data: 'Connection request from Front-end.'})
+    });
+</script>
+-->
+
+
+<!--
+<script>
+    var socket = io();
+
+    socket.on('connect', function() {
+        console.log("Connected to WebSocket");
+    });
+
+    socket.on('alerts', function(data) {
+        console.log("Received alerts:", data);
+        document.getElementById('alertBox').innerText = data;
+    });
+</script> 
+
+-->
+
+
+<div id="alert_box" style="background: transparent; padding: 10px; border-left: 3px solid #cbb956;">
+    Waiting for updates...
+</div>
+
+
+<div id="share-requests-container"></div>
+
+<!-- Accept Share Modal -->
+<div class="modal" id="acceptShareModal">
+    <div class="modal-inner">
+        <h3>Accept Shared Folder</h3>
+        <div class="form-container">
+            <form id="acceptShareForm">
+                <input type="hidden" id="share-request-id" name="share_request_id">
+                <input type="hidden" id="share-device-name" name="device_name">
+                <input type="hidden" id="share-folder-id" name="folder_id">
+                
+                <label for="share-folder-label">Folder Label:</label>
+                <input type="text" id="share-folder-label" name="folder_label" required>
+                
+                <label for="share-folder-path">Folder Path:</label>
+                <input type="text" id="share-folder-path" name="folder_path" required>
+                
+                <div class="button-container">
+                    <button type="submit" class="accept-button">Accept</button>
+                    <button type="button" id="cancelAcceptShare">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="status-section">
+    <strong>SYSTEM:</strong> 
+    {% if status %}
+        Connected to {{server_name}} as {{user}}
+    {% else %}
+        Disconnected from {{server_name}}
+    {% endif %}
+</div>
+
+<h2>Dashboard Control Panel</h2>
+
+<br>
+<!-- Add this button somewhere near other account controls, after the storage stats button -->
+
+<button id="openDeleteUserModal" class="btn-danger">Delete Account</button>
+
+<!-- Delete User Confirmation Modal -->
+<div class="modal" id="deleteUserModal">
+    <div class="modal-inner">
+        <h3>Delete Account</h3>
+        <p>Are you sure you want to permanently delete your user account?</p>
+        <p class="warning">This action cannot be undone! All your files and folders will be deleted.</p>
+        
+        <div class="button-container">
+            <button id="confirmDeleteUser" class="danger-button">Delete My Account</button>
+            <button id="cancelDeleteUser">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<br> 
+
+<body>
+    <button id="openModalDevice">register device</button>
+
+    <div class="modal" id="modalDevice">
+        <div class="modal-inner">
+            <h2>(っ °Д °;)っ</h2>
+            <p>register device</p>
+            <div class="form-container">
+                <form method="POST" action="#">
+                    <input type="hidden" name="action" value="add_device">
+                    <label for="device_name">device name:</label>
+                    <input type="text" id="device_name" name="device_name" required>
+                    <button type="submit">add device</button>
+                </form>
+                </div> 
+            <button id="closeModalDevice">Close</button>
+        </div>
+    </div> 
+</body>
+
+<br>
+<body>
+    <button id="openModalFolder">add folder</button>
+
+    <div class="modal" id="modalFolder">
+        <div class="modal-inner">
+
+                <!-- Tabs -->
+    <div class="tabs">
+        <button class="tablink active" data-tab="general">General</button>
+        <button class="tablink" data-tab="sharing">Sharing</button>
+        <button class="tablink" data-tab="advanced">Advanced</button>
+    </div>
+
+        <!-- Tab Content -->
+        <div id="general" class="tabcontent active">
+            <div class="form-container">
+                <form id="generalForm" autocomplete="off">
+                    <input type="hidden" name="action" value="add_folder">
+                    <label for="folder_label">Folder Label</label>
+                    <input type="text" id="folder_label" name="folder_label" required>
+                    <span id="folder_label_error" class="error-message"></span>
+                    
+                    <label for="folder_id">Folder ID</label>
+                    <input type="text" id="folder_id" name="folder_id" value="{{random_folder_id}}" required>
+                    <span id="folder_id_error" class="error-message"></span>
+                    
+                    <label for="folder_path">Folder Path</label>
+                    <input type="text" id="folder_path" name="folder_path" value="~/{{random_folder_id}}" required>
+                    <span id="folder_path_error" class="error-message"></span>
+                </form>
+            </div> 
+        </div>
+
+        <div id="sharing" class="tabcontent">
+            <div class="form-container">
+                <form id="sharingForm">
+                    <!-- Dynamically populated by JavaScript -->
+                </form>
+            </div>
+        </div>
+  
+        <div id="advanced" class="tabcontent">
+            <div class="form-container">
+                <form id="advancedForm">
+                    <label for="folder_type">Folder Type</label>
+                    <select id="folder_type" name="folder_type" required>
+                        <option value="sync_bothways">Sync Both Ways</option>
+                        <option value="sync_oneway">Sync One Way</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button id="submitAllForms" class="action-button">Submit</button>
+            <button id="closeModalFolder" class="action-button">Close</button>
+        </div>
+    </div>
+</div> 
+
+
+</body>
+
+
+<!-- Storage Stats Modal -->
+<div id="statsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="closeStatsModal">&times;</span>
+        <h2>Storage Statistics</h2>
+        <div class="stats-container">
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Total Storage</div>
+                    <div class="stat-value" id="total-storage">Loading...</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Free Space</div>
+                    <div class="stat-value" id="free-space">Loading...</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Your Usage</div>
+                    <div class="stat-value" id="your-usage">Loading...</div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="storage-chart"></canvas>
+            </div>
+            <div class="stats-footer">
+                <span id="stats-timestamp">Last updated: Never</span>
+                <button id="refreshStats" class="btn-refresh">Refresh</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<!-- Button to open the stats modal -->
+<button id="openStatsModal" class="btn-stats">View Storage Statistics</button>
+
+<!-- Include Chart.js before your script.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    .timestamp {
+        color: #808080;
+        font-size: 12px;
+        margin-top: -10px;
+        margin-bottom: 15px;
+        font-style: italic;
+        font-family: 'Courier New', monospace;
+    }
+    
+    /* Make sure modal is wide enough for the chart */
+    #statsModal .modal-inner {
+        width: 600px;
+        max-width: 90%;
+    }
+</style>
+
+<!-- Folders Display Section -->
+<div class="section-container">
+    <h2>Your Folders</h2>
+    <div id="folders-container" class="folders-container">
+        <!-- Folders will be dynamically added here -->
+        <div class="loading-folders">Loading your folders...</div>
+    </div>
+</div>
+
+<!-- Delete Folder Modal -->
+<div class="modal" id="deleteFolderModal">
+    <div class="modal-inner">
+        <h3>Delete Folder</h3>
+        <p>Are you sure you want to delete folder: <span id="folderToDelete"></span>?</p>
+        <p class="warning">This action cannot be undone!</p>
+        
+        <div class="button-container">
+            <button id="confirmDeleteFolder" class="danger-button">Delete</button>
+            <button id="cancelDeleteFolder">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/static/js/script.js" defer></script>
+
+
+
+{% endblock %}

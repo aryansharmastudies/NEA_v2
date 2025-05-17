@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:138.0) Gecko/20100101 Firefox/138.0" version="27.0.3">
+  <diagram name="Level 0 DFD with Echo" id="mWYbhGCn1MksGaVGYC-w">
+    <mxGraphModel dx="1653" dy="3048" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-56" value="User" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0f0c0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-57" value="Client (Frontend &amp; Flask)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e0e6;" vertex="1" parent="1">
+          <mxGeometry x="339.99852631578943" y="60" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-58" value="Client DB (SQLAlchemy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9e79f;" vertex="1" parent="1">
+          <mxGeometry x="529.9985263157894" y="-150" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-59" value="Sync Queue + Watchdog" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f7dc6f;" vertex="1" parent="1">
+          <mxGeometry x="509.9985263157894" y="140" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-60" value="TCP Socket 8000/9000" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#add8e6;" vertex="1" parent="1">
+          <mxGeometry x="759.9964210526315" y="140" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-61" value="Server (Backend)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffb6c1;" vertex="1" parent="1">
+          <mxGeometry x="1150.0043157894736" y="-40" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-62" value="Server DB (SQLAlchemy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f4cccc;" vertex="1" parent="1">
+          <mxGeometry x="1280.0043157894736" y="220" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-63" value="Share &amp; Folder Handler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8c471;" vertex="1" parent="1">
+          <mxGeometry x="1000.0043157894736" y="380" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-64" value="SyncWorker / Incoming" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a3e4d7;" vertex="1" parent="1">
+          <mxGeometry x="1430.0043157894736" y="520" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-65" value="Echo Handler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c39bd3;" vertex="1" parent="1">
+          <mxGeometry x="1139.9943157894736" y="700" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-68" value="Input credentials" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-56" target="nHvpTd-C9U2itzHcUaPn-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-69" value="Send login/track/add_folder" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-57" target="nHvpTd-C9U2itzHcUaPn-60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-70" value="Read/write session data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-58" target="nHvpTd-C9U2itzHcUaPn-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-71" value="Update local DB" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-57" target="nHvpTd-C9U2itzHcUaPn-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-72" value="Send event metadata" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-59" target="nHvpTd-C9U2itzHcUaPn-60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-73" value="Forward packet" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-60" target="nHvpTd-C9U2itzHcUaPn-61">
+          <mxGeometry x="0.6893" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-74" value="Log metadata" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-61" target="nHvpTd-C9U2itzHcUaPn-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-75" value="Process folder/user/device" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-61" target="nHvpTd-C9U2itzHcUaPn-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-76" value="Insert/update table" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-63" target="nHvpTd-C9U2itzHcUaPn-62">
+          <mxGeometry x="0.6056" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-77" value="Push file sync" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-60" target="nHvpTd-C9U2itzHcUaPn-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-78" value="Write file data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-64" target="nHvpTd-C9U2itzHcUaPn-62">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1440" y="245" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-79" value="Trigger echo" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-64" target="nHvpTd-C9U2itzHcUaPn-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-84" value="Send event" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-65" target="nHvpTd-C9U2itzHcUaPn-60">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1090" y="750" as="sourcePoint" />
+            <mxPoint x="980" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-86" value="Request block" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-64" target="nHvpTd-C9U2itzHcUaPn-60">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1440" y="555" as="sourcePoint" />
+            <mxPoint x="1010" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-88" value="Client Event Handler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9e79f;" vertex="1" parent="1">
+          <mxGeometry x="480.00168421052626" y="270" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nHvpTd-C9U2itzHcUaPn-89" value="Handle event" style="edgeStyle=orthogonalEdgeStyle;rounded=1;endArrow=block;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="nHvpTd-C9U2itzHcUaPn-60" target="nHvpTd-C9U2itzHcUaPn-88">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="175" as="sourcePoint" />
+            <mxPoint x="770" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

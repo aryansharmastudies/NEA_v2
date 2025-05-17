@@ -30977,3 +30977,2085 @@
 2025-05-14 18:07:52 INFO Loaded sync list with 0 events
 2025-05-14 18:07:52 INFO [LOAD] Loaded invites data
 2025-05-14 18:07:52 INFO [LOAD] Loaded file_to_hash with 0 entries
+2025-05-14 18:28:01 INFO 192.168.1.75
+2025-05-14 18:28:01 INFO [START] Started main server thread
+2025-05-14 18:28:01 INFO [START] Started sync queue worker thread
+2025-05-14 18:28:01 INFO [LOAD] Loaded global blocklist with 0 entries
+2025-05-14 18:28:01 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-14 18:28:01 INFO [LOAD] Loaded IP map with 0 users
+2025-05-14 18:28:01 INFO Loaded sync list with 0 events
+2025-05-14 18:28:01 INFO [LOAD] Loaded invites data
+2025-05-14 18:28:01 INFO [LOAD] Loaded file_to_hash with 0 entries
+2025-05-15 09:45:56 INFO 192.168.1.75
+2025-05-15 09:45:56 INFO [START] Started main server thread
+2025-05-15 09:45:56 INFO [START] Started sync queue worker thread
+2025-05-15 09:45:56 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-15 09:45:56 INFO [LOAD] Loaded global blocklist with 1 entries
+2025-05-15 09:45:56 INFO [LOAD] Loaded IP map with 2 users
+2025-05-15 09:45:56 INFO Loaded sync list with 0 events
+2025-05-15 09:45:56 INFO [LOAD] Loaded invites data
+2025-05-15 09:45:56 INFO [LOAD] Loaded file_to_hash with 0 entries
+2025-05-15 09:46:07 INFO Connection from ('192.168.1.75', 44608) has been established!
+2025-05-15 09:46:07 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-05-15 09:46:07 INFO Received ping from 192.168.1.75
+2025-05-15 09:46:07 INFO Pong sent to 192.168.1.75
+2025-05-15 09:53:11 INFO Connection from ('192.168.1.75', 57676) has been established!
+2025-05-15 09:53:11 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-05-15 09:53:11 INFO Received ping from 192.168.1.75
+2025-05-15 09:53:11 INFO Pong sent to 192.168.1.75
+2025-05-15 09:53:13 INFO Connection from ('192.168.1.75', 57690) has been established!
+2025-05-15 09:53:13 INFO message: {"action": "login", "l_user": "takumi", "hash": "00390de2b7074071bb6494e818e84884ef6331ceb0b1e70948bde3ef4ba57b92"}
+2025-05-15 09:53:13 INFO User: takumi not found
+2025-05-15 09:53:13 INFO Sending login status: {"status": "404", "status_msg": "User not found"}
+2025-05-15 09:53:17 INFO Connection from ('192.168.1.75', 35078) has been established!
+2025-05-15 09:53:17 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "User01", "hash": "a7be36a7e8111c37e2312b515862f809efb0a9fddf40d4f959eecba0a5166ab2"}
+2025-05-15 09:53:17 INFO Creating user: User01 with hash: a7be36a7e8111c37e2312b515862f809efb0a9fddf40d4f959eecba0a5166ab2
+2025-05-15 09:53:17 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-05-15 09:53:17 INFO Connection from ('192.168.1.75', 35088) has been established!
+2025-05-15 09:53:17 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "User01", "mac_addr": 4681952839112}
+2025-05-15 09:53:17 INFO Recieved tracking info from User01 with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:53:17 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:53:17 INFO building alerts for User01 with mac_addr 4681952839112
+2025-05-15 09:53:17 INFO sending alerts to User01 with mac_addr 4681952839112: []
+2025-05-15 09:53:17 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:53:17 INFO Connection from ('192.168.1.75', 35094) has been established!
+2025-05-15 09:53:17 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:53:17 INFO Data_Response Object is made
+2025-05-15 09:53:17 INFO Scraped 0 records from folders
+2025-05-15 09:53:17 INFO scraped data to be returned!: {'folders': []}
+2025-05-15 09:53:17 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:53:17 INFO Connection from ('192.168.1.75', 35104) has been established!
+2025-05-15 09:53:17 INFO message: {"action": "get_storage_stats", "user": "User01", "mac_addr": 4681952839112}
+2025-05-15 09:53:17 INFO Received storage statistics request from User01
+2025-05-15 09:53:17 INFO Generated storage statistics: 1 users, 190.72GB free
+2025-05-15 09:53:17 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50886754304, 'free_space': 204780875776, 'user_usage': [{'username': 'System', 'bytes_used': 50886754304}], 'timestamp': '2025-05-15 09:53:17'}}
+2025-05-15 09:53:17 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50886754304, "free_space": 204780875776, "user_usage": [{"username": "System", "bytes_used": 50886754304}], "timestamp": "2025-05-15 09:53:17"}}
+2025-05-15 09:53:17 INFO Connection from ('192.168.1.75', 35120) has been established!
+2025-05-15 09:53:17 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:53:17 INFO Data_Response Object is made
+2025-05-15 09:53:17 INFO Scraped 1 records from users
+2025-05-15 09:53:17 INFO Scraped 0 records from devices
+2025-05-15 09:53:17 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}], 'devices': []}
+2025-05-15 09:53:17 INFO SENDING: {
+  "data": {
+    "devices": [],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:53:17 INFO Connection from ('192.168.1.75', 42168) has been established!
+2025-05-15 09:53:17 INFO [+] Sync job created for ('192.168.1.75', 42168)...
+2025-05-15 09:53:17 INFO [+] Metadata received: {'index': 0, 'user': 'User01', 'event_type': 'deleted', 'src_path': '/tmp/tmpt2at54xw/delete_file.txt', 'is_dir': False, 'origin': 'user', 'folder_id': 'test_folder', 'mac_addr': 4681952839112}
+2025-05-15 09:53:17 INFO [+] Initiating Delete.apply()
+2025-05-15 09:54:00 INFO 192.168.1.75
+2025-05-15 09:54:00 INFO [START] Started main server thread
+2025-05-15 09:54:00 INFO [START] Started sync queue worker thread
+2025-05-15 09:54:00 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-15 09:54:00 INFO [LOAD] Loaded global blocklist with 1 entries
+2025-05-15 09:54:00 INFO [LOAD] Loaded IP map with 3 users
+2025-05-15 09:54:00 INFO Loaded sync list with 0 events
+2025-05-15 09:54:00 INFO [LOAD] Loaded invites data
+2025-05-15 09:54:00 INFO [LOAD] Loaded file_to_hash with 0 entries
+2025-05-15 09:54:03 INFO Connection from ('192.168.1.75', 50764) has been established!
+2025-05-15 09:54:03 INFO message: {"action": "ping", "ip_addr": "192.168.1.75"}
+2025-05-15 09:54:03 INFO Received ping from 192.168.1.75
+2025-05-15 09:54:03 INFO Pong sent to 192.168.1.75
+2025-05-15 09:54:06 INFO Connection from ('192.168.1.75', 50776) has been established!
+2025-05-15 09:54:06 INFO message: {"action": "register_user", "ip_addr": "192.168.1.75", "r_user": "james", "hash": "4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694"}
+2025-05-15 09:54:06 INFO Creating user: james with hash: 4b9a1b32cb47a5da4346dc5935e18b6de80af6959b45c2495812588407581694
+2025-05-15 09:54:06 INFO Sending registration status: {"status": "201", "status_msg": "User created successfully"}
+2025-05-15 09:54:06 INFO Connection from ('192.168.1.75', 50788) has been established!
+2025-05-15 09:54:06 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:54:06 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:54:06 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:54:06 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:54:06 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:54:06 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:54:06 INFO Connection from ('192.168.1.75', 50796) has been established!
+2025-05-15 09:54:06 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:54:06 INFO Data_Response Object is made
+2025-05-15 09:54:06 INFO Scraped 0 records from folders
+2025-05-15 09:54:06 INFO scraped data to be returned!: {'folders': []}
+2025-05-15 09:54:06 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:54:06 INFO Connection from ('192.168.1.75', 50810) has been established!
+2025-05-15 09:54:06 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:54:06 INFO Received storage statistics request from james
+2025-05-15 09:54:06 INFO Generated storage statistics: 1 users, 190.72GB free
+2025-05-15 09:54:06 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50888142848, 'free_space': 204779487232, 'user_usage': [{'username': 'System', 'bytes_used': 50888142848}], 'timestamp': '2025-05-15 09:54:06'}}
+2025-05-15 09:54:06 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50888142848, "free_space": 204779487232, "user_usage": [{"username": "System", "bytes_used": 50888142848}], "timestamp": "2025-05-15 09:54:06"}}
+2025-05-15 09:54:06 INFO Connection from ('192.168.1.75', 50822) has been established!
+2025-05-15 09:54:06 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:54:06 INFO Data_Response Object is made
+2025-05-15 09:54:06 INFO Scraped 2 records from users
+2025-05-15 09:54:06 INFO Scraped 0 records from devices
+2025-05-15 09:54:06 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': []}
+2025-05-15 09:54:06 INFO SENDING: {
+  "data": {
+    "devices": [],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:54:07 INFO Connection from ('192.168.1.75', 53254) has been established!
+2025-05-15 09:54:07 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:54:07 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:54:07 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:54:07 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:54:07 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:54:07 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:54:07 INFO Connection from ('192.168.1.75', 53266) has been established!
+2025-05-15 09:54:07 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:54:07 INFO Data_Response Object is made
+2025-05-15 09:54:07 INFO Scraped 0 records from folders
+2025-05-15 09:54:07 INFO scraped data to be returned!: {'folders': []}
+2025-05-15 09:54:07 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:54:07 INFO Connection from ('192.168.1.75', 53272) has been established!
+2025-05-15 09:54:07 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:54:07 INFO Received storage statistics request from james
+2025-05-15 09:54:07 INFO Generated storage statistics: 1 users, 190.72GB free
+2025-05-15 09:54:07 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50888196096, 'free_space': 204779433984, 'user_usage': [{'username': 'System', 'bytes_used': 50888196096}], 'timestamp': '2025-05-15 09:54:07'}}
+2025-05-15 09:54:07 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50888196096, "free_space": 204779433984, "user_usage": [{"username": "System", "bytes_used": 50888196096}], "timestamp": "2025-05-15 09:54:07"}}
+2025-05-15 09:54:07 INFO Connection from ('192.168.1.75', 53276) has been established!
+2025-05-15 09:54:07 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:54:07 INFO Data_Response Object is made
+2025-05-15 09:54:07 INFO Scraped 2 records from users
+2025-05-15 09:54:07 INFO Scraped 0 records from devices
+2025-05-15 09:54:07 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': []}
+2025-05-15 09:54:07 INFO SENDING: {
+  "data": {
+    "devices": [],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:54:38 INFO Connection from ('192.168.1.75', 36880) has been established!
+2025-05-15 09:54:38 INFO message: {"action": "add_device", "user": "james", "r_dev_name": "Mac-mini", "mac_addr": 4681952839112}
+2025-05-15 09:54:38 INFO User_ID: 2
+2025-05-15 09:54:38 INFO Adding device: Mac-mini with Mac_addr: 4681952839112 for User: james with User_ID: 2
+2025-05-15 09:54:38 INFO Sending device status: {"status": "201", "status_msg": "Device added successfully"}
+2025-05-15 09:54:38 INFO Connection from ('192.168.1.75', 36886) has been established!
+2025-05-15 09:54:38 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:54:38 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:54:38 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:54:38 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:54:38 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:54:38 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:54:38 INFO Connection from ('192.168.1.75', 36894) has been established!
+2025-05-15 09:54:38 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:54:38 INFO Data_Response Object is made
+2025-05-15 09:54:38 INFO Scraped 0 records from folders
+2025-05-15 09:54:38 INFO scraped data to be returned!: {'folders': []}
+2025-05-15 09:54:38 INFO SENDING: {
+  "data": {
+    "folders": []
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:54:38 INFO Connection from ('192.168.1.75', 36900) has been established!
+2025-05-15 09:54:38 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:54:38 INFO Received storage statistics request from james
+2025-05-15 09:54:38 INFO Generated storage statistics: 1 users, 190.72GB free
+2025-05-15 09:54:38 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50888470528, 'free_space': 204779159552, 'user_usage': [{'username': 'System', 'bytes_used': 50888470528}], 'timestamp': '2025-05-15 09:54:38'}}
+2025-05-15 09:54:38 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50888470528, "free_space": 204779159552, "user_usage": [{"username": "System", "bytes_used": 50888470528}], "timestamp": "2025-05-15 09:54:38"}}
+2025-05-15 09:54:38 INFO Connection from ('192.168.1.75', 36914) has been established!
+2025-05-15 09:54:38 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:54:38 INFO Data_Response Object is made
+2025-05-15 09:54:38 INFO Scraped 2 records from users
+2025-05-15 09:54:38 INFO Scraped 1 records from devices
+2025-05-15 09:54:38 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 09:54:38 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:55:23 INFO Connection from ('192.168.1.75', 47466) has been established!
+2025-05-15 09:55:23 INFO message: {"action": "add_folder", "folder_label": "Lecture-Notes", "folder_id": "W1Py1wiqE0", "directory": "/home/osaka/Desktop/Lecture-Notes", "shared_users": [], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "james"}
+2025-05-15 09:55:23 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'Lecture-Notes', 'folder_id': 'W1Py1wiqE0', 'directory': '/home/osaka/Desktop/Lecture-Notes', 'shared_users': [], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'james'}
+2025-05-15 09:55:23 INFO Unix format directory: /home/osaka/Desktop/Lecture-Notes
+2025-05-15 09:55:23 INFO [F] 👤Host: james with User_ID: 2 is creating folder📂: Lecture-Notes with folder_id: W1Py1wiqE0 in directory: /home/osaka/Desktop/Lecture-Notes
+2025-05-15 09:55:23 INFO [F] Creating folder directory: /home/osaka/2/4681952839112/Desktop/Lecture-Notes
+2025-05-15 09:55:23 INFO [F] Directory /home/osaka/2/4681952839112/Desktop/Lecture-Notes created successfully.
+2025-05-15 09:55:23 INFO [F] Adding folder entry to database for folder_id: W1Py1wiqE0, mac_addr: 4681952839112
+2025-05-15 09:55:23 INFO [F] New folder entry created for folder_id: W1Py1wiqE0, mac_addr: 4681952839112
+2025-05-15 09:55:23 INFO [F] Creating new share for folder_id: W1Py1wiqE0, mac_addr: 4681952839112, user: james
+2025-05-15 09:55:23 INFO [F] New share entry created for folder_id: W1Py1wiqE0, mac_addr: 4681952839112
+2025-05-15 09:55:23 INFO Sending folder status: {"status": "201", "status_msg": "Folder added successfully"}
+2025-05-15 09:55:23 INFO Connection from ('192.168.1.75', 44096) has been established!
+2025-05-15 09:55:23 INFO [+] Sync job created for ('192.168.1.75', 44096)...
+2025-05-15 09:55:23 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'created', 'src_path': '/home/osaka/Desktop/Lecture-Notes', 'is_dir': True, 'origin': 'mkdir', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112}
+2025-05-15 09:55:23 INFO [+] Initiating CreateDir.apply()
+2025-05-15 09:55:23 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes
+2025-05-15 09:55:23 INFO [+] Directory created at: /home/osaka/2/4681952839112/Desktop/Lecture-Notes
+2025-05-15 09:55:23 INFO [+] User: james
+2025-05-15 09:55:23 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 09:55:23 INFO [+] Event type: created
+2025-05-15 09:55:23 INFO [+] Is directory: True
+2025-05-15 09:55:23 INFO [+] Folder we got from table: <__main__.Folder object at 0x7fc89f8ee3c0>
+2025-05-15 09:55:23 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes
+2025-05-15 09:55:23 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes
+2025-05-15 09:55:23 INFO Calculated relative src path: .
+2025-05-15 09:55:23 INFO [+] Sync job completed for ('192.168.1.75', 44096)...
+2025-05-15 09:55:23 INFO [-] Connection closed for ('192.168.1.75', 44096)...
+2025-05-15 09:55:23 INFO [-] Sync job deleted for ('192.168.1.75', 44096)...
+2025-05-15 09:55:26 INFO Connection from ('192.168.1.75', 47480) has been established!
+2025-05-15 09:55:26 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:55:26 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:55:26 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:55:26 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:55:26 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:55:26 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:55:26 INFO Connection from ('192.168.1.75', 47486) has been established!
+2025-05-15 09:55:26 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:55:26 INFO Data_Response Object is made
+2025-05-15 09:55:26 INFO Scraped 1 records from folders
+2025-05-15 09:55:26 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 09:55:26 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:55:26 INFO Connection from ('192.168.1.75', 47496) has been established!
+2025-05-15 09:55:26 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:55:26 INFO Received storage statistics request from james
+2025-05-15 09:55:26 INFO Generated storage statistics: 2 users, 190.72GB free
+2025-05-15 09:55:26 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50888953856, 'free_space': 204778676224, 'user_usage': [{'username': 'james', 'bytes_used': 0}, {'username': 'System', 'bytes_used': 50888953856}], 'timestamp': '2025-05-15 09:55:26'}}
+2025-05-15 09:55:26 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50888953856, "free_space": 204778676224, "user_usage": [{"username": "james", "bytes_used": 0}, {"username": "System", "bytes_used": 50888953856}], "timestamp": "2025-05-15 09:55:26"}}
+2025-05-15 09:55:26 INFO Connection from ('192.168.1.75', 47500) has been established!
+2025-05-15 09:55:26 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:55:26 INFO Data_Response Object is made
+2025-05-15 09:55:26 INFO Scraped 2 records from users
+2025-05-15 09:55:26 INFO Scraped 1 records from devices
+2025-05-15 09:55:26 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 09:55:26 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:55:43 INFO Connection from ('192.168.1.75', 46644) has been established!
+2025-05-15 09:55:43 INFO [+] Sync job created for ('192.168.1.75', 46644)...
+2025-05-15 09:55:43 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'created', 'src_path': '/home/osaka/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png', 'is_dir': False, 'origin': 'mkdir', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112, 'hash': None, 'packet_count': 4, 'size': 1837508}
+2025-05-15 09:55:43 INFO [+] Initiating CreateFile.apply()
+2025-05-15 09:55:43 INFO [+] Expecting 4 packets...
+2025-05-15 09:55:43 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png
+2025-05-15 09:55:43 INFO [+] Writing file to: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png
+2025-05-15 09:55:43 INFO [+] File "/home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png" received successfully.
+2025-05-15 09:55:43 INFO [BLOCKLIST] Successfully wrote 5 entries to blocklist.json
+2025-05-15 09:55:43 ERROR [!] Hash mismatch for file /home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png. Expected: None, Got: 2950a33b5cd41556744555d598fbdb9a
+2025-05-15 09:55:43 INFO [+] Adding file entry to database with parameters: W1Py1wiqE0, /home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png, 1837508, None
+2025-05-15 09:55:43 INFO [+] Added file entry to database: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png
+2025-05-15 09:55:43 INFO [+] Committed file entry to database: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png
+2025-05-15 09:55:43 INFO [📊] Updated folder W1Py1wiqE0 size to 1837508 bytes
+2025-05-15 09:55:43 INFO [+] User: james
+2025-05-15 09:55:43 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 09:55:43 INFO [+] Event type: created
+2025-05-15 09:55:43 INFO [+] Is directory: False
+2025-05-15 09:55:43 INFO [+] Folder we got from table: <__main__.Folder object at 0x7fc89f8ee8a0>
+2025-05-15 09:55:43 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png
+2025-05-15 09:55:43 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png
+2025-05-15 09:55:43 INFO Calculated relative src path: screenshot-20250421-075604Z-selected.png
+2025-05-15 09:55:43 INFO [+] Sync job completed for ('192.168.1.75', 46644)...
+2025-05-15 09:55:43 INFO [-] Connection closed for ('192.168.1.75', 46644)...
+2025-05-15 09:55:43 INFO [-] Sync job deleted for ('192.168.1.75', 46644)...
+2025-05-15 09:55:45 INFO Connection from ('192.168.1.75', 46650) has been established!
+2025-05-15 09:55:45 INFO [+] Sync job created for ('192.168.1.75', 46650)...
+2025-05-15 09:55:45 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'created', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112}
+2025-05-15 09:55:45 INFO [+] Initiating CreateDir.apply()
+2025-05-15 09:55:45 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:45 INFO [+] Directory created at: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:45 INFO [+] User: james
+2025-05-15 09:55:45 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 09:55:45 INFO [+] Event type: created
+2025-05-15 09:55:45 INFO [+] Is directory: True
+2025-05-15 09:55:45 INFO [+] Folder we got from table: <__main__.Folder object at 0x7fc89f8f01a0>
+2025-05-15 09:55:45 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:45 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:45 INFO Calculated relative src path: Untitled Folder
+2025-05-15 09:55:45 INFO [+] Sync job completed for ('192.168.1.75', 46650)...
+2025-05-15 09:55:45 INFO [-] Connection closed for ('192.168.1.75', 46650)...
+2025-05-15 09:55:45 INFO [-] Sync job deleted for ('192.168.1.75', 46650)...
+2025-05-15 09:55:51 INFO Connection from ('192.168.1.75', 50344) has been established!
+2025-05-15 09:55:51 INFO [+] Sync job created for ('192.168.1.75', 50344)...
+2025-05-15 09:55:51 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'moved', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112, 'dest_path': '/home/osaka/Desktop/Lecture-Notes/Machine Learning'}
+2025-05-15 09:55:51 INFO [+] Initiating Move.apply()
+2025-05-15 09:55:51 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:51 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning
+2025-05-15 09:55:51 INFO [+] Moving from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning
+2025-05-15 09:55:51 INFO [+] Directory moved from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning
+2025-05-15 09:55:51 INFO [+] User: james
+2025-05-15 09:55:51 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 09:55:51 INFO [+] Event type: moved
+2025-05-15 09:55:51 INFO [+] Is directory: True
+2025-05-15 09:55:51 INFO [+] Folder we got from table: <__main__.Folder object at 0x7fc89f8f0bc0>
+2025-05-15 09:55:51 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:51 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:51 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning
+2025-05-15 09:55:51 INFO [+] Formatted Destination path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning
+2025-05-15 09:55:51 INFO Calculated relative dest path: Machine Learning
+2025-05-15 09:55:51 INFO Calculated relative src path: Untitled Folder
+2025-05-15 09:55:51 INFO [+] Sync job completed for ('192.168.1.75', 50344)...
+2025-05-15 09:55:51 INFO [-] Connection closed for ('192.168.1.75', 50344)...
+2025-05-15 09:55:51 INFO [-] Sync job deleted for ('192.168.1.75', 50344)...
+2025-05-15 09:55:52 INFO Connection from ('192.168.1.75', 50352) has been established!
+2025-05-15 09:55:52 INFO [+] Sync job created for ('192.168.1.75', 50352)...
+2025-05-15 09:55:52 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'created', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112}
+2025-05-15 09:55:52 INFO [+] Initiating CreateDir.apply()
+2025-05-15 09:55:52 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:52 INFO [+] Directory created at: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:52 INFO [+] User: james
+2025-05-15 09:55:52 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 09:55:52 INFO [+] Event type: created
+2025-05-15 09:55:52 INFO [+] Is directory: True
+2025-05-15 09:55:52 INFO [+] Folder we got from table: <__main__.Folder object at 0x7fc89f8f08f0>
+2025-05-15 09:55:52 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:52 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:52 INFO Calculated relative src path: Untitled Folder
+2025-05-15 09:55:52 INFO [+] Sync job completed for ('192.168.1.75', 50352)...
+2025-05-15 09:55:52 INFO [-] Connection closed for ('192.168.1.75', 50352)...
+2025-05-15 09:55:52 INFO [-] Sync job deleted for ('192.168.1.75', 50352)...
+2025-05-15 09:55:57 INFO Connection from ('192.168.1.75', 58016) has been established!
+2025-05-15 09:55:57 INFO [+] Sync job created for ('192.168.1.75', 58016)...
+2025-05-15 09:55:57 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'moved', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112, 'dest_path': '/home/osaka/Desktop/Lecture-Notes/Algorithms'}
+2025-05-15 09:55:57 INFO [+] Initiating Move.apply()
+2025-05-15 09:55:57 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:57 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Algorithms
+2025-05-15 09:55:57 INFO [+] Moving from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Algorithms
+2025-05-15 09:55:57 INFO [+] Directory moved from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Algorithms
+2025-05-15 09:55:57 INFO [+] User: james
+2025-05-15 09:55:57 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 09:55:57 INFO [+] Event type: moved
+2025-05-15 09:55:57 INFO [+] Is directory: True
+2025-05-15 09:55:57 INFO [+] Folder we got from table: <__main__.Folder object at 0x7fc89f8f0a70>
+2025-05-15 09:55:57 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:57 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:57 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Algorithms
+2025-05-15 09:55:57 INFO [+] Formatted Destination path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Algorithms
+2025-05-15 09:55:57 INFO Calculated relative dest path: Algorithms
+2025-05-15 09:55:57 INFO Calculated relative src path: Untitled Folder
+2025-05-15 09:55:57 INFO [+] Sync job completed for ('192.168.1.75', 58016)...
+2025-05-15 09:55:57 INFO [-] Connection closed for ('192.168.1.75', 58016)...
+2025-05-15 09:55:57 INFO [-] Sync job deleted for ('192.168.1.75', 58016)...
+2025-05-15 09:55:59 INFO Connection from ('192.168.1.75', 58020) has been established!
+2025-05-15 09:55:59 INFO [+] Sync job created for ('192.168.1.75', 58020)...
+2025-05-15 09:55:59 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'created', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112}
+2025-05-15 09:55:59 INFO [+] Initiating CreateDir.apply()
+2025-05-15 09:55:59 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:59 INFO [+] Directory created at: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:59 INFO [+] User: james
+2025-05-15 09:55:59 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 09:55:59 INFO [+] Event type: created
+2025-05-15 09:55:59 INFO [+] Is directory: True
+2025-05-15 09:55:59 INFO [+] Folder we got from table: <__main__.Folder object at 0x7fc89f8f0860>
+2025-05-15 09:55:59 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:59 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:55:59 INFO Calculated relative src path: Untitled Folder
+2025-05-15 09:55:59 INFO [+] Sync job completed for ('192.168.1.75', 58020)...
+2025-05-15 09:55:59 INFO [-] Connection closed for ('192.168.1.75', 58020)...
+2025-05-15 09:55:59 INFO [-] Sync job deleted for ('192.168.1.75', 58020)...
+2025-05-15 09:56:02 INFO Connection from ('192.168.1.75', 58036) has been established!
+2025-05-15 09:56:02 INFO [+] Sync job created for ('192.168.1.75', 58036)...
+2025-05-15 09:56:02 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'moved', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112, 'dest_path': '/home/osaka/Desktop/Lecture-Notes/Data Structures'}
+2025-05-15 09:56:02 INFO [+] Initiating Move.apply()
+2025-05-15 09:56:02 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:56:02 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Data Structures
+2025-05-15 09:56:02 INFO [+] Moving from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Data Structures
+2025-05-15 09:56:02 INFO [+] Directory moved from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Data Structures
+2025-05-15 09:56:02 INFO [+] User: james
+2025-05-15 09:56:02 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 09:56:02 INFO [+] Event type: moved
+2025-05-15 09:56:02 INFO [+] Is directory: True
+2025-05-15 09:56:02 INFO [+] Folder we got from table: <__main__.Folder object at 0x7fc89f8f09e0>
+2025-05-15 09:56:02 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:56:02 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:56:02 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Data Structures
+2025-05-15 09:56:02 INFO [+] Formatted Destination path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Data Structures
+2025-05-15 09:56:02 INFO Calculated relative dest path: Data Structures
+2025-05-15 09:56:02 INFO Calculated relative src path: Untitled Folder
+2025-05-15 09:56:02 INFO [+] Sync job completed for ('192.168.1.75', 58036)...
+2025-05-15 09:56:02 INFO [-] Connection closed for ('192.168.1.75', 58036)...
+2025-05-15 09:56:02 INFO [-] Sync job deleted for ('192.168.1.75', 58036)...
+2025-05-15 09:56:03 INFO Connection from ('192.168.1.75', 58042) has been established!
+2025-05-15 09:56:03 INFO [+] Sync job created for ('192.168.1.75', 58042)...
+2025-05-15 09:56:03 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'created', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112}
+2025-05-15 09:56:03 INFO [+] Initiating CreateDir.apply()
+2025-05-15 09:56:03 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:56:03 INFO [+] Directory created at: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:56:03 INFO [+] User: james
+2025-05-15 09:56:03 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 09:56:03 INFO [+] Event type: created
+2025-05-15 09:56:03 INFO [+] Is directory: True
+2025-05-15 09:56:03 INFO [+] Folder we got from table: <__main__.Folder object at 0x7fc89f8f03e0>
+2025-05-15 09:56:03 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:56:03 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:56:03 INFO Calculated relative src path: Untitled Folder
+2025-05-15 09:56:03 INFO [+] Sync job completed for ('192.168.1.75', 58042)...
+2025-05-15 09:56:03 INFO [-] Connection closed for ('192.168.1.75', 58042)...
+2025-05-15 09:56:03 INFO [-] Sync job deleted for ('192.168.1.75', 58042)...
+2025-05-15 09:56:06 INFO Connection from ('192.168.1.75', 58056) has been established!
+2025-05-15 09:56:06 INFO [+] Sync job created for ('192.168.1.75', 58056)...
+2025-05-15 09:56:06 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'moved', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112, 'dest_path': '/home/osaka/Desktop/Lecture-Notes/Operating Sys'}
+2025-05-15 09:56:06 INFO [+] Initiating Move.apply()
+2025-05-15 09:56:06 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:56:06 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Operating Sys
+2025-05-15 09:56:06 INFO [+] Moving from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Operating Sys
+2025-05-15 09:56:06 INFO [+] Directory moved from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Operating Sys
+2025-05-15 09:56:06 INFO [+] User: james
+2025-05-15 09:56:06 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 09:56:06 INFO [+] Event type: moved
+2025-05-15 09:56:06 INFO [+] Is directory: True
+2025-05-15 09:56:06 INFO [+] Folder we got from table: <__main__.Folder object at 0x7fc89f8f04d0>
+2025-05-15 09:56:06 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:56:06 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Untitled Folder
+2025-05-15 09:56:06 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Operating Sys
+2025-05-15 09:56:06 INFO [+] Formatted Destination path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Operating Sys
+2025-05-15 09:56:06 INFO Calculated relative dest path: Operating Sys
+2025-05-15 09:56:06 INFO Calculated relative src path: Untitled Folder
+2025-05-15 09:56:06 INFO [+] Sync job completed for ('192.168.1.75', 58056)...
+2025-05-15 09:56:06 INFO [-] Connection closed for ('192.168.1.75', 58056)...
+2025-05-15 09:56:06 INFO [-] Sync job deleted for ('192.168.1.75', 58056)...
+2025-05-15 09:56:12 INFO Connection from ('192.168.1.75', 35184) has been established!
+2025-05-15 09:56:12 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:56:12 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:56:12 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:56:12 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:56:12 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:56:12 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:56:12 INFO Connection from ('192.168.1.75', 35200) has been established!
+2025-05-15 09:56:12 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:56:12 INFO Data_Response Object is made
+2025-05-15 09:56:12 INFO Scraped 1 records from folders
+2025-05-15 09:56:12 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 09:56:12 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:56:12 INFO Connection from ('192.168.1.75', 35216) has been established!
+2025-05-15 09:56:12 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:56:12 INFO Received storage statistics request from james
+2025-05-15 09:56:12 INFO Generated storage statistics: 2 users, 190.71GB free
+2025-05-15 09:56:12 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50892611584, 'free_space': 204775018496, 'user_usage': [{'username': 'james', 'bytes_used': 1837508}, {'username': 'System', 'bytes_used': 50890774076}], 'timestamp': '2025-05-15 09:56:12'}}
+2025-05-15 09:56:12 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50892611584, "free_space": 204775018496, "user_usage": [{"username": "james", "bytes_used": 1837508}, {"username": "System", "bytes_used": 50890774076}], "timestamp": "2025-05-15 09:56:12"}}
+2025-05-15 09:56:12 INFO Connection from ('192.168.1.75', 35220) has been established!
+2025-05-15 09:56:12 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:56:12 INFO Data_Response Object is made
+2025-05-15 09:56:12 INFO Scraped 2 records from users
+2025-05-15 09:56:12 INFO Scraped 1 records from devices
+2025-05-15 09:56:12 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 09:56:12 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:56:32 INFO Connection from ('192.168.1.75', 49828) has been established!
+2025-05-15 09:56:32 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:56:32 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:56:32 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:56:32 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:56:32 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:56:32 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:56:32 INFO Connection from ('192.168.1.75', 49830) has been established!
+2025-05-15 09:56:32 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:56:32 INFO Data_Response Object is made
+2025-05-15 09:56:32 INFO Scraped 1 records from folders
+2025-05-15 09:56:32 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 09:56:32 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:56:32 INFO Connection from ('192.168.1.75', 49846) has been established!
+2025-05-15 09:56:32 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:56:32 INFO Received storage statistics request from james
+2025-05-15 09:56:32 INFO Generated storage statistics: 2 users, 190.71GB free
+2025-05-15 09:56:32 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50892648448, 'free_space': 204774981632, 'user_usage': [{'username': 'james', 'bytes_used': 1837508}, {'username': 'System', 'bytes_used': 50890810940}], 'timestamp': '2025-05-15 09:56:32'}}
+2025-05-15 09:56:32 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50892648448, "free_space": 204774981632, "user_usage": [{"username": "james", "bytes_used": 1837508}, {"username": "System", "bytes_used": 50890810940}], "timestamp": "2025-05-15 09:56:32"}}
+2025-05-15 09:56:32 INFO Connection from ('192.168.1.75', 49850) has been established!
+2025-05-15 09:56:32 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:56:32 INFO Data_Response Object is made
+2025-05-15 09:56:32 INFO Scraped 2 records from users
+2025-05-15 09:56:32 INFO Scraped 1 records from devices
+2025-05-15 09:56:32 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 09:56:32 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:57:39 INFO 192.168.1.75
+2025-05-15 09:57:39 INFO [START] Started main server thread
+2025-05-15 09:57:39 INFO [START] Started sync queue worker thread
+2025-05-15 09:57:39 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-15 09:57:39 INFO [LOAD] Loaded global blocklist with 5 entries
+2025-05-15 09:57:39 INFO [LOAD] Loaded IP map with 4 users
+2025-05-15 09:57:39 INFO Loaded sync list with 0 events
+2025-05-15 09:57:39 INFO [LOAD] Loaded invites data
+2025-05-15 09:57:39 INFO [LOAD] Loaded file_to_hash with 1 entries
+2025-05-15 09:57:41 INFO Connection from ('192.168.1.75', 51972) has been established!
+2025-05-15 09:57:41 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:57:41 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:57:41 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:57:41 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:57:41 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:57:41 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:57:41 INFO Connection from ('192.168.1.75', 51984) has been established!
+2025-05-15 09:57:41 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:57:41 INFO Data_Response Object is made
+2025-05-15 09:57:41 INFO Scraped 1 records from folders
+2025-05-15 09:57:41 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 09:57:41 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:57:41 INFO Connection from ('192.168.1.75', 51986) has been established!
+2025-05-15 09:57:41 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:57:41 INFO Received storage statistics request from james
+2025-05-15 09:57:41 INFO Generated storage statistics: 2 users, 190.71GB free
+2025-05-15 09:57:41 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50889338880, 'free_space': 204778291200, 'user_usage': [{'username': 'james', 'bytes_used': 1837508}, {'username': 'System', 'bytes_used': 50887501372}], 'timestamp': '2025-05-15 09:57:41'}}
+2025-05-15 09:57:41 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50889338880, "free_space": 204778291200, "user_usage": [{"username": "james", "bytes_used": 1837508}, {"username": "System", "bytes_used": 50887501372}], "timestamp": "2025-05-15 09:57:41"}}
+2025-05-15 09:57:41 INFO Connection from ('192.168.1.75', 51990) has been established!
+2025-05-15 09:57:41 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:57:41 INFO Data_Response Object is made
+2025-05-15 09:57:41 INFO Scraped 2 records from users
+2025-05-15 09:57:41 INFO Scraped 1 records from devices
+2025-05-15 09:57:41 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 09:57:41 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:57:42 INFO Connection from ('192.168.1.75', 52004) has been established!
+2025-05-15 09:57:42 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:57:42 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:57:42 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:57:42 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:57:42 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:57:42 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:57:42 INFO Connection from ('192.168.1.75', 52008) has been established!
+2025-05-15 09:57:42 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:57:42 INFO Data_Response Object is made
+2025-05-15 09:57:42 INFO Scraped 1 records from folders
+2025-05-15 09:57:42 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 09:57:42 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:57:42 INFO Connection from ('192.168.1.75', 52016) has been established!
+2025-05-15 09:57:42 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:57:42 INFO Received storage statistics request from james
+2025-05-15 09:57:42 INFO Generated storage statistics: 2 users, 190.71GB free
+2025-05-15 09:57:42 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50889388032, 'free_space': 204778242048, 'user_usage': [{'username': 'james', 'bytes_used': 1837508}, {'username': 'System', 'bytes_used': 50887550524}], 'timestamp': '2025-05-15 09:57:42'}}
+2025-05-15 09:57:42 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50889388032, "free_space": 204778242048, "user_usage": [{"username": "james", "bytes_used": 1837508}, {"username": "System", "bytes_used": 50887550524}], "timestamp": "2025-05-15 09:57:42"}}
+2025-05-15 09:57:42 INFO Connection from ('192.168.1.75', 52030) has been established!
+2025-05-15 09:57:42 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:57:42 INFO Data_Response Object is made
+2025-05-15 09:57:42 INFO Scraped 2 records from users
+2025-05-15 09:57:42 INFO Scraped 1 records from devices
+2025-05-15 09:57:42 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 09:57:42 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:59:01 INFO 192.168.1.75
+2025-05-15 09:59:01 INFO [START] Started main server thread
+2025-05-15 09:59:01 INFO [START] Started sync queue worker thread
+2025-05-15 09:59:01 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-15 09:59:01 INFO [LOAD] Loaded global blocklist with 5 entries
+2025-05-15 09:59:01 INFO [LOAD] Loaded IP map with 4 users
+2025-05-15 09:59:01 INFO Loaded sync list with 0 events
+2025-05-15 09:59:01 INFO [LOAD] Loaded invites data
+2025-05-15 09:59:01 INFO [LOAD] Loaded file_to_hash with 1 entries
+2025-05-15 09:59:03 INFO Connection from ('192.168.1.75', 39584) has been established!
+2025-05-15 09:59:03 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:59:03 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:59:03 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:59:03 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:59:03 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:59:03 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:59:03 INFO Connection from ('192.168.1.75', 39586) has been established!
+2025-05-15 09:59:03 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:59:03 INFO Data_Response Object is made
+2025-05-15 09:59:03 INFO Scraped 1 records from folders
+2025-05-15 09:59:03 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 09:59:03 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:59:03 INFO Connection from ('192.168.1.75', 39588) has been established!
+2025-05-15 09:59:03 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:59:03 INFO Received storage statistics request from james
+2025-05-15 09:59:03 INFO Generated storage statistics: 2 users, 190.71GB free
+2025-05-15 09:59:03 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50889408512, 'free_space': 204778221568, 'user_usage': [{'username': 'james', 'bytes_used': 18375083}, {'username': 'System', 'bytes_used': 50871033429}], 'timestamp': '2025-05-15 09:59:03'}}
+2025-05-15 09:59:03 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50889408512, "free_space": 204778221568, "user_usage": [{"username": "james", "bytes_used": 18375083}, {"username": "System", "bytes_used": 50871033429}], "timestamp": "2025-05-15 09:59:03"}}
+2025-05-15 09:59:03 INFO Connection from ('192.168.1.75', 39592) has been established!
+2025-05-15 09:59:03 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:59:03 INFO Data_Response Object is made
+2025-05-15 09:59:03 INFO Scraped 2 records from users
+2025-05-15 09:59:03 INFO Scraped 1 records from devices
+2025-05-15 09:59:03 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 09:59:03 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:59:04 INFO Connection from ('192.168.1.75', 39594) has been established!
+2025-05-15 09:59:04 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:59:04 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:59:04 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:59:04 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:59:04 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:59:04 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:59:04 INFO Connection from ('192.168.1.75', 39606) has been established!
+2025-05-15 09:59:04 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:59:04 INFO Data_Response Object is made
+2025-05-15 09:59:04 INFO Scraped 1 records from folders
+2025-05-15 09:59:04 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 09:59:04 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:59:04 INFO Connection from ('192.168.1.75', 39610) has been established!
+2025-05-15 09:59:04 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:59:04 INFO Received storage statistics request from james
+2025-05-15 09:59:04 INFO Generated storage statistics: 2 users, 190.71GB free
+2025-05-15 09:59:04 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50889461760, 'free_space': 204778168320, 'user_usage': [{'username': 'james', 'bytes_used': 18375083}, {'username': 'System', 'bytes_used': 50871086677}], 'timestamp': '2025-05-15 09:59:04'}}
+2025-05-15 09:59:04 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50889461760, "free_space": 204778168320, "user_usage": [{"username": "james", "bytes_used": 18375083}, {"username": "System", "bytes_used": 50871086677}], "timestamp": "2025-05-15 09:59:04"}}
+2025-05-15 09:59:04 INFO Connection from ('192.168.1.75', 39612) has been established!
+2025-05-15 09:59:04 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:59:04 INFO Data_Response Object is made
+2025-05-15 09:59:04 INFO Scraped 2 records from users
+2025-05-15 09:59:04 INFO Scraped 1 records from devices
+2025-05-15 09:59:04 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 09:59:04 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:59:32 INFO 192.168.1.75
+2025-05-15 09:59:32 INFO [START] Started main server thread
+2025-05-15 09:59:32 INFO [START] Started sync queue worker thread
+2025-05-15 09:59:32 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-15 09:59:32 INFO [LOAD] Loaded global blocklist with 5 entries
+2025-05-15 09:59:32 INFO [LOAD] Loaded IP map with 4 users
+2025-05-15 09:59:32 INFO Loaded sync list with 0 events
+2025-05-15 09:59:32 INFO [LOAD] Loaded invites data
+2025-05-15 09:59:32 INFO [LOAD] Loaded file_to_hash with 1 entries
+2025-05-15 09:59:33 INFO Connection from ('192.168.1.75', 56924) has been established!
+2025-05-15 09:59:33 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:59:33 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:59:33 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:59:33 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:59:33 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:59:33 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:59:33 INFO Connection from ('192.168.1.75', 56930) has been established!
+2025-05-15 09:59:33 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:59:33 INFO Data_Response Object is made
+2025-05-15 09:59:33 INFO Scraped 1 records from folders
+2025-05-15 09:59:33 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 09:59:33 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:59:33 INFO Connection from ('192.168.1.75', 56936) has been established!
+2025-05-15 09:59:33 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:59:33 INFO Received storage statistics request from james
+2025-05-15 09:59:33 INFO Generated storage statistics: 2 users, 190.71GB free
+2025-05-15 09:59:33 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50889809920, 'free_space': 204777820160, 'user_usage': [{'username': 'james', 'bytes_used': 18375083}, {'username': 'System', 'bytes_used': 50871434837}], 'timestamp': '2025-05-15 09:59:33'}}
+2025-05-15 09:59:33 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50889809920, "free_space": 204777820160, "user_usage": [{"username": "james", "bytes_used": 18375083}, {"username": "System", "bytes_used": 50871434837}], "timestamp": "2025-05-15 09:59:33"}}
+2025-05-15 09:59:33 INFO Connection from ('192.168.1.75', 56942) has been established!
+2025-05-15 09:59:33 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:59:33 INFO Data_Response Object is made
+2025-05-15 09:59:33 INFO Scraped 2 records from users
+2025-05-15 09:59:33 INFO Scraped 1 records from devices
+2025-05-15 09:59:33 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 09:59:33 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 09:59:34 INFO Connection from ('192.168.1.75', 56952) has been established!
+2025-05-15 09:59:34 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:59:34 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 09:59:34 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 09:59:34 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 09:59:34 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 09:59:34 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 09:59:34 INFO Connection from ('192.168.1.75', 56968) has been established!
+2025-05-15 09:59:34 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 09:59:34 INFO Data_Response Object is made
+2025-05-15 09:59:34 INFO Scraped 1 records from folders
+2025-05-15 09:59:34 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 09:59:34 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 09:59:34 INFO Connection from ('192.168.1.75', 56984) has been established!
+2025-05-15 09:59:34 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 09:59:34 INFO Received storage statistics request from james
+2025-05-15 09:59:34 INFO Generated storage statistics: 2 users, 190.71GB free
+2025-05-15 09:59:34 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50889867264, 'free_space': 204777762816, 'user_usage': [{'username': 'james', 'bytes_used': 18375083}, {'username': 'System', 'bytes_used': 50871492181}], 'timestamp': '2025-05-15 09:59:34'}}
+2025-05-15 09:59:34 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50889867264, "free_space": 204777762816, "user_usage": [{"username": "james", "bytes_used": 18375083}, {"username": "System", "bytes_used": 50871492181}], "timestamp": "2025-05-15 09:59:34"}}
+2025-05-15 09:59:34 INFO Connection from ('192.168.1.75', 56994) has been established!
+2025-05-15 09:59:34 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 09:59:34 INFO Data_Response Object is made
+2025-05-15 09:59:34 INFO Scraped 2 records from users
+2025-05-15 09:59:34 INFO Scraped 1 records from devices
+2025-05-15 09:59:34 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 09:59:34 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 10:00:05 INFO 192.168.1.75
+2025-05-15 10:00:05 INFO [START] Started main server thread
+2025-05-15 10:00:05 INFO [START] Started sync queue worker thread
+2025-05-15 10:00:05 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-15 10:00:05 INFO [LOAD] Loaded global blocklist with 5 entries
+2025-05-15 10:00:05 INFO [LOAD] Loaded IP map with 4 users
+2025-05-15 10:00:05 INFO Loaded sync list with 0 events
+2025-05-15 10:00:05 INFO [LOAD] Loaded invites data
+2025-05-15 10:00:05 INFO [LOAD] Loaded file_to_hash with 1 entries
+2025-05-15 10:00:07 INFO Connection from ('192.168.1.75', 39176) has been established!
+2025-05-15 10:00:07 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:00:07 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 10:00:07 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 10:00:07 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 10:00:07 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 10:00:07 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 10:00:07 INFO Connection from ('192.168.1.75', 39178) has been established!
+2025-05-15 10:00:07 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 10:00:07 INFO Data_Response Object is made
+2025-05-15 10:00:07 INFO Scraped 1 records from folders
+2025-05-15 10:00:07 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 10:00:07 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 10:00:07 INFO Connection from ('192.168.1.75', 39186) has been established!
+2025-05-15 10:00:07 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:00:07 INFO Received storage statistics request from james
+2025-05-15 10:00:07 INFO Generated storage statistics: 2 users, 190.71GB free
+2025-05-15 10:00:07 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50889863168, 'free_space': 204777766912, 'user_usage': [{'username': 'james', 'bytes_used': 1837508383}, {'username': 'System', 'bytes_used': 49052354785}], 'timestamp': '2025-05-15 10:00:07'}}
+2025-05-15 10:00:07 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50889863168, "free_space": 204777766912, "user_usage": [{"username": "james", "bytes_used": 1837508383}, {"username": "System", "bytes_used": 49052354785}], "timestamp": "2025-05-15 10:00:07"}}
+2025-05-15 10:00:07 INFO Connection from ('192.168.1.75', 39200) has been established!
+2025-05-15 10:00:07 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 10:00:07 INFO Data_Response Object is made
+2025-05-15 10:00:07 INFO Scraped 2 records from users
+2025-05-15 10:00:07 INFO Scraped 1 records from devices
+2025-05-15 10:00:07 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 10:00:07 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 10:00:22 INFO 192.168.1.75
+2025-05-15 10:00:22 INFO [START] Started main server thread
+2025-05-15 10:00:22 INFO [START] Started sync queue worker thread
+2025-05-15 10:00:22 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-15 10:00:22 INFO [LOAD] Loaded global blocklist with 5 entries
+2025-05-15 10:00:22 INFO [LOAD] Loaded IP map with 4 users
+2025-05-15 10:00:22 INFO Loaded sync list with 0 events
+2025-05-15 10:00:22 INFO [LOAD] Loaded invites data
+2025-05-15 10:00:22 INFO [LOAD] Loaded file_to_hash with 1 entries
+2025-05-15 10:00:24 INFO Connection from ('192.168.1.75', 38180) has been established!
+2025-05-15 10:00:24 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:00:24 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 10:00:24 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 10:00:24 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 10:00:24 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 10:00:24 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 10:00:24 INFO Connection from ('192.168.1.75', 38190) has been established!
+2025-05-15 10:00:24 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 10:00:24 INFO Data_Response Object is made
+2025-05-15 10:00:24 INFO Scraped 1 records from folders
+2025-05-15 10:00:24 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 10:00:24 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 10:00:24 INFO Connection from ('192.168.1.75', 38192) has been established!
+2025-05-15 10:00:24 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:00:24 INFO Received storage statistics request from james
+2025-05-15 10:00:24 INFO Generated storage statistics: 2 users, 190.71GB free
+2025-05-15 10:00:24 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50889850880, 'free_space': 204777779200, 'user_usage': [{'username': 'james', 'bytes_used': 1837508383}, {'username': 'System', 'bytes_used': 49052342497}], 'timestamp': '2025-05-15 10:00:24'}}
+2025-05-15 10:00:24 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50889850880, "free_space": 204777779200, "user_usage": [{"username": "james", "bytes_used": 1837508383}, {"username": "System", "bytes_used": 49052342497}], "timestamp": "2025-05-15 10:00:24"}}
+2025-05-15 10:00:24 INFO Connection from ('192.168.1.75', 38200) has been established!
+2025-05-15 10:00:24 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 10:00:24 INFO Data_Response Object is made
+2025-05-15 10:00:24 INFO Scraped 2 records from users
+2025-05-15 10:00:24 INFO Scraped 1 records from devices
+2025-05-15 10:00:24 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 10:00:24 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 10:00:48 INFO 192.168.1.75
+2025-05-15 10:00:48 INFO [START] Started main server thread
+2025-05-15 10:00:48 INFO [START] Started sync queue worker thread
+2025-05-15 10:00:48 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-15 10:00:48 INFO [LOAD] Loaded global blocklist with 5 entries
+2025-05-15 10:00:48 INFO [LOAD] Loaded IP map with 4 users
+2025-05-15 10:00:48 INFO Loaded sync list with 0 events
+2025-05-15 10:00:48 INFO [LOAD] Loaded invites data
+2025-05-15 10:00:48 INFO [LOAD] Loaded file_to_hash with 1 entries
+2025-05-15 10:00:50 INFO Connection from ('192.168.1.75', 45942) has been established!
+2025-05-15 10:00:50 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:00:50 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 10:00:50 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 10:00:50 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 10:00:50 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 10:00:50 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 10:00:50 INFO Connection from ('192.168.1.75', 45944) has been established!
+2025-05-15 10:00:50 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 10:00:50 INFO Data_Response Object is made
+2025-05-15 10:00:50 INFO Scraped 1 records from folders
+2025-05-15 10:00:50 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 10:00:50 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 10:00:50 INFO Connection from ('192.168.1.75', 45960) has been established!
+2025-05-15 10:00:50 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:00:50 INFO Received storage statistics request from james
+2025-05-15 10:00:50 INFO Generated storage statistics: 1 users, 190.71GB free
+2025-05-15 10:00:50 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50889875456, 'free_space': 204777754624, 'user_usage': [{'username': 'james', 'bytes_used': 183750838352}], 'timestamp': '2025-05-15 10:00:50'}}
+2025-05-15 10:00:50 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50889875456, "free_space": 204777754624, "user_usage": [{"username": "james", "bytes_used": 183750838352}], "timestamp": "2025-05-15 10:00:50"}}
+2025-05-15 10:00:50 INFO Connection from ('192.168.1.75', 45962) has been established!
+2025-05-15 10:00:50 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 10:00:50 INFO Data_Response Object is made
+2025-05-15 10:00:50 INFO Scraped 2 records from users
+2025-05-15 10:00:50 INFO Scraped 1 records from devices
+2025-05-15 10:00:50 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 10:00:50 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 10:01:11 INFO 192.168.1.75
+2025-05-15 10:01:11 INFO [START] Started main server thread
+2025-05-15 10:01:11 INFO [START] Started sync queue worker thread
+2025-05-15 10:01:11 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-15 10:01:11 INFO [LOAD] Loaded global blocklist with 5 entries
+2025-05-15 10:01:11 INFO [LOAD] Loaded IP map with 4 users
+2025-05-15 10:01:11 INFO Loaded sync list with 0 events
+2025-05-15 10:01:11 INFO [LOAD] Loaded invites data
+2025-05-15 10:01:11 INFO [LOAD] Loaded file_to_hash with 1 entries
+2025-05-15 10:01:13 INFO Connection from ('192.168.1.75', 37694) has been established!
+2025-05-15 10:01:13 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:01:13 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 10:01:13 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 10:01:13 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 10:01:13 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 10:01:13 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 10:01:13 INFO Connection from ('192.168.1.75', 37700) has been established!
+2025-05-15 10:01:13 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 10:01:13 INFO Data_Response Object is made
+2025-05-15 10:01:13 INFO Scraped 1 records from folders
+2025-05-15 10:01:13 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 10:01:13 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 10:01:13 INFO Connection from ('192.168.1.75', 37716) has been established!
+2025-05-15 10:01:13 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:01:13 INFO Received storage statistics request from james
+2025-05-15 10:01:13 INFO Generated storage statistics: 1 users, 190.71GB free
+2025-05-15 10:01:13 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50889945088, 'free_space': 204777684992, 'user_usage': [{'username': 'james', 'bytes_used': 183750838352}], 'timestamp': '2025-05-15 10:01:13'}}
+2025-05-15 10:01:13 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50889945088, "free_space": 204777684992, "user_usage": [{"username": "james", "bytes_used": 183750838352}], "timestamp": "2025-05-15 10:01:13"}}
+2025-05-15 10:01:13 INFO Connection from ('192.168.1.75', 37718) has been established!
+2025-05-15 10:01:13 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 10:01:13 INFO Data_Response Object is made
+2025-05-15 10:01:13 INFO Scraped 2 records from users
+2025-05-15 10:01:13 INFO Scraped 1 records from devices
+2025-05-15 10:01:13 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 10:01:13 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 10:01:17 INFO Connection from ('192.168.1.75', 39092) has been established!
+2025-05-15 10:01:17 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:01:17 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 10:01:17 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 10:01:17 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 10:01:17 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 10:01:17 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 10:01:17 INFO Connection from ('192.168.1.75', 39094) has been established!
+2025-05-15 10:01:17 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 10:01:17 INFO Data_Response Object is made
+2025-05-15 10:01:17 INFO Scraped 1 records from folders
+2025-05-15 10:01:17 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 10:01:17 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 10:01:17 INFO Connection from ('192.168.1.75', 39102) has been established!
+2025-05-15 10:01:17 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:01:17 INFO Received storage statistics request from james
+2025-05-15 10:01:17 INFO Generated storage statistics: 1 users, 190.71GB free
+2025-05-15 10:01:17 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50890002432, 'free_space': 204777627648, 'user_usage': [{'username': 'james', 'bytes_used': 183750838352}], 'timestamp': '2025-05-15 10:01:17'}}
+2025-05-15 10:01:17 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50890002432, "free_space": 204777627648, "user_usage": [{"username": "james", "bytes_used": 183750838352}], "timestamp": "2025-05-15 10:01:17"}}
+2025-05-15 10:01:17 INFO Connection from ('192.168.1.75', 39106) has been established!
+2025-05-15 10:01:17 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 10:01:17 INFO Data_Response Object is made
+2025-05-15 10:01:17 INFO Scraped 2 records from users
+2025-05-15 10:01:17 INFO Scraped 1 records from devices
+2025-05-15 10:01:17 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 10:01:17 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 10:03:36 INFO Connection from ('192.168.1.75', 53502) has been established!
+2025-05-15 10:03:36 INFO [+] Sync job created for ('192.168.1.75', 53502)...
+2025-05-15 10:03:36 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'deleted', 'src_path': '/home/osaka/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png', 'is_dir': False, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112}
+2025-05-15 10:03:36 INFO [+] Initiating Delete.apply()
+2025-05-15 10:03:36 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png
+2025-05-15 10:03:36 INFO [-] File "/home/osaka/2/4681952839112/Desktop/Lecture-Notes/screenshot-20250421-075604Z-selected.png" deleted successfully.
+2025-05-15 10:06:50 INFO 192.168.1.75
+2025-05-15 10:06:50 INFO [START] Started main server thread
+2025-05-15 10:06:50 INFO [START] Started sync queue worker thread
+2025-05-15 10:06:50 INFO [+] Listening on 192.168.1.75:9000...
+2025-05-15 10:06:50 INFO [LOAD] Loaded global blocklist with 5 entries
+2025-05-15 10:06:50 INFO [LOAD] Loaded IP map with 4 users
+2025-05-15 10:06:50 INFO Loaded sync list with 0 events
+2025-05-15 10:06:50 INFO [LOAD] Loaded invites data
+2025-05-15 10:06:50 INFO [LOAD] Loaded file_to_hash with 1 entries
+2025-05-15 10:08:24 INFO Connection from ('192.168.1.75', 51166) has been established!
+2025-05-15 10:08:24 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:08:24 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 10:08:24 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 10:08:24 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 10:08:24 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 10:08:24 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 10:08:24 INFO Connection from ('192.168.1.75', 51172) has been established!
+2025-05-15 10:08:24 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 10:08:24 INFO Data_Response Object is made
+2025-05-15 10:08:24 INFO Scraped 1 records from folders
+2025-05-15 10:08:24 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 10:08:24 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 10:08:24 INFO Connection from ('192.168.1.75', 51178) has been established!
+2025-05-15 10:08:24 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:08:24 INFO Received storage statistics request from james
+2025-05-15 10:08:24 INFO Generated storage statistics: 1 users, 190.71GB free
+2025-05-15 10:08:24 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50890162176, 'free_space': 204777467904, 'user_usage': [{'username': 'james', 'bytes_used': 183750838352}], 'timestamp': '2025-05-15 10:08:24'}}
+2025-05-15 10:08:24 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50890162176, "free_space": 204777467904, "user_usage": [{"username": "james", "bytes_used": 183750838352}], "timestamp": "2025-05-15 10:08:24"}}
+2025-05-15 10:08:24 INFO Connection from ('192.168.1.75', 51180) has been established!
+2025-05-15 10:08:24 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 10:08:24 INFO Data_Response Object is made
+2025-05-15 10:08:24 INFO Scraped 2 records from users
+2025-05-15 10:08:24 INFO Scraped 1 records from devices
+2025-05-15 10:08:24 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 10:08:24 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 10:08:24 INFO Connection from ('192.168.1.75', 44356) has been established!
+2025-05-15 10:08:24 INFO [+] Sync job created for ('192.168.1.75', 44356)...
+2025-05-15 10:08:24 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'created', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Machine Learning/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112}
+2025-05-15 10:08:24 INFO [+] Initiating CreateDir.apply()
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Untitled Folder
+2025-05-15 10:08:24 INFO [+] Directory created at: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Untitled Folder
+2025-05-15 10:08:24 INFO [+] User: james
+2025-05-15 10:08:24 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 10:08:24 INFO [+] Event type: created
+2025-05-15 10:08:24 INFO [+] Is directory: True
+2025-05-15 10:08:24 INFO [+] Folder we got from table: <__main__.Folder object at 0x7d9a2f42b170>
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Untitled Folder
+2025-05-15 10:08:24 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Untitled Folder
+2025-05-15 10:08:24 INFO Calculated relative src path: Machine Learning/Untitled Folder
+2025-05-15 10:08:24 INFO [+] Sync job completed for ('192.168.1.75', 44356)...
+2025-05-15 10:08:24 INFO [-] Connection closed for ('192.168.1.75', 44356)...
+2025-05-15 10:08:24 INFO [-] Sync job deleted for ('192.168.1.75', 44356)...
+2025-05-15 10:08:24 INFO Connection from ('192.168.1.75', 44372) has been established!
+2025-05-15 10:08:24 INFO [+] Sync job created for ('192.168.1.75', 44372)...
+2025-05-15 10:08:24 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'moved', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Machine Learning/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112, 'dest_path': '/home/osaka/Desktop/Lecture-Notes/Machine Learning/Training Data'}
+2025-05-15 10:08:24 INFO [+] Initiating Move.apply()
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Untitled Folder
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data
+2025-05-15 10:08:24 INFO [+] Moving from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data
+2025-05-15 10:08:24 INFO [+] Directory moved from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data
+2025-05-15 10:08:24 INFO [+] User: james
+2025-05-15 10:08:24 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 10:08:24 INFO [+] Event type: moved
+2025-05-15 10:08:24 INFO [+] Is directory: True
+2025-05-15 10:08:24 INFO [+] Folder we got from table: <__main__.Folder object at 0x7d9a2f448080>
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Untitled Folder
+2025-05-15 10:08:24 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Untitled Folder
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data
+2025-05-15 10:08:24 INFO [+] Formatted Destination path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data
+2025-05-15 10:08:24 INFO Calculated relative dest path: Machine Learning/Training Data
+2025-05-15 10:08:24 INFO Calculated relative src path: Machine Learning/Untitled Folder
+2025-05-15 10:08:24 INFO [+] Sync job completed for ('192.168.1.75', 44372)...
+2025-05-15 10:08:24 INFO [-] Connection closed for ('192.168.1.75', 44372)...
+2025-05-15 10:08:24 INFO [-] Sync job deleted for ('192.168.1.75', 44372)...
+2025-05-15 10:08:24 INFO Connection from ('192.168.1.75', 44380) has been established!
+2025-05-15 10:08:24 INFO [+] Sync job created for ('192.168.1.75', 44380)...
+2025-05-15 10:08:24 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'created', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112}
+2025-05-15 10:08:24 INFO [+] Initiating CreateDir.apply()
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder
+2025-05-15 10:08:24 INFO [+] Directory created at: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder
+2025-05-15 10:08:24 INFO [+] User: james
+2025-05-15 10:08:24 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 10:08:24 INFO [+] Event type: created
+2025-05-15 10:08:24 INFO [+] Is directory: True
+2025-05-15 10:08:24 INFO [+] Folder we got from table: <__main__.Folder object at 0x7d9a2f448920>
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder
+2025-05-15 10:08:24 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder
+2025-05-15 10:08:24 INFO Calculated relative src path: Machine Learning/Training Data/Untitled Folder
+2025-05-15 10:08:24 INFO [+] Sync job completed for ('192.168.1.75', 44380)...
+2025-05-15 10:08:24 INFO [-] Connection closed for ('192.168.1.75', 44380)...
+2025-05-15 10:08:24 INFO [-] Sync job deleted for ('192.168.1.75', 44380)...
+2025-05-15 10:08:24 INFO Connection from ('192.168.1.75', 44382) has been established!
+2025-05-15 10:08:24 INFO [+] Sync job created for ('192.168.1.75', 44382)...
+2025-05-15 10:08:24 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'moved', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112, 'dest_path': '/home/osaka/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1'}
+2025-05-15 10:08:24 INFO [+] Initiating Move.apply()
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1
+2025-05-15 10:08:24 INFO [+] Moving from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1
+2025-05-15 10:08:24 INFO [+] Directory moved from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1
+2025-05-15 10:08:24 INFO [+] User: james
+2025-05-15 10:08:24 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 10:08:24 INFO [+] Event type: moved
+2025-05-15 10:08:24 INFO [+] Is directory: True
+2025-05-15 10:08:24 INFO [+] Folder we got from table: <__main__.Folder object at 0x7d9a2f448200>
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder
+2025-05-15 10:08:24 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Untitled Folder
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1
+2025-05-15 10:08:24 INFO [+] Formatted Destination path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1
+2025-05-15 10:08:24 INFO Calculated relative dest path: Machine Learning/Training Data/Modelo1
+2025-05-15 10:08:24 INFO Calculated relative src path: Machine Learning/Training Data/Untitled Folder
+2025-05-15 10:08:24 INFO [+] Sync job completed for ('192.168.1.75', 44382)...
+2025-05-15 10:08:24 INFO [-] Connection closed for ('192.168.1.75', 44382)...
+2025-05-15 10:08:24 INFO [-] Sync job deleted for ('192.168.1.75', 44382)...
+2025-05-15 10:08:24 INFO Connection from ('192.168.1.75', 44396) has been established!
+2025-05-15 10:08:24 INFO [+] Sync job created for ('192.168.1.75', 44396)...
+2025-05-15 10:08:24 INFO [+] Metadata received: {'index': 0, 'user': 'james', 'event_type': 'moved', 'src_path': '/home/osaka/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1', 'is_dir': True, 'origin': 'user', 'folder_id': 'W1Py1wiqE0', 'mac_addr': 4681952839112, 'dest_path': '/home/osaka/Desktop/Lecture-Notes/Machine Learning/Training Data/Model_o1'}
+2025-05-15 10:08:24 INFO [+] Initiating Move.apply()
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Model_o1
+2025-05-15 10:08:24 INFO [+] Moving from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1 to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Model_o1
+2025-05-15 10:08:24 INFO [+] Directory moved from /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1 to /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Model_o1
+2025-05-15 10:08:24 INFO [+] User: james
+2025-05-15 10:08:24 INFO [+] Folder ID: W1Py1wiqE0
+2025-05-15 10:08:24 INFO [+] Event type: moved
+2025-05-15 10:08:24 INFO [+] Is directory: True
+2025-05-15 10:08:24 INFO [+] Folder we got from table: <__main__.Folder object at 0x7d9a2f4482c0>
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1
+2025-05-15 10:08:24 INFO [+] Formatted path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Modelo1
+2025-05-15 10:08:24 INFO [F] Formatted Path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Model_o1
+2025-05-15 10:08:24 INFO [+] Formatted Destination path: /home/osaka/2/4681952839112/Desktop/Lecture-Notes/Machine Learning/Training Data/Model_o1
+2025-05-15 10:08:24 INFO Calculated relative dest path: Machine Learning/Training Data/Model_o1
+2025-05-15 10:08:24 INFO Calculated relative src path: Machine Learning/Training Data/Modelo1
+2025-05-15 10:08:24 INFO [+] Sync job completed for ('192.168.1.75', 44396)...
+2025-05-15 10:08:24 INFO [-] Connection closed for ('192.168.1.75', 44396)...
+2025-05-15 10:08:24 INFO [-] Sync job deleted for ('192.168.1.75', 44396)...
+2025-05-15 10:08:25 INFO Connection from ('192.168.1.75', 51194) has been established!
+2025-05-15 10:08:25 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:08:25 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 10:08:25 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 10:08:25 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 10:08:25 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 10:08:25 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 10:08:25 INFO Connection from ('192.168.1.75', 51210) has been established!
+2025-05-15 10:08:25 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 10:08:25 INFO Data_Response Object is made
+2025-05-15 10:08:25 INFO Scraped 1 records from folders
+2025-05-15 10:08:25 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 10:08:25 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 10:08:25 INFO Connection from ('192.168.1.75', 51220) has been established!
+2025-05-15 10:08:25 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:08:25 INFO Received storage statistics request from james
+2025-05-15 10:08:25 INFO Generated storage statistics: 1 users, 190.71GB free
+2025-05-15 10:08:25 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50890240000, 'free_space': 204777390080, 'user_usage': [{'username': 'james', 'bytes_used': 183750838352}], 'timestamp': '2025-05-15 10:08:25'}}
+2025-05-15 10:08:25 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50890240000, "free_space": 204777390080, "user_usage": [{"username": "james", "bytes_used": 183750838352}], "timestamp": "2025-05-15 10:08:25"}}
+2025-05-15 10:08:25 INFO Connection from ('192.168.1.75', 51236) has been established!
+2025-05-15 10:08:25 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 10:08:25 INFO Data_Response Object is made
+2025-05-15 10:08:25 INFO Scraped 2 records from users
+2025-05-15 10:08:25 INFO Scraped 1 records from devices
+2025-05-15 10:08:25 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 10:08:25 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 10:08:26 INFO Connection from ('192.168.1.75', 51244) has been established!
+2025-05-15 10:08:26 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:08:26 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 10:08:26 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 10:08:26 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 10:08:26 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 10:08:26 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 10:08:26 INFO Connection from ('192.168.1.75', 51260) has been established!
+2025-05-15 10:08:26 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 10:08:26 INFO Data_Response Object is made
+2025-05-15 10:08:26 INFO Scraped 1 records from folders
+2025-05-15 10:08:26 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 10:08:26 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 10:08:26 INFO Connection from ('192.168.1.75', 51270) has been established!
+2025-05-15 10:08:26 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:08:26 INFO Received storage statistics request from james
+2025-05-15 10:08:26 INFO Generated storage statistics: 1 users, 190.71GB free
+2025-05-15 10:08:26 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50890297344, 'free_space': 204777332736, 'user_usage': [{'username': 'james', 'bytes_used': 183750838352}], 'timestamp': '2025-05-15 10:08:26'}}
+2025-05-15 10:08:26 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50890297344, "free_space": 204777332736, "user_usage": [{"username": "james", "bytes_used": 183750838352}], "timestamp": "2025-05-15 10:08:26"}}
+2025-05-15 10:08:26 INFO Connection from ('192.168.1.75', 51278) has been established!
+2025-05-15 10:08:26 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 10:08:26 INFO Data_Response Object is made
+2025-05-15 10:08:26 INFO Scraped 2 records from users
+2025-05-15 10:08:26 INFO Scraped 1 records from devices
+2025-05-15 10:08:26 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 10:08:26 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}
+2025-05-15 10:09:11 INFO Connection from ('192.168.1.75', 37608) has been established!
+2025-05-15 10:09:11 INFO message: {"action": "add_folder", "folder_label": "Scripts(Cron)", "folder_id": "vM4NETbJcD", "directory": "/home/osaka/Desktop/Cron", "shared_users": [], "folder_type": "sync_bothways", "mac_addr": 4681952839112, "user": "james"}
+2025-05-15 10:09:11 INFO Recieved data to add folder: {'action': 'add_folder', 'folder_label': 'Scripts(Cron)', 'folder_id': 'vM4NETbJcD', 'directory': '/home/osaka/Desktop/Cron', 'shared_users': [], 'folder_type': 'sync_bothways', 'mac_addr': 4681952839112, 'user': 'james'}
+2025-05-15 10:09:11 INFO Unix format directory: /home/osaka/Desktop/Cron
+2025-05-15 10:09:11 INFO [F] 👤Host: james with User_ID: 2 is creating folder📂: Scripts(Cron) with folder_id: vM4NETbJcD in directory: /home/osaka/Desktop/Cron
+2025-05-15 10:09:11 INFO [F] Creating folder directory: /home/osaka/2/4681952839112/Desktop/Cron
+2025-05-15 10:09:11 INFO [F] Directory /home/osaka/2/4681952839112/Desktop/Cron created successfully.
+2025-05-15 10:09:11 INFO [F] Adding folder entry to database for folder_id: vM4NETbJcD, mac_addr: 4681952839112
+2025-05-15 10:09:16 ERROR [F] Error adding folder entry: (sqlite3.OperationalError) database is locked
+[SQL: INSERT INTO folders (mac_addr, folder_id, name, path, type, size) VALUES (?, ?, ?, ?, ?, ?)]
+[parameters: (4681952839112, 'vM4NETbJcD', 'Scripts(Cron)', '/home/osaka/2/4681952839112/Desktop/Cron', 'sync_bothways', None)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-15 10:09:16 INFO Sending folder status: {"status": "500", "status_msg": "Database error: (sqlite3.OperationalError) database is locked\n[SQL: INSERT INTO folders (mac_addr, folder_id, name, path, type, size) VALUES (?, ?, ?, ?, ?, ?)]\n[parameters: (4681952839112, 'vM4NETbJcD', 'Scripts(Cron)', '/home/osaka/2/4681952839112/Desktop/Cron', 'sync_bothways', None)]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"}
+2025-05-15 10:10:04 INFO Connection from ('192.168.1.75', 42416) has been established!
+2025-05-15 10:10:04 INFO message: {"action": "track", "ip_addr": "192.168.1.75", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:10:04 INFO Recieved tracking info from james with ip_addr 192.168.1.75 and mac_addr 4681952839112
+2025-05-15 10:10:04 INFO ip_map: {'users': {'itsuki': {'4681952839112': '192.168.1.75'}, 'takumi': {'4681952839112': '192.168.1.75'}, 'User01': {'4681952839112': '192.168.1.75'}, 'james': {'4681952839112': '192.168.1.75'}}}
+2025-05-15 10:10:04 INFO building alerts for james with mac_addr 4681952839112
+2025-05-15 10:10:04 INFO sending alerts to james with mac_addr 4681952839112: []
+2025-05-15 10:10:04 INFO Sending tracking results + alerts: {"status": "200", "status_msg": "IP updated successfully", "data": []}
+2025-05-15 10:10:04 INFO Connection from ('192.168.1.75', 42430) has been established!
+2025-05-15 10:10:04 INFO message: {"action": "request", "data": {"folders": {"mac_addr": 4681952839112, "folder_id": null, "name": null, "path": null, "type": null}}}
+2025-05-15 10:10:04 INFO Data_Response Object is made
+2025-05-15 10:10:04 INFO Scraped 1 records from folders
+2025-05-15 10:10:04 INFO scraped data to be returned!: {'folders': [{'mac_addr': '4681952839112', 'folder_id': 'W1Py1wiqE0', 'name': 'Lecture-Notes', 'path': '/home/osaka/2/4681952839112/Desktop/Lecture-Notes', 'type': 'sync_bothways'}]}
+2025-05-15 10:10:04 INFO SENDING: {
+  "data": {
+    "folders": [
+      {
+        "folder_id": "W1Py1wiqE0",
+        "mac_addr": "4681952839112",
+        "name": "Lecture-Notes",
+        "path": "/home/osaka/2/4681952839112/Desktop/Lecture-Notes",
+        "type": "sync_bothways"
+      }
+    ]
+  },
+  "requested_data": {
+    "folders": {
+      "folder_id": null,
+      "mac_addr": 4681952839112,
+      "name": null,
+      "path": null,
+      "type": null
+    }
+  }
+}
+2025-05-15 10:10:04 INFO Connection from ('192.168.1.75', 42434) has been established!
+2025-05-15 10:10:04 INFO message: {"action": "get_storage_stats", "user": "james", "mac_addr": 4681952839112}
+2025-05-15 10:10:04 INFO Received storage statistics request from james
+2025-05-15 10:10:04 INFO Generated storage statistics: 1 users, 190.71GB free
+2025-05-15 10:10:04 INFO Stats Response: {'status': '200', 'data': {'total_storage': 269428457472, 'used_space': 50890743808, 'free_space': 204776886272, 'user_usage': [{'username': 'james', 'bytes_used': 183750838352}], 'timestamp': '2025-05-15 10:10:04'}}
+2025-05-15 10:10:04 INFO Sending storage statistics response {"status": "200", "data": {"total_storage": 269428457472, "used_space": 50890743808, "free_space": 204776886272, "user_usage": [{"username": "james", "bytes_used": 183750838352}], "timestamp": "2025-05-15 10:10:04"}}
+2025-05-15 10:10:04 INFO Connection from ('192.168.1.75', 42440) has been established!
+2025-05-15 10:10:04 INFO message: {"action": "request", "data": {"users": {"user_id": null, "name": null}, "devices": {"user_id": null, "name": null}}}
+2025-05-15 10:10:04 INFO Data_Response Object is made
+2025-05-15 10:10:04 INFO Scraped 2 records from users
+2025-05-15 10:10:04 INFO Scraped 1 records from devices
+2025-05-15 10:10:04 INFO scraped data to be returned!: {'users': [{'user_id': 1, 'name': 'User01'}, {'user_id': 2, 'name': 'james'}], 'devices': [{'user_id': 2, 'name': 'Mac-mini'}]}
+2025-05-15 10:10:04 INFO SENDING: {
+  "data": {
+    "devices": [
+      {
+        "name": "Mac-mini",
+        "user_id": 2
+      }
+    ],
+    "users": [
+      {
+        "name": "User01",
+        "user_id": 1
+      },
+      {
+        "name": "james",
+        "user_id": 2
+      }
+    ]
+  },
+  "requested_data": {
+    "devices": {
+      "name": null,
+      "user_id": null
+    },
+    "users": {
+      "name": null,
+      "user_id": null
+    }
+  }
+}

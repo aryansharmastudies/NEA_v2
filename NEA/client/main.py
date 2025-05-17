@@ -998,8 +998,7 @@ def send(json_data): # 🛫
         try: 
             logging.info(f'trying to connect to server: {session["server_name"]} on port 8000')
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            # s.connect((session['server_name'], 8000))
-            s.connect(('192.168.1.75', 8000))
+            s.connect((session['server_name'], 8000))
             logging.info(f'Connected to server: {session["server_name"]} on port 8000')
             session['connected_to_server'] = True
 
@@ -1410,6 +1409,9 @@ class MyEventHandler(FileSystemEventHandler):
             return
 
         path = event.src_path
+        # Initialize variables to prevent UnboundLocalError
+        removed_created = False
+        removed_modified = False
 
         if path in self._debounce_timers:
             self._debounce_timers[path].cancel()

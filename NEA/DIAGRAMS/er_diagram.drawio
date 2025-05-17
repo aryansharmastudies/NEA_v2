@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net">
+	<diagram name="ER Diagram" id="er">
+		<mxGraphModel dx="1182" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
+				<mxCell id="User" value="User&lt;br&gt;user_id (PK)&lt;br&gt;name (None)&lt;br&gt;hash (None)&lt;br&gt;email (None)" style="shape=swimlane;startSize=20;collapsible=0;childLayout=stackLayout;horizontal=1;resizeParent=1;resizeLast=0;container=1;recursiveResize=0;swimlaneLine=0;" vertex="1" parent="1">
+					<mxGeometry x="40" y="40" width="220" height="100" as="geometry"/>
+				</mxCell>
+				<mxCell id="Device" value="Device&lt;br&gt;user_id (PK, FK)&lt;br&gt;name (None)&lt;br&gt;mac_addr (PK)" style="shape=swimlane;startSize=20;collapsible=0;childLayout=stackLayout;horizontal=1;resizeParent=1;resizeLast=0;container=1;recursiveResize=0;swimlaneLine=0;" vertex="1" parent="1">
+					<mxGeometry x="300" y="40" width="220" height="85" as="geometry"/>
+				</mxCell>
+				<mxCell id="Folder" value="Folder&lt;br&gt;folder_id (PK)&lt;br&gt;name (None)&lt;br&gt;mac_addr (None)&lt;br&gt;path (None)&lt;br&gt;type (None)&lt;br&gt;size (None)" style="shape=swimlane;startSize=20;collapsible=0;childLayout=stackLayout;horizontal=1;resizeParent=1;resizeLast=0;container=1;recursiveResize=0;swimlaneLine=0;" vertex="1" parent="1">
+					<mxGeometry x="40" y="240" width="220" height="130" as="geometry"/>
+				</mxCell>
+				<mxCell id="Share" value="Share&lt;br&gt;username (PK, FK)&lt;br&gt;folder_id (PK, FK)&lt;br&gt;mac_addr (PK)&lt;br&gt;folder_label (None)&lt;br&gt;path (None)" style="shape=swimlane;startSize=20;collapsible=0;childLayout=stackLayout;horizontal=1;resizeParent=1;resizeLast=0;container=1;recursiveResize=0;swimlaneLine=0;" vertex="1" parent="1">
+					<mxGeometry x="300" y="240" width="220" height="115" as="geometry"/>
+				</mxCell>
+				<mxCell id="File" value="File&lt;br&gt;folder_id (FK)&lt;br&gt;path (PK)&lt;br&gt;size (None)&lt;br&gt;hash (None)&lt;br&gt;version (None)&lt;br&gt;block_list (None)" style="shape=swimlane;startSize=20;collapsible=0;childLayout=stackLayout;horizontal=1;resizeParent=1;resizeLast=0;container=1;recursiveResize=0;swimlaneLine=0;" vertex="1" parent="1">
+					<mxGeometry x="580" y="240" width="220" height="130" as="geometry"/>
+				</mxCell>
+				<mxCell id="r1" value="1 user" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="Device" target="User">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="r2" value="1 device" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="Folder" target="Device">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="r3" value="1 folder" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="Share" target="Folder">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="r4" value="1 user" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="Share" target="User">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="r5" value="1 folder" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="File" target="Folder">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>

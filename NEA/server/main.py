@@ -307,7 +307,7 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
             return json.dumps({'status': '404', 'status_msg': 'User not found'})
         
         logging.info(f'[F] User: {username} found with User_ID: {target_user_id}')
-        device = session.query(Device).filter_by(user_id=target_user_id, name=device_name).first() # 🌸
+        device = session.query(Device).filter_by(user_id=target_user_id, name=device_name).first()
         
         if not device:
             logging.info(f'[F] Device: {device_name} not found for User: {username}')
@@ -320,19 +320,19 @@ def create_folder(mac_addr, folder_label, folder_id, directory, shared_users, fo
             logging.info(f'[F] User: {username} not found in ip_map')
             return json.dumps({'status': '404', 'status_msg': 'User not found in ip_map'})
 
-        logging.info(f'[F] {ip_map['users'][username]}')        
+        logging.info(f'[F] {ip_map["users"][username]}')        
         if str(device_mac_addr) not in ip_map['users'][username]:
             logging.info(f'Device: {device_name} not found in ip_map')
             return json.dumps({'status': '404', 'status_msg': 'Device not found in ip_map'})
 
         logging.info(f'[F] invites.json BEFORE adding: {invites}')
-        if username not in invites['folders']: # first check if the user is in the invites file 🌸
+        if username not in invites['folders']: # first check if the user is in the invites file
             invites['folders'][username] = {} 
             invites['folders'][username][device_mac_addr] = [] # if not, add them
-        elif device_mac_addr not in invites['folders'][username]: # then check if the device is in the invites file 🌸
+        elif device_mac_addr not in invites['folders'][username]: # then check if the device is in the invites file
             invites['folders'][username][device_mac_addr] = [] # if not, add it
 
-        invites['folders'][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE! 🌸
+        invites['folders'][username][device_mac_addr].append([folder_label, folder_id, host_name])# ✅ ADD THE HOST WHO IS SENDING INVITE!
         logging.info(f'[F] invites.json AFTER adding: {invites}')
         with open(invites_file, 'w') as file:
             json.dump(invites, file, indent=2)

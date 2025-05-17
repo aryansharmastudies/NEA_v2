@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net">
+	<diagram name="Page Hierarchy" id="hierarchy">
+		<mxGraphModel dx="1024" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
+				<mxCell id="pair" value="Pair Page (/pair)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="300" y="40" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="login" value="Login Page (/login)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="100" y="140" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="register" value="Register Page (/register)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="500" y="140" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="dashboard" value="Dashboard (/dashboard)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="300" y="240" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="device" value="Add Device" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="100" y="340" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="folder_modal" value="Add Folder Modal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="300" y="340" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="alerts" value="Folder Share Alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="500" y="340" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="submit" value="Submit Folder (/submit_folder)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="300" y="440" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="accept" value="Accept Share (/accept_share)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="500" y="440" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="stats" value="Storage Stats (/get_storage_stats)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="300" y="540" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="logout" value="Logout / Unpair" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f7fa;" vertex="1" parent="1">
+					<mxGeometry x="300" y="640" width="160" height="50" as="geometry"/>
+				</mxCell>
+				<mxCell id="e0" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="pair" target="login">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e1" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="pair" target="register">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e2" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="login" target="dashboard">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e3" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="register" target="dashboard">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e4" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="dashboard" target="device">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e5" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="dashboard" target="folder_modal">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e6" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="dashboard" target="alerts">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e7" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="folder_modal" target="submit">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e8" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="alerts" target="accept">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e9" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="dashboard" target="stats">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="e10" style="endArrow=block;html=1;rounded=1;" edge="1" parent="1" source="dashboard" target="logout">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>
